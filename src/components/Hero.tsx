@@ -29,7 +29,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground font-medium">ROI< 24 months</span>
+                <span className="text-foreground font-medium">ROI &lt; 24 months</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
