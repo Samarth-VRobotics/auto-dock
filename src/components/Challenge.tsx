@@ -1,11 +1,6 @@
 import { Package, Users, Truck, TrendingUp, Building } from "lucide-react";
-
 const Challenge = () => {
-  return (
-    <section 
-      className="py-20 bg-background" 
-      aria-label="Dock Operations Bottlenecks"
-    >
+  return <section className="py-20 bg-background" aria-label="Dock Operations Bottlenecks">
       <div className="container mx-auto px-6">
         {/* Centered single column layout */}
         <div className="max-w-5xl mx-auto">
@@ -57,15 +52,11 @@ const Challenge = () => {
 
             {/* Closing Line */}
             <div className="text-center">
-              <p className="text-xl font-bold text-foreground">
-                Our autonomous mobile manipulator with conveyor integration turns this bottleneck into a predictable, scalable flow.
-              </p>
+              <p className="text-xl font-bold text-foreground">AutoDock redefines dock autonomy, converting inefficiencies into scalable, predictable flow</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Challenge;
