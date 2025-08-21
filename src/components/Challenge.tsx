@@ -1,6 +1,5 @@
 import { Package, Users, Truck, TrendingUp, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import mobileManipulatorImage from "@/assets/mobile-manipulator-dock.jpg";
 
 const Challenge = () => {
   return (
@@ -9,20 +8,9 @@ const Challenge = () => {
       aria-label="Dock Operations Bottlenecks"
     >
       <div className="container mx-auto px-6">
-        {/* Desktop: 2-column layout, Mobile: single column */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Visual - Left on desktop, full-width on mobile */}
-          <div className="order-2 lg:order-1">
-            <img 
-              src={mobileManipulatorImage}
-              alt="Mobile robot arm unloading cartons onto flexible conveyor at dock"
-              className="w-full h-auto rounded-lg shadow-lg"
-              loading="lazy"
-            />
-          </div>
-
-          {/* Content - Right on desktop */}
-          <div className="order-1 lg:order-2 space-y-8">
+        {/* Single column layout */}
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-8">
             <div>
               <h2 className="text-4xl font-bold text-foreground mb-4">
                 The Hidden Bottlenecks in Dock Operations

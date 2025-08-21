@@ -1,58 +1,79 @@
-import { Shuffle, Brain, Shield, TrendingUp } from "lucide-react";
-
 const ValueProps = () => {
+  const features = [
+    {
+      emoji: "🔄",
+      title: "Dynamic Shape Formation",
+      description: "Conveyor adapts length & angle to any truck or dock layout."
+    },
+    {
+      emoji: "🤖", 
+      title: "Dual AMR Synchronization",
+      description: "Two AMRs coordinate for endpoint alignment and precision."
+    },
+    {
+      emoji: "🦾",
+      title: "Cobot Arm Handling", 
+      description: "Robotic arms with swappable grippers handle boxes, bags, or irregular goods."
+    },
+    {
+      emoji: "↔",
+      title: "Bi-Directional Flow",
+      description: "Smooth inbound unloading and outbound loading in one system."
+    },
+    {
+      emoji: "⚡",
+      title: "Throughput Optimization",
+      description: "Minimize truck idle time and accelerate dock operations."
+    },
+    {
+      emoji: "🔌",
+      title: "Smart Factory Integration", 
+      description: "Native link with Vegam's Smart Factory for missions & analytics."
+    },
+    {
+      emoji: "📦",
+      title: "Multi-Drop Point Handling",
+      description: "Route goods directly to multiple staging zones or destinations."
+    },
+    {
+      emoji: "🔗",
+      title: "Integrated System",
+      description: "AMRs, conveyors, and cobots work as a single orchestrated flow."
+    },
+    {
+      emoji: "🧠",
+      title: "AI-Driven Efficiency",
+      description: "AI adapts in real-time to optimize throughput and resilience."
+    }
+  ];
+
   return (
     <section className="py-20 bg-muted/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl font-bold text-foreground mb-8">
             Why Choose Our Solution
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Four key advantages that make our autonomous dock solution the optimal choice for modern logistics operations.
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="text-center p-6">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Shuffle className="w-8 h-8 text-primary" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {features.map((feature, index) => (
+            <div key={index} className="bg-background rounded-lg p-6 shadow-sm border">
+              <div className="text-4xl mb-4">{feature.emoji}</div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {feature.description}
+              </p>
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Flexible</h3>
-            <p className="text-muted-foreground">
-              Serves multiple dock doors simultaneously, optimizing resource allocation across your facility.
-            </p>
-          </div>
+          ))}
+        </div>
 
-          <div className="text-center p-6">
-            <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Brain className="w-8 h-8 text-secondary" />
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Adaptive</h3>
-            <p className="text-muted-foreground">
-              Handles unstructured loads with varying package sizes, weights, and orientations intelligently.
-            </p>
-          </div>
-
-          <div className="text-center p-6">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-8 h-8 text-primary" />
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Safe</h3>
-            <p className="text-muted-foreground">
-              Removes workers from heavy manual labor, significantly reducing workplace injuries and liability.
-            </p>
-          </div>
-
-          <div className="text-center p-6">
-            <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <TrendingUp className="w-8 h-8 text-secondary" />
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Scalable</h3>
-            <p className="text-muted-foreground">
-              Easily handles seasonal peaks and volume fluctuations without additional staffing concerns.
-            </p>
-          </div>
+        <div className="text-center">
+          <p className="text-xl font-bold text-foreground">
+            From dock to warehouse, automation that adapts, synchronizes, and scales.
+          </p>
         </div>
       </div>
     </section>
