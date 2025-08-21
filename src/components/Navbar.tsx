@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav className="flex items-center justify-between px-6 py-4 bg-background border-b border-border">
         <div className="flex items-center space-x-6">
           {/* Vegam Logo */}
-          <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-8" />
+          <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-10" />
           
           {/* DockAuto branding */}
           
