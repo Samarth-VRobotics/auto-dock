@@ -28,7 +28,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        <Button variant="default" className="bg-primary hover:bg-primary/90">Contact sales</Button>
+        <Button variant="default" className="bg-primary hover:bg-primary/90">Contact us</Button>
       </nav>
     </>;
 };
