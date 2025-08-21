@@ -8,6 +8,7 @@ import PerformanceMetrics from "@/components/PerformanceMetrics";
 import AutonomousSoftware from "@/components/AutonomousSoftware";
 import Industries from "@/components/Industries";
 import FinalCTA from "@/components/FinalCTA";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <AutonomousSoftware />
       <Industries />
       <FinalCTA />
+      <Footer />
     </div>
   );
 };

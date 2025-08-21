@@ -1,4 +1,4 @@
-import { Package, ShoppingCart, Truck, Coffee, Shirt } from "lucide-react";
+import { FlaskConical, ShoppingCart, Truck, Coffee, Factory } from "lucide-react";
 const Industries = () => {
   return <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -12,7 +12,7 @@ const Industries = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           <div className="text-center p-6 rounded-lg bg-muted/50 border border-border">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Package className="w-8 h-8 text-primary" />
+              <FlaskConical className="w-8 h-8 text-primary" />
             </div>
             <h3 className="text-lg font-semibold text-foreground mb-3">Chemical </h3>
             <p className="text-sm text-muted-foreground">
@@ -52,7 +52,7 @@ const Industries = () => {
 
           <div className="text-center p-6 rounded-lg bg-muted/50 border border-border">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Shirt className="w-8 h-8 text-primary" />
+              <Factory className="w-8 h-8 text-primary" />
             </div>
             <h3 className="text-lg font-semibold text-foreground mb-3">Manufacturing</h3>
             <p className="text-sm text-muted-foreground">

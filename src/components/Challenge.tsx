@@ -6,13 +6,13 @@ const Challenge = () => {
         <div className="max-w-5xl mx-auto">
           <div className="space-y-12">
             <div className="text-center">
-              <h2 className="text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-5xl font-bold text-foreground mb-6">
                 The Hidden Bottlenecks in Dock Operations
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-2xl text-muted-foreground mb-8">
                 The dock is where logistics efficiency is pushed to its limits.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-4xl mx-auto">
+              <p className="text-xl text-muted-foreground leading-relaxed mb-12 max-w-4xl mx-auto">
                 Inside the warehouse, processes are structured and predictable. At the dock, things change — floor-loaded cartons, labor-heavy tasks, and fluctuating throughput create hidden bottlenecks that traditional conveyors and forklifts can't solve.
               </p>
             </div>
