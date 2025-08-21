@@ -19,7 +19,7 @@ const Hero = () => {
               </Button>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
+            <div className="grid grid-cols-2 gap-6 pt-8">
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
                 <span className="text-foreground font-medium">Loads trailer in 5–10 min</span>
