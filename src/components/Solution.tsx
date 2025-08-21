@@ -3,8 +3,8 @@ const Solution = () => {
   return <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">AutoDock – Redefining Dock Autonomy</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Integrated autonomous components working together to revolutionize dock operations</p>
+          <h2 className="text-4xl font-bold text-foreground mb-6">AutoDock - The revolutionary dock autonomy system</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Auto Dock - Redefines dock autonomy, converting inefficiencies into scalable, predictable flow</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -15,7 +15,7 @@ const Solution = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Mobile Robot Platform</h3>
-                <p className="text-muted-foreground">Advanced AMRs with precise navigation and positioning, orchestrating autonomous movement at the dock for both inbound and outbound operations.</p>
+                <p className="text-muted-foreground">Advanced autonomous mobile robot equipped with sophisticated navigation and positioning systems for precise autonomous operations.</p>
               </div>
             </div>
 
@@ -25,7 +25,7 @@ const Solution = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Intelligent Manipulator</h3>
-                <p className="text-muted-foreground">Robotic arms with modular, swappable grippers to handle boxes, bags, and irregular goods safely and efficiently.</p>
+                <p className="text-muted-foreground">Precision robotic arm with computer vision that safely handles payloads of varying size and weight.</p>
               </div>
             </div>
 
@@ -34,18 +34,8 @@ const Solution = () => {
                 <Zap className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">Controlled Flexible Conveyor</h3>
-                <p className="text-muted-foreground">Adaptive conveyor system dynamically adjusting length and angle to match truck, dock, and staging layouts, enabling multi-drop, bi-directional flow.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <Bot className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">Integrated Vegam Smart Factory System (SFS)</h3>
-                <p className="text-muted-foreground">End-to-end digital integration with Vegam Smart Factory platform for real-time task orchestration, WMS/ERP connectivity, analytics, and AI-driven optimization.</p>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Seamless Conveyor Autonomy</h3>
+                <p className="text-muted-foreground">Autonomy driFlexible conveyor system that adapts to existing infrastructure and efficiently transports unloaded packages to sorting areas.</p>
               </div>
             </div>
           </div>
