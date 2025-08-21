@@ -4,7 +4,7 @@ const Solution = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6">AutoDock – Redefining Dock Autonomy</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Integrated autonomous components working together to revolutionize dock operations</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Converting dock inefficiencies into scalable, predictable flow through an integrated autonomous system</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
