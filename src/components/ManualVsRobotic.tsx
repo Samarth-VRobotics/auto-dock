@@ -1,3 +1,5 @@
+import { User, Bot, X, Check } from "lucide-react";
+
 const ManualVsRobotic = () => {
   const capabilities = [
     "24/7 Operations",
@@ -23,27 +25,33 @@ const ManualVsRobotic = () => {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full max-w-4xl mx-auto bg-card rounded-lg shadow-sm border">
+          <table className="w-full max-w-5xl mx-auto bg-card rounded-lg shadow-sm border">
             <thead>
-              <tr className="border-b">
-                <th className="text-left p-6 text-lg font-semibold text-foreground">Capability</th>
-                <th className="text-center p-6 text-lg font-semibold text-foreground">Manual Loading</th>
-                <th className="text-center p-6 text-lg font-semibold text-foreground">Robotic Loading</th>
+              <tr className="border-b bg-muted/20">
+                <th className="text-left p-6 text-lg font-semibold text-foreground w-1/3">Capability</th>
+                <th className="text-center p-6 text-lg font-semibold text-foreground w-1/3">
+                  <div className="flex items-center justify-center space-x-2">
+                    <User className="w-5 h-5 text-muted-foreground" />
+                    <span>Manual Loading</span>
+                  </div>
+                </th>
+                <th className="text-center p-6 text-lg font-semibold text-foreground w-1/3">
+                  <div className="flex items-center justify-center space-x-2">
+                    <Bot className="w-5 h-5 text-primary" />
+                    <span>Robotic Loading</span>
+                  </div>
+                </th>
               </tr>
             </thead>
             <tbody>
               {capabilities.map((capability, index) => (
-                <tr key={index} className="border-b last:border-b-0">
+                <tr key={index} className="border-b last:border-b-0 hover:bg-muted/10 transition-colors">
                   <td className="p-6 font-medium text-foreground">{capability}</td>
                   <td className="p-6 text-center">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-destructive/10">
-                      <span className="text-destructive font-bold">✗</span>
-                    </span>
+                    <X className="w-6 h-6 text-destructive mx-auto" strokeWidth={2} />
                   </td>
                   <td className="p-6 text-center">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10">
-                      <span className="text-primary font-bold">✓</span>
-                    </span>
+                    <Check className="w-6 h-6 text-green-500 mx-auto" strokeWidth={2} />
                   </td>
                 </tr>
               ))}
