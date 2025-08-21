@@ -7,12 +7,10 @@ const Hero = () => {
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Beyond Automation: 
-              <span className="block text-black">True Dock Autonomy</span>
+              <span className="text-primary block">True Dock Autonomy</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">Seamlessly automate the first and last 20 meters of logistics with a single integrated system — transforming Vegam’s decades of expertise in manufacturing and digital factory solutions into true dock autonomy.
-
- </p>
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">Seamlessly automate the first and last 20 meters of logistics with a single integrated system, transforming Vegam’s decades of expertise in manufacturing and digital factory solutions into true dock autonomy.</p>
 
             <div className="grid grid-cols-2 gap-6 pt-8">
               <div className="flex items-center space-x-3">
@@ -29,7 +27,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground font-medium">ROI &lt; 24 months</span>
+                <span className="text-foreground font-medium">Payback &lt; 24 months</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -37,7 +35,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground font-medium">Fits any trailer, Deploys in under 1 hour</span>
+                <span className="text-foreground font-medium">Fits any trailer/Deploys in under 1 hour</span>
               </div>
             </div>
 
