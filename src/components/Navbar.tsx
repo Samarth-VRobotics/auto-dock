@@ -23,9 +23,7 @@ const Navbar = () => {
           <a href="#about" className="text-foreground hover:text-primary transition-colors">
             About Us
           </a>
-          <a href="#contact" className="text-foreground hover:text-primary transition-colors">
-            Contact
-          </a>
+          
         </div>
 
         <Button variant="default" className="bg-primary hover:bg-primary/90">Contact us</Button>

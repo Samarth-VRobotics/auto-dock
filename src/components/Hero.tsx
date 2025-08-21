@@ -27,7 +27,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground font-medium">Payback &lt; 24 months</span>
+                <span className="text-foreground font-medium">ROI< 24 months</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -35,12 +35,12 @@ const Hero = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground font-medium">Fits any trailer/Deploys in under 1 hour</span>
+                <span className="text-foreground font-medium">Fits any trailer, Deploys in under 1 hour</span>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold">Contact sales</Button>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold">Contact Us</Button>
               <Button variant="outline" size="lg" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground px-8 py-4 text-lg">
                 Watch Demo
               </Button>
