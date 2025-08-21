@@ -25,9 +25,7 @@ const Solution = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Intelligent Manipulator</h3>
-                <p className="text-muted-foreground">
-                  Precision robotic arm with computer vision that safely handles floor-loaded cartons of varying sizes and weights.
-                </p>
+                <p className="text-muted-foreground">Precision robotic arm with computer vision that safely handles payloads of varying size and weight.</p>
               </div>
             </div>
 
