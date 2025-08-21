@@ -52,7 +52,7 @@ const Challenge = () => {
 
             {/* Closing Line */}
             <div className="text-center">
-              <p className="text-xl font-bold text-foreground">AutoDock redefines dock autonomy, converting inefficiencies into scalable, predictable flow</p>
+              <p className="text-xl font-bold text-foreground">Auto Dock - Redefines dock autonomy, converting inefficiencies into scalable, predictable flow</p>
             </div>
           </div>
         </div>
