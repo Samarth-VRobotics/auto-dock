@@ -63,8 +63,8 @@ const AutonomousSoftware = () => {
           const IconComponent = feature.icon;
           return <div key={index} className="bg-card rounded-lg p-6 border shadow-sm">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <IconComponent className={`w-5 h-5 ${feature.iconColor}`} />
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <IconComponent className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">
                     {feature.title}

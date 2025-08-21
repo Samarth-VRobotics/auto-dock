@@ -53,8 +53,8 @@ const PerformanceMetrics = () => {
           const IconComponent = metric.icon;
           return <div key={index} className="bg-background rounded-lg p-6 shadow-sm border">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-rose-200">
-                    <IconComponent className={`w-6 h-6 ${metric.iconColor}`} />
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-primary/10">
+                    <IconComponent className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">
                     {metric.title}
