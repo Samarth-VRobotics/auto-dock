@@ -37,32 +37,6 @@ const PerformanceMetrics = () => {
     secondary: "Deploys in under 1 hour",
     iconColor: "text-blue-500"
   }];
-  return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {metrics.map((metric, index) => {
-            const IconComponent = metric.icon;
-            return (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <IconComponent className={`w-8 h-8 ${metric.iconColor}`} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">
-                  {metric.title}
-                </h3>
-                <p className="text-xl font-bold text-primary mb-1">
-                  {metric.primary}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {metric.secondary}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
+  return;
 };
 export default PerformanceMetrics;
