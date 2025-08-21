@@ -6,7 +6,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              AutoDock – 
+              Beyond Automation: 
               <span className="text-primary block">True Dock Autonomy</span>
             </h1>
             
