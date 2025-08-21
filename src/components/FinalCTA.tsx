@@ -65,7 +65,7 @@ const FinalCTA = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-2 border-white text-white hover:bg-white hover:text-foreground px-10 py-5 text-xl font-bold hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+              className="glass-effect border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-10 py-5 text-xl font-bold hover-lift backdrop-blur-md shadow-glow-secondary group"
             >
               Download Brochure
             </Button>
