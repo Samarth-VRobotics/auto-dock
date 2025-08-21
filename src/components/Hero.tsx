@@ -10,7 +10,9 @@ const Hero = () => {
               <span className="text-primary block">True Dock Autonomy</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">Seamlessly automate the first and last 20 meters of logistics with a single integrated system</p>
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">Seamlessly automate the first and last 20 meters of logistics with a single integrated system — transforming Vegam’s decades of expertise in manufacturing and digital factory solutions into true dock autonomy.
+
+ </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold">Contact sales</Button>
