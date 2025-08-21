@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-
 const Navbar = () => {
-  return (
-    <>
+  return <>
       {/* Red line at the top */}
       <div className="w-full h-1 bg-destructive"></div>
       
@@ -12,9 +10,7 @@ const Navbar = () => {
           <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-8" />
           
           {/* DockAuto branding */}
-          <div className="text-2xl font-bold text-primary">
-            Dock<span className="text-secondary">Auto</span>
-          </div>
+          
         </div>
         
         <div className="hidden md:flex items-center space-x-8">
@@ -34,7 +30,6 @@ const Navbar = () => {
 
         <Button variant="default" className="bg-primary hover:bg-primary/90">Contact sales</Button>
       </nav>
-    </>
-  );
+    </>;
 };
 export default Navbar;

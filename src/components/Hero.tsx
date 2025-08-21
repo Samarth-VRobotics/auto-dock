@@ -22,19 +22,19 @@ const Hero = () => {
             <div className="grid grid-cols-2 gap-6 pt-8">
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground font-medium">Reduce labor costs by up to 40%</span>
+                <span className="text-foreground font-medium">Loads trailer in 5–10 min</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground font-medium">99.9% accuracy in handling</span>
+                <span className="text-foreground font-medium">600+ boxes/hour</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground font-medium">24/7 autonomous operations</span>
+                <span className="text-foreground font-medium">40–60% less dock labor</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground font-medium">ROI within 12-18 months</span>
+                <span className="text-foreground font-medium">Payback &lt; 24 months</span>
               </div>
             </div>
           </div>
