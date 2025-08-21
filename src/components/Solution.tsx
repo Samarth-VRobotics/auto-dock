@@ -1,13 +1,9 @@
 import { Bot, ArrowRight, Zap } from "lucide-react";
-
 const Solution = () => {
-  return (
-    <section className="py-20 bg-background">
+  return <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">
-            Our Autonomous Solution
-          </h2>
+          <h2 className="text-4xl font-bold text-foreground mb-6">The Auto Dock Solution</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Revolutionary mobile robotics technology that transforms truck unloading operations through intelligent automation.
           </p>
@@ -21,9 +17,7 @@ const Solution = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Mobile Robot Platform</h3>
-                <p className="text-muted-foreground">
-                  Advanced autonomous mobile robot equipped with sophisticated navigation and positioning systems for precise truck dock operations.
-                </p>
+                <p className="text-muted-foreground">Advanced autonomous mobile robot equipped with sophisticated navigation and positioning systems for precise autonomous operations.</p>
               </div>
             </div>
 
@@ -44,10 +38,8 @@ const Solution = () => {
                 <Zap className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">Seamless Conveyor Integration</h3>
-                <p className="text-muted-foreground">
-                  Flexible conveyor system that adapts to existing infrastructure and efficiently transports unloaded packages to sorting areas.
-                </p>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Seamless Conveyor Autonomy</h3>
+                <p className="text-muted-foreground">Autonomy driFlexible conveyor system that adapts to existing infrastructure and efficiently transports unloaded packages to sorting areas.</p>
               </div>
             </div>
           </div>
@@ -63,8 +55,6 @@ const Solution = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Solution;

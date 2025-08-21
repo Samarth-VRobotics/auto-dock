@@ -1,24 +1,10 @@
 import { User, Bot, X, Check } from "lucide-react";
-
 const ManualVsRobotic = () => {
-  const capabilities = [
-    "24/7 Operations",
-    "Consistent Speed", 
-    "Safety Compliance",
-    "Scalable Capacity",
-    "Data Analytics",
-    "Ergonomic Benefits",
-    "Weather Independence",
-    "Predictable Costs"
-  ];
-
-  return (
-    <section className="py-20 bg-background">
+  const capabilities = ["24/7 Operations", "Consistent Speed", "Safety Compliance", "Scalable Capacity", "Data Analytics", "Ergonomic Benefits", "Weather Independence", "Predictable Costs"];
+  return <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">
-            Manual vs. Robotic Loading
-          </h2>
+          <h2 className="text-4xl font-bold text-foreground mb-6">Traditional vs Automated systems</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Compare traditional manual loading processes with our advanced robotic solution
           </p>
@@ -44,8 +30,7 @@ const ManualVsRobotic = () => {
               </tr>
             </thead>
             <tbody>
-              {capabilities.map((capability, index) => (
-                <tr key={index} className="border-b last:border-b-0 hover:bg-muted/10 transition-colors">
+              {capabilities.map((capability, index) => <tr key={index} className="border-b last:border-b-0 hover:bg-muted/10 transition-colors">
                   <td className="p-6 font-medium text-foreground">{capability}</td>
                   <td className="p-6 text-center">
                     <X className="w-6 h-6 text-destructive mx-auto" strokeWidth={2} />
@@ -53,8 +38,7 @@ const ManualVsRobotic = () => {
                   <td className="p-6 text-center">
                     <Check className="w-6 h-6 text-green-500 mx-auto" strokeWidth={2} />
                   </td>
-                </tr>
-              ))}
+                </tr>)}
             </tbody>
           </table>
         </div>
@@ -65,8 +49,6 @@ const ManualVsRobotic = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ManualVsRobotic;
