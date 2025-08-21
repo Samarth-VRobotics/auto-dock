@@ -6,9 +6,7 @@ const Industries = () => {
           <h2 className="text-4xl font-bold text-foreground mb-6">
             Industries We Serve
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our autonomous dock solution adapts to the unique requirements of diverse logistics operations.
-          </p>
+          
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
