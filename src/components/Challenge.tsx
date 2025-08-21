@@ -45,7 +45,7 @@ const Challenge = () => {
               
               <div className="text-center space-y-2">
                 <Building className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
-                <p className="text-sm font-medium text-foreground">Space Constraints</p>
+                <p className="text-sm font-medium text-foreground">Dynamic Layouts</p>
                 <p className="text-xs text-muted-foreground">Fixed systems that reduce flexibility</p>
               </div>
             </div>

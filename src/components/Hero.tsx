@@ -7,7 +7,7 @@ const Hero = () => {
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Beyond Automation: 
-              <span className="text-primary block">True Dock Autonomy</span>
+              <span className="block text-black">True Dock Autonomy</span>
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">Seamlessly automate the first and last 20 meters of logistics with a single integrated system — transforming Vegam’s decades of expertise in manufacturing and digital factory solutions into true dock autonomy.
