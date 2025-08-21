@@ -2,17 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Professional Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 5%;
+    --foreground: 210 24% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
+    --card-foreground: 210 24% 12%;
+    
+    /* Professional color palette */
+    --slate-50: 210 40% 98%;
+    --slate-100: 210 40% 96%;
+    --slate-200: 214 32% 91%;
+    --slate-300: 213 27% 84%;
+    --slate-400: 215 20% 65%;
+    --slate-500: 215 16% 47%;
+    --slate-600: 215 19% 35%;
+    --slate-700: 215 25% 27%;
+    --slate-800: 217 33% 17%;
+    --slate-900: 222 84% 5%;
+    
+    /* Professional gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 84% 47%) 0%, hsl(0 74% 57%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(207 89% 42%) 0%, hsl(217 89% 52%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    
+    /* Professional shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
+    --shadow-glow: 0 0 40px hsl(0 84% 47% / 0.15);
+    --shadow-glow-secondary: 0 0 40px hsl(207 89% 42% / 0.15);
 
     --popover: 0 0% 100%;
     --popover-foreground: 213 24% 18%;
@@ -100,6 +125,36 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/10 border border-white/20;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  /* Background grid pattern */
+  .bg-grid-slate-100 {
+    background-image: url("data:image/svg+xml,%3csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='%23f1f5f9' fill-opacity='0.4' fill-rule='evenodd'%3e%3cpath d='m0 40 40-40h20v20l-20 20z'/%3e%3cpath d='m0 20 20-20h20v20h-20z'/%3e%3c/g%3e%3c/svg%3e");
+  }
+  
+  .bg-grid-slate-100\/50 {
+    background-image: url("data:image/svg+xml,%3csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='%23f1f5f9' fill-opacity='0.2' fill-rule='evenodd'%3e%3cpath d='m0 40 40-40h20v20l-20 20z'/%3e%3cpath d='m0 20 20-20h20v20h-20z'/%3e%3c/g%3e%3c/svg%3e");
+  }
+  
+  .bg-grid-white\/10 {
+    background-image: url("data:image/svg+xml,%3csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3e%3cpath d='m0 40 40-40h20v20l-20 20z'/%3e%3cpath d='m0 20 20-20h20v20h-20z'/%3e%3c/g%3e%3c/svg%3e");
   }
 }

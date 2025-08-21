@@ -18,12 +18,28 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				slate: {
+					50: 'hsl(var(--slate-50))',
+					100: 'hsl(var(--slate-100))',
+					200: 'hsl(var(--slate-200))',
+					300: 'hsl(var(--slate-300))',
+					400: 'hsl(var(--slate-400))',
+					500: 'hsl(var(--slate-500))',
+					600: 'hsl(var(--slate-600))',
+					700: 'hsl(var(--slate-700))',
+					800: 'hsl(var(--slate-800))',
+					900: 'hsl(var(--slate-900))',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -67,6 +83,16 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			boxShadow: {
+				'glow': 'var(--shadow-glow)',
+				'glow-secondary': 'var(--shadow-glow-secondary)',
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-surface': 'var(--gradient-surface)',
 			},
 			keyframes: {
 				'accordion-down': {
