@@ -4,7 +4,7 @@ const ManualVsRobotic = () => {
   return <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">Traditional vs Automated systems</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-6">Traditional vs Vegam's Auto Dock</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Compare traditional manual loading processes with our advanced robotic solution
           </p>
