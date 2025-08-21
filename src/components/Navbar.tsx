@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-
 const Navbar = () => {
-  return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-background border-b border-border">
+  return <nav className="flex items-center justify-between px-6 py-4 bg-background border-b border-border">
       <div className="flex items-center space-x-2">
         <div className="text-2xl font-bold text-primary">
           Dock<span className="text-secondary">Auto</span>
@@ -24,11 +22,7 @@ const Navbar = () => {
         </a>
       </div>
 
-      <Button variant="default" className="bg-primary hover:bg-primary/90">
-        Book a Demo
-      </Button>
-    </nav>
-  );
+      <Button variant="default" className="bg-primary hover:bg-primary/90">Contact sales</Button>
+    </nav>;
 };
-
 export default Navbar;
