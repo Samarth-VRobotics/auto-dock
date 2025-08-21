@@ -1,47 +1,89 @@
-import { AlertTriangle, Users, TrendingDown } from "lucide-react";
+import { Package, Users, Truck, TrendingUp, Building } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import mobileManipulatorImage from "@/assets/mobile-manipulator-dock.jpg";
 
 const Challenge = () => {
   return (
-    <section className="py-20 bg-muted/50">
+    <section 
+      className="py-20 bg-background" 
+      aria-label="Dock Operations Bottlenecks"
+    >
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">
-            The Challenge at the Dock
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Traditional truck unloading operations face critical challenges that impact efficiency, safety, and profitability.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center p-8 rounded-lg bg-background border border-border">
-            <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Users className="w-8 h-8 text-destructive" />
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Labor Shortage</h3>
-            <p className="text-muted-foreground">
-              Critical shortage of dock workers leading to operational delays and increased labor costs across the industry.
-            </p>
+        {/* Desktop: 2-column layout, Mobile: single column */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Visual - Left on desktop, full-width on mobile */}
+          <div className="order-2 lg:order-1">
+            <img 
+              src={mobileManipulatorImage}
+              alt="Mobile robot arm unloading cartons onto flexible conveyor at dock"
+              className="w-full h-auto rounded-lg shadow-lg"
+              loading="lazy"
+            />
           </div>
 
-          <div className="text-center p-8 rounded-lg bg-background border border-border">
-            <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <AlertTriangle className="w-8 h-8 text-destructive" />
+          {/* Content - Right on desktop */}
+          <div className="order-1 lg:order-2 space-y-8">
+            <div>
+              <h2 className="text-4xl font-bold text-foreground mb-4">
+                The Hidden Bottlenecks in Dock Operations
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Where truck-to-warehouse flow is most tested.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed mb-8">
+                Inside the warehouse, flows are structured. At the dock, floor-loaded cartons, manual effort, and variable volumes create delays beyond what forklifts or fixed conveyors handle.
+              </p>
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Worker Injuries</h3>
-            <p className="text-muted-foreground">
-              High rates of workplace injuries from repetitive heavy lifting and awkward positions in truck unloading operations.
-            </p>
-          </div>
 
-          <div className="text-center p-8 rounded-lg bg-background border border-border">
-            <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <TrendingDown className="w-8 h-8 text-destructive" />
+            {/* Icon Grid - 5 items, responsive */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              <div className="text-center space-y-2">
+                <Package className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
+                <p className="text-sm font-medium text-foreground">Unstructured Loads</p>
+                <p className="text-xs text-muted-foreground">no pallets</p>
+              </div>
+              
+              <div className="text-center space-y-2">
+                <Users className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
+                <p className="text-sm font-medium text-foreground">Labor Dependency</p>
+                <p className="text-xs text-muted-foreground">manual intensity</p>
+              </div>
+              
+              <div className="text-center space-y-2">
+                <Truck className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
+                <p className="text-sm font-medium text-foreground">Dock Variability</p>
+                <p className="text-xs text-muted-foreground">trucks & peaks</p>
+              </div>
+              
+              <div className="text-center space-y-2">
+                <TrendingUp className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
+                <p className="text-sm font-medium text-foreground">Throughput Uncertainty</p>
+                <p className="text-xs text-muted-foreground">uneven flow</p>
+              </div>
+              
+              <div className="text-center space-y-2">
+                <Building className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
+                <p className="text-sm font-medium text-foreground">Space Constraints</p>
+                <p className="text-xs text-muted-foreground">fixed equipment</p>
+              </div>
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Unpredictable Throughput</h3>
-            <p className="text-muted-foreground">
-              Inconsistent unloading speeds and capacity limitations that create bottlenecks in supply chain operations.
-            </p>
+
+            {/* Closing Line */}
+            <div className="text-center lg:text-left">
+              <p className="text-lg font-semibold text-foreground mb-6">
+                Autonomy turns dock bottlenecks into predictable, scalable flow.
+              </p>
+              
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button size="lg" className="font-semibold">
+                  See It In Action
+                </Button>
+                <Button variant="outline" size="lg" className="font-semibold">
+                  Book a Demo
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
