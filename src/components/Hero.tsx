@@ -1,15 +1,13 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-dock-autonomy.jpg";
-
 const Hero = () => {
-  return (
-    <section className="min-h-screen flex items-center bg-background">
+  return <section className="min-h-screen flex items-center bg-background">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               AutoDock – 
-              <span className="text-primary block">Redefining Dock Autonomy</span>
+              <span className="text-primary block">True Dock Autonomy</span>
             </h1>
             
             <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">Converting dock inefficiencies into scalable, predictable flow through an integrated autonomous system.</p>
@@ -54,8 +52,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
