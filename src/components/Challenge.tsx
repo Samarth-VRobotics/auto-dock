@@ -28,10 +28,10 @@ const Challenge = () => {
                 The Hidden Bottlenecks in Dock Operations
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Where truck-to-warehouse flow is most tested.
+                The dock is where logistics efficiency is pushed to its limits.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mb-8">
-                Inside the warehouse, flows are structured. At the dock, floor-loaded cartons, manual effort, and variable volumes create delays beyond what forklifts or fixed conveyors handle.
+                Inside the warehouse, processes are structured and predictable. At the dock, things change — floor-loaded cartons, labor-heavy tasks, and fluctuating throughput create hidden bottlenecks that traditional conveyors and forklifts can't solve.
               </p>
             </div>
 
@@ -40,38 +40,38 @@ const Challenge = () => {
               <div className="text-center space-y-2">
                 <Package className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
                 <p className="text-sm font-medium text-foreground">Unstructured Loads</p>
-                <p className="text-xs text-muted-foreground">no pallets</p>
+                <p className="text-xs text-muted-foreground">Floor-loaded cartons without pallets</p>
               </div>
               
               <div className="text-center space-y-2">
                 <Users className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
                 <p className="text-sm font-medium text-foreground">Labor Dependency</p>
-                <p className="text-xs text-muted-foreground">manual intensity</p>
+                <p className="text-xs text-muted-foreground">High manual effort, low consistency</p>
               </div>
               
               <div className="text-center space-y-2">
                 <Truck className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
                 <p className="text-sm font-medium text-foreground">Dock Variability</p>
-                <p className="text-xs text-muted-foreground">trucks & peaks</p>
+                <p className="text-xs text-muted-foreground">Different truck types & seasonal peaks</p>
               </div>
               
               <div className="text-center space-y-2">
                 <TrendingUp className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
                 <p className="text-sm font-medium text-foreground">Throughput Uncertainty</p>
-                <p className="text-xs text-muted-foreground">uneven flow</p>
+                <p className="text-xs text-muted-foreground">Inconsistent flow into operations</p>
               </div>
               
               <div className="text-center space-y-2">
                 <Building className="w-8 h-8 text-primary mx-auto" strokeWidth={1.5} />
                 <p className="text-sm font-medium text-foreground">Space Constraints</p>
-                <p className="text-xs text-muted-foreground">fixed equipment</p>
+                <p className="text-xs text-muted-foreground">Fixed systems that reduce flexibility</p>
               </div>
             </div>
 
             {/* Closing Line */}
             <div className="text-center lg:text-left">
               <p className="text-lg font-semibold text-foreground mb-6">
-                Autonomy turns dock bottlenecks into predictable, scalable flow.
+                Our autonomous mobile manipulator with conveyor integration turns this bottleneck into a predictable, scalable flow.
               </p>
               
               {/* CTAs */}
