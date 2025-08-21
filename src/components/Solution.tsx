@@ -3,7 +3,7 @@ const Solution = () => {
   return <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">4-System Architecture</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-6">AutoDock – Redefining Dock Autonomy</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Integrated autonomous components working together to revolutionize dock operations</p>
         </div>
 
