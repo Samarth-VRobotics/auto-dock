@@ -1,49 +1,36 @@
+import { Settings, GitBranch, Wrench, RefreshCw, Zap, Factory } from "lucide-react";
+
 const ValueProps = () => {
   const features = [
     {
-      emoji: "🔄",
-      title: "Dynamic Shape Formation",
-      description: "Conveyor adapts length & angle to any truck or dock layout."
+      icon: Settings,
+      title: "Adaptive Dock Integration",
+      description: "Dynamic conveyor length & angle fit any truck size or dock layout."
     },
     {
-      emoji: "🤖", 
-      title: "Dual AMR Synchronization",
-      description: "Two AMRs coordinate for endpoint alignment and precision."
+      icon: GitBranch,
+      title: "Coordinated AMR System", 
+      description: "Dual AMRs synchronize for precise positioning, endpoint control, and flow balance."
     },
     {
-      emoji: "🦾",
-      title: "Cobot Arm Handling", 
-      description: "Robotic arms with swappable grippers handle boxes, bags, or irregular goods."
+      icon: Wrench,
+      title: "Versatile Robotic Handling",
+      description: "Cobot arms with swappable grippers manage boxes, bags, and irregular goods."
     },
     {
-      emoji: "↔",
-      title: "Bi-Directional Flow",
-      description: "Smooth inbound unloading and outbound loading in one system."
+      icon: RefreshCw,
+      title: "Seamless Bi-Directional Flow",
+      description: "Supports both unloading inbound goods and loading outbound shipments."
     },
     {
-      emoji: "⚡",
-      title: "Throughput Optimization",
-      description: "Minimize truck idle time and accelerate dock operations."
+      icon: Zap,
+      title: "AI-Driven Optimization",
+      description: "Real-time throughput control reduces idle time and adapts to demand shifts."
     },
     {
-      emoji: "🔌",
-      title: "Smart Factory Integration", 
-      description: "Native link with Vegam's Smart Factory for missions & analytics."
-    },
-    {
-      emoji: "📦",
-      title: "Multi-Drop Point Handling",
-      description: "Route goods directly to multiple staging zones or destinations."
-    },
-    {
-      emoji: "🔗",
-      title: "Integrated System",
-      description: "AMRs, conveyors, and cobots work as a single orchestrated flow."
-    },
-    {
-      emoji: "🧠",
-      title: "AI-Driven Efficiency",
-      description: "AI adapts in real-time to optimize throughput and resilience."
+      icon: Factory,
+      title: "Smart Factory Integration",
+      description: "Native Vegam Smart Factory link for missions, multi-drop routing, and analytics."
     }
   ];
 
@@ -57,22 +44,27 @@ const ValueProps = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-background rounded-lg p-6 shadow-sm border">
-              <div className="text-4xl mb-4">{feature.emoji}</div>
-              <h3 className="text-lg font-semibold text-foreground mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div key={index} className="bg-background rounded-lg p-8 shadow-sm border text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <IconComponent className="w-8 h-8 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
         <div className="text-center">
           <p className="text-xl font-bold text-foreground">
-            From dock to warehouse, automation that adapts, synchronizes, and scales.
+            One integrated system that adapts, synchronizes, and scales dock operations.
           </p>
         </div>
       </div>
