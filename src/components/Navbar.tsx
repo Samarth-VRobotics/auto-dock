@@ -12,7 +12,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo Section */}
             <div className="flex items-center space-x-8">
-              <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-10 transition-transform duration-200 hover:scale-105" />
+              <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-14 transition-transform duration-200 hover:scale-105" />
               
               
             </div>
