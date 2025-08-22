@@ -6,7 +6,7 @@ const Hero = () => {
     <section className="min-h-screen flex items-center bg-background py-10">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-          <div className="space-y-12">
+          <div className="space-y-6">
             <h1 className="text-5xl lg:text-7xl font-black text-foreground leading-[1.1] animate-fade-in-up">
               Beyond Automation: 
               <span className="text-primary block animate-slide-in-left">True Dock Autonomy</span>
@@ -16,7 +16,7 @@ const Hero = () => {
               Seamlessly automate the first and last 20 meters of logistics with a single integrated system — transforming Vegam's decades of expertise in manufacturing and digital factory solutions into true dock autonomy
             </p>
 
-            <div className="grid grid-cols-2 gap-8 pt-12 animate-fade-in" style={{animationDelay: '0.6s', animationFillMode: 'both'}}>
+            <div className="grid grid-cols-2 gap-8 pt-4 animate-fade-in" style={{animationDelay: '0.6s', animationFillMode: 'both'}}>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle"></div>
                 <span className="text-foreground font-semibold text-lg">Loads trailer in 5–10 min</span>
@@ -43,7 +43,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 pt-12 animate-fade-in" style={{animationDelay: '0.9s', animationFillMode: 'both'}}>
+            <div className="flex flex-col sm:flex-row gap-6 pt-4 animate-fade-in" style={{animationDelay: '0.9s', animationFillMode: 'both'}}>
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-5 text-xl font-bold hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
