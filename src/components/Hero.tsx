@@ -13,9 +13,7 @@ const Hero = () => {
             <p className="text-xl lg:text-2xl text-foreground/70 leading-relaxed max-w-2xl animate-fade-in" style={{
             animationDelay: '0.3s',
             animationFillMode: 'both'
-          }}>
-              Seamlessly automate the first and last 20 meters of logistics with a single integrated system — transforming Vegam's decades of expertise in manufacturing and digital factory solutions into true dock autonomy
-            </p>
+          }}>Seamlessly automate the first and last 20 meters of logistics powered by Vegam’s 20-year legacy in manufacturing and digital factory solutions.</p>
 
             <div className="grid grid-cols-2 gap-8 pt-4 animate-fade-in" style={{
             animationDelay: '0.6s',
@@ -48,7 +46,7 @@ const Hero = () => {
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.8s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">Zero manual lifting</span>
+                <span className="text-foreground font-semibold text-lg">24/7 peak season ready</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
