@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 const FinalCTA = () => {
-  const benefits = ["5-10 minute trailer loading", "600+ boxes per hour throughput", "Faster turnaround times", "ROI under 24 months"];
   return <section className="py-24 relative overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary"></div>
@@ -24,24 +23,31 @@ const FinalCTA = () => {
             
             <h2 className="text-5xl lg:text-6xl font-poppins font-bold text-white mb-8 leading-tight">
               Ready to Redefine Your 
-              <span className="block">Dock Operations?</span>
+              <span className="block">Dock?</span>
             </h2>
             
-            <p className="text-xl lg:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">Transform your logistics with autonomous technology. See how our solution can revolutionize efficiency at your docks.</p>
+            <p className="text-xl lg:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+              From unpredictable dock flow to predictable, scalable automation—our autonomous system is built for peak seasons, high throughput, and faster turnarounds.
+            </p>
           </div>
           
-          {/* Benefits grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 animate-fade-in" style={{
+          {/* Key Impact Points */}
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-12 animate-fade-in" style={{
           animationDelay: '0.2s',
           animationFillMode: 'both'
         }}>
-            {benefits.map((benefit, index) => <div key={benefit} className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300" style={{
-            animationDelay: `${0.1 * index}s`,
-            animationFillMode: 'both'
-          }}>
-                <CheckCircle className="w-6 h-6 text-white flex-shrink-0" />
-                <span className="text-white font-medium text-sm">{benefit}</span>
-              </div>)}
+            <div className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-white rounded-full"></div>
+              <span className="text-white font-medium text-lg">Trailers handled in minutes</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-white rounded-full"></div>
+              <span className="text-white font-medium text-lg">Consistent throughput, 24/7</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-white rounded-full"></div>
+              <span className="text-white font-medium text-lg">ROI in under 24 months</span>
+            </div>
           </div>
           
           {/* CTA Buttons */}
@@ -64,10 +70,10 @@ const FinalCTA = () => {
           animationDelay: '0.6s',
           animationFillMode: 'both'
         }}>
-            <p className="text-white/80 text-sm">
-              Ready to discuss your specific requirements? 
+            <p className="text-white/80 text-lg">
+              Let's explore your operations.
               <a href="mailto:info@vegam.co" className="text-white font-semibold hover:underline ml-2">
-                Contact our experts today
+                Contact our team
               </a>
             </p>
           </div>
