@@ -3,43 +3,55 @@ const AutonomousSoftware = () => {
   const features = [{
     icon: Network,
     title: "Fleet Orchestration",
-    description: "Seamlessly coordinate all robotic systems for optimal dock flow and efficiency.",
+    description: "Coordinate AMRs, cobots, and conveyors with dynamic tasking, priorities, and dock/queue logic.",
     iconColor: "text-primary"
   }, {
     icon: Wrench,
     title: "WMS/ERP Integration",
-    description: "Connect directly with your existing warehouse management systems and ERPs.",
+    description: "Native connectors + REST/webhooks to SAP, Oracle, Manhattan, Blue Yonder, custom APIs.",
     iconColor: "text-primary"
   }, {
     icon: Eye,
     title: "Computer Vision + AI",
-    description: "Intelligent detection and handling of boxes, bags, and irregular loads.",
+    description: "Box detection, trailer fill maps, hazard zones, barcode/label read, and anomaly alerts.",
     iconColor: "text-primary"
   }, {
     icon: Shield,
     title: "Safety & Compliance",
-    description: "Safety-certified systems that meet industry standards and regulations.",
+    description: "SIL-rated E‑stops, zone braking, ISO 3691‑4 / ANSI B56.5 guidance, audit trails & RBAC.",
     iconColor: "text-primary"
   }, {
     icon: Zap,
-    title: "Smart Optimization",
-    description: "AI-driven optimization for maximum throughput and minimal congestion.",
+    title: "Optimization Engine",
+    description: "Auto slotting, path planning, congestion control, and smart trailer sequencing.",
     iconColor: "text-primary"
   }, {
     icon: Activity,
-    title: "Live Monitoring",
-    description: "Real-time visibility into system health, performance, and maintenance needs.",
+    title: "Health & Telemetry",
+    description: "Live KPIs, fleet health, battery SOC, MTBF/MTTR, and predictive maintenance.",
+    iconColor: "text-primary"
+  }, {
+    icon: BarChart3,
+    title: "Analytics & Reporting",
+    description: "Throughput dashboards, dwell times, cost per trailer, CO₂ impact, exportable reports.",
+    iconColor: "text-primary"
+  }, {
+    icon: AlertTriangle,
+    title: "Alerts & Exceptions",
+    description: "Rules engine for jams, mispicks, and blocked aisles with guided recovery workflows.",
+    iconColor: "text-primary"
+  }, {
+    icon: Lock,
+    title: "Security by Design",
+    description: "SSO/SAML, OAuth2, SOC 2 controls, data encryption in transit/at rest, secure updates.",
     iconColor: "text-primary"
   }];
   const highlights = ["<200 ms command latency for responsive control", "Digital twin for simulation and what‑if planning", "Multi‑tenant + role‑based access with audit logs", "On‑prem or VPC deployment; air‑gapped option", "99.5%+ software uptime with active/active failover", "Zero‑touch OTA updates and rollbacks", "Multi‑language operator UI (EN/ES/FR/DE/HI)", "Open SDK for custom skills & plugins"];
   return <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <span className="text-primary font-semibold text-sm">Vegam — The Safe Bet vs Risky New Entrants</span>
-          </div>
-          <h2 className="text-4xl font-bold text-foreground mb-6">The AutoDock Software Platform</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Safety-certified. Standards-compliant. Secure by design.</p>
+          <h2 className="text-4xl font-bold text-foreground mb-6">Meet the Brain: The Auto Dock Software Platform</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Real‑time task orchestration, safety, and insights to keep every dock moving.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">

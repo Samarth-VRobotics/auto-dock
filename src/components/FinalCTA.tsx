@@ -65,9 +65,9 @@ const FinalCTA = () => {
           animationFillMode: 'both'
         }}>
             <p className="text-white/80 text-sm">
-              Ready to make your docks autonomous? See AutoDock in action — 
+              Ready to discuss your specific requirements? 
               <a href="mailto:info@vegam.co" className="text-white font-semibold hover:underline ml-2">
-                book a live demo today
+                Contact our experts today
               </a>
             </p>
           </div>

@@ -3,22 +3,22 @@ const Industries = () => {
   const industries = [{
     icon: Factory,
     title: "Manufacturing",
-    description: "Handle irregular loads without slowing production.",
+    description: "Seasonal volume variations with soft goods and irregular package shapes.",
     color: "primary"
   }, {
     icon: Truck,
     title: "3PL",
-    description: "Adapt fast to multiple clients and SKUs.",
+    description: "Multi-client operations requiring flexible and efficient cargo handling solutions.",
     color: "secondary"
   }, {
     icon: Coffee,
     title: "FMCG",
-    description: "Keep cold chains and sensitive goods flowing.",
+    description: "Temperature-sensitive products with strict handling and safety requirements.",
     color: "primary"
   }, {
     icon: ShoppingCart,
     title: "E-commerce & Retail",
-    description: "Speed up fulfillment even at peak.",
+    description: "Diverse product mix handling for online fulfillment and retail distribution.",
     color: "secondary"
   }];
   return <section className="py-24 bg-gradient-hero relative overflow-hidden" id="industries">
