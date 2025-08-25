@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 const FinalCTA = () => {
-  const benefits = ["5-10 minute trailer loading", "600+ boxes per hour throughput", "40-60% dock labor reduction", "ROI under 24 months"];
+  const benefits = ["5-10 minute trailer loading", "600+ boxes per hour throughput", "Faster turnaround times", "ROI under 24 months"];
   return <section className="py-24 relative overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary"></div>

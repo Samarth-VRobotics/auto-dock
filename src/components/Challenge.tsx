@@ -34,7 +34,7 @@ const Challenge = () => {
                 <span className="text-primary font-semibold text-sm">The Challenge</span>
               </div>
               <h2 className="text-5xl lg:text-6xl font-poppins font-bold text-foreground mb-8 leading-tight">
-                The Hidden Bottlenecks in 
+                The Chaos in 
                 <span className="gradient-text block">Dock Operations</span>
               </h2>
               <p className="text-xl lg:text-2xl text-slate-600 mb-8 max-w-4xl mx-auto leading-relaxed">

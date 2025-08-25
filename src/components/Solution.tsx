@@ -49,6 +49,38 @@ const Solution = () => {
               Converting dock inefficiencies into scalable, predictable flow through an integrated autonomous system
             </p>
             <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-8"></div>
+            
+            {/* System Flow Visual */}
+            <div className="mt-12 max-w-4xl mx-auto">
+              <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-6 border border-primary/10">
+                <div className="flex items-center justify-center space-x-4 text-sm font-medium text-slate-600">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
+                    <span>Flow Management</span>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-primary" />
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                    <span>AMR Navigation</span>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-primary" />
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
+                    <span>Manipulator</span>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-primary" />
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                    <span>Conveyor</span>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-primary" />
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
+                    <span>Vegam SFS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
