@@ -6,8 +6,8 @@ const Challenge = () => {
     description: "Floor-loaded cartons without pallets"
   }, {
     icon: Users,
-    title: "Labor Dependency",
-    description: "High manual effort, low consistency"
+    title: "Peak Season Downtime",
+    description: "Overloaded docks, delayed turnaround"
   }, {
     icon: Truck,
     title: "Dock Variability",
