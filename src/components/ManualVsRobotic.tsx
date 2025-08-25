@@ -3,11 +3,9 @@ const ManualVsRobotic = () => {
   const capabilities = [
     "24/7 Operations",
     "Consistent Speed", 
-    "Data & Analytics",
     "Ergonomics / Safety",
     "Predictable Costs",
     "Flexibility",
-    "Labor Dependency",
     "Throughput & Productivity",
     "Integration with WMS/ERP",
     "Multi-Material Handling"
