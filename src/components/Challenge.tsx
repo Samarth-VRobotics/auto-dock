@@ -1,36 +1,27 @@
 import { Package, Users, Truck, TrendingUp, Building } from "lucide-react";
-
 const Challenge = () => {
-  const challenges = [
-    {
-      icon: Package,
-      title: "Unstructured Loads",
-      description: "Floor-loaded cartons without pallets"
-    },
-    {
-      icon: Users,
-      title: "Labor Dependency", 
-      description: "High manual effort, low consistency"
-    },
-    {
-      icon: Truck,
-      title: "Dock Variability",
-      description: "Different truck types & seasonal peaks"
-    },
-    {
-      icon: TrendingUp,
-      title: "Throughput Uncertainty",
-      description: "Unpredictable flow rates"
-    },
-    {
-      icon: Building,
-      title: "Dynamic Layouts",
-      description: "Fixed systems that reduce flexibility"
-    }
-  ];
-
-  return (
-    <section className="py-24 bg-gradient-surface relative overflow-hidden" aria-label="Dock Operations Bottlenecks">
+  const challenges = [{
+    icon: Package,
+    title: "Unstructured Loads",
+    description: "Floor-loaded cartons without pallets"
+  }, {
+    icon: Users,
+    title: "Labor Dependency",
+    description: "High manual effort, low consistency"
+  }, {
+    icon: Truck,
+    title: "Dock Variability",
+    description: "Different truck types & seasonal peaks"
+  }, {
+    icon: TrendingUp,
+    title: "Throughput Uncertainty",
+    description: "Unpredictable flow rates"
+  }, {
+    icon: Building,
+    title: "Dynamic Layouts",
+    description: "Fixed systems that reduce flexibility"
+  }];
+  return <section className="py-24 bg-gradient-surface relative overflow-hidden" aria-label="Dock Operations Bottlenecks">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]"></div>
       
@@ -56,13 +47,14 @@ const Challenge = () => {
             </div>
 
             {/* Challenge Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 animate-fade-in" style={{animationDelay: '0.3s', animationFillMode: 'both'}}>
-              {challenges.map((challenge, index) => (
-                <div 
-                  key={challenge.title}
-                  className="text-center group hover-lift bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-slate-200/50 hover:border-primary/30 transition-all duration-300"
-                  style={{animationDelay: `${0.1 * index}s`, animationFillMode: 'both'}}
-                >
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 animate-fade-in" style={{
+            animationDelay: '0.3s',
+            animationFillMode: 'both'
+          }}>
+              {challenges.map((challenge, index) => <div key={challenge.title} className="text-center group hover-lift bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-slate-200/50 hover:border-primary/30 transition-all duration-300" style={{
+              animationDelay: `${0.1 * index}s`,
+              animationFillMode: 'both'
+            }}>
                   <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-glow">
                     <challenge.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
                   </div>
@@ -72,26 +64,22 @@ const Challenge = () => {
                   <p className="text-xs text-slate-500 leading-relaxed">
                     {challenge.description}
                   </p>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             {/* Bottom CTA */}
-            <div className="text-center animate-fade-in" style={{animationDelay: '0.6s', animationFillMode: 'both'}}>
+            <div className="text-center animate-fade-in" style={{
+            animationDelay: '0.6s',
+            animationFillMode: 'both'
+          }}>
               <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/50 shadow-lg">
-                <p className="text-xl font-poppins font-semibold text-foreground mb-4">
-                  It's time to eliminate these bottlenecks with true dock autonomy.
-                </p>
-                <p className="text-slate-600">
-                  AutoDock transforms these challenges into opportunities for seamless, scalable operations.
-                </p>
+                <p className="text-xl font-poppins font-semibold text-foreground mb-4">Let's turn the dock chaos into clarity with The AutoDock.</p>
+                <p className="text-slate-600">“Backed by Vegam’s decades of expertise in digital factory solutions, AutoDock streamlines dock operations, adapts to variability, and delivers measurable efficiency.”</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Challenge;
