@@ -74,7 +74,7 @@ const Challenge = () => {
           }}>
               <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/50 shadow-lg">
                 <p className="text-xl font-poppins font-semibold text-foreground mb-4">Let's turn the dock chaos into clarity with The AutoDock.</p>
-                <p className="text-slate-600">“Backed by Vegam’s decades of expertise in digital factory solutions, AutoDock streamlines dock operations, adapts to variability, and delivers measurable efficiency.”</p>
+                <p className="text-slate-600">“Backed by Vegam’s decades of expertise in digital factory solutions, vAutoDock streamlines dock operations, adapts to variability, and delivers measurable efficiency.”</p>
               </div>
             </div>
           </div>
