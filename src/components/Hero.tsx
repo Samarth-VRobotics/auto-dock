@@ -7,8 +7,7 @@ const Hero = () => {
           <div className="space-y-6">
             <h1 className="text-5xl lg:text-7xl font-black text-foreground leading-[1.1] animate-fade-in-up">
               The AutoDock: 
-              <span className="text-primary block animate-slide-in-left">True Truck 
-Dock Autonomy</span>
+              <span className="text-primary block animate-slide-in-left">True Dock Autonomy</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-foreground/70 leading-relaxed max-w-2xl animate-fade-in" style={{
