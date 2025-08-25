@@ -4,26 +4,22 @@ const Industries = () => {
     icon: Factory,
     title: "Manufacturing",
     description: "Seasonal volume variations with soft goods and irregular package shapes.",
-    color: "primary",
-    stats: "40-60% labor reduction"
-  }, {
-    icon: ShoppingCart,
-    title: "E-commerce & Retail",
-    description: "Diverse product mix handling for online fulfillment and retail distribution.",
-    color: "secondary",
-    stats: "600+ boxes/hour"
+    color: "primary"
   }, {
     icon: Truck,
     title: "3PL",
     description: "Multi-client operations requiring flexible and efficient cargo handling solutions.",
-    color: "primary",
-    stats: "ROI < 24 months"
+    color: "secondary"
   }, {
     icon: Coffee,
     title: "FMCG",
     description: "Temperature-sensitive products with strict handling and safety requirements.",
-    color: "secondary",
-    stats: "Zero manual lifting"
+    color: "primary"
+  }, {
+    icon: ShoppingCart,
+    title: "E-commerce & Retail",
+    description: "Diverse product mix handling for online fulfillment and retail distribution.",
+    color: "secondary"
   }];
   return <section className="py-24 bg-gradient-hero relative overflow-hidden" id="industries">
       {/* Background pattern */}
@@ -66,14 +62,9 @@ const Industries = () => {
                   {industry.title}
                 </h3>
                 
-                <p className="text-slate-600 leading-relaxed mb-6 text-sm">
+                <p className="text-slate-600 leading-relaxed text-sm">
                   {industry.description}
                 </p>
-                
-                {/* Stats badge */}
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 border border-slate-200">
-                  <span className="text-xs font-semibold text-slate-700">{industry.stats}</span>
-                </div>
               </div>)}
           </div>
 
