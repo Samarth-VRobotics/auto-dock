@@ -21,20 +21,19 @@ const Hero = () => {
           }}>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle"></div>
-                <span className="text-foreground font-semibold text-lg">Handles Any Trailer in Mins</span>
+                <span className="text-foreground font-semibold text-lg">Loads & unloads any trailer in minutes</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.2s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">600+ Boxes/Hour</span>
+                <span className="text-foreground font-semibold text-lg">600+ boxes per hour</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.4s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">Layout Friendly
-              </span>
+                <span className="text-foreground font-semibold text-lg">Fits into your existing layout</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
@@ -46,13 +45,13 @@ const Hero = () => {
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.8s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">24/7 Peak Season Ready</span>
+                <span className="text-foreground font-semibold text-lg">24/7 peak-season ready</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '1s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">Unified with Vegam's WMS Suite</span>
+                <span className="text-foreground font-semibold text-lg">ERP & WMS integration ready</span>
               </div>
             </div>
 
