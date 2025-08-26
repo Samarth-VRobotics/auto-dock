@@ -1,50 +1,37 @@
-import { Network, Wrench, Eye, Shield, Zap, BarChart3, AlertTriangle, Lock, Activity } from "lucide-react";
+import { Brain, Shield, Network, Lock } from "lucide-react";
 const AutonomousSoftware = () => {
-  const features = [{
-    icon: Network,
-    title: "Fleet Orchestration",
-    description: "Coordinate AMRs, cobots, and conveyors with dynamic tasking, priorities, and dock/queue logic.",
-    iconColor: "text-primary"
-  }, {
-    icon: Wrench,
-    title: "WMS/ERP Integration",
-    description: "Native connectors + REST/webhooks to SAP, Oracle, Manhattan, Blue Yonder, custom APIs.",
-    iconColor: "text-primary"
-  }, {
-    icon: Eye,
-    title: "Computer Vision + AI",
-    description: "Box detection, trailer fill maps, hazard zones, barcode/label read, and anomaly alerts.",
-    iconColor: "text-primary"
+  const pillars = [{
+    icon: Brain,
+    title: "Intelligence & Orchestration",
+    capabilities: [
+      "Real-time tasking for AMRs, cobots, conveyors",
+      "AI-driven slotting, path planning, and congestion control", 
+      "Dynamic dock/queue logic with recovery workflows"
+    ]
   }, {
     icon: Shield,
     title: "Safety & Compliance",
-    description: "SIL-rated E‑stops, zone braking, ISO 3691‑4 / ANSI B56.5 guidance, audit trails & RBAC.",
-    iconColor: "text-primary"
+    capabilities: [
+      "SIL-rated E-stops, zone braking, ISO/ANSI standards",
+      "Computer vision for hazard zones + anomaly detection",
+      "Built-in audit trails and role-based access"
+    ]
   }, {
-    icon: Zap,
-    title: "Optimization Engine",
-    description: "Auto slotting, path planning, congestion control, and smart trailer sequencing.",
-    iconColor: "text-primary"
-  }, {
-    icon: Activity,
-    title: "Health & Telemetry",
-    description: "Live KPIs, fleet health, battery SOC, MTBF/MTTR, and predictive maintenance.",
-    iconColor: "text-primary"
-  }, {
-    icon: BarChart3,
-    title: "Analytics & Reporting",
-    description: "Throughput dashboards, dwell times, cost per trailer, CO₂ impact, exportable reports.",
-    iconColor: "text-primary"
-  }, {
-    icon: AlertTriangle,
-    title: "Alerts & Exceptions",
-    description: "Rules engine for jams, mispicks, and blocked aisles with guided recovery workflows.",
-    iconColor: "text-primary"
+    icon: Network,
+    title: "Integration & Insights", 
+    capabilities: [
+      "Native WMS/ERP connectors (SAP, Oracle, Blue Yonder)",
+      "Throughput dashboards, CO₂ impact, and cost per trailer",
+      "REST/webhook APIs for custom workflows"
+    ]
   }, {
     icon: Lock,
-    title: "Security by Design",
-    description: "SSO/SAML, OAuth2, SOC 2 controls, data encryption in transit/at rest, secure updates.",
-    iconColor: "text-primary"
+    title: "Reliability & Security",
+    capabilities: [
+      "Live fleet health, predictive maintenance, MTBF/MTTR",
+      "Rules engine for alerts/exceptions (jams, blocked aisles)",
+      "Security-by-design: SSO, SOC 2, encrypted updates"
+    ]
   }];
   const highlights = ["<200 ms command latency for responsive control", "Digital twin for simulation and what‑if planning", "Multi‑tenant + role‑based access with audit logs", "On‑prem or VPC deployment; air‑gapped option", "99.5%+ software uptime with active/active failover", "Zero‑touch OTA updates and rollbacks", "Multi‑language operator UI (EN/ES/FR/DE/HI)", "Open SDK for custom skills & plugins"];
   return <section className="py-20 bg-background">
@@ -54,21 +41,28 @@ const AutonomousSoftware = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Real‑time task orchestration, safety, and insights to keep every dock moving.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">
-          {features.map((feature, index) => {
-          const IconComponent = feature.icon;
-          return <div key={index} className="bg-card rounded-lg p-6 border shadow-sm">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <IconComponent className={`w-5 h-5 ${feature.iconColor}`} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
+          {pillars.map((pillar, index) => {
+          const IconComponent = pillar.icon;
+          return <div key={index} className="bg-card rounded-lg p-8 border shadow-sm">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <IconComponent className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {feature.title}
+                  <h3 className="text-xl font-semibold text-foreground">
+                    {pillar.title}
                   </h3>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
+                <div className="space-y-3">
+                  {pillar.capabilities.map((capability, capIndex) => (
+                    <div key={capIndex} className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {capability}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>;
         })}
         </div>
