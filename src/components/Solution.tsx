@@ -5,26 +5,26 @@ const Solution = () => {
   const systems = [
     {
       icon: Bot,
-      title: "Mobile Robot Platform",
-      description: "Advanced AMRs with precise navigation and positioning, orchestrating autonomous movement at the dock for both inbound and outbound operations.",
+      title: "Head & Tail AMRs",
+      description: "Mobile robots that move inside the truck and at staging. Each carries a robotic arm to handle goods directly.",
       color: "primary"
     },
     {
       icon: ArrowRight,
-      title: "Intelligent Manipulator", 
-      description: "Robotic arms with modular, swappable grippers to handle boxes, bags, and irregular goods safely and efficiently.",
+      title: "Robotic Arms with Swappable Grippers", 
+      description: "Adapt to different load types — cartons, bags, or irregular goods — with quick-change modular grippers.",
       color: "secondary"
     },
     {
       icon: Zap,
-      title: "Controlled Flexible Conveyor",
-      description: "Adaptive conveyor system dynamically adjusting length and angle to match truck, dock, and staging layouts, enabling multi-drop, bi-directional flow.",
+      title: "Flexible Powered Conveyor",
+      description: "Connects the two AMRs. Adjusts its length, angle, and shape as they move in sync. Powered rollers and smart brakes keep it stable, even in curves.",
       color: "primary"
     },
     {
       icon: Brain,
-      title: "Integrated Vegam Smart Factory System (SFS)",
-      description: "End-to-end digital integration with Vegam Smart Factory platform for real-time task orchestration, WMS/ERP connectivity, analytics, and AI-driven optimization.",
+      title: "Dock AI Software",
+      description: "Orchestrates AMRs, conveyors, and arms in real time. Connects with WMS/ERP for mission planning, queue logic, throughput tracking, and analytics.",
       color: "secondary"
     }
   ];
@@ -39,14 +39,14 @@ const Solution = () => {
           {/* Header */}
           <div className="text-center mb-20 animate-fade-in-up">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <span className="text-primary font-semibold text-sm">4-System Architecture</span>
+              <span className="text-primary font-semibold text-sm">Technology</span>
             </div>
             <h2 className="text-5xl lg:text-6xl font-poppins font-bold text-foreground mb-8 leading-tight">
-              AutoDock – Redefining 
-              <span className="gradient-text block">Dock Autonomy</span>
+              The Technology Behind
+              <span className="gradient-text block">AutoDock</span>
             </h2>
             <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Converting dock inefficiencies into scalable, predictable flow through an integrated autonomous system
+              Four core components work together to turn bottlenecks into predictable flow.
             </p>
             <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-8"></div>
             
@@ -121,10 +121,10 @@ const Solution = () => {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
                     <h4 className="text-white font-poppins font-bold text-lg mb-2">
-                      Autonomous Operation
+                      Individually Powerful
                     </h4>
                     <p className="text-white/90 text-sm">
-                      Real-time coordination between mobile robots, intelligent manipulators, and flexible conveyors
+                      Together unstoppable — one integrated system for true dock autonomy
                     </p>
                   </div>
                 </div>
