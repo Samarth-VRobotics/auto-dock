@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Challenge from "@/components/Challenge";
+import Impacts from "@/components/Impacts";
 import Solution from "@/components/Solution";
 import ValueProps from "@/components/ValueProps";
 import ManualVsRobotic from "@/components/ManualVsRobotic";
@@ -16,6 +17,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Challenge />
+      <Impacts />
       <Solution />
       <ValueProps />
       <ManualVsRobotic />

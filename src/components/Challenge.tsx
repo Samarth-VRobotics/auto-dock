@@ -31,7 +31,7 @@ const Challenge = () => {
             {/* Header Section */}
             <div className="text-center animate-fade-in-up">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <span className="text-primary font-semibold text-sm">The Challenge</span>
+                <span className="text-primary font-semibold text-sm">The Challenges</span>
               </div>
               <h2 className="text-5xl lg:text-6xl font-poppins font-bold text-foreground mb-8 leading-tight">
                 The Hidden Bottlenecks in 
