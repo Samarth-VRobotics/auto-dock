@@ -5,32 +5,27 @@ const HowAutoDockFits = () => {
     {
       icon: Truck,
       title: "Truck Docking & Trailer Entry",
-      description: "Head AMR drives inside, Tail AMR anchors at staging, conveyor links them.",
-      benefit: "Trailers unload immediately — no manual entry, no wasted ramp time."
+      description: "Head AMR drives inside while Tail AMR anchors at staging with the conveyor linking them, unloading trailers immediately without manual entry or wasted ramp time."
     },
     {
       icon: RotateCcw,
       title: "Unload to Staging",
-      description: "Conveyor flexes length, angle, and shape to match truck & dock.",
-      benefit: "Smooth flow to staging points — no pile-ups at dock doors."
+      description: "The flexible conveyor adjusts its length, angle, and shape to match truck and dock, creating smooth flow to staging points without pile-ups at dock doors."
     },
     {
       icon: Package,
       title: "Staging & Palletizing",
-      description: "Head AMR's arm unloads inside, Tail AMR's arm places on pallets/floor.",
-      benefit: "Mixed loads cleared consistently, staging stays organized."
+      description: "Head AMR's arm unloads inside while Tail AMR's arm places goods on pallets or the floor, clearing mixed loads consistently and keeping staging organized."
     },
     {
       icon: RotateCcw,
       title: "Staging-to-Storage & Outbound Loading",
-      description: "Same AMR + conveyor system extends flow into storage or reverses for loading.",
-      benefit: "Continuous, bi-directional dock movement — inbound or outbound."
+      description: "The same AMR + conveyor system extends flow from staging into storage or reverses for loading, enabling continuous bi-directional dock movement."
     },
     {
       icon: Brain,
       title: "Dock Orchestration & Visibility",
-      description: "Dock AI syncs AMRs, arms, conveyor, and updates WMS/ERP.",
-      benefit: "Predictable throughput, SLA compliance, real-time visibility."
+      description: "Dock AI synchronizes AMRs, arms, and conveyors while updating WMS/ERP, ensuring predictable throughput, SLA compliance, and real-time visibility."
     }
   ];
 
@@ -78,12 +73,6 @@ const HowAutoDockFits = () => {
                         <p className="text-slate-700 leading-relaxed font-medium">
                           {step.description}
                         </p>
-                        <div className="flex items-start space-x-3 pt-2 border-t border-slate-100">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-primary font-semibold text-sm leading-relaxed">
-                            {step.benefit}
-                          </p>
-                        </div>
                       </div>
                     </div>
                   </div>
