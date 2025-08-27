@@ -52,7 +52,7 @@ const Impacts = () => {
                 <span className="text-destructive block">Dock Bottlenecks</span>
               </h2>
               <p className="text-xl lg:text-2xl text-slate-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Dock inefficiencies don't just slow operations — they drain profits, trigger penalties, and erode customer trust.
+                Every hidden bottleneck at the dock comes with a visible price tag — in wasted hours, lost revenue, and broken customer promises.
               </p>
               <div className="w-24 h-1 bg-gradient-to-r from-destructive to-destructive/60 mx-auto rounded-full mb-8"></div>
             </div>
