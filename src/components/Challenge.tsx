@@ -66,6 +66,16 @@ const Challenge = () => {
                   </p>
                 </div>)}
             </div>
+
+            {/* Transition to Impacts */}
+            <div className="text-center animate-fade-in" style={{
+              animationDelay: '0.6s',
+              animationFillMode: 'both'
+            }}>
+              <p className="text-2xl font-poppins font-semibold text-foreground">
+                Here's what those bottlenecks really cost you.
+              </p>
+            </div>
           </div>
         </div>
       </div>
