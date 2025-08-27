@@ -4,23 +4,33 @@ const HowAutoDockFits = () => {
   const steps = [
     {
       icon: Truck,
-      title: "When the Truck Arrives",
-      description: "Trucks back in, ramps drop, and traditionally crews climb into trailers to start unloading. With AutoDock, the robots roll in instead — keeping people safe and trailers turning faster."
+      title: "Truck Docking & Trailer Entry",
+      description: "When a trailer reverses into position and the dock ramp drops, the Head AMR drives directly inside while the Tail AMR positions at staging. The two are linked by a flexible powered conveyor that bridges truck to dock.",
+      benefit: "Trailers start unloading immediately — no manual climbing inside, no wasted turnaround time."
     },
     {
       icon: RotateCcw,
-      title: "Continuous Flow to Staging",
-      description: "Instead of goods piling at the dock door, AutoDock creates a smooth flow from trailer to staging. Boxes, bags, and mixed loads are handled consistently, even when volumes spike."
+      title: "Unload to Staging",
+      description: "The flexible conveyor flexes its length, angle, and shape as the AMRs move in sync, adapting to different truck sizes and dock layouts.",
+      benefit: "Goods flow smoothly from inside the trailer to staging points without pile-ups at dock doors or congestion in front of bays."
     },
     {
       icon: Package,
-      title: "Clear Staging, Clear Floor",
-      description: "No more bottlenecks in front of dock doors. AutoDock keeps staging areas moving, so forklifts and operators can do their jobs without congestion or delay."
+      title: "Staging & Palletizing",
+      description: "Inside the trailer: the Head AMR's robotic arm picks cartons, bags, and irregular loads with swappable grippers and places them on the conveyor. At staging: the Tail AMR's robotic arm lifts items off the conveyor and places them onto pallets or floor staging zones.",
+      benefit: "Mixed loads are unloaded consistently, staging areas stay organized, and forklifts can operate without bottlenecks."
+    },
+    {
+      icon: RotateCcw,
+      title: "Staging-to-Storage & Outbound Loading",
+      description: "Once trailers are cleared, the same AMR + conveyor system extends flow beyond staging into storage lanes or outbound docks. The process runs in reverse for loading outbound trailers.",
+      benefit: "Continuous, bi-directional movement — inbound or outbound — that adapts to your warehouse footprint."
     },
     {
       icon: Brain,
-      title: "Always Orchestrated, Always Visible",
-      description: "Behind the scenes, Dock AI ensures everything works in sync and feeds your WMS/ERP. You don't just get faster flow — you get real-time visibility into throughput, turnaround, and performance."
+      title: "Dock Orchestration & Visibility",
+      description: "Dock AI software synchronizes AMRs, robotic arms, and conveyor motion while linking seamlessly with your WMS/ERP.",
+      benefit: "Predictable throughput, SLA compliance, and full real-time visibility into dock performance."
     }
   ];
 
@@ -64,9 +74,15 @@ const HowAutoDockFits = () => {
                       <h3 className="text-xl font-poppins font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                         {step.title}
                       </h3>
-                      <p className="text-slate-600 leading-relaxed">
+                      <p className="text-slate-600 leading-relaxed mb-3">
                         {step.description}
                       </p>
+                      <div className="flex items-start space-x-2">
+                        <span className="text-primary font-bold mt-0.5">👉</span>
+                        <p className="text-primary font-medium text-sm leading-relaxed">
+                          {step.benefit}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}
