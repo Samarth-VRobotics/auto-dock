@@ -54,34 +54,36 @@ const HowAutoDockFits = () => {
                   <span className="gradient-text block">Your Dock</span>
                 </h2>
                 <p className="text-xl lg:text-2xl text-slate-600 mb-8 leading-relaxed">
-                  Every dock is busy: trucks reversing, ramps dropping, forklifts moving, staging areas filling up. It's here that bottlenecks slow everything down. AutoDock steps into this exact environment — not by redesigning it, but by removing the friction that costs you time and money.
+                  Busy docks create bottlenecks: trucks, ramps, forklifts, and staging all competing for space. AutoDock eliminates this friction without redesigning your dock — just removing what slows you down.
                 </p>
                 <div className="w-24 h-1 bg-gradient-primary mx-0 rounded-full mb-8"></div>
               </div>
 
               {/* Steps */}
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {steps.map((step, index) => (
                   <div
                     key={step.title}
-                    className="group flex items-start space-x-6 animate-fade-in"
+                    className="group bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50 hover:border-primary/20 hover:shadow-lg transition-all duration-300 animate-fade-in"
                     style={{animationDelay: `${0.1 * index}s`, animationFillMode: 'both'}}
                   >
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-glow">
-                      <step.icon className="w-6 h-6 text-white" strokeWidth={1.5} />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-poppins font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {step.title}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed mb-3">
-                        {step.description}
-                      </p>
-                      <div className="flex items-start space-x-2">
-                        <span className="text-primary font-bold mt-0.5">👉</span>
-                        <p className="text-primary font-medium text-sm leading-relaxed">
-                          {step.benefit}
+                    <div className="flex items-start space-x-5">
+                      <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                        <step.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
+                      </div>
+                      <div className="flex-1 space-y-3">
+                        <h3 className="text-xl font-poppins font-bold text-foreground group-hover:text-primary transition-colors">
+                          {step.title}
+                        </h3>
+                        <p className="text-slate-700 leading-relaxed font-medium">
+                          {step.description}
                         </p>
+                        <div className="flex items-start space-x-3 pt-2 border-t border-slate-100">
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <p className="text-primary font-semibold text-sm leading-relaxed">
+                            {step.benefit}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
