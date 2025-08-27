@@ -5,32 +5,32 @@ const HowAutoDockFits = () => {
     {
       icon: Truck,
       title: "Truck Docking & Trailer Entry",
-      description: "When a trailer reverses into position and the dock ramp drops, the Head AMR drives directly inside while the Tail AMR positions at staging. The two are linked by a flexible powered conveyor that bridges truck to dock.",
-      benefit: "Trailers start unloading immediately — no manual climbing inside, no wasted turnaround time."
+      description: "Head AMR drives inside, Tail AMR anchors at staging, conveyor links them.",
+      benefit: "Trailers unload immediately — no manual entry, no wasted ramp time."
     },
     {
       icon: RotateCcw,
       title: "Unload to Staging",
-      description: "The flexible conveyor flexes its length, angle, and shape as the AMRs move in sync, adapting to different truck sizes and dock layouts.",
-      benefit: "Goods flow smoothly from inside the trailer to staging points without pile-ups at dock doors or congestion in front of bays."
+      description: "Conveyor flexes length, angle, and shape to match truck & dock.",
+      benefit: "Smooth flow to staging points — no pile-ups at dock doors."
     },
     {
       icon: Package,
       title: "Staging & Palletizing",
-      description: "Inside the trailer: the Head AMR's robotic arm picks cartons, bags, and irregular loads with swappable grippers and places them on the conveyor. At staging: the Tail AMR's robotic arm lifts items off the conveyor and places them onto pallets or floor staging zones.",
-      benefit: "Mixed loads are unloaded consistently, staging areas stay organized, and forklifts can operate without bottlenecks."
+      description: "Head AMR's arm unloads inside, Tail AMR's arm places on pallets/floor.",
+      benefit: "Mixed loads cleared consistently, staging stays organized."
     },
     {
       icon: RotateCcw,
       title: "Staging-to-Storage & Outbound Loading",
-      description: "Once trailers are cleared, the same AMR + conveyor system extends flow beyond staging into storage lanes or outbound docks. The process runs in reverse for loading outbound trailers.",
-      benefit: "Continuous, bi-directional movement — inbound or outbound — that adapts to your warehouse footprint."
+      description: "Same AMR + conveyor system extends flow into storage or reverses for loading.",
+      benefit: "Continuous, bi-directional dock movement — inbound or outbound."
     },
     {
       icon: Brain,
       title: "Dock Orchestration & Visibility",
-      description: "Dock AI software synchronizes AMRs, robotic arms, and conveyor motion while linking seamlessly with your WMS/ERP.",
-      benefit: "Predictable throughput, SLA compliance, and full real-time visibility into dock performance."
+      description: "Dock AI syncs AMRs, arms, conveyor, and updates WMS/ERP.",
+      benefit: "Predictable throughput, SLA compliance, real-time visibility."
     }
   ];
 
