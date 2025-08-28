@@ -15,46 +15,53 @@ const AutoDockAdvantage = () => {
 
   const features = [
     {
-      id: 'hands-free',
-      label: 'Hands-Free Setup',
-      icon: Settings,
-      title: 'Detects trucks, starts unloading',
-      description: 'AutoDock automatically identifies incoming trucks and begins the unloading process without human intervention, ensuring seamless operations around the clock.'
+      id: 'always-ready',
+      label: 'Always Ready, Always On',
+      icon: Zap,
+      title: 'Eliminates labor bottlenecks',
+      description: 'AutoDock detects incoming trucks, configures itself, and begins unloading instantly — ensuring continuous throughput even at peak volumes.'
     },
     {
-      id: 'scales',
-      label: 'Scales Effortlessly', 
-      icon: BarChart3,
-      title: 'One platform, multiple docks',
-      description: 'Deploy across multiple loading docks with centralized orchestration, allowing you to handle volume surges without operational bottlenecks.'
-    },
-    {
-      id: 'ai-driven',
-      label: 'AI-Driven Efficiency',
-      icon: Brain, 
-      title: 'Learns, adapts, optimizes',
-      description: 'Advanced AI continuously analyzes operations and automatically adjusts workflows to maximize throughput and minimize delays.'
-    },
-    {
-      id: 'integration',
-      label: 'Seamless Integration',
-      icon: Plug,
-      title: 'Works with SAP/SFS + APIs',
-      description: 'Pre-built connectors for major ERP and WMS systems ensure rapid deployment without disrupting existing workflows or IT infrastructure.'
-    },
-    {
-      id: 'roi',
-      label: 'Fast ROI',
+      id: 'roi-multiple',
+      label: 'ROI on Multiple Fronts', 
       icon: TrendingUp,
-      title: 'Cuts dwell times & costs',
-      description: 'Achieve payback in under 24 months through reduced labor dependency, faster truck turnarounds, and optimized dock utilization.'
+      title: 'Reduce costs, accelerate time-to-value',
+      description: 'Reduce labor dependency, cut trailer dwell times, and avoid costly dock modifications. AutoDock drives efficiency gains across the board, accelerating time-to-value.'
     },
     {
-      id: 'safety',
-      label: 'Safety Built In',
+      id: 'scales-without-slowing',
+      label: 'Scales Without Slowing Down',
+      icon: BarChart3, 
+      title: 'Handles surges without disruption',
+      description: 'Handles surges in truck volumes without disruption. With a central orchestration platform and modular AMRs, you can scale across docks while maximizing asset utilization.'
+    },
+    {
+      id: 'ai-understands',
+      label: 'AI That Understands Logistics',
+      icon: Brain,
+      title: 'Dynamically adapts to optimize every cycle',
+      description: 'Powered by decades of industry data, AutoDock\'s AI doesn\'t just execute tasks — it understands logistics workflows, dynamically adapting to optimize every movement and cycle.'
+    },
+    {
+      id: 'enterprise-integration',
+      label: 'Enterprise Integration, Simplified',
+      icon: Plug,
+      title: 'Seamlessly connects to ERP/WMS ecosystems',
+      description: 'Backed by pre-integrated native SAP/SFS software and open APIs, AutoDock connects seamlessly into ERP/WMS ecosystems — giving real-time dashboards, control, and analytics without IT complexity.'
+    },
+    {
+      id: 'built-in-safety',
+      label: 'Built-In Safety, By Design',
       icon: Shield,
-      title: 'Meets standards with monitoring',
-      description: 'Comprehensive safety systems including zone monitoring, collision detection, and emergency stops ensure compliance with global safety standards.'
+      title: 'Automated and inherently safe',
+      description: 'Zone monitoring, human detection, and instant e-stops are built in. Designed to align with global standards, AutoDock ensures dock operations are not just automated, but inherently safe.'
+    },
+    {
+      id: 'future-proof',
+      label: 'Future-Proof Across Industries',
+      icon: Settings,
+      title: 'Built for industries where dock efficiency defines success',
+      description: 'From retail and e-commerce to 3PLs and manufacturing, AutoDock is built for industries where dock efficiency defines supply chain success.'
     }
   ];
 
