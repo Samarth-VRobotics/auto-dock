@@ -56,13 +56,6 @@ const AutoDockAdvantage = () => {
       title: 'Automated and inherently safe',
       description: 'Zone monitoring, human detection, and instant e-stops are built in. Designed to align with global standards, AutoDock ensures dock operations are not just automated, but inherently safe.'
     },
-    {
-      id: 'future-proof',
-      label: 'Future-Proof Across Industries',
-      icon: Settings,
-      title: 'Built for industries where dock efficiency defines success',
-      description: 'From retail and e-commerce to 3PLs and manufacturing, AutoDock is built for industries where dock efficiency defines supply chain success.'
-    }
   ];
 
   return (
