@@ -16,7 +16,7 @@ const Customers = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
+    <section className="section-padding bg-gradient-surface relative overflow-hidden">
       {/* Enhanced background decorations */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30" />
@@ -27,15 +27,15 @@ const Customers = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Enhanced header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-inter font-medium text-primary mb-6">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+        <div className="section-header">
+          <div className="badge badge-primary mb-6">
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse mr-2"></div>
             Global Trust & Recognition
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent mb-6 leading-tight">
+          <h2 className="heading-xl gradient-text mb-6">
             Trusted by 300+ Plants
             <br />
-            <span className="text-primary font-inter">across 60+ countries</span>
+            <span className="text-primary">across 60+ countries</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </div>

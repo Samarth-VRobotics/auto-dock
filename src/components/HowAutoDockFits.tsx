@@ -106,22 +106,22 @@ const HowAutoDockFits = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden" id="how-autodock-fits">
+    <section className="section-padding bg-gradient-surface relative overflow-hidden" id="how-autodock-fits">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-primary/5 to-transparent"></div>
       
       <div className="container mx-auto px-6 relative">
         <div className="max-w-7xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-24 animate-fade-in">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <span className="text-primary font-semibold text-sm">Integration</span>
+            <div className="section-header animate-fade-in">
+              <div className="badge badge-primary mb-6">
+                <span>Integration</span>
               </div>
-              <h2 className="text-5xl lg:text-6xl font-inter font-bold text-foreground mb-8 leading-tight">
+              <h2 className="heading-xl text-foreground mb-8">
                 How AutoDock Fits Into
                 <span className="gradient-text block">Your Dock</span>
               </h2>
-              <p className="text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-4xl mx-auto font-inter">
+              <p className="body-xl text-muted-foreground mb-8 max-w-4xl mx-auto">
                 Busy docks create bottlenecks: trucks, ramps, forklifts, and staging all competing for space. AutoDock eliminates this friction without redesigning your dock — just removing what slows you down.
               </p>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
@@ -200,10 +200,10 @@ const HowAutoDockFits = () => {
                       <Brain className="w-14 h-14 lg:w-16 lg:h-16 text-white relative z-10" strokeWidth={1.5} />
                     </div>
                     <div className="space-y-3">
-                      <h4 className="text-3xl lg:text-4xl font-inter font-bold text-foreground">
+                      <h4 className="heading-lg text-foreground">
                         Interactive Process Flow
                       </h4>
-                      <p className="text-muted-foreground text-lg lg:text-xl max-w-2xl mx-auto font-inter leading-relaxed">
+                      <p className="text-muted-foreground body-lg max-w-2xl mx-auto">
                         Explore each step of AutoDock's seamless integration with your dock operations
                       </p>
                     </div>
@@ -276,7 +276,7 @@ const HowAutoDockFits = () => {
                           
                           {/* Title only */}
                           <div className="min-w-0 flex-1">
-                            <h3 className={`text-base lg:text-lg font-inter font-bold transition-colors leading-tight ${
+                            <h3 className={`body-base font-bold transition-colors ${
                               isHighlighted 
                                 ? 'text-primary' 
                                 : 'text-foreground group-hover:text-primary'
@@ -306,10 +306,10 @@ const HowAutoDockFits = () => {
                                 <IconComponent className="w-5 h-5 text-primary" strokeWidth={1.5} />
                               </div>
                               <div>
-                                <span className="font-inter font-bold text-base text-foreground">
+                                <span className="body-base font-bold text-foreground">
                                   Step {index + 1}
                                 </span>
-                                <h4 className="font-inter font-semibold text-sm text-primary">
+                                <h4 className="body-sm font-semibold text-primary">
                                   {step.title}
                                 </h4>
                               </div>
@@ -317,7 +317,7 @@ const HowAutoDockFits = () => {
                             
                             {/* Description */}
                             <div>
-                              <p className="text-muted-foreground leading-relaxed text-sm font-inter">
+                              <p className="text-muted-foreground body-sm">
                                 {step.description}
                               </p>
                             </div>

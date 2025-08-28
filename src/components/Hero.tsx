@@ -5,12 +5,12 @@ const Hero = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           <div className="space-y-6">
-            <h1 className="text-5xl lg:text-7xl font-black text-foreground leading-[1.1] animate-fade-in-up">
+            <h1 className="heading-hero text-foreground animate-fade-in-up">
               The AutoDock: 
               <span className="text-primary block animate-slide-in-left">True Dock Autonomy</span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-foreground/70 leading-relaxed max-w-2xl animate-fade-in" style={{
+            <p className="body-xl text-muted-foreground max-w-2xl animate-fade-in" style={{
             animationDelay: '0.3s',
             animationFillMode: 'both'
           }}>"Automating the first and last 20 meters of logistics powered by Vegam’s 20-year legacy in manufacturing and digital factory innovation."</p>
@@ -21,37 +21,37 @@ const Hero = () => {
           }}>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle"></div>
-                <span className="text-foreground font-semibold text-lg">Loads & unloads any trailer in minutes</span>
+                <span className="text-foreground font-semibold body-base">Loads & unloads any trailer in minutes</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.2s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">600+ boxes per hour</span>
+                <span className="text-foreground font-semibold body-base">600+ boxes per hour</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.4s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">Fits into your existing layout</span>
+                <span className="text-foreground font-semibold body-base">Fits into your existing layout</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.6s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">ROI &lt; 24 Months</span>
+                <span className="text-foreground font-semibold body-base">ROI &lt; 24 Months</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.8s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">24/7 peak-season ready</span>
+                <span className="text-foreground font-semibold body-base">24/7 peak-season ready</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '1s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">ERP &amp; WMS integration ready</span>
+                <span className="text-foreground font-semibold body-base">ERP &amp; WMS integration ready</span>
               </div>
             </div>
 
@@ -59,10 +59,10 @@ const Hero = () => {
             animationDelay: '0.9s',
             animationFillMode: 'both'
           }}>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-5 text-xl font-bold hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
                 Contact Us
               </Button>
-              <Button variant="outline" size="lg" className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-background px-10 py-5 text-xl font-bold hover:scale-105 transition-all duration-200">
+              <Button variant="outline" size="lg" className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-background px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-200">
                 Watch Demo
               </Button>
             </div>

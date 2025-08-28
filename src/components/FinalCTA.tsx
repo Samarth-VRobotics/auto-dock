@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 const FinalCTA = () => {
-  return <section className="py-24 relative overflow-hidden">
+  return <section className="section-padding relative overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary"></div>
       
@@ -19,7 +19,7 @@ const FinalCTA = () => {
           <div className="animate-fade-in-up">
             
             
-            <h2 className="text-5xl lg:text-6xl font-poppins font-bold text-white mb-8 leading-tight">
+            <h2 className="heading-xl text-white mb-8">
               Ready to Redefine Your 
               <span className="block">Dock Operations?</span>
             </h2>
@@ -35,7 +35,7 @@ const FinalCTA = () => {
           animationDelay: '0.4s',
           animationFillMode: 'both'
         }}>
-            <Button size="lg" className="bg-white text-foreground hover:bg-white/90 px-10 py-5 text-xl font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group">
+            <Button size="lg" className="bg-white text-foreground hover:bg-white/90 px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group">
               Book a Call
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Button>

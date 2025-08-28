@@ -129,8 +129,75 @@
     scroll-behavior: smooth;
   }
   
+  /* Typography System */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins;
+    @apply font-poppins font-bold leading-tight;
+  }
+  
+  .heading-hero {
+    @apply text-5xl lg:text-7xl font-black leading-tight;
+  }
+  
+  .heading-xl {
+    @apply text-4xl lg:text-6xl font-bold leading-tight;
+  }
+  
+  .heading-lg {
+    @apply text-3xl lg:text-4xl font-bold leading-tight;
+  }
+  
+  .heading-md {
+    @apply text-2xl lg:text-3xl font-semibold leading-tight;
+  }
+  
+  .heading-sm {
+    @apply text-xl lg:text-2xl font-semibold leading-tight;
+  }
+  
+  .body-xl {
+    @apply text-xl lg:text-2xl leading-relaxed;
+  }
+  
+  .body-lg {
+    @apply text-lg lg:text-xl leading-relaxed;
+  }
+  
+  .body-base {
+    @apply text-base lg:text-lg leading-relaxed;
+  }
+  
+  .body-sm {
+    @apply text-sm lg:text-base leading-relaxed;
+  }
+  
+  /* Section spacing system */
+  .section-padding {
+    @apply py-20 lg:py-24;
+  }
+  
+  .section-padding-sm {
+    @apply py-16 lg:py-20;
+  }
+  
+  .section-header {
+    @apply text-center mb-16 lg:mb-20;
+  }
+  
+  /* Badge component */
+  .badge {
+    @apply inline-flex items-center px-4 py-2 rounded-full border font-semibold text-sm;
+  }
+  
+  .badge-primary {
+    @apply bg-primary/10 border-primary/20 text-primary;
+  }
+  
+  .badge-secondary {
+    @apply bg-secondary/10 border-secondary/20 text-secondary;
+  }
+  
+  .badge-destructive {
+    @apply bg-destructive/10 border-destructive/20 text-destructive;
   }
   
   .gradient-text {

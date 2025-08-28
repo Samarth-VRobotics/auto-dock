@@ -54,7 +54,7 @@ const Challenge = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-24 bg-gradient-to-br from-slate-50 via-background to-slate-50/50 relative overflow-hidden" 
+      className="section-padding bg-gradient-surface relative overflow-hidden" 
       aria-label="Dock Operations Bottlenecks"
     >
       {/* Background decoration */}
@@ -63,15 +63,15 @@ const Challenge = () => {
       <div className="container mx-auto px-6 relative">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
-          <div className="text-center mb-20 animate-fade-in">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20 mb-6">
-              <span className="text-destructive font-semibold text-sm">Challenges & Impacts</span>
+          <div className="section-header animate-fade-in">
+            <div className="badge badge-destructive mb-6">
+              <span>Challenges & Impacts</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-inter font-bold text-foreground mb-8 leading-tight">
+            <h2 className="heading-xl text-foreground mb-8">
               The Hidden Bottlenecks in
               <span className="gradient-text block">Dock Operations</span>
             </h2>
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed font-inter">
+            <p className="body-xl text-muted-foreground mb-8 max-w-4xl mx-auto">
               The dock is where logistics efficiency breaks down — and hidden bottlenecks quietly drain time, money, and customer trust.
             </p>
             <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
@@ -91,11 +91,11 @@ const Challenge = () => {
                     <Building className="w-8 h-8 text-white" strokeWidth={1.5} />
                   </div>
                   
-                  <h3 className="text-2xl font-inter font-bold text-foreground mb-4">
+                  <h3 className="heading-md text-foreground mb-4">
                     Operational Bottlenecks
                   </h3>
                   
-                  <h4 className="text-lg font-inter font-semibold text-blue-700 mb-6 leading-tight">
+                  <h4 className="body-lg font-semibold text-blue-700 mb-6">
                     Where rigid systems meet unpredictable reality
                   </h4>
                   
@@ -105,7 +105,7 @@ const Challenge = () => {
                         <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-blue-200 transition-colors">
                           <item.icon className="w-4 h-4 text-blue-600" strokeWidth={1.5} />
                         </div>
-                        <div className="font-inter font-medium text-foreground">
+                        <div className="body-base font-medium text-foreground">
                           <span className="font-semibold">{item.text}</span> – {item.description}
                         </div>
                       </div>
@@ -127,11 +127,11 @@ const Challenge = () => {
                     <DollarSign className="w-8 h-8 text-white" strokeWidth={1.5} />
                   </div>
                   
-                  <h3 className="text-2xl font-inter font-bold text-foreground mb-4">
+                  <h3 className="heading-md text-foreground mb-4">
                     Direct Financial Costs
                   </h3>
                   
-                  <h4 className="text-lg font-inter font-semibold text-orange-700 mb-6 leading-tight">
+                  <h4 className="body-lg font-semibold text-orange-700 mb-6">
                     Every wasted hour shows up on your balance sheet
                   </h4>
                   
@@ -142,7 +142,7 @@ const Challenge = () => {
                           <DollarSign className="w-4 h-4 text-orange-600" strokeWidth={1.5} />
                         </div>
                         <div>
-                          <div className="font-inter font-medium text-foreground">
+                          <div className="body-base font-medium text-foreground">
                             Truck Detention → <AnimatedNumber value="$50–100" />/hr = <AnimatedNumber value="$80K+" />/year lost
                           </div>
                         </div>
@@ -155,7 +155,7 @@ const Challenge = () => {
                           <AlertTriangle className="w-4 h-4 text-orange-600" strokeWidth={1.5} />
                         </div>
                         <div>
-                          <div className="font-inter font-medium text-foreground">
+                          <div className="body-base font-medium text-foreground">
                             Hidden Extras → costly expedited freight, storage fees, emergency shipments
                           </div>
                         </div>
@@ -178,11 +178,11 @@ const Challenge = () => {
                     <TrendingDown className="w-8 h-8 text-white" strokeWidth={1.5} />
                   </div>
                   
-                  <h3 className="text-2xl font-inter font-bold text-foreground mb-4">
+                  <h3 className="heading-md text-foreground mb-4">
                     Lost Revenue & Growth
                   </h3>
                   
-                  <h4 className="text-lg font-inter font-semibold text-green-700 mb-6 leading-tight">
+                  <h4 className="body-lg font-semibold text-green-700 mb-6">
                     Dock delays don't just waste time — they cost sales
                   </h4>
                   
@@ -191,7 +191,7 @@ const Challenge = () => {
                       <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Clock className="w-4 h-4 text-green-600" strokeWidth={1.5} />
                       </div>
-                      <div className="font-inter font-medium text-foreground">
+                      <div className="body-base font-medium text-foreground">
                         Lost Throughput → <AnimatedNumber value="70%" />% slower turnarounds
                       </div>
                     </div>
@@ -200,7 +200,7 @@ const Challenge = () => {
                       <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                         <TrendingDown className="w-4 h-4 text-green-600" strokeWidth={1.5} />
                       </div>
-                      <div className="font-inter font-medium text-foreground">
+                      <div className="body-base font-medium text-foreground">
                         Revenue Loss → up to <AnimatedNumber value="20%" />% lost sales
                       </div>
                     </div>
@@ -209,7 +209,7 @@ const Challenge = () => {
                       <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                         <FileX className="w-4 h-4 text-green-600" strokeWidth={1.5} />
                       </div>
-                      <div className="font-inter font-medium text-foreground">
+                      <div className="body-base font-medium text-foreground">
                         OTIF Penalties → millions in fines
                       </div>
                     </div>
@@ -218,7 +218,7 @@ const Challenge = () => {
                       <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                         <UserMinus className="w-4 h-4 text-green-600" strokeWidth={1.5} />
                       </div>
-                      <div className="font-inter font-medium text-foreground">
+                      <div className="body-base font-medium text-foreground">
                         Customer Churn → <AnimatedNumber value="50%" />%+ abandon after one late delivery
                       </div>
                     </div>
