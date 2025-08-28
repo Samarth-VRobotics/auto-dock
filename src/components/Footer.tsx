@@ -5,7 +5,7 @@ const Footer = () => {
           {/* Left Side - Brand & Description */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="AutoDock" className="h-8" />
+              
               <h2 className="heading-lg text-foreground">AutoDock</h2>
             </div>
             
