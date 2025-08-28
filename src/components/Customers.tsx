@@ -1,8 +1,6 @@
-import { useEffect, useRef } from "react";
+import React from "react";
 
 const Customers = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
   // Customer logos data from vegam website
   const customers = [
     { name: "Bostik", logo: "https://vegam.co/lovable-uploads/1a590db5-6790-4c96-846f-1908fd8142ea.png" },
@@ -16,24 +14,6 @@ const Customers = () => {
     { name: "SKF", logo: "https://vegam.co/lovable-uploads/28ac4552-9267-4e43-9929-9dff1c9e7f86.png" },
     { name: "Solex Logistics", logo: "https://vegam.co/lovable-uploads/66fde0cf-949d-4508-81a6-02eeeb41e212.png" },
   ];
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let scrollAmount = 0;
-    const step = 1;
-    const scrollStep = () => {
-      scrollAmount += step;
-      if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-        scrollAmount = 0;
-      }
-      scrollContainer.scrollLeft = scrollAmount;
-    };
-
-    const interval = setInterval(scrollStep, 50);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section className="py-16 bg-background relative overflow-hidden">
@@ -51,11 +31,7 @@ const Customers = () => {
         {/* Scrolling logos */}
         <div className="relative overflow-hidden">
           <div 
-            ref={scrollRef}
-            className="flex gap-8 md:gap-12 overflow-hidden"
-            style={{
-              width: 'max-content',
-            }}
+            className="flex gap-8 md:gap-12 animate-scroll"
           >
             {/* First set of logos */}
             {customers.map((customer, index) => (
