@@ -8,6 +8,7 @@ import ValueProps from "@/components/ValueProps";
 
 
 import AutonomousSoftware from "@/components/AutonomousSoftware";
+import Customers from "@/components/Customers";
 import Industries from "@/components/Industries";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -25,6 +26,7 @@ const Index = () => {
       
       
       <AutonomousSoftware />
+      <Customers />
       <Industries />
       <FinalCTA />
       <Footer />
