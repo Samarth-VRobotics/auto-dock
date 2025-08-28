@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { 
   Zap, 
@@ -7,45 +7,54 @@ import {
   Brain, 
   Plug, 
   Shield, 
-  Globe 
+  Settings
 } from 'lucide-react';
 
 const AutoDockAdvantage = () => {
-  const benefits = [
+  const [activeTab, setActiveTab] = useState(0);
+
+  const features = [
     {
-      icon: Zap,
-      title: "Always Ready, Always On",
-      description: "Eliminates labor bottlenecks. AutoDock detects incoming trucks, configures itself, and begins unloading instantly — ensuring continuous throughput even at peak volumes."
+      id: 'hands-free',
+      label: 'Hands-Free Setup',
+      icon: Settings,
+      title: 'Detects trucks, starts unloading',
+      description: 'AutoDock automatically identifies incoming trucks and begins the unloading process without human intervention, ensuring seamless operations around the clock.'
     },
     {
-      icon: TrendingUp,
-      title: "ROI on Multiple Fronts",
-      description: "Reduce labor dependency, cut trailer dwell times, and avoid costly dock modifications. AutoDock drives efficiency gains across the board, accelerating time-to-value."
-    },
-    {
+      id: 'scales',
+      label: 'Scales Effortlessly', 
       icon: BarChart3,
-      title: "Scales Without Slowing Down",
-      description: "Handles surges in truck volumes without disruption. With a central orchestration platform and modular AMRs, you can scale across docks while maximizing asset utilization."
+      title: 'One platform, multiple docks',
+      description: 'Deploy across multiple loading docks with centralized orchestration, allowing you to handle volume surges without operational bottlenecks.'
     },
     {
-      icon: Brain,
-      title: "AI That Understands Logistics",
-      description: "Powered by decades of industry data, AutoDock's AI doesn't just execute tasks — it understands logistics workflows, dynamically adapting to optimize every movement and cycle."
+      id: 'ai-driven',
+      label: 'AI-Driven Efficiency',
+      icon: Brain, 
+      title: 'Learns, adapts, optimizes',
+      description: 'Advanced AI continuously analyzes operations and automatically adjusts workflows to maximize throughput and minimize delays.'
     },
     {
+      id: 'integration',
+      label: 'Seamless Integration',
       icon: Plug,
-      title: "Enterprise Integration, Simplified",
-      description: "Backed by pre-integrated native SAP/SFS software and open APIs, AutoDock connects seamlessly into ERP/WMS ecosystems — giving real-time dashboards, control, and analytics without IT complexity."
+      title: 'Works with SAP/SFS + APIs',
+      description: 'Pre-built connectors for major ERP and WMS systems ensure rapid deployment without disrupting existing workflows or IT infrastructure.'
     },
     {
+      id: 'roi',
+      label: 'Fast ROI',
+      icon: TrendingUp,
+      title: 'Cuts dwell times & costs',
+      description: 'Achieve payback in under 24 months through reduced labor dependency, faster truck turnarounds, and optimized dock utilization.'
+    },
+    {
+      id: 'safety',
+      label: 'Safety Built In',
       icon: Shield,
-      title: "Built-In Safety, By Design",
-      description: "Zone monitoring, human detection, and instant e-stops are built in. Designed to align with global standards, AutoDock ensures dock operations are not just automated, but inherently safe."
-    },
-    {
-      icon: Globe,
-      title: "Future-Proof Across Industries",
-      description: "From retail and e-commerce to 3PLs and manufacturing, AutoDock is built for industries where dock efficiency defines supply chain success."
+      title: 'Meets standards with monitoring',
+      description: 'Comprehensive safety systems including zone monitoring, collision detection, and emergency stops ensure compliance with global safety standards.'
     }
   ];
 
@@ -73,32 +82,113 @@ const AutoDockAdvantage = () => {
           </p>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {benefits.map((benefit, index) => {
-            const IconComponent = benefit.icon;
-            return (
-              <div 
-                key={index}
-                className="group p-8 bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 animate-fade-in hover-lift"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/15 transition-colors duration-300">
-                    <IconComponent className="w-7 h-7 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed text-lg">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
+        {/* Interactive Tabbed Layout */}
+        <div className="max-w-7xl mx-auto">
+          {/* Mobile: Horizontal Scrollable Chips */}
+          <div className="lg:hidden mb-8">
+            <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
+              {features.map((feature, index) => (
+                <button
+                  key={feature.id}
+                  onClick={() => setActiveTab(index)}
+                  className={`flex-shrink-0 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
+                    activeTab === index
+                      ? 'bg-primary text-primary-foreground shadow-lg'
+                      : 'bg-card/50 text-muted-foreground hover:bg-card border border-border/50'
+                  }`}
+                >
+                  {feature.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Side Tabs + Content Panel */}
+          <div className="grid lg:grid-cols-5 gap-8 items-start">
+            {/* Left: Tab Navigation (Desktop) */}
+            <div className="hidden lg:block lg:col-span-2 space-y-2">
+              {features.map((feature, index) => {
+                const IconComponent = feature.icon;
+                return (
+                  <button
+                    key={feature.id}
+                    onClick={() => setActiveTab(index)}
+                    className={`group w-full text-left p-6 rounded-2xl transition-all duration-300 ${
+                      activeTab === index
+                        ? 'bg-primary text-primary-foreground shadow-xl'
+                        : 'bg-card/30 hover:bg-card/50 border border-border/50 hover:border-primary/30'
+                    }`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
+                        activeTab === index 
+                          ? 'bg-white/20' 
+                          : 'bg-primary/10 group-hover:bg-primary/15'
+                      }`}>
+                        <IconComponent className={`w-6 h-6 ${
+                          activeTab === index ? 'text-white' : 'text-primary'
+                        }`} />
+                      </div>
+                      <div>
+                        <h3 className={`text-lg font-bold ${
+                          activeTab === index ? 'text-white' : 'text-foreground group-hover:text-primary'
+                        }`}>
+                          {feature.label}
+                        </h3>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right: Content Panel */}
+            <div className="lg:col-span-3">
+              <div className="relative overflow-hidden">
+                {features.map((feature, index) => {
+                  const IconComponent = feature.icon;
+                  return (
+                    <div
+                      key={feature.id}
+                      className={`transition-all duration-500 ease-in-out ${
+                        activeTab === index
+                          ? 'opacity-100 translate-x-0 relative'
+                          : 'opacity-0 translate-x-8 absolute inset-0 pointer-events-none'
+                      }`}
+                    >
+                      <div className="bg-gradient-to-br from-card/50 to-accent/10 p-10 rounded-3xl border border-border/50 backdrop-blur-sm">
+                        {/* Feature Icon */}
+                        <div className="flex justify-center mb-8">
+                          <div className="w-24 h-24 bg-primary/10 rounded-2xl flex items-center justify-center">
+                            <IconComponent className="w-12 h-12 text-primary" />
+                          </div>
+                        </div>
+
+                        {/* Feature Content */}
+                        <div className="text-center">
+                          <h3 className="text-3xl font-bold text-foreground mb-4">
+                            {feature.title}
+                          </h3>
+                          <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
+                            {feature.description}
+                          </p>
+                          
+                          {/* Individual CTA */}
+                          <Button 
+                            variant="outline" 
+                            className="h-12 px-8 text-base font-semibold border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                          >
+                            See AutoDock in Action
+                            <Zap className="ml-2 w-5 h-5" />
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
+            </div>
+          </div>
         </div>
 
         {/* Closing Statement */}
