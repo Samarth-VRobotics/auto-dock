@@ -42,7 +42,7 @@ const Customers = () => {
                 <img
                   src={customer.logo}
                   alt={`${customer.name} logo`}
-                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  className="max-w-full max-h-full object-contain transition-all duration-300"
                 />
               </div>
             ))}
@@ -56,7 +56,7 @@ const Customers = () => {
                 <img
                   src={customer.logo}
                   alt={`${customer.name} logo`}
-                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  className="max-w-full max-h-full object-contain transition-all duration-300"
                 />
               </div>
             ))}
