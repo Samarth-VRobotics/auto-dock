@@ -13,6 +13,8 @@ const AutoDockAdvantage = () => {
       id: 'hands-free',
       header: 'Unloading starts the moment a truck arrives.',
       text: 'AutoDock detects incoming trucks, configures itself, and begins unloading — no labor, no setup, no delays.',
+      title: 'Eliminates labor bottlenecks',
+      description: 'AutoDock detects incoming trucks, configures itself, and begins unloading instantly — ensuring continuous throughput even at peak volumes.',
       icon: Truck,
       visual: 'truck-docking'
     },
@@ -20,6 +22,8 @@ const AutoDockAdvantage = () => {
       id: 'modular',
       header: 'One system, multiple docks. Scale as you grow.',
       text: 'Central orchestration platform manages multiple docks and AMRs with minimal configuration.',
+      title: 'Handles surges without disruption',
+      description: 'Handles surges in truck volumes without disruption. With a central orchestration platform and modular AMRs, you can scale across docks while maximizing asset utilization.',
       icon: Network,
       visual: 'dashboard'
     },
@@ -27,6 +31,8 @@ const AutoDockAdvantage = () => {
       id: 'ai-driven',
       header: 'Decades of industry knowledge, built in.',
       text: 'AI learns from historical logistics data, adapting to your layout and workflows for peak efficiency.',
+      title: 'Dynamically adapts to optimize every cycle',
+      description: 'Powered by decades of industry data, AutoDock\'s AI doesn\'t just execute tasks — it understands logistics workflows, dynamically adapting to optimize every movement and cycle.',
       icon: Brain,
       visual: 'ai-brain'
     },
@@ -34,6 +40,8 @@ const AutoDockAdvantage = () => {
       id: 'integration',
       header: 'Works with what you already use.',
       text: 'Native SAP/SFS ready, plus APIs for ERP, WMS, or any external system.',
+      title: 'Seamlessly connects to ERP/WMS ecosystems',
+      description: 'Backed by pre-integrated native SAP/SFS software and open APIs, AutoDock connects seamlessly into ERP/WMS ecosystems — giving real-time dashboards, control, and analytics without IT complexity.',
       icon: Plug,
       visual: 'integrations'
     },
@@ -41,6 +49,8 @@ const AutoDockAdvantage = () => {
       id: 'roi',
       header: 'From investment to impact — in months, not years.',
       text: 'Lower dwell times, reduced labor dependency, and measurable cost savings.',
+      title: 'Reduce costs, accelerate time-to-value',
+      description: 'Reduce labor dependency, cut trailer dwell times, and avoid costly dock modifications. AutoDock drives efficiency gains across the board, accelerating time-to-value.',
       icon: TrendingUp,
       visual: 'roi-graph'
     }
