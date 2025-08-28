@@ -1,90 +1,71 @@
 const Footer = () => {
-  return <footer className="bg-background border-t border-border section-padding-sm">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-8" />
+  return (
+    <footer className="bg-blue-600 text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 right-20 w-64 h-64 bg-white rounded-full"></div>
+        <div className="absolute bottom-10 right-40 w-32 h-32 bg-white rounded-full"></div>
+      </div>
+      
+      <div className="relative container mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left Side - Brand & Description */}
+          <div className="space-y-6">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                <div className="w-6 h-6 bg-blue-600 rounded"></div>
+              </div>
+              <h2 className="text-2xl font-bold">AutoDock</h2>
             </div>
-            <p className="body-sm text-muted-foreground">
-              Making Factories Smarter
+            <p className="text-lg leading-relaxed max-w-md text-blue-100">
+              Secure knowledge management for companies. Transform scattered 
+              knowledge into instant insights.
             </p>
           </div>
 
-          {/* Contact Us */}
-          <div className="space-y-4">
-            <h3 className="heading-sm text-foreground">Contact Us</h3>
-            <div className="space-y-1">
-              <p className="body-sm font-medium text-foreground">Vegam Solutions Inc.</p>
-              <p className="body-sm text-muted-foreground">16192, Coastal Highway</p>
-              <p className="body-sm text-muted-foreground">Lewes, Delaware 19958, USA</p>
-              <a href="mailto:info@aiintime.com" className="body-sm text-primary hover:text-primary/80 transition-colors block">
-                info@aiintime.com
-              </a>
-              <a href="tel:+19193326999" className="body-sm text-primary hover:text-primary/80 transition-colors block">
-                +1 (919) 332-6999
-              </a>
-            </div>
-          </div>
+          {/* Right Side - Contact Info */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-semibold">Contact Us</h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <div className="w-5 h-5 mt-1 flex-shrink-0">
+                  <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-medium">Vegam Solutions Inc.</p>
+                  <p className="text-blue-100">16192, Coastal Highway</p>
+                  <p className="text-blue-100">Lewes, Delaware 19958, USA</p>
+                </div>
+              </div>
 
-          {/* Company */}
-          <div className="space-y-4">
-            <h3 className="heading-sm text-foreground">Company</h3>
-            <div className="space-y-2">
-              <a href="#about" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                About Us
-              </a>
-              <a href="#careers" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                Careers
-              </a>
-              <a href="#news" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                News & Press
-              </a>
-              <a href="#contact" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                Contact
-              </a>
-            </div>
-          </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-5 h-5 flex-shrink-0">
+                  <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </div>
+                <a href="mailto:info@aiintime.com" className="text-blue-100 hover:text-white transition-colors">
+                  info@aiintime.com
+                </a>
+              </div>
 
-          {/* Support */}
-          <div className="space-y-4">
-            <h3 className="heading-sm text-foreground">Support</h3>
-            <div className="space-y-2">
-              <a href="#documentation" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                Documentation
-              </a>
-              <a href="#support" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                Technical Support
-              </a>
-              <a href="#training" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                Training
-              </a>
-              <a href="#warranty" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                Warranty
-              </a>
+              <div className="flex items-center space-x-3">
+                <div className="w-5 h-5 flex-shrink-0">
+                  <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                </div>
+                <a href="tel:+19193326999" className="text-blue-100 hover:text-white transition-colors">
+                  +1 (919) 332-6999
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="body-sm text-muted-foreground">
-            © 2024 Vegam. All rights reserved.
-          </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#privacy" className="body-sm text-muted-foreground hover:text-primary transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#terms" className="body-sm text-muted-foreground hover:text-primary transition-colors">
-              Terms of Service
-            </a>
-            <a href="#cookies" className="body-sm text-muted-foreground hover:text-primary transition-colors">
-              Cookie Policy
-            </a>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
 export default Footer;
