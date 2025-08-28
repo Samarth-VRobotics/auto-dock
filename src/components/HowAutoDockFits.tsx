@@ -80,7 +80,7 @@ const HowAutoDockFits = () => {
                   </div>
                 </div>
 
-                {/* Step 1 - Top Left Corner */}
+                {/* Step 1 - Top Left */}
                 <div className="absolute -top-4 -left-4 lg:-top-8 lg:-left-8">
                   <div
                     className="group bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-slate-200/50 hover:border-primary/20 hover:shadow-xl transition-all duration-300 animate-fade-in w-64 lg:w-80 hover:scale-125 hover:z-20 relative transform origin-top-left"
@@ -103,7 +103,7 @@ const HowAutoDockFits = () => {
                   </div>
                 </div>
 
-                {/* Step 2 - Top Right Corner */}
+                {/* Step 2 - Top Right */}
                 <div className="absolute -top-4 -right-4 lg:-top-8 lg:-right-8">
                   <div
                     className="group bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-slate-200/50 hover:border-primary/20 hover:shadow-xl transition-all duration-300 animate-fade-in w-64 lg:w-80 hover:scale-125 hover:z-20 relative transform origin-top-right"
@@ -126,10 +126,10 @@ const HowAutoDockFits = () => {
                   </div>
                 </div>
 
-                {/* Step 3 - Bottom Left Corner */}
-                <div className="absolute -bottom-4 -left-4 lg:-bottom-8 lg:-left-8">
+                {/* Step 3 - Middle Right */}
+                <div className="absolute top-1/2 -translate-y-1/2 -right-4 lg:-right-8">
                   <div
-                    className="group bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-slate-200/50 hover:border-primary/20 hover:shadow-xl transition-all duration-300 animate-fade-in w-64 lg:w-80 hover:scale-125 hover:z-20 relative transform origin-bottom-left"
+                    className="group bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-slate-200/50 hover:border-primary/20 hover:shadow-xl transition-all duration-300 animate-fade-in w-64 lg:w-80 hover:scale-125 hover:z-20 relative transform origin-right"
                     style={{animationDelay: '0.3s', animationFillMode: 'both'}}
                   >
                     <div className="flex items-start space-x-3 lg:space-x-4">
@@ -149,7 +149,7 @@ const HowAutoDockFits = () => {
                   </div>
                 </div>
 
-                {/* Step 4 - Bottom Right Corner */}
+                {/* Step 4 - Bottom Right */}
                 <div className="absolute -bottom-4 -right-4 lg:-bottom-8 lg:-right-8">
                   <div
                     className="group bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-slate-200/50 hover:border-primary/20 hover:shadow-xl transition-all duration-300 animate-fade-in w-64 lg:w-80 hover:scale-125 hover:z-20 relative transform origin-bottom-right"
@@ -172,10 +172,10 @@ const HowAutoDockFits = () => {
                   </div>
                 </div>
 
-                {/* Step 5 - Bottom Center */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 lg:-bottom-8">
+                {/* Step 5 - Middle Left */}
+                <div className="absolute top-1/2 -translate-y-1/2 -left-4 lg:-left-8">
                   <div
-                    className="group bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-slate-200/50 hover:border-primary/20 hover:shadow-xl transition-all duration-300 animate-fade-in w-64 lg:w-80 hover:scale-125 hover:z-20 relative transform origin-bottom"
+                    className="group bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-slate-200/50 hover:border-primary/20 hover:shadow-xl transition-all duration-300 animate-fade-in w-64 lg:w-80 hover:scale-125 hover:z-20 relative transform origin-left"
                     style={{animationDelay: '0.5s', animationFillMode: 'both'}}
                   >
                     <div className="flex items-start space-x-3 lg:space-x-4">
