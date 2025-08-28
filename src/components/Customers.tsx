@@ -16,33 +16,43 @@ const Customers = () => {
   ];
 
   return (
-    <section className="py-16 bg-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,119,198,0.1),transparent_50%)]" />
+    <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
+      {/* Enhanced background decorations */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl opacity-30" />
+      
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.8),transparent_1px)] bg-[length:24px_24px]" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Trusted by 300+ Plants Across the Globe
+        {/* Enhanced header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-medium text-primary mb-6">
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            Global Trust & Recognition
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent mb-6 leading-tight">
+            Trusted by 300+ Plants
+            <br />
+            <span className="text-primary">Across the Globe</span>
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </div>
 
-        {/* Scrolling logos */}
-        <div className="relative overflow-hidden">
-          <div 
-            className="flex gap-8 md:gap-12 animate-scroll"
-          >
+        {/* Enhanced scrolling logos */}
+        <div className="relative overflow-hidden rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-white/20 shadow-2xl p-8 mb-16">
+          <div className="flex gap-10 md:gap-16 animate-scroll">
             {/* First set of logos */}
             {customers.map((customer, index) => (
               <div 
                 key={`first-${index}`}
-                className="flex-shrink-0 w-32 h-16 md:w-40 md:h-20 flex items-center justify-center bg-white/80 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+                className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 dark:bg-slate-700/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 dark:border-slate-600/50 group"
               >
                 <img
                   src={customer.logo}
                   alt={`${customer.name} logo`}
-                  className="max-w-full max-h-full object-contain transition-all duration-300"
+                  className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105"
                 />
               </div>
             ))}
@@ -51,31 +61,51 @@ const Customers = () => {
             {customers.map((customer, index) => (
               <div 
                 key={`second-${index}`}
-                className="flex-shrink-0 w-32 h-16 md:w-40 md:h-20 flex items-center justify-center bg-white/80 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+                className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 dark:bg-slate-700/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 dark:border-slate-600/50 group"
               >
                 <img
                   src={customer.logo}
                   alt={`${customer.name} logo`}
-                  className="max-w-full max-h-full object-contain transition-all duration-300"
+                  className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105"
                 />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 mt-16 text-center">
-          <div className="space-y-2">
-            <div className="text-3xl md:text-4xl font-bold text-primary">300+</div>
-            <div className="text-sm md:text-base text-muted-foreground">Plants</div>
+        {/* Enhanced stats */}
+        <div className="grid grid-cols-3 gap-8 lg:gap-16">
+          <div className="text-center group">
+            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 mb-4 border border-primary/20 group-hover:shadow-lg transition-all duration-300">
+              <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-2">
+                300+
+              </div>
+              <div className="text-sm md:text-base font-medium text-slate-600 dark:text-slate-300 uppercase tracking-wider">
+                Manufacturing Plants
+              </div>
+            </div>
           </div>
-          <div className="space-y-2">
-            <div className="text-3xl md:text-4xl font-bold text-primary">60+</div>
-            <div className="text-sm md:text-base text-muted-foreground">Countries</div>
+          
+          <div className="text-center group">
+            <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-8 mb-4 border border-accent/20 group-hover:shadow-lg transition-all duration-300">
+              <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent mb-2">
+                60+
+              </div>
+              <div className="text-sm md:text-base font-medium text-slate-600 dark:text-slate-300 uppercase tracking-wider">
+                Countries Worldwide
+              </div>
+            </div>
           </div>
-          <div className="space-y-2">
-            <div className="text-3xl md:text-4xl font-bold text-primary">24/7</div>
-            <div className="text-sm md:text-base text-muted-foreground">Support</div>
+          
+          <div className="text-center group">
+            <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-2xl p-8 mb-4 border border-emerald-500/20 group-hover:shadow-lg transition-all duration-300">
+              <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent mb-2">
+                24/7
+              </div>
+              <div className="text-sm md:text-base font-medium text-slate-600 dark:text-slate-300 uppercase tracking-wider">
+                Expert Support
+              </div>
+            </div>
           </div>
         </div>
       </div>
