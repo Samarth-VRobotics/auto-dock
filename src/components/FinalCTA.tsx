@@ -36,12 +36,8 @@ const FinalCTA = () => {
           animationFillMode: 'both'
         }}>
             <Button size="lg" className="bg-white text-foreground hover:bg-white/90 px-10 py-5 text-xl font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group">
-              Book a Demo
+              Book a Call
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            
-            <Button variant="outline" size="lg" className="glass-effect border-2 border-white/30 text-black hover:bg-white/10 hover:border-white/50 px-10 py-5 text-xl font-bold hover-lift backdrop-blur-md shadow-glow-secondary group">
-              Download Brochure
             </Button>
           </div>
           
