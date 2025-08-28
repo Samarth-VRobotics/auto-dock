@@ -14,6 +14,22 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               Leading the future of autonomous dock operations with intelligent robotics solutions.
             </p>
+            
+            {/* Contact Information */}
+            <div className="space-y-2 pt-4 border-t border-border">
+              <h3 className="text-lg font-semibold text-foreground">Contact Us</h3>
+              <div className="space-y-1">
+                <p className="text-sm font-medium text-foreground">Vegam Solutions Inc.</p>
+                <p className="text-sm text-muted-foreground">16192, Coastal Highway</p>
+                <p className="text-sm text-muted-foreground">Lewes, Delaware 19958, USA</p>
+                <a href="mailto:info@aiintime.com" className="text-sm text-primary hover:text-primary/80 transition-colors block">
+                  info@aiintime.com
+                </a>
+                <a href="tel:+19193326999" className="text-sm text-primary hover:text-primary/80 transition-colors block">
+                  +1 (919) 332-6999
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Solutions */}
