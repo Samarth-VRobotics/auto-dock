@@ -1,206 +1,232 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import React from 'react';
 import { 
-  Zap, 
-  TrendingUp, 
-  BarChart3, 
+  Truck, 
+  Network, 
   Brain, 
   Plug, 
-  Shield, 
-  Settings
+  TrendingUp
 } from 'lucide-react';
 
 const AutoDockAdvantage = () => {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const features = [
+  const benefits = [
     {
-      id: 'always-ready',
-      label: 'Always Ready, Always On',
-      icon: Zap,
-      title: 'Eliminates labor bottlenecks',
-      description: 'AutoDock detects incoming trucks, configures itself, and begins unloading instantly — ensuring continuous throughput even at peak volumes.'
+      id: 'hands-free',
+      header: 'Unloading starts the moment a truck arrives.',
+      text: 'AutoDock detects incoming trucks, configures itself, and begins unloading — no labor, no setup, no delays.',
+      icon: Truck,
+      visual: 'truck-docking'
     },
     {
-      id: 'roi-multiple',
-      label: 'ROI on Multiple Fronts', 
-      icon: TrendingUp,
-      title: 'Reduce costs, accelerate time-to-value',
-      description: 'Reduce labor dependency, cut trailer dwell times, and avoid costly dock modifications. AutoDock drives efficiency gains across the board, accelerating time-to-value.'
+      id: 'modular',
+      header: 'One system, multiple docks. Scale as you grow.',
+      text: 'Central orchestration platform manages multiple docks and AMRs with minimal configuration.',
+      icon: Network,
+      visual: 'dashboard'
     },
     {
-      id: 'scales-without-slowing',
-      label: 'Scales Without Slowing Down',
-      icon: BarChart3, 
-      title: 'Handles surges without disruption',
-      description: 'Handles surges in truck volumes without disruption. With a central orchestration platform and modular AMRs, you can scale across docks while maximizing asset utilization.'
-    },
-    {
-      id: 'ai-understands',
-      label: 'AI That Understands Logistics',
+      id: 'ai-driven',
+      header: 'Decades of industry knowledge, built in.',
+      text: 'AI learns from historical logistics data, adapting to your layout and workflows for peak efficiency.',
       icon: Brain,
-      title: 'Dynamically adapts to optimize every cycle',
-      description: 'Powered by decades of industry data, AutoDock\'s AI doesn\'t just execute tasks — it understands logistics workflows, dynamically adapting to optimize every movement and cycle.'
+      visual: 'ai-brain'
     },
     {
-      id: 'enterprise-integration',
-      label: 'Enterprise Integration, Simplified',
+      id: 'integration',
+      header: 'Works with what you already use.',
+      text: 'Native SAP/SFS ready, plus APIs for ERP, WMS, or any external system.',
       icon: Plug,
-      title: 'Seamlessly connects to ERP/WMS ecosystems',
-      description: 'Backed by pre-integrated native SAP/SFS software and open APIs, AutoDock connects seamlessly into ERP/WMS ecosystems — giving real-time dashboards, control, and analytics without IT complexity.'
+      visual: 'integrations'
     },
     {
-      id: 'built-in-safety',
-      label: 'Built-In Safety, By Design',
-      icon: Shield,
-      title: 'Automated and inherently safe',
-      description: 'Zone monitoring, human detection, and instant e-stops are built in. Designed to align with global standards, AutoDock ensures dock operations are not just automated, but inherently safe.'
-    },
+      id: 'roi',
+      header: 'From investment to impact — in months, not years.',
+      text: 'Lower dwell times, reduced labor dependency, and measurable cost savings.',
+      icon: TrendingUp,
+      visual: 'roi-graph'
+    }
   ];
 
-  return (
-    <section className="py-24 bg-gradient-to-br from-background via-background/95 to-accent/5 relative overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-grid-pattern bg-[length:60px_60px]"></div>
-      </div>
+  const renderVisual = (visual: string, icon: any) => {
+    const IconComponent = icon;
+    
+    switch (visual) {
+      case 'truck-docking':
+        return (
+          <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 h-64 flex items-center justify-center">
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-12 bg-slate-300 rounded border-2 border-slate-400 relative">
+                <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-8 bg-slate-400 rounded-r"></div>
+                <Truck className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-slate-600" />
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse mb-2"></div>
+                <div className="w-12 h-8 bg-primary/20 rounded border-2 border-primary/40"></div>
+              </div>
+            </div>
+          </div>
+        );
+      
+      case 'dashboard':
+        return (
+          <div className="relative bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-8 h-64">
+            <div className="grid grid-cols-3 gap-4 h-full">
+              <div className="space-y-3">
+                <div className="h-8 bg-accent/30 rounded flex items-center justify-center">
+                  <Network className="w-4 h-4 text-accent-foreground" />
+                </div>
+                <div className="space-y-2">
+                  <div className="h-3 bg-accent/20 rounded w-full"></div>
+                  <div className="h-3 bg-accent/20 rounded w-3/4"></div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="h-8 bg-primary/30 rounded flex items-center justify-center">
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-3 bg-primary/20 rounded w-full"></div>
+                  <div className="h-3 bg-primary/20 rounded w-2/3"></div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="h-8 bg-secondary/30 rounded flex items-center justify-center">
+                  <div className="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-3 bg-secondary/20 rounded w-full"></div>
+                  <div className="h-3 bg-secondary/20 rounded w-5/6"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      
+      case 'ai-brain':
+        return (
+          <div className="relative bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-64 flex items-center justify-center">
+            <div className="relative">
+              <Brain className="w-24 h-24 text-secondary" />
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary/20 rounded-full flex items-center justify-center">
+                <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+              </div>
+              <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-secondary/30 rounded-full"></div>
+              <div className="absolute top-1/2 -right-8 w-8 h-1 bg-secondary/40 rounded"></div>
+            </div>
+          </div>
+        );
+      
+      case 'integrations':
+        return (
+          <div className="relative bg-gradient-to-br from-muted/20 to-muted/10 rounded-2xl p-8 h-64 flex items-center justify-center">
+            <div className="flex items-center gap-6">
+              <div className="text-center">
+                <div className="w-12 h-8 bg-slate-600 rounded mb-2 flex items-center justify-center text-white text-xs font-bold">SAP</div>
+                <div className="w-12 h-8 bg-blue-600 rounded flex items-center justify-center text-white text-xs font-bold">WMS</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <Plug className="w-8 h-8 text-primary mb-2" />
+                <div className="flex gap-1">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                </div>
+              </div>
+              <div className="w-16 h-12 bg-primary/20 rounded border-2 border-primary/40 flex items-center justify-center">
+                <span className="text-xs font-bold text-primary">AutoDock</span>
+              </div>
+            </div>
+          </div>
+        );
+      
+      case 'roi-graph':
+        return (
+          <div className="relative bg-gradient-to-br from-green-50 to-green-25 rounded-2xl p-8 h-64">
+            <div className="flex items-end justify-center h-full gap-2">
+              <div className="flex flex-col items-center">
+                <div className="h-16 w-8 bg-slate-300 rounded-t mb-2"></div>
+                <span className="text-xs text-slate-600">Before</span>
+              </div>
+              <TrendingUp className="w-8 h-8 text-green-600 mb-8" />
+              <div className="flex flex-col items-center">
+                <div className="h-32 w-8 bg-green-500 rounded-t mb-2 animate-pulse"></div>
+                <span className="text-xs text-green-700 font-semibold">After</span>
+              </div>
+            </div>
+          </div>
+        );
+      
+      default:
+        return (
+          <div className="bg-muted/20 rounded-2xl p-8 h-64 flex items-center justify-center">
+            <IconComponent className="w-16 h-16 text-muted-foreground" />
+          </div>
+        );
+    }
+  };
 
-      <div className="container mx-auto px-4 relative">
+  return (
+    <section className="py-24 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-6 relative">
         {/* Header Section */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-20 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-6 py-3 rounded-full border border-primary/20 mb-6">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             <span className="text-primary font-semibold text-sm tracking-wide uppercase">Strategic Advantage</span>
           </div>
           
-          <h2 className="text-5xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent leading-tight">
+          <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent leading-tight">
             Why AutoDock Is in a<br />League of Its Own
           </h2>
           
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto font-medium leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             More than automation — AutoDock is a strategic platform that transforms dock operations into a resilient, scalable, and future-ready advantage.
           </p>
         </div>
 
-        {/* Interactive Tabbed Layout */}
-        <div className="max-w-7xl mx-auto">
-          {/* Mobile: Horizontal Scrollable Chips */}
-          <div className="lg:hidden mb-8">
-            <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
-              {features.map((feature, index) => (
-                <button
-                  key={feature.id}
-                  onClick={() => setActiveTab(index)}
-                  className={`flex-shrink-0 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
-                    activeTab === index
-                      ? 'bg-primary text-primary-foreground shadow-lg'
-                      : 'bg-card/50 text-muted-foreground hover:bg-card border border-border/50'
-                  }`}
-                >
-                  {feature.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Desktop: Side Tabs + Content Panel */}
-          <div className="grid lg:grid-cols-5 gap-8 items-start">
-            {/* Left: Tab Navigation (Desktop) */}
-            <div className="hidden lg:block lg:col-span-2 space-y-2">
-              {features.map((feature, index) => {
-                const IconComponent = feature.icon;
-                return (
-                  <button
-                    key={feature.id}
-                    onClick={() => setActiveTab(index)}
-                    className={`group w-full text-left p-6 rounded-2xl transition-all duration-300 ${
-                      activeTab === index
-                        ? 'bg-primary text-primary-foreground shadow-xl'
-                        : 'bg-card/30 hover:bg-card/50 border border-border/50 hover:border-primary/30'
-                    }`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
-                        activeTab === index 
-                          ? 'bg-white/20' 
-                          : 'bg-primary/10 group-hover:bg-primary/15'
-                      }`}>
-                        <IconComponent className={`w-6 h-6 ${
-                          activeTab === index ? 'text-white' : 'text-primary'
-                        }`} />
-                      </div>
-                      <div>
-                        <h3 className={`text-lg font-bold ${
-                          activeTab === index ? 'text-white' : 'text-foreground group-hover:text-primary'
-                        }`}>
-                          {feature.label}
-                        </h3>
-                      </div>
+        {/* Benefits Rows */}
+        <div className="max-w-7xl mx-auto space-y-20">
+          {benefits.map((benefit, index) => {
+            const IconComponent = benefit.icon;
+            const isEven = index % 2 === 0;
+            
+            return (
+              <div
+                key={benefit.id}
+                className={`grid lg:grid-cols-2 gap-12 items-center animate-fade-in`}
+                style={{
+                  animationDelay: `${index * 0.2}s`,
+                  animationFillMode: 'both'
+                }}
+              >
+                {/* Text Content */}
+                <div className={`space-y-6 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <IconComponent className="w-6 h-6 text-primary" />
                     </div>
-                  </button>
-                );
-              })}
-            </div>
+                    <div className="h-px bg-border flex-1"></div>
+                  </div>
+                  
+                  <h3 className="text-3xl lg:text-4xl font-poppins font-bold text-foreground leading-tight">
+                    {benefit.header}
+                  </h3>
+                  
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    {benefit.text}
+                  </p>
+                </div>
 
-            {/* Right: Content Panel */}
-            <div className="lg:col-span-3">
-              <div className="relative overflow-hidden">
-                {features.map((feature, index) => {
-                  const IconComponent = feature.icon;
-                  return (
-                    <div
-                      key={feature.id}
-                      className={`transition-all duration-500 ease-in-out ${
-                        activeTab === index
-                          ? 'opacity-100 translate-x-0 relative'
-                          : 'opacity-0 translate-x-8 absolute inset-0 pointer-events-none'
-                      }`}
-                    >
-                      <div className="bg-gradient-to-br from-card/50 to-accent/10 p-10 rounded-3xl border border-border/50 backdrop-blur-sm">
-                        {/* Feature Icon */}
-                        <div className="flex justify-center mb-8">
-                          <div className="w-24 h-24 bg-primary/10 rounded-2xl flex items-center justify-center">
-                            <IconComponent className="w-12 h-12 text-primary" />
-                          </div>
-                        </div>
-
-                        {/* Feature Content */}
-                        <div className="text-center">
-                          <h3 className="text-3xl font-bold text-foreground mb-4">
-                            {feature.title}
-                          </h3>
-                          <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
-                            {feature.description}
-                          </p>
-                          
-                          {/* Individual CTA */}
-                          <Button 
-                            variant="outline" 
-                            className="h-12 px-8 text-base font-semibold border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                          >
-                            See AutoDock in Action
-                            <Zap className="ml-2 w-5 h-5" />
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
+                {/* Visual Content */}
+                <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                  {renderVisual(benefit.visual, benefit.icon)}
+                </div>
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center animate-fade-in" style={{ animationDelay: '1s' }}>
-          <Button 
-            size="lg" 
-            className="h-14 px-10 text-lg font-semibold bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-          >
-            Discover How AutoDock Works
-            <Zap className="ml-2 w-5 h-5" />
-          </Button>
-        </div>
+        {/* Separator */}
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full my-20"></div>
       </div>
     </section>
   );
