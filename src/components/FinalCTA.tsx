@@ -23,32 +23,14 @@ const FinalCTA = () => {
             
             <h2 className="text-5xl lg:text-6xl font-poppins font-bold text-white mb-8 leading-tight">
               Ready to Redefine Your 
-              <span className="block">Dock?</span>
+              <span className="block">Dock Operations?</span>
             </h2>
             
-            <p className="text-xl lg:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-              From unpredictable dock flow to predictable, scalable automation—our autonomous system is built for peak seasons, high throughput, and faster turnarounds.
-            </p>
+            
           </div>
           
           {/* Key Impact Points */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-12 animate-fade-in" style={{
-          animationDelay: '0.2s',
-          animationFillMode: 'both'
-        }}>
-            <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-white rounded-full"></div>
-              <span className="text-white font-medium text-lg">Trailers handled in minutes</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-white rounded-full"></div>
-              <span className="text-white font-medium text-lg">Consistent throughput, 24/7</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <div className="w-2 h-2 bg-white rounded-full"></div>
-              <span className="text-white font-medium text-lg">ROI in under 24 months</span>
-            </div>
-          </div>
+          
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{
@@ -70,12 +52,7 @@ const FinalCTA = () => {
           animationDelay: '0.6s',
           animationFillMode: 'both'
         }}>
-            <p className="text-white/80 text-lg">
-              Let's explore your operations.
-              <a href="mailto:info@vegam.co" className="text-white font-semibold hover:underline ml-2">
-                Contact our team
-              </a>
-            </p>
+            
           </div>
         </div>
       </div>
