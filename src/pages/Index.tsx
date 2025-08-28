@@ -6,7 +6,7 @@ import HowAutoDockFits from "@/components/HowAutoDockFits";
 import AutoDockAdvantage from "@/components/AutoDockAdvantage";
 import Industries from "@/components/Industries";
 import Customers from "@/components/Customers";
-import IndustryCTA from "@/components/IndustryCTA";
+
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -20,7 +20,7 @@ const Index = () => {
       <AutoDockAdvantage />
       <Industries />
       <Customers />
-      <IndustryCTA />
+      
       <FinalCTA />
       <Footer />
     </div>
