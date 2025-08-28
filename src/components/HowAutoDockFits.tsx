@@ -74,15 +74,15 @@ const HowAutoDockFits = () => {
   const getPositionClasses = (position: string) => {
     switch (position) {
       case "top-left":
-        return "-top-6 -left-6 lg:-top-8 lg:-left-8";
+        return "-top-8 -left-8 lg:-top-12 lg:-left-12";
       case "top-right":
-        return "-top-6 -right-6 lg:-top-8 lg:-right-8";
+        return "-top-8 -right-8 lg:-top-12 lg:-right-12";
       case "center-right":
-        return "top-1/2 -translate-y-1/2 -right-6 lg:-right-8";
+        return "top-1/2 -translate-y-1/2 -right-8 lg:-right-12";
       case "bottom-right":
-        return "-bottom-6 -right-6 lg:-bottom-8 lg:-right-8";
+        return "-bottom-8 -right-8 lg:-bottom-12 lg:-right-12";
       case "center-left":
-        return "top-1/2 -translate-y-1/2 -left-6 lg:-left-8";
+        return "top-1/2 -translate-y-1/2 -left-8 lg:-left-12";
       default:
         return "";
     }
@@ -91,15 +91,15 @@ const HowAutoDockFits = () => {
   const getTooltipPosition = (position: string) => {
     switch (position) {
       case "top-left":
-        return "top-full left-0 mt-4";
+        return "top-full left-0 mt-6";
       case "top-right":
-        return "top-full right-0 mt-4";
+        return "top-full right-0 mt-6";
       case "center-right":
-        return "right-full top-1/2 -translate-y-1/2 mr-4";
+        return "right-full top-1/2 -translate-y-1/2 mr-6";
       case "bottom-right":
-        return "bottom-full right-0 mb-4";
+        return "bottom-full right-0 mb-6";
       case "center-left":
-        return "left-full top-1/2 -translate-y-1/2 ml-4";
+        return "left-full top-1/2 -translate-y-1/2 ml-6";
       default:
         return "";
     }
@@ -112,20 +112,20 @@ const HowAutoDockFits = () => {
       
       <div className="container mx-auto px-6 relative">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-20 animate-fade-in">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <span className="text-primary font-semibold text-sm">Integration</span>
+            {/* Header */}
+            <div className="text-center mb-24 animate-fade-in">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <span className="text-primary font-semibold text-sm">Integration</span>
+              </div>
+              <h2 className="text-5xl lg:text-6xl font-inter font-bold text-foreground mb-8 leading-tight">
+                How AutoDock Fits Into
+                <span className="gradient-text block">Your Dock</span>
+              </h2>
+              <p className="text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-4xl mx-auto font-inter">
+                Busy docks create bottlenecks: trucks, ramps, forklifts, and staging all competing for space. AutoDock eliminates this friction without redesigning your dock — just removing what slows you down.
+              </p>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-poppins font-bold text-foreground mb-8 leading-tight">
-              How AutoDock Fits Into
-              <span className="gradient-text block">Your Dock</span>
-            </h2>
-            <p className="text-xl lg:text-2xl text-slate-600 mb-8 leading-relaxed max-w-4xl mx-auto">
-              Busy docks create bottlenecks: trucks, ramps, forklifts, and staging all competing for space. AutoDock eliminates this friction without redesigning your dock — just removing what slows you down.
-            </p>
-            <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
-          </div>
 
           {/* Interactive Step Flow */}
           <div className="relative max-w-7xl mx-auto" onClick={handleClickOutside}>
@@ -190,33 +190,33 @@ const HowAutoDockFits = () => {
             </svg>
 
             {/* Central Animation Area */}
-            <div className="flex items-center justify-center mb-16 relative" style={{ zIndex: 2 }}>
-              <div className="relative animate-fade-in bg-gradient-to-br from-background via-background/95 to-accent/10 rounded-3xl border border-border/50 shadow-2xl hover:shadow-3xl transition-all duration-700 w-full max-w-4xl h-72 lg:h-96 backdrop-blur-sm">
-                <div className="flex items-center justify-center p-8 h-full">
-                  <div className="text-center space-y-4">
-                    <div className="w-24 h-24 bg-gradient-to-br from-primary via-primary to-primary/80 rounded-full mx-auto flex items-center justify-center shadow-lg relative overflow-hidden">
+            <div className="flex items-center justify-center mb-20 relative" style={{ zIndex: 2 }}>
+              <div className="relative animate-fade-in bg-gradient-to-br from-background via-background/95 to-accent/5 rounded-3xl border border-border/30 shadow-2xl hover:shadow-3xl transition-all duration-700 w-full max-w-5xl h-80 lg:h-[28rem] backdrop-blur-sm">
+                <div className="flex items-center justify-center p-10 h-full">
+                  <div className="text-center space-y-6">
+                    <div className="w-28 h-28 lg:w-32 lg:h-32 bg-gradient-to-br from-primary via-primary to-primary/80 rounded-full mx-auto flex items-center justify-center shadow-xl relative overflow-hidden">
                       {/* Animated glow effect */}
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40 animate-pulse"></div>
-                      <Brain className="w-12 h-12 text-white relative z-10" strokeWidth={1.5} />
+                      <Brain className="w-14 h-14 lg:w-16 lg:h-16 text-white relative z-10" strokeWidth={1.5} />
                     </div>
-                    <div className="space-y-2">
-                      <h4 className="text-2xl font-bold text-foreground">
-                        AutoDock Process Flow
+                    <div className="space-y-3">
+                      <h4 className="text-3xl lg:text-4xl font-inter font-bold text-foreground">
+                        Interactive Process Flow
                       </h4>
-                      <p className="text-muted-foreground text-base max-w-md mx-auto">
-                        Seamless dock operations from arrival to orchestration
+                      <p className="text-muted-foreground text-lg lg:text-xl max-w-2xl mx-auto font-inter leading-relaxed">
+                        Explore each step of AutoDock's seamless integration with your dock operations
                       </p>
                     </div>
                     
                     {/* Progress indicator */}
-                    <div className="flex justify-center items-center space-x-3 pt-4">
+                    <div className="flex justify-center items-center space-x-4 pt-6">
                       {steps.map((_, index) => (
                         <div
                           key={index}
-                          className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                          className={`w-4 h-4 rounded-full transition-all duration-500 ${
                             highlightedStep === index
-                              ? 'bg-primary scale-125 shadow-lg'
-                              : 'bg-primary/20'
+                              ? 'bg-primary scale-125 shadow-lg shadow-primary/40'
+                              : 'bg-primary/20 hover:bg-primary/40'
                           }`}
                         />
                       ))}
@@ -255,28 +255,28 @@ const HowAutoDockFits = () => {
                       }}
                     >
                       {/* Main card - compact with only header */}
-                      <div className={`bg-white/95 backdrop-blur-sm rounded-2xl p-4 lg:p-5 border shadow-lg hover:shadow-xl transition-all duration-300 w-48 lg:w-56 ${
+                      <div className={`bg-background/95 backdrop-blur-sm rounded-2xl p-5 lg:p-6 border shadow-lg hover:shadow-xl transition-all duration-300 w-52 lg:w-64 ${
                         isHighlighted 
-                          ? 'border-primary/40 shadow-primary/20' 
-                          : 'border-border/30 hover:border-primary/30'
+                          ? 'border-primary/50 shadow-primary/25 ring-1 ring-primary/20' 
+                          : 'border-border/40 hover:border-primary/40 hover:shadow-primary/10'
                       }`}>
-                        <div className="flex items-center space-x-3">
+                        <div className="flex items-center space-x-4">
                           {/* Icon with red number badge */}
                           <div className="relative flex-shrink-0">
-                            <div className={`w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-primary via-primary to-primary/90 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                              isHighlighted ? 'shadow-lg shadow-primary/30 scale-110' : 'shadow-md'
+                            <div className={`w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-primary via-primary to-primary/90 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                              isHighlighted ? 'shadow-lg shadow-primary/40 scale-110' : 'shadow-md'
                             }`}>
-                              <IconComponent className="w-6 h-6 lg:w-7 lg:h-7 text-white" strokeWidth={1.5} />
+                              <IconComponent className="w-7 h-7 lg:w-8 lg:h-8 text-white" strokeWidth={1.5} />
                             </div>
                             {/* Red number badge */}
-                            <div className="absolute -top-2 -right-2 w-6 h-6 lg:w-7 lg:h-7 bg-destructive text-white rounded-full flex items-center justify-center text-xs lg:text-sm font-bold shadow-md">
+                            <div className="absolute -top-2 -right-2 w-7 h-7 lg:w-8 lg:h-8 bg-destructive text-white rounded-full flex items-center justify-center text-sm lg:text-base font-bold shadow-lg">
                               {index + 1}
                             </div>
                           </div>
                           
                           {/* Title only */}
                           <div className="min-w-0 flex-1">
-                            <h3 className={`text-sm lg:text-base font-bold transition-colors leading-tight ${
+                            <h3 className={`text-base lg:text-lg font-inter font-bold transition-colors leading-tight ${
                               isHighlighted 
                                 ? 'text-primary' 
                                 : 'text-foreground group-hover:text-primary'
@@ -286,8 +286,8 @@ const HowAutoDockFits = () => {
                           </div>
                           
                           {/* Arrow indicator */}
-                          <ArrowRight className={`w-4 h-4 text-muted-foreground transition-all duration-300 ${
-                            isActive ? 'rotate-90 text-primary' : 'group-hover:text-primary group-hover:translate-x-0.5'
+                          <ArrowRight className={`w-5 h-5 text-muted-foreground transition-all duration-300 ${
+                            isActive ? 'rotate-90 text-primary' : 'group-hover:text-primary group-hover:translate-x-1'
                           }`} />
                         </div>
                       </div>
@@ -295,29 +295,40 @@ const HowAutoDockFits = () => {
                       {/* Tooltip/Pop-up for description */}
                       <div className={`absolute ${getTooltipPosition(step.position)} transition-all duration-300 z-20 ${
                         isActive 
-                          ? 'opacity-100 translate-y-0 pointer-events-auto' 
-                          : 'opacity-0 translate-y-2 pointer-events-none'
+                          ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' 
+                          : 'opacity-0 translate-y-3 scale-95 pointer-events-none'
                       }`}>
-                        <div className="bg-white border border-border/50 rounded-xl shadow-xl p-4 max-w-xs backdrop-blur-sm">
-                          <div className="space-y-2">
-                            <div className="flex items-center space-x-2">
-                              <div className="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center">
-                                <IconComponent className="w-4 h-4 text-primary" strokeWidth={1.5} />
+                        <div className="bg-background/98 border border-border/60 rounded-2xl shadow-2xl p-6 max-w-sm backdrop-blur-sm ring-1 ring-primary/10">
+                          <div className="space-y-4">
+                            {/* Header */}
+                            <div className="flex items-center space-x-3 pb-3 border-b border-border/30">
+                              <div className="w-8 h-8 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <IconComponent className="w-5 h-5 text-primary" strokeWidth={1.5} />
                               </div>
-                              <span className="font-semibold text-sm text-foreground">
-                                Step {index + 1}
-                              </span>
+                              <div>
+                                <span className="font-inter font-bold text-base text-foreground">
+                                  Step {index + 1}
+                                </span>
+                                <h4 className="font-inter font-semibold text-sm text-primary">
+                                  {step.title}
+                                </h4>
+                              </div>
                             </div>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                              {step.description}
-                            </p>
+                            
+                            {/* Description */}
+                            <div>
+                              <p className="text-muted-foreground leading-relaxed text-sm font-inter">
+                                {step.description}
+                              </p>
+                            </div>
                           </div>
+                          
                           {/* Arrow pointer */}
-                          <div className={`absolute w-3 h-3 bg-white border-l border-t border-border/50 transform rotate-45 ${
-                            step.position.includes('top') ? '-bottom-1.5 left-4' :
-                            step.position.includes('bottom') ? '-top-1.5 left-4' :
-                            step.position.includes('left') ? 'top-1/2 -translate-y-1/2 -right-1.5' :
-                            'top-1/2 -translate-y-1/2 -left-1.5'
+                          <div className={`absolute w-4 h-4 bg-background border-l border-t border-border/60 transform rotate-45 ${
+                            step.position.includes('top') ? '-bottom-2 left-6' :
+                            step.position.includes('bottom') ? '-top-2 left-6' :
+                            step.position.includes('left') ? 'top-1/2 -translate-y-1/2 -right-2' :
+                            'top-1/2 -translate-y-1/2 -left-2'
                           }`}></div>
                         </div>
                       </div>
