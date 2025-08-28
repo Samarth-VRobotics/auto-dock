@@ -10,40 +10,20 @@ const Footer = () => {
             <p className="body-sm text-muted-foreground">
               Making Factories Smarter
             </p>
-            
-            
-            {/* Contact Information */}
-            <div className="space-y-2 pt-4 border-t border-border">
-              <h3 className="heading-sm text-foreground">Contact Us</h3>
-              <div className="space-y-1">
-                <p className="body-sm font-medium text-foreground">Vegam Solutions Inc.</p>
-                <p className="body-sm text-muted-foreground">16192, Coastal Highway</p>
-                <p className="body-sm text-muted-foreground">Lewes, Delaware 19958, USA</p>
-                <a href="mailto:info@aiintime.com" className="body-sm text-primary hover:text-primary/80 transition-colors block">
-                  info@aiintime.com
-                </a>
-                <a href="tel:+19193326999" className="body-sm text-primary hover:text-primary/80 transition-colors block">
-                  +1 (919) 332-6999
-                </a>
-              </div>
-            </div>
           </div>
 
-          {/* Solutions */}
+          {/* Contact Us */}
           <div className="space-y-4">
-            <h3 className="heading-sm text-foreground">Solutions</h3>
-            <div className="space-y-2">
-              <a href="#autodock" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                AutoDock System
+            <h3 className="heading-sm text-foreground">Contact Us</h3>
+            <div className="space-y-1">
+              <p className="body-sm font-medium text-foreground">Vegam Solutions Inc.</p>
+              <p className="body-sm text-muted-foreground">16192, Coastal Highway</p>
+              <p className="body-sm text-muted-foreground">Lewes, Delaware 19958, USA</p>
+              <a href="mailto:info@aiintime.com" className="body-sm text-primary hover:text-primary/80 transition-colors block">
+                info@aiintime.com
               </a>
-              <a href="#loading" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                Loading Solutions
-              </a>
-              <a href="#unloading" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                Unloading Solutions
-              </a>
-              <a href="#software" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                Software Platform
+              <a href="tel:+19193326999" className="body-sm text-primary hover:text-primary/80 transition-colors block">
+                +1 (919) 332-6999
               </a>
             </div>
           </div>
