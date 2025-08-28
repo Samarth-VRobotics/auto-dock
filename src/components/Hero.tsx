@@ -21,37 +21,37 @@ const Hero = () => {
           }}>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle"></div>
-                <span className="text-foreground font-semibold text-lg">Slash loading times by 80%</span>
+                <span className="text-foreground font-semibold text-lg">Loads & unloads any trailer in minutes</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.2s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">Boost throughput to 600+ boxes/hour</span>
+                <span className="text-foreground font-semibold text-lg">600+ boxes per hour</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.4s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">Zero layout disruption</span>
+                <span className="text-foreground font-semibold text-lg">Fits into your existing layout</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.6s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">Pay back in under 24 months</span>
+                <span className="text-foreground font-semibold text-lg">ROI &lt; 24 Months</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '0.8s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">Never miss peak demand</span>
+                <span className="text-foreground font-semibold text-lg">24/7 peak-season ready</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle" style={{
                 animationDelay: '1s'
               }}></div>
-                <span className="text-foreground font-semibold text-lg">Instant ERP &amp; WMS sync</span>
+                <span className="text-foreground font-semibold text-lg">ERP &amp; WMS integration ready</span>
               </div>
             </div>
 
