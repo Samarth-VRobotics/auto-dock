@@ -1,58 +1,66 @@
 import React from 'react';
 import { 
-  Truck, 
-  Network, 
+  Zap, 
+  TrendingUp, 
+  BarChart3, 
   Brain, 
   Plug, 
-  TrendingUp
+  Shield,
+  Globe,
+  Truck,
+  Network
 } from 'lucide-react';
 
 const AutoDockAdvantage = () => {
   const benefits = [
     {
-      id: 'hands-free',
-      header: 'Unloading starts the moment a truck arrives.',
-      text: 'AutoDock detects incoming trucks, configures itself, and begins unloading — no labor, no setup, no delays.',
-      title: 'Eliminates labor bottlenecks',
-      description: 'AutoDock detects incoming trucks, configures itself, and begins unloading instantly — ensuring continuous throughput even at peak volumes.',
-      icon: Truck,
+      id: 'always-ready',
+      header: 'Always Ready, Always On',
+      text: 'Eliminates labor bottlenecks. AutoDock detects incoming trucks, configures itself, and begins unloading instantly — ensuring continuous throughput even at peak volumes.',
+      icon: Zap,
       visual: 'truck-docking'
     },
     {
-      id: 'modular',
-      header: 'One system, multiple docks. Scale as you grow.',
-      text: 'Central orchestration platform manages multiple docks and AMRs with minimal configuration.',
-      title: 'Handles surges without disruption',
-      description: 'Handles surges in truck volumes without disruption. With a central orchestration platform and modular AMRs, you can scale across docks while maximizing asset utilization.',
-      icon: Network,
+      id: 'roi-multiple',
+      header: 'ROI on Multiple Fronts',
+      text: 'Reduce labor dependency, cut trailer dwell times, and avoid costly dock modifications. AutoDock drives efficiency gains across the board, accelerating time-to-value.',
+      icon: TrendingUp,
+      visual: 'roi-graph'
+    },
+    {
+      id: 'scales-without-slowing',
+      header: 'Scales Without Slowing Down',
+      text: 'Handles surges in truck volumes without disruption. With a central orchestration platform and modular AMRs, you can scale across docks while maximizing asset utilization.',
+      icon: BarChart3,
       visual: 'dashboard'
     },
     {
-      id: 'ai-driven',
-      header: 'Decades of industry knowledge, built in.',
-      text: 'AI learns from historical logistics data, adapting to your layout and workflows for peak efficiency.',
-      title: 'Dynamically adapts to optimize every cycle',
-      description: 'Powered by decades of industry data, AutoDock\'s AI doesn\'t just execute tasks — it understands logistics workflows, dynamically adapting to optimize every movement and cycle.',
+      id: 'ai-understands',
+      header: 'AI That Understands Logistics',
+      text: 'Powered by decades of industry data, AutoDock\'s AI doesn\'t just execute tasks — it understands logistics workflows, dynamically adapting to optimize every movement and cycle.',
       icon: Brain,
       visual: 'ai-brain'
     },
     {
-      id: 'integration',
-      header: 'Works with what you already use.',
-      text: 'Native SAP/SFS ready, plus APIs for ERP, WMS, or any external system.',
-      title: 'Seamlessly connects to ERP/WMS ecosystems',
-      description: 'Backed by pre-integrated native SAP/SFS software and open APIs, AutoDock connects seamlessly into ERP/WMS ecosystems — giving real-time dashboards, control, and analytics without IT complexity.',
+      id: 'enterprise-integration',
+      header: 'Enterprise Integration, Simplified',
+      text: 'Backed by pre-integrated native SAP/SFS software and open APIs, AutoDock connects seamlessly into ERP/WMS ecosystems — giving real-time dashboards, control, and analytics without IT complexity.',
       icon: Plug,
       visual: 'integrations'
     },
     {
-      id: 'roi',
-      header: 'From investment to impact — in months, not years.',
-      text: 'Lower dwell times, reduced labor dependency, and measurable cost savings.',
-      title: 'Reduce costs, accelerate time-to-value',
-      description: 'Reduce labor dependency, cut trailer dwell times, and avoid costly dock modifications. AutoDock drives efficiency gains across the board, accelerating time-to-value.',
-      icon: TrendingUp,
-      visual: 'roi-graph'
+      id: 'built-in-safety',
+      header: 'Built-In Safety, By Design',
+      text: 'Zone monitoring, human detection, and instant e-stops are built in. Designed to align with global standards, AutoDock ensures dock operations are not just automated, but inherently safe.',
+      icon: Shield,
+      visual: 'safety'
+    },
+    {
+      id: 'future-proof',
+      header: 'Future-Proof Across Industries',
+      text: 'From retail and e-commerce to 3PLs and manufacturing, AutoDock is built for industries where dock efficiency defines supply chain success.',
+      icon: Globe,
+      visual: 'industries'
     }
   ];
 
@@ -145,6 +153,40 @@ const AutoDockAdvantage = () => {
                 <span className="text-xs font-bold text-primary">AutoDock</span>
               </div>
             </div>
+          </div>
+        );
+      
+      case 'safety':
+        return (
+          <div className="relative bg-gradient-to-br from-orange-50 to-orange-25 rounded-2xl p-8 h-64 flex items-center justify-center">
+            <div className="relative">
+              <Shield className="w-20 h-20 text-orange-600" />
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                <div className="w-2 h-2 bg-white rounded-full"></div>
+              </div>
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-orange-200 rounded-full flex items-center justify-center">
+                <div className="w-3 h-3 bg-orange-600 rounded-full animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+        );
+      
+      case 'industries':
+        return (
+          <div className="relative bg-gradient-to-br from-purple-50 to-purple-25 rounded-2xl p-8 h-64">
+            <div className="grid grid-cols-2 gap-4 h-full">
+              <div className="space-y-3">
+                <div className="h-6 bg-purple-200 rounded flex items-center justify-center text-xs font-semibold text-purple-800">Retail</div>
+                <div className="h-6 bg-blue-200 rounded flex items-center justify-center text-xs font-semibold text-blue-800">E-commerce</div>
+                <div className="h-6 bg-green-200 rounded flex items-center justify-center text-xs font-semibold text-green-800">3PL</div>
+              </div>
+              <div className="space-y-3">
+                <div className="h-6 bg-orange-200 rounded flex items-center justify-center text-xs font-semibold text-orange-800">Manufacturing</div>
+                <div className="h-6 bg-red-200 rounded flex items-center justify-center text-xs font-semibold text-red-800">Food & Beverage</div>
+                <div className="h-6 bg-indigo-200 rounded flex items-center justify-center text-xs font-semibold text-indigo-800">Automotive</div>
+              </div>
+            </div>
+            <Globe className="absolute bottom-4 right-4 w-8 h-8 text-purple-600 opacity-50" />
           </div>
         );
       
