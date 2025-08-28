@@ -17,8 +17,8 @@ const Index = () => {
       <Challenge />
       <HowAutoDockFits />
       <AutoDockAdvantage />
-      <Customers />
       <Industries />
+      <Customers />
       <FinalCTA />
       <Footer />
     </div>

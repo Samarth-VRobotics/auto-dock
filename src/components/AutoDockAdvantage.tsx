@@ -54,13 +54,6 @@ const AutoDockAdvantage = () => {
       text: 'Zone monitoring, human detection, and instant e-stops are built in. Designed to align with global standards, AutoDock ensures dock operations are not just automated, but inherently safe.',
       icon: Shield,
       visual: 'safety'
-    },
-    {
-      id: 'future-proof',
-      header: 'Future-Proof Across Industries',
-      text: 'From retail and e-commerce to 3PLs and manufacturing, AutoDock is built for industries where dock efficiency defines supply chain success.',
-      icon: Globe,
-      visual: 'industries'
     }
   ];
 
@@ -244,14 +237,14 @@ const AutoDockAdvantage = () => {
             return (
               <div
                 key={benefit.id}
-                className={`grid lg:grid-cols-2 gap-12 items-center animate-fade-in`}
+                className={`grid lg:grid-cols-10 gap-12 items-center animate-fade-in`}
                 style={{
                   animationDelay: `${index * 0.2}s`,
                   animationFillMode: 'both'
                 }}
               >
                 {/* Text Content */}
-                <div className={`space-y-6 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className={`space-y-6 lg:col-span-7 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                       <IconComponent className="w-6 h-6 text-primary" />
@@ -269,7 +262,7 @@ const AutoDockAdvantage = () => {
                 </div>
 
                 {/* Visual Content */}
-                <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                <div className={`lg:col-span-3 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                   {renderVisual(benefit.visual, benefit.icon)}
                 </div>
               </div>
