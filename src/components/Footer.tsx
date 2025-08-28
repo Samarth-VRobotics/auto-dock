@@ -1,18 +1,64 @@
 const Footer = () => {
   return <footer className="bg-background border-t border-border section-padding-sm">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left Side - Brand & Description */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+          {/* Left Side - Vegam Brand */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-3">
-              
-              <h2 className="heading-lg text-foreground">AutoDock</h2>
+            <div className="space-y-2">
+              <h2 className="text-2xl font-bold text-primary">Vegam</h2>
+              <p className="body-sm text-muted-foreground">Making Factories Smart</p>
             </div>
-            
+            <button className="bg-primary text-primary-foreground px-6 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">
+              Book a Demo
+            </button>
           </div>
 
-          {/* Right Side - Contact Info */}
-          <div className="space-y-6">
+          {/* Solutions Section */}
+          <div className="space-y-4">
+            <h3 className="heading-sm text-foreground">Solutions</h3>
+            <div className="space-y-2">
+              <a href="#vsfs" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+                vSFS
+              </a>
+              <a href="#vmaxoee" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+                vMaxOEE
+              </a>
+              <a href="#vcms" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+                vCMS
+              </a>
+              <a href="#vwms" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+                vWMS
+              </a>
+            </div>
+          </div>
+
+          {/* Company Section */}
+          <div className="space-y-4">
+            <h3 className="heading-sm text-foreground">Company</h3>
+            <div className="space-y-2">
+              <a href="#about" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+                About Us
+              </a>
+              <a href="#partners" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+                Partners
+              </a>
+              <a href="#partner-connect" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+                PartnerConnect2025
+              </a>
+              <a href="#brochure" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+                Brochure
+              </a>
+              <a href="#quality" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+                Quality Policy
+              </a>
+              <a href="#security" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+                Information Security
+              </a>
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-4">
             <h3 className="heading-sm text-foreground">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
