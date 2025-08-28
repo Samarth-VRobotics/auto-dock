@@ -193,15 +193,15 @@ const AutoDockAdvantage = () => {
 
         {/* Closing Statement */}
         <div className="text-center mb-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <div className="max-w-5xl mx-auto p-8 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-2xl border border-primary/10">
+          <div className="max-w-3xl mx-auto p-8 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-2xl border border-primary/10">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
                 <div className="w-3 h-3 bg-white rounded-full"></div>
               </div>
               <span className="text-primary font-semibold uppercase tracking-wide text-sm">The Bottom Line</span>
             </div>
-            <p className="text-xl lg:text-2xl text-foreground font-semibold leading-relaxed">
-              AutoDock is not another piece of equipment. It is an intelligent dock autonomy platform that delivers resilience, ROI, and competitive edge — redefining how the first and last 20 meters of logistics are managed.
+            <p className="text-2xl lg:text-3xl text-foreground font-bold leading-tight">
+              AutoDock: Where intelligent dock autonomy meets ROI.
             </p>
           </div>
         </div>
