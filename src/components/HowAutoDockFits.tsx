@@ -118,8 +118,7 @@ const HowAutoDockFits = () => {
                 <span>Integration</span>
               </div>
               <h2 className="heading-xl text-foreground mb-8">
-                How AutoDock Fits Into
-                <span className="gradient-text block">Your Dock</span>
+                <span className="gradient-text">Autodock in Action</span>
               </h2>
               <p className="body-xl text-muted-foreground mb-8 max-w-4xl mx-auto">
                 Busy docks create bottlenecks: trucks, ramps, forklifts, and staging all competing for space. AutoDock eliminates this friction without redesigning your dock — just removing what slows you down.

@@ -16,42 +16,42 @@ const AutoDockAdvantage = () => {
     {
       id: 'always-ready',
       header: 'Always Ready, Always On',
-      text: 'Eliminates labor bottlenecks. AutoDock detects incoming trucks, configures itself, and begins unloading instantly — ensuring continuous throughput even at peak volumes.',
+      text: 'Traditional docks wait. AutoDock doesn\'t. It detects incoming trucks, configures itself, and begins unloading instantly — keeping flow continuous even when volumes spike.',
       icon: Zap,
       visual: 'truck-docking'
     },
     {
       id: 'roi-multiple',
       header: 'ROI on Multiple Fronts',
-      text: 'Reduce labor dependency, cut trailer dwell times, and avoid costly dock modifications. AutoDock drives efficiency gains across the board, accelerating time-to-value.',
+      text: 'Every extra minute at the dock costs money. AutoDock cuts trailer dwell times, avoids costly dock modifications, and delivers measurable returns in 12–24 months.',
       icon: TrendingUp,
       visual: 'roi-graph'
     },
     {
       id: 'scales-without-slowing',
       header: 'Scales Without Slowing Down',
-      text: 'Handles surges in truck volumes without disruption. With a central orchestration platform and modular AMRs, you can scale across docks while maximizing asset utilization.',
+      text: 'Fixed systems buckle under pressure. AutoDock handles surges in truck volumes and scales seamlessly across multiple docks — keeping throughput steady as you grow.',
       icon: BarChart3,
       visual: 'dashboard'
     },
     {
       id: 'ai-understands',
       header: 'AI That Understands Logistics',
-      text: 'Powered by decades of industry data, AutoDock\'s AI doesn\'t just execute tasks — it understands logistics workflows, dynamically adapting to optimize every movement and cycle.',
+      text: 'Most automation just follows commands. AutoDock\'s AI learns logistics workflows, anticipates variability, and adapts in real time to keep goods moving predictably.',
       icon: Brain,
       visual: 'ai-brain'
     },
     {
       id: 'enterprise-integration',
       header: 'Enterprise Integration, Simplified',
-      text: 'Backed by pre-integrated native SAP/SFS software and open APIs, AutoDock connects seamlessly into ERP/WMS ecosystems — giving real-time dashboards, control, and analytics without IT complexity.',
+      text: 'Integration shouldn\'t be another bottleneck. AutoDock connects natively with SAP, Vegam SFS, and leading WMS platforms — giving you real-time dashboards, control, and analytics without IT headaches.',
       icon: Plug,
       visual: 'integrations'
     },
     {
       id: 'built-in-safety',
       header: 'Built-In Safety, By Design',
-      text: 'Zone monitoring, human detection, and instant e-stops are built in. Designed to align with global standards, AutoDock ensures dock operations are not just automated, but inherently safe.',
+      text: 'Speed means nothing without safety. AutoDock is engineered with zone monitoring, human detection, and global-standard compliance — making automation powerful, safe, and reliable.',
       icon: Shield,
       visual: 'safety'
     }
@@ -220,7 +220,7 @@ const AutoDockAdvantage = () => {
           </div>
           
           <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent leading-tight">
-            Why AutoDock Is in a<br />League of Its Own
+            Why choose AutoDock
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
