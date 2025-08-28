@@ -28,14 +28,14 @@ const Customers = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Enhanced header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-medium text-primary mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-inter font-medium text-primary mb-6">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             Global Trust & Recognition
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent mb-6 leading-tight">
             Trusted by 300+ Plants
             <br />
-            <span className="text-primary">across 60+ countries</span>
+            <span className="text-primary font-inter">across 60+ countries</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </div>
