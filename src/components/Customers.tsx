@@ -35,7 +35,7 @@ const Customers = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent mb-6 leading-tight">
             Trusted by 300+ Plants
             <br />
-            <span className="text-primary">Across the Globe</span>
+            <span className="text-primary">across 60+ countries</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </div>
@@ -73,41 +73,6 @@ const Customers = () => {
           </div>
         </div>
 
-        {/* Enhanced stats */}
-        <div className="grid grid-cols-3 gap-8 lg:gap-16">
-          <div className="text-center group">
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 mb-4 border border-primary/20 group-hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-2">
-                300+
-              </div>
-              <div className="text-sm md:text-base font-medium text-slate-600 dark:text-slate-300 uppercase tracking-wider">
-                Manufacturing Plants
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center group">
-            <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-8 mb-4 border border-accent/20 group-hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent mb-2">
-                60+
-              </div>
-              <div className="text-sm md:text-base font-medium text-slate-600 dark:text-slate-300 uppercase tracking-wider">
-                Countries Worldwide
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center group">
-            <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-2xl p-8 mb-4 border border-emerald-500/20 group-hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent mb-2">
-                24/7
-              </div>
-              <div className="text-sm md:text-base font-medium text-slate-600 dark:text-slate-300 uppercase tracking-wider">
-                Expert Support
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
