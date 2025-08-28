@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Challenge from "@/components/Challenge";
 import Impacts from "@/components/Impacts";
 import HowAutoDockFits from "@/components/HowAutoDockFits";
-import Solution from "@/components/Solution";
+
 import ValueProps from "@/components/ValueProps";
 
 
@@ -20,7 +20,7 @@ const Index = () => {
       <Challenge />
       <Impacts />
       <HowAutoDockFits />
-      <Solution />
+      
       <ValueProps />
       
       
