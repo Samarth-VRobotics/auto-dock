@@ -5,7 +5,7 @@ import Impacts from "@/components/Impacts";
 import HowAutoDockFits from "@/components/HowAutoDockFits";
 import Solution from "@/components/Solution";
 import ValueProps from "@/components/ValueProps";
-import ManualVsRobotic from "@/components/ManualVsRobotic";
+
 
 import AutonomousSoftware from "@/components/AutonomousSoftware";
 import Industries from "@/components/Industries";
@@ -22,7 +22,7 @@ const Index = () => {
       <HowAutoDockFits />
       <Solution />
       <ValueProps />
-      <ManualVsRobotic />
+      
       
       <AutonomousSoftware />
       <Industries />
