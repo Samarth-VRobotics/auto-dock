@@ -18,7 +18,7 @@ const FinalCTA = () => {
         <div className="max-w-5xl mx-auto text-center">
           <div className="animate-fade-in-up">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8">
-              <span className="text-white font-semibold text-sm">Transform Your Operations</span>
+              
             </div>
             
             <h2 className="text-5xl lg:text-6xl font-poppins font-bold text-white mb-8 leading-tight">
