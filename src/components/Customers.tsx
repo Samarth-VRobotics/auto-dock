@@ -3,18 +3,18 @@ import { useEffect, useRef } from "react";
 const Customers = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Customer logos data - using placeholder logos for now
+  // Customer logos data from vegam website
   const customers = [
-    { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-    { name: "FedEx", logo: "https://logos-world.net/wp-content/uploads/2020/11/FedEx-Logo.png" },
-    { name: "UPS", logo: "https://logos-world.net/wp-content/uploads/2020/06/UPS-Logo.png" },
-    { name: "DHL", logo: "https://logos-world.net/wp-content/uploads/2020/06/DHL-Logo.png" },
-    { name: "Walmart", logo: "https://logos-world.net/wp-content/uploads/2020/04/Walmart-Logo.png" },
-    { name: "Target", logo: "https://logos-world.net/wp-content/uploads/2020/04/Target-Logo.png" },
-    { name: "Home Depot", logo: "https://logos-world.net/wp-content/uploads/2020/04/Home-Depot-Logo.png" },
-    { name: "Costco", logo: "https://logos-world.net/wp-content/uploads/2020/04/Costco-Logo.png" },
-    { name: "Kroger", logo: "https://logos-world.net/wp-content/uploads/2020/09/Kroger-Logo.png" },
-    { name: "Sysco", logo: "https://logos-world.net/wp-content/uploads/2020/11/Sysco-Logo.png" },
+    { name: "Bostik", logo: "https://vegam.co/lovable-uploads/1a590db5-6790-4c96-846f-1908fd8142ea.png" },
+    { name: "Emerson", logo: "https://vegam.co/lovable-uploads/a130b90f-7ac1-4960-920e-a0474132e26f.png" },
+    { name: "JSL Jindal Stainless", logo: "https://vegam.co/lovable-uploads/a566f628-b7a5-488d-ae06-e4f4dc306e28.png" },
+    { name: "Indorama", logo: "https://vegam.co/lovable-uploads/83bbbced-e06e-48c3-b1e2-1a0879172c1c.png" },
+    { name: "LG Electronics", logo: "https://vegam.co/lovable-uploads/c0b6dbaa-39e8-4181-8f27-a1e1e3a63bda.png" },
+    { name: "JSW Steel", logo: "https://vegam.co/lovable-uploads/3a453a0d-1d64-4438-b964-ce77b954bdb1.png" },
+    { name: "Saint-Gobain", logo: "https://vegam.co/lovable-uploads/fcf8d687-3ef1-4c16-993e-16dd3eb46b83.png" },
+    { name: "SEP India", logo: "https://vegam.co/lovable-uploads/5693a6a3-2dff-454a-9982-d16213261092.png" },
+    { name: "SKF", logo: "https://vegam.co/lovable-uploads/28ac4552-9267-4e43-9929-9dff1c9e7f86.png" },
+    { name: "Solex Logistics", logo: "https://vegam.co/lovable-uploads/66fde0cf-949d-4508-81a6-02eeeb41e212.png" },
   ];
 
   useEffect(() => {
@@ -44,11 +44,8 @@ const Customers = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Trusted by 500+ Distribution Centers Worldwide
+            Trusted by 300+ Plants Across the Globe
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Leading logistics companies rely on AutoDock to optimize their warehouse operations and reduce docking times.
-          </p>
         </div>
 
         {/* Scrolling logos */}
