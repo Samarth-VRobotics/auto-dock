@@ -44,7 +44,7 @@ const AutoDockAdvantage = () => {
     {
       id: 'enterprise-integration',
       header: 'Enterprise Integration, Simplified',
-      text: 'Backed by pre-integrated native SAP/SFS software and open APIs, AutoDock connects seamlessly into ERP/WMS ecosystems — giving real-time dashboards, control, and analytics without IT complexity.',
+      text: 'Integrations often slow systems down. AutoDock, backed by native SAP/SFS connectors and open APIs, connects seamlessly into ERP/WMS ecosystems, giving you real-time dashboards and control without IT complexity.',
       icon: Plug,
       visual: 'integrations'
     },
