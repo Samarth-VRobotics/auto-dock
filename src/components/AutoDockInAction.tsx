@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Play, Pause } from 'lucide-react';
+import { Play, Pause, Truck, Move3D, Package, Warehouse, Brain } from 'lucide-react';
 
 const AutoDockInAction = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -19,23 +19,28 @@ const AutoDockInAction = () => {
   const steps = [
     {
       headline: "Unloading Begins the Moment Trucks Arrive",
-      description: "Head AMR drives inside while Tail AMR anchors at staging, conveyor links them, unloading begins instantly."
+      description: "Head AMR drives inside while Tail AMR anchors at staging, conveyor links them, unloading begins instantly.",
+      icon: Truck
     },
     {
       headline: "Flexible Conveyors Keep Goods Moving",
-      description: "Conveyor adjusts length, angle, and shape to maintain smooth flow without pile-ups."
+      description: "Conveyor adjusts length, angle, and shape to maintain smooth flow without pile-ups.",
+      icon: Move3D
     },
     {
       headline: "Smart Palletizing for Mixed Loads",
-      description: "Head AMR unloads while Tail AMR organizes goods onto pallets or floor, keeping staging consistent."
+      description: "Head AMR unloads while Tail AMR organizes goods onto pallets or floor, keeping staging consistent.",
+      icon: Package
     },
     {
       headline: "Seamless Flow to Storage or Outbound",
-      description: "The system extends into storage or reverses for outbound, enabling continuous bi-directional dock flow."
+      description: "The system extends into storage or reverses for outbound, enabling continuous bi-directional dock flow.",
+      icon: Warehouse
     },
     {
       headline: "Orchestrated by AI for Predictable Throughput",
-      description: "Dock AI synchronizes all elements and updates WMS/ERP for visibility and SLA compliance."
+      description: "Dock AI synchronizes all elements and updates WMS/ERP for visibility and SLA compliance.",
+      icon: Brain
     }
   ];
 
@@ -107,26 +112,27 @@ const AutoDockInAction = () => {
               
               {/* Timeline Steps */}
               <div className="space-y-16">
-                {steps.map((step, index) => (
-                  <div key={index} className="relative flex items-start">
-                    {/* Step Number Circle */}
-                    <div className="flex-shrink-0 w-12 h-12 bg-[#f8b5b5] rounded-full flex items-center justify-center z-10 relative">
-                      <span className="text-base font-semibold text-foreground">
-                        {index + 1}
-                      </span>
+                {steps.map((step, index) => {
+                  const IconComponent = step.icon;
+                  return (
+                    <div key={index} className="relative flex items-start group hover:scale-105 transition-transform duration-300 cursor-pointer">
+                      {/* Step Icon Circle */}
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#f8b5b5] rounded-full flex items-center justify-center z-10 relative group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="w-5 h-5 text-foreground" />
+                      </div>
+                      
+                      {/* Step Content - Expandable on Hover */}
+                      <div className="ml-8 flex-1 group-hover:bg-card/50 group-hover:p-4 group-hover:rounded-lg group-hover:border group-hover:border-primary/20 group-hover:shadow-lg transition-all duration-300">
+                        <h3 className="text-lg font-bold text-foreground mb-2 leading-tight group-hover:text-primary transition-colors duration-300">
+                          {step.headline}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed text-sm group-hover:text-base group-hover:text-foreground/80 transition-all duration-300">
+                          {step.description}
+                        </p>
+                      </div>
                     </div>
-                    
-                    {/* Step Content */}
-                    <div className="ml-8 flex-1">
-                      <h3 className="text-lg font-bold text-foreground mb-2 leading-tight">
-                        {step.headline}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed text-sm">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
