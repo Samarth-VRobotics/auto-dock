@@ -63,15 +63,36 @@ const AutoDockAdvantage = () => {
     switch (visual) {
       case 'truck-docking':
         return (
-          <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 h-64 flex items-center justify-center">
-            <div className="flex items-center gap-6">
-              <div className="w-16 h-12 bg-slate-300 rounded border-2 border-slate-400 relative">
-                <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-8 bg-slate-400 rounded-r"></div>
-                <Truck className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-slate-600" />
+          <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 h-64 overflow-hidden">
+            <div className="flex items-center justify-between h-full">
+              {/* Incoming truck with detection sensor */}
+              <div className="relative flex items-center gap-4">
+                <div className="relative">
+                  <Truck className="w-12 h-12 text-muted-foreground transition-all duration-1000 animate-pulse" />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-ping"></div>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full"></div>
+                </div>
+                
+                {/* Detection waves */}
+                <div className="flex gap-1">
+                  <div className="w-1 h-8 bg-primary/60 rounded-full animate-pulse" style={{ animationDelay: '0s' }}></div>
+                  <div className="w-1 h-6 bg-primary/40 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-1 h-4 bg-primary/20 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                </div>
               </div>
-              <div className="flex flex-col items-center">
-                <div className="w-3 h-3 bg-primary rounded-full animate-pulse mb-2"></div>
-                <div className="w-12 h-8 bg-primary/20 rounded border-2 border-primary/40"></div>
+
+              {/* Auto-configuring dock */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-16 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg border border-primary/30 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-pulse" style={{ animationDuration: '2s' }}></div>
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rounded-full animate-bounce"></div>
+                </div>
+                <div className="text-xs text-primary font-medium">Auto-Config</div>
+              </div>
+
+              {/* Flow indicator */}
+              <div className="absolute right-4 top-1/2 -translate-y-1/2">
+                <Zap className="w-6 h-6 text-primary animate-pulse" />
               </div>
             </div>
           </div>
@@ -79,71 +100,131 @@ const AutoDockAdvantage = () => {
       
       case 'dashboard':
         return (
-          <div className="relative bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-8 h-64">
-            <div className="grid grid-cols-3 gap-4 h-full">
-              <div className="space-y-3">
-                <div className="h-8 bg-accent/30 rounded flex items-center justify-center">
-                  <Network className="w-4 h-4 text-accent-foreground" />
+          <div className="relative bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-8 h-64 overflow-hidden">
+            {/* Multiple trucks flowing */}
+            <div className="absolute top-4 left-0 right-0 flex justify-between px-4">
+              {[0, 1, 2].map((i) => (
+                <div key={i} className="flex flex-col items-center">
+                  <Truck 
+                    className="w-6 h-6 text-primary/70 transition-all duration-1000 animate-bounce" 
+                    style={{ animationDelay: `${i * 0.3}s` }}
+                  />
+                  <div className="w-1 h-8 bg-primary/30 rounded-full mt-2 relative overflow-hidden">
+                    <div 
+                      className="absolute bottom-0 w-full bg-primary rounded-full transition-all duration-2000 ease-out"
+                      style={{ 
+                        height: '100%',
+                        animationDelay: `${i * 0.5}s`
+                      }}
+                    ></div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="h-3 bg-accent/20 rounded w-full"></div>
-                  <div className="h-3 bg-accent/20 rounded w-3/4"></div>
+              ))}
+            </div>
+
+            {/* Multiple dock stations */}
+            <div className="absolute bottom-8 left-0 right-0 flex justify-between px-6">
+              {[0, 1, 2].map((i) => (
+                <div key={i} className="w-12 h-8 bg-gradient-to-t from-primary/30 to-primary/10 rounded-lg border border-primary/20 relative">
+                  <div 
+                    className="absolute top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rounded-full animate-pulse"
+                    style={{ animationDelay: `${i * 0.4}s` }}
+                  ></div>
+                  <div className="absolute -top-1 right-0 w-3 h-3 bg-accent rounded-full opacity-60"></div>
                 </div>
-              </div>
-              <div className="space-y-3">
-                <div className="h-8 bg-primary/30 rounded flex items-center justify-center">
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
-                </div>
-                <div className="space-y-2">
-                  <div className="h-3 bg-primary/20 rounded w-full"></div>
-                  <div className="h-3 bg-primary/20 rounded w-2/3"></div>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="h-8 bg-secondary/30 rounded flex items-center justify-center">
-                  <div className="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
-                </div>
-                <div className="space-y-2">
-                  <div className="h-3 bg-secondary/20 rounded w-full"></div>
-                  <div className="h-3 bg-secondary/20 rounded w-5/6"></div>
-                </div>
-              </div>
+              ))}
+            </div>
+
+            {/* Central orchestration indicator */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
+              <Network className="w-4 h-4 text-accent animate-spin" style={{ animationDuration: '4s' }} />
             </div>
           </div>
         );
       
       case 'ai-brain':
         return (
-          <div className="relative bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-64 flex items-center justify-center">
+          <div className="relative bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-64 flex items-center justify-center overflow-hidden">
             <div className="relative">
-              <Brain className="w-24 h-24 text-secondary" />
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary/20 rounded-full flex items-center justify-center">
-                <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+              {/* Central brain/network hub */}
+              <div className="w-16 h-16 bg-gradient-to-br from-secondary/30 to-secondary/20 rounded-full flex items-center justify-center relative">
+                <Brain className="w-8 h-8 text-secondary" />
+                
+                {/* Pulsing rings */}
+                <div className="absolute inset-0 rounded-full border-2 border-secondary/30 animate-ping"></div>
+                <div className="absolute inset-0 rounded-full border border-secondary/20" style={{ animation: 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite', animationDelay: '1s' }}></div>
               </div>
-              <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-secondary/30 rounded-full"></div>
-              <div className="absolute top-1/2 -right-8 w-8 h-1 bg-secondary/40 rounded"></div>
+
+              {/* Dynamic connection nodes */}
+              {[
+                { top: '-20px', left: '50px', delay: '0s' },
+                { top: '50px', left: '60px', delay: '0.5s' },
+                { top: '50px', left: '-20px', delay: '1s' },
+                { top: '-10px', left: '-25px', delay: '1.5s' }
+              ].map((node, i) => (
+                <div 
+                  key={i}
+                  className="absolute w-3 h-3 bg-secondary/60 rounded-full"
+                  style={{ top: node.top, left: node.left }}
+                >
+                  <div 
+                    className="w-full h-full bg-secondary rounded-full animate-pulse"
+                    style={{ animationDelay: node.delay }}
+                  ></div>
+                  <div className="absolute top-1/2 left-1/2 w-12 h-px bg-gradient-to-r from-secondary/40 to-transparent -translate-y-1/2"></div>
+                </div>
+              ))}
+
+              {/* Optimization indicators */}
+              <div className="absolute -top-6 -right-6 flex gap-1">
+                <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
+                <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                <div className="w-2 h-2 bg-secondary rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+              </div>
             </div>
           </div>
         );
       
       case 'integrations':
         return (
-          <div className="relative bg-gradient-to-br from-muted/20 to-muted/10 rounded-2xl p-8 h-64 flex items-center justify-center">
-            <div className="flex items-center gap-6">
-              <div className="text-center">
-                <div className="w-12 h-8 bg-slate-600 rounded mb-2 flex items-center justify-center text-white text-xs font-bold">SAP</div>
-                <div className="w-12 h-8 bg-blue-600 rounded flex items-center justify-center text-white text-xs font-bold">WMS</div>
-              </div>
-              <div className="flex flex-col items-center">
-                <Plug className="w-8 h-8 text-primary mb-2" />
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <div className="relative bg-gradient-to-br from-muted/20 to-muted/10 rounded-2xl p-8 h-64 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full max-w-xs">
+              {/* External systems */}
+              <div className="absolute -left-8 top-0 space-y-3">
+                <div className="w-12 h-6 bg-gradient-to-r from-slate-600 to-slate-500 rounded text-white text-xs font-bold flex items-center justify-center shadow-sm">
+                  SAP
+                </div>
+                <div className="w-12 h-6 bg-gradient-to-r from-blue-600 to-blue-500 rounded text-white text-xs font-bold flex items-center justify-center shadow-sm">
+                  ERP
+                </div>
+                <div className="w-12 h-6 bg-gradient-to-r from-green-600 to-green-500 rounded text-white text-xs font-bold flex items-center justify-center shadow-sm">
+                  WMS
                 </div>
               </div>
-              <div className="w-16 h-12 bg-primary/20 rounded border-2 border-primary/40 flex items-center justify-center">
+
+              {/* Connection lines with animation */}
+              <div className="absolute left-4 top-3 w-12 h-px bg-gradient-to-r from-primary/60 to-transparent">
+                <div className="w-2 h-px bg-primary animate-pulse" style={{ animationDelay: '0s' }}></div>
+              </div>
+              <div className="absolute left-4 top-9 w-12 h-px bg-gradient-to-r from-accent/60 to-transparent">
+                <div className="w-2 h-px bg-accent animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+              </div>
+              <div className="absolute left-4 top-15 w-12 h-px bg-gradient-to-r from-secondary/60 to-transparent">
+                <div className="w-2 h-px bg-secondary animate-pulse" style={{ animationDelay: '1s' }}></div>
+              </div>
+
+              {/* Central AutoDock hub */}
+              <div className="w-20 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg border border-primary/30 flex items-center justify-center relative">
                 <span className="text-xs font-bold text-primary">AutoDock</span>
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary/10 to-transparent animate-pulse"></div>
+                <Plug className="absolute -top-2 -right-2 w-4 h-4 text-primary" />
+              </div>
+
+              {/* Data flow indicators */}
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-1">
+                <div className="w-8 h-1 bg-gradient-to-r from-primary to-transparent rounded-full animate-pulse"></div>
+                <div className="w-6 h-1 bg-gradient-to-r from-accent to-transparent rounded-full animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+                <div className="w-4 h-1 bg-gradient-to-r from-secondary to-transparent rounded-full animate-pulse" style={{ animationDelay: '0.6s' }}></div>
               </div>
             </div>
           </div>
@@ -151,51 +232,86 @@ const AutoDockAdvantage = () => {
       
       case 'safety':
         return (
-          <div className="relative bg-gradient-to-br from-orange-50 to-orange-25 rounded-2xl p-8 h-64 flex items-center justify-center">
+          <div className="relative bg-gradient-to-br from-emerald-50 to-emerald-25 rounded-2xl p-8 h-64 flex items-center justify-center overflow-hidden">
             <div className="relative">
-              <Shield className="w-20 h-20 text-orange-600" />
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
-                <div className="w-2 h-2 bg-white rounded-full"></div>
+              {/* Central shield */}
+              <div className="w-20 h-24 bg-gradient-to-br from-emerald-200 to-emerald-100 rounded-full flex items-center justify-center relative">
+                <Shield className="w-12 h-12 text-emerald-600" />
+                
+                {/* Safety scanning waves */}
+                <div className="absolute inset-0 rounded-full border-2 border-emerald-400/50 animate-ping"></div>
+                <div className="absolute inset-0 rounded-full border border-emerald-300/30" style={{ animation: 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite', animationDelay: '1s' }}></div>
+                <div className="absolute inset-0 rounded-full border border-emerald-200/20" style={{ animation: 'ping 4s cubic-bezier(0, 0, 0.2, 1) infinite', animationDelay: '2s' }}></div>
               </div>
-              <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-orange-200 rounded-full flex items-center justify-center">
-                <div className="w-3 h-3 bg-orange-600 rounded-full animate-pulse"></div>
+
+              {/* Safety status indicator */}
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-sm">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+
+              {/* Protected zone indicators */}
+              {[
+                { top: '-25px', left: '30px' },
+                { top: '30px', left: '45px' },
+                { top: '30px', left: '-15px' },
+                { top: '-10px', left: '-20px' }
+              ].map((pos, i) => (
+                <div 
+                  key={i}
+                  className="absolute w-4 h-4 bg-emerald-300/40 rounded-full flex items-center justify-center"
+                  style={{ top: pos.top, left: pos.left }}
+                >
+                  <div 
+                    className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+                    style={{ animationDelay: `${i * 0.3}s` }}
+                  ></div>
+                </div>
+              ))}
+
+              {/* Compliance indicator */}
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-xs text-emerald-700 font-medium bg-emerald-100 px-2 py-1 rounded-full">
+                ISO Compliant
               </div>
             </div>
-          </div>
-        );
-      
-      case 'industries':
-        return (
-          <div className="relative bg-gradient-to-br from-purple-50 to-purple-25 rounded-2xl p-8 h-64">
-            <div className="grid grid-cols-2 gap-4 h-full">
-              <div className="space-y-3">
-                <div className="h-6 bg-purple-200 rounded flex items-center justify-center text-xs font-semibold text-purple-800">Retail</div>
-                <div className="h-6 bg-blue-200 rounded flex items-center justify-center text-xs font-semibold text-blue-800">E-commerce</div>
-                <div className="h-6 bg-green-200 rounded flex items-center justify-center text-xs font-semibold text-green-800">3PL</div>
-              </div>
-              <div className="space-y-3">
-                <div className="h-6 bg-orange-200 rounded flex items-center justify-center text-xs font-semibold text-orange-800">Manufacturing</div>
-                <div className="h-6 bg-red-200 rounded flex items-center justify-center text-xs font-semibold text-red-800">Food & Beverage</div>
-                <div className="h-6 bg-indigo-200 rounded flex items-center justify-center text-xs font-semibold text-indigo-800">Automotive</div>
-              </div>
-            </div>
-            <Globe className="absolute bottom-4 right-4 w-8 h-8 text-purple-600 opacity-50" />
           </div>
         );
       
       case 'roi-graph':
         return (
-          <div className="relative bg-gradient-to-br from-green-50 to-green-25 rounded-2xl p-8 h-64">
-            <div className="flex items-end justify-center h-full gap-2">
-              <div className="flex flex-col items-center">
-                <div className="h-16 w-8 bg-slate-300 rounded-t mb-2"></div>
-                <span className="text-xs text-slate-600">Before</span>
+          <div className="relative bg-gradient-to-br from-emerald-50 to-emerald-25 rounded-2xl p-8 h-64 overflow-hidden">
+            <div className="flex items-end justify-center h-full gap-8">
+              {/* Before state */}
+              <div className="flex flex-col items-center relative">
+                <div className="relative mb-4">
+                  <div className="h-24 w-12 bg-gradient-to-t from-red-400 to-red-300 rounded-t-lg shadow-sm"></div>
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-xs font-bold text-red-600">HIGH</div>
+                </div>
+                <div className="text-xs text-muted-foreground font-medium">Before</div>
+                <div className="text-xs text-red-600 mt-1">Costs & Time</div>
               </div>
-              <TrendingUp className="w-8 h-8 text-green-600 mb-8" />
-              <div className="flex flex-col items-center">
-                <div className="h-32 w-8 bg-green-500 rounded-t mb-2 animate-pulse"></div>
-                <span className="text-xs text-green-700 font-semibold">After</span>
+
+              {/* Transformation arrow */}
+              <div className="mb-8 flex flex-col items-center">
+                <TrendingUp className="w-8 h-8 text-emerald-600 animate-pulse" />
+                <div className="text-xs text-emerald-600 font-medium mt-1">AutoDock</div>
               </div>
+
+              {/* After state */}
+              <div className="flex flex-col items-center relative">
+                <div className="relative mb-4">
+                  <div className="h-12 w-12 bg-gradient-to-t from-emerald-500 to-emerald-400 rounded-t-lg shadow-sm">
+                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-400 to-emerald-300 rounded-t-lg animate-pulse"></div>
+                  </div>
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-xs font-bold text-emerald-600">LOW</div>
+                </div>
+                <div className="text-xs text-muted-foreground font-medium">After</div>
+                <div className="text-xs text-emerald-600 mt-1">Efficiency ↑</div>
+              </div>
+            </div>
+
+            {/* ROI percentage indicator */}
+            <div className="absolute top-4 right-4 bg-emerald-100 px-3 py-1 rounded-full">
+              <span className="text-xs font-bold text-emerald-700">12-24mo ROI</span>
             </div>
           </div>
         );
