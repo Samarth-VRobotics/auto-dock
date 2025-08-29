@@ -37,7 +37,7 @@ const AutoDockAdvantage = () => {
     {
       id: 'ai-understands',
       header: 'AI That Understands Logistics',
-      text: 'Powered by decades of industry data, AutoDock\'s AI doesn\'t just execute tasks — it understands logistics workflows, dynamically adapting to optimize every movement and cycle.',
+      text: 'Traditional systems only follow commands. Powered by decades of industry data, AutoDock\'s AI adapts to dynamic workflows and keeps every movement optimized',
       icon: Brain,
       visual: 'ai-brain'
     },
