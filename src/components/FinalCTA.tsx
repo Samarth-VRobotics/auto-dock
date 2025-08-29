@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 const FinalCTA = () => {
   return <section className="section-padding relative overflow-hidden">
       {/* Gradient background */}
@@ -38,6 +38,10 @@ const FinalCTA = () => {
             <Button size="lg" className="bg-white text-foreground hover:bg-white/90 px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group">
               Book a Call
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-foreground px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group">
+              Download Case Study
+              <Download className="ml-3 w-6 h-6 group-hover:translate-y-1 transition-transform" />
             </Button>
           </div>
           
