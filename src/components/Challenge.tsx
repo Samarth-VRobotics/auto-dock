@@ -24,10 +24,7 @@ const Challenge = () => {
       <div className="container mx-auto px-6 relative">
         {/* Header Section */}
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-destructive/10 backdrop-blur-sm px-6 py-3 rounded-full border border-destructive/20 mb-6">
-            <div className="w-2 h-2 bg-destructive rounded-full animate-pulse"></div>
-            <span className="text-destructive font-semibold text-sm tracking-wide uppercase">Business Impact</span>
-          </div>
+          
           
           <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-destructive bg-clip-text text-transparent leading-tight">The Hidden Bottlenecks 
 of Dock Operations</h2>

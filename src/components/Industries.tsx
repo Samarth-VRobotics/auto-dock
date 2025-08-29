@@ -29,9 +29,7 @@ const Industries = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-20 animate-fade-in-up">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
-              <span className="text-secondary font-semibold text-sm">Versatile Solutions</span>
-            </div>
+            
             <h2 className="text-5xl lg:text-6xl font-poppins font-bold text-foreground mb-8 leading-tight">
               Industries We 
               <span className="gradient-text"> Serve</span>
