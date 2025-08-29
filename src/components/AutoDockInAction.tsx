@@ -1,149 +1,169 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Play, Pause, Truck, Move3D, Package, Warehouse, Brain, ChevronDown } from 'lucide-react';
+import React, { useState } from 'react';
+import { Play, Truck, Move3D, Package, Warehouse, Brain, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Button } from '@/components/ui/button';
 
 const AutoDockInAction = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
+  const [playingSteps, setPlayingSteps] = useState<Set<number>>(new Set());
 
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
+  const toggleStepPlay = (stepIndex: number) => {
+    setPlayingSteps(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(stepIndex)) {
+        newSet.delete(stepIndex);
       } else {
-        videoRef.current.play();
+        newSet.add(stepIndex);
       }
-      setIsPlaying(!isPlaying);
-    }
+      return newSet;
+    });
   };
 
   const steps = [
     {
+      title: "Truck Arrival",
       headline: "Unloading Begins the Moment Trucks Arrive",
       description: "Head AMR drives inside while Tail AMR anchors at staging, conveyor links them, unloading begins instantly.",
-      icon: Truck
+      icon: Truck,
+      duration: "0:15"
     },
     {
+      title: "AMR Positioning", 
       headline: "Flexible Conveyors Keep Goods Moving",
       description: "Conveyor adjusts length, angle, and shape to maintain smooth flow without pile-ups.",
-      icon: Move3D
+      icon: Move3D,
+      duration: "0:12"
     },
     {
-      headline: "Smart Palletizing for Mixed Loads",
+      title: "Conveyor Unloading",
+      headline: "Smart Palletizing for Mixed Loads", 
       description: "Head AMR unloads while Tail AMR organizes goods onto pallets or floor, keeping staging consistent.",
-      icon: Package
+      icon: Package,
+      duration: "0:18"
     },
     {
+      title: "Storage Flow",
       headline: "Seamless Flow to Storage or Outbound",
       description: "The system extends into storage or reverses for outbound, enabling continuous bi-directional dock flow.",
-      icon: Warehouse
+      icon: Warehouse,
+      duration: "0:10"
     },
     {
+      title: "AI Orchestration",
       headline: "Orchestrated by AI for Predictable Throughput",
       description: "Dock AI synchronizes all elements and updates WMS/ERP for visibility and SLA compliance.",
-      icon: Brain
+      icon: Brain,
+      duration: "0:08"
     }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            entry.target.classList.remove('opacity-0', 'translate-y-8');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.scroll-reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className="py-12 bg-background min-h-screen flex flex-col">
-      <div className="container mx-auto px-6 flex-1 flex flex-col">
-        {/* Header - Compact */}
-        <div className="text-center mb-8">
+    <section className="py-16 bg-background">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-poppins font-bold mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight">
             AutoDock in Action
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            From truck to storage in one seamless flow — see AutoDock in action.
+            Explore each step of the AutoDock workflow through interactive video demonstrations
           </p>
         </div>
 
-        {/* Video Showcase - Compact */}
-        <div className="relative mb-8 rounded-xl overflow-hidden bg-muted/20 backdrop-blur-sm border border-border shadow-xl flex-shrink-0">
-          <div className="relative aspect-video w-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-background flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Play className="w-8 h-8 text-primary ml-1" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-1">AutoDock Demo</h3>
-                <p className="text-sm text-muted-foreground">Full workflow demonstration</p>
-              </div>
-            </div>
-
-            <button
-              onClick={togglePlay}
-              className="absolute bottom-4 left-4 w-10 h-10 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-background/90 transition-all duration-300 border border-border"
-              aria-label={isPlaying ? 'Pause video' : 'Play video'}
-            >
-              {isPlaying ? (
-                <Pause className="w-4 h-4 text-foreground" />
-              ) : (
-                <Play className="w-4 h-4 text-foreground ml-0.5" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Vertical Timeline - Full Width */}
-        <div className="flex-1 flex items-center justify-center">
-          <div className="w-full max-w-6xl mx-auto">
-            <div className="relative">
-              {/* Vertical Timeline Line */}
-              <div className="absolute left-8 top-8 bottom-8 w-px bg-border/20"></div>
-              
-              {/* Timeline Steps */}
-              <div className="space-y-16">
-                {steps.map((step, index) => {
-                  const IconComponent = step.icon;
-                  return (
-                    <div key={index} className="relative flex items-start group hover:scale-105 transition-transform duration-300 cursor-pointer">
-                      {/* Step Icon Circle */}
-                      <div className="flex-shrink-0 w-16 h-16 bg-[#f8b5b5] rounded-full flex items-center justify-center z-10 relative group-hover:scale-125 transition-transform duration-300">
-                        <IconComponent className="w-7 h-7 text-foreground" />
-                      </div>
-                      
-                      {/* Step Content - Description appears on hover */}
-                      <div className="ml-8 flex-1 flex items-center justify-between group-hover:bg-card/50 group-hover:p-4 group-hover:rounded-lg group-hover:border group-hover:border-primary/20 group-hover:shadow-lg transition-all duration-300">
-                        <div className="flex-1">
-                          <h3 className="text-lg font-bold text-foreground mb-2 leading-tight group-hover:text-primary transition-colors duration-300">
-                            {step.headline}
-                          </h3>
-                          <p className="text-muted-foreground leading-relaxed text-sm group-hover:text-base group-hover:text-foreground/80 transition-all duration-300">
-                            {step.description}
-                          </p>
+        {/* Video Carousel */}
+        <div className="relative">
+          <Carousel className="w-full max-w-7xl mx-auto" opts={{ align: "start", loop: true }}>
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {steps.map((step, index) => {
+                const IconComponent = step.icon;
+                const isPlaying = playingSteps.has(index);
+                
+                return (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                    <div className="group cursor-pointer" onClick={() => setActiveStepIndex(index)}>
+                      {/* Video Thumbnail */}
+                      <div className="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 via-primary/10 to-background border border-border shadow-lg group-hover:shadow-xl transition-all duration-300">
+                        {/* Video Placeholder */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-background/50 flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="w-12 h-12 bg-background/20 rounded-full flex items-center justify-center mb-3 mx-auto">
+                              <IconComponent className="w-6 h-6 text-foreground" />
+                            </div>
+                            <div className="text-xs text-muted-foreground font-medium">{step.duration}</div>
+                          </div>
                         </div>
                         
-                        {/* Dropdown Arrow Indicator */}
-                        <div className="flex-shrink-0 ml-4">
-                          <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+                        {/* Play Button Overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <Button
+                            size="icon"
+                            variant="outline"
+                            className="w-16 h-16 rounded-full bg-background/90 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 hover:bg-background shadow-xl"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleStepPlay(index);
+                            }}
+                          >
+                            <Play className={`w-6 h-6 text-primary ${isPlaying ? 'animate-pulse' : ''} ml-1`} />
+                          </Button>
                         </div>
+
+                        {/* Step Number */}
+                        <div className="absolute top-3 left-3 w-8 h-8 bg-primary/90 rounded-full flex items-center justify-center">
+                          <span className="text-sm font-bold text-primary-foreground">{index + 1}</span>
+                        </div>
+
+                        {/* Playing Indicator */}
+                        {isPlaying && (
+                          <div className="absolute bottom-3 right-3 flex items-center gap-1">
+                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse animation-delay-150"></div>
+                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse animation-delay-300"></div>
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* Step Info */}
+                      <div className="pt-4">
+                        <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                          {step.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {step.description}
+                        </p>
                       </div>
                     </div>
-                  );
-                })}
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            
+            {/* Custom Navigation */}
+            <CarouselPrevious className="hidden md:flex -left-12 bg-background/80 backdrop-blur-sm border-border hover:bg-background/90" />
+            <CarouselNext className="hidden md:flex -right-12 bg-background/80 backdrop-blur-sm border-border hover:bg-background/90" />
+          </Carousel>
+        </div>
+
+        {/* Active Step Details */}
+        {activeStepIndex !== null && (
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="bg-card/50 backdrop-blur-sm rounded-xl border border-border p-6 shadow-lg">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  {React.createElement(steps[activeStepIndex].icon, { className: "w-6 h-6 text-primary" })}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    {steps[activeStepIndex].headline}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {steps[activeStepIndex].description}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
