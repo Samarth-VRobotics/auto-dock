@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Play, Pause, Truck, Move3D, Package, Warehouse, Brain } from 'lucide-react';
+import { Play, Pause, Truck, Move3D, Package, Warehouse, Brain, ChevronDown } from 'lucide-react';
 
 const AutoDockInAction = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -103,32 +103,39 @@ const AutoDockInAction = () => {
           </div>
         </div>
 
-        {/* Vertical Timeline - Exact Match */}
+        {/* Vertical Timeline - Full Width */}
         <div className="flex-1 flex items-center justify-center">
-          <div className="w-full max-w-3xl mx-auto">
+          <div className="w-full max-w-6xl mx-auto">
             <div className="relative">
               {/* Vertical Timeline Line */}
-              <div className="absolute left-6 top-8 bottom-8 w-px bg-border/20"></div>
+              <div className="absolute left-8 top-8 bottom-8 w-px bg-border/20"></div>
               
               {/* Timeline Steps */}
               <div className="space-y-16">
                 {steps.map((step, index) => {
                   const IconComponent = step.icon;
                   return (
-                    <div key={index} className="relative flex items-start group hover:scale-110 transition-transform duration-300 cursor-pointer">
+                    <div key={index} className="relative flex items-start group hover:scale-105 transition-transform duration-300 cursor-pointer">
                       {/* Step Icon Circle */}
                       <div className="flex-shrink-0 w-16 h-16 bg-[#f8b5b5] rounded-full flex items-center justify-center z-10 relative group-hover:scale-125 transition-transform duration-300">
                         <IconComponent className="w-7 h-7 text-foreground" />
                       </div>
                       
                       {/* Step Content - Description appears on hover */}
-                      <div className="ml-8 flex-1 group-hover:bg-card/50 group-hover:p-4 group-hover:rounded-lg group-hover:border group-hover:border-primary/20 group-hover:shadow-lg transition-all duration-300">
-                        <h3 className="text-lg font-bold text-foreground mb-2 leading-tight group-hover:text-primary transition-colors duration-300">
-                          {step.headline}
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed text-sm opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-20 group-hover:text-base group-hover:text-foreground/80 transition-all duration-300 group-hover:mb-0">
-                          {step.description}
-                        </p>
+                      <div className="ml-8 flex-1 flex items-center justify-between group-hover:bg-card/50 group-hover:p-4 group-hover:rounded-lg group-hover:border group-hover:border-primary/20 group-hover:shadow-lg transition-all duration-300">
+                        <div className="flex-1">
+                          <h3 className="text-lg font-bold text-foreground mb-2 leading-tight group-hover:text-primary transition-colors duration-300">
+                            {step.headline}
+                          </h3>
+                          <p className="text-muted-foreground leading-relaxed text-sm opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-20 group-hover:text-base group-hover:text-foreground/80 transition-all duration-300 group-hover:mb-0">
+                            {step.description}
+                          </p>
+                        </div>
+                        
+                        {/* Dropdown Arrow Indicator */}
+                        <div className="flex-shrink-0 ml-4">
+                          <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+                        </div>
                       </div>
                     </div>
                   );
