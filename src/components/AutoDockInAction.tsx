@@ -93,10 +93,6 @@ const AutoDockInAction = () => {
                           </Button>
                         </div>
 
-                        {/* Step Number */}
-                        <div className="absolute top-3 left-3 w-8 h-8 bg-primary/90 rounded-full flex items-center justify-center">
-                          <span className="text-sm font-bold text-primary-foreground">{index + 1}</span>
-                        </div>
 
                         {/* Playing Indicator */}
                         {isPlaying && <div className="absolute bottom-3 right-3 flex items-center gap-1">
