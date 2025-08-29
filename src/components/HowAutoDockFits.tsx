@@ -91,10 +91,6 @@ const HowAutoDockFits = () => {
         return "";
     }
   };
-  return (
-    <div>
-      {/* Placeholder component */}
-    </div>
-  );
+  return;
 };
 export default HowAutoDockFits;
