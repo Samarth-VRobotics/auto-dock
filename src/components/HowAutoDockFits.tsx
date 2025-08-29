@@ -91,6 +91,19 @@ const HowAutoDockFits = () => {
         return "";
     }
   };
-  return;
+  return (
+    <section className="py-24 bg-background">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight">
+            How AutoDock Fits
+          </h2>
+          <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            See how AutoDock transforms your dock operations
+          </p>
+        </div>
+      </div>
+    </section>
+  );
 };
 export default HowAutoDockFits;

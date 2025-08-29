@@ -1,5 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Play, Pause } from 'lucide-react';
+import { Play, Pause, ChevronDown } from 'lucide-react';
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const AutoDockInAction = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -101,43 +107,37 @@ const AutoDockInAction = () => {
           </div>
         </div>
 
-        {/* Step Breakdown */}
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 gap-12">
+        {/* Step Breakdown - Accordion Style */}
+        <div className="max-w-4xl mx-auto">
+          <Accordion type="single" collapsible className="w-full space-y-4">
             {steps.map((step, index) => (
-              <div
-                key={index}
-                className="scroll-reveal opacity-0 translate-y-8 transition-all duration-700 ease-out"
-                style={{
-                  transitionDelay: `${index * 0.1}s`
-                }}
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="scroll-reveal border border-border rounded-lg bg-card/50 backdrop-blur-sm overflow-hidden"
               >
-                <div className="flex items-start gap-6">
+                <AccordionTrigger className="flex items-center gap-4 px-6 py-4 hover:no-underline group">
                   {/* Step Number */}
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20">
-                    <span className="text-lg font-bold text-primary">{index + 1}</span>
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                    <span className="text-sm font-bold text-primary">{index + 1}</span>
                   </div>
                   
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-poppins font-bold text-foreground mb-3 leading-tight">
-                      {step.title}
-                    </h3>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                  {/* Step Title */}
+                  <h3 className="text-xl font-poppins font-bold text-foreground text-left flex-1 group-hover:text-primary transition-colors">
+                    {step.title}
+                  </h3>
+                </AccordionTrigger>
+                
+                <AccordionContent className="px-6 pb-6">
+                  <div className="pl-12">
+                    <p className="text-base text-muted-foreground leading-relaxed">
                       {step.description}
                     </p>
                   </div>
-                </div>
-                
-                {/* Connector Line */}
-                {index < steps.length - 1 && (
-                  <div className="ml-6 mt-8 mb-4">
-                    <div className="w-0.5 h-8 bg-gradient-to-b from-primary/30 to-transparent"></div>
-                  </div>
-                )}
-              </div>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </div>
     </section>
