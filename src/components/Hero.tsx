@@ -12,120 +12,106 @@ const Hero = () => {
           loop
           playsInline
           className="w-full h-full object-cover"
-          style={{ filter: 'brightness(0.4)' }}
+          poster={heroImage}
         >
-          <source src="/path-to-your-video.mp4" type="video/mp4" />
-          {/* Fallback image */}
-          <img 
-            src={heroImage} 
-            alt="AutoDock system in action" 
-            className="w-full h-full object-cover"
-          />
+          {/* Placeholder for actual video - replace src with your AMR conveyor demo video */}
+          <source src="/path-to-your-amr-demo-video.mp4" type="video/mp4" />
+          {/* Fallback to hero image if video fails to load */}
+          <img src={heroImage} alt="AutoDock AMR System" className="w-full h-full object-cover" />
         </video>
         
-        {/* Gradient overlays for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-background/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/40" />
+        {/* Video Fade-in Animation Overlay */}
+        <div className="absolute inset-0 bg-background/20 animate-fade-in" style={{
+          animationDuration: '2s'
+        }}></div>
+        
+        {/* Professional Gradient Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/30"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-8 py-20">
+      {/* Content Overlay */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-8 py-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           <div className="space-y-6">
-            <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight animate-fade-in">
+            <h1 className="heading-hero text-foreground animate-fade-in-up drop-shadow-lg">
               The AutoDock: 
-              <span className="text-primary block mt-2 animate-slide-in-left">True Dock Autonomy</span>
+              <span className="text-primary block animate-slide-in-left">True Dock Autonomy</span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-white/90 max-w-2xl leading-relaxed animate-fade-in" style={{
+            <p className="body-xl text-foreground/90 max-w-2xl animate-fade-in drop-shadow-md" style={{
               animationDelay: '0.3s',
               animationFillMode: 'both'
-            }}>
-              "Automating the first and last 20 meters of logistics powered by Vegam's 20-year legacy in manufacturing and digital factory innovation."
-            </p>
+            }}>"Automating the first and last 20 meters of logistics powered by Vegam's 20-year legacy in manufacturing and digital factory innovation."</p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8 animate-fade-in" style={{
+            <div className="grid grid-cols-2 gap-8 pt-4 animate-fade-in" style={{
               animationDelay: '0.6s',
               animationFillMode: 'both'
             }}>
-              {[
-                "Loads & unloads any trailer in minutes",
-                "600+ boxes per hour", 
-                "Fits into your existing layout",
-                "ROI < 24 Months",
-                "24/7 peak-season ready",
-                "ERP & WMS integration ready"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center space-x-4 p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 transition-all duration-300 hover:bg-white/15">
-                  <div 
-                    className="w-3 h-3 bg-primary rounded-full animate-pulse" 
-                    style={{ animationDelay: `${index * 0.2}s` }}
-                  />
-                  <span className="text-white font-semibold text-lg">{feature}</span>
-                </div>
-              ))}
+              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+                <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg"></div>
+                <span className="text-foreground font-semibold body-base drop-shadow-sm">Loads & unloads any trailer in minutes</span>
+              </div>
+              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+                <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
+                  animationDelay: '0.2s'
+                }}></div>
+                <span className="text-foreground font-semibold body-base drop-shadow-sm">600+ boxes per hour</span>
+              </div>
+              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+                <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
+                  animationDelay: '0.4s'
+                }}></div>
+                <span className="text-foreground font-semibold body-base drop-shadow-sm">Fits into your existing layout</span>
+              </div>
+              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+                <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
+                  animationDelay: '0.6s'
+                }}></div>
+                <span className="text-foreground font-semibold body-base drop-shadow-sm">ROI &lt; 24 Months</span>
+              </div>
+              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+                <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
+                  animationDelay: '0.8s'
+                }}></div>
+                <span className="text-foreground font-semibold body-base drop-shadow-sm">24/7 peak-season ready</span>
+              </div>
+              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+                <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
+                  animationDelay: '1s'
+                }}></div>
+                <span className="text-foreground font-semibold body-base drop-shadow-sm">ERP &amp; WMS integration ready</span>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 pt-8 animate-fade-in" style={{
+            <div className="flex flex-col sm:flex-row gap-6 pt-4 animate-fade-in" style={{
               animationDelay: '0.9s',
               animationFillMode: 'both'
             }}>
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-xl font-bold hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-primary/25"
-              >
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl">
                 Contact Us
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 border-white text-white hover:bg-white hover:text-background px-12 py-6 text-xl font-bold hover:scale-105 transition-all duration-300 backdrop-blur-sm"
-              >
+              <Button variant="outline" size="lg" className="border-2 border-foreground/80 bg-background/20 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-200 shadow-lg">
                 Watch Demo
               </Button>
             </div>
           </div>
 
-          {/* Right side - Video showcase overlay */}
-          <div className="relative animate-fade-in" style={{
+          {/* Right side content overlay - keeping for mobile/fallback */}
+          <div className="relative animate-fade-in lg:hidden" style={{
             animationDelay: '0.4s',
             animationFillMode: 'both'
           }}>
-            <div className="relative">
-              {/* Video frame overlay */}
-              <div className="relative p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                <img 
-                  src={heroImage} 
-                  alt="Autonomous robotic arm unloading truck with flexible conveyor system" 
-                  className="w-full h-auto rounded-xl shadow-2xl" 
-                />
-                
-                {/* Product callouts */}
-                <div className="absolute top-4 left-4 bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm font-semibold animate-pulse">
-                  AMR Head Unit
-                </div>
-                <div className="absolute bottom-4 right-4 bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm font-semibold animate-pulse" style={{ animationDelay: '1s' }}>
-                  Flexible Conveyor
-                </div>
-                <div className="absolute top-1/2 left-4 bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm font-semibold animate-pulse" style={{ animationDelay: '2s' }}>
-                  AMR Tail Unit
-                </div>
-              </div>
-              
-              {/* Floating metrics */}
-              <div className="absolute -top-4 -right-4 bg-green-500/90 text-white px-6 py-3 rounded-xl font-bold text-lg shadow-lg animate-bounce">
-                600+ boxes/hr
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-blue-500/90 text-white px-6 py-3 rounded-xl font-bold text-lg shadow-lg animate-bounce" style={{ animationDelay: '0.5s' }}>
-                ROI &lt; 24 months
-              </div>
+            <div className="bg-background/10 backdrop-blur-sm rounded-xl p-6 border border-foreground/10">
+              <img 
+                src={heroImage} 
+                alt="Autonomous robotic arm unloading truck with flexible conveyor system" 
+                className="w-full h-auto rounded-lg shadow-xl opacity-80" 
+              />
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Subtle fade animation overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20 pointer-events-none" />
     </section>
   );
 };
