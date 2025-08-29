@@ -98,30 +98,30 @@ const AutoDockInAction = () => {
           </div>
         </div>
 
-        {/* Vertical Timeline */}
+        {/* Vertical Timeline - Exact Match */}
         <div className="flex-1 flex items-center justify-center">
-          <div className="w-full max-w-4xl mx-auto">
+          <div className="w-full max-w-3xl mx-auto">
             <div className="relative">
               {/* Vertical Timeline Line */}
-              <div className="absolute left-8 top-0 bottom-0 w-px bg-border/30"></div>
+              <div className="absolute left-6 top-8 bottom-8 w-px bg-border/20"></div>
               
               {/* Timeline Steps */}
-              <div className="space-y-12">
+              <div className="space-y-16">
                 {steps.map((step, index) => (
                   <div key={index} className="relative flex items-start">
                     {/* Step Number Circle */}
-                    <div className="flex-shrink-0 w-16 h-16 bg-primary/10 border-2 border-primary rounded-full flex items-center justify-center z-10 relative">
-                      <span className="text-lg font-bold text-primary">
+                    <div className="flex-shrink-0 w-12 h-12 bg-[#f8b5b5] rounded-full flex items-center justify-center z-10 relative">
+                      <span className="text-base font-semibold text-foreground">
                         {index + 1}
                       </span>
                     </div>
                     
                     {/* Step Content */}
                     <div className="ml-8 flex-1">
-                      <h3 className="text-xl font-bold text-foreground mb-3 leading-tight">
+                      <h3 className="text-lg font-bold text-foreground mb-2 leading-tight">
                         {step.headline}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-muted-foreground leading-relaxed text-sm">
                         {step.description}
                       </p>
                     </div>
