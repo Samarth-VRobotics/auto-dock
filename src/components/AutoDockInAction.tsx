@@ -45,6 +45,7 @@ const AutoDockInAction = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-fade-in');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
           }
         });
       },
@@ -97,18 +98,6 @@ const AutoDockInAction = () => {
               )}
             </button>
 
-            {/* Overlay Text Examples */}
-            <div className="absolute top-6 right-6 bg-background/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-border">
-              <span className="text-sm font-semibold text-foreground">Instant Unloading</span>
-            </div>
-            
-            <div className="absolute top-1/2 left-6 bg-background/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-border opacity-80">
-              <span className="text-sm font-semibold text-foreground">Smooth Flow</span>
-            </div>
-            
-            <div className="absolute bottom-20 right-6 bg-background/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-border">
-              <span className="text-sm font-semibold text-foreground">24/7 Operations</span>
-            </div>
           </div>
         </div>
 
