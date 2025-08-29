@@ -71,7 +71,7 @@ const Challenge = () => {
               The Hidden Bottlenecks in
               <span className="gradient-text block">Dock Operations</span>
             </h2>
-            <p className="body-xl text-muted-foreground mb-8 max-w-4xl mx-auto">The dock is where logistics efficiency is pushed to its limits.</p>
+            <p className="body-xl text-muted-foreground mb-8 max-w-4xl mx-auto">&quot;The dock is where logistics efficiency is pushed to its limits&quot;</p>
             <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
           </div>
 
