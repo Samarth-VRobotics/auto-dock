@@ -1,11 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Play, Pause, ChevronDown } from 'lucide-react';
-import { 
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Play, Pause } from 'lucide-react';
 
 const AutoDockInAction = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -24,28 +18,23 @@ const AutoDockInAction = () => {
 
   const steps = [
     {
-      headline: "Unloading Begins Instantly",
-      subtext: "Head AMR enters, Tail AMR anchors, conveyor links for immediate flow.",
+      headline: "Unloading Begins the Moment Trucks Arrive",
       description: "Head AMR drives inside while Tail AMR anchors at staging, conveyor links them, unloading begins instantly."
     },
     {
-      headline: "Adaptive Conveyors",
-      subtext: "Adjust length, angle, shape to prevent pile-ups.",
+      headline: "Flexible Conveyors Keep Goods Moving",
       description: "Conveyor adjusts length, angle, and shape to maintain smooth flow without pile-ups."
     },
     {
-      headline: "Smart Palletizing",
-      subtext: "AMRs unload and organize mixed loads consistently.",
+      headline: "Smart Palletizing for Mixed Loads",
       description: "Head AMR unloads while Tail AMR organizes goods onto pallets or floor, keeping staging consistent."
     },
     {
-      headline: "Seamless Flow",
-      subtext: "Bi-directional movement between staging, storage, and outbound.",
+      headline: "Seamless Flow to Storage or Outbound",
       description: "The system extends into storage or reverses for outbound, enabling continuous bi-directional dock flow."
     },
     {
-      headline: "AI Orchestration",
-      subtext: "Synchronizes all systems, updates WMS/ERP in real time.",
+      headline: "Orchestrated by AI for Predictable Throughput",
       description: "Dock AI synchronizes all elements and updates WMS/ERP for visibility and SLA compliance."
     }
   ];
@@ -112,47 +101,56 @@ const AutoDockInAction = () => {
           </div>
         </div>
 
-        {/* Visual Timeline */}
-        <div className="max-w-4xl mx-auto">
+        {/* Horizontal Timeline */}
+        <div className="max-w-7xl mx-auto">
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/30 via-primary/20 to-transparent"></div>
+            {/* Timeline Line - Desktop */}
+            <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/30 via-primary/50 to-primary/30"></div>
             
-            <Accordion type="single" collapsible className="space-y-6">
+            {/* Timeline Steps */}
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-4">
               {steps.map((step, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className="border-none"
-                >
-                  <div className="relative">
-                    {/* Timeline Dot */}
-                    <div className="absolute left-4 top-3 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-sm z-10"></div>
+                <div key={index} className="relative group">
+                  {/* Timeline Dot - Desktop */}
+                  <div className="hidden lg:block absolute top-14 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-background shadow-lg z-10"></div>
+                  
+                  {/* Step Card */}
+                  <div className="relative bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 hover:bg-card/70 transition-all duration-300 cursor-pointer min-h-[120px] flex items-center">
+                    {/* Mobile Timeline Dot */}
+                    <div className="lg:hidden absolute -left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-primary rounded-full border-3 border-background shadow-sm"></div>
                     
-                    <AccordionTrigger className="flex items-start gap-8 pl-16 pr-6 py-4 hover:no-underline group bg-card/30 rounded-lg border border-border/50 hover:border-primary/30 hover:bg-card/50 transition-all duration-300">
-                      <div className="flex-1 text-left">
-                        {/* Headline */}
-                        <h3 className="text-xl font-poppins font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                          {step.headline}
-                        </h3>
-                        {/* Subtext */}
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                          {step.subtext}
-                        </p>
-                      </div>
-                    </AccordionTrigger>
+                    {/* Step Number */}
+                    <div className="absolute top-4 left-4 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20">
+                      <span className="text-sm font-bold text-primary">{index + 1}</span>
+                    </div>
                     
-                    <AccordionContent className="pl-16 pr-6 pb-4">
-                      <div className="pt-2">
-                        <p className="text-base text-muted-foreground leading-relaxed bg-muted/30 rounded-lg p-4 border-l-4 border-primary/30">
+                    {/* Headline */}
+                    <h3 className="text-lg font-poppins font-bold text-foreground leading-tight pt-8 group-hover:text-primary transition-colors">
+                      {step.headline}
+                    </h3>
+                    
+                    {/* Hover Tooltip */}
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20">
+                      <div className="bg-background border border-border rounded-lg shadow-xl p-4 max-w-xs text-center">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           {step.description}
                         </p>
+                        {/* Tooltip Arrow */}
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-border"></div>
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-px border-4 border-transparent border-t-background"></div>
                       </div>
-                    </AccordionContent>
+                    </div>
                   </div>
-                </AccordionItem>
+                  
+                  {/* Mobile Connector Line */}
+                  {index < steps.length - 1 && (
+                    <div className="lg:hidden ml-2 mt-4 mb-4">
+                      <div className="w-0.5 h-8 bg-gradient-to-b from-primary/30 to-transparent"></div>
+                    </div>
+                  )}
+                </div>
               ))}
-            </Accordion>
+            </div>
           </div>
         </div>
       </div>
