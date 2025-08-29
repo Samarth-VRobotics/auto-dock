@@ -91,6 +91,123 @@ const HowAutoDockFits = () => {
         return "";
     }
   };
-  return;
+  return (
+    <section className="py-20 bg-muted/30 relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            How AutoDock Fits Into Your Operations
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Watch the complete dock-to-storage workflow powered by intelligent AMR coordination
+          </p>
+        </div>
+
+        <div 
+          className="relative w-full max-w-6xl mx-auto h-[600px] bg-background/50 rounded-2xl border-2 border-border shadow-2xl"
+          onClick={handleClickOutside}
+        >
+          {/* Central dock visualization */}
+          <div className="absolute inset-8 bg-gradient-to-br from-primary/5 to-secondary/10 rounded-xl border border-border/50">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="text-center">
+                <div className="w-32 h-20 bg-primary/20 rounded-lg mb-4 flex items-center justify-center">
+                  <Truck className="w-12 h-12 text-primary" />
+                </div>
+                <p className="text-sm font-medium text-muted-foreground">AutoDock System</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Interactive step points */}
+          {steps.map((step, index) => {
+            const IconComponent = step.icon;
+            const isHighlighted = highlightedStep === index;
+            const isActive = activeStep === index;
+            
+            return (
+              <div key={index} className={`absolute ${getPositionClasses(step.position)}`}>
+                <button
+                  onClick={(e) => handleStepClick(index, e)}
+                  className={`
+                    relative w-16 h-16 lg:w-20 lg:h-20 rounded-full border-4 
+                    transition-all duration-300 cursor-pointer
+                    ${isHighlighted 
+                      ? 'bg-primary/20 border-primary scale-110 shadow-lg shadow-primary/25' 
+                      : 'bg-background border-border hover:border-primary/50 hover:scale-105'
+                    }
+                    ${isActive ? 'ring-4 ring-primary/30' : ''}
+                  `}
+                >
+                  <IconComponent className={`
+                    w-6 h-6 lg:w-8 lg:h-8 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                    ${isHighlighted ? 'text-primary' : 'text-muted-foreground'}
+                  `} />
+                  
+                  {/* Step number */}
+                  <div className={`
+                    absolute -top-2 -right-2 w-6 h-6 rounded-full text-xs font-bold
+                    flex items-center justify-center
+                    ${isHighlighted 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'bg-muted text-muted-foreground'
+                    }
+                  `}>
+                    {index + 1}
+                  </div>
+                </button>
+
+                {/* Tooltip */}
+                {isActive && (
+                  <div className={`
+                    absolute ${getTooltipPosition(step.position)} z-50
+                    w-80 p-6 bg-background border border-border rounded-xl shadow-2xl
+                    animate-in fade-in-0 zoom-in-95 duration-200
+                  `}>
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-foreground mb-2 text-lg">
+                          {step.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Arrow pointing to step */}
+                    <div className={`
+                      absolute w-3 h-3 bg-background border-l border-t border-border rotate-45
+                      ${step.position.includes('top') ? '-bottom-1.5' : ''}
+                      ${step.position.includes('bottom') ? '-top-1.5' : ''}
+                      ${step.position.includes('left') ? '-right-1.5' : ''}
+                      ${step.position.includes('right') ? '-left-1.5' : ''}
+                      ${step.position === 'center-right' ? 'top-1/2 -translate-y-1/2 -left-1.5' : ''}
+                      ${step.position === 'center-left' ? 'top-1/2 -translate-y-1/2 -right-1.5' : ''}
+                    `} />
+                  </div>
+                )}
+              </div>
+            );
+          })}
+
+          {/* Flow indicators */}
+          <div className="absolute top-1/2 left-8 right-8 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          <div className="absolute top-8 bottom-8 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-border to-transparent" />
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground mb-4">Click any step to learn more about the process</p>
+          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+            <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+            Auto-highlighting active
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 export default HowAutoDockFits;
