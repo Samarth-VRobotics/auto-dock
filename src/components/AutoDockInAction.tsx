@@ -115,10 +115,10 @@ const AutoDockInAction = () => {
                 {steps.map((step, index) => {
                   const IconComponent = step.icon;
                   return (
-                    <div key={index} className="relative flex items-start group hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <div key={index} className="relative flex items-start group hover:scale-110 transition-transform duration-300 cursor-pointer">
                       {/* Step Icon Circle */}
-                      <div className="flex-shrink-0 w-12 h-12 bg-[#f8b5b5] rounded-full flex items-center justify-center z-10 relative group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="w-5 h-5 text-foreground" />
+                      <div className="flex-shrink-0 w-16 h-16 bg-[#f8b5b5] rounded-full flex items-center justify-center z-10 relative group-hover:scale-125 transition-transform duration-300">
+                        <IconComponent className="w-7 h-7 text-foreground" />
                       </div>
                       
                       {/* Step Content - Expandable on Hover */}
