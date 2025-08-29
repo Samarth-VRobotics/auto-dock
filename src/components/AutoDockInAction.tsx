@@ -127,7 +127,7 @@ const AutoDockInAction = () => {
                           <h3 className="text-lg font-bold text-foreground mb-2 leading-tight group-hover:text-primary transition-colors duration-300">
                             {step.headline}
                           </h3>
-                          <p className="text-muted-foreground leading-relaxed text-sm opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-20 group-hover:text-base group-hover:text-foreground/80 transition-all duration-300 group-hover:mb-0">
+                          <p className="text-muted-foreground leading-relaxed text-sm group-hover:text-base group-hover:text-foreground/80 transition-all duration-300">
                             {step.description}
                           </p>
                         </div>
