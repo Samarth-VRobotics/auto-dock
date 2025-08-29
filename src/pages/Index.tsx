@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Challenge from "@/components/Challenge";
+import AutoDockInAction from "@/components/AutoDockInAction";
 import HowAutoDockFits from "@/components/HowAutoDockFits";
 
 import AutoDockAdvantage from "@/components/AutoDockAdvantage";
@@ -16,6 +17,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Challenge />
+      <AutoDockInAction />
       <HowAutoDockFits />
       <AutoDockAdvantage />
       <Industries />
