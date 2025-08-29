@@ -24,23 +24,28 @@ const AutoDockInAction = () => {
 
   const steps = [
     {
-      title: "Unloading Begins the Moment Trucks Arrive",
+      headline: "Unloading Begins Instantly",
+      subtext: "Head AMR enters, Tail AMR anchors, conveyor links for immediate flow.",
       description: "Head AMR drives inside while Tail AMR anchors at staging, conveyor links them, unloading begins instantly."
     },
     {
-      title: "Flexible Conveyors Keep Goods Moving", 
+      headline: "Adaptive Conveyors",
+      subtext: "Adjust length, angle, shape to prevent pile-ups.",
       description: "Conveyor adjusts length, angle, and shape to maintain smooth flow without pile-ups."
     },
     {
-      title: "Smart Palletizing for Mixed Loads",
+      headline: "Smart Palletizing",
+      subtext: "AMRs unload and organize mixed loads consistently.",
       description: "Head AMR unloads while Tail AMR organizes goods onto pallets or floor, keeping staging consistent."
     },
     {
-      title: "Seamless Flow to Storage or Outbound",
+      headline: "Seamless Flow",
+      subtext: "Bi-directional movement between staging, storage, and outbound.",
       description: "The system extends into storage or reverses for outbound, enabling continuous bi-directional dock flow."
     },
     {
-      title: "Orchestrated by AI for Predictable Throughput",
+      headline: "AI Orchestration",
+      subtext: "Synchronizes all systems, updates WMS/ERP in real time.",
       description: "Dock AI synchronizes all elements and updates WMS/ERP for visibility and SLA compliance."
     }
   ];
@@ -107,37 +112,48 @@ const AutoDockInAction = () => {
           </div>
         </div>
 
-        {/* Step Breakdown - Accordion Style */}
+        {/* Visual Timeline */}
         <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {steps.map((step, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="scroll-reveal border border-border rounded-lg bg-card/50 backdrop-blur-sm overflow-hidden"
-              >
-                <AccordionTrigger className="flex items-center gap-4 px-6 py-4 hover:no-underline group">
-                  {/* Step Number */}
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                    <span className="text-sm font-bold text-primary">{index + 1}</span>
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/30 via-primary/20 to-transparent"></div>
+            
+            <Accordion type="single" collapsible className="space-y-6">
+              {steps.map((step, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="border-none"
+                >
+                  <div className="relative">
+                    {/* Timeline Dot */}
+                    <div className="absolute left-4 top-3 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-sm z-10"></div>
+                    
+                    <AccordionTrigger className="flex items-start gap-8 pl-16 pr-6 py-4 hover:no-underline group bg-card/30 rounded-lg border border-border/50 hover:border-primary/30 hover:bg-card/50 transition-all duration-300">
+                      <div className="flex-1 text-left">
+                        {/* Headline */}
+                        <h3 className="text-xl font-poppins font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                          {step.headline}
+                        </h3>
+                        {/* Subtext */}
+                        <p className="text-base text-muted-foreground leading-relaxed">
+                          {step.subtext}
+                        </p>
+                      </div>
+                    </AccordionTrigger>
+                    
+                    <AccordionContent className="pl-16 pr-6 pb-4">
+                      <div className="pt-2">
+                        <p className="text-base text-muted-foreground leading-relaxed bg-muted/30 rounded-lg p-4 border-l-4 border-primary/30">
+                          {step.description}
+                        </p>
+                      </div>
+                    </AccordionContent>
                   </div>
-                  
-                  {/* Step Title */}
-                  <h3 className="text-xl font-poppins font-bold text-foreground text-left flex-1 group-hover:text-primary transition-colors">
-                    {step.title}
-                  </h3>
-                </AccordionTrigger>
-                
-                <AccordionContent className="px-6 pb-6">
-                  <div className="pl-12">
-                    <p className="text-base text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </div>
     </section>
