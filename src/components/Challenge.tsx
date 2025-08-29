@@ -9,9 +9,10 @@ const Challenge = () => {
       header: 'Operational Bottlenecks',
       tagline: 'Rigid systems can\'t keep up with real dock conditions',
       points: [
-        'Seasonal surges → overloaded docks, missed turnarounds',
-        'Unstructured loads → floor-loaded cartons, irregular goods',
-        'Rigid layouts & ERP/WMS gaps → blind spots, fixed infrastructure'
+        'Seasonal Surges: Overloaded docks, missed turnarounds.',
+        'Unstructured Loads: Manual handling of floor-loaded cartons.',
+        'Rigid Layouts: Fixed infrastructure limits flexibility.',
+        'Integration Gaps: ERP/WMS blind spots causing delays.'
       ]
     },
     {
@@ -20,8 +21,8 @@ const Challenge = () => {
       header: 'Direct Financial Costs',
       tagline: 'Every wasted hour shows up on your balance sheet',
       points: [
-        'Truck detention → $50–100/hr = $80K+/year lost',
-        'Hidden extras → expedited freight, storage fees, emergency shipments'
+        'Truck Detention: $50–100/hr → $80K+/year lost.',
+        'Hidden Extras: Expedited freight, storage fees, emergency shipments.'
       ]
     },
     {
@@ -30,10 +31,10 @@ const Challenge = () => {
       header: 'Revenue & Growth Loss',
       tagline: 'Delays don\'t just waste time — they cost sales',
       points: [
-        'Lost throughput → up to 70% slower turnarounds',
-        'Revenue loss → up to 20% of sales lost',
-        'OTIF penalties → millions in SLA fines',
-        'Customer churn → 50%+ abandon after a late delivery'
+        'Lost Throughput: Up to 70% slower turnarounds.',
+        'Revenue Loss: Up to 20% of sales lost due to delays.',
+        'OTIF Penalties: Millions in SLA fines.',
+        'Customer Churn: 50%+ abandon after a late delivery.'
       ]
     }
   ];
@@ -76,26 +77,26 @@ const Challenge = () => {
                 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto">
                     <IconComponent className="w-8 h-8 text-primary" />
                   </div>
                   
                   {/* Header */}
-                  <h3 className="text-2xl font-poppins font-bold text-foreground mb-4">
+                  <h3 className="text-xl font-poppins font-bold text-foreground mb-4 text-center">
                     {challenge.header}
                   </h3>
                   
                   {/* Tagline */}
-                  <p className="text-base italic text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-sm italic text-muted-foreground mb-6 leading-relaxed text-center">
                     {challenge.tagline}
                   </p>
                   
                   {/* Bullet Points */}
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {challenge.points.map((point, pointIndex) => (
                       <div key={pointIndex} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-sm text-foreground leading-relaxed">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-sm text-foreground leading-[1.5]">
                           {point}
                         </p>
                       </div>
