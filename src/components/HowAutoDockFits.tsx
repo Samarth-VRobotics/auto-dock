@@ -103,7 +103,7 @@ const HowAutoDockFits = () => {
                 <span>Integration</span>
               </div>
               <h2 className="heading-xl text-foreground mb-8">
-                <span className="gradient-text">Autodock in Action</span>
+                <span className="gradient-text">Autodock in Action 2</span>
               </h2>
               <p className="body-xl text-muted-foreground mb-8 max-w-4xl mx-auto">"With intelligent AI sensors and software at its core, AutoDock powers round-the-clock operations, delivering unmatched efficiency and ROI."</p>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
