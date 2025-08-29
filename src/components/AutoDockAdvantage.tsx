@@ -44,7 +44,7 @@ const AutoDockAdvantage = () => {
     {
       id: 'enterprise-integration',
       header: 'Enterprise Integration, Simplified',
-      text: 'Integration shouldn\'t be another bottleneck. AutoDock connects natively with SAP, Vegam SFS, and leading WMS platforms — giving you real-time dashboards, control, and analytics without IT headaches.',
+      text: 'Backed by pre-integrated native SAP/SFS software and open APIs, AutoDock connects seamlessly into ERP/WMS ecosystems — giving real-time dashboards, control, and analytics without IT complexity.',
       icon: Plug,
       visual: 'integrations'
     },
