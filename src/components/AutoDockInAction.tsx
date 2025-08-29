@@ -121,12 +121,12 @@ const AutoDockInAction = () => {
                         <IconComponent className="w-7 h-7 text-foreground" />
                       </div>
                       
-                      {/* Step Content - Expandable on Hover */}
+                      {/* Step Content - Description appears on hover */}
                       <div className="ml-8 flex-1 group-hover:bg-card/50 group-hover:p-4 group-hover:rounded-lg group-hover:border group-hover:border-primary/20 group-hover:shadow-lg transition-all duration-300">
                         <h3 className="text-lg font-bold text-foreground mb-2 leading-tight group-hover:text-primary transition-colors duration-300">
                           {step.headline}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed text-sm group-hover:text-base group-hover:text-foreground/80 transition-all duration-300">
+                        <p className="text-muted-foreground leading-relaxed text-sm opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-20 group-hover:text-base group-hover:text-foreground/80 transition-all duration-300 group-hover:mb-0">
                           {step.description}
                         </p>
                       </div>
