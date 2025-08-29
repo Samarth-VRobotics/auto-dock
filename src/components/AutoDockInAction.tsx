@@ -98,62 +98,33 @@ const AutoDockInAction = () => {
           </div>
         </div>
 
-        {/* Timeline - Clean and Professional */}
-        <div className="flex-1 flex items-center">
-          <div className="w-full max-w-7xl mx-auto">
+        {/* Vertical Timeline */}
+        <div className="flex-1 flex items-center justify-center">
+          <div className="w-full max-w-4xl mx-auto">
             <div className="relative">
-              {/* Timeline Connection Line - Subtle */}
-              <div className="hidden lg:block absolute top-16 left-8 right-8 h-px bg-border/40 z-0"></div>
+              {/* Vertical Timeline Line */}
+              <div className="absolute left-8 top-0 bottom-0 w-px bg-border/30"></div>
               
               {/* Timeline Steps */}
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-6">
+              <div className="space-y-12">
                 {steps.map((step, index) => (
-                  <div key={index} className="relative group">
-                    {/* Timeline Dot - Clean Connection Point */}
-                    <div className="hidden lg:block absolute top-14 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-primary/60 rounded-full border-2 border-background z-10 group-hover:bg-primary group-hover:scale-110 transition-all duration-300"></div>
-                    
-                    {/* Step Card - Enhanced */}
-                    <div className="relative bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:border-primary/40 hover:shadow-lg hover:bg-card/90 transition-all duration-300 cursor-pointer min-h-[100px] flex items-center justify-center text-center group-hover:-translate-y-1">
-                      {/* Headline - Centered and Bold */}
-                      <h3 className="text-lg font-bold text-foreground leading-snug group-hover:text-primary transition-colors duration-300">
-                        {step.headline}
-                      </h3>
-                      
-                      {/* Enhanced Hover Tooltip - Floating Above */}
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 group-hover:translate-y-1">
-                        <div className="bg-background/95 backdrop-blur-sm border border-border/30 rounded-xl shadow-2xl p-5 max-w-sm min-w-[280px]">
-                          <p className="text-sm text-muted-foreground leading-relaxed text-center">
-                            {step.description}
-                          </p>
-                          {/* Enhanced Arrow */}
-                          <div className="absolute top-full left-1/2 transform -translate-x-1/2">
-                            <div className="w-0 h-0 border-l-6 border-r-6 border-t-6 border-transparent border-t-border/30"></div>
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-px w-0 h-0 border-l-6 border-r-6 border-t-6 border-transparent border-t-background/95"></div>
-                          </div>
-                        </div>
-                      </div>
+                  <div key={index} className="relative flex items-start">
+                    {/* Step Number Circle */}
+                    <div className="flex-shrink-0 w-16 h-16 bg-primary/10 border-2 border-primary rounded-full flex items-center justify-center z-10 relative">
+                      <span className="text-lg font-bold text-primary">
+                        {index + 1}
+                      </span>
                     </div>
                     
-                    {/* Mobile Connection Indicator */}
-                    {index < steps.length - 1 && (
-                      <div className="lg:hidden flex justify-center my-4">
-                        <div className="w-px h-8 bg-border/40"></div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-              
-              {/* Step Numbers - Subtle indicators at bottom */}
-              <div className="hidden lg:flex justify-center mt-8 space-x-6">
-                {steps.map((_, index) => (
-                  <div key={index} className="flex items-center">
-                    <span className="text-xs font-medium text-muted-foreground/60">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    {index < steps.length - 1 && (
-                      <div className="ml-6 w-16 h-px bg-border/20"></div>
-                    )}
+                    {/* Step Content */}
+                    <div className="ml-8 flex-1">
+                      <h3 className="text-xl font-bold text-foreground mb-3 leading-tight">
+                        {step.headline}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
