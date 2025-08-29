@@ -55,7 +55,7 @@ const AutoDockInAction = () => {
             AutoDock in Action
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore each step of the AutoDock workflow through interactive video demonstrations
+            From truck to storage in one seamless flow — see AutoDock in action.
           </p>
         </div>
 
