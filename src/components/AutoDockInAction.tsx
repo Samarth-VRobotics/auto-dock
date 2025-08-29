@@ -114,13 +114,8 @@ const AutoDockInAction = () => {
                     
                     {/* Step Card - Minimal */}
                     <div className="relative bg-background/50 backdrop-blur-sm border border-border rounded-lg p-4 hover:border-primary/30 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                      {/* Step Number */}
-                      <div className="absolute top-3 right-3 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
-                        <span className="text-xs font-bold text-primary">{index + 1}</span>
-                      </div>
-                      
                       {/* Headline */}
-                      <h3 className="text-base font-semibold text-foreground leading-tight pr-8 group-hover:text-primary transition-colors">
+                      <h3 className="text-base font-semibold text-foreground leading-tight group-hover:text-primary transition-colors">
                         {step.headline}
                       </h3>
                       
