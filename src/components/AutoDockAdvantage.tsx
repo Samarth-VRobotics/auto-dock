@@ -30,7 +30,7 @@ const AutoDockAdvantage = () => {
     {
       id: 'scales-without-slowing',
       header: 'Scales Without Slowing Down',
-      text: 'Fixed systems buckle under pressure. AutoDock handles surges in truck volumes and scales seamlessly across multiple docks — keeping throughput steady as you grow.',
+      text: 'Handles surges in truck volumes without disruption. With a central orchestration platform and modular AMRs, you can scale across docks while maximizing asset utilization.',
       icon: BarChart3,
       visual: 'dashboard'
     },
