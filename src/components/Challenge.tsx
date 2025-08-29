@@ -50,7 +50,7 @@ const Challenge = () => {
           </div>
           
           <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-destructive bg-clip-text text-transparent leading-tight">
-            The Hidden Cost of Dock Operations
+            The hidden bottlenecks of dock operations
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -82,25 +82,37 @@ const Challenge = () => {
                   </div>
                   
                   {/* Header */}
-                  <h3 className="text-xl font-poppins font-bold text-foreground mb-4 text-center">
+                  <h3 className="text-2xl font-poppins font-bold text-foreground mb-3 text-center leading-tight">
                     {challenge.header}
                   </h3>
                   
                   {/* Tagline */}
-                  <p className="text-sm italic text-muted-foreground mb-6 leading-relaxed text-center">
+                  <p className="text-base italic text-muted-foreground mb-8 leading-relaxed text-center font-medium">
                     {challenge.tagline}
                   </p>
                   
                   {/* Bullet Points */}
-                  <div className="space-y-4">
-                    {challenge.points.map((point, pointIndex) => (
-                      <div key={pointIndex} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-sm text-foreground leading-[1.5]">
-                          {point}
-                        </p>
-                      </div>
-                    ))}
+                  <div className="space-y-5">
+                    {challenge.points.map((point, pointIndex) => {
+                      const [boldPart, ...restParts] = point.split(':');
+                      const description = restParts.join(':').trim();
+                      
+                      return (
+                        <div key={pointIndex} className="flex items-start gap-4">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="text-left">
+                            <span className="font-bold text-foreground text-base leading-relaxed">
+                              {boldPart}
+                            </span>
+                            {description && (
+                              <span className="font-normal text-muted-foreground text-base leading-relaxed">
+                                : {description}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
