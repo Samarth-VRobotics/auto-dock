@@ -100,43 +100,59 @@ const AutoDockInAction = () => {
 
         {/* Timeline - Clean and Professional */}
         <div className="flex-1 flex items-center">
-          <div className="w-full max-w-6xl mx-auto">
+          <div className="w-full max-w-7xl mx-auto">
             <div className="relative">
-              {/* Timeline Line - Clean */}
-              <div className="hidden lg:block absolute top-12 left-0 right-0 h-px bg-border z-0"></div>
+              {/* Timeline Connection Line - Subtle */}
+              <div className="hidden lg:block absolute top-16 left-8 right-8 h-px bg-border/40 z-0"></div>
               
               {/* Timeline Steps */}
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-2">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-6">
                 {steps.map((step, index) => (
                   <div key={index} className="relative group">
-                    {/* Timeline Dot - Clean */}
-                    <div className="hidden lg:block absolute top-10 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-background border-2 border-primary rounded-full z-10"></div>
+                    {/* Timeline Dot - Clean Connection Point */}
+                    <div className="hidden lg:block absolute top-14 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-primary/60 rounded-full border-2 border-background z-10 group-hover:bg-primary group-hover:scale-110 transition-all duration-300"></div>
                     
-                    {/* Step Card - Minimal */}
-                    <div className="relative bg-background/50 backdrop-blur-sm border border-border rounded-lg p-4 hover:border-primary/30 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                      {/* Headline */}
-                      <h3 className="text-base font-semibold text-foreground leading-tight group-hover:text-primary transition-colors">
+                    {/* Step Card - Enhanced */}
+                    <div className="relative bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:border-primary/40 hover:shadow-lg hover:bg-card/90 transition-all duration-300 cursor-pointer min-h-[100px] flex items-center justify-center text-center group-hover:-translate-y-1">
+                      {/* Headline - Centered and Bold */}
+                      <h3 className="text-lg font-bold text-foreground leading-snug group-hover:text-primary transition-colors duration-300">
                         {step.headline}
                       </h3>
                       
-                      {/* Hover Tooltip - Above card */}
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20">
-                        <div className="bg-background border border-border rounded-lg shadow-xl p-3 max-w-xs text-center whitespace-nowrap">
-                          <p className="text-sm text-muted-foreground">
+                      {/* Enhanced Hover Tooltip - Floating Above */}
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 group-hover:translate-y-1">
+                        <div className="bg-background/95 backdrop-blur-sm border border-border/30 rounded-xl shadow-2xl p-5 max-w-sm min-w-[280px]">
+                          <p className="text-sm text-muted-foreground leading-relaxed text-center">
                             {step.description}
                           </p>
-                          {/* Arrow */}
-                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-border"></div>
-                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-px w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-background"></div>
+                          {/* Enhanced Arrow */}
+                          <div className="absolute top-full left-1/2 transform -translate-x-1/2">
+                            <div className="w-0 h-0 border-l-6 border-r-6 border-t-6 border-transparent border-t-border/30"></div>
+                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-px w-0 h-0 border-l-6 border-r-6 border-t-6 border-transparent border-t-background/95"></div>
+                          </div>
                         </div>
                       </div>
                     </div>
                     
-                    {/* Mobile Connection Line */}
+                    {/* Mobile Connection Indicator */}
                     {index < steps.length - 1 && (
-                      <div className="lg:hidden flex justify-center my-3">
-                        <div className="w-px h-6 bg-border"></div>
+                      <div className="lg:hidden flex justify-center my-4">
+                        <div className="w-px h-8 bg-border/40"></div>
                       </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              
+              {/* Step Numbers - Subtle indicators at bottom */}
+              <div className="hidden lg:flex justify-center mt-8 space-x-6">
+                {steps.map((_, index) => (
+                  <div key={index} className="flex items-center">
+                    <span className="text-xs font-medium text-muted-foreground/60">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    {index < steps.length - 1 && (
+                      <div className="ml-6 w-16 h-px bg-border/20"></div>
                     )}
                   </div>
                 ))}
