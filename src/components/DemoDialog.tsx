@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+
+interface Video {
+  id: string;
+  title: string;
+  description: string | null;
+  file_path: string;
+  thumbnail_path: string | null;
+}
 interface DemoDialogProps {
   children: React.ReactNode;
 }
@@ -14,6 +22,9 @@ const DemoDialog = ({
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<'email' | 'video'>('email');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [video, setVideo] = useState<Video | null>(null);
+  const [videoUrl, setVideoUrl] = useState<string>('');
+  const [videoLoading, setVideoLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,6 +33,51 @@ const DemoDialog = ({
   const {
     toast
   } = useToast();
+
+  // Fetch demo video when transitioning to video step
+  useEffect(() => {
+    if (step === 'video' && !video) {
+      fetchDemoVideo();
+    }
+  }, [step]);
+
+  const fetchDemoVideo = async () => {
+    setVideoLoading(true);
+    try {
+      // Get the first active video from the videos table
+      const { data: videos, error: videosError } = await supabase
+        .from('videos')
+        .select('*')
+        .eq('is_active', true)
+        .order('created_at', { ascending: false })
+        .limit(1);
+
+      if (videosError) throw videosError;
+
+      if (videos && videos.length > 0) {
+        const videoData = videos[0];
+        setVideo(videoData);
+
+        // Get the signed URL for the video file
+        const { data: signedUrlData } = await supabase.storage
+          .from('videos')
+          .createSignedUrl(videoData.file_path, 3600); // 1 hour expiry
+
+        if (signedUrlData?.signedUrl) {
+          setVideoUrl(signedUrlData.signedUrl);
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching demo video:', error);
+      toast({
+        title: "Video Loading Error",
+        description: "Unable to load the demo video. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setVideoLoading(false);
+    }
+  };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {
       name,
@@ -75,6 +131,9 @@ const DemoDialog = ({
   const handleClose = () => {
     setOpen(false);
     setStep('email');
+    setVideo(null);
+    setVideoUrl('');
+    setVideoLoading(false);
     setFormData({
       name: '',
       email: '',
@@ -119,16 +178,39 @@ const DemoDialog = ({
             </DialogHeader>
             <div className="space-y-4">
               <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <video controls autoPlay className="w-full h-full rounded-lg" poster="/assets/hero-dock-autonomy.jpg">
-                  {/* Replace with actual demo video URL */}
-                  <source src="/path-to-your-demo-video.mp4" type="video/mp4" />
+                {videoLoading ? (
+                  <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4"></div>
+                    <p className="text-lg font-semibold">Loading Demo Video...</p>
+                  </div>
+                ) : videoUrl && video ? (
+                  <video 
+                    controls 
+                    autoPlay 
+                    className="w-full h-full rounded-lg" 
+                    poster={video.thumbnail_path ? 
+                      supabase.storage.from('videos').getPublicUrl(video.thumbnail_path).data.publicUrl : 
+                      "/src/assets/hero-dock-autonomy.jpg"
+                    }
+                  >
+                    <source src={videoUrl} type="video/mp4" />
+                    <p>Your browser does not support the video tag.</p>
+                  </video>
+                ) : (
                   <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
                     <div className="text-6xl mb-4">🎥</div>
-                    <p className="text-lg font-semibold">Demo Video</p>
-                    <p className="text-sm">AutoDock in Action</p>
+                    <p className="text-lg font-semibold">Demo Video Coming Soon</p>
+                    <p className="text-sm">Please check back later for our AutoDock demonstration</p>
                   </div>
-                </video>
+                )}
               </div>
+              
+              {video && video.description && (
+                <div className="text-sm text-muted-foreground text-center">
+                  <p>{video.description}</p>
+                </div>
+              )}
+              
               <div className="text-sm text-muted-foreground text-center">
                 <p>Interested in seeing AutoDock live? <br />
                 Contact our team to schedule an in-person demonstration.</p>
