@@ -54,9 +54,7 @@ const AutoDockInAction = () => {
           <h2 className="text-4xl lg:text-5xl font-poppins font-bold mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight">
             AutoDock in Action
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            From truck to storage in one seamless flow — see AutoDock in action.
-          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">From Dock-to-Stock in one seamless flow — see AutoDock in action.</p>
         </div>
 
         {/* Video Carousel */}
