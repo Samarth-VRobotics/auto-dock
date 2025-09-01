@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="heading-sm text-foreground">Solutions</h3>
             <div className="space-y-2">
-              <a href="#vsfs" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://vegam.co/sfs" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 vSFS
               </a>
               <a href="#vmaxoee" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
