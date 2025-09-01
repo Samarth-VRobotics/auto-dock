@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-dock-autonomy.jpg";
+import ContactDialog from "@/components/ContactDialog";
 
 const Hero = () => {
   return (
@@ -88,9 +89,11 @@ const Hero = () => {
               animationDelay: '0.9s',
               animationFillMode: 'both'
             }}>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl">
-                Contact Us
-              </Button>
+              <ContactDialog>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl">
+                  Contact Us
+                </Button>
+              </ContactDialog>
               <Button variant="outline" size="lg" className="border-2 border-foreground/80 bg-background/20 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-200 shadow-lg">
                 Watch Demo
               </Button>

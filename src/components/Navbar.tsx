@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ContactDialog from "@/components/ContactDialog";
 import { useState } from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,9 +40,11 @@ const Navbar = () => {
                 </a>
               </div>
               
-              <Button className="hidden sm:flex bg-gradient-primary hover:shadow-glow text-white font-semibold px-6 py-2 transition-all duration-200 hover:scale-105">
-                Contact Us
-              </Button>
+              <ContactDialog>
+                <Button className="hidden sm:flex bg-gradient-primary hover:shadow-glow text-white font-semibold px-6 py-2 transition-all duration-200 hover:scale-105">
+                  Contact Us
+                </Button>
+              </ContactDialog>
               
               {/* Mobile menu button */}
               <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2 rounded-md hover:bg-slate-100 transition-colors">
@@ -66,9 +69,11 @@ const Navbar = () => {
               <a href="#about" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
                 About
               </a>
-              <Button className="w-full mt-4 bg-gradient-primary hover:shadow-glow text-white font-semibold">
-                Contact Us
-              </Button>
+              <ContactDialog>
+                <Button className="w-full mt-4 bg-gradient-primary hover:shadow-glow text-white font-semibold">
+                  Contact Us
+                </Button>
+              </ContactDialog>
             </div>
           </div>}
       </nav>
