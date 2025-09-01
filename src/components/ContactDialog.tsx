@@ -15,6 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Building, User, MessageSquare } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { sendDemoConfirmationEmail } from "@/lib/emailService";
 
 interface ContactDialogProps {
   children: React.ReactNode;
@@ -53,6 +54,20 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
 
       if (error) {
         throw error;
+      }
+
+      // Send auto-response email
+      const emailSent = await sendDemoConfirmationEmail({
+        name: `${formData.firstName} ${formData.lastName}`,
+        email: formData.email,
+        product: "Auto-Dock Warehouse Robotics Solutions",
+        company: formData.company
+      });
+
+      if (emailSent) {
+        console.log('Auto-response email sent successfully');
+      } else {
+        console.warn('Failed to send auto-response email, but form was submitted successfully');
       }
 
       toast({
