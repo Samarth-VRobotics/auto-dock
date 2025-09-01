@@ -107,6 +107,11 @@ const Navbar = () => {
                   About
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                 </a>
+                
+                <a href="#our-journey" className="text-foreground hover:text-primary transition-colors font-medium relative group">
+                  Our Journey
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+                </a>
               </div>
               
               <ContactDialog>
@@ -137,6 +142,9 @@ const Navbar = () => {
               </a>
               <a href="#about" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
                 About
+              </a>
+              <a href="#our-journey" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
+                Our Journey
               </a>
               <ContactDialog>
                 <Button className="w-full mt-4 bg-gradient-primary hover:shadow-glow text-white font-semibold">
