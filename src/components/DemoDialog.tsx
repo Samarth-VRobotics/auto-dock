@@ -1,22 +1,16 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { sendDemoConfirmationEmail } from "@/lib/emailService";
-
 interface DemoDialogProps {
   children: React.ReactNode;
 }
-
-const DemoDialog = ({ children }: DemoDialogProps) => {
+const DemoDialog = ({
+  children
+}: DemoDialogProps) => {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<'email' | 'video'>('email');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,30 +19,30 @@ const DemoDialog = ({ children }: DemoDialogProps) => {
     email: '',
     company: ''
   });
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.name || !formData.email) {
       toast({
         title: "Missing Information",
         description: "Please fill in your name and email address.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     setIsSubmitting(true);
-
     try {
       const emailSent = await sendDemoConfirmationEmail({
         name: formData.name,
@@ -56,17 +50,16 @@ const DemoDialog = ({ children }: DemoDialogProps) => {
         product: "AutoDock Demo",
         company: formData.company
       });
-
       if (emailSent) {
         toast({
           title: "Success!",
-          description: "We've sent you a confirmation email. Enjoy the demo!",
+          description: "We've sent you a confirmation email. Enjoy the demo!"
         });
         setStep('video');
       } else {
         toast({
           title: "Demo Access Granted",
-          description: "Enjoy watching the AutoDock demo!",
+          description: "Enjoy watching the AutoDock demo!"
         });
         setStep('video');
       }
@@ -74,28 +67,28 @@ const DemoDialog = ({ children }: DemoDialogProps) => {
       console.error('Error submitting demo request:', error);
       toast({
         title: "Demo Access Granted",
-        description: "Enjoy watching the AutoDock demo!",
+        description: "Enjoy watching the AutoDock demo!"
       });
       setStep('video');
     } finally {
       setIsSubmitting(false);
     }
   };
-
   const handleClose = () => {
     setOpen(false);
     setStep('email');
-    setFormData({ name: '', email: '', company: '' });
+    setFormData({
+      name: '',
+      email: '',
+      company: ''
+    });
   };
-
-  return (
-    <Dialog open={open} onOpenChange={handleClose}>
+  return <Dialog open={open} onOpenChange={handleClose}>
       <div onClick={() => setOpen(true)}>
         {children}
       </div>
       <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
-        {step === 'email' ? (
-          <>
+        {step === 'email' ? <>
             <DialogHeader>
               <DialogTitle>Watch AutoDock Demo</DialogTitle>
               <DialogDescription>
@@ -105,50 +98,21 @@ const DemoDialog = ({ children }: DemoDialogProps) => {
             <form onSubmit={handleEmailSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Name *</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Your full name"
-                  required
-                />
+                <Input id="name" name="name" type="text" value={formData.name} onChange={handleInputChange} placeholder="Your full name" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email *</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="your.email@company.com"
-                  required
-                />
+                <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="your.email@company.com" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="company">Company (Optional)</Label>
-                <Input
-                  id="company"
-                  name="company"
-                  type="text"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  placeholder="Your company name"
-                />
+                <Input id="company" name="company" type="text" value={formData.company} onChange={handleInputChange} placeholder="Your company name" />
               </div>
-              <Button 
-                type="submit" 
-                className="w-full" 
-                disabled={isSubmitting}
-              >
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? "Processing..." : "Watch Demo"}
               </Button>
             </form>
-          </>
-        ) : (
-          <>
+          </> : <>
             <DialogHeader>
               <DialogTitle>AutoDock Demo Video</DialogTitle>
               <DialogDescription>
@@ -157,12 +121,7 @@ const DemoDialog = ({ children }: DemoDialogProps) => {
             </DialogHeader>
             <div className="space-y-4">
               <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <video
-                  controls
-                  autoPlay
-                  className="w-full h-full rounded-lg"
-                  poster="/assets/hero-dock-autonomy.jpg"
-                >
+                <video controls autoPlay className="w-full h-full rounded-lg" poster="/assets/hero-dock-autonomy.jpg">
                   {/* Replace with actual demo video URL */}
                   <source src="/path-to-your-demo-video.mp4" type="video/mp4" />
                   <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
@@ -177,29 +136,17 @@ const DemoDialog = ({ children }: DemoDialogProps) => {
                 Contact our team to schedule an in-person demonstration.</p>
               </div>
               <div className="flex gap-3">
-                <Button 
-                  variant="outline" 
-                  onClick={handleClose}
-                  className="flex-1"
-                >
+                <Button variant="outline" onClick={handleClose} className="flex-1">
                   Close
                 </Button>
-                <Button 
-                  onClick={() => {
-                    handleClose();
-                    // Trigger contact dialog here if needed
-                  }}
-                  className="flex-1"
-                >
-                  Schedule Live Demo
-                </Button>
+                <Button onClick={() => {
+              handleClose();
+              // Trigger contact dialog here if needed
+            }} className="flex-1">Contact Us</Button>
               </div>
             </div>
-          </>
-        )}
+          </>}
       </DialogContent>
-    </Dialog>
-  );
+    </Dialog>;
 };
-
 export default DemoDialog;
