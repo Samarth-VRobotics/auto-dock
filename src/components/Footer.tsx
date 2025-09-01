@@ -1,5 +1,4 @@
 import ContactDialog from "@/components/ContactDialog";
-
 const Footer = () => {
   return <footer className="bg-background border-t border-border section-padding-sm">
       <div className="container mx-auto px-6">
@@ -22,9 +21,7 @@ const Footer = () => {
               <a href="https://vegam.co/sfs" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 vSFS
               </a>
-              <a href="#vmaxoee" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
-                vMaxOEE
-              </a>
+              <a href="#vmaxoee" className="block body-sm text-muted-foreground hover:text-primary transition-colors">vMaxOEE</a>
               <a href="#vcms" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 vCMS
               </a>
