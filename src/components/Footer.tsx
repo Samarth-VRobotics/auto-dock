@@ -21,11 +21,11 @@ const Footer = () => {
               <a href="https://vegam.co/sfs" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 vSFS
               </a>
-              <a href="#vmaxoee" className="block body-sm text-muted-foreground hover:text-primary transition-colors">vMaxOEE</a>
-              <a href="#vcms" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://vegam.co/oee" className="block body-sm text-muted-foreground hover:text-primary transition-colors">vMaxOEE</a>
+              <a href="https://vegam.co/cms" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 vCMS
               </a>
-              <a href="#vwms" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://vegam.co/vwms" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 vWMS
               </a>
             </div>
