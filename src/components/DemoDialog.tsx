@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { sendDemoConfirmationEmail } from "@/lib/emailService";
+import { supabase } from "@/integrations/supabase/client";
 interface DemoDialogProps {
   children: React.ReactNode;
 }
@@ -44,32 +44,30 @@ const DemoDialog = ({
     }
     setIsSubmitting(true);
     try {
-      const emailSent = await sendDemoConfirmationEmail({
-        name: formData.name,
-        email: formData.email,
-        product: "AutoDock Demo",
-        company: formData.company
-      });
-      if (emailSent) {
-        toast({
-          title: "Success!",
-          description: "We've sent you a confirmation email. Enjoy the demo!"
+      const { error } = await supabase
+        .from('demo_requests')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || null
         });
-        setStep('video');
-      } else {
-        toast({
-          title: "Demo Access Granted",
-          description: "Enjoy watching the AutoDock demo!"
-        });
-        setStep('video');
+
+      if (error) {
+        throw error;
       }
-    } catch (error) {
-      console.error('Error submitting demo request:', error);
+
       toast({
-        title: "Demo Access Granted",
+        title: "Success!",
         description: "Enjoy watching the AutoDock demo!"
       });
       setStep('video');
+    } catch (error) {
+      console.error('Error submitting demo request:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit demo request. Please try again.",
+        variant: "destructive"
+      });
     } finally {
       setIsSubmitting(false);
     }
