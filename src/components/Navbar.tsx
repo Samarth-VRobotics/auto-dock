@@ -103,7 +103,7 @@ const Navbar = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
                 
-                <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium relative group">
+                <a href="https://vegam.co/about" className="text-foreground hover:text-primary transition-colors font-medium relative group">
                   About
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                 </a>
@@ -140,7 +140,7 @@ const Navbar = () => {
               <a href="#industries" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
                 Industries
               </a>
-              <a href="#about" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
+              <a href="https://vegam.co/about" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
                 About
               </a>
               <a href="#our-journey" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">

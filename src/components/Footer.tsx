@@ -35,22 +35,22 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="heading-sm text-foreground">Company</h3>
             <div className="space-y-2">
-              <a href="#about" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://vegam.co/about" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 About Us
               </a>
-              <a href="#partners" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://vegam.co/partners" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 Partners
               </a>
-              <a href="#partner-connect" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://vegam.co/partners/partnerconnect2025" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 PartnerConnect2025
               </a>
-              <a href="#brochure" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://vegam.co/brochure" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 Brochure
               </a>
-              <a href="#quality" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://vegam.co/quality-policy" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 Quality Policy
               </a>
-              <a href="#security" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://vegam.co/information-security" className="block body-sm text-muted-foreground hover:text-primary transition-colors">
                 Information Security
               </a>
             </div>
@@ -102,10 +102,10 @@ const Footer = () => {
             © 2024 AutoDock. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#privacy" className="body-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://vegam.co/privacy-policy" className="body-sm text-muted-foreground hover:text-primary transition-colors">
               Privacy Policy
             </a>
-            <a href="#terms" className="body-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://vegam.co/terms-of-use" className="body-sm text-muted-foreground hover:text-primary transition-colors">
               Terms of Service
             </a>
             <a href="#cookies" className="body-sm text-muted-foreground hover:text-primary transition-colors">
