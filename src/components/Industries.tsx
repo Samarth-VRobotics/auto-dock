@@ -21,7 +21,7 @@ const Industries = () => {
     description: "Diverse product mix handling for online fulfillment and retail distribution.",
     color: "secondary"
   }];
-  return <section className="py-24 bg-gradient-hero relative overflow-hidden" id="industries">
+  return <section className="pt-16 pb-24 bg-gradient-hero relative overflow-hidden" id="industries">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-grid-slate-100/50 [mask-image:linear-gradient(0deg,transparent,white,transparent)]"></div>
       
