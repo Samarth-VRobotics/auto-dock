@@ -5,16 +5,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
           {/* Left Side - Vegam Brand */}
           <div className="space-y-6">
-            <div className="space-y-2 flex justify-center lg:justify-start">
-              <img src="/lovable-uploads/714d52e8-240b-4aeefd614424.png" alt="Vegam" className="h-20" />
+            <div className="space-y-2">
+              <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-12" />
+              <p className="body-sm text-muted-foreground">Making factories smarter</p>
             </div>
-            <div className="flex justify-center lg:justify-start">
-              <ContactDialog>
-                <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg body-base font-medium transition-colors">
-                  Contact Us
-                </button>
-              </ContactDialog>
-            </div>
+            <ContactDialog>
+              
+            </ContactDialog>
           </div>
 
           {/* Solutions Section */}
