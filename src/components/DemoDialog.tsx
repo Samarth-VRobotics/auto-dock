@@ -138,9 +138,9 @@ const DemoDialog = ({
                   Close
                 </Button>
                 <Button onClick={() => {
-              handleClose();
-              // Trigger contact dialog here if needed
-            }} className="flex-1">Contact Us</Button>
+                  handleClose();
+                  // User can click "Contact Us" to open contact dialog
+                }} className="flex-1">Contact Us</Button>
               </div>
             </div>
           </>}

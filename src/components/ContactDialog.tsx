@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Building, User, MessageSquare } from "lucide-react";
-import { sendDemoConfirmationEmail } from "@/lib/emailService";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ContactDialogProps {
   children: React.ReactNode;
@@ -40,25 +40,25 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
     setIsSubmitting(true);
 
     try {
-      // Send email confirmation
-      const emailSuccess = await sendDemoConfirmationEmail({
-        name: `${formData.firstName} ${formData.lastName}`,
-        email: formData.email,
-        product: "AutoDock Solution",
-        company: formData.company,
-      });
+      // Save contact request to database
+      const { error } = await supabase
+        .from('contact_requests')
+        .insert({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          phone: formData.phone || null,
+          company: formData.company,
+          message: `Job Title: ${formData.jobTitle || 'Not specified'}\nIndustry: ${formData.industry || 'Not specified'}\n\nMessage: ${formData.message || 'No additional message'}`
+        });
 
-      if (emailSuccess) {
-        toast({
-          title: "Message Sent Successfully!",
-          description: "Thank you for your interest. We'll get back to you within 24 hours. Check your email for confirmation.",
-        });
-      } else {
-        toast({
-          title: "Message Sent!",
-          description: "Your message has been received. We'll get back to you within 24 hours.",
-        });
+      if (error) {
+        throw error;
       }
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for your interest. We'll get back to you within 24 hours.",
+      });
 
       setFormData({
         firstName: "",
@@ -72,12 +72,12 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
       });
       setOpen(false);
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Error submitting contact request:", error);
       toast({
-        title: "Message Sent!",
-        description: "Your message has been received. We'll get back to you within 24 hours.",
+        title: "Error",
+        description: "Failed to submit your message. Please try again.",
+        variant: "destructive"
       });
-      setOpen(false);
     } finally {
       setIsSubmitting(false);
     }
