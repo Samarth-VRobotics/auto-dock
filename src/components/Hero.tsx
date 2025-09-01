@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-dock-autonomy.jpg";
 import ContactDialog from "@/components/ContactDialog";
+import DemoDialog from "@/components/DemoDialog";
 
 const Hero = () => {
   return (
@@ -94,9 +95,11 @@ const Hero = () => {
                   Contact Us
                 </Button>
               </ContactDialog>
-              <Button variant="outline" size="lg" className="border-2 border-foreground/80 bg-background/20 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-200 shadow-lg">
-                Watch Demo
-              </Button>
+              <DemoDialog>
+                <Button variant="outline" size="lg" className="border-2 border-foreground/80 bg-background/20 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-200 shadow-lg">
+                  Watch Demo
+                </Button>
+              </DemoDialog>
             </div>
           </div>
 
