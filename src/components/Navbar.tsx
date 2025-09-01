@@ -36,25 +36,25 @@ const Navbar = () => {
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-80 bg-white">
-                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
                       <a href="https://vegam.co/sfs" className="block w-full">
                         <div className="font-semibold text-foreground">vSFS</div>
                         <div className="text-sm text-muted-foreground">Smart Factory Suite</div>
                       </a>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
                       <a href="https://vegam.co/oee" className="block w-full">
                         <div className="font-semibold text-foreground">vMaxOEE</div>
                         <div className="text-sm text-muted-foreground">Overall Equipment Effectiveness</div>
                       </a>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
                       <a href="https://vegam.co/cms" className="block w-full">
                         <div className="font-semibold text-foreground">vCMS</div>
                         <div className="text-sm text-muted-foreground">Condition Monitoring System</div>
                       </a>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
                       <a href="https://vegam.co/vwms" className="block w-full">
                         <div className="font-semibold text-foreground">vWMS</div>
                         <div className="text-sm text-muted-foreground">Warehouse Management System</div>
@@ -76,29 +76,29 @@ const Navbar = () => {
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-64 bg-white">
-                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
-                      <div>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
+                      <a href="https://vegam.co/chemical" className="block w-full">
                         <div className="font-semibold text-foreground">Chemical</div>
                         <div className="text-sm text-muted-foreground">Chemical Processing</div>
-                      </div>
+                      </a>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
-                      <div>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
+                      <a href="https://vegam.co/steel" className="block w-full">
                         <div className="font-semibold text-foreground">Steel</div>
                         <div className="text-sm text-muted-foreground">Steel Manufacturing</div>
-                      </div>
+                      </a>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
-                      <div>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
+                      <a href="https://vegam.co/discrete" className="block w-full">
                         <div className="font-semibold text-foreground">Discrete</div>
                         <div className="text-sm text-muted-foreground">Discrete Manufacturing</div>
-                      </div>
+                      </a>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
-                      <div>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
+                      <a href="https://vegam.co/pharma" className="block w-full">
                         <div className="font-semibold text-foreground">Pharma</div>
                         <div className="text-sm text-muted-foreground">Pharmaceutical</div>
-                      </div>
+                      </a>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
