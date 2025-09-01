@@ -192,6 +192,8 @@ const DemoDialog = ({
                       supabase.storage.from('videos').getPublicUrl(video.thumbnail_path).data.publicUrl : 
                       "/src/assets/hero-dock-autonomy.jpg"
                     }
+                    onContextMenu={(e) => e.preventDefault()}
+                    controlsList="nodownload"
                   >
                     <source src={videoUrl} type="video/mp4" />
                     <p>Your browser does not support the video tag.</p>
