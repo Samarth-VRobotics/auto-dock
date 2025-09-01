@@ -10,7 +10,7 @@ const Footer = () => {
               <p className="body-sm text-muted-foreground">Making factories smarter</p>
             </div>
             <ContactDialog>
-              <button className="bg-primary text-primary-foreground px-6 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">Contact Us</button>
+              
             </ContactDialog>
           </div>
 
