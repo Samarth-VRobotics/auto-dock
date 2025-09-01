@@ -35,7 +35,7 @@ const Hero = () => {
             <p className="body-xl text-foreground/90 max-w-2xl animate-fade-in drop-shadow-md" style={{
             animationDelay: '0.3s',
             animationFillMode: 'both'
-          }}>Vegam's Smart Robots &amp; Conveyors: Automating Truck Loading &amp; Factory Logistics</p>
+          }}>“Transforming Dock-to-Stock Operations, Powered by Vegam’s 20-Year Legacy in Manufacturing and Digital Factory Innovation.”</p>
 
             <div className="grid grid-cols-2 gap-8 pt-4 animate-fade-in" style={{
             animationDelay: '0.6s',
