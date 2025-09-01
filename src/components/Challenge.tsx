@@ -12,7 +12,7 @@ const Challenge = () => {
     icon: DollarSign,
     header: 'Direct Financial Costs',
     tagline: 'Every wasted hour shows up on your balance sheet',
-    points: ['Truck Detention: $50–100/hr → $80K+/year lost.', 'Hidden Extras: Expedited freight, storage fees, emergency shipments.']
+    points: ['Truck Detention & Demurrage: $50–100/hr → $80K+/year lost.', 'Hidden Extras: Expedited freight, storage fees, emergency shipments.']
   }, {
     id: 'revenue-growth-loss',
     icon: TrendingDown,
