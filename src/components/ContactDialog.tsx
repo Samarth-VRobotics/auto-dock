@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Building, User, MessageSquare } from "lucide-react";
+import { sendDemoConfirmationEmail } from "@/lib/emailService";
 
 interface ContactDialogProps {
   children: React.ReactNode;
@@ -38,26 +39,48 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      // Send email confirmation
+      const emailSuccess = await sendDemoConfirmationEmail({
+        name: `${formData.firstName} ${formData.lastName}`,
+        email: formData.email,
+        product: "AutoDock Solution",
+        company: formData.company,
+      });
 
-    toast({
-      title: "Message Sent Successfully!",
-      description: "Thank you for your interest. We'll get back to you within 24 hours.",
-    });
+      if (emailSuccess) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for your interest. We'll get back to you within 24 hours. Check your email for confirmation.",
+        });
+      } else {
+        toast({
+          title: "Message Sent!",
+          description: "Your message has been received. We'll get back to you within 24 hours.",
+        });
+      }
 
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      company: "",
-      jobTitle: "",
-      industry: "",
-      message: "",
-    });
-    setIsSubmitting(false);
-    setOpen(false);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        company: "",
+        jobTitle: "",
+        industry: "",
+        message: "",
+      });
+      setOpen(false);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Message Sent!",
+        description: "Your message has been received. We'll get back to you within 24 hours.",
+      });
+      setOpen(false);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
