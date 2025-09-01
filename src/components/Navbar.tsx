@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
 import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return <>
@@ -22,18 +28,81 @@ const Navbar = () => {
             <div className="flex items-center space-x-8">
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center space-x-8">
-                <a href="#solutions" className="text-foreground hover:text-primary transition-colors font-medium relative group">
-                  Solutions
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-                </a>
+                {/* Solutions Dropdown */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors font-medium relative group flex items-center gap-1">
+                    Solutions
+                    <ChevronDown className="h-4 w-4" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-80 bg-white">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                      <div>
+                        <div className="font-semibold text-foreground">vSFS</div>
+                        <div className="text-sm text-muted-foreground">Smart Factory Suite</div>
+                      </div>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                      <div>
+                        <div className="font-semibold text-foreground">vMaxOEE</div>
+                        <div className="text-sm text-muted-foreground">Overall Equipment Effectiveness</div>
+                      </div>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                      <div>
+                        <div className="font-semibold text-foreground">vCMS</div>
+                        <div className="text-sm text-muted-foreground">Condition Monitoring System</div>
+                      </div>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                      <div>
+                        <div className="font-semibold text-foreground">vWMS</div>
+                        <div className="text-sm text-muted-foreground">Warehouse Management System</div>
+                      </div>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                
                 <a href="#technology" className="text-foreground hover:text-primary transition-colors font-medium relative group">
                   Technology
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                 </a>
-                <a href="#industries" className="text-foreground hover:text-primary transition-colors font-medium relative group">
-                  Industries
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-                </a>
+                
+                {/* Industries Dropdown */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors font-medium relative group flex items-center gap-1">
+                    Industries
+                    <ChevronDown className="h-4 w-4" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-64 bg-white">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                      <div>
+                        <div className="font-semibold text-foreground">Chemical</div>
+                        <div className="text-sm text-muted-foreground">Chemical Processing</div>
+                      </div>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                      <div>
+                        <div className="font-semibold text-foreground">Steel</div>
+                        <div className="text-sm text-muted-foreground">Steel Manufacturing</div>
+                      </div>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                      <div>
+                        <div className="font-semibold text-foreground">Discrete</div>
+                        <div className="text-sm text-muted-foreground">Discrete Manufacturing</div>
+                      </div>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-slate-50 p-4">
+                      <div>
+                        <div className="font-semibold text-foreground">Pharma</div>
+                        <div className="text-sm text-muted-foreground">Pharmaceutical</div>
+                      </div>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                
                 <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium relative group">
                   About
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
