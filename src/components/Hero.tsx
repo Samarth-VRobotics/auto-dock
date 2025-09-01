@@ -29,7 +29,7 @@ const Hero = () => {
           <div className="space-y-6">
             <h1 className="heading-hero text-foreground animate-fade-in-up drop-shadow-lg">
               The AutoDock: 
-              <span className="text-primary block animate-slide-in-left text-4xl">Smart Docks. Smarter Factories.</span>
+              <span className="text-primary block animate-slide-in-left text-4xl">Smart Docks. Smarter Factory.</span>
             </h1>
             
             <p className="body-xl text-foreground/90 max-w-2xl animate-fade-in drop-shadow-md" style={{
@@ -43,7 +43,7 @@ const Hero = () => {
           }}>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg"></div>
-                <span className="text-foreground font-semibold body-base drop-shadow-sm">Loads/Unloads 30 tons within 100 Mins</span>
+                <span className="text-foreground font-semibold body-base drop-shadow-sm">Loads/Unloads 25 Tons within 100 Min</span>
               </div>
               <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
