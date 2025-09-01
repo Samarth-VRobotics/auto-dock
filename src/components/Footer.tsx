@@ -8,9 +8,7 @@ const Footer = () => {
               <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-12" />
               <p className="body-sm text-muted-foreground">Making factories smarter</p>
             </div>
-            <button className="bg-primary text-primary-foreground px-6 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">
-              Book a Demo
-            </button>
+            <button className="bg-primary text-primary-foreground px-6 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">Contact Us</button>
           </div>
 
           {/* Solutions Section */}
