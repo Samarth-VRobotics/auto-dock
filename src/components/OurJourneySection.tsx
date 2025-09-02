@@ -80,10 +80,8 @@ const OurJourneySection = () => {
             {/* University Lab Portrait Gallery */}
             <div className="grid grid-cols-2 gap-2 max-w-sm">
               {/* Portrait Frame 1 */}
-              <div className="relative rounded-xl overflow-hidden shadow-md border-2 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
-                <div className="aspect-[3/4] h-32">
-                  <img src={studentPortrait1} alt="Student working on robotics project" className="w-full h-full object-cover" />
-                </div>
+              <div className="relative w-24 h-32 rounded-xl overflow-hidden shadow-md border-2 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                <img src={studentPortrait1} alt="Student working on robotics project" className="w-full h-full object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 <div className="absolute bottom-2 left-2 text-white">
                   <p className="text-[10px] font-medium">Late Night Innovation</p>
@@ -91,10 +89,8 @@ const OurJourneySection = () => {
               </div>
 
               {/* Portrait Frame 2 */}
-              <div className="relative rounded-xl overflow-hidden shadow-md border-2 border-white/20 bg-white/10 backdrop-blur-sm transform -rotate-1 hover:rotate-0 transition-transform duration-300 mt-4">
-                <div className="aspect-[3/4] h-32">
-                  <img src={studentPortrait2} alt="Team collaboration in university lab" className="w-full h-full object-cover" />
-                </div>
+              <div className="relative w-24 h-32 rounded-xl overflow-hidden shadow-md border-2 border-white/20 bg-white/10 backdrop-blur-sm transform -rotate-1 hover:rotate-0 transition-transform duration-300 mt-4">
+                <img src={studentPortrait2} alt="Team collaboration in university lab" className="w-full h-full object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 <div className="absolute bottom-2 left-2 text-white">
                   <p className="text-[10px] font-medium">Team Spirit</p>
@@ -102,10 +98,8 @@ const OurJourneySection = () => {
               </div>
 
               {/* Portrait Frame 3 */}
-              <div className="relative rounded-xl overflow-hidden shadow-md border-2 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform duration-300 -mt-2">
-                <div className="aspect-[3/4] h-32">
-                  <img src={studentPortrait3} alt="Student coding robotics software" className="w-full h-full object-cover" />
-                </div>
+              <div className="relative w-24 h-32 rounded-xl overflow-hidden shadow-md border-2 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform duration-300 -mt-2">
+                <img src={studentPortrait3} alt="Student coding robotics software" className="w-full h-full object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 <div className="absolute bottom-2 left-2 text-white">
                   <p className="text-[10px] font-medium">Code & Create</p>
@@ -113,10 +107,8 @@ const OurJourneySection = () => {
               </div>
 
               {/* Portrait Frame 4 */}
-              <div className="relative rounded-xl overflow-hidden shadow-md border-2 border-white/20 bg-white/10 backdrop-blur-sm transform -rotate-2 hover:rotate-0 transition-transform duration-300 mt-1">
-                <div className="aspect-[3/4] h-32">
-                  <img src={studentPortrait4} alt="Student testing robot prototype" className="w-full h-full object-cover" />
-                </div>
+              <div className="relative w-24 h-32 rounded-xl overflow-hidden shadow-md border-2 border-white/20 bg-white/10 backdrop-blur-sm transform -rotate-2 hover:rotate-0 transition-transform duration-300 mt-1">
+                <img src={studentPortrait4} alt="Student testing robot prototype" className="w-full h-full object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 <div className="absolute bottom-2 left-2 text-white">
                   <p className="text-[10px] font-medium">Testing Dreams</p>
