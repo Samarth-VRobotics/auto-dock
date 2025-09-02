@@ -5,25 +5,27 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
 import OurJourneySection from "@/components/OurJourneySection";
+import teamCollaboration from "@/assets/team-collaboration.jpg";
+import mentorshipScene from "@/assets/mentorship-scene.jpg";
 const OurTeam = () => {
   // First row: Faizan, Rani, Amrut
   const firstRowMembers = [{
     initials: "FP",
     name: "Faizan Pathan",
     role: "Builder of Possibilities",
-    description: "From dismantling old gadgets as a child to architecting complex robotic systems today, Faizan's journey has always been about transforming curiosity into creation. He embodies the restless spirit of someone who doesn't just dream, but builds the future piece by piece.",
+    description: "From dismantling gadgets as a child to architecting complex robotic systems. Transforms curiosity into creation, building the future piece by piece.",
     quote: "Robots aren't just machines — they're stories of persistence told in bolts and code."
   }, {
     initials: "R",
     name: "Rani",
     role: "The Systems Orchestrator",
-    description: "Rani has always been the one who sees the bigger picture — weaving robotics, automation, and industrial integration into seamless systems. She transforms scattered ideas into robust solutions, ensuring every robot carries both precision and purpose.",
+    description: "Sees the bigger picture — weaving robotics, automation, and industrial integration into seamless systems. Transforms ideas into robust solutions.",
     quote: "KLETU gave us the stage, Arun Sir gave us the courage, and Vegam gave us the canvas to paint on a bigger scale."
   }, {
     initials: "A",
     name: "Amrut",
     role: "The Technical Backbone",
-    description: "Every lab, every prototype, every failure that turned into a breakthrough — Amrut has been the steady force holding the team together. His hands-on technical depth and relentless resilience ensure no challenge feels unconquerable.",
+    description: "The steady force through every lab, prototype, and breakthrough. His technical depth and resilience ensure no challenge feels unconquerable.",
     quote: "Every project we built taught us resilience. That's still the strongest lesson we carry."
   }];
 
@@ -32,13 +34,13 @@ const OurTeam = () => {
     initials: "S",
     name: "Samarth",
     role: "The Fresh Spark",
-    description: "As one of the youngest engineers in the team, Samarth brings fresh energy, curiosity, and the drive to question the old and imagine the new. His commitment reflects the spirit of the next generation carrying Vegam forward.",
+    description: "Youngest engineer bringing fresh energy and curiosity. Drives us to question the old and imagine new possibilities for Vegam's future.",
     quote: "Every fresh idea is a spark — and sparks are what ignite revolutions."
   }, {
     initials: "AS",
     name: "Ashutosh",
     role: "The Quiet Strength",
-    description: "Ashutosh believes impact is louder than words. Focused, disciplined, and deeply technical, he has been an anchor in the team, ensuring that Vegam's foundations remain strong as we scale new heights.",
+    description: "Believes impact speaks louder than words. Focused, disciplined, and deeply technical — our anchor as we scale new heights.",
     quote: "Strong foundations are invisible — but they're what keep everything standing."
   }];
   return <div className="min-h-screen bg-background">
@@ -67,14 +69,29 @@ const OurTeam = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">The Core Team</h2>
-            <p className="text-foreground/80 text-center mb-12 max-w-3xl mx-auto leading-relaxed">
-              Vegam is more than a company — it's the continuation of friendships, late-night experiments, and shared dreams from our university days.
-            </p>
-            <div className="text-center mb-12">
-              <p className="text-lg font-medium text-primary italic">
-                Together, this core team carries forward the spirit of innovation, teamwork, and problem-solving from KLETU into Vegam's DNA.
-              </p>
+            {/* Team Header with Visual */}
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">The Core Team</h2>
+                <p className="text-foreground/80 leading-relaxed mb-6">
+                  Vegam is more than a company — it's the continuation of friendships, late-night experiments, and shared dreams from our university days.
+                </p>
+                <p className="text-lg font-medium text-primary italic">
+                  Together, this core team carries forward the spirit of innovation, teamwork, and problem-solving from KLETU into Vegam's DNA.
+                </p>
+              </div>
+              <div className="relative rounded-3xl overflow-hidden shadow-xl">
+                <img 
+                  src={teamCollaboration} 
+                  alt="Team collaboration on robotics projects" 
+                  className="w-full h-80 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h4 className="text-xl font-bold">Building Together</h4>
+                  <p className="text-sm">Innovation through collaboration</p>
+                </div>
+              </div>
             </div>
             
             {/* First Row - Senior Engineers */}
@@ -138,13 +155,30 @@ const OurTeam = () => {
       <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Vegam Robotics: Scaling Innovation</h2>
-            <div className="space-y-6 text-foreground/80 leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Vegam Robotics: Scaling Innovation</h2>
+            
+            {/* Key Stats */}
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                <div className="text-3xl font-bold text-primary mb-2">300+</div>
+                <div className="text-sm text-foreground/70">Plants Powered</div>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                <div className="text-3xl font-bold text-secondary mb-2">100%</div>
+                <div className="text-sm text-foreground/70">Safety Focus</div>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                <div className="text-3xl font-bold text-accent mb-2">Global</div>
+                <div className="text-sm text-foreground/70">Scale</div>
+              </div>
+            </div>
+
+            <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p className="text-lg">
-                Vegam today is not just about robotics — it is about building end-to-end solutions for the future of manufacturing. With over 300+ plants powered by Vegam's digital backbone, we are integrating robotics into smart factory software, creating safer workplaces, improving quality, and reducing risk in industries dealing with high complexities and hazardous environments.
+                Building end-to-end solutions for manufacturing's future. We integrate robotics into smart factory software, creating safer workplaces and reducing risk in complex environments.
               </p>
               <p className="text-lg">
-                With clarity of thought and a strong belief in robotics as a natural extension of digital manufacturing, this vision continues to guide and inspire the way we scale our solutions globally.
+                Our vision: robotics as a natural extension of digital manufacturing, guiding how we scale solutions globally.
               </p>
             </div>
           </div>
@@ -154,39 +188,55 @@ const OurTeam = () => {
       {/* Leadership & Mentorship */}
       <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Supported by Mentorship & Leadership</h2>
-            <p className="text-foreground/80 leading-relaxed">
-              None of this happened in isolation. At KLE, we were nurtured by a culture of innovation, world-class labs, and the constant encouragement to push boundaries.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                  PG
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Prof. Arun Giriyapur</h3>
-                <p className="text-primary font-medium mb-4">Mentor & Former HOD</p>
-                <p className="text-foreground/70 text-sm leading-relaxed">
-                  Guiding us from the start as Head of Department, now a lifelong mentor. His belief in our potential shaped not only our projects, but also the values we carry as engineers today.
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Supported by Mentorship & Leadership</h2>
+                <p className="text-foreground/80 leading-relaxed">
+                  At KLE, we were nurtured by a culture of innovation, world-class labs, and constant encouragement to push boundaries.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+              <div className="relative rounded-3xl overflow-hidden shadow-xl">
+                <img 
+                  src={mentorshipScene} 
+                  alt="Students and mentors working together in university" 
+                  className="w-full h-80 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h4 className="text-xl font-bold">Guided by Excellence</h4>
+                  <p className="text-sm">Mentorship that shapes careers</p>
+                </div>
+              </div>
+            </div>
             
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                  AS
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Dr. Ashok Shetter</h3>
-                <p className="text-primary font-medium mb-4">Chancellor, KLE Tech</p>
-                <p className="text-foreground/70 text-sm leading-relaxed">
-                  Commitment to excellence has elevated KLE Tech into a hub of innovation, creating an ecosystem that bridges academia and industry.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
+                    PG
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Prof. Arun Giriyapur</h3>
+                  <p className="text-primary font-medium mb-4">Mentor & Former HOD</p>
+                  <p className="text-foreground/70 text-sm leading-relaxed">
+                    Our lifelong mentor who believed in our potential and shaped the values we carry as engineers today.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
+                    AS
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Dr. Ashok Shetter</h3>
+                  <p className="text-primary font-medium mb-4">Chancellor, KLE Tech</p>
+                  <p className="text-foreground/70 text-sm leading-relaxed">
+                    Elevated KLE Tech into an innovation hub, creating an ecosystem that bridges academia and industry.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -275,18 +325,18 @@ const OurTeam = () => {
                     <h3 className="text-3xl font-bold mb-4">An Open Call to Students</h3>
                   </div>
                   
-                  <div className="grid md:grid-cols-2 gap-6 mb-8 text-left">
+                   <div className="grid md:grid-cols-2 gap-6 mb-8 text-left">
                     <div>
                        <p className="leading-relaxed mb-4">
-                        If you are a student or faculty member looking for mentorship, guidance, or collaboration in robotics and automation — we are always open to help.
+                        Looking for mentorship, guidance, or collaboration in robotics? We're here to help students and faculty dream big.
                       </p>
                       <p className="leading-relaxed">
-                        We are always open to support, mentor, and collaborate with those who dare to dream big in the world of robotics.
+                        We started as students with a dream — today, we're building that dream into reality.
                       </p>
                     </div>
                     <div>
                       <p className="leading-relaxed mb-4">
-                        At Vegam Robotics, we started as students with a dream — and today, we are building that dream into reality.
+                        Open to support, mentor, and collaborate with the next generation of robotics innovators.
                       </p>
                       <p className="leading-relaxed font-semibold">
                         Tomorrow, it could be you.

@@ -2,6 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Play, ExternalLink, Code, Eye } from "lucide-react";
 import { useState } from "react";
+import universityLabScene from "@/assets/university-lab-scene.jpg";
+import modernRoboticsFacility from "@/assets/modern-robotics-facility.jpg";
 const OurJourneySection = () => {
   const [activeProject, setActiveProject] = useState(0);
   const projects = [{
@@ -56,31 +58,66 @@ const OurJourneySection = () => {
           </div>
 
           {/* Our Journey in Robotics Introduction */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 mb-16 shadow-xl border border-primary/10">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Our Journey in Robotics</h3>
-                <p className="text-foreground/80 leading-relaxed mb-6">
-                  At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the university that has shaped us into who we are today. We take immense pride in calling it our alma mater — a place that not only gave us knowledge but also a thriving ecosystem of mentorship, opportunities, and vision.
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            {/* Text Content */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
+              <h3 className="text-3xl font-bold mb-6 text-primary">Our Journey in Robotics</h3>
+              <div className="space-y-4 text-foreground/80 leading-relaxed">
+                <p>
+                  At Vegam Robotics, our story is rooted in KLE Technological University (KLETU) — our alma mater that gave us knowledge, mentorship, and vision.
                 </p>
-                <p className="text-foreground/80 leading-relaxed mb-6">
-                  KLETU has long been a space where innovation thrives. Under the leadership of Dr. Ashok Shetter, the university has built a culture that inspires innovation and celebrates research-driven excellence. Today, the Department of Automation and Robotics, led by Mr. Vinayak, continues to carry that vision forward, shaping the next generation of engineers.
+                <p>
+                  Under Dr. Ashok Shetter's leadership, KLETU built a culture of innovation. The Department of Automation and Robotics, led by Mr. Vinayak, continues shaping future engineers.
                 </p>
-                <p className="text-foreground/80 leading-relaxed">
-                  Among the many guiding lights on our path, Prof. Arun Giriyapur, former HOD, has been far more than just a teacher. He has been a steady, lifelong mentor — guiding us with his wisdom, encouraging our wildest ideas, and inspiring us to keep pushing the boundaries of robotics. The faith he placed in us during our university days still anchors our journey, reminding us of where we started and why we continue to build.
+                <p>
+                  Prof. Arun Giriyapur, our former HOD, has been more than a teacher — a lifelong mentor guiding us to push robotics boundaries.
                 </p>
               </div>
+            </div>
+            
+            {/* University Lab Visual */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl">
+              <img 
+                src={universityLabScene} 
+                alt="University robotics lab with students working on projects" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white">
+                <h4 className="text-xl font-bold mb-2">Where It All Began</h4>
+                <p className="text-sm">Late nights in university labs, building our dreams</p>
+              </div>
+            </div>
+          </div>
 
-              <div>
-                <h4 className="text-2xl md:text-3xl font-bold mb-6 text-primary">From Academia to Industry</h4>
-                <p className="text-foreground/80 leading-relaxed mb-4">
-                  Our journey began in university labs, where we worked late into the night on projects that challenged us — humanoids, mobile robots, automated storage systems, and vision-based inspection platforms. Each build was more than just a technical exercise; it was a spark, showing us how engineering could solve real problems.
+          {/* From Academia to Industry */}
+          <div className="grid md:grid-cols-2 gap-12 mb-16">            
+            {/* Industry Visual */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl">
+              <img 
+                src={modernRoboticsFacility} 
+                alt="Modern robotics facility with advanced automation" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white">
+                <h4 className="text-xl font-bold mb-2">Industry Impact</h4>
+                <p className="text-sm">300+ plants powered by our solutions</p>
+              </div>
+            </div>
+            
+            {/* Text Content */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
+              <h4 className="text-3xl font-bold mb-6 text-primary">From Academia to Industry</h4>
+              <div className="space-y-4 text-foreground/80 leading-relaxed">
+                <p>
+                  Our journey began in university labs — humanoids, mobile robots, automated systems. Each project sparked our vision of engineering solving real problems.
                 </p>
-                <p className="text-foreground/80 leading-relaxed mb-4">
-                  The bridge from academia to industry wasn't built overnight. It was shaped by mentors like Prof. Giriyapur, who pushed us to think beyond textbooks, and by the guidance of our CEO, Subramanyam Kasibhat, whose belief in robotics as a force for manufacturing transformation encouraged us to take our work into the real world.
+                <p>
+                  Mentors like Prof. Giriyapur pushed us beyond textbooks. Our CEO, Subramanyam Kasibhat, believed in robotics transforming manufacturing.
                 </p>
-                <p className="text-foreground/80 leading-relaxed">
-                  What began as passion-driven projects within university walls gradually matured into scalable, industry-grade solutions. Those countless hours of experimentation, problem-solving, and small wins laid the foundation for Vegam Robotics. Even today, the values we absorbed at KLETU — rigor, practicality, and impact — continue to guide the way we design, build, and innovate.
+                <p>
+                  Passion-driven university projects evolved into scalable, industry-grade solutions. KLETU's values — rigor, practicality, impact — still guide us today.
                 </p>
               </div>
             </div>
