@@ -110,10 +110,34 @@ const OurJourneySection = () => {
             </div>
           </div>
 
-          {/* Project Showcase */}
-          
-
-          {/* Timeline Visualization */}
+          {/* From University to Industry */}
+          <div className="grid md:grid-cols-2 gap-12 mb-16">            
+            {/* Industry Visual */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl">
+              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 text-white">
+                <h4 className="text-xl font-bold mb-2">Industry Impact</h4>
+                <p className="text-sm">300+ plants powered by our solutions</p>
+              </div>
+            </div>
+            
+            {/* Text Content */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
+              <h4 className="text-3xl font-bold mb-6 text-primary">From University to Industry</h4>
+              <div className="space-y-4 text-foreground/80 leading-relaxed">
+                <p>
+                  Our journey began in university labs with late-night projects — humanoids, mobile robots, automated systems. Each build showed us how engineering solves real problems.
+                </p>
+                <p>
+                  Mentors like Prof. Giriyapur pushed us beyond textbooks, while CEO Subramanyam Kasibhat's vision for robotics in manufacturing encouraged us to enter industry.
+                </p>
+                <p>
+                  University passion projects evolved into scalable solutions. KLETU's values — rigor, practicality, impact — continue guiding how we design and innovate.
+                </p>
+              </div>
+            </div>
+          </div>
           
         </div>
       </div>
