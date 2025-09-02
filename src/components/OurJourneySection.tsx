@@ -51,10 +51,10 @@ const OurJourneySection = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header - Reduced spacing and size */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
               Our Journey Into <span className="text-primary">Robotics</span>
-            </h2>
-            <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            </h3>
+            <p className="text-base text-foreground/70 max-w-2xl mx-auto leading-relaxed">
               From curious students to innovation pioneers — every project shaped our vision of what robotics can achieve
             </p>
           </div>
