@@ -4,6 +4,10 @@ import { Play, ExternalLink, Code, Eye } from "lucide-react";
 import { useState } from "react";
 import universityLabScene from "@/assets/university-lab-scene.jpg";
 import modernRoboticsFacility from "@/assets/modern-robotics-facility.jpg";
+import studentPortrait1 from "@/assets/student-portrait-1.jpg";
+import studentPortrait2 from "@/assets/student-portrait-2.jpg";
+import studentPortrait3 from "@/assets/student-portrait-3.jpg";
+import studentPortrait4 from "@/assets/student-portrait-4.jpg";
 const OurJourneySection = () => {
   const [activeProject, setActiveProject] = useState(0);
   const projects = [{
@@ -73,13 +77,56 @@ const OurJourneySection = () => {
               </div>
             </div>
             
-            {/* University Lab Visual */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl">
-              <img src={universityLabScene} alt="University robotics lab with students working on projects" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
-                <h4 className="text-xl font-bold mb-2">Where It All Began</h4>
-                <p className="text-sm">Late nights in university labs, building our dreams</p>
+            {/* University Lab Portrait Gallery */}
+            <div className="grid grid-cols-2 gap-4">
+              {/* Portrait Frame 1 */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg border-4 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                <div className="aspect-[3/4]">
+                  <img src={studentPortrait1} alt="Student working on robotics project" className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute bottom-3 left-3 text-white">
+                  <p className="text-xs font-medium">Late Night Innovation</p>
+                </div>
+              </div>
+
+              {/* Portrait Frame 2 */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg border-4 border-white/20 bg-white/10 backdrop-blur-sm transform -rotate-1 hover:rotate-0 transition-transform duration-300 mt-6">
+                <div className="aspect-[3/4]">
+                  <img src={studentPortrait2} alt="Team collaboration in university lab" className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute bottom-3 left-3 text-white">
+                  <p className="text-xs font-medium">Team Spirit</p>
+                </div>
+              </div>
+
+              {/* Portrait Frame 3 */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg border-4 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform duration-300 -mt-4">
+                <div className="aspect-[3/4]">
+                  <img src={studentPortrait3} alt="Student coding robotics software" className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute bottom-3 left-3 text-white">
+                  <p className="text-xs font-medium">Code & Create</p>
+                </div>
+              </div>
+
+              {/* Portrait Frame 4 */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg border-4 border-white/20 bg-white/10 backdrop-blur-sm transform -rotate-2 hover:rotate-0 transition-transform duration-300 mt-2">
+                <div className="aspect-[3/4]">
+                  <img src={studentPortrait4} alt="Student testing robot prototype" className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute bottom-3 left-3 text-white">
+                  <p className="text-xs font-medium">Testing Dreams</p>
+                </div>
+              </div>
+
+              {/* Overlay Caption */}
+              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                <h4 className="text-lg font-bold text-primary mb-1">Where It All Began</h4>
+                <p className="text-sm text-foreground/60">University labs, building our dreams</p>
               </div>
             </div>
           </div>
