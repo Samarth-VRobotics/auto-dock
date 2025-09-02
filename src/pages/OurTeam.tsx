@@ -222,7 +222,7 @@ const OurTeam = () => {
             {/* Header */}
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Giving Back: ConnectNext Mentorship
+                From Learners to Guides
               </h2>
               <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
                 Building bridges between academia and industry through mentorship and collaboration
