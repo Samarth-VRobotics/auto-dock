@@ -58,74 +58,99 @@ const OurJourneySection = () => {
           </div>
 
           {/* Our Journey in Robotics - Section Header */}
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold text-primary mb-4">Our Journey in Robotics</h3>
+          <div className="text-center mb-16">
+            <h3 className="text-5xl font-bold text-primary mb-6 hover:text-primary/80 transition-colors duration-300">Our Journey in Robotics</h3>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
           </div>
 
           {/* Row 1: First Paragraph + Image (Text Left, Image Right) */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
-              <p className="text-foreground/80 leading-relaxed">
+          <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10 
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group">
+              <p className="text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
                 At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. We take immense pride in calling it our alma mater, a place that offered us not only knowledge but also a thriving ecosystem of mentorship, opportunities, and innovation.
               </p>
             </div>
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-64">
-              <img src={universityLabScene} alt="University lab scene with students working on robotics" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-sm font-medium">Our Roots at KLETU</p>
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
+              <img src={universityLabScene} alt="University lab scene with students working on robotics" 
+                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
+                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
+              <div className="absolute bottom-6 left-6 text-white transform 
+                            group-hover:translate-y-[-4px] transition-transform duration-300">
+                <p className="text-base font-medium">Our Roots at KLETU</p>
               </div>
             </div>
           </div>
 
           {/* Row 2: Second Image + Paragraph (Image Left, Text Right) */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-64">
-              <img src={studentPortrait1} alt="Student working on robotics project" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-sm font-medium">Leadership & Vision</p>
+          <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
+              <img src={studentPortrait1} alt="Student working on robotics project" 
+                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
+                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
+              <div className="absolute bottom-6 left-6 text-white transform 
+                            group-hover:translate-y-[-4px] transition-transform duration-300">
+                <p className="text-base font-medium">Leadership & Vision</p>
               </div>
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
-              <p className="text-foreground/80 leading-relaxed">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10 
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group">
+              <p className="text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
                 Under the leadership of Dr. Ashok Shetter, the university fostered a culture that celebrates research-driven excellence and bold ideas. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry the vision forward, preparing the next generation of robotics engineers.
               </p>
             </div>
           </div>
 
           {/* Row 3: Third Paragraph + Image (Text Left, Image Right) */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16 items-center">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
-              <p className="text-foreground/80 leading-relaxed">
+          <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10 
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group">
+              <p className="text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
                 Among our greatest guiding lights, Prof. Arun Giriyapur, former HOD, has been far more than a teacher. A lifelong mentor, he encouraged our wildest ideas, anchored us with wisdom, and inspired us to keep pushing the boundaries of robotics. The faith he placed in us during our early years still drives our journey.
               </p>
             </div>
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-64">
-              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-sm font-medium">Mentorship & Growth</p>
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
+              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" 
+                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
+                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
+              <div className="absolute bottom-6 left-6 text-white transform 
+                            group-hover:translate-y-[-4px] transition-transform duration-300">
+                <p className="text-base font-medium">Mentorship & Growth</p>
               </div>
             </div>
           </div>
 
           {/* From University to Industry */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">            
+          <div className="grid md:grid-cols-2 gap-12 mb-20">            
             {/* Industry Visual */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl">
-              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
+              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" 
+                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
+                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
+              <div className="absolute bottom-6 left-6 text-white transform 
+                            group-hover:translate-y-[-4px] transition-transform duration-300">
                 <h4 className="text-xl font-bold mb-2">Industry Impact</h4>
-                <p className="text-sm">300+ plants powered by our solutions</p>
+                <p className="text-base">300+ plants powered by our solutions</p>
               </div>
             </div>
             
             {/* Text Content */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
-              <h4 className="text-3xl font-bold mb-6 text-primary">From University to Industry</h4>
-              <div className="space-y-4 text-foreground/80 leading-relaxed">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group">
+              <h4 className="text-3xl font-bold mb-8 text-primary group-hover:text-primary/80 transition-colors duration-300">From University to Industry</h4>
+              <div className="space-y-6 text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
                 <p>
                   Our journey began in university labs with late-night projects — humanoids, mobile robots, automated systems. Each build showed us how engineering solves real problems.
                 </p>
