@@ -149,7 +149,10 @@ const OurJourneySection = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
                           transition-all duration-500 ease-out group">
-              <h4 className="text-3xl font-bold mb-8 text-primary group-hover:text-primary/80 transition-colors duration-300">From University to Industry</h4>
+              <div className="text-center mb-8">
+                <h4 className="text-5xl font-bold text-primary mb-6 hover:text-primary/80 transition-colors duration-300">From University to Industry</h4>
+                <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
+              </div>
               <div className="space-y-6 text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
                 <p>
                   Our journey began in university labs with late-night projects — humanoids, mobile robots, automated systems. Each build showed us how engineering solves real problems.
