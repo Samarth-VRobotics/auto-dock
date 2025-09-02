@@ -41,7 +41,7 @@ const OurJourneySection = () => {
     // Placeholder
     achievements: ["99.9% detection accuracy", "Real-time processing", "Industry deployment"]
   }];
-  return <section className="py-20 bg-gradient-to-br from-background via-background to-primary/5 relative overflow-hidden">
+  return <section className="py-12 bg-gradient-to-br from-background via-background to-primary/5 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-slate-100/25 opacity-50"></div>
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-primary opacity-10 rounded-full blur-3xl"></div>
@@ -49,12 +49,12 @@ const OurJourneySection = () => {
       
       <div className="container mx-auto px-6 relative">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          {/* Section Header - Reduced spacing and size */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Journey Into <span className="text-primary">Robotics</span>
             </h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed">
               From curious students to innovation pioneers — every project shaped our vision of what robotics can achieve
             </p>
           </div>
