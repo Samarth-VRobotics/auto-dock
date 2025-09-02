@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
+import OurJourneySection from "@/components/OurJourneySection";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { useCallback, useEffect, useState } from 'react';
@@ -96,35 +97,7 @@ const OurTeam = () => {
         </div>
       </section>
 
-      {/* Our Story Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Journey Into Robotics</h2>
-            
-            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-              <div>
-                <h3 className="text-2xl font-semibold mb-6 text-primary">From Curiosity to Collaboration</h3>
-                <p className="text-foreground/80 leading-relaxed mb-6">
-                  We are a young team of robotics engineers, united by one belief: robotics belongs beyond labs and classrooms — solving real-world challenges.
-                </p>
-                <p className="text-foreground/80 leading-relaxed mb-6">
-                  Our story began at KLE Technological University, where late-night experiments and wild ideas turned into working prototypes. From humanoids to mobile robots, from precision parallel mechanisms to vision-based inspection systems — each project taught us to dream big, fail fast, and build better.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-primary/5 to-blue-50/50 p-8 rounded-2xl">
-                <h4 className="text-xl font-semibold mb-4 text-primary">Projects That Shaped Us</h4>
-                <ul className="space-y-3 text-foreground/80">
-                  <li>• <strong>Humanoids</strong> → balancing dynamics, actuation, stability control</li>
-                  <li>• <strong>Autonomous Mobile Robots (AMRs)</strong> → navigation, stair-climbing, obstacle negotiation</li>
-                  <li>• <strong>Parallel Robots</strong> → high-precision mechanics, control theory in practice</li>
-                  <li>• <strong>Industrial Inspection Systems</strong> → computer vision, AI, reliability at scale</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <OurJourneySection />
 
       {/* Core Team Carousel */}
       <section className="py-16 bg-background">
