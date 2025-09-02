@@ -51,7 +51,7 @@ const Navbar = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
                 
-                <a href="https://vegam.co/team" className="text-foreground hover:text-primary transition-colors font-medium relative group">
+                <a href="/our-team" className="text-foreground hover:text-primary transition-colors font-medium relative group">
                   Our Team
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                 </a>
