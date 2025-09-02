@@ -140,10 +140,8 @@ const OurTeam = () => {
             {/* Why We Build Together Section */}
             <div className="mt-16 text-center max-w-4xl mx-auto">
               <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
-                <h3 className="text-2xl font-bold mb-4 text-primary">Why We Build Together</h3>
-                <p className="text-foreground/80 leading-relaxed">
-                  Each of us brings unique skills and perspectives, but it's our shared spirit of exploration and problem-solving — combined with the flexibility to wear any hat — that powers Vegam. Together, we're shaping the future of robotics, one innovation at a time.
-                </p>
+                <h3 className="text-2xl font-bold mb-4 text-primary">Building Together</h3>
+                <p className="text-foreground/80 leading-relaxed">Each of us brings unique skills and perspectives, but it's our shared spirit of exploration and problem-solving combined with the flexibility to wear any hat that powers Vegam Robotics. Together, we're shaping the future of robotics, one innovation at a time.</p>
               </div>
             </div>
           </div>
