@@ -6,40 +6,37 @@ import { Mail, Linkedin } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
 import OurJourneySection from "@/components/OurJourneySection";
 const OurTeam = () => {
-  // First row: Faizan, Rani, Amrut
-  const firstRowMembers = [{
+  // Core team members with updated stories and quotes
+  const coreTeamMembers = [{
     initials: "FP",
     name: "Faizan Pathan",
-    role: "Robotics Engineer & System Architect",
-    description: "Multidisciplinary builder with expertise spanning humanoids, AMRs, ASRS, delta robots, and advanced vision systems.",
-    quote: "Robotics isn't just about machines; it's about creating systems that amplify human potential and transform industries."
+    role: "Builder of Possibilities",
+    story: "From dismantling old gadgets as a child to architecting complex robotic systems today, Faizan's journey has always been about transforming curiosity into creation. He embodies the restless spirit of someone who doesn't just dream, but builds the future piece by piece.",
+    quote: "Robots aren't just machines — they're stories of persistence told in bolts and code."
   }, {
     initials: "R",
     name: "Rani",
-    role: "Robotics Engineer - Vision Systems",
-    description: "Strong technical depth, specializing in robotic vision pipelines, inspection systems, and intelligent automation.",
-    quote: "What excites me most is when engineering and vision come together — when a robot can see, think, and act with precision."
+    role: "The Systems Orchestrator",
+    story: "Rani has always been the one who sees the bigger picture — weaving robotics, automation, and industrial integration into seamless systems. She transforms scattered ideas into robust solutions, ensuring every robot carries both precision and purpose.",
+    quote: "KLETU gave us the stage, Arun Sir gave us the courage, and Vegam gave us the canvas to paint on a bigger scale."
   }, {
     initials: "A",
     name: "Amrut",
-    role: "Robotics Engineer - AMRs & Motion",
-    description: "Expertise in AMRs, motion systems, and behavior-tree-based robot control for autonomous navigation.",
-    quote: "For me, robotics is about autonomy — systems that can adapt, respond, and evolve in real-world environments."
-  }];
-
-  // Second row: Samarth, Asutosh
-  const secondRowMembers = [{
-    initials: "S",
-    name: "Samarth",
-    role: "Junior Robotics Engineer",
-    description: "Dedicated junior engineer adding execution strength, new perspectives, and technical expertise to drive innovation forward.",
-    quote: "I believe in building robust systems that make a real difference in how industries operate and evolve."
+    role: "The Technical Backbone",
+    story: "Every lab, every prototype, every failure that turned into a breakthrough — Amrut has been the steady force holding the team together. His hands-on technical depth and relentless resilience ensure no challenge feels unconquerable.",
+    quote: "Every project we built taught us resilience. That's still the strongest lesson we carry."
   }, {
     initials: "AS",
     name: "Ashutosh",
-    role: "Junior Robotics Engineer",
-    description: "Talented junior engineer bringing fresh energy, innovative problem-solving skills, and strong execution capabilities to the team.",
-    quote: "Every challenge is an opportunity to learn and push the boundaries of what's possible in robotics."
+    role: "The Quiet Strength",
+    story: "Ashutosh believes impact is louder than words. Focused, disciplined, and deeply technical, he has been an anchor in the team, ensuring that Vegam's foundations remain strong as we scale new heights.",
+    quote: "Strong foundations are invisible — but they're what keep everything standing."
+  }, {
+    initials: "S",
+    name: "Samarth",
+    role: "The Fresh Spark",
+    story: "As one of the youngest engineers in the team, Samarth brings fresh energy, curiosity, and the drive to question the old and imagine the new. His commitment reflects the spirit of the next generation carrying Vegam forward.",
+    quote: "Every fresh idea is a spark — and sparks are what ignite revolutions."
   }];
   return <div className="min-h-screen bg-background">
       <Navbar />
@@ -67,21 +64,38 @@ const OurTeam = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">The Core Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">The Core Team</h2>
+            <p className="text-center text-foreground/70 mb-12 max-w-3xl mx-auto">
+              Vegam is more than a company — it's the continuation of friendships, late-night experiments, and shared dreams from our university days.
+            </p>
             
-            {/* First Row - Senior Engineers */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              {firstRowMembers.map((member, index) => <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <CardContent className="p-8 text-center h-full flex flex-col">
-                    <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                      {member.initials}
+            {/* Team Members Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+              {coreTeamMembers.map((member, index) => (
+                <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+                  <CardContent className="p-8 h-full flex flex-col">
+                    {/* Avatar and Basic Info */}
+                    <div className="text-center mb-6">
+                      <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
+                        {member.initials}
+                      </div>
+                      <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                      <p className="text-primary font-medium mb-4">{member.role}</p>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                    <p className="text-primary font-medium mb-4">{member.role}</p>
                     
-                    <blockquote className="text-xs italic text-foreground/60 border-l-2 border-primary pl-3 mb-4">
+                    {/* Story */}
+                    <div className="flex-grow mb-6">
+                      <p className="text-sm text-foreground/70 leading-relaxed mb-4">
+                        {member.story}
+                      </p>
+                    </div>
+                    
+                    {/* Quote */}
+                    <blockquote className="text-sm italic text-foreground/80 border-l-3 border-primary pl-4 mb-6 font-medium">
                       "{member.quote}"
                     </blockquote>
+                    
+                    {/* Social Links */}
                     <div className="flex justify-center space-x-3">
                       <Button variant="ghost" size="icon" className="h-8 w-8">
                         <Mail className="h-4 w-4" />
@@ -91,33 +105,35 @@ const OurTeam = () => {
                       </Button>
                     </div>
                   </CardContent>
-                </Card>)}
+                </Card>
+              ))}
             </div>
+            
+            {/* Closing line */}
+            <div className="text-center mt-12">
+              <p className="text-lg text-foreground/80 italic max-w-3xl mx-auto">
+                Together, this core team carries forward the spirit of innovation, teamwork, and problem-solving from KLETU into Vegam's DNA.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Second Row - Junior Engineers */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {secondRowMembers.map((member, index) => <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <CardContent className="p-8 text-center h-full flex flex-col">
-                    <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                      {member.initials}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                    <p className="text-primary font-medium mb-4">{member.role}</p>
-                    
-                    <blockquote className="text-xs italic text-foreground/60 border-l-2 border-primary pl-3 mb-4">
-                      "{member.quote}"
-                    </blockquote>
-                    <div className="flex justify-center space-x-3">
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Linkedin className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>)}
-            </div>
+      {/* Vegam Robotics: Scaling Innovation */}
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Vegam Robotics: Scaling Innovation</h2>
+            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
+              <CardContent className="p-8">
+                <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+                  Vegam today is not just about robotics — it is about building end-to-end solutions for the future of manufacturing. With over 300+ plants powered by Vegam's digital backbone, we are integrating robotics into smart factory software, creating safer workplaces, improving quality, and reducing risk in industries dealing with high complexities and hazardous environments.
+                </p>
+                <p className="text-lg text-foreground/80 leading-relaxed">
+                  With clarity of thought and a strong belief in robotics as a natural extension of digital manufacturing, this vision continues to guide and inspire the way we scale our solutions globally.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -180,55 +196,20 @@ const OurTeam = () => {
               </p>
             </div>
 
-            {/* Main Content Cards */}
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-              {/* ConnectNext Program Card */}
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover-scale">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-2xl font-bold text-primary">ConnectNext Program</h3>
-                  </div>
-                  <p className="text-foreground/80 leading-relaxed mb-6">
-                    As much as Vegam is about building robots, it is also about giving back. Three of our lead engineers — Faizan, Rani, and Amrut — actively contribute to the ConnectNext program, a joint initiative by Law Foundation and Sol Systems.
-                  </p>
-                  <div className="flex items-center text-sm text-primary font-medium">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
-                    Industry-Grade Problem Statements
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Bridge Building Card */}
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover-scale">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-secondary rounded-xl flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-2xl font-bold text-secondary">Academia Meets Industry</h3>
-                  </div>
-                  <p className="text-foreground/80 leading-relaxed mb-6">
-                    Through this program, we float industry-grade problem statements in robotics and automation to universities and guide students and faculty in solving them. These projects are monitored by Law Foundation and Sol Systems, creating a bridge between academia and industry.
-                  </p>
-                  <div className="flex items-center text-sm text-secondary font-medium">
-                    <div className="w-2 h-2 bg-secondary rounded-full mr-2"></div>
-                    Continuous Learning Cycle
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Philosophy Section */}
-            <div className="text-center mb-12">
-              
-            </div>
+            {/* Main Content */}
+            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl mb-16">
+              <CardContent className="p-8">
+                <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+                  As much as Vegam is about building robots, it is also about giving back. Our engineers being part of the ConnectNext program, initiative by La Fondation Dassault Systèmes.
+                </p>
+                <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+                  As part of this program, we float industry-grade problem statements in robotics and automation along with experts from Dassault systems to universities and guide students and faculty in solving them. These projects are monitored by La Fondation creating a bridge between academia and industry.
+                </p>
+                <p className="text-lg text-foreground/80 leading-relaxed">
+                  For us, this is a way to keep the cycle of learning alive — the same way our mentors once guided us.
+                </p>
+              </CardContent>
+            </Card>
 
             {/* Call to Action */}
             <div className="relative">
@@ -246,23 +227,10 @@ const OurTeam = () => {
                     <h3 className="text-3xl font-bold mb-4">An Open Call to Students</h3>
                   </div>
                   
-                  <div className="grid md:grid-cols-2 gap-6 mb-8 text-left">
-                    <div>
-                      <p className="leading-relaxed mb-4">
-                        To the students out there — if you are passionate about robotics and are looking for mentorship, guidance, or a platform to test your ideas, reach out to us.
-                      </p>
-                      <p className="leading-relaxed">
-                        We are always open to support, mentor, and collaborate with those who dare to dream big in the world of robotics.
-                      </p>
-                    </div>
-                    <div>
-                      <p className="leading-relaxed mb-4">
-                        At Vegam Robotics, we started as students with a dream — and today, we are building that dream into reality.
-                      </p>
-                      <p className="leading-relaxed font-semibold">
-                        Tomorrow, it could be you.
-                      </p>
-                    </div>
+                  <div className="mb-8 text-left max-w-4xl mx-auto">
+                    <p className="leading-relaxed mb-6 text-lg">
+                      If you are a student or faculty member looking for mentorship, guidance, or collaboration in robotics and automation — we are always open to help.
+                    </p>
                   </div>
                   
                   <ContactDialog>
