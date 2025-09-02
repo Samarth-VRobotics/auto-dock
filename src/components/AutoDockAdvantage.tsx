@@ -330,9 +330,7 @@ const AutoDockAdvantage = () => {
             Why choose AutoDock
           </h2>
           
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            More than automation — AutoDock is a strategic platform that transforms dock operations into a resilient, scalable, and future-ready advantage.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">More than automation, AutoDock redefines dock operations intelligently, safely, and at peak efficiency, even under the toughest logistics demands.</p>
         </div>
 
         {/* Benefits Rows */}
