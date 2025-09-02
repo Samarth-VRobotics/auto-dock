@@ -74,8 +74,7 @@ const OurJourneySection = () => {
             </div>
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="KLETU campus buildings with beautiful architecture" 
-                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="KLETU campus buildings with beautiful architecture" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
@@ -89,8 +88,7 @@ const OurJourneySection = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              <img src={studentPortrait1} alt="Student working on robotics project" 
-                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <img src={studentPortrait1} alt="Student working on robotics project" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
@@ -118,8 +116,7 @@ const OurJourneySection = () => {
             </div>
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" 
-                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
@@ -140,8 +137,7 @@ const OurJourneySection = () => {
             {/* Industry Visual */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" 
-                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
@@ -155,9 +151,17 @@ const OurJourneySection = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
                           transition-all duration-500 ease-out group">
-              <div className="text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
+              <div className="space-y-6 text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
+                <p>It all started in the university labs, where late nights were spent building humanoids, mobile robots, automated systems, and vision-based inspection platforms. Each project was more than a technical challenge. It was proof that engineering could solve real problems. 
+
+This bridge from academia to industry was shaped by mentors like Prof. Giriyapur, who pushed us to think beyond textbooks, and by the vision of Subramanyam Kasibhat, whose belief in robotics as a driver of manufacturing transformation inspired us to take our ideas into the real world.
+
+ From humble passion projects to industry-ready solutions, our journey has been shaped by the values we carried from KLE Technological University. Rigor, practicality, and impact remain the compass for everything we design, build, and innovate at Vegam Robotics.</p>
                 <p>
-                  Our journey began in university labs, where late nights were spent building humanoids, mobile robots, automated systems, and vision-based inspection platforms. Each project was more than a technical challenge—it was proof that engineering could solve real problems. This bridge from academia to industry was shaped by mentors like Prof. Giriyapur, who pushed us to think beyond textbooks, and by the vision of Subramanyam Kasibhat, whose belief in robotics as a driver of manufacturing transformation inspired us to take our ideas into the real world. From humble passion projects to industry-ready solutions, our journey has been shaped by the values we carried from KLE Technological University. Rigor, practicality, and impact remain the compass for everything we design, build, and innovate at Vegam Robotics.
+                  Mentors like Prof. Giriyapur pushed us beyond textbooks, while CEO Subramanyam Kasibhat's vision for robotics in manufacturing encouraged us to enter industry.
+                </p>
+                <p>
+                  University passion projects evolved into scalable solutions. KLETU's values — rigor, practicality, impact — continue guiding how we design and innovate.
                 </p>
               </div>
             </div>
