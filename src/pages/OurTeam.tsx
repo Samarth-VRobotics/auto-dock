@@ -177,25 +177,55 @@ const OurTeam = () => {
               </Card>
             </div>
             
-            {/* Junior Engineers */}
-            <div className="bg-gradient-to-br from-primary/5 to-blue-50/50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold text-center mb-6">Rising Stars</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold">
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <CardContent className="p-8 text-center">
+                  <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
                     AS
                   </div>
-                  <h4 className="font-semibold mb-2">Ashutosh</h4>
-                  <p className="text-sm text-foreground/70">Junior Engineer bringing fresh energy and problem-solving skills</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold">
+                  <h3 className="text-xl font-semibold mb-2">Ashutosh</h3>
+                  <p className="text-primary font-medium mb-4">Junior Robotics Engineer</p>
+                  <p className="text-foreground/70 text-sm leading-relaxed mb-4">
+                    Talented junior engineer bringing fresh energy, innovative problem-solving skills, and strong execution capabilities to the team.
+                  </p>
+                  <blockquote className="text-xs italic text-foreground/60 border-l-2 border-primary pl-3">
+                    "Every challenge is an opportunity to learn and push the boundaries of what's possible in robotics."
+                  </blockquote>
+                  <div className="flex justify-center space-x-3 mt-4">
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <Mail className="h-4 w-4" />
+                    </Button>
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <Linkedin className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <CardContent className="p-8 text-center">
+                  <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
                     S
                   </div>
-                  <h4 className="font-semibold mb-2">Samarth</h4>
-                  <p className="text-sm text-foreground/70">Junior Engineer adding execution strength and new perspectives</p>
-                </div>
-              </div>
+                  <h3 className="text-xl font-semibold mb-2">Samarth</h3>
+                  <p className="text-primary font-medium mb-4">Junior Robotics Engineer</p>
+                  <p className="text-foreground/70 text-sm leading-relaxed mb-4">
+                    Dedicated junior engineer adding execution strength, new perspectives, and technical expertise to drive innovation forward.
+                  </p>
+                  <blockquote className="text-xs italic text-foreground/60 border-l-2 border-primary pl-3">
+                    "I believe in building robust systems that make a real difference in how industries operate and evolve."
+                  </blockquote>
+                  <div className="flex justify-center space-x-3 mt-4">
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <Mail className="h-4 w-4" />
+                    </Button>
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <Linkedin className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
