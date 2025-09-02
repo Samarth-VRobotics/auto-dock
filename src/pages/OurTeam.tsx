@@ -246,7 +246,7 @@ const OurTeam = () => {
                     At Vegam, building robots goes hand in hand with giving back. Through the ConnectNext Program, an initiative by La Fondation Dassault Systèmes, we collaborate with universities to inspire the next generation of innovators.
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    We co-create industry-grade problem statements in robotics and automation, and guide students and faculty in solving them. Experts from La Fondation Dassault Systèmes mentor and monitor these projects, creating a strong bridge between academia and industry.
+                    We co-create industry-grade problem statements in robotics and automation, and guide students and faculty in solving them.Creating a strong bridge between academia and industry.
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-6">
                     For us, it is about keeping the cycle of learning alive, just as our own mentors once did for us.
