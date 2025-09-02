@@ -3,16 +3,19 @@ import { ArrowRight, Download } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
 const FinalCTA = () => {
   return <section className="section-padding relative overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary"></div>
+      {/* Enhanced gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary/90 to-accent"></div>
       
-      {/* Background pattern */}
-      <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,transparent,white,transparent)]"></div>
+      {/* Background pattern with enhanced visibility */}
+      <div className="absolute inset-0 bg-grid-white/20 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       
-      {/* Animated background elements */}
-      <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-48 h-48 bg-white/5 rounded-full blur-2xl animate-pulse" style={{
+      {/* Dynamic animated background elements */}
+      <div className="absolute top-10 left-10 w-32 h-32 bg-white/20 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-10 right-10 w-48 h-48 bg-white/15 rounded-full blur-2xl animate-pulse" style={{
       animationDelay: '1s'
+    }}></div>
+      <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-accent/20 rounded-full blur-lg animate-pulse" style={{
+      animationDelay: '2s'
     }}></div>
       
       <div className="container mx-auto px-6 relative">

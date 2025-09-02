@@ -2,9 +2,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 const TeamIntro = () => {
-  return <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-slate-100/20 opacity-30"></div>
-      <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-primary opacity-10 rounded-full blur-3xl"></div>
+  return <section className="py-16 bg-gradient-to-br from-background via-muted/50 to-secondary/20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-primary/10 opacity-40"></div>
+      <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-l from-accent/10 to-primary/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
