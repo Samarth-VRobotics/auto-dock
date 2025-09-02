@@ -175,21 +175,11 @@ const OurTeam = () => {
       <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Supported by Mentorship & Leadership</h2>
-                <p className="text-foreground/80 leading-relaxed">
-                  At KLE, we were nurtured by a culture of innovation, world-class labs, and constant encouragement to push boundaries.
-                </p>
-              </div>
-              <div className="relative rounded-3xl overflow-hidden shadow-xl">
-                <img src={mentorshipScene} alt="Students and mentors working together in university" className="w-full h-80 object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h4 className="text-xl font-bold">Guided by Excellence</h4>
-                  <p className="text-sm">Mentorship that shapes careers</p>
-                </div>
-              </div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Supported by Mentorship & Leadership</h2>
+              <p className="text-foreground/80 leading-relaxed max-w-3xl mx-auto">
+                At KLE, we were nurtured by a culture of innovation, world-class labs, and constant encouragement to push boundaries.
+              </p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
