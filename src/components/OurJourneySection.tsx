@@ -185,7 +185,18 @@ const OurJourneySection = () => {
               year: "2024",
               title: "Vegam Born",
               desc: "Founded Vegam Robotics to bring innovations to market"
-            }].map((milestone, index) => {})}
+            }].map((milestone, index) => (
+              <div key={index} className="relative flex items-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10"></div>
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 ml-auto'}`}>
+                  <div className="bg-card p-6 rounded-lg shadow-md">
+                    <span className="text-primary font-bold text-lg">{milestone.year}</span>
+                    <h4 className="font-semibold mt-2">{milestone.title}</h4>
+                    <p className="text-muted-foreground text-sm mt-1">{milestone.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
             </div>
           </div>
         </div>
