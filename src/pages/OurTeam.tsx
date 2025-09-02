@@ -267,7 +267,7 @@ const OurTeam = () => {
               </Card>
 
               {/* Call for Students Card */}
-              <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover-scale">
+              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover-scale">
                 <CardContent className="p-8 h-full flex flex-col justify-center">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-primary rounded-2xl mx-auto mb-6 flex items-center justify-center">
