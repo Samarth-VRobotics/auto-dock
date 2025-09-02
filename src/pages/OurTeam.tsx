@@ -169,25 +169,24 @@ const OurTeam = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-secondary opacity-10 rounded-full blur-3xl"></div>
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Giving Back</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Giving Back: ConnectNext Mentorship</h2>
             <p className="text-foreground/80 leading-relaxed mb-8">
-              Through the Law Foundation and Sol Systems' ConnectNext Program, our lead engineers actively volunteer to mentor the next generation of roboticists.
+              As much as Vegam is about building robots, it is also about giving back. Three of our lead engineers — Faizan, Rani, and Amrut — actively contribute to the ConnectNext program, a joint initiative by Law Foundation and Sol Systems.
             </p>
-            
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-primary">ConnectNext Program</h3>
-              <ul className="text-left space-y-3 text-foreground/80 max-w-2xl mx-auto">
-                <li>• Float industry-based problem statements in robotics and automation</li>
-                <li>• Mentor students and faculty in solving real-world challenges</li>
-                <li>• Bridge the gap between academia and industry</li>
-                <li>• Provide oversight and guidance through established foundations</li>
-              </ul>
-            </div>
+            <p className="text-foreground/80 leading-relaxed mb-8">
+              Through this program, we float industry-grade problem statements in robotics and automation to universities and guide students and faculty in solving them. These projects are monitored by Law Foundation and Sol Systems, creating a bridge between academia and industry.
+            </p>
+            <p className="text-foreground/80 leading-relaxed mb-8">
+              For us, this is a way to keep the cycle of learning alive — the same way our mentors once guided us.
+            </p>
             
             <div className="bg-gradient-primary text-white p-8 rounded-2xl">
               <h3 className="text-xl font-semibold mb-4">An Open Call to Students</h3>
               <p className="leading-relaxed mb-6">
-                If you are passionate about robotics and looking for mentorship, guidance, or a platform to test your ideas, reach out to us. We are always open to support and collaborate with those who dare to dream big.
+                To the students out there — if you are passionate about robotics and are looking for mentorship, guidance, or a platform to test your ideas, reach out to us. We are always open to support, mentor, and collaborate with those who dare to dream big in the world of robotics.
+              </p>
+              <p className="leading-relaxed mb-6">
+                At Vegam Robotics, we started as students with a dream — and today, we are building that dream into reality. Tomorrow, it could be you.
               </p>
               <ContactDialog>
                 <Button variant="secondary" className="bg-white text-primary hover:bg-white/90">
