@@ -68,11 +68,13 @@ const OurJourneySection = () => {
               <h3 className="text-3xl font-bold mb-6 text-primary">Our Journey in Robotics</h3>
               <div className="space-y-4 text-foreground/80 leading-relaxed">
                 <p>
-                  At Vegam Robotics, our story is rooted in KLE Technological University (KLETU) — our alma mater that shaped us with knowledge, mentorship, and vision.
+                  At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. We take immense pride in calling it our alma mater, a place that offered us not only knowledge but also a thriving ecosystem of mentorship, opportunities, and innovation.
                 </p>
-                <p>KLETU has long been a space where innovation thrives. Under the leadership of Dr. Ashok Shetter, the university has built a culture that inspires innovation and celebrates research-driven excellence. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry that vision forward, shaping the next generation of engineers.</p>
                 <p>
-                  Prof. Arun Giriyapur, former HOD, has been our lifelong mentor — guiding us with wisdom and inspiring us to push robotics boundaries.
+                  Under the leadership of Dr. Ashok Shetter, the university fostered a culture that celebrates research-driven excellence and bold ideas. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry the vision forward, preparing the next generation of robotics engineers.
+                </p>
+                <p>
+                  Among our greatest guiding lights, Prof. Arun Giriyapur, former HOD, has been far more than a teacher. A lifelong mentor, he encouraged our wildest ideas, anchored us with wisdom, and inspired us to keep pushing the boundaries of robotics. The faith he placed in us during our early years still drives our journey.
                 </p>
               </div>
             </div>
