@@ -81,11 +81,7 @@ const OurTeam = () => {
                 </p>
               </div>
               <div className="relative rounded-3xl overflow-hidden shadow-xl">
-                <img 
-                  src={teamCollaboration} 
-                  alt="Team collaboration on robotics projects" 
-                  className="w-full h-80 object-cover"
-                />
+                <img src={teamCollaboration} alt="Team collaboration on robotics projects" className="w-full h-80 object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white">
                   <h4 className="text-xl font-bold">Building Together</h4>
@@ -158,20 +154,7 @@ const OurTeam = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Vegam Robotics: Scaling Innovation</h2>
             
             {/* Key Stats */}
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                <div className="text-3xl font-bold text-primary mb-2">300+</div>
-                <div className="text-sm text-foreground/70">Plants Powered</div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                <div className="text-3xl font-bold text-secondary mb-2">100%</div>
-                <div className="text-sm text-foreground/70">Safety Focus</div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                <div className="text-3xl font-bold text-accent mb-2">Global</div>
-                <div className="text-sm text-foreground/70">Scale</div>
-              </div>
-            </div>
+            
 
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p className="text-lg">
@@ -197,11 +180,7 @@ const OurTeam = () => {
                 </p>
               </div>
               <div className="relative rounded-3xl overflow-hidden shadow-xl">
-                <img 
-                  src={mentorshipScene} 
-                  alt="Students and mentors working together in university" 
-                  className="w-full h-80 object-cover"
-                />
+                <img src={mentorshipScene} alt="Students and mentors working together in university" className="w-full h-80 object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white">
                   <h4 className="text-xl font-bold">Guided by Excellence</h4>
