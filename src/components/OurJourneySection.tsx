@@ -152,17 +152,13 @@ const OurJourneySection = () => {
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
                           transition-all duration-500 ease-out group">
               <div className="space-y-6 text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
-                <p>It all started in the university labs, where late nights were spent building humanoids, mobile robots, automated systems, and vision-based inspection platforms. Each project was more than a technical challenge. It was proof that engineering could solve real problems. 
+                <p>It all started in the university labs, where late nights were spent building humanoids, mobile robots, automated systems, and vision-based inspection platforms. Each project was more than a technical challenge. It was proof that engineering could solve real problems.
 
-This bridge from academia to industry was shaped by mentors like Prof. Giriyapur, who pushed us to think beyond textbooks, and by the vision of Subramanyam Kasibhat, whose belief in robotics as a driver of manufacturing transformation inspired us to take our ideas into the real world.
+This bridge from academia to industry was shaped by mentors like Prof. Arun Giriyapur, who pushed us to think beyond textbooks, and by the vision of Subramanyam Kasibhat, whose belief in robotics as a driver of manufacturing transformation inspired us to take our ideas into the real world. 
 
- From humble passion projects to industry-ready solutions, our journey has been shaped by the values we carried from KLE Technological University. Rigor, practicality, and impact remain the compass for everything we design, build, and innovate at Vegam Robotics.</p>
-                <p>
-                  Mentors like Prof. Giriyapur pushed us beyond textbooks, while CEO Subramanyam Kasibhat's vision for robotics in manufacturing encouraged us to enter industry.
-                </p>
-                <p>
-                  University passion projects evolved into scalable solutions. KLETU's values — rigor, practicality, impact — continue guiding how we design and innovate.
-                </p>
+From humble passion projects to industry-ready solutions, our journey has been shaped by the values we carried from KLE Technological University. Rigor, practicality, and impact remain the compass for everything we design, build, and innovate at Vegam Robotics.</p>
+                
+                
               </div>
             </div>
           </div>
