@@ -126,46 +126,6 @@ const OurTeam = () => {
         </div>
       </section>
 
-      {/* Leadership & Mentorship */}
-      <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Supported by Mentorship & Leadership</h2>
-            <p className="text-foreground/80 leading-relaxed">
-              None of this happened in isolation. At KLE, we were nurtured by a culture of innovation, world-class labs, and the constant encouragement to push boundaries.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                  PG
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Prof. Arun Giriyapur</h3>
-                <p className="text-primary font-medium mb-4">Mentor & Former HOD</p>
-                <p className="text-foreground/70 text-sm leading-relaxed">
-                  Guiding us from the start as Head of Department, now a lifelong mentor. His belief in our potential shaped not only our projects, but also the values we carry as engineers today.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                  AS
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Dr. Ashok Shetter</h3>
-                <p className="text-primary font-medium mb-4">Vice-Chancellor, KLE Tech</p>
-                <p className="text-foreground/70 text-sm leading-relaxed">
-                  Commitment to excellence has elevated KLE Tech into a hub of innovation, creating an ecosystem that bridges academia and industry.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Core Team Carousel */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
@@ -238,6 +198,46 @@ const OurTeam = () => {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership & Mentorship */}
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Supported by Mentorship & Leadership</h2>
+            <p className="text-foreground/80 leading-relaxed">
+              None of this happened in isolation. At KLE, we were nurtured by a culture of innovation, world-class labs, and the constant encouragement to push boundaries.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
+                  PG
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Prof. Arun Giriyapur</h3>
+                <p className="text-primary font-medium mb-4">Mentor & Former HOD</p>
+                <p className="text-foreground/70 text-sm leading-relaxed">
+                  Guiding us from the start as Head of Department, now a lifelong mentor. His belief in our potential shaped not only our projects, but also the values we carry as engineers today.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
+                  AS
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Dr. Ashok Shetter</h3>
+                <p className="text-primary font-medium mb-4">Vice-Chancellor, KLE Tech</p>
+                <p className="text-foreground/70 text-sm leading-relaxed">
+                  Commitment to excellence has elevated KLE Tech into a hub of innovation, creating an ecosystem that bridges academia and industry.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
