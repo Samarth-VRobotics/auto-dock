@@ -96,9 +96,7 @@ const OurTeam = () => {
                     </div>
                     <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
                     <p className="text-primary font-medium mb-4">{member.role}</p>
-                    <p className="text-sm text-foreground/70 leading-relaxed mb-4 flex-grow">
-                      {member.description}
-                    </p>
+                    
                     <blockquote className="text-sm italic text-foreground/80 border-l-2 border-primary pl-3 mb-6 font-medium">
                       "{member.quote}"
                     </blockquote>
@@ -123,9 +121,7 @@ const OurTeam = () => {
                     </div>
                     <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
                     <p className="text-primary font-medium mb-4">{member.role}</p>
-                    <p className="text-sm text-foreground/70 leading-relaxed mb-4 flex-grow">
-                      {member.description}
-                    </p>
+                    
                     <blockquote className="text-sm italic text-foreground/80 border-l-2 border-primary pl-3 mb-6 font-medium">
                       "{member.quote}"
                     </blockquote>
