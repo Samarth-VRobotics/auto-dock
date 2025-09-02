@@ -64,24 +64,18 @@ const OurJourneySection = () => {
               <h3 className="text-3xl font-bold mb-6 text-primary">Our Journey in Robotics</h3>
               <div className="space-y-4 text-foreground/80 leading-relaxed">
                 <p>
-                  At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the university that has shaped us into who we are today. We take immense pride in calling it our alma mater — a place that not only gave us knowledge but also a thriving ecosystem of mentorship, opportunities, and vision.
+                  At Vegam Robotics, our story is rooted in KLE Technological University (KLETU) — our alma mater that shaped us with knowledge, mentorship, and vision.
                 </p>
+                <p>KLETU has long been a space where innovation thrives. Under the leadership of Dr. Ashok Shetter, the university has built a culture that inspires innovation and celebrates research-driven excellence. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry that vision forward, shaping the next generation of engineers.</p>
                 <p>
-                  KLETU has long been a space where innovation thrives. Under the leadership of Dr. Ashok Shetter, the university has built a culture that inspires innovation and celebrates research-driven excellence. Today, the Department of Automation and Robotics, led by Mr. Vinayak, continues to carry that vision forward, shaping the next generation of engineers.
-                </p>
-                <p>
-                  Among the many guiding lights on our path, Prof. Arun Giriyapur, former HOD, has been far more than just a teacher. He has been a steady, lifelong mentor — guiding us with his wisdom, encouraging our wildest ideas, and inspiring us to keep pushing the boundaries of robotics. The faith he placed in us during our university days still anchors our journey, reminding us of where we started and why we continue to build.
+                  Prof. Arun Giriyapur, former HOD, has been our lifelong mentor — guiding us with wisdom and inspiring us to push robotics boundaries.
                 </p>
               </div>
             </div>
             
             {/* University Lab Visual */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl">
-              <img 
-                src={universityLabScene} 
-                alt="University robotics lab with students working on projects" 
-                className="w-full h-full object-cover"
-              />
+              <img src={universityLabScene} alt="University robotics lab with students working on projects" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white">
                 <h4 className="text-xl font-bold mb-2">Where It All Began</h4>
@@ -94,11 +88,7 @@ const OurJourneySection = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-16">            
             {/* Industry Visual */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl">
-              <img 
-                src={modernRoboticsFacility} 
-                alt="Modern robotics facility with advanced automation" 
-                className="w-full h-full object-cover"
-              />
+              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white">
                 <h4 className="text-xl font-bold mb-2">Industry Impact</h4>
@@ -111,13 +101,13 @@ const OurJourneySection = () => {
               <h4 className="text-3xl font-bold mb-6 text-primary">From University to Industry</h4>
               <div className="space-y-4 text-foreground/80 leading-relaxed">
                 <p>
-                  Our journey began in university labs, where we worked late into the night on projects that challenged us — humanoids, mobile robots, automated storage systems, and vision-based inspection platforms. Each build was more than just a technical exercise; it was a spark, showing us how engineering could solve real problems.
+                  Our journey began in university labs with late-night projects — humanoids, mobile robots, automated systems. Each build showed us how engineering solves real problems.
                 </p>
                 <p>
-                  The bridge from academia to industry wasn't built overnight. It was shaped by mentors like Prof. Giriyapur, who pushed us to think beyond textbooks, and by the guidance of our CEO, Subramanyam Kasibhat, whose belief in robotics as a force for manufacturing transformation encouraged us to take our work into the real world.
+                  Mentors like Prof. Giriyapur pushed us beyond textbooks, while CEO Subramanyam Kasibhat's vision for robotics in manufacturing encouraged us to enter industry.
                 </p>
                 <p>
-                  What began as passion-driven projects within university walls gradually matured into scalable, industry-grade solutions. Those countless hours of experimentation, problem-solving, and small wins laid the foundation for Vegam Robotics. Even today, the values we absorbed at KLETU — rigor, practicality, and impact — continue to guide the way we design, build, and innovate.
+                  University passion projects evolved into scalable solutions. KLETU's values — rigor, practicality, impact — continue guiding how we design and innovate.
                 </p>
               </div>
             </div>
