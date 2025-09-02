@@ -37,28 +37,16 @@ const Navbar = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-80 bg-white">
                     <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
-                      <a href="https://vegam.co/sfs" className="block w-full">
-                        <div className="font-semibold text-foreground">vSFS</div>
-                        <div className="text-sm text-muted-foreground">Smart Factory Suite</div>
-                      </a>
+                      <div className="block w-full">
+                        <div className="font-semibold text-foreground">AMRs</div>
+                        <div className="text-sm text-muted-foreground">Autonomous Mobile Robots</div>
+                      </div>
                     </DropdownMenuItem>
                     <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
-                      <a href="https://vegam.co/oee" className="block w-full">
-                        <div className="font-semibold text-foreground">vMaxOEE</div>
-                        <div className="text-sm text-muted-foreground">Overall Equipment Effectiveness</div>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
-                      <a href="https://vegam.co/cms" className="block w-full">
-                        <div className="font-semibold text-foreground">vCMS</div>
-                        <div className="text-sm text-muted-foreground">Condition Monitoring System</div>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
-                      <a href="https://vegam.co/vwms" className="block w-full">
-                        <div className="font-semibold text-foreground">vWMS</div>
-                        <div className="text-sm text-muted-foreground">Warehouse Management System</div>
-                      </a>
+                      <div className="block w-full">
+                        <div className="font-semibold text-foreground">ASRS</div>
+                        <div className="text-sm text-muted-foreground">Automatic Storage and Retrieval System</div>
+                      </div>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
