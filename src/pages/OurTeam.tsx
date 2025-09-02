@@ -227,11 +227,7 @@ const OurTeam = () => {
 
             {/* Philosophy Section */}
             <div className="text-center mb-12">
-              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto border border-primary/10">
-                <blockquote className="text-lg text-foreground/80 italic leading-relaxed">
-                  "For us, this is a way to keep the cycle of learning alive — the same way our mentors once guided us."
-                </blockquote>
-              </div>
+              
             </div>
 
             {/* Call to Action */}
