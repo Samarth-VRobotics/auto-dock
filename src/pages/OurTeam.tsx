@@ -74,7 +74,7 @@ const OurTeam = () => {
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Core Team</h2>
                 <p className="text-foreground/80 leading-relaxed mb-6">
-                  Vegam is more than a company — it's the continuation of friendships, shared dreams, and late-night breakthroughs from our university days. While everyone wears many hats, from robotics and software to business and operations, each has a superpower that anchors the team.
+                  Vegam continues friendships and shared dreams from university days. Each team member wears many hats while bringing unique expertise to anchor our innovation.
                 </p>
               </div>
               <div className="relative rounded-3xl overflow-hidden shadow-xl">
@@ -146,7 +146,7 @@ const OurTeam = () => {
               <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
                 <h3 className="text-2xl font-bold mb-4 text-primary">Why We Build Together</h3>
                 <p className="text-foreground/80 leading-relaxed">
-                  Each of us brings unique skills and perspectives, but it's our shared spirit of exploration and problem-solving — combined with the flexibility to wear any hat — that powers Vegam. Together, we're shaping the future of robotics, one innovation at a time.
+                  Each brings unique skills, but our shared exploration spirit and flexibility to tackle any challenge powers Vegam's innovation.
                 </p>
               </div>
             </div>
@@ -165,10 +165,10 @@ const OurTeam = () => {
 
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p className="text-lg">
-                Vegam today is not just about robotics — it is about building end-to-end solutions for the future of manufacturing. With over 300+ plants powered by Vegam's digital backbone, we are integrating robotics into smart factory software, creating safer workplaces, improving quality, and reducing risk in industries dealing with high complexities and hazardous environments.
+                Vegam builds end-to-end manufacturing solutions. With 300+ plants powered by our digital backbone, we integrate robotics into smart factory software for safer, higher-quality operations.
               </p>
               <p className="text-lg">
-                With clarity of thought and a strong belief in robotics as a natural extension of digital manufacturing, this vision continues to guide and inspire the way we scale our solutions globally.
+                Our vision: robotics as a natural extension of digital manufacturing, guiding global scaling.
               </p>
             </div>
           </div>
@@ -259,7 +259,7 @@ const OurTeam = () => {
                     <h3 className="text-2xl font-bold text-primary">ConnectNext Program</h3>
                   </div>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    As much as Vegam is about building robots, it is also about giving back. Our engineers being part of the ConnectNext program, initiative by La Fondation Dassault Systèmes.
+                    As much as Vegam builds robots, we give back through ConnectNext — La Fondation Dassault Systèmes' initiative connecting academia with industry.
                   </p>
                   <div className="flex items-center text-sm text-primary font-medium">
                     <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
@@ -280,7 +280,7 @@ const OurTeam = () => {
                     <h3 className="text-2xl font-bold text-secondary">Academia Meets Industry</h3>
                   </div>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    As part of this program, we float industry-grade problem statements in robotics and automation along with experts from Dassault systems to universities and guide students and faculty in solving them. These projects are monitored by La Fondation creating a bridge between academia and industry. For us, this is a way to keep the cycle of learning alive — the same way our mentors once guided us.
+                    We float industry-grade robotics problems to universities with Dassault experts, creating academia-industry bridges. This keeps our learning cycle alive — just as mentors once guided us.
                   </p>
                   <div className="flex items-center text-sm text-secondary font-medium">
                     <div className="w-2 h-2 bg-secondary rounded-full mr-2"></div>
