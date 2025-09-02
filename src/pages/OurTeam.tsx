@@ -245,10 +245,13 @@ const OurTeam = () => {
                     <h3 className="text-2xl font-bold text-primary">ConnectNext Program</h3>
                   </div>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    As much as Vegam is about building robots, it is also about giving back. Our engineers being part of the ConnectNext program, initiative by La Fondation Dassault Systèmes.
+                    At Vegam, building robots goes hand in hand with giving back. Through the ConnectNext Program, an initiative by La Fondation Dassault Systèmes, we collaborate with universities to inspire the next generation of innovators.
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    As part of this program, we float industry-grade problem statements in robotics and automation along with experts from Dassault systems to universities and guide students and faculty in solving them. These projects are monitored by La Fondation creating a bridge between academia and industry. For us, this is a way to keep the cycle of learning alive — the same way our mentors once guided us.
+                    We co-create industry-grade problem statements in robotics and automation, and guide students and faculty in solving them. Experts from La Fondation Dassault Systèmes mentor and monitor these projects, creating a strong bridge between academia and industry.
+                  </p>
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    For us, it is about keeping the cycle of learning alive, just as our own mentors once did for us.
                   </p>
                   <div className="flex justify-between items-center">
                     <div className="flex items-center text-sm text-primary font-medium">
