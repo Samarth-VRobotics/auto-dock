@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
+import OurJourneySection from "@/components/OurJourneySection";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { useCallback, useEffect, useState } from 'react';
@@ -95,6 +96,8 @@ const OurTeam = () => {
           </div>
         </div>
       </section>
+
+      <OurJourneySection />
 
       {/* Core Team Carousel */}
       <section className="py-16 bg-background">
