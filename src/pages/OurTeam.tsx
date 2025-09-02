@@ -2,52 +2,70 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
 import OurJourneySection from "@/components/OurJourneySection";
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import { useCallback, useEffect, useState } from 'react';
 const OurTeam = () => {
-  // First row: Faizan, Rani, Amrut
-  const firstRowMembers = [
-    {
-      initials: "FP",
-      name: "Faizan Pathan",
-      role: "Robotics Engineer & System Architect",
-      description: "Multidisciplinary builder with expertise spanning humanoids, AMRs, ASRS, delta robots, and advanced vision systems.",
-      quote: "Robotics isn't just about machines; it's about creating systems that amplify human potential and transform industries."
-    },
-    {
-      initials: "R",
-      name: "Rani",
-      role: "Robotics Engineer - Vision Systems",
-      description: "Strong technical depth, specializing in robotic vision pipelines, inspection systems, and intelligent automation.",
-      quote: "What excites me most is when engineering and vision come together — when a robot can see, think, and act with precision."
-    },
-    {
-      initials: "A",
-      name: "Amrut",
-      role: "Robotics Engineer - AMRs & Motion",
-      description: "Expertise in AMRs, motion systems, and behavior-tree-based robot control for autonomous navigation.",
-      quote: "For me, robotics is about autonomy — systems that can adapt, respond, and evolve in real-world environments."
-    }
-  ];
-
-  // Second row: Samarth, Asutosh
-  const secondRowMembers = [
-    {
-      initials: "S",
-      name: "Samarth",
-      role: "Junior Robotics Engineer",
-      description: "Dedicated junior engineer adding execution strength, new perspectives, and technical expertise to drive innovation forward.",
-      quote: "I believe in building robust systems that make a real difference in how industries operate and evolve."
-    },
-    {
-      initials: "AS",
-      name: "Ashutosh",
-      role: "Junior Robotics Engineer",
-      description: "Talented junior engineer bringing fresh energy, innovative problem-solving skills, and strong execution capabilities to the team.",
-      quote: "Every challenge is an opportunity to learn and push the boundaries of what's possible in robotics."
-    }
-  ];
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'center'
+  }, [Autoplay({
+    delay: 4000,
+    stopOnInteraction: false
+  })]);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+  }, [emblaApi, onSelect]);
+  const teamMembers = [{
+    initials: "FP",
+    name: "Faizan Pathan",
+    role: "Robotics Engineer & System Architect",
+    description: "Multidisciplinary builder with expertise spanning humanoids, AMRs, ASRS, delta robots, and advanced vision systems.",
+    quote: "Robotics isn't just about machines; it's about creating systems that amplify human potential and transform industries."
+  }, {
+    initials: "R",
+    name: "Rani",
+    role: "Robotics Engineer - Vision Systems",
+    description: "Strong technical depth, specializing in robotic vision pipelines, inspection systems, and intelligent automation.",
+    quote: "What excites me most is when engineering and vision come together — when a robot can see, think, and act with precision."
+  }, {
+    initials: "A",
+    name: "Amrut",
+    role: "Robotics Engineer - AMRs & Motion",
+    description: "Expertise in AMRs, motion systems, and behavior-tree-based robot control for autonomous navigation.",
+    quote: "For me, robotics is about autonomy — systems that can adapt, respond, and evolve in real-world environments."
+  }, {
+    initials: "AS",
+    name: "Ashutosh",
+    role: "Junior Robotics Engineer",
+    description: "Talented junior engineer bringing fresh energy, innovative problem-solving skills, and strong execution capabilities to the team.",
+    quote: "Every challenge is an opportunity to learn and push the boundaries of what's possible in robotics."
+  }, {
+    initials: "S",
+    name: "Samarth",
+    role: "Junior Robotics Engineer",
+    description: "Dedicated junior engineer adding execution strength, new perspectives, and technical expertise to drive innovation forward.",
+    quote: "I believe in building robust systems that make a real difference in how industries operate and evolve."
+  }];
   return <div className="min-h-screen bg-background">
       <Navbar />
       
@@ -68,70 +86,59 @@ const OurTeam = () => {
         </div>
       </section>
 
-      <OurJourneySection />
+      
 
-      {/* Core Team Grid */}
+      {/* Core Team Carousel */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">The Core Team</h2>
             
-            {/* First Row - Senior Engineers */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              {firstRowMembers.map((member, index) => (
-                <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <CardContent className="p-8 text-center h-full flex flex-col">
-                    <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                      {member.initials}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                    <p className="text-primary font-medium mb-4">{member.role}</p>
-                    <p className="text-foreground/70 text-sm leading-relaxed mb-4 flex-grow">
-                      {member.description}
-                    </p>
-                    <blockquote className="text-xs italic text-foreground/60 border-l-2 border-primary pl-3 mb-4">
-                      "{member.quote}"
-                    </blockquote>
-                    <div className="flex justify-center space-x-3">
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Linkedin className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+            {/* Carousel Container */}
+            <div className="relative">
+              <div className="overflow-hidden" ref={emblaRef}>
+                <div className="flex gap-8">
+                  {teamMembers.map((member, index) => <div key={index} className="flex-none w-80 md:w-96">
+                      <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+                        <CardContent className="p-8 text-center h-full flex flex-col">
+                          <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
+                            {member.initials}
+                          </div>
+                          <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+                          <p className="text-primary font-medium mb-4">{member.role}</p>
+                          <p className="text-foreground/70 text-sm leading-relaxed mb-4 flex-grow">
+                            {member.description}
+                          </p>
+                          <blockquote className="text-xs italic text-foreground/60 border-l-2 border-primary pl-3 mb-4">
+                            "{member.quote}"
+                          </blockquote>
+                          <div className="flex justify-center space-x-3">
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Mail className="h-4 w-4" />
+                            </Button>
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Linkedin className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>)}
+                </div>
+              </div>
+              
+              {/* Navigation Buttons */}
+              <Button variant="outline" size="icon" className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm border-primary/20 hover:bg-primary hover:text-white" onClick={scrollPrev} disabled={!canScrollPrev}>
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              
+              <Button variant="outline" size="icon" className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm border-primary/20 hover:bg-primary hover:text-white" onClick={scrollNext} disabled={!canScrollNext}>
+                <ChevronRight className="h-5 w-5" />
+              </Button>
             </div>
-
-            {/* Second Row - Junior Engineers */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {secondRowMembers.map((member, index) => (
-                <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <CardContent className="p-8 text-center h-full flex flex-col">
-                    <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                      {member.initials}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                    <p className="text-primary font-medium mb-4">{member.role}</p>
-                    <p className="text-foreground/70 text-sm leading-relaxed mb-4 flex-grow">
-                      {member.description}
-                    </p>
-                    <blockquote className="text-xs italic text-foreground/60 border-l-2 border-primary pl-3 mb-4">
-                      "{member.quote}"
-                    </blockquote>
-                    <div className="flex justify-center space-x-3">
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Linkedin className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+            
+            {/* Carousel Indicators */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {teamMembers.map((_, index) => <button key={index} className="w-2 h-2 rounded-full bg-primary/30 hover:bg-primary/60 transition-colors" onClick={() => emblaApi && emblaApi.scrollTo(index)} />)}
             </div>
           </div>
         </div>
