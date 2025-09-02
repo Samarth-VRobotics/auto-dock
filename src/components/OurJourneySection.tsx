@@ -176,20 +176,7 @@ const OurJourneySection = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-4">
-                    <Button variant="outline" size="sm" className="group">
-                      <Code className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-                      View Code
-                    </Button>
-                    <Button variant="outline" size="sm" className="group">
-                      <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                      Case Study
-                    </Button>
-                    <Button variant="outline" size="sm" className="group">
-                      <ExternalLink className="w-4 h-4 mr-2 group-hover:rotate-45 transition-transform" />
-                      Learn More
-                    </Button>
-                  </div>
+                  
                 </div>
               </div>
             </div>
