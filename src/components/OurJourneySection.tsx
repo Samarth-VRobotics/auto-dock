@@ -57,120 +57,62 @@ const OurJourneySection = () => {
             
           </div>
 
-          {/* Our Journey in Robotics - Modern Card Structure */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <Card className="bg-gradient-to-br from-background via-muted/30 to-background border border-primary/10 shadow-2xl overflow-hidden">
-              <CardContent className="p-0">
-                {/* Header Section with Icon */}
-                <div className="p-8 pb-6">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-lg">
-                      <Code className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-foreground mb-2">Always Learning, Always Building</h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. Under the mentorship of Prof. Arun Giriyapur and leadership of Dr. Ashok Shetter, we evolved from curious students to industry innovators.
-                      </p>
-                    </div>
-                    <div className="hidden sm:flex items-center gap-2">
-                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                      <span className="text-xs text-muted-foreground font-medium">Innovation</span>
-                    </div>
-                  </div>
+          {/* Our Journey in Robotics Introduction */}
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            {/* Text Content */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
+              <h3 className="text-3xl font-bold mb-6 text-primary">Our Journey in Robotics</h3>
+              <div className="space-y-4 text-foreground/80 leading-relaxed">
+                <p>
+                  At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. We take immense pride in calling it our alma mater, a place that offered us not only knowledge but also a thriving ecosystem of mentorship, opportunities, and innovation.
+                </p>
+                <p>
+                  Under the leadership of Dr. Ashok Shetter, the university fostered a culture that celebrates research-driven excellence and bold ideas. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry the vision forward, preparing the next generation of robotics engineers.
+                </p>
+                <p>
+                  Among our greatest guiding lights, Prof. Arun Giriyapur, former HOD, has been far more than a teacher. A lifelong mentor, he encouraged our wildest ideas, anchored us with wisdom, and inspired us to keep pushing the boundaries of robotics. The faith he placed in us during our early years still drives our journey.
+                </p>
+              </div>
+            </div>
+            
+            {/* University Lab Portrait Gallery */}
+            <div className="grid grid-cols-2 gap-3 w-full max-w-2xl">
+              {/* Portrait Frame 1 */}
+              <div className="relative w-60 h-40 rounded-xl overflow-hidden shadow-lg border-3 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                <img src={studentPortrait1} alt="Student working on robotics project" className="w-full h-full object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute bottom-3 left-3 text-white">
+                  <p className="text-sm font-medium">Late Night Innovation</p>
                 </div>
+              </div>
 
-                {/* Impact Metrics Section */}
-                <div className="px-8 pb-6">
-                  <div className="bg-muted/50 rounded-2xl p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Eye className="w-4 h-4 text-primary" />
-                      </div>
-                      <h4 className="text-lg font-semibold text-foreground">Journey Milestones</h4>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                      {/* Before/After Comparison */}
-                      <div className="text-center">
-                        <div className="mb-3">
-                          <div className="text-xs text-muted-foreground mb-1">University Projects</div>
-                          <div className="h-16 bg-muted rounded-lg flex items-end justify-center p-2">
-                            <div className="w-8 bg-gradient-to-t from-primary/60 to-primary h-12 rounded-sm flex items-end justify-center">
-                              <span className="text-xs text-white font-medium mb-1">15+</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="text-sm font-medium text-foreground">Research Projects</div>
-                      </div>
-                      
-                      <div className="text-center">
-                        <div className="mb-3">
-                          <div className="text-xs text-primary font-medium mb-1">Industry Impact</div>
-                          <div className="h-16 bg-muted rounded-lg flex items-end justify-center p-2">
-                            <div className="w-8 bg-gradient-to-t from-secondary/60 to-secondary h-14 rounded-sm flex items-end justify-center">
-                              <span className="text-xs text-white font-medium mb-1">300+</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="text-sm font-medium text-foreground">Plants Powered</div>
-                      </div>
-
-                      <div className="text-center">
-                        <div className="mb-3">
-                          <div className="text-xs text-muted-foreground mb-1">Innovation ROI</div>
-                          <div className="h-16 bg-muted rounded-lg flex items-end justify-center p-2">
-                            <div className="w-8 bg-gradient-to-t from-accent/60 to-accent h-10 rounded-sm flex items-end justify-center">
-                              <span className="text-xs text-white font-medium mb-1">24x</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="text-sm font-medium text-foreground">Efficiency Gain</div>
-                      </div>
-                    </div>
-                  </div>
+              {/* Portrait Frame 2 */}
+              <div className="relative w-60 h-40 rounded-xl overflow-hidden shadow-lg border-3 border-white/20 bg-white/10 backdrop-blur-sm transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                <img src={studentPortrait2} alt="Team collaboration in university lab" className="w-full h-full object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute bottom-3 left-3 text-white">
+                  <p className="text-sm font-medium">Team Spirit</p>
                 </div>
+              </div>
 
-                {/* Scaling Section */}
-                <div className="px-8 pb-8">
-                  <div className="border-t border-border/50 pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl flex items-center justify-center">
-                        <Play className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-foreground mb-3">Scaling Innovation Without Limits</h4>
-                        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                          From late-night university projects to powering 300+ industrial plants. Our mentors pushed us beyond textbooks, while industry leaders like CEO Subramanyam Kasibhat encouraged us to transform academic passion into scalable solutions.
-                        </p>
-                        
-                        {/* Technology Stack Indicators */}
-                        <div className="flex items-center gap-8">
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
-                            <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                            <div className="w-2 h-2 bg-accent rounded-full"></div>
-                            <span className="text-xs text-muted-foreground ml-2">Multi-Platform</span>
-                          </div>
-                          
-                          <div className="flex items-center gap-2">
-                            <div className="w-6 h-1 bg-primary/30 rounded-full"></div>
-                            <span className="text-xs text-muted-foreground">Scalable Architecture</span>
-                          </div>
-
-                          <div className="flex items-center gap-2">
-                            <div className="w-4 h-4 rounded-full border-2 border-primary/30 flex items-center justify-center">
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
-                            </div>
-                            <span className="text-xs text-muted-foreground">Real-time Processing</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              {/* Portrait Frame 3 */}
+              <div className="relative w-60 h-40 rounded-xl overflow-hidden shadow-lg border-3 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform duration-300">
+                <img src={studentPortrait3} alt="Student coding robotics software" className="w-full h-full object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute bottom-3 left-3 text-white">
+                  <p className="text-sm font-medium">Code & Create</p>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+
+              {/* Portrait Frame 4 */}
+              <div className="relative w-60 h-40 rounded-xl overflow-hidden shadow-lg border-3 border-white/20 bg-white/10 backdrop-blur-sm transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+                <img src={studentPortrait4} alt="Student testing robot prototype" className="w-full h-full object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute bottom-3 left-3 text-white">
+                  <p className="text-sm font-medium">Testing Dreams</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* From Academia to Industry */}
