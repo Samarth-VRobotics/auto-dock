@@ -12,36 +12,36 @@ const OurTeam = () => {
   const firstRowMembers = [{
     initials: "FP",
     name: "Faizan Pathan",
-    role: "Builder of Possibilities",
-    description: "From dismantling gadgets as a child to architecting complex robotic systems. Transforms curiosity into creation, building the future piece by piece.",
-    quote: "Robots aren't just machines — they're stories of persistence told in bolts and code."
+    role: "Autonomy & Embedded Systems",
+    description: "Multidisciplinary engineer with expertise in autonomous systems and embedded technologies.",
+    quote: "Being multidisciplinary builds the mindset to tackle challenges across diverse fields, no matter the problem."
   }, {
-    initials: "R",
-    name: "Rani",
-    role: "The Systems Orchestrator",
-    description: "Sees the bigger picture — weaving robotics, automation, and industrial integration into seamless systems. Transforms ideas into robust solutions.",
-    quote: "KLETU gave us the stage, Arun Sir gave us the courage, and Vegam gave us the canvas to paint on a bigger scale."
+    initials: "RK",
+    name: "Rani Kinnal",
+    role: "Systems & Simulation",
+    description: "Expert in systems integration and simulation technologies, orchestrating complex robotic solutions.",
+    quote: "KLETU gave us the stage, Arun Sir gave us the courage, and Vegam gave us the platform to apply what we learned."
   }, {
-    initials: "A",
-    name: "Amrut",
-    role: "The Technical Backbone",
-    description: "The steady force through every lab, prototype, and breakthrough. His technical depth and resilience ensure no challenge feels unconquerable.",
-    quote: "Every project we built taught us resilience. That's still the strongest lesson we carry."
+    initials: "AK",
+    name: "Amrut Kurtakoti",
+    role: "Coordination & Business Development",
+    description: "Drives business growth and coordinates cross-functional teams to deliver impactful solutions.",
+    quote: "Collaboration and organization amplify our impact and speed of delivery."
   }];
 
   // Second row: Samarth, Ashutosh
   const secondRowMembers = [{
-    initials: "S",
-    name: "Samarth",
-    role: "The Fresh Spark",
-    description: "Youngest engineer bringing fresh energy and curiosity. Drives us to question the old and imagine new possibilities for Vegam's future.",
-    quote: "Every fresh idea is a spark — and sparks are what ignite revolutions."
+    initials: "SV",
+    name: "Samarth Vengurlekar",
+    role: "UI & Integration",
+    description: "Specializes in user interface design and system integration, bringing complex systems to life through intuitive design.",
+    quote: "Clear and simple design brings complex systems to life."
   }, {
-    initials: "AS",
-    name: "Ashutosh",
-    role: "The Quiet Strength",
-    description: "Believes impact speaks louder than words. Focused, disciplined, and deeply technical — our anchor as we scale new heights.",
-    quote: "Strong foundations are invisible — but they're what keep everything standing."
+    initials: "AK",
+    name: "Ashutosh Kangralkar",
+    role: "Mechanical Design & Hardware",
+    description: "Mechanical design expert focused on hardware development and robust system foundations.",
+    quote: "Strong foundations support everything we build."
   }];
   return <div className="min-h-screen bg-background">
       <Navbar />
@@ -72,12 +72,9 @@ const OurTeam = () => {
             {/* Team Header with Visual */}
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">The Core Team</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Core Team</h2>
                 <p className="text-foreground/80 leading-relaxed mb-6">
-                  Vegam is more than a company — it's the continuation of friendships, late-night experiments, and shared dreams from our university days.
-                </p>
-                <p className="text-lg font-medium text-primary italic">
-                  Together, this core team carries forward the spirit of innovation, teamwork, and problem-solving from KLETU into Vegam's DNA.
+                  Vegam is more than a company — it's the continuation of friendships, shared dreams, and late-night breakthroughs from our university days. While everyone wears many hats, from robotics and software to business and operations, each has a superpower that anchors the team.
                 </p>
               </div>
               <div className="relative rounded-3xl overflow-hidden shadow-xl">
@@ -143,6 +140,16 @@ const OurTeam = () => {
                   </CardContent>
                 </Card>)}
             </div>
+            
+            {/* Why We Build Together Section */}
+            <div className="mt-16 text-center max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Why We Build Together</h3>
+                <p className="text-foreground/80 leading-relaxed">
+                  Each of us brings unique skills and perspectives, but it's our shared spirit of exploration and problem-solving — combined with the flexibility to wear any hat — that powers Vegam. Together, we're shaping the future of robotics, one innovation at a time.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -158,10 +165,10 @@ const OurTeam = () => {
 
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p className="text-lg">
-                Building end-to-end solutions for manufacturing's future. We integrate robotics into smart factory software, creating safer workplaces and reducing risk in complex environments.
+                Vegam today is not just about robotics — it is about building end-to-end solutions for the future of manufacturing. With over 300+ plants powered by Vegam's digital backbone, we are integrating robotics into smart factory software, creating safer workplaces, improving quality, and reducing risk in industries dealing with high complexities and hazardous environments.
               </p>
               <p className="text-lg">
-                Our vision: robotics as a natural extension of digital manufacturing, guiding how we scale solutions globally.
+                With clarity of thought and a strong belief in robotics as a natural extension of digital manufacturing, this vision continues to guide and inspire the way we scale our solutions globally.
               </p>
             </div>
           </div>
@@ -305,22 +312,22 @@ const OurTeam = () => {
                   </div>
                   
                    <div className="grid md:grid-cols-2 gap-6 mb-8 text-left">
-                    <div>
+                     <div>
+                        <p className="leading-relaxed mb-4">
+                        If you are a student or faculty member looking for mentorship, guidance, or collaboration in robotics and automation — we are always open to help.
+                       </p>
+                       <p className="leading-relaxed">
+                         We started as students with a dream — today, we're building that dream into reality.
+                       </p>
+                     </div>
+                     <div>
                        <p className="leading-relaxed mb-4">
-                        Looking for mentorship, guidance, or collaboration in robotics? We're here to help students and faculty dream big.
-                      </p>
-                      <p className="leading-relaxed">
-                        We started as students with a dream — today, we're building that dream into reality.
-                      </p>
-                    </div>
-                    <div>
-                      <p className="leading-relaxed mb-4">
-                        Open to support, mentor, and collaborate with the next generation of robotics innovators.
-                      </p>
-                      <p className="leading-relaxed font-semibold">
-                        Tomorrow, it could be you.
-                      </p>
-                    </div>
+                         Open to support, mentor, and collaborate with the next generation of robotics innovators.
+                       </p>
+                       <p className="leading-relaxed font-semibold">
+                         Tomorrow, it could be you.
+                       </p>
+                     </div>
                   </div>
                   
                   <ContactDialog>

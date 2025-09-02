@@ -64,13 +64,13 @@ const OurJourneySection = () => {
               <h3 className="text-3xl font-bold mb-6 text-primary">Our Journey in Robotics</h3>
               <div className="space-y-4 text-foreground/80 leading-relaxed">
                 <p>
-                  At Vegam Robotics, our story is rooted in KLE Technological University (KLETU) — our alma mater that gave us knowledge, mentorship, and vision.
+                  At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the university that has shaped us into who we are today. We take immense pride in calling it our alma mater — a place that not only gave us knowledge but also a thriving ecosystem of mentorship, opportunities, and vision.
                 </p>
                 <p>
-                  Under Dr. Ashok Shetter's leadership, KLETU built a culture of innovation. The Department of Automation and Robotics, led by Mr. Vinayak, continues shaping future engineers.
+                  KLETU has long been a space where innovation thrives. Under the leadership of Dr. Ashok Shetter, the university has built a culture that inspires innovation and celebrates research-driven excellence. Today, the Department of Automation and Robotics, led by Mr. Vinayak, continues to carry that vision forward, shaping the next generation of engineers.
                 </p>
                 <p>
-                  Prof. Arun Giriyapur, our former HOD, has been more than a teacher — a lifelong mentor guiding us to push robotics boundaries.
+                  Among the many guiding lights on our path, Prof. Arun Giriyapur, former HOD, has been far more than just a teacher. He has been a steady, lifelong mentor — guiding us with his wisdom, encouraging our wildest ideas, and inspiring us to keep pushing the boundaries of robotics. The faith he placed in us during our university days still anchors our journey, reminding us of where we started and why we continue to build.
                 </p>
               </div>
             </div>
@@ -108,16 +108,16 @@ const OurJourneySection = () => {
             
             {/* Text Content */}
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
-              <h4 className="text-3xl font-bold mb-6 text-primary">From Academia to Industry</h4>
+              <h4 className="text-3xl font-bold mb-6 text-primary">From University to Industry</h4>
               <div className="space-y-4 text-foreground/80 leading-relaxed">
                 <p>
-                  Our journey began in university labs — humanoids, mobile robots, automated systems. Each project sparked our vision of engineering solving real problems.
+                  Our journey began in university labs, where we worked late into the night on projects that challenged us — humanoids, mobile robots, automated storage systems, and vision-based inspection platforms. Each build was more than just a technical exercise; it was a spark, showing us how engineering could solve real problems.
                 </p>
                 <p>
-                  Mentors like Prof. Giriyapur pushed us beyond textbooks. Our CEO, Subramanyam Kasibhat, believed in robotics transforming manufacturing.
+                  The bridge from academia to industry wasn't built overnight. It was shaped by mentors like Prof. Giriyapur, who pushed us to think beyond textbooks, and by the guidance of our CEO, Subramanyam Kasibhat, whose belief in robotics as a force for manufacturing transformation encouraged us to take our work into the real world.
                 </p>
                 <p>
-                  Passion-driven university projects evolved into scalable, industry-grade solutions. KLETU's values — rigor, practicality, impact — still guide us today.
+                  What began as passion-driven projects within university walls gradually matured into scalable, industry-grade solutions. Those countless hours of experimentation, problem-solving, and small wins laid the foundation for Vegam Robotics. Even today, the values we absorbed at KLETU — rigor, practicality, and impact — continue to guide the way we design, build, and innovate.
                 </p>
               </div>
             </div>
