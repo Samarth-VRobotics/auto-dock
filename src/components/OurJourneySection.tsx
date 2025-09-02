@@ -59,7 +59,7 @@ const OurJourneySection = () => {
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 mb-16 shadow-xl border border-primary/10">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary">From Curiosity to Innovation</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary">From University to Industry</h3>
                 <p className="text-foreground/80 leading-relaxed mb-4">
                   It all started with late-night experiments at KLE Technological University. What began as academic projects 
                   quickly evolved into a passion for solving real-world challenges through robotics.
