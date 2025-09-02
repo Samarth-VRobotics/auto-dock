@@ -303,44 +303,7 @@ const OurTeam = () => {
               <Card className="relative bg-gradient-to-br from-primary via-primary to-primary/90 text-white border-0 shadow-2xl overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
-                <CardContent className="relative p-12 text-center">
-                  <div className="mb-8">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
-                    </div>
-                    <h3 className="text-3xl font-bold mb-4">An Open Call to Students</h3>
-                  </div>
-                  
-                   <div className="grid md:grid-cols-2 gap-6 mb-8 text-left">
-                     <div>
-                        <p className="leading-relaxed mb-4">
-                        If you are a student or faculty member looking for mentorship, guidance, or collaboration in robotics and automation — we are always open to help.
-                       </p>
-                       <p className="leading-relaxed">
-                         We started as students with a dream — today, we're building that dream into reality.
-                       </p>
-                     </div>
-                     <div>
-                       <p className="leading-relaxed mb-4">
-                         Open to support, mentor, and collaborate with the next generation of robotics innovators.
-                       </p>
-                       <p className="leading-relaxed font-semibold">
-                         Tomorrow, it could be you.
-                       </p>
-                     </div>
-                  </div>
-                  
-                  <ContactDialog>
-                    <Button variant="secondary" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                      Connect With Us
-                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Button>
-                  </ContactDialog>
-                </CardContent>
+                
               </Card>
             </div>
           </div>
