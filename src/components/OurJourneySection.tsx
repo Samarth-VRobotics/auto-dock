@@ -68,10 +68,45 @@ const OurJourneySection = () => {
                   It all started with late-night experiments at KLE Technological University. What began as academic projects 
                   quickly evolved into a passion for solving real-world challenges through robotics.
                 </p>
-                <p className="text-foreground/80 leading-relaxed">
+                <p className="text-foreground/80 leading-relaxed mb-6">
                   Each project taught us something new — from the elegant mathematics of parallel mechanisms to the 
                   gritty reality of making robots work in unpredictable environments.
                 </p>
+                
+                {/* Projects That Shaped Us */}
+                <div>
+                  <h4 className="text-xl font-bold mb-4 text-primary">Projects That Shaped Us</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <div>
+                        <span className="font-semibold text-foreground">Humanoids</span>
+                        <span className="text-foreground/70"> → balancing dynamics, actuation, stability control</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <div>
+                        <span className="font-semibold text-foreground">Autonomous Mobile Robots (AMRs)</span>
+                        <span className="text-foreground/70"> → navigation, stair-climbing, obstacle negotiation</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <div>
+                        <span className="font-semibold text-foreground">Parallel Robots</span>
+                        <span className="text-foreground/70"> → high-precision mechanics, control theory in practice</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <div>
+                        <span className="font-semibold text-foreground">Industrial Inspection Systems</span>
+                        <span className="text-foreground/70"> → computer vision, AI, reliability at scale</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div className="relative">
                 <div className="aspect-video bg-gradient-primary rounded-2xl flex items-center justify-center text-white">
