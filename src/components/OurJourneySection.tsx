@@ -78,7 +78,7 @@ const OurJourneySection = () => {
             </div>
             
             {/* University Lab Portrait Gallery */}
-            <div className="grid grid-cols-2 gap-6 w-full max-w-2xl">
+            <div className="grid grid-cols-2 gap-3 w-full max-w-2xl">
               {/* Portrait Frame 1 */}
               <div className="relative w-60 h-40 rounded-xl overflow-hidden shadow-lg border-3 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
                 <img src={studentPortrait1} alt="Student working on robotics project" className="w-full h-full object-cover object-center" />
