@@ -57,89 +57,55 @@ const OurJourneySection = () => {
             
           </div>
 
-          {/* Our Journey in Robotics Introduction */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            {/* Text Content */}
+          {/* Our Journey in Robotics - Section Header */}
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-primary mb-4">Our Journey in Robotics</h3>
+          </div>
+
+          {/* Row 1: First Paragraph + Image (Text Left, Image Right) */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
-              <h3 className="text-3xl font-bold mb-6 text-primary">Our Journey in Robotics</h3>
-              <div className="space-y-4 text-foreground/80 leading-relaxed">
-                <p>
-                  At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. We take immense pride in calling it our alma mater, a place that offered us not only knowledge but also a thriving ecosystem of mentorship, opportunities, and innovation.
-                </p>
-                <p>
-                  Under the leadership of Dr. Ashok Shetter, the university fostered a culture that celebrates research-driven excellence and bold ideas. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry the vision forward, preparing the next generation of robotics engineers.
-                </p>
-                <p>
-                  Among our greatest guiding lights, Prof. Arun Giriyapur, former HOD, has been far more than a teacher. A lifelong mentor, he encouraged our wildest ideas, anchored us with wisdom, and inspired us to keep pushing the boundaries of robotics. The faith he placed in us during our early years still drives our journey.
-                </p>
-              </div>
+              <p className="text-foreground/80 leading-relaxed">
+                At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. We take immense pride in calling it our alma mater, a place that offered us not only knowledge but also a thriving ecosystem of mentorship, opportunities, and innovation.
+              </p>
             </div>
-            
-            {/* University Lab Portrait Gallery */}
-            <div className="grid grid-cols-2 gap-3 w-full max-w-2xl">
-              {/* Portrait Frame 1 */}
-              <div className="relative w-60 h-40 rounded-xl overflow-hidden shadow-lg border-3 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
-                <img src={studentPortrait1} alt="Student working on robotics project" className="w-full h-full object-cover object-center" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <div className="absolute bottom-3 left-3 text-white">
-                  <p className="text-sm font-medium">Late Night Innovation</p>
-                </div>
-              </div>
-
-              {/* Portrait Frame 2 */}
-              <div className="relative w-60 h-40 rounded-xl overflow-hidden shadow-lg border-3 border-white/20 bg-white/10 backdrop-blur-sm transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-                <img src={studentPortrait2} alt="Team collaboration in university lab" className="w-full h-full object-cover object-center" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <div className="absolute bottom-3 left-3 text-white">
-                  <p className="text-sm font-medium">Team Spirit</p>
-                </div>
-              </div>
-
-              {/* Portrait Frame 3 */}
-              <div className="relative w-60 h-40 rounded-xl overflow-hidden shadow-lg border-3 border-white/20 bg-white/10 backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform duration-300">
-                <img src={studentPortrait3} alt="Student coding robotics software" className="w-full h-full object-cover object-center" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <div className="absolute bottom-3 left-3 text-white">
-                  <p className="text-sm font-medium">Code & Create</p>
-                </div>
-              </div>
-
-              {/* Portrait Frame 4 */}
-              <div className="relative w-60 h-40 rounded-xl overflow-hidden shadow-lg border-3 border-white/20 bg-white/10 backdrop-blur-sm transform -rotate-2 hover:rotate-0 transition-transform duration-300">
-                <img src={studentPortrait4} alt="Student testing robot prototype" className="w-full h-full object-cover object-center" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <div className="absolute bottom-3 left-3 text-white">
-                  <p className="text-sm font-medium">Testing Dreams</p>
-                </div>
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-64">
+              <img src={universityLabScene} alt="University lab scene with students working on robotics" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <p className="text-sm font-medium">Our Roots at KLETU</p>
               </div>
             </div>
           </div>
 
-          {/* From Academia to Industry */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">            
-            {/* Industry Visual */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl">
-              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" className="w-full h-full object-cover" />
+          {/* Row 2: Second Image + Paragraph (Image Left, Text Right) */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-64">
+              <img src={studentPortrait1} alt="Student working on robotics project" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
-                <h4 className="text-xl font-bold mb-2">Industry Impact</h4>
-                <p className="text-sm">300+ plants powered by our solutions</p>
+              <div className="absolute bottom-4 left-4 text-white">
+                <p className="text-sm font-medium">Leadership & Vision</p>
               </div>
             </div>
-            
-            {/* Text Content */}
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
-              <h4 className="text-3xl font-bold mb-6 text-primary">From University to Industry</h4>
-              <div className="space-y-4 text-foreground/80 leading-relaxed">
-                <p>
-                  Our journey began in university labs with late-night projects — humanoids, mobile robots, automated systems. Each build showed us how engineering solves real problems.
-                </p>
-                <p>
-                  Mentors like Prof. Giriyapur pushed us beyond textbooks, while CEO Subramanyam Kasibhat's vision for robotics in manufacturing encouraged us to enter industry.
-                </p>
-                <p>
-                  University passion projects evolved into scalable solutions. KLETU's values — rigor, practicality, impact — continue guiding how we design and innovate.
-                </p>
+              <p className="text-foreground/80 leading-relaxed">
+                Under the leadership of Dr. Ashok Shetter, the university fostered a culture that celebrates research-driven excellence and bold ideas. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry the vision forward, preparing the next generation of robotics engineers.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 3: Third Paragraph + Image (Text Left, Image Right) */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16 items-center">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/10">
+              <p className="text-foreground/80 leading-relaxed">
+                Among our greatest guiding lights, Prof. Arun Giriyapur, former HOD, has been far more than a teacher. A lifelong mentor, he encouraged our wildest ideas, anchored us with wisdom, and inspired us to keep pushing the boundaries of robotics. The faith he placed in us during our early years still drives our journey.
+              </p>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-64">
+              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <p className="text-sm font-medium">Mentorship & Growth</p>
               </div>
             </div>
           </div>
