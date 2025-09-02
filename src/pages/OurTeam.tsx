@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
-import OurJourneySection from "@/components/OurJourneySection";
 const OurTeam = () => {
   // First row: Faizan, Rani, Amrut
   const firstRowMembers = [{
@@ -60,8 +59,6 @@ const OurTeam = () => {
           </div>
         </div>
       </section>
-
-      <OurJourneySection />
 
       {/* Core Team Grid */}
       <section className="py-16 bg-background">
