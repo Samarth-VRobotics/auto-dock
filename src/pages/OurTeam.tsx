@@ -243,7 +243,7 @@ const OurTeam = () => {
 
             {/* Main Content Cards */}
             <div className="grid md:grid-cols-2 gap-8 mb-16">
-              {/* ConnectNext Program Card */}
+              {/* Merged ConnectNext Program Card */}
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover-scale">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
@@ -257,30 +257,46 @@ const OurTeam = () => {
                   <p className="text-foreground/80 leading-relaxed mb-6">
                     As much as Vegam is about building robots, it is also about giving back. Our engineers being part of the ConnectNext program, initiative by La Fondation Dassault Systèmes.
                   </p>
-                  <div className="flex items-center text-sm text-primary font-medium">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
-                    Industry-Grade Problem Statements
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    As part of this program, we float industry-grade problem statements in robotics and automation along with experts from Dassault systems to universities and guide students and faculty in solving them. These projects are monitored by La Fondation creating a bridge between academia and industry. For us, this is a way to keep the cycle of learning alive — the same way our mentors once guided us.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center text-sm text-primary font-medium">
+                      <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
+                      Industry-Grade Problem Statements
+                    </div>
+                    <div className="flex items-center text-sm text-secondary font-medium">
+                      <div className="w-2 h-2 bg-secondary rounded-full mr-2"></div>
+                      Continuous Learning Cycle
+                    </div>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Bridge Building Card */}
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover-scale">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-secondary rounded-xl flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              {/* Call for Students Card */}
+              <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover-scale">
+                <CardContent className="p-8 h-full flex flex-col justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-secondary">Academia Meets Industry</h3>
-                  </div>
-                  <p className="text-foreground/80 leading-relaxed mb-6">
-                    As part of this program, we float industry-grade problem statements in robotics and automation along with experts from Dassault systems to universities and guide students and faculty in solving them. These projects are monitored by La Fondation creating a bridge between academia and industry. For us, this is a way to keep the cycle of learning alive — the same way our mentors once guided us.
-                  </p>
-                  <div className="flex items-center text-sm text-secondary font-medium">
-                    <div className="w-2 h-2 bg-secondary rounded-full mr-2"></div>
-                    Continuous Learning Cycle
+                    <h3 className="text-2xl font-bold mb-4 text-primary">Calling All Students</h3>
+                    <p className="text-foreground/80 leading-relaxed mb-6">
+                      Are you a student or faculty member passionate about robotics? We're always open to mentor, collaborate, and guide the next generation of innovators.
+                    </p>
+                    <p className="text-primary font-semibold mb-6">
+                      We started as students with a dream — today, we're building that dream into reality. Tomorrow, it could be you.
+                    </p>
+                    <ContactDialog>
+                      <Button className="bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300">
+                        Get Mentorship
+                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </Button>
+                    </ContactDialog>
                   </div>
                 </CardContent>
               </Card>
