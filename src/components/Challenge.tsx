@@ -29,7 +29,7 @@ const Challenge = () => {
           <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-destructive bg-clip-text text-transparent leading-tight">The Hidden Bottlenecks 
 of Dock Operations</h2>
           
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">Wher</p>
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">Docks: Where Dynamic Demand Meets Static Systems</p>
         </div>
 
         {/* Three Card Layout */}
