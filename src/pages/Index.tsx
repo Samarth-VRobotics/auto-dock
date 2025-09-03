@@ -4,10 +4,8 @@ import { Button } from "@/components/ui/button";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
 import { ArrowRight, CheckCircle2, Truck, Building2, Globe, Clock } from "lucide-react";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
       
       {/* Hero Section */}
@@ -74,11 +72,7 @@ const Index = () => {
 
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5 border">
-                <img 
-                  src="/src/assets/modern-robotics-facility.jpg" 
-                  alt="Advanced Robotics Manufacturing Facility"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/src/assets/modern-robotics-facility.jpg" alt="Advanced Robotics Manufacturing Facility" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -86,32 +80,7 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">vRobotics Across The Globe</h2>
-          </div>
-          
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl md:text-6xl font-bold text-primary mb-2">1000+</div>
-              <div className="text-muted-foreground font-medium">Robots Deployed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-6xl font-bold text-primary mb-2">100+</div>
-              <div className="text-muted-foreground font-medium">Active Warehouses</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-6xl font-bold text-primary mb-2">25+</div>
-              <div className="text-muted-foreground font-medium">Countries</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-6xl font-bold text-primary mb-2">48 Hours</div>
-              <div className="text-muted-foreground font-medium">Deployment Time</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Solutions Preview - keeping as requested */}
       <section className="py-20">
@@ -127,11 +96,7 @@ const Index = () => {
             {/* AMR Solution */}
             <div className="group cursor-pointer">
               <div className="aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary/10 to-primary/5 border">
-                <img 
-                  src="/src/assets/mobile-manipulator-dock.jpg" 
-                  alt="Autonomous Mobile Robots (AMR)"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <img src="/src/assets/mobile-manipulator-dock.jpg" alt="Autonomous Mobile Robots (AMR)" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               <h3 className="text-xl font-bold mb-4">Autonomous Mobile Robots (AMR)</h3>
               <p className="text-muted-foreground mb-6 text-sm">
@@ -164,11 +129,7 @@ const Index = () => {
             {/* AutoDock Solution */}
             <div className="group cursor-pointer">
               <div className="aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary/10 to-primary/5 border">
-                <img 
-                  src="/src/assets/hero-dock-autonomy.jpg" 
-                  alt="Robotic Loading and Unloading Solutions"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <img src="/src/assets/hero-dock-autonomy.jpg" alt="Robotic Loading and Unloading Solutions" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               <h3 className="text-xl font-bold mb-4">Robotic Loading and Unloading Solutions</h3>
               <p className="text-muted-foreground mb-6 text-sm">
@@ -201,11 +162,7 @@ const Index = () => {
             {/* ASRS Solution */}
             <div className="group cursor-pointer">
               <div className="aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary/10 to-primary/5 border">
-                <img 
-                  src="/src/assets/university-lab-scene.jpg" 
-                  alt="Automated Storage & Retrieval Systems"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <img src="/src/assets/university-lab-scene.jpg" alt="Automated Storage & Retrieval Systems" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               <h3 className="text-xl font-bold mb-4">Automated Storage & Retrieval Systems</h3>
               <p className="text-muted-foreground mb-6 text-sm">
@@ -238,11 +195,7 @@ const Index = () => {
             {/* WMS Integration */}
             <div className="group cursor-pointer">
               <div className="aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary/10 to-primary/5 border">
-                <img 
-                  src="/src/assets/modern-robotics-facility.jpg" 
-                  alt="WMS Integration & Orchestration"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <img src="/src/assets/modern-robotics-facility.jpg" alt="WMS Integration & Orchestration" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               <h3 className="text-xl font-bold mb-4">WMS Integration & Orchestration</h3>
               <p className="text-muted-foreground mb-6 text-sm">
@@ -363,21 +316,13 @@ const Index = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ContactDialog>
-                <Button 
-                  size="lg" 
-                  variant="secondary"
-                  className="text-lg px-8 py-3 bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300"
-                >
+                <Button size="lg" variant="secondary" className="text-lg px-8 py-3 bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300">
                   Book A Demo
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </ContactDialog>
               
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="text-lg px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-300"
-              >
+              <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-300">
                 Download Case Study
               </Button>
             </div>
@@ -386,8 +331,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
