@@ -1,11 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Industries from "@/components/Industries";
+import Customers from "@/components/Customers";
+import TeamIntro from "@/components/TeamIntro";
+import FinalCTA from "@/components/FinalCTA";
 import { Button } from "@/components/ui/button";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
 import { ArrowRight, CheckCircle2, Truck, Building2, Globe, Clock } from "lucide-react";
 const Index = () => {
-  return <div className="min-h-screen bg-background">
+  return (
+    <div className="min-h-screen bg-background">
       <Navbar />
       
       {/* Hero Section */}
@@ -300,37 +305,22 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary/90 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
-        
-        <div className="container mx-auto px-6 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Deploy Intelligent Robotics in Your Warehouse?
-            </h2>
-            <p className="text-xl mb-8 text-white/90">
-              Join 100+ leading warehouses worldwide and transform your operations with Vegam's AI-powered robotics platform. Get ROI within 12-18 months with 48-hour deployment.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ContactDialog>
-                <Button size="lg" variant="secondary" className="text-lg px-8 py-3 bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300">
-                  Book A Demo
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </ContactDialog>
-              
-              <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-300">
-                Download Case Study
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Industries */}
+      <Industries />
 
+      {/* Customers */}
+      <Customers />
+
+      {/* Team Introduction */}
+      <TeamIntro />
+
+      {/* Final CTA */}
+      <FinalCTA />
+
+      {/* Footer */}
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
