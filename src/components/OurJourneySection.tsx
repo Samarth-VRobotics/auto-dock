@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Play, ExternalLink, Code, Eye } from "lucide-react";
 import { useState } from "react";
+import EventsCarousel from "@/components/EventsCarousel";
 import universityLabScene from "@/assets/university-lab-scene.jpg";
 import modernRoboticsFacility from "@/assets/modern-robotics-facility.jpg";
 import studentPortrait1 from "@/assets/student-portrait-1.jpg";
@@ -161,6 +162,20 @@ const OurJourneySection = () => {
                 
               </div>
             </div>
+          </div>
+
+          {/* Events & Experiences Section */}
+          <div className="text-center mb-16">
+            <h4 className="text-5xl font-bold text-primary mb-6 hover:text-primary/80 transition-colors duration-300">Events & Experiences</h4>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full mb-8"></div>
+            <p className="text-foreground/80 leading-relaxed text-lg max-w-4xl mx-auto">
+              At Vegam, our journey extends beyond the lab and into real-world interactions — with customers, industry leaders, and students alike. From hosting our own expos to showcasing solutions on global stages, these moments capture how we share ideas, learn, and grow together.
+            </p>
+          </div>
+
+          {/* Events Carousel */}
+          <div className="relative max-w-6xl mx-auto">
+            <EventsCarousel />
           </div>
           
         </div>
