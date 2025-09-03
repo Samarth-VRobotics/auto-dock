@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Challenge from "@/components/Challenge";
+import ASRSHero from "@/components/ASRSHero";
+import ASRSChallenge from "@/components/ASRSChallenge";
 import Industries from "@/components/Industries";
 import Customers from "@/components/Customers";
 import TeamIntro from "@/components/TeamIntro";
@@ -11,8 +11,8 @@ const ASRS = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Hero />
-      <Challenge />
+      <ASRSHero />
+      <ASRSChallenge />
       <Industries />
       <Customers />
       <TeamIntro />

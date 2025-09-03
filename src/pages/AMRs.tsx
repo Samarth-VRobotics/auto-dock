@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Challenge from "@/components/Challenge";
+import AMRHero from "@/components/AMRHero";
+import AMRChallenge from "@/components/AMRChallenge";
 import Industries from "@/components/Industries";
 import Customers from "@/components/Customers";
 import TeamIntro from "@/components/TeamIntro";
@@ -11,8 +11,8 @@ const AMRs = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Hero />
-      <Challenge />
+      <AMRHero />
+      <AMRChallenge />
       <Industries />
       <Customers />
       <TeamIntro />
