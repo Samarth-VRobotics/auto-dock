@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Index from "./pages/Index";
 import OurTeam from "./pages/OurTeam";
+import AutoDock from "./pages/AutoDock";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/our-team" element={<OurTeam />} />
+            <Route path="/autodock" element={<AutoDock />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

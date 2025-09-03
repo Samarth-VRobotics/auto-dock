@@ -36,6 +36,12 @@ const Navbar = () => {
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-80 bg-white">
+                    <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 p-4">
+                      <a href="/autodock" className="block w-full">
+                        <div className="font-semibold text-foreground">AutoDock</div>
+                        <div className="text-sm text-muted-foreground">Automated loading and unloading</div>
+                      </a>
+                    </DropdownMenuItem>
                     <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
                       <div className="block w-full">
                         <div className="font-semibold text-foreground">AMRs</div>
