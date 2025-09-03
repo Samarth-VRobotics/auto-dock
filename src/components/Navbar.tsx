@@ -19,9 +19,9 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo Section */}
             <div className="flex items-center space-x-8">
-              <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-14 transition-transform duration-200 hover:scale-105" />
-              
-              
+              <a href="/" className="flex items-center">
+                <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-14 transition-transform duration-200 hover:scale-105" />
+              </a>
             </div>
             
             {/* CTA Button & Mobile Menu */}
@@ -30,28 +30,43 @@ const Navbar = () => {
               <div className="hidden lg:flex items-center space-x-8">
                 {/* Solutions Dropdown */}
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors font-medium relative group flex items-center gap-1">
+                  <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors font-medium relative group flex items-center gap-1 focus:outline-none">
                     Solutions
-                    <ChevronDown className="h-4 w-4" />
+                    <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-80 bg-white">
-                    <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 p-4">
-                      <a href="/autodock" className="block w-full">
-                        <div className="font-semibold text-foreground">AutoDock</div>
-                        <div className="text-sm text-muted-foreground">Automated loading and unloading</div>
+                  <DropdownMenuContent className="w-80 bg-white/95 backdrop-blur-lg border border-slate-200/50 shadow-xl rounded-xl p-2 z-50">
+                    <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
+                      <a href="/autodock" className="block w-full group">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
+                          <div>
+                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">AutoDock</div>
+                            <div className="text-sm text-muted-foreground">Automated loading and unloading</div>
+                          </div>
+                        </div>
                       </a>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
-                      <div className="block w-full">
-                        <div className="font-semibold text-foreground">AMRs</div>
-                        <div className="text-sm text-muted-foreground">Autonomous Mobile Robots</div>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
+                      <div className="block w-full group">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
+                          <div>
+                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">AMRs</div>
+                            <div className="text-sm text-muted-foreground">Autonomous Mobile Robots</div>
+                          </div>
+                        </div>
                       </div>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 p-4">
-                      <div className="block w-full">
-                        <div className="font-semibold text-foreground">ASRS</div>
-                        <div className="text-sm text-muted-foreground">Automatic Storage and Retrieval System</div>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
+                      <div className="block w-full group">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
+                          <div>
+                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">ASRS</div>
+                            <div className="text-sm text-muted-foreground">Automatic Storage and Retrieval System</div>
+                          </div>
+                        </div>
                       </div>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
