@@ -278,23 +278,14 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-card rounded-xl p-6 border hover:shadow-lg transition-shadow">
-              <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
-                <img src="/src/assets/ai-orchestration.jpg" alt="AI-Driven Fleet Orchestration" className="w-full h-full object-cover" />
-              </div>
               <h3 className="text-xl font-bold mb-4">AI-Driven Orchestration</h3>
               <p className="text-muted-foreground">Intelligent task allocation and dynamic route optimization across robot fleets.</p>
             </div>
             <div className="bg-card rounded-xl p-6 border hover:shadow-lg transition-shadow">
-              <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
-                <img src="/src/assets/safety-compliance.jpg" alt="Safety & Compliance Systems" className="w-full h-full object-cover" />
-              </div>
               <h3 className="text-xl font-bold mb-4">Safety & Compliance</h3>
               <p className="text-muted-foreground">Advanced safety protocols with real-time monitoring and emergency response systems.</p>
             </div>
             <div className="bg-card rounded-xl p-6 border hover:shadow-lg transition-shadow">
-              <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
-                <img src="/src/assets/performance-analytics.jpg" alt="Performance Analytics Dashboard" className="w-full h-full object-cover" />
-              </div>
               <h3 className="text-xl font-bold mb-4">Performance Analytics</h3>
               <p className="text-muted-foreground">Real-time KPI tracking with predictive insights for continuous optimization.</p>
             </div>
