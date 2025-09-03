@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 
 import OurTeam from "./pages/OurTeam";
 import AutoDock from "./pages/AutoDock";
+import AMRs from "./pages/AMRs";
+import ASRS from "./pages/ASRS";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -30,6 +32,8 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/autodock" element={<AutoDock />} />
+            <Route path="/amrs" element={<AMRs />} />
+            <Route path="/asrs" element={<ASRS />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

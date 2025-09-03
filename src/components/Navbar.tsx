@@ -47,8 +47,8 @@ const Navbar = () => {
                         </div>
                       </a>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
-                      <div className="block w-full group">
+                    <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
+                      <a href="/amrs" className="block w-full group">
                         <div className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
                           <div>
@@ -56,10 +56,10 @@ const Navbar = () => {
                             <div className="text-sm text-muted-foreground">Autonomous Mobile Robots</div>
                           </div>
                         </div>
-                      </div>
+                      </a>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
-                      <div className="block w-full group">
+                    <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
+                      <a href="/asrs" className="block w-full group">
                         <div className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
                           <div>
@@ -67,7 +67,7 @@ const Navbar = () => {
                             <div className="text-sm text-muted-foreground">Automatic Storage and Retrieval System</div>
                           </div>
                         </div>
-                      </div>
+                      </a>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
