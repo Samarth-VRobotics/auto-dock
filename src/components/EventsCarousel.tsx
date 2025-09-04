@@ -21,7 +21,13 @@ const eventsData = [
     id: 2,
     title: "NVIDIA GTC – San Jose, California",
     description: "This year, we had the privilege of presenting at NVIDIA GTC, where we set up a booth in San Jose. Sharing our work on a global stage allowed us to connect with innovators and highlight how our solutions push the boundaries of robotics.",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format",
+    images: [
+      { url: "/lovable-uploads/7ac5175e-c253-4a13-ba01-29e303052493.png", alt: "NVIDIA GTC booth presentation with attendees" },
+      { url: "/lovable-uploads/ecf241d1-7b89-40d3-b8ff-1993263c8f79.png", alt: "Team engagement at NVIDIA GTC conference" },
+      { url: "/lovable-uploads/2f4eb91c-0584-44e0-85f3-fa040b217476.png", alt: "Networking at NVIDIA GTC startup section" },
+      { url: "/lovable-uploads/5fd9a1e2-f41c-4f50-8fd4-0e5707c4282a.png", alt: "Industry discussions at NVIDIA GTC booth" }
+    ],
+    imageUrl: "/lovable-uploads/7ac5175e-c253-4a13-ba01-29e303052493.png",
     imageAlt: "NVIDIA GTC conference presentation"
   },
   {
@@ -43,6 +49,7 @@ const eventsData = [
 const EventsCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [imageSlides, setImageSlides] = useState<{ [key: number]: number }>({});
 
   const scrollToSlide = useCallback((index: number) => {
     if (api) {
@@ -57,10 +64,29 @@ const EventsCarousel = () => {
     const interval = setInterval(() => {
       const nextIndex = (current + 1) % eventsData.length;
       scrollToSlide(nextIndex);
-    }, 7000); // 7 seconds rotation
+    }, 12000); // Increased to 12 seconds rotation
 
     return () => clearInterval(interval);
   }, [api, current, scrollToSlide]);
+
+  // Auto-advance image slideshow for events with multiple images
+  useEffect(() => {
+    const intervals: NodeJS.Timeout[] = [];
+    
+    eventsData.forEach((event, eventIndex) => {
+      if (event.images && event.images.length > 1) {
+        const interval = setInterval(() => {
+          setImageSlides(prev => ({
+            ...prev,
+            [eventIndex]: ((prev[eventIndex] || 0) + 1) % event.images!.length
+          }));
+        }, 4000); // Change image every 4 seconds
+        intervals.push(interval);
+      }
+    });
+
+    return () => intervals.forEach(clearInterval);
+  }, []);
 
   // Update current index when slide changes
   useEffect(() => {
@@ -89,15 +115,47 @@ const EventsCarousel = () => {
                   <div className="grid md:grid-cols-2 gap-0 items-center min-h-[500px]">
                     {/* Image Section */}
                     <div className="relative h-64 md:h-[500px] overflow-hidden group">
-                      <img 
-                        src={event.imageUrl} 
-                        alt={event.imageAlt}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                      />
+                      {event.images && event.images.length > 1 ? (
+                        // Multiple images slideshow
+                        <>
+                          {event.images.map((image, imgIndex) => (
+                            <img 
+                              key={imgIndex}
+                              src={image.url} 
+                              alt={image.alt}
+                              className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
+                                imgIndex === (imageSlides[index] || 0) 
+                                  ? 'opacity-100 z-10' 
+                                  : 'opacity-0 z-0'
+                              }`}
+                            />
+                          ))}
+                          {/* Image indicators */}
+                          <div className="absolute bottom-16 left-6 z-20">
+                            <div className="flex space-x-2">
+                              {event.images.map((_, imgIndex) => (
+                                <div 
+                                  key={imgIndex}
+                                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                    imgIndex === (imageSlides[index] || 0) ? 'bg-white' : 'bg-white/50'
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        // Single image
+                        <img 
+                          src={event.imageUrl} 
+                          alt={event.imageAlt}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        />
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
-                                    group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
+                                    group-hover:from-black/60 group-hover:to-transparent transition-all duration-300 z-15"></div>
                       <div className="absolute bottom-6 left-6 text-white transform 
-                                    group-hover:translate-y-[-4px] transition-transform duration-300">
+                                    group-hover:translate-y-[-4px] transition-transform duration-300 z-20">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
                       </div>
                     </div>
