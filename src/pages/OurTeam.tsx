@@ -476,19 +476,19 @@ const OurTeam = () => {
       <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Our Vision: Lights-Out Manufacturing</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Our Vision: Lights Out Manufacturing</h2>
             
             <div className="space-y-6 text-foreground/80 leading-relaxed">
               <p className="text-lg">
-                At Vegam, we are shaping the future of manufacturing with fully autonomous factories that run continuously with minimal human intervention. By uniting robotics, AI, and digital intelligence, we create production ecosystems that are safer, smarter, and self-optimizing.
+                We envision a future where factories operate seamlessly without human intervention, where robots handle every aspect of production with precision and efficiency. This isn't just automation—it's complete autonomous manufacturing.
               </p>
               
               <p className="text-base">
-                With 300+ plants powered by our digital backbone, we are driving the shift from connected factories to truly autonomous ones. Through adaptive robotics, generative AI, and predictive intelligence, we are pioneering a new era where risks are anticipated, quality is built-in, and efficiency has no limits.
+                Our team combines expertise in robotics, artificial intelligence, and manufacturing to create solutions that transform traditional factories into smart, adaptive production environments. Each member brings unique skills that contribute to this ambitious vision.
               </p>
               
               <p className="text-base">
-                For us, robotics is the foundation of a world where factories never stop, innovation never slows, and the Lights-Out vision becomes reality.
+                From autonomous mobile robots that navigate complex warehouse environments to AI-powered systems that optimize production schedules, we're building the infrastructure for the factory of tomorrow—today.
               </p>
             </div>
           </div>
