@@ -65,117 +65,188 @@ const OurTeam = () => {
 
       <OurJourneySection />
 
-      {/* Our Team Media Band */}
+      {/* Our Team Collage Section */}
       <section className="py-16 bg-background">
         <div className="w-full">
           {/* Header */}
-          <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">Our Team</h2>
             <p className="text-foreground/60 text-sm md:text-base max-w-4xl mx-auto px-6 leading-relaxed">
               Vegam is more than a company — it's the continuation of friendships, shared dreams, and late-night breakthroughs from our university days. While everyone wears many hats, from robotics and software to business and operations, each has a superpower that anchors the team.
             </p>
           </div>
 
-          {/* Full-Width Media Band */}
-          <div className="w-full overflow-hidden">
-            {/* Desktop: Horizontal Gallery */}
-            <div className="hidden md:flex gap-6 px-6">
-              <div className="flex-1 min-w-0 relative rounded-2xl overflow-hidden shadow-lg group">
-                <img src={teamCollaboration} alt="Team collaboration session" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-sm font-medium">Collaboration</p>
+          {/* Desktop: Dynamic Collage Grid */}
+          <div className="hidden lg:block w-full px-6">
+            <div className="grid grid-cols-6 grid-rows-4 gap-4 h-[600px] max-w-7xl mx-auto">
+              {/* Large landscape image - spans 2x2 */}
+              <div className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden shadow-xl group">
+                <img src={teamCollaboration} alt="Team collaboration session" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <h4 className="text-lg font-bold mb-1">Team Collaboration</h4>
+                  <p className="text-sm text-white/80">Innovation through partnership</p>
                 </div>
               </div>
-              <div className="flex-1 min-w-0 relative rounded-2xl overflow-hidden shadow-lg group">
-                <img src={mentorshipScene} alt="Mentorship and guidance" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-sm font-medium">Mentorship</p>
-                </div>
-              </div>
-              <div className="flex-1 min-w-0 relative rounded-2xl overflow-hidden shadow-lg group bg-gradient-to-br from-primary/20 to-secondary/20">
-                <div className="w-full h-64 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+              {/* Square video placeholder */}
+              <div className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary/30 to-secondary/30 group hover:shadow-xl transition-all duration-300">
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <p className="text-foreground/80 text-sm font-medium">Innovation Hub</p>
+                    <p className="text-white text-xs font-medium">Innovation</p>
                   </div>
                 </div>
               </div>
-              <div className="flex-1 min-w-0 relative rounded-2xl overflow-hidden shadow-lg group bg-gradient-to-br from-secondary/20 to-accent/20">
-                <div className="w-full h-64 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-16 h-16 bg-gradient-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+
+              {/* Portrait image */}
+              <div className="col-span-1 row-span-2 relative rounded-2xl overflow-hidden shadow-xl group">
+                <img src={mentorshipScene} alt="Mentorship session" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <p className="text-sm font-medium">Mentorship</p>
+                </div>
+              </div>
+
+              {/* Wide landscape spanning 2 columns */}
+              <div className="col-span-2 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-r from-secondary/20 via-accent/20 to-primary/20 group hover:shadow-xl transition-all duration-300">
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-secondary rounded-full mx-auto mb-3 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
-                    <p className="text-foreground/80 text-sm font-medium">Rapid Prototyping</p>
+                    <p className="text-foreground/80 text-sm font-medium">Rapid Development</p>
                   </div>
                 </div>
               </div>
-              <div className="flex-1 min-w-0 relative rounded-2xl overflow-hidden shadow-lg group bg-gradient-to-br from-accent/20 to-primary/20">
-                <div className="w-full h-64 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-16 h-16 bg-gradient-accent rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+              {/* Square elements filling remaining spaces */}
+              <div className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-accent/30 to-primary/30 group hover:shadow-xl transition-all duration-300">
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <p className="text-foreground/80 text-sm font-medium">Quality Assurance</p>
+                    <p className="text-white text-xs font-medium">Quality</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary/40 to-accent/40 group hover:shadow-xl transition-all duration-300">
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <p className="text-white text-xs font-medium">Team</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-span-2 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-r from-secondary/30 to-primary/30 group hover:shadow-xl transition-all duration-300">
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-14 h-14 bg-gradient-accent rounded-full mx-auto mb-3 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                      <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      </svg>
+                    </div>
+                    <p className="text-white text-sm font-medium">Research & Development</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-span-2 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-r from-accent/20 to-secondary/20 group hover:shadow-xl transition-all duration-300">
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-14 h-14 bg-gradient-primary rounded-full mx-auto mb-3 flex items-center justify-center group-hover:-rotate-12 transition-transform duration-300">
+                      <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                      </svg>
+                    </div>
+                    <p className="text-white text-sm font-medium">Smart Manufacturing</p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Mobile: Swipeable Carousel */}
-            <div className="md:hidden px-4">
-              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4">
-                <div className="flex-shrink-0 w-80 snap-center relative rounded-2xl overflow-hidden shadow-lg">
-                  <img src={teamCollaboration} alt="Team collaboration session" className="w-full h-48 object-cover" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
-                      <p className="text-sm font-medium text-foreground">Team Collaboration</p>
-                      <p className="text-xs text-foreground/70">Building together</p>
+          {/* Tablet: Simplified Grid */}
+          <div className="hidden md:block lg:hidden px-4">
+            <div className="grid grid-cols-4 grid-rows-3 gap-4 h-[400px] max-w-4xl mx-auto">
+              <div className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden shadow-xl group">
+                <img src={teamCollaboration} alt="Team collaboration" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <p className="text-sm font-medium">Collaboration</p>
+                </div>
+              </div>
+              <div className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary/30 to-secondary/30"></div>
+              <div className="col-span-1 row-span-2 relative rounded-2xl overflow-hidden shadow-xl group">
+                <img src={mentorshipScene} alt="Mentorship" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              </div>
+              <div className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-accent/30 to-primary/30"></div>
+              <div className="col-span-2 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-r from-secondary/20 to-accent/20"></div>
+            </div>
+          </div>
+
+          {/* Mobile: Stacked Cards */}
+          <div className="md:hidden px-4">
+            <div className="space-y-4 max-w-sm mx-auto">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl group h-48">
+                <img src={teamCollaboration} alt="Team collaboration" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h4 className="text-lg font-bold">Team Collaboration</h4>
+                  <p className="text-sm text-white/80">Building together</p>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg h-32 bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-8 h-8 bg-white/20 rounded-full mx-auto mb-1 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
                     </div>
+                    <p className="text-white text-xs font-medium">Innovation</p>
                   </div>
                 </div>
-                <div className="flex-shrink-0 w-80 snap-center relative rounded-2xl overflow-hidden shadow-lg">
-                  <img src={mentorshipScene} alt="Mentorship and guidance" className="w-full h-48 object-cover" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
-                      <p className="text-sm font-medium text-foreground">Mentorship</p>
-                      <p className="text-xs text-foreground/70">Learning & growing</p>
+                <div className="relative rounded-2xl overflow-hidden shadow-lg h-32 bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-8 h-8 bg-white/20 rounded-full mx-auto mb-1 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
                     </div>
+                    <p className="text-white text-xs font-medium">Quality</p>
                   </div>
                 </div>
-                <div className="flex-shrink-0 w-80 snap-center relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary/20 to-secondary/20">
-                  <div className="w-full h-48 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-full mx-auto mb-3 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                      <p className="text-foreground/80 text-sm font-medium">Innovation Hub</p>
-                    </div>
-                  </div>
+              </div>
+
+              <div className="relative rounded-2xl overflow-hidden shadow-xl group h-40">
+                <img src={mentorshipScene} alt="Mentorship session" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h4 className="text-base font-bold">Mentorship</h4>
+                  <p className="text-sm text-white/80">Learning & growth</p>
                 </div>
-                <div className="flex-shrink-0 w-80 snap-center relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-secondary/20 to-accent/20">
-                  <div className="w-full h-48 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-gradient-secondary rounded-full mx-auto mb-3 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-                      <p className="text-foreground/80 text-sm font-medium">Rapid Prototyping</p>
-                    </div>
-                  </div>
+              </div>
+
+              <div className="relative rounded-2xl overflow-hidden shadow-lg h-24 bg-gradient-to-r from-secondary/20 to-accent/20 flex items-center justify-center">
+                <div className="text-center">
+                  <p className="text-foreground/80 text-sm font-medium">Research & Development</p>
                 </div>
               </div>
             </div>
