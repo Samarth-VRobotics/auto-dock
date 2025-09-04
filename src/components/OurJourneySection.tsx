@@ -221,7 +221,7 @@ const OurJourneySection = () => {
           </div>
 
           {/* From University to Industry */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-stretch w-full max-w-[95vw] mx-auto">            
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">            
             {/* Industry Visual */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out h-full mt-8">
