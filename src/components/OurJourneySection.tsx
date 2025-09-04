@@ -143,18 +143,18 @@ const OurJourneySection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
               {/* Student Portraits Slideshow */}
-              {studentPortraits.map((portrait, index) => (
-                <img 
-                  key={index}
-                  src={portrait.src} 
-                  alt={portrait.alt} 
-                  className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
-                    index === studentSlide 
-                      ? 'opacity-100 z-10' 
-                      : 'opacity-0 z-0'
-                  }`} 
-                />
-              ))}
+               {studentPortraits.map((portrait, index) => (
+                 <img 
+                   key={index}
+                   src={portrait.src} 
+                   alt={portrait.alt} 
+                   className={`absolute inset-0 w-full h-full object-contain bg-gray-100 group-hover:scale-110 transition-all duration-1000 ease-out ${
+                     index === studentSlide 
+                       ? 'opacity-100 z-10' 
+                       : 'opacity-0 z-0'
+                   }`} 
+                 />
+               ))}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
