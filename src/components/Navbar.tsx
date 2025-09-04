@@ -31,7 +31,7 @@ const Navbar = () => {
                 {/* Solutions Dropdown */}
                 <DropdownMenu>
                   <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors font-medium relative group flex items-center gap-1 focus:outline-none">
-                    Solutions
+                    Robotics Solutions
                     <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                   </DropdownMenuTrigger>
@@ -73,7 +73,7 @@ const Navbar = () => {
                 </DropdownMenu>
                 
                 <a href="/our-team" className="text-foreground hover:text-primary transition-colors font-medium relative group">
-                  Our Team
+                  Robotics Team
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                 </a>
               </div>
