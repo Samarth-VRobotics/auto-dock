@@ -26,7 +26,8 @@ const OurJourneySection = () => {
   // Student portraits slideshow
   const studentPortraits = [
     { src: "/lovable-uploads/b7373469-1778-4c54-af4f-2f6695ad3d78.png", alt: "Ribbon cutting ceremony with leadership team" },
-    { src: "/lovable-uploads/49fef62f-3ef6-4c23-8ef3-f0e8bdfa7fe7.png", alt: "Team group photo at company facility" }
+    { src: "/lovable-uploads/49fef62f-3ef6-4c23-8ef3-f0e8bdfa7fe7.png", alt: "Team group photo at company facility" },
+    { src: "/lovable-uploads/9bcf1e71-8657-4876-9de5-7978801d653c.png", alt: "Students demonstrating robotics technology to leadership" }
   ];
 
   // Industry transition slideshow
