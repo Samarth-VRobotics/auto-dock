@@ -12,7 +12,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const eventsData = [
   {
     id: 1,
-    title: "Vegam Expo – In-House Showcase",
+    title: "Vegam Customer's Engagement Event",
     description: "We hosted an in-house expo, setting up our automation and robotics R&D demonstrations for leading clients and industry professionals. It was a space for open conversations, networking, and sharing the possibilities of robotics.",
     imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format",
     imageAlt: "Vegam Expo showcasing robotics demonstrations"
