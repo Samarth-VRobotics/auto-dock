@@ -253,108 +253,305 @@ const OurTeam = () => {
           </div>
         </div>
         
-        {/* Team Member Cards - Moved below media band */}
+        {/* 6×6 Matrix Team Structure */}
         <div className="container mx-auto px-6 mt-16">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             
-            {/* First Row - Senior Engineers */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              {firstRowMembers.map((member, index) => <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <CardContent className="p-8 text-center h-full flex flex-col">
-                    <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                      {member.initials}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                    <p className="text-primary font-medium mb-4">{member.role}</p>
-                    
-                    <blockquote className="text-sm italic text-foreground/80 border-l-2 border-primary pl-3 mb-6 font-medium">
-                      "{member.quote}"
-                    </blockquote>
-                    <div className="flex justify-center space-x-3">
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Linkedin className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>)}
-            </div>
-
-            {/* Second Row - Junior Engineers */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {secondRowMembers.map((member, index) => <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <CardContent className="p-8 text-center h-full flex flex-col">
-                    <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                      {member.initials}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                    <p className="text-primary font-medium mb-4">{member.role}</p>
-                    
-                    <blockquote className="text-sm italic text-foreground/80 border-l-2 border-primary pl-3 mb-6 font-medium">
-                      "{member.quote}"
-                    </blockquote>
-                    <div className="flex justify-center space-x-3">
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Linkedin className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>)}
-            </div>
-            
-            {/* Extended Team Section */}
-            <div className="mt-16">
-              <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">Our Extended Team</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
-                {[
-                  { name: "Aman Saxena", initials: "AS", designation: "Senior Functional Consultant" },
-                  { name: "Balaji Kumar", initials: "BK", designation: "Senior Functional Consultant" },
-                  { name: "Rohan Patil", initials: "RP", designation: "Senior Functional Consultant" },
-                  { name: "Shreeja M S", initials: "SM", designation: "Senior Software Engineer" },
-                  { name: "Ann Maria Jess Kurian", initials: "AJ", designation: "Lead Functional Consultant" },
-                  { name: "Kanakaraddi C Radder", initials: "KR", designation: "Senior Functional Consultant" },
-                  { name: "Pramod BP", initials: "PB", designation: "Lead Functional Consultant" },
-                  { name: "Subha J", initials: "SJ", designation: "Lead Functional Consultant" },
-                  { name: "Ajay K", initials: "AK", designation: "Technical Lead" },
-                  { name: "Venkatesh HS", initials: "VH", designation: "Lead Functional Consultant" },
-                  { name: "Tunga Santosh Kumar Reddy", initials: "TS", designation: "Software Architect" },
-                  { name: "Varadharajan N M", initials: "VN", designation: "Software Architect" },
-                  { name: "Sachin Vishwakarma", initials: "SV", designation: "Software Architect" },
-                  { name: "Pratish RameshChandra Gandhi", initials: "PG", designation: "Software Architect" },
-                  { name: "Vishweshwar Kapse", initials: "VK", designation: "Software Architect" },
-                  { name: "Sreenivasa Yarram", initials: "SY", designation: "Software Architect" },
-                  { name: "Sirajudheen NH", initials: "SN", designation: "Software Architect" },
-                  { name: "Sushin C", initials: "SC", designation: "Software Architect" },
-                  { name: "Chaithra N", initials: "CN", designation: "Lead Functional Consultant" }
-                ].map((member, index) => (
-                  <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <CardContent className="p-4 text-center">
-                      <div className="w-16 h-16 bg-gradient-primary rounded-full mx-auto mb-3 flex items-center justify-center text-white text-sm font-bold">
-                        {member.initials}
+            {/* Desktop: 6×6 Grid Layout */}
+            <div className="hidden lg:block">
+              <div className="grid grid-cols-6 gap-4 mb-16">
+                
+                {/* Leadership Team - Top Left (2x3 section) */}
+                <div className="col-span-2 row-span-3 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 border border-primary/10">
+                  <h3 className="text-xl font-bold text-primary mb-6 text-center">Leadership Team</h3>
+                  <div className="space-y-4">
+                    {[
+                      { name: "Faizan Pathan", initials: "FP", role: "Autonomy & Embedded Systems" },
+                      { name: "Rani Kinnal", initials: "RK", role: "Systems & Simulation" },
+                      { name: "Amrut Kurtakoti", initials: "AK", role: "Coordination & Business" },
+                      { name: "Samarth Vengurlekar", initials: "SV", role: "UI & Integration" },
+                      { name: "Ashutosh Kangralkar", initials: "AS", role: "Mechanical Design" }
+                    ].map((member, index) => (
+                      <div key={index} className="flex items-center space-x-3 hover:bg-white/50 rounded-lg p-2 transition-all duration-200">
+                        <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                          {member.initials}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="text-sm font-semibold leading-tight">{member.name}</h4>
+                          <p className="text-xs text-primary/70 leading-tight">{member.role}</p>
+                        </div>
                       </div>
-                      <h4 className="text-sm font-semibold text-center leading-tight mb-2">{member.name}</h4>
-                      <p className="text-xs text-primary font-medium text-center leading-tight">{member.designation}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+                    ))}
+                  </div>
+                </div>
+
+                {/* Software Architects - Top Right (2x3 section) */}
+                <div className="col-span-2 row-span-3 bg-gradient-to-br from-secondary/5 to-accent/5 rounded-2xl p-6 border border-secondary/10">
+                  <h3 className="text-xl font-bold text-secondary mb-6 text-center">Software Architects</h3>
+                  <div className="space-y-4">
+                    {[
+                      { name: "Tunga Santosh Kumar", initials: "TS", role: "Software Architect" },
+                      { name: "Varadharajan N M", initials: "VN", role: "Software Architect" },
+                      { name: "Sachin Vishwakarma", initials: "SV", role: "Software Architect" },
+                      { name: "Pratish Gandhi", initials: "PG", role: "Software Architect" },
+                      { name: "Vishweshwar Kapse", initials: "VK", role: "Software Architect" }
+                    ].map((member, index) => (
+                      <div key={index} className="flex items-center space-x-3 hover:bg-white/50 rounded-lg p-2 transition-all duration-200">
+                        <div className="w-12 h-12 bg-gradient-secondary rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                          {member.initials}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="text-sm font-semibold leading-tight">{member.name}</h4>
+                          <p className="text-xs text-secondary/70 leading-tight">{member.role}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Technical Leads - Middle Right (2x3 section) */}
+                <div className="col-span-2 row-span-3 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl p-6 border border-accent/10">
+                  <h3 className="text-xl font-bold text-accent mb-6 text-center">Technical Leads</h3>
+                  <div className="space-y-4">
+                    {[
+                      { name: "Sreenivasa Yarram", initials: "SY", role: "Software Architect" },
+                      { name: "Sirajudheen NH", initials: "SN", role: "Software Architect" },
+                      { name: "Sushin C", initials: "SC", role: "Software Architect" },
+                      { name: "Ajay K", initials: "AJ", role: "Technical Lead" },
+                      { name: "Shreeja M S", initials: "SM", role: "Senior Software Engineer" }
+                    ].map((member, index) => (
+                      <div key={index} className="flex items-center space-x-3 hover:bg-white/50 rounded-lg p-2 transition-all duration-200">
+                        <div className="w-12 h-12 bg-gradient-accent rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                          {member.initials}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="text-sm font-semibold leading-tight">{member.name}</h4>
+                          <p className="text-xs text-accent/70 leading-tight">{member.role}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Functional Consultants - Bottom (6x3 section) */}
+                <div className="col-span-6 row-span-3 bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-8 border border-slate-200">
+                  <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Functional Consultants</h3>
+                  <div className="grid grid-cols-5 gap-6">
+                    {[
+                      { name: "Aman Saxena", initials: "AS", role: "Senior Functional Consultant" },
+                      { name: "Balaji Kumar", initials: "BK", role: "Senior Functional Consultant" },
+                      { name: "Rohan Patil", initials: "RP", role: "Senior Functional Consultant" },
+                      { name: "Ann Maria Jess Kurian", initials: "AJ", role: "Lead Functional Consultant" },
+                      { name: "Kanakaraddi C Radder", initials: "KR", role: "Senior Functional Consultant" },
+                      { name: "Pramod BP", initials: "PB", role: "Lead Functional Consultant" },
+                      { name: "Subha J", initials: "SJ", role: "Lead Functional Consultant" },
+                      { name: "Venkatesh HS", initials: "VH", role: "Lead Functional Consultant" },
+                      { name: "Chaithra N", initials: "CN", role: "Lead Functional Consultant" },
+                      { name: "Arun Kumar", initials: "AR", role: "Senior Consultant" },
+                      { name: "Priya Sharma", initials: "PS", role: "Business Analyst" },
+                      { name: "Ravi Mehta", initials: "RM", role: "Process Engineer" },
+                      { name: "Kavya Reddy", initials: "KV", role: "Quality Analyst" },
+                      { name: "Deepak Singh", initials: "DS", role: "Integration Specialist" },
+                      { name: "Neha Gupta", initials: "NG", role: "System Administrator" },
+                      { name: "Vikram Joshi", initials: "VJ", role: "Database Engineer" },
+                      { name: "Anita Rao", initials: "AR", role: "UI/UX Designer" },
+                      { name: "Suresh Kumar", initials: "SK", role: "DevOps Engineer" },
+                      { name: "Pooja Nair", initials: "PN", role: "Project Coordinator" },
+                      { name: "Manoj Verma", initials: "MV", role: "Security Analyst" }
+                    ].map((member, index) => (
+                      <div key={index} className="text-center group hover:scale-105 transition-all duration-200">
+                        <div className="w-16 h-16 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-sm font-bold shadow-lg group-hover:shadow-xl transition-all duration-200">
+                          {member.initials}
+                        </div>
+                        <h4 className="text-sm font-semibold leading-tight mb-1">{member.name}</h4>
+                        <p className="text-xs text-foreground/60 leading-tight">{member.role}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Why We Build Together Section */}
-            <div className="mt-16 text-center max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
-                <h3 className="text-2xl font-bold mb-4 text-primary">Building Together</h3>
-                <p className="text-foreground/80 leading-relaxed">Each of us brings unique skills and perspectives, but it's our shared spirit of exploration and problem-solving combined with the flexibility to wear any hat that powers Vegam Robotics. Together, we're shaping the future of robotics, one innovation at a time.</p>
+            {/* Tablet: 2-Column Layout */}
+            <div className="hidden md:block lg:hidden">
+              <div className="grid grid-cols-2 gap-8 mb-16">
+                
+                {/* Leadership Team */}
+                <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 border border-primary/10">
+                  <h3 className="text-xl font-bold text-primary mb-6 text-center">Leadership Team</h3>
+                  <div className="grid grid-cols-1 gap-4">
+                    {[
+                      { name: "Faizan Pathan", initials: "FP", role: "Autonomy & Embedded Systems" },
+                      { name: "Rani Kinnal", initials: "RK", role: "Systems & Simulation" },
+                      { name: "Amrut Kurtakoti", initials: "AK", role: "Coordination & Business" },
+                      { name: "Samarth Vengurlekar", initials: "SV", role: "UI & Integration" },
+                      { name: "Ashutosh Kangralkar", initials: "AS", role: "Mechanical Design" }
+                    ].map((member, index) => (
+                      <div key={index} className="flex items-center space-x-3 hover:bg-white/50 rounded-lg p-2 transition-all duration-200">
+                        <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          {member.initials}
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold">{member.name}</h4>
+                          <p className="text-xs text-primary/70">{member.role}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Software Architects */}
+                <div className="bg-gradient-to-br from-secondary/5 to-accent/5 rounded-2xl p-6 border border-secondary/10">
+                  <h3 className="text-xl font-bold text-secondary mb-6 text-center">Software Architects</h3>
+                  <div className="grid grid-cols-1 gap-4">
+                    {[
+                      { name: "Tunga Santosh Kumar", initials: "TS", role: "Software Architect" },
+                      { name: "Varadharajan N M", initials: "VN", role: "Software Architect" },
+                      { name: "Sachin Vishwakarma", initials: "SV", role: "Software Architect" },
+                      { name: "Pratish Gandhi", initials: "PG", role: "Software Architect" },
+                      { name: "Vishweshwar Kapse", initials: "VK", role: "Software Architect" }
+                    ].map((member, index) => (
+                      <div key={index} className="flex items-center space-x-3 hover:bg-white/50 rounded-lg p-2 transition-all duration-200">
+                        <div className="w-12 h-12 bg-gradient-secondary rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          {member.initials}
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold">{member.name}</h4>
+                          <p className="text-xs text-secondary/70">{member.role}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Technical Leads & Functional Consultants for Tablet */}
+              <div className="space-y-8">
+                <div className="bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl p-6 border border-accent/10">
+                  <h3 className="text-xl font-bold text-accent mb-6 text-center">Technical Leads</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { name: "Sreenivasa Yarram", initials: "SY", role: "Software Architect" },
+                      { name: "Sirajudheen NH", initials: "SN", role: "Software Architect" },
+                      { name: "Sushin C", initials: "SC", role: "Software Architect" },
+                      { name: "Ajay K", initials: "AJ", role: "Technical Lead" },
+                      { name: "Shreeja M S", initials: "SM", role: "Senior Software Engineer" }
+                    ].map((member, index) => (
+                      <div key={index} className="text-center">
+                        <div className="w-16 h-16 bg-gradient-accent rounded-full mx-auto mb-2 flex items-center justify-center text-white text-sm font-bold">
+                          {member.initials}
+                        </div>
+                        <h4 className="text-sm font-semibold">{member.name}</h4>
+                        <p className="text-xs text-accent/70">{member.role}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-6 border border-slate-200">
+                  <h3 className="text-xl font-bold text-foreground mb-6 text-center">Functional Consultants (Partial View)</h3>
+                  <div className="grid grid-cols-3 gap-4">
+                    {[
+                      { name: "Aman Saxena", initials: "AS", role: "Senior Functional Consultant" },
+                      { name: "Balaji Kumar", initials: "BK", role: "Senior Functional Consultant" },
+                      { name: "Rohan Patil", initials: "RP", role: "Senior Functional Consultant" },
+                      { name: "Ann Maria Jess", initials: "AJ", role: "Lead Functional Consultant" },
+                      { name: "Kanakaraddi Radder", initials: "KR", role: "Senior Functional Consultant" },
+                      { name: "And 15 more...", initials: "...", role: "Various Specialists" }
+                    ].map((member, index) => (
+                      <div key={index} className="text-center">
+                        <div className="w-14 h-14 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full mx-auto mb-2 flex items-center justify-center text-white text-xs font-bold">
+                          {member.initials}
+                        </div>
+                        <h4 className="text-xs font-semibold">{member.name}</h4>
+                        <p className="text-xs text-foreground/60">{member.role}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile: Stacked Layout */}
+            <div className="md:hidden space-y-8">
+              {[
+                { title: "Leadership Team", color: "primary", members: [
+                  { name: "Faizan Pathan", initials: "FP", role: "Autonomy & Embedded Systems" },
+                  { name: "Rani Kinnal", initials: "RK", role: "Systems & Simulation" },
+                  { name: "Amrut Kurtakoti", initials: "AK", role: "Coordination & Business" },
+                  { name: "Samarth Vengurlekar", initials: "SV", role: "UI & Integration" },
+                  { name: "Ashutosh Kangralkar", initials: "AS", role: "Mechanical Design" }
+                ]},
+                { title: "Software Architects", color: "secondary", members: [
+                  { name: "Tunga Santosh Kumar", initials: "TS", role: "Software Architect" },
+                  { name: "Varadharajan N M", initials: "VN", role: "Software Architect" },
+                  { name: "Sachin Vishwakarma", initials: "SV", role: "Software Architect" },
+                  { name: "Pratish Gandhi", initials: "PG", role: "Software Architect" },
+                  { name: "Vishweshwar Kapse", initials: "VK", role: "Software Architect" }
+                ]},
+                { title: "Technical Leads", color: "accent", members: [
+                  { name: "Sreenivasa Yarram", initials: "SY", role: "Software Architect" },
+                  { name: "Sirajudheen NH", initials: "SN", role: "Software Architect" },
+                  { name: "Sushin C", initials: "SC", role: "Software Architect" },
+                  { name: "Ajay K", initials: "AJ", role: "Technical Lead" },
+                  { name: "Shreeja M S", initials: "SM", role: "Senior Software Engineer" }
+                ]}
+              ].map((team, teamIndex) => (
+                <div key={teamIndex} className={`bg-gradient-to-br from-${team.color}/5 to-${team.color}/10 rounded-2xl p-6 border border-${team.color}/10`}>
+                  <h3 className={`text-lg font-bold text-${team.color} mb-4 text-center`}>{team.title}</h3>
+                  <div className="space-y-3">
+                    {team.members.map((member, index) => (
+                      <div key={index} className="flex items-center space-x-3 bg-white/50 rounded-lg p-3">
+                        <div className={`w-12 h-12 bg-gradient-${team.color} rounded-full flex items-center justify-center text-white text-sm font-bold`}>
+                          {member.initials}
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold">{member.name}</h4>
+                          <p className={`text-xs text-${team.color}/70`}>{member.role}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              {/* Functional Consultants - Mobile */}
+              <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-6 border border-slate-200">
+                <h3 className="text-lg font-bold text-foreground mb-4 text-center">Functional Consultants</h3>
+                <p className="text-center text-sm text-foreground/60 mb-4">20 specialists across various domains</p>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { name: "Aman Saxena", initials: "AS" },
+                    { name: "Balaji Kumar", initials: "BK" },
+                    { name: "Rohan Patil", initials: "RP" },
+                    { name: "Ann Maria Jess", initials: "AJ" },
+                    { name: "View All Team", initials: "..." }
+                  ].map((member, index) => (
+                    <div key={index} className="flex items-center space-x-2 bg-white/50 rounded-lg p-2">
+                      <div className="w-8 h-8 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                        {member.initials}
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-semibold">{member.name}</h4>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Why We Build Together Section */}
+      <div className="container mx-auto px-6 mt-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
+            <h3 className="text-2xl font-bold mb-4 text-primary">Building Together</h3>
+            <p className="text-foreground/80 leading-relaxed">Each of us brings unique skills and perspectives, but it's our shared spirit of exploration and problem-solving combined with the flexibility to wear any hat that powers Vegam Robotics. Together, we're shaping the future of robotics, one innovation at a time.</p>
+          </div>
+        </div>
+      </div>
 
       {/* Vegam Robotics: Scaling Innovation */}
       <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
