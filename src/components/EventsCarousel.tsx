@@ -29,12 +29,12 @@ const eventsData = [
     title: "NVIDIA GTC – San Jose, California",
     description: "This year, we had the privilege of presenting at NVIDIA GTC, where we set up a booth in San Jose. Sharing our work on a global stage allowed us to connect with innovators and highlight how our solutions push the boundaries of robotics.",
     images: [
-      { url: "/lovable-uploads/61765257-0fe4-49fc-bae1-cea024290b99.png", alt: "Team at NVIDIA GTC 2025 with #GTC25 sign at convention center" },
-      { url: "/lovable-uploads/af569300-8aa1-41e5-9a35-0292707866c6.png", alt: "Vegam team at NVIDIA Inception Startup booth display" },
-      { url: "/lovable-uploads/863d412f-9315-44e1-be90-64e8fffa24f6.png", alt: "Team networking at NVIDIA GTC conference reception" },
-      { url: "/lovable-uploads/53dfb58d-8b84-4489-87ce-eac0c604e1da.png", alt: "Team collaboration and networking at Vegam booth with industry partners" }
+      { url: "/lovable-uploads/49c9f88f-fd22-45f9-a115-f78e0e6ea848.png", alt: "Team at NVIDIA GTC 2025 with #GTC25 sign at convention center" },
+      { url: "/lovable-uploads/2991708b-0967-45b6-941f-9198703ebe8e.png", alt: "Team networking at NVIDIA GTC conference reception hall" },
+      { url: "/lovable-uploads/00b20230-98af-4b65-9605-650061216508.png", alt: "Team collaboration and networking at Vegam booth with industry partners" },
+      { url: "/lovable-uploads/f191ab51-7c99-400f-8dca-10df86689ff4.png", alt: "Engaging with attendees and industry experts at NVIDIA startup section" }
     ],
-    imageUrl: "/lovable-uploads/61765257-0fe4-49fc-bae1-cea024290b99.png",
+    imageUrl: "/lovable-uploads/49c9f88f-fd22-45f9-a115-f78e0e6ea848.png",
     imageAlt: "NVIDIA GTC conference presentation"
   },
   {
