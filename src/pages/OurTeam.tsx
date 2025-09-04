@@ -507,70 +507,12 @@ const OurTeam = () => {
 
           {/* First Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {firstRowMembers.map((member, index) => <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
-                <CardContent className="p-8 text-center">
-                  <div className="relative mb-6">
-                    <div className="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto shadow-2xl group-hover:shadow-primary/30 transition-all duration-300">
-                      {member.initials}
-                    </div>
-                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center shadow-lg">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">{member.name}</h3>
-                  <p className="text-primary font-semibold mb-4">{member.role}</p>
-                  <p className="text-foreground/70 mb-6 leading-relaxed">{member.description}</p>
-                  <div className="bg-primary/5 rounded-xl p-4 border-l-4 border-primary">
-                    <p className="text-foreground/80 italic text-sm">"{member.quote}"</p>
-                  </div>
-                  <div className="flex justify-center space-x-4 mt-6">
-                    <Button variant="outline" size="sm" className="hover:bg-primary hover:text-white transition-all duration-300">
-                      <Mail className="w-4 h-4 mr-2" />
-                      Connect
-                    </Button>
-                    <Button variant="outline" size="sm" className="hover:bg-secondary hover:text-white transition-all duration-300">
-                      <Linkedin className="w-4 h-4 mr-2" />
-                      LinkedIn
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>)}
+            {firstRowMembers.map((member, index) => {})}
           </div>
 
           {/* Second Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {secondRowMembers.map((member, index) => <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
-                <CardContent className="p-8 text-center">
-                  <div className="relative mb-6">
-                    <div className="w-32 h-32 bg-gradient-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto shadow-2xl group-hover:shadow-secondary/30 transition-all duration-300">
-                      {member.initials}
-                    </div>
-                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center shadow-lg">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2 text-foreground group-hover:text-secondary transition-colors duration-300">{member.name}</h3>
-                  <p className="text-secondary font-semibold mb-4">{member.role}</p>
-                  <p className="text-foreground/70 mb-6 leading-relaxed">{member.description}</p>
-                  <div className="bg-secondary/5 rounded-xl p-4 border-l-4 border-secondary">
-                    <p className="text-foreground/80 italic text-sm">"{member.quote}"</p>
-                  </div>
-                  <div className="flex justify-center space-x-4 mt-6">
-                    <Button variant="outline" size="sm" className="hover:bg-secondary hover:text-white transition-all duration-300">
-                      <Mail className="w-4 h-4 mr-2" />
-                      Connect
-                    </Button>
-                    <Button variant="outline" size="sm" className="hover:bg-accent hover:text-white transition-all duration-300">
-                      <Linkedin className="w-4 h-4 mr-2" />
-                      LinkedIn
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>)}
+            {secondRowMembers.map((member, index) => {})}
           </div>
         </div>
       </section>
