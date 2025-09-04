@@ -740,12 +740,26 @@ const OurTeam = () => {
         </div>
       </section>
 
-      {/* Why We Build Together Section */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="max-w-4xl mx-auto text-center">
-          
+      {/* Our Vision Section */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Our Vision: Lights-Out Manufacturing</h2>
+            
+            <div className="space-y-6 text-foreground/80 leading-relaxed">
+              <p className="text-lg">
+                At Vegam, we are shaping the future of manufacturing by building fully autonomous factories that run continuously with minimal human intervention. Our goal is to create production ecosystems where robotics, AI, and digital intelligence work seamlessly together making operations safer, smarter, and self-optimizing.
+              </p>
+              <p className="text-lg">
+                With 300+ plants already powered by our digital backbone, we are leading the transformation from connected factories to truly autonomous ones. By integrating adaptive robotics, generative AI, and predictive intelligence, we are pioneering a new era of manufacturing where risks are prevented before they arise, quality is inherent in every process, and efficiency knows no boundaries.
+              </p>
+              <p className="text-lg">
+                For us, robotics isn't just an extension of digital manufacturing, it is the foundation of a world where factories never stop, innovation never slows, and Lights-Out becomes reality.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Vegam Robotics: Scaling Innovation */}
       <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
