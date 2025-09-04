@@ -140,34 +140,35 @@ const OurTeam = () => {
             {/* Extended Team Section */}
             <div className="mt-16">
               <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">Our Extended Team</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-16">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
                 {[
-                  { name: "Aman Saxena", initials: "AS" },
-                  { name: "Balaji Kumar", initials: "BK" },
-                  { name: "Rohan Patil", initials: "RP" },
-                  { name: "Shreeja M S", initials: "SM" },
-                  { name: "Ann Maria Jess Kurian", initials: "AJ" },
-                  { name: "Kanakaraddi C Radder", initials: "KR" },
-                  { name: "Pramod BP", initials: "PB" },
-                  { name: "Subha J", initials: "SJ" },
-                  { name: "Ajay K", initials: "AK" },
-                  { name: "Venkatesh HS", initials: "VH" },
-                  { name: "Tunga Santosh Kumar Reddy", initials: "TS" },
-                  { name: "Varadharajan N M", initials: "VN" },
-                  { name: "Sachin Vishwakarma", initials: "SV" },
-                  { name: "Pratish RameshChandra Gandhi", initials: "PG" },
-                  { name: "Vishweshwar Kapse", initials: "VK" },
-                  { name: "Sreenivasa Yarram", initials: "SY" },
-                  { name: "Sirajudheen NH", initials: "SN" },
-                  { name: "Sushin C", initials: "SC" },
-                  { name: "Chaithra N", initials: "CN" }
+                  { name: "Aman Saxena", initials: "AS", designation: "Senior Functional Consultant" },
+                  { name: "Balaji Kumar", initials: "BK", designation: "Senior Functional Consultant" },
+                  { name: "Rohan Patil", initials: "RP", designation: "Senior Functional Consultant" },
+                  { name: "Shreeja M S", initials: "SM", designation: "Senior Software Engineer" },
+                  { name: "Ann Maria Jess Kurian", initials: "AJ", designation: "Lead Functional Consultant" },
+                  { name: "Kanakaraddi C Radder", initials: "KR", designation: "Senior Functional Consultant" },
+                  { name: "Pramod BP", initials: "PB", designation: "Lead Functional Consultant" },
+                  { name: "Subha J", initials: "SJ", designation: "Lead Functional Consultant" },
+                  { name: "Ajay K", initials: "AK", designation: "Technical Lead" },
+                  { name: "Venkatesh HS", initials: "VH", designation: "Lead Functional Consultant" },
+                  { name: "Tunga Santosh Kumar Reddy", initials: "TS", designation: "Software Architect" },
+                  { name: "Varadharajan N M", initials: "VN", designation: "Software Architect" },
+                  { name: "Sachin Vishwakarma", initials: "SV", designation: "Software Architect" },
+                  { name: "Pratish RameshChandra Gandhi", initials: "PG", designation: "Software Architect" },
+                  { name: "Vishweshwar Kapse", initials: "VK", designation: "Software Architect" },
+                  { name: "Sreenivasa Yarram", initials: "SY", designation: "Software Architect" },
+                  { name: "Sirajudheen NH", initials: "SN", designation: "Software Architect" },
+                  { name: "Sushin C", initials: "SC", designation: "Software Architect" },
+                  { name: "Chaithra N", initials: "CN", designation: "Lead Functional Consultant" }
                 ].map((member, index) => (
                   <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-4 text-center">
                       <div className="w-16 h-16 bg-gradient-primary rounded-full mx-auto mb-3 flex items-center justify-center text-white text-sm font-bold">
                         {member.initials}
                       </div>
-                      <h4 className="text-sm font-semibold text-center leading-tight">{member.name}</h4>
+                      <h4 className="text-sm font-semibold text-center leading-tight mb-2">{member.name}</h4>
+                      <p className="text-xs text-primary font-medium text-center leading-tight">{member.designation}</p>
                     </CardContent>
                   </Card>
                 ))}
