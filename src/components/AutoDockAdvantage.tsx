@@ -42,15 +42,15 @@ const AutoDockAdvantage = () => {
     const IconComponent = icon;
     switch (visual) {
       case 'truck-docking':
-        return <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-4 h-80 overflow-hidden bg-white">
+        return <div className="relative h-80 overflow-hidden flex items-center justify-center">
             <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Always%20Ready,%20Always%20On.gif" alt="Always Ready, Always On - AutoDock in action" className="w-full h-full object-cover" />
           </div>;
       case 'dashboard':
-        return <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 p-4 h-80 overflow-hidden bg-white">
+        return <div className="relative h-80 overflow-hidden flex items-center justify-center">
             <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Scales%20Without%20Slowing%20Down.gif" alt="Scales Without Slowing Down - AutoDock scaling visualization" className="w-full h-full object-cover" />
           </div>;
       case 'ai-brain':
-        return <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 p-4 h-80 overflow-hidden bg-white">
+        return <div className="relative h-80 overflow-hidden flex items-center justify-center">
             <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/AI%20That%20Understands%20Logistics.gif" alt="AI That Understands Logistics - AutoDock AI visualization" className="w-full h-full object-cover" />
           </div>;
       case 'integrations':
