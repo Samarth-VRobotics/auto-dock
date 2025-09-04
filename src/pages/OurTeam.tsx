@@ -54,10 +54,10 @@ const OurTeam = () => {
         <div className="container mx-auto px-6 relative">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Meet the Minds Behind <span className="text-primary">Vegam Robotics</span>
+              The People Behind the <span className="text-primary">Robots</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed">
-              A passionate team of engineers, dreamers, and doers shaping the future of robotics
+              A multidisciplinary team of engineers, creators, and problem-solvers building robots with purpose.
             </p>
           </div>
         </div>
