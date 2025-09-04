@@ -65,27 +65,126 @@ const OurTeam = () => {
 
       <OurJourneySection />
 
-      {/* Core Team Grid */}
+      {/* Our Team Media Band */}
       <section className="py-16 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            {/* Team Header with Visual */}
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Core Team</h2>
-                <p className="text-foreground/80 leading-relaxed mb-6">
-                  Vegam is more than a company — it's the continuation of friendships, shared dreams, and late-night breakthroughs from our university days. While everyone wears many hats, from robotics and software to business and operations, each has a superpower that anchors the team.
-                </p>
+        <div className="w-full">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h2>
+            <p className="text-foreground/60 text-sm md:text-base max-w-4xl mx-auto px-6 leading-relaxed">
+              Vegam is more than a company — it's the continuation of friendships, shared dreams, and late-night breakthroughs from our university days. While everyone wears many hats, from robotics and software to business and operations, each has a superpower that anchors the team.
+            </p>
+          </div>
+
+          {/* Full-Width Media Band */}
+          <div className="w-full overflow-hidden">
+            {/* Desktop: Horizontal Gallery */}
+            <div className="hidden md:flex gap-6 px-6">
+              <div className="flex-1 min-w-0 relative rounded-2xl overflow-hidden shadow-lg group">
+                <img src={teamCollaboration} alt="Team collaboration session" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-sm font-medium">Collaboration</p>
+                </div>
               </div>
-              <div className="relative rounded-3xl overflow-hidden shadow-xl">
-                <img src={teamCollaboration} alt="Team collaboration on robotics projects" className="w-full h-80 object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h4 className="text-xl font-bold">Building Together</h4>
-                  <p className="text-sm">Innovation through collaboration</p>
+              <div className="flex-1 min-w-0 relative rounded-2xl overflow-hidden shadow-lg group">
+                <img src={mentorshipScene} alt="Mentorship and guidance" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-sm font-medium">Mentorship</p>
+                </div>
+              </div>
+              <div className="flex-1 min-w-0 relative rounded-2xl overflow-hidden shadow-lg group bg-gradient-to-br from-primary/20 to-secondary/20">
+                <div className="w-full h-64 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <p className="text-foreground/80 text-sm font-medium">Innovation Hub</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1 min-w-0 relative rounded-2xl overflow-hidden shadow-lg group bg-gradient-to-br from-secondary/20 to-accent/20">
+                <div className="w-full h-64 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="w-16 h-16 bg-gradient-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <p className="text-foreground/80 text-sm font-medium">Rapid Prototyping</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1 min-w-0 relative rounded-2xl overflow-hidden shadow-lg group bg-gradient-to-br from-accent/20 to-primary/20">
+                <div className="w-full h-64 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="w-16 h-16 bg-gradient-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <p className="text-foreground/80 text-sm font-medium">Quality Assurance</p>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Mobile: Swipeable Carousel */}
+            <div className="md:hidden px-4">
+              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4">
+                <div className="flex-shrink-0 w-80 snap-center relative rounded-2xl overflow-hidden shadow-lg">
+                  <img src={teamCollaboration} alt="Team collaboration session" className="w-full h-48 object-cover" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
+                      <p className="text-sm font-medium text-foreground">Team Collaboration</p>
+                      <p className="text-xs text-foreground/70">Building together</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-shrink-0 w-80 snap-center relative rounded-2xl overflow-hidden shadow-lg">
+                  <img src={mentorshipScene} alt="Mentorship and guidance" className="w-full h-48 object-cover" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
+                      <p className="text-sm font-medium text-foreground">Mentorship</p>
+                      <p className="text-xs text-foreground/70">Learning & growing</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-shrink-0 w-80 snap-center relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary/20 to-secondary/20">
+                  <div className="w-full h-48 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <p className="text-foreground/80 text-sm font-medium">Innovation Hub</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-shrink-0 w-80 snap-center relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-secondary/20 to-accent/20">
+                  <div className="w-full h-48 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-gradient-secondary rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      <p className="text-foreground/80 text-sm font-medium">Rapid Prototyping</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Team Member Cards - Moved below media band */}
+        <div className="container mx-auto px-6 mt-16">
+          <div className="max-w-6xl mx-auto">
             
             {/* First Row - Senior Engineers */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
