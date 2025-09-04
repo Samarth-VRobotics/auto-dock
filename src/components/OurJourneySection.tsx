@@ -25,6 +25,8 @@ const OurJourneySection = () => {
 
   // Student portraits slideshow
   const studentPortraits = [
+    { src: "/lovable-uploads/b7373469-1778-4c54-af4f-2f6695ad3d78.png", alt: "Ribbon cutting ceremony with leadership team" },
+    { src: "/lovable-uploads/49fef62f-3ef6-4c23-8ef3-f0e8bdfa7fe7.png", alt: "Team group photo at company facility" },
     { src: studentPortrait1, alt: "Student working on robotics project" },
     { src: studentPortrait2, alt: "Student in engineering lab" },
     { src: studentPortrait3, alt: "Robotics team member" },
