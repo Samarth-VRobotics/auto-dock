@@ -272,15 +272,15 @@ const OurTeam = () => {
                       { name: "Samarth Vengurlekar", initials: "SV", role: "UI & Integration" },
                       { name: "Ashutosh Kangralkar", initials: "AS", role: "Mechanical Design" }
                     ].map((member, index) => (
-                      <div key={index} className="flex items-center space-x-3 hover:bg-white/50 rounded-lg p-2 transition-all duration-200">
-                        <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                          {member.initials}
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <h4 className="text-sm font-semibold leading-tight">{member.name}</h4>
-                          <p className="text-xs text-primary/70 leading-tight">{member.role}</p>
-                        </div>
-                      </div>
+                       <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
+                         <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
+                           {member.initials}
+                         </div>
+                         <div className="min-w-0 flex-1">
+                           <h4 className="text-base font-semibold leading-tight">{member.name}</h4>
+                           <p className="text-sm text-primary/70 leading-tight">{member.role}</p>
+                         </div>
+                       </div>
                     ))}
                   </div>
                 </div>
@@ -296,15 +296,15 @@ const OurTeam = () => {
                       { name: "Pratish Gandhi", initials: "PG", role: "Software Architect" },
                       { name: "Vishweshwar Kapse", initials: "VK", role: "Software Architect" }
                     ].map((member, index) => (
-                      <div key={index} className="flex items-center space-x-3 hover:bg-white/50 rounded-lg p-2 transition-all duration-200">
-                        <div className="w-12 h-12 bg-gradient-secondary rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                          {member.initials}
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <h4 className="text-sm font-semibold leading-tight">{member.name}</h4>
-                          <p className="text-xs text-secondary/70 leading-tight">{member.role}</p>
-                        </div>
-                      </div>
+                       <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
+                         <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
+                           {member.initials}
+                         </div>
+                         <div className="min-w-0 flex-1">
+                           <h4 className="text-base font-semibold leading-tight">{member.name}</h4>
+                           <p className="text-sm text-secondary/70 leading-tight">{member.role}</p>
+                         </div>
+                       </div>
                     ))}
                   </div>
                 </div>
@@ -320,15 +320,15 @@ const OurTeam = () => {
                       { name: "Ajay K", initials: "AJ", role: "Technical Lead" },
                       { name: "Shreeja M S", initials: "SM", role: "Senior Software Engineer" }
                     ].map((member, index) => (
-                      <div key={index} className="flex items-center space-x-3 hover:bg-white/50 rounded-lg p-2 transition-all duration-200">
-                        <div className="w-12 h-12 bg-gradient-accent rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                          {member.initials}
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <h4 className="text-sm font-semibold leading-tight">{member.name}</h4>
-                          <p className="text-xs text-accent/70 leading-tight">{member.role}</p>
-                        </div>
-                      </div>
+                       <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
+                         <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
+                           {member.initials}
+                         </div>
+                         <div className="min-w-0 flex-1">
+                           <h4 className="text-base font-semibold leading-tight">{member.name}</h4>
+                           <p className="text-sm text-accent/70 leading-tight">{member.role}</p>
+                         </div>
+                       </div>
                     ))}
                   </div>
                 </div>
@@ -387,15 +387,15 @@ const OurTeam = () => {
                       { name: "Samarth Vengurlekar", initials: "SV", role: "UI & Integration" },
                       { name: "Ashutosh Kangralkar", initials: "AS", role: "Mechanical Design" }
                     ].map((member, index) => (
-                      <div key={index} className="flex items-center space-x-3 hover:bg-white/50 rounded-lg p-2 transition-all duration-200">
-                        <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          {member.initials}
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-semibold">{member.name}</h4>
-                          <p className="text-xs text-primary/70">{member.role}</p>
-                        </div>
-                      </div>
+                       <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
+                         <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-white text-base font-bold">
+                           {member.initials}
+                         </div>
+                         <div>
+                           <h4 className="text-base font-semibold">{member.name}</h4>
+                           <p className="text-sm text-primary/70">{member.role}</p>
+                         </div>
+                       </div>
                     ))}
                   </div>
                 </div>
@@ -411,15 +411,15 @@ const OurTeam = () => {
                       { name: "Pratish Gandhi", initials: "PG", role: "Software Architect" },
                       { name: "Vishweshwar Kapse", initials: "VK", role: "Software Architect" }
                     ].map((member, index) => (
-                      <div key={index} className="flex items-center space-x-3 hover:bg-white/50 rounded-lg p-2 transition-all duration-200">
-                        <div className="w-12 h-12 bg-gradient-secondary rounded-full flex items-center justify-center text-white text-sm font-bold">
-                          {member.initials}
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-semibold">{member.name}</h4>
-                          <p className="text-xs text-secondary/70">{member.role}</p>
-                        </div>
-                      </div>
+                       <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
+                         <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center text-white text-base font-bold">
+                           {member.initials}
+                         </div>
+                         <div>
+                           <h4 className="text-base font-semibold">{member.name}</h4>
+                           <p className="text-sm text-secondary/70">{member.role}</p>
+                         </div>
+                       </div>
                     ))}
                   </div>
                 </div>
@@ -437,13 +437,13 @@ const OurTeam = () => {
                       { name: "Ajay K", initials: "AJ", role: "Technical Lead" },
                       { name: "Shreeja M S", initials: "SM", role: "Senior Software Engineer" }
                     ].map((member, index) => (
-                      <div key={index} className="text-center">
-                        <div className="w-16 h-16 bg-gradient-accent rounded-full mx-auto mb-2 flex items-center justify-center text-white text-sm font-bold">
-                          {member.initials}
-                        </div>
-                        <h4 className="text-sm font-semibold">{member.name}</h4>
-                        <p className="text-xs text-accent/70">{member.role}</p>
-                      </div>
+                       <div key={index} className="text-center">
+                         <div className="w-20 h-20 bg-gradient-accent rounded-full mx-auto mb-3 flex items-center justify-center text-white text-base font-bold">
+                           {member.initials}
+                         </div>
+                         <h4 className="text-base font-semibold">{member.name}</h4>
+                         <p className="text-sm text-accent/70">{member.role}</p>
+                       </div>
                     ))}
                   </div>
                 </div>
@@ -459,13 +459,13 @@ const OurTeam = () => {
                       { name: "Kanakaraddi Radder", initials: "KR", role: "Senior Functional Consultant" },
                       { name: "And 15 more...", initials: "...", role: "Various Specialists" }
                     ].map((member, index) => (
-                      <div key={index} className="text-center">
-                        <div className="w-14 h-14 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full mx-auto mb-2 flex items-center justify-center text-white text-xs font-bold">
-                          {member.initials}
-                        </div>
-                        <h4 className="text-xs font-semibold">{member.name}</h4>
-                        <p className="text-xs text-foreground/60">{member.role}</p>
-                      </div>
+                       <div key={index} className="text-center">
+                         <div className="w-18 h-18 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-sm font-bold">
+                           {member.initials}
+                         </div>
+                         <h4 className="text-sm font-semibold">{member.name}</h4>
+                         <p className="text-sm text-foreground/60">{member.role}</p>
+                       </div>
                     ))}
                   </div>
                 </div>
@@ -502,13 +502,13 @@ const OurTeam = () => {
                   <div className="space-y-3">
                     {team.members.map((member, index) => (
                       <div key={index} className="flex items-center space-x-3 bg-white/50 rounded-lg p-3">
-                        <div className={`w-12 h-12 bg-gradient-${team.color} rounded-full flex items-center justify-center text-white text-sm font-bold`}>
-                          {member.initials}
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-semibold">{member.name}</h4>
-                          <p className={`text-xs text-${team.color}/70`}>{member.role}</p>
-                        </div>
+                         <div className={`w-16 h-16 bg-gradient-${team.color} rounded-full flex items-center justify-center text-white text-base font-bold`}>
+                           {member.initials}
+                         </div>
+                         <div>
+                           <h4 className="text-base font-semibold">{member.name}</h4>
+                           <p className={`text-sm text-${team.color}/70`}>{member.role}</p>
+                         </div>
                       </div>
                     ))}
                   </div>
