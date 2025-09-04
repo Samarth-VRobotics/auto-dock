@@ -41,7 +41,11 @@ const eventsData = [
     id: 3,
     title: "Industry Visits & Engagements",
     description: "As a team, we make it a point to step into real-world shop floors and plants. These visits — often with helmets on and sleeves rolled up — deepen our understanding of industrial needs and ground our solutions in practical reality.",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format",
+    images: [
+      { url: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png", alt: "Team visit to industrial facility with safety helmets" },
+      { url: "/lovable-uploads/7e619b3d-0110-4751-9e58-75c59c40d7e4.png", alt: "Team meeting with industry professionals at BASF facility" }
+    ],
+    imageUrl: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png",
     imageAlt: "Industrial facility visit"
   },
   {
@@ -123,32 +127,55 @@ const EventsCarousel = () => {
                     {/* Image Section */}
                     <div className="relative h-64 md:h-[500px] overflow-hidden group">
                       {event.images && event.images.length > 1 ? (
-                        // Image slideshow for events with multiple images
-                        <div className="relative h-full">
-                          {event.images.map((image, imgIndex) => (
-                            <img 
-                              key={imgIndex}
-                              src={image.url} 
-                              alt={image.alt}
-                              className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-700 ease-out ${
-                                imgIndex === (imageSlides[index] || 0) 
-                                  ? 'opacity-100 z-10' 
-                                  : 'opacity-0 z-0'
-                              }`}
-                            />
-                          ))}
-                          {/* Image indicators */}
-                          <div className="absolute bottom-4 right-4 flex space-x-1 z-20">
-                            {event.images.map((_, imgIndex) => (
+                        event.id === 2 ? (
+                          // Image collage for NVIDIA GTC only
+                          <div className="grid grid-cols-2 grid-rows-2 gap-1 h-full">
+                            {event.images.map((image, imgIndex) => (
                               <div 
                                 key={imgIndex}
-                                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                  imgIndex === (imageSlides[index] || 0) ? 'bg-white' : 'bg-white/50'
+                                className={`relative overflow-hidden ${
+                                  imgIndex === 0 ? 'col-span-1 row-span-1' :
+                                  imgIndex === 1 ? 'col-span-1 row-span-1' :
+                                  imgIndex === 2 ? 'col-span-1 row-span-1' :
+                                  'col-span-1 row-span-1'
+                                }`}
+                              >
+                                <img 
+                                  src={image.url} 
+                                  alt={image.alt}
+                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          // Image slideshow for other events with multiple images
+                          <div className="relative h-full">
+                            {event.images.map((image, imgIndex) => (
+                              <img 
+                                key={imgIndex}
+                                src={image.url} 
+                                alt={image.alt}
+                                className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-700 ease-out ${
+                                  imgIndex === (imageSlides[index] || 0) 
+                                    ? 'opacity-100 z-10' 
+                                    : 'opacity-0 z-0'
                                 }`}
                               />
                             ))}
+                            {/* Image indicators */}
+                            <div className="absolute bottom-4 right-4 flex space-x-1 z-20">
+                              {event.images.map((_, imgIndex) => (
+                                <div 
+                                  key={imgIndex}
+                                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                    imgIndex === (imageSlides[index] || 0) ? 'bg-white' : 'bg-white/50'
+                                  }`}
+                                />
+                              ))}
+                            </div>
                           </div>
-                        </div>
+                        )
                       ) : (
                         // Single image
                         <img 
