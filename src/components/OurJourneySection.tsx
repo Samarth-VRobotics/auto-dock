@@ -32,7 +32,7 @@ const OurJourneySection = () => {
   // Industry transition slideshow
   const industryImages = [
     { src: "/lovable-uploads/1ce695c8-00a1-4a19-8a83-6a5447c4e299.png", alt: "Vegam robot in industrial setting with worker" },
-    { src: "/lovable-uploads/c0401a95-0838-4dc5-ae67-d6184ac3abf5.png", alt: "Team showcasing MAYA 1.0 robot at exhibition" },
+    { src: "/lovable-uploads/2f5b3683-c1f1-4ab8-93da-c3246e6b6f98.png", alt: "Team showcasing MAYA 1.0 robot at university exhibition" },
     { src: "/lovable-uploads/cdfeba0e-e1a6-4714-a55d-180e813b74c6.png", alt: "Team working in robotics lab with MAYA robot" }
   ];
   const projects = [{
@@ -221,10 +221,10 @@ const OurJourneySection = () => {
           </div>
 
           {/* From University to Industry */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-stretch w-full max-w-[95vw] mx-auto">            
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">            
             {/* Industry Visual */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl w-full group
-                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out h-80 lg:h-[500px]">
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out h-80 lg:h-[500px] mt-8">
               {/* Industry Images Slideshow */}
               {industryImages.map((image, index) => (
                 <img 
