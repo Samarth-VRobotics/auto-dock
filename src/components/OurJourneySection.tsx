@@ -103,10 +103,10 @@ const OurJourneySection = () => {
     return () => clearInterval(interval);
   }, [industryImages.length]);
 
-  return <section className="py-8 bg-background relative overflow-hidden">
+  return <section className="py-16 bg-background relative overflow-hidden min-h-screen">
       
-      <div className="container mx-auto px-6 relative">
-        <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-full mx-auto">
           {/* Section Header - More integrated style */}
           <div className="text-center mb-8">
             
@@ -114,21 +114,21 @@ const OurJourneySection = () => {
           </div>
 
           {/* Our Journey in Robotics - Section Header */}
-          <div className="text-center mb-16">
-            <h3 className="text-5xl font-bold text-primary mb-6 hover:text-primary/80 transition-colors duration-300">Our Journey in Robotics</h3>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
+          <div className="text-center mb-20">
+            <h3 className="text-6xl font-bold text-primary mb-8 hover:text-primary/80 transition-colors duration-300">Our Journey in Robotics</h3>
+            <div className="w-32 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
           </div>
 
           {/* Row 1: First Paragraph + Image (Text Left, Image Right) */}
-          <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10 
+          <div className="grid md:grid-cols-2 gap-16 mb-24 items-center">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-primary/10 
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
                           transition-all duration-500 ease-out group">
-              <p className="text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
+              <p className="text-foreground/80 leading-relaxed text-xl group-hover:text-foreground transition-colors duration-300">
                 At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. We take immense pride in calling it our alma mater, a place that offered us not only knowledge but also a thriving ecosystem of mentorship, opportunities, and innovation.
               </p>
             </div>
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-96 group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
               <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="KLETU campus buildings with beautiful architecture" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
