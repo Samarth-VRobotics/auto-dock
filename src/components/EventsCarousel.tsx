@@ -15,13 +15,13 @@ const eventsData = [
     title: "Vegam Customer's Engagement Event",
     description: "We hosted an in-house expo, setting up our automation and robotics R&D demonstrations for leading clients and industry professionals. It was a space for open conversations, networking, and sharing the possibilities of robotics.",
     images: [
-      { url: "/lovable-uploads/e7b947de-0159-404a-a66b-45f5874df568.png", alt: "Robot demonstration with customer engagement" },
-      { url: "/lovable-uploads/00ffd763-89d4-4678-90d5-f35cca980b83.png", alt: "Interactive presentation with customers" },
-      { url: "/lovable-uploads/794b5998-0409-47d1-b376-dda8eb84b884.png", alt: "Product showcase with industry professionals" },
-      { url: "/lovable-uploads/ff000336-c83d-4376-a7c9-8480301b793b.png", alt: "Ceremonial event with team and customers" },
-      { url: "/lovable-uploads/351602e8-b3e2-4c08-82b9-da40410d555f.png", alt: "Customer networking and engagement session" }
+      { url: "/lovable-uploads/318afd9b-1608-4c39-9b68-af9535c69047.png", alt: "Robot demonstration with customer engagement at Vegam expo" },
+      { url: "/lovable-uploads/52c835ce-39ec-41bb-a91c-ce18cc6b08be.png", alt: "Interactive presentation with customers and team wall display" },
+      { url: "/lovable-uploads/d3c66e54-a8ee-437e-8013-494f66d658fb.png", alt: "Ceremonial lighting event with team and customers" },
+      { url: "/lovable-uploads/d808f01b-6871-4874-82e6-0c036ace0348.png", alt: "Customer networking session with team presentations" },
+      { url: "/lovable-uploads/c65c0c7e-e09d-4819-ae8c-8ac2b721d683.png", alt: "Product showcase with industry professionals and demonstrations" }
     ],
-    imageUrl: "/lovable-uploads/e7b947de-0159-404a-a66b-45f5874df568.png",
+    imageUrl: "/lovable-uploads/318afd9b-1608-4c39-9b68-af9535c69047.png",
     imageAlt: "Vegam Expo showcasing robotics demonstrations"
   },
   {
