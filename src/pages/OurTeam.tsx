@@ -564,13 +564,13 @@ const OurTeam = () => {
 
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p className="text-lg">
-                Vegam's ultimate vision is Lights-Out Manufacturing — fully autonomous factories that run continuously with minimal human intervention. We see a future where robotics, AI, and digital intelligence converge to create production ecosystems that are safer, smarter, and self-optimizing.
+                At Vegam, we are shaping the future of manufacturing by building fully autonomous factories that run continuously with minimal human intervention. Our goal is to create production ecosystems where robotics, AI, and digital intelligence work seamlessly together making operations safer, smarter, and self-optimizing.
               </p>
               <p className="text-lg">
-                With 300+ plants already powered by our digital backbone, we are transforming today's connected factories into tomorrow's autonomous ones. By integrating adaptive robotics, generative AI, and predictive systems, we are pioneering a new era of manufacturing — where risk is anticipated, quality is assured, and efficiency knows no boundaries.
+                With 300+ plants already powered by our digital backbone, we are leading the transformation from connected factories to truly autonomous ones. By integrating adaptive robotics, generative AI, and predictive intelligence, we are pioneering a new era of manufacturing where risks are prevented before they arise, quality is inherent in every process, and efficiency knows no boundaries.
               </p>
               <p className="text-lg">
-                For us, robotics is not just an extension of digital manufacturing; it is the foundation of a world where factories never stop, innovation never slows, and Lights-Out Manufacturing becomes reality.
+                For us, robotics isn't just an extension of digital manufacturing, it is the foundation of a world where factories never stop, innovation never slows, and Lights-Out becomes reality.
               </p>
             </div>
           </div>
