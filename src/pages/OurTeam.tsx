@@ -256,242 +256,210 @@ const OurTeam = () => {
           </div>
         </div>
         
-        {/* Team Structure - Horizontal Rows */}
+        {/* Corporate Team Structure */}
         <div className="w-full px-4 sm:px-6 lg:px-8 mt-16">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             
-            {/* Desktop: Horizontal Row Layout */}
-            <div className="space-y-12">
+            <div className="space-y-16">
               
-              {/* Robotics Team Row */}
-              <div className="border-b border-border/20 pb-12">
-                <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                  <div className="lg:w-1/4 flex-shrink-0">
-                    <h3 className="text-3xl font-bold text-primary mb-2">Robotics Experts</h3>
-                    <p className="text-foreground/60 text-sm">Building autonomous systems</p>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
-                      {[{
-                        name: "Faizan Pathan",
-                        initials: "FP",
-                        role: "Autonomy & Embedded Systems"
-                      }, {
-                        name: "Rani Kinnal",
-                        initials: "RK",
-                        role: "Systems & Simulation"
-                      }, {
-                        name: "Amrut Kurtakoti",
-                        initials: "AK",
-                        role: "Coordination & Business"
-                      }, {
-                        name: "Samarth Vengurlekar",
-                        initials: "SV",
-                        role: "UI & Integration"
-                      }, {
-                        name: "Ashutosh Kangralkar",
-                        initials: "AS",
-                        role: "Mechanical Design"
-                      }].map((member, index) => (
-                        <div key={index} className="text-center group hover:scale-105 transition-all duration-300">
-                          <div className="w-28 h-28 lg:w-32 lg:h-32 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center text-white text-xl font-bold shadow-lg group-hover:shadow-xl transition-all duration-300">
-                            {member.initials}
-                          </div>
-                          <h4 className="text-base font-semibold mb-1 max-w-[120px]">{member.name}</h4>
-                          <p className="text-sm text-primary/70 max-w-[120px] leading-tight">{member.role}</p>
+              {/* Robotics Experts */}
+              <div className="bg-gradient-to-r from-primary/3 to-primary/1 rounded-2xl p-8 border border-primary/10">
+                <h3 className="text-3xl font-bold text-primary mb-8 pb-4 border-b border-primary/20">
+                  Robotics Experts
+                </h3>
+                <div className="space-y-6">
+                  {[{
+                    name: "Faizan Pathan",
+                    role: "Autonomy & Embedded Systems"
+                  }, {
+                    name: "Rani Kinnal",
+                    role: "Systems & Simulation"
+                  }, {
+                    name: "Amrut Kurtakoti",
+                    role: "Coordination & Business"
+                  }, {
+                    name: "Samarth Vengurlekar",
+                    role: "UI & Integration"
+                  }, {
+                    name: "Ashutosh Kangralkar",
+                    role: "Mechanical Design"
+                  }].map((member, index) => (
+                    <div key={index} className="flex items-center justify-between py-3 px-4 bg-white/50 rounded-xl hover:bg-white/80 transition-all duration-200 group">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-3 h-3 bg-primary rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-200">
+                            {member.name}
+                          </h4>
                         </div>
-                      ))}
+                      </div>
+                      <div className="text-right">
+                        <p className="text-foreground/70 font-medium">{member.role}</p>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
-              {/* AI Team Row */}
-              <div className="border-b border-border/20 pb-12">
-                <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                  <div className="lg:w-1/4 flex-shrink-0">
-                    <h3 className="text-3xl font-bold text-secondary mb-2">AI Experts</h3>
-                    <p className="text-foreground/60 text-sm">Intelligent software solutions</p>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
-                      {[{
-                        name: "Tunga Santosh Kumar",
-                        initials: "TS",
-                        role: "Software Architect"
-                      }, {
-                        name: "Varadharajan N M",
-                        initials: "VN",
-                        role: "Software Architect"
-                      }, {
-                        name: "Sachin Vishwakarma",
-                        initials: "SV",
-                        role: "Software Architect"
-                      }, {
-                        name: "Pratish Gandhi",
-                        initials: "PG",
-                        role: "Software Architect"
-                      }, {
-                        name: "Vishweshwar Kapse",
-                        initials: "VK",
-                        role: "Software Architect"
-                      }].map((member, index) => (
-                        <div key={index} className="text-center group hover:scale-105 transition-all duration-300">
-                          <div className="w-28 h-28 lg:w-32 lg:h-32 bg-gradient-secondary rounded-full mx-auto mb-4 flex items-center justify-center text-white text-xl font-bold shadow-lg group-hover:shadow-xl transition-all duration-300">
-                            {member.initials}
-                          </div>
-                          <h4 className="text-base font-semibold mb-1 max-w-[120px]">{member.name}</h4>
-                          <p className="text-sm text-secondary/70 max-w-[120px] leading-tight">{member.role}</p>
+              {/* AI Experts */}
+              <div className="bg-gradient-to-r from-secondary/3 to-secondary/1 rounded-2xl p-8 border border-secondary/10">
+                <h3 className="text-3xl font-bold text-secondary mb-8 pb-4 border-b border-secondary/20">
+                  AI Experts
+                </h3>
+                <div className="space-y-6">
+                  {[{
+                    name: "Tunga Santosh Kumar",
+                    role: "Software Architect"
+                  }, {
+                    name: "Varadharajan N M",
+                    role: "Software Architect"
+                  }, {
+                    name: "Sachin Vishwakarma",
+                    role: "Software Architect"
+                  }, {
+                    name: "Pratish Gandhi",
+                    role: "Software Architect"
+                  }, {
+                    name: "Vishweshwar Kapse",
+                    role: "Software Architect"
+                  }].map((member, index) => (
+                    <div key={index} className="flex items-center justify-between py-3 px-4 bg-white/50 rounded-xl hover:bg-white/80 transition-all duration-200 group">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-3 h-3 bg-secondary rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-foreground group-hover:text-secondary transition-colors duration-200">
+                            {member.name}
+                          </h4>
                         </div>
-                      ))}
+                      </div>
+                      <div className="text-right">
+                        <p className="text-foreground/70 font-medium">{member.role}</p>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Embedded Team Row */}
-              <div className="border-b border-border/20 pb-12">
-                <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                  <div className="lg:w-1/4 flex-shrink-0">
-                    <h3 className="text-3xl font-bold text-accent mb-2">Embedded Experts</h3>
-                    <p className="text-foreground/60 text-sm">Hardware-software integration</p>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
-                      {[{
-                        name: "Sreenivasa Yarram",
-                        initials: "SY",
-                        role: "Software Architect"
-                      }, {
-                        name: "Sirajudheen NH",
-                        initials: "SN",
-                        role: "Software Architect"
-                      }, {
-                        name: "Sushin C",
-                        initials: "SC",
-                        role: "Software Architect"
-                      }, {
-                        name: "Ajay K",
-                        initials: "AJ",
-                        role: "Technical Lead"
-                      }, {
-                        name: "Shreeja M S",
-                        initials: "SM",
-                        role: "Senior Software Engineer"
-                      }].map((member, index) => (
-                        <div key={index} className="text-center group hover:scale-105 transition-all duration-300">
-                          <div className="w-28 h-28 lg:w-32 lg:h-32 bg-gradient-accent rounded-full mx-auto mb-4 flex items-center justify-center text-white text-xl font-bold shadow-lg group-hover:shadow-xl transition-all duration-300">
-                            {member.initials}
-                          </div>
-                          <h4 className="text-base font-semibold mb-1 max-w-[120px]">{member.name}</h4>
-                          <p className="text-sm text-accent/70 max-w-[120px] leading-tight">{member.role}</p>
+              {/* Embedded Experts */}
+              <div className="bg-gradient-to-r from-accent/3 to-accent/1 rounded-2xl p-8 border border-accent/10">
+                <h3 className="text-3xl font-bold text-accent mb-8 pb-4 border-b border-accent/20">
+                  Embedded Experts
+                </h3>
+                <div className="space-y-6">
+                  {[{
+                    name: "Sreenivasa Yarram",
+                    role: "Software Architect"
+                  }, {
+                    name: "Sirajudheen NH",
+                    role: "Software Architect"
+                  }, {
+                    name: "Sushin C",
+                    role: "Software Architect"
+                  }, {
+                    name: "Ajay K",
+                    role: "Technical Lead"
+                  }, {
+                    name: "Shreeja M S",
+                    role: "Senior Software Engineer"
+                  }].map((member, index) => (
+                    <div key={index} className="flex items-center justify-between py-3 px-4 bg-white/50 rounded-xl hover:bg-white/80 transition-all duration-200 group">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-3 h-3 bg-accent rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors duration-200">
+                            {member.name}
+                          </h4>
                         </div>
-                      ))}
+                      </div>
+                      <div className="text-right">
+                        <p className="text-foreground/70 font-medium">{member.role}</p>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Manufacturing Team Row */}
-              <div className="pb-12">
-                <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                  <div className="lg:w-1/4 flex-shrink-0">
-                    <h3 className="text-3xl font-bold text-foreground mb-2">Manufacturing Experts</h3>
-                    <p className="text-foreground/60 text-sm">Digital factory solutions</p>
-                  </div>
-                  <div className="flex-1">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                      {[{
-                        name: "Aman Saxena",
-                        initials: "AS",
-                        role: "Senior Functional Consultant"
-                      }, {
-                        name: "Balaji Kumar",
-                        initials: "BK",
-                        role: "Senior Functional Consultant"
-                      }, {
-                        name: "Rohan Patil",
-                        initials: "RP",
-                        role: "Senior Functional Consultant"
-                      }, {
-                        name: "Ann Maria Jess Kurian",
-                        initials: "AJ",
-                        role: "Lead Functional Consultant"
-                      }, {
-                        name: "Kanakaraddi C Radder",
-                        initials: "KR",
-                        role: "Senior Functional Consultant"
-                      }, {
-                        name: "Pramod BP",
-                        initials: "PB",
-                        role: "Lead Functional Consultant"
-                      }, {
-                        name: "Subha J",
-                        initials: "SJ",
-                        role: "Lead Functional Consultant"
-                      }, {
-                        name: "Venkatesh HS",
-                        initials: "VH",
-                        role: "Lead Functional Consultant"
-                      }, {
-                        name: "Chaithra N",
-                        initials: "CN",
-                        role: "Lead Functional Consultant"
-                      }, {
-                        name: "Arun Kumar",
-                        initials: "AR",
-                        role: "Senior Consultant"
-                      }, {
-                        name: "Priya Sharma",
-                        initials: "PS",
-                        role: "Business Analyst"
-                      }, {
-                        name: "Ravi Mehta",
-                        initials: "RM",
-                        role: "Process Engineer"
-                      }, {
-                        name: "Kavya Reddy",
-                        initials: "KV",
-                        role: "Quality Analyst"
-                      }, {
-                        name: "Deepak Singh",
-                        initials: "DS",
-                        role: "Integration Specialist"
-                      }, {
-                        name: "Neha Gupta",
-                        initials: "NG",
-                        role: "System Administrator"
-                      }, {
-                        name: "Vikram Joshi",
-                        initials: "VJ",
-                        role: "Database Engineer"
-                      }, {
-                        name: "Anita Rao",
-                        initials: "AR",
-                        role: "UI/UX Designer"
-                      }, {
-                        name: "Suresh Kumar",
-                        initials: "SK",
-                        role: "DevOps Engineer"
-                      }, {
-                        name: "Pooja Nair",
-                        initials: "PN",
-                        role: "Project Coordinator"
-                      }, {
-                        name: "Manoj Verma",
-                        initials: "MV",
-                        role: "Security Analyst"
-                      }].map((member, index) => (
-                        <div key={index} className="text-center group hover:scale-105 transition-all duration-300">
-                          <div className="w-20 h-20 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-sm font-bold shadow-lg group-hover:shadow-xl transition-all duration-300">
-                            {member.initials}
-                          </div>
-                          <h4 className="text-sm font-semibold mb-1 leading-tight">{member.name}</h4>
-                          <p className="text-xs text-foreground/60 leading-tight">{member.role}</p>
+              {/* Manufacturing Experts */}
+              <div className="bg-gradient-to-r from-slate-100/50 to-slate-50/30 rounded-2xl p-8 border border-slate-200/50">
+                <h3 className="text-3xl font-bold text-foreground mb-8 pb-4 border-b border-slate-200">
+                  Manufacturing Experts
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[{
+                    name: "Aman Saxena",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Balaji Kumar",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Rohan Patil",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Ann Maria Jess Kurian",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Kanakaraddi C Radder",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Pramod BP",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Subha J",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Venkatesh HS",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Chaithra N",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Arun Kumar",
+                    role: "Senior Consultant"
+                  }, {
+                    name: "Priya Sharma",
+                    role: "Business Analyst"
+                  }, {
+                    name: "Ravi Mehta",
+                    role: "Process Engineer"
+                  }, {
+                    name: "Kavya Reddy",
+                    role: "Quality Analyst"
+                  }, {
+                    name: "Deepak Singh",
+                    role: "Integration Specialist"
+                  }, {
+                    name: "Neha Gupta",
+                    role: "System Administrator"
+                  }, {
+                    name: "Vikram Joshi",
+                    role: "Database Engineer"
+                  }, {
+                    name: "Anita Rao",
+                    role: "UI/UX Designer"
+                  }, {
+                    name: "Suresh Kumar",
+                    role: "DevOps Engineer"
+                  }, {
+                    name: "Pooja Nair",
+                    role: "Project Coordinator"
+                  }, {
+                    name: "Manoj Verma",
+                    role: "Security Analyst"
+                  }].map((member, index) => (
+                    <div key={index} className="flex items-center justify-between py-3 px-4 bg-white/60 rounded-xl hover:bg-white/90 transition-all duration-200 group">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-3 h-3 bg-slate-600 rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-foreground group-hover:text-slate-700 transition-colors duration-200">
+                            {member.name}
+                          </h4>
                         </div>
-                      ))}
+                      </div>
+                      <div className="text-right">
+                        <p className="text-foreground/70 font-medium text-sm">{member.role}</p>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
