@@ -310,19 +310,74 @@ const Index = () => {
           </div>
           
           <div className="mt-16 text-center">
-            <p className="body-lg text-muted-foreground mb-8">Trusted by Global Manufacturing Leaders</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-70">
-              <div className="bg-white/80 h-16 rounded-lg flex items-center justify-center p-4">
-                <img src="https://vegam.co/lovable-uploads/1a590db5-6790-4c96-846f-1908fd8142ea.png" alt="Bostik" className="max-h-10 max-w-full object-contain" />
-              </div>
-              <div className="bg-white/80 h-16 rounded-lg flex items-center justify-center p-4">
-                <img src="https://vegam.co/lovable-uploads/a130b90f-7ac1-4960-920e-a0474132e26f.png" alt="Emerson" className="max-h-10 max-w-full object-contain" />
-              </div>
-              <div className="bg-white/80 h-16 rounded-lg flex items-center justify-center p-4">
-                <img src="https://vegam.co/lovable-uploads/c0b6dbaa-39e8-4181-8f27-a1e1e3a63bda.png" alt="LG Electronics" className="max-h-10 max-w-full object-contain" />
-              </div>
-              <div className="bg-white/80 h-16 rounded-lg flex items-center justify-center p-4">
-                <img src="https://vegam.co/lovable-uploads/fcf8d687-3ef1-4c16-993e-16dd3eb46b83.png" alt="Saint-Gobain" className="max-h-10 max-w-full object-contain" />
+            <p className="body-lg text-muted-foreground mb-8">Trusted by 300+ Plants across 60+ countries</p>
+            
+            {/* Animated scrolling logos */}
+            <div className="relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20 shadow-2xl p-8">
+              <div className="flex gap-10 md:gap-16 animate-scroll">
+                {/* First set of logos */}
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/1a590db5-6790-4c96-846f-1908fd8142ea.png" alt="Bostik logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/a130b90f-7ac1-4960-920e-a0474132e26f.png" alt="Emerson logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/a566f628-b7a5-488d-ae06-e4f4dc306e28.png" alt="JSL Jindal Stainless logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/83bbbced-e06e-48c3-b1e2-1a0879172c1c.png" alt="Indorama logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/c0b6dbaa-39e8-4181-8f27-a1e1e3a63bda.png" alt="LG Electronics logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/3a453a0d-1d64-4438-b964-ce77b954bdb1.png" alt="JSW Steel logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/fcf8d687-3ef1-4c16-993e-16dd3eb46b83.png" alt="Saint-Gobain logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/5693a6a3-2dff-454a-9982-d16213261092.png" alt="SEP India logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/28ac4552-9267-4e43-9929-9dff1c9e7f86.png" alt="SKF logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/66fde0cf-949d-4508-81a6-02eeeb41e212.png" alt="Solex Logistics logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                
+                {/* Duplicate set for seamless loop */}
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/1a590db5-6790-4c96-846f-1908fd8142ea.png" alt="Bostik logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/a130b90f-7ac1-4960-920e-a0474132e26f.png" alt="Emerson logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/a566f628-b7a5-488d-ae06-e4f4dc306e28.png" alt="JSL Jindal Stainless logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/83bbbced-e06e-48c3-b1e2-1a0879172c1c.png" alt="Indorama logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/c0b6dbaa-39e8-4181-8f27-a1e1e3a63bda.png" alt="LG Electronics logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/3a453a0d-1d64-4438-b964-ce77b954bdb1.png" alt="JSW Steel logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/fcf8d687-3ef1-4c16-993e-16dd3eb46b83.png" alt="Saint-Gobain logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/5693a6a3-2dff-454a-9982-d16213261092.png" alt="SEP India logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/28ac4552-9267-4e43-9929-9dff1c9e7f86.png" alt="SKF logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 group">
+                  <img src="https://vegam.co/lovable-uploads/66fde0cf-949d-4508-81a6-02eeeb41e212.png" alt="Solex Logistics logo" className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+                </div>
               </div>
             </div>
           </div>
