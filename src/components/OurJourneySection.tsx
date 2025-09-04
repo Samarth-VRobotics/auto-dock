@@ -89,18 +89,25 @@ const OurJourneySection = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              {/* Asymmetric Image Collage */}
-              <div className="grid grid-cols-3 grid-rows-3 gap-1 h-full">
-                <div className="relative overflow-hidden col-span-2 row-span-2">
+              {/* Randomly Placed Photo Collage */}
+              <div className="relative h-full p-4">
+                {/* Photo 1 - Top left area */}
+                <div className="absolute top-2 left-2 w-24 h-32 rounded-lg overflow-hidden shadow-lg transform rotate-[-8deg]">
                   <img src={studentPortrait1} alt="Student portrait 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
-                <div className="relative overflow-hidden col-span-1 row-span-1">
+                
+                {/* Photo 2 - Top right area */}
+                <div className="absolute top-8 right-4 w-28 h-36 rounded-lg overflow-hidden shadow-lg transform rotate-[12deg]">
                   <img src={studentPortrait2} alt="Student portrait 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
-                <div className="relative overflow-hidden col-span-1 row-span-2">
+                
+                {/* Photo 3 - Bottom left area */}
+                <div className="absolute bottom-6 left-8 w-32 h-28 rounded-lg overflow-hidden shadow-lg transform rotate-[5deg]">
                   <img src={studentPortrait3} alt="Student portrait 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
-                <div className="relative overflow-hidden col-span-2 row-span-1">
+                
+                {/* Photo 4 - Center right area */}
+                <div className="absolute bottom-2 right-2 w-26 h-34 rounded-lg overflow-hidden shadow-lg transform rotate-[-15deg]">
                   <img src={studentPortrait4} alt="Student portrait 4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
               </div>
