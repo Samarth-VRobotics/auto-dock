@@ -14,7 +14,14 @@ const eventsData = [
     id: 1,
     title: "Vegam Customer's Engagement Event",
     description: "We hosted an in-house expo, setting up our automation and robotics R&D demonstrations for leading clients and industry professionals. It was a space for open conversations, networking, and sharing the possibilities of robotics.",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format",
+    images: [
+      { url: "/lovable-uploads/e7b947de-0159-404a-a66b-45f5874df568.png", alt: "Robot demonstration with customer engagement" },
+      { url: "/lovable-uploads/00ffd763-89d4-4678-90d5-f35cca980b83.png", alt: "Interactive presentation with customers" },
+      { url: "/lovable-uploads/794b5998-0409-47d1-b376-dda8eb84b884.png", alt: "Product showcase with industry professionals" },
+      { url: "/lovable-uploads/ff000336-c83d-4376-a7c9-8480301b793b.png", alt: "Ceremonial event with team and customers" },
+      { url: "/lovable-uploads/351602e8-b3e2-4c08-82b9-da40410d555f.png", alt: "Customer networking and engagement session" }
+    ],
+    imageUrl: "/lovable-uploads/e7b947de-0159-404a-a66b-45f5874df568.png",
     imageAlt: "Vegam Expo showcasing robotics demonstrations"
   },
   {
