@@ -89,18 +89,18 @@ const OurJourneySection = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              {/* 2x2 Image Collage */}
-              <div className="grid grid-cols-2 gap-1 h-full">
-                <div className="relative overflow-hidden">
+              {/* Asymmetric Image Collage */}
+              <div className="grid grid-cols-3 grid-rows-3 gap-1 h-full">
+                <div className="relative overflow-hidden col-span-2 row-span-2">
                   <img src={studentPortrait1} alt="Student portrait 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden col-span-1 row-span-1">
                   <img src={studentPortrait2} alt="Student portrait 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden col-span-1 row-span-2">
                   <img src={studentPortrait3} alt="Student portrait 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden col-span-2 row-span-1">
                   <img src={studentPortrait4} alt="Student portrait 4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
               </div>
