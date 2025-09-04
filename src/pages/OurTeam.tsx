@@ -305,24 +305,24 @@ const OurTeam = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
                   {[{
-                  name: "Tunga Santosh Kumar",
-                  initials: "TS",
+                  name: "Falgun",
+                  initials: "F",
                   role: "Software Architect"
                 }, {
-                  name: "Varadharajan N M",
-                  initials: "VN",
+                  name: "J. S. Ranjith",
+                  initials: "JSR",
                   role: "Software Architect"
                 }, {
-                  name: "Sachin Vishwakarma",
-                  initials: "SV",
+                  name: "Parikshith Palegar",
+                  initials: "PP",
                   role: "Software Architect"
                 }, {
-                  name: "Pratish Gandhi",
-                  initials: "PG",
+                  name: "MANOKARTHI J",
+                  initials: "MJ",
                   role: "Software Architect"
                 }, {
-                  name: "Vishweshwar Kapse",
-                  initials: "VK",
+                  name: "Nieander Pranesh",
+                  initials: "NP",
                   role: "Software Architect"
                 }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
                       <div className="w-24 h-24 rounded-full bg-gradient-secondary flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
@@ -342,24 +342,24 @@ const OurTeam = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
                   {[{
-                  name: "Sreenivasa Yarram",
-                  initials: "SY",
+                  name: "Vishwanath Garagad",
+                  initials: "VG",
                   role: "Software Architect"
                 }, {
-                  name: "Sirajudheen NH",
-                  initials: "SN",
+                  name: "Vijaylakshmi",
+                  initials: "VL",
                   role: "Software Architect"
                 }, {
-                  name: "Sushin C",
-                  initials: "SC",
+                  name: "Samuel Mara",
+                  initials: "SM",
                   role: "Software Architect"
                 }, {
-                  name: "Ajay K",
-                  initials: "AJ",
+                  name: "Sarvanan",
+                  initials: "SV",
                   role: "Technical Lead"
                 }, {
-                  name: "Shreeja M S",
-                  initials: "SM",
+                  name: "Shridhar",
+                  initials: "SH",
                   role: "Senior Software Engineer"
                 }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
                       <div className="w-24 h-24 rounded-full bg-gradient-accent flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
