@@ -53,10 +53,10 @@ const OurTeam = () => {
         
         <div className="container mx-auto px-6 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in-up">
               Meet the Humans Behind the <span className="text-primary">Robots</span>
             </h1>
-            <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 leading-relaxed animate-fade-in px-4">
               A multidisciplinary team of engineers, creators, and problem-solvers building robots with purpose.
             </p>
           </div>
@@ -69,9 +69,9 @@ const OurTeam = () => {
       <section className="py-16 bg-background">
         <div className="w-full">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Our Team</h2>
-            <p className="text-foreground/60 text-sm md:text-base max-w-4xl mx-auto px-6 leading-relaxed">
+          <div className="text-center mb-12 px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Team</h2>
+            <p className="text-foreground/60 text-base sm:text-lg md:text-xl max-w-4xl mx-auto px-2 sm:px-6 leading-relaxed">
               Vegam is more than a company — it's the continuation of friendships, shared dreams, and late-night breakthroughs from our university days. While everyone wears many hats, from robotics and software to business and operations, each has a superpower that anchors the team.
             </p>
           </div>

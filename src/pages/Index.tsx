@@ -29,11 +29,11 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/30"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 lg:px-8 py-20">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="max-w-4xl">
-            <h1 className="heading-hero text-foreground mb-8 animate-fade-in-up">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 sm:mb-8 animate-fade-in-up leading-tight">
               Light's Out Manufacturing: 
-              <span className="block text-primary">The Era of Autonomous Factories</span>
+              <span className="block text-primary mt-2">The Era of Autonomous Factories</span>
             </h1>
             
             <div className="flex flex-wrap gap-3 mb-8 animate-fade-in" style={{
@@ -48,16 +48,16 @@ const Index = () => {
 
             
 
-            <div className="flex flex-col sm:flex-row gap-6 animate-fade-in" style={{
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-in" style={{
             animationDelay: '0.9s',
             animationFillMode: 'both'
           }}>
-              <Button size="lg" className="px-10 py-6 body-lg font-bold hover:scale-105 transition-transform" onClick={() => scrollToSection('future-manufacturing')}>
+              <Button size="lg" className="px-6 sm:px-10 py-4 sm:py-6 text-base sm:text-lg font-bold hover:scale-105 transition-transform" onClick={() => scrollToSection('future-manufacturing')}>
                 Explore the Vision
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
               <ContactDialog>
-                <Button variant="outline" size="lg" className="px-10 py-6 body-lg font-bold hover:scale-105 transition-transform">
+                <Button variant="outline" size="lg" className="px-6 sm:px-10 py-4 sm:py-6 text-base sm:text-lg font-bold hover:scale-105 transition-transform">
                   Contact Vegam
                 </Button>
               </ContactDialog>

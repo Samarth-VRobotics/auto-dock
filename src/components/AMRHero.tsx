@@ -39,43 +39,43 @@ const AMRHero = () => {
               animationFillMode: 'both'
             }}>"Revolutionizing warehouse operations with intelligent AMRs that adapt, navigate, and optimize your material flow autonomously."</p>
 
-            <div className="grid grid-cols-2 gap-8 pt-4 animate-fade-in" style={{
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 pt-4 animate-fade-in" style={{
               animationDelay: '0.6s',
               animationFillMode: 'both'
             }}>
-              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+              <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg"></div>
-                <span className="text-foreground font-semibold body-base drop-shadow-sm">99.8% Navigation Accuracy</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">99.8% Navigation Accuracy</span>
               </div>
-              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+              <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.2s'
                 }}></div>
-                <span className="text-foreground font-semibold body-base drop-shadow-sm">50% Faster Picking Operations</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">50% Faster Picking Operations</span>
               </div>
-              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+              <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.4s'
                 }}></div>
-                <span className="text-foreground font-semibold body-base drop-shadow-sm">24/7 Continuous Operations</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">24/7 Continuous Operations</span>
               </div>
-              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+              <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.6s'
                 }}></div>
-                <span className="text-foreground font-semibold body-base drop-shadow-sm">Dynamic Route Optimization</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Dynamic Route Optimization</span>
               </div>
-              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+              <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.8s'
                 }}></div>
-                <span className="text-foreground font-semibold body-base drop-shadow-sm">Seamless Human Collaboration</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Seamless Human Collaboration</span>
               </div>
-              <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-200">
+              <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '1s'
                 }}></div>
-                <span className="text-foreground font-semibold body-base drop-shadow-sm">ROI &lt; 18 Months</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">ROI &lt; 18 Months</span>
               </div>
             </div>
 
