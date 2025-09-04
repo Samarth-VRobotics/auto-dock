@@ -42,12 +42,8 @@ const AutoDockAdvantage = () => {
     const IconComponent = icon;
     switch (visual) {
       case 'truck-docking':
-        return <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-4 h-80 overflow-hidden">
-            <img 
-              src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Always%20Ready,%20Always%20On.gif" 
-              alt="Always Ready, Always On - AutoDock in action"
-              className="w-full h-full object-cover"
-            />
+        return <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-4 h-80 overflow-hidden bg-white">
+            <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Always%20Ready,%20Always%20On.gif" alt="Always Ready, Always On - AutoDock in action" className="w-full h-full object-cover" />
           </div>;
       case 'dashboard':
         return <div className="relative bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-8 h-64 overflow-hidden">
