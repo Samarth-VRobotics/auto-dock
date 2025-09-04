@@ -810,6 +810,138 @@ const OurTeam = () => {
         </div>
       </section>
 
+      {/* Photo Gallery Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Team in Action</h2>
+              <p className="text-foreground/80 leading-relaxed max-w-3xl mx-auto">
+                Moments from our journey - collaborating with industry partners, working on-site, and building the future of manufacturing together.
+              </p>
+            </div>
+
+            {/* Gallery Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Team Photos */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/2eb8d899-f40d-4991-bd0b-94b5ed5454c6.png" 
+                  alt="Team at BASF Shanghai Coatings Co., Ltd." 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <p className="text-sm font-medium">BASF Shanghai Coatings</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/d9ae9656-f558-4e24-99c0-6cbd7febced3.png" 
+                  alt="Team at industrial facility" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <p className="text-sm font-medium">Industrial Facility Visit</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/382c3799-75d7-4d93-b7c6-c480e30542a7.png" 
+                  alt="Team meeting with geometric wall art" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <p className="text-sm font-medium">Team Collaboration</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/f5b253e0-0622-4a49-9af6-0d38e7b442ca.png" 
+                  alt="Team at warehouse facility" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <p className="text-sm font-medium">Warehouse Operations</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/861c4859-c35a-48a4-bf48-95c98c63966f.png" 
+                  alt="Team in control room" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <p className="text-sm font-medium">Control Room Operations</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/8bae0c4d-aa49-4d6e-8e88-e3498222cd23.png" 
+                  alt="Team at BASF India Limited" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <p className="text-sm font-medium">BASF India Limited</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/9463cff9-0962-4f79-9e14-fb3c9a9ee73d.png" 
+                  alt="Team at demonstration lab" 
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <p className="text-sm font-medium">Demonstration Lab</p>
+                </div>
+              </div>
+
+              {/* Videos */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300 md:col-span-2">
+                <video 
+                  src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/CAAR%20lab.mp4"
+                  controls
+                  className="w-full h-64 object-cover"
+                  poster="/lovable-uploads/2eb8d899-f40d-4991-bd0b-94b5ed5454c6.png"
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="text-sm font-medium bg-black/50 px-2 py-1 rounded">CAAR Lab Tour</p>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
+                <video 
+                  src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Ashutosh.mp4"
+                  controls
+                  className="w-full h-64 object-cover"
+                  poster="/lovable-uploads/861c4859-c35a-48a4-bf48-95c98c63966f.png"
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="text-sm font-medium bg-black/50 px-2 py-1 rounded">Team Insights</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Giving Back Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-slate-100/20 opacity-30"></div>
