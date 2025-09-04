@@ -50,60 +50,8 @@ const AutoDockAdvantage = () => {
             <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Scales%20Without%20Slowing%20Down.gif" alt="Scales Without Slowing Down - AutoDock scaling visualization" className="w-full h-full object-cover" />
           </div>;
       case 'ai-brain':
-        return <div className="relative bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-64 flex items-center justify-center overflow-hidden">
-            <div className="relative">
-              {/* Central brain/network hub */}
-              <div className="w-16 h-16 bg-gradient-to-br from-secondary/30 to-secondary/20 rounded-full flex items-center justify-center relative">
-                <Brain className="w-8 h-8 text-secondary" />
-                
-                {/* Pulsing rings */}
-                <div className="absolute inset-0 rounded-full border-2 border-secondary/30 animate-ping"></div>
-                <div className="absolute inset-0 rounded-full border border-secondary/20" style={{
-                animation: 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
-                animationDelay: '1s'
-              }}></div>
-              </div>
-
-              {/* Dynamic connection nodes */}
-              {[{
-              top: '-20px',
-              left: '50px',
-              delay: '0s'
-            }, {
-              top: '50px',
-              left: '60px',
-              delay: '0.5s'
-            }, {
-              top: '50px',
-              left: '-20px',
-              delay: '1s'
-            }, {
-              top: '-10px',
-              left: '-25px',
-              delay: '1.5s'
-            }].map((node, i) => <div key={i} className="absolute w-3 h-3 bg-secondary/60 rounded-full" style={{
-              top: node.top,
-              left: node.left
-            }}>
-                  <div className="w-full h-full bg-secondary rounded-full animate-pulse" style={{
-                animationDelay: node.delay
-              }}></div>
-                  <div className="absolute top-1/2 left-1/2 w-12 h-px bg-gradient-to-r from-secondary/40 to-transparent -translate-y-1/2"></div>
-                </div>)}
-
-              {/* Optimization indicators */}
-              <div className="absolute -top-6 -right-6 flex gap-1">
-                <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{
-                animationDelay: '0s'
-              }}></div>
-                <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{
-                animationDelay: '0.2s'
-              }}></div>
-                <div className="w-2 h-2 bg-secondary rounded-full animate-bounce" style={{
-                animationDelay: '0.4s'
-              }}></div>
-              </div>
-            </div>
+        return <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 p-4 h-80 overflow-hidden bg-white">
+            <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/AI%20That%20Understands%20Logistics.gif" alt="AI That Understands Logistics - AutoDock AI visualization" className="w-full h-full object-cover" />
           </div>;
       case 'integrations':
         return <div className="relative bg-gradient-to-br from-muted/20 to-muted/10 rounded-2xl p-8 h-64 flex items-center justify-center overflow-hidden">
