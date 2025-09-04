@@ -263,7 +263,7 @@ const OurTeam = () => {
                 
                 {/* Leadership Team - Top Left (2x3 section) */}
                 <div className="col-span-2 row-span-3 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 border border-primary/10">
-                  <h3 className="text-xl font-bold text-primary mb-6 text-center">Leadership Team</h3>
+                  <h3 className="text-xl font-bold text-primary mb-6 text-center">Robotics Team</h3>
                   <div className="space-y-4">
                     {[
                       { name: "Faizan Pathan", initials: "FP", role: "Autonomy & Embedded Systems" },
