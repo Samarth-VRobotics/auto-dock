@@ -887,13 +887,7 @@ const OurTeam = () => {
                 </div>
               </div>
 
-              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
-                
-                
-                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                  <p className="text-sm font-medium">Demonstration Lab</p>
-                </div>
-              </div>
+              
 
               {/* Videos */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300 md:col-span-2">
