@@ -335,7 +335,7 @@ const OurTeam = () => {
 
                 {/* Functional Consultants - Bottom (6x3 section) */}
                 <div className="col-span-6 row-span-3 bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-8 border border-slate-200">
-                  <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Functional Consultants</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Subject Matter Experts – Digital Factory Module</h3>
                   <div className="grid grid-cols-5 gap-6">
                     {[
                       { name: "Aman Saxena", initials: "AS", role: "Senior Functional Consultant" },
