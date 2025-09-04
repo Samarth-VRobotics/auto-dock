@@ -287,7 +287,7 @@ const OurTeam = () => {
 
                 {/* Software Architects - Top Right (2x3 section) */}
                 <div className="col-span-2 row-span-3 bg-gradient-to-br from-secondary/5 to-accent/5 rounded-2xl p-6 border border-secondary/10">
-                  <h3 className="text-xl font-bold text-secondary mb-6 text-center">Software Architects</h3>
+                  <h3 className="text-xl font-bold text-secondary mb-6 text-center">AI Team</h3>
                   <div className="space-y-4">
                     {[
                       { name: "Tunga Santosh Kumar", initials: "TS", role: "Software Architect" },
