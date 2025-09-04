@@ -900,9 +900,7 @@ const OurTeam = () => {
               </div>
 
               <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
-                <video src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Ashutosh.mp4" controls className="w-full h-64 object-cover" poster="/lovable-uploads/861c4859-c35a-48a4-bf48-95c98c63966f.png">
-                  Your browser does not support the video tag.
-                </video>
+                
                 <div className="absolute bottom-4 left-4 text-white">
                   <p className="text-sm font-medium bg-black/50 px-2 py-1 rounded">Team Insights</p>
                 </div>
