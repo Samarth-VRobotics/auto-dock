@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Play, ExternalLink, Code, Eye } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import EventsCarousel from "@/components/EventsCarousel";
 import universityLabScene from "@/assets/university-lab-scene.jpg";
 import modernRoboticsFacility from "@/assets/modern-robotics-facility.jpg";
@@ -11,6 +11,15 @@ import studentPortrait3 from "@/assets/student-portrait-3.jpg";
 import studentPortrait4 from "@/assets/student-portrait-4.jpg";
 const OurJourneySection = () => {
   const [activeProject, setActiveProject] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Slideshow images for mentorship section
+  const slideshowImages = [
+    { src: modernRoboticsFacility, alt: "Modern robotics facility with advanced automation" },
+    { src: universityLabScene, alt: "University laboratory scene with robotics equipment" },
+    { src: studentPortrait1, alt: "Student working on robotics project" },
+    { src: studentPortrait2, alt: "Mentorship session in progress" }
+  ];
   const projects = [{
     title: "Humanoid Robots",
     category: "Advanced Robotics",
@@ -48,6 +57,16 @@ const OurJourneySection = () => {
     // Placeholder
     achievements: ["99.9% detection accuracy", "Real-time processing", "Industry deployment"]
   }];
+
+  // Auto-advance slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slideshowImages.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [slideshowImages.length]);
+
   return <section className="py-8 bg-background relative overflow-hidden">
       
       <div className="container mx-auto px-6 relative">
@@ -131,12 +150,35 @@ const OurJourneySection = () => {
             </div>
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              {/* Slideshow Images */}
+              {slideshowImages.map((image, index) => (
+                <img 
+                  key={index}
+                  src={image.src} 
+                  alt={image.alt} 
+                  className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
+                    index === currentSlide 
+                      ? 'opacity-100 z-10' 
+                      : 'opacity-0 z-0'
+                  }`} 
+                />
+              ))}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
-                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
+                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300 z-20"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
-                            group-hover:translate-y-[-4px] transition-transform duration-300">
+                            group-hover:translate-y-[-4px] transition-transform duration-300 z-30">
                 <p className="text-base font-medium">Mentorship & Growth</p>
+                {/* Slide indicators */}
+                <div className="flex space-x-2 mt-2">
+                  {slideshowImages.map((_, index) => (
+                    <div 
+                      key={index}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentSlide ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
