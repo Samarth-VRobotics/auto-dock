@@ -13,6 +13,7 @@ const OurJourneySection = () => {
   const [activeProject, setActiveProject] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [studentSlide, setStudentSlide] = useState(0);
+  const [industrySlide, setIndustrySlide] = useState(0);
   
   // Slideshow images for mentorship section
   const slideshowImages = [
@@ -28,6 +29,14 @@ const OurJourneySection = () => {
     { src: studentPortrait2, alt: "Student in engineering lab" },
     { src: studentPortrait3, alt: "Robotics team member" },
     { src: studentPortrait4, alt: "Student researcher" }
+  ];
+
+  // Industry transition slideshow
+  const industryImages = [
+    { src: modernRoboticsFacility, alt: "Modern robotics facility with advanced automation" },
+    { src: universityLabScene, alt: "University laboratory transitioning to industry" },
+    { src: studentPortrait3, alt: "Engineers in professional setting" },
+    { src: studentPortrait4, alt: "Industry professionals at work" }
   ];
   const projects = [{
     title: "Humanoid Robots",
@@ -84,6 +93,15 @@ const OurJourneySection = () => {
 
     return () => clearInterval(interval);
   }, [studentPortraits.length]);
+
+  // Auto-advance industry slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndustrySlide((prev) => (prev + 1) % industryImages.length);
+    }, 3500); // Change image every 3.5 seconds
+
+    return () => clearInterval(interval);
+  }, [industryImages.length]);
 
   return <section className="py-8 bg-background relative overflow-hidden">
       
@@ -206,17 +224,40 @@ const OurJourneySection = () => {
           </div>
 
           {/* From University to Industry */}
-          <div className="grid md:grid-cols-2 gap-12 mb-20">            
+          <div className="grid md:grid-cols-2 gap-12 mb-20 items-stretch">            
             {/* Industry Visual */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
+            <div className="relative rounded-3xl overflow-hidden shadow-xl group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              <img src={modernRoboticsFacility} alt="Modern robotics facility with advanced automation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              {/* Industry Images Slideshow */}
+              {industryImages.map((image, index) => (
+                <img 
+                  key={index}
+                  src={image.src} 
+                  alt={image.alt} 
+                  className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
+                    index === industrySlide 
+                      ? 'opacity-100 z-10' 
+                      : 'opacity-0 z-0'
+                  }`} 
+                />
+              ))}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
-                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
+                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300 z-20"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
-                            group-hover:translate-y-[-4px] transition-transform duration-300">
+                            group-hover:translate-y-[-4px] transition-transform duration-300 z-30">
                 <h5 className="text-xl font-bold mb-2">Industry Impact</h5>
                 <p className="text-base">300+ plants powered by our solutions</p>
+                {/* Slide indicators */}
+                <div className="flex space-x-2 mt-3">
+                  {industryImages.map((_, index) => (
+                    <div 
+                      key={index}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === industrySlide ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
             
