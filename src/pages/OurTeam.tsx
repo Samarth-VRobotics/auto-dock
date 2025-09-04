@@ -830,7 +830,7 @@ const OurTeam = () => {
           <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Team in Action</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Photo Gallery</h2>
               <p className="text-foreground/80 leading-relaxed max-w-3xl mx-auto">
                 Moments from our journey - collaborating with industry partners, working on-site, and building the future of manufacturing together.
               </p>
