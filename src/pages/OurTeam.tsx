@@ -391,6 +391,10 @@ const OurTeam = () => {
                   initials: "RP",
                   role: "Senior Functional Consultant"
                 }, {
+                  name: "Shreeja M S",
+                  initials: "SMS",
+                  role: "Senior Functional Consultant"
+                }, {
                   name: "Ann Maria Jess Kurian",
                   initials: "AJ",
                   role: "Lead Functional Consultant"
@@ -407,52 +411,52 @@ const OurTeam = () => {
                   initials: "SJ",
                   role: "Lead Functional Consultant"
                 }, {
-                  name: "Venkatesh HS",
-                  initials: "VH",
-                  role: "Lead Functional Consultant"
+                  name: "Ajay K",
+                  initials: "AK",
+                  role: "Technical Lead"
                 }, {
                   name: "Chaithra N",
                   initials: "CN",
                   role: "Lead Functional Consultant"
                 }, {
-                  name: "Arun Kumar",
-                  initials: "AR",
+                  name: "Venkatesh HS",
+                  initials: "VH",
                   role: "Senior Consultant"
                 }, {
-                  name: "Priya Sharma",
-                  initials: "PS",
+                  name: "Tunga Santosh Kumar Reddy",
+                  initials: "TSR",
                   role: "Business Analyst"
                 }, {
-                  name: "Ravi Mehta",
-                  initials: "RM",
+                  name: "Varadharajan N M",
+                  initials: "VN",
                   role: "Process Engineer"
                 }, {
-                  name: "Kavya Reddy",
-                  initials: "KV",
+                  name: "Sachin Vishwakarma",
+                  initials: "SV",
                   role: "Quality Analyst"
                 }, {
-                  name: "Deepak Singh",
-                  initials: "DS",
+                  name: "Pratish RameshChandra Gandhi",
+                  initials: "PRG",
                   role: "Integration Specialist"
                 }, {
-                  name: "Neha Gupta",
-                  initials: "NG",
+                  name: "Vishweshwar Kapse",
+                  initials: "VK",
                   role: "System Administrator"
                 }, {
-                  name: "Vikram Joshi",
-                  initials: "VJ",
+                  name: "Sreenivasa Yarram",
+                  initials: "SY",
                   role: "Database Engineer"
                 }, {
-                  name: "Anita Rao",
-                  initials: "AR",
+                  name: "Sirajudheen NH",
+                  initials: "SN",
                   role: "UI/UX Designer"
                 }, {
-                  name: "Suresh Kumar",
-                  initials: "SK",
+                  name: "Sushin C",
+                  initials: "SC",
                   role: "DevOps Engineer"
                 }, {
-                  name: "Pooja Nair",
-                  initials: "PN",
+                  name: "Ramesh Kumar",
+                  initials: "RK",
                   role: "Project Coordinator"
                 }, {
                   name: "Manoj Verma",
