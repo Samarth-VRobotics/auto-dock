@@ -26,8 +26,7 @@ const OurJourneySection = () => {
   // Student portraits slideshow
   const studentPortraits = [
     { src: "/lovable-uploads/b7373469-1778-4c54-af4f-2f6695ad3d78.png", alt: "Ribbon cutting ceremony with leadership team" },
-    { src: "/lovable-uploads/49fef62f-3ef6-4c23-8ef3-f0e8bdfa7fe7.png", alt: "Team group photo at company facility" },
-    { src: "/lovable-uploads/9bcf1e71-8657-4876-9de5-7978801d653c.png", alt: "Students demonstrating robotics technology to leadership" }
+    { src: "/lovable-uploads/49fef62f-3ef6-4c23-8ef3-f0e8bdfa7fe7.png", alt: "Team group photo at company facility" }
   ];
 
   // Industry transition slideshow
@@ -143,18 +142,18 @@ const OurJourneySection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
               {/* Student Portraits Slideshow */}
-               {studentPortraits.map((portrait, index) => (
-                 <img 
-                   key={index}
-                   src={portrait.src} 
-                   alt={portrait.alt} 
-                   className={`absolute inset-0 w-full h-full object-contain bg-gray-100 group-hover:scale-110 transition-all duration-1000 ease-out ${
-                     index === studentSlide 
-                       ? 'opacity-100 z-10' 
-                       : 'opacity-0 z-0'
-                   }`} 
-                 />
-               ))}
+              {studentPortraits.map((portrait, index) => (
+                <img 
+                  key={index}
+                  src={portrait.src} 
+                  alt={portrait.alt} 
+                  className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
+                    index === studentSlide 
+                      ? 'opacity-100 z-10' 
+                      : 'opacity-0 z-0'
+                  }`} 
+                />
+              ))}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
