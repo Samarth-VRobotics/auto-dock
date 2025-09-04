@@ -14,27 +14,42 @@ const OurJourneySection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [studentSlide, setStudentSlide] = useState(0);
   const [industrySlide, setIndustrySlide] = useState(0);
-  
+
   // Slideshow images for mentorship section
-  const slideshowImages = [
-    { src: modernRoboticsFacility, alt: "Modern robotics facility with advanced automation" },
-    { src: universityLabScene, alt: "University laboratory scene with robotics equipment" },
-    { src: studentPortrait1, alt: "Student working on robotics project" },
-    { src: studentPortrait2, alt: "Mentorship session in progress" }
-  ];
+  const slideshowImages = [{
+    src: modernRoboticsFacility,
+    alt: "Modern robotics facility with advanced automation"
+  }, {
+    src: universityLabScene,
+    alt: "University laboratory scene with robotics equipment"
+  }, {
+    src: studentPortrait1,
+    alt: "Student working on robotics project"
+  }, {
+    src: studentPortrait2,
+    alt: "Mentorship session in progress"
+  }];
 
   // Student portraits slideshow
-  const studentPortraits = [
-    { src: "/lovable-uploads/b7373469-1778-4c54-af4f-2f6695ad3d78.png", alt: "Ribbon cutting ceremony with leadership team" },
-    { src: "/lovable-uploads/49fef62f-3ef6-4c23-8ef3-f0e8bdfa7fe7.png", alt: "Team group photo at company facility" }
-  ];
+  const studentPortraits = [{
+    src: "/lovable-uploads/b7373469-1778-4c54-af4f-2f6695ad3d78.png",
+    alt: "Ribbon cutting ceremony with leadership team"
+  }, {
+    src: "/lovable-uploads/49fef62f-3ef6-4c23-8ef3-f0e8bdfa7fe7.png",
+    alt: "Team group photo at company facility"
+  }];
 
   // Industry transition slideshow
-  const industryImages = [
-    { src: "/lovable-uploads/1ce695c8-00a1-4a19-8a83-6a5447c4e299.png", alt: "Vegam robot in industrial setting with worker" },
-    { src: "/lovable-uploads/2f5b3683-c1f1-4ab8-93da-c3246e6b6f98.png", alt: "Team showcasing MAYA 1.0 robot at university exhibition" },
-    { src: "/lovable-uploads/cdfeba0e-e1a6-4714-a55d-180e813b74c6.png", alt: "Team working in robotics lab with MAYA robot" }
-  ];
+  const industryImages = [{
+    src: "/lovable-uploads/1ce695c8-00a1-4a19-8a83-6a5447c4e299.png",
+    alt: "Vegam robot in industrial setting with worker"
+  }, {
+    src: "/lovable-uploads/2f5b3683-c1f1-4ab8-93da-c3246e6b6f98.png",
+    alt: "Team showcasing MAYA 1.0 robot at university exhibition"
+  }, {
+    src: "/lovable-uploads/cdfeba0e-e1a6-4714-a55d-180e813b74c6.png",
+    alt: "Team working in robotics lab with MAYA robot"
+  }];
   const projects = [{
     title: "Humanoid Robots",
     category: "Advanced Robotics",
@@ -76,7 +91,7 @@ const OurJourneySection = () => {
   // Auto-advance slideshow
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slideshowImages.length);
+      setCurrentSlide(prev => (prev + 1) % slideshowImages.length);
     }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
@@ -85,7 +100,7 @@ const OurJourneySection = () => {
   // Auto-advance student slideshow
   useEffect(() => {
     const interval = setInterval(() => {
-      setStudentSlide((prev) => (prev + 1) % studentPortraits.length);
+      setStudentSlide(prev => (prev + 1) % studentPortraits.length);
     }, 2500); // Change image every 2.5 seconds
 
     return () => clearInterval(interval);
@@ -94,12 +109,11 @@ const OurJourneySection = () => {
   // Auto-advance industry slideshow
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndustrySlide((prev) => (prev + 1) % industryImages.length);
+      setIndustrySlide(prev => (prev + 1) % industryImages.length);
     }, 3500); // Change image every 3.5 seconds
 
     return () => clearInterval(interval);
   }, [industryImages.length]);
-
   return <section className="py-16 bg-background relative overflow-hidden min-h-screen">
       
       <div className="w-full px-2 sm:px-4 lg:px-6 relative">
@@ -112,8 +126,8 @@ const OurJourneySection = () => {
 
           {/* Our Journey in Robotics - Section Header */}
           <div className="text-center mb-20">
-            <h3 className="text-6xl font-bold text-primary mb-8 hover:text-primary/80 transition-colors duration-300">Our Journey in Robotics</h3>
-            <div className="w-32 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
+            
+            
           </div>
 
           {/* Row 1: First Paragraph + Image (Text Left, Image Right) */}
@@ -142,18 +156,7 @@ const OurJourneySection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
               {/* Student Portraits Slideshow */}
-              {studentPortraits.map((portrait, index) => (
-                <img 
-                  key={index}
-                  src={portrait.src} 
-                  alt={portrait.alt} 
-                  className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
-                    index === studentSlide 
-                      ? 'opacity-100 z-10' 
-                      : 'opacity-0 z-0'
-                  }`} 
-                />
-              ))}
+              {studentPortraits.map((portrait, index) => <img key={index} src={portrait.src} alt={portrait.alt} className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${index === studentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
@@ -182,18 +185,7 @@ const OurJourneySection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
               {/* Slideshow Images */}
-              {slideshowImages.map((image, index) => (
-                <img 
-                  key={index}
-                  src={image.src} 
-                  alt={image.alt} 
-                  className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
-                    index === currentSlide 
-                      ? 'opacity-100 z-10' 
-                      : 'opacity-0 z-0'
-                  }`} 
-                />
-              ))}
+              {slideshowImages.map((image, index) => <img key={index} src={image.src} alt={image.alt} className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300 z-20"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
@@ -201,14 +193,7 @@ const OurJourneySection = () => {
                 <p className="text-base font-medium">Mentorship & Growth</p>
                 {/* Slide indicators */}
                 <div className="flex space-x-2 mt-2">
-                  {slideshowImages.map((_, index) => (
-                    <div 
-                      key={index}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        index === currentSlide ? 'bg-white' : 'bg-white/50'
-                      }`}
-                    />
-                  ))}
+                  {slideshowImages.map((_, index) => <div key={index} className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white' : 'bg-white/50'}`} />)}
                 </div>
               </div>
             </div>
@@ -226,29 +211,11 @@ const OurJourneySection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-xl w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out h-full mt-8">
               {/* Industry Images Slideshow */}
-              {industryImages.map((image, index) => (
-                <img 
-                  key={index}
-                  src={image.src} 
-                  alt={image.alt} 
-                  className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
-                    index === industrySlide 
-                      ? 'opacity-100 z-10' 
-                      : 'opacity-0 z-0'
-                  }`} 
-                />
-              ))}
+              {industryImages.map((image, index) => <img key={index} src={image.src} alt={image.alt} className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${index === industrySlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
               {/* Slide indicators only */}
               <div className="absolute bottom-6 right-6 z-30">
                 <div className="flex space-x-2">
-                  {industryImages.map((_, index) => (
-                    <div 
-                      key={index}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                        index === industrySlide ? 'bg-white' : 'bg-white/50'
-                      }`}
-                    />
-                  ))}
+                  {industryImages.map((_, index) => <div key={index} className={`w-3 h-3 rounded-full transition-all duration-300 ${index === industrySlide ? 'bg-white' : 'bg-white/50'}`} />)}
                 </div>
               </div>
             </div>
