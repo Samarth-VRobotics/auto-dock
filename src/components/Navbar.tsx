@@ -10,6 +10,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false); // Close mobile menu after clicking
+    }
+  };
   return <>
       {/* Professional accent line */}
       <div className="w-full h-1 bg-gradient-primary"></div>
@@ -26,56 +34,43 @@ const Navbar = () => {
             
             {/* CTA Button & Mobile Menu */}
             <div className="flex items-center space-x-8">
-              {/* Desktop Navigation */}
-              <div className="hidden lg:flex items-center space-x-8">
-                {/* Solutions Dropdown */}
-                <DropdownMenu>
-                  <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors font-medium relative group flex items-center gap-1 focus:outline-none">
-                    Robotics Solutions
-                    <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-80 bg-white/95 backdrop-blur-lg border border-slate-200/50 shadow-xl rounded-xl p-2 z-50">
-                    <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
-                      <a href="/autodock" className="block w-full group">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
-                          <div>
-                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">AutoDock</div>
-                            <div className="text-sm text-muted-foreground">Automated loading and unloading</div>
-                          </div>
-                        </div>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
-                      <a href="/amrs" className="block w-full group">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
-                          <div>
-                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">AMRs</div>
-                            <div className="text-sm text-muted-foreground">Autonomous Mobile Robots</div>
-                          </div>
-                        </div>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
-                      <a href="/asrs" className="block w-full group">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
-                          <div>
-                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">ASRS</div>
-                            <div className="text-sm text-muted-foreground">Automatic Storage and Retrieval System</div>
-                          </div>
-                        </div>
-                      </a>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                
-                <a href="/our-team" className="text-foreground hover:text-primary transition-colors font-medium relative group">
-                  Robotics Team
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-                </a>
+              {/* Desktop Navigation - Jump Nav */}
+              <div className="hidden xl:flex items-center space-x-6">
+                <button onClick={() => scrollToSection('hero')} className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                  Hero
+                </button>
+                <span className="text-muted-foreground">•</span>
+                <button onClick={() => scrollToSection('future-manufacturing')} className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                  Future of Manufacturing
+                </button>
+                <span className="text-muted-foreground">•</span>
+                <button onClick={() => scrollToSection('industry-evolution')} className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                  Industry Evolution
+                </button>
+                <span className="text-muted-foreground">•</span>
+                <button onClick={() => scrollToSection('key-technologies')} className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                  Key Technologies
+                </button>
+                <span className="text-muted-foreground">•</span>
+                <button onClick={() => scrollToSection('vegam-journey')} className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                  Vegam Journey
+                </button>
+                <span className="text-muted-foreground">•</span>
+                <button onClick={() => scrollToSection('global-partnerships')} className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                  Partnerships
+                </button>
+                <span className="text-muted-foreground">•</span>
+                <button onClick={() => scrollToSection('offerings')} className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                  Offerings
+                </button>
+                <span className="text-muted-foreground">•</span>
+                <button onClick={() => scrollToSection('automation-portfolio')} className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                  Automation Portfolio
+                </button>
+                <span className="text-muted-foreground">•</span>
+                <button onClick={() => scrollToSection('why-vegam')} className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                  Why Vegam
+                </button>
               </div>
               
               <ContactDialog>
@@ -95,21 +90,33 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && <div className="lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-lg animate-fade-in">
             <div className="container mx-auto px-6 py-4 space-y-4">
-              <a href="#solutions" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
-                Solutions
-              </a>
-              <a href="#technology" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
-                Technology
-              </a>
-              <a href="#industries" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
-                Industries
-              </a>
-              <a href="https://vegam.co/about" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
-                About
-              </a>
-              <a href="#our-journey" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
-                Our Journey
-              </a>
+              <button onClick={() => scrollToSection('hero')} className="block py-2 text-foreground hover:text-primary transition-colors font-medium text-left w-full">
+                Hero
+              </button>
+              <button onClick={() => scrollToSection('future-manufacturing')} className="block py-2 text-foreground hover:text-primary transition-colors font-medium text-left w-full">
+                Future of Manufacturing
+              </button>
+              <button onClick={() => scrollToSection('industry-evolution')} className="block py-2 text-foreground hover:text-primary transition-colors font-medium text-left w-full">
+                Industry Evolution
+              </button>
+              <button onClick={() => scrollToSection('key-technologies')} className="block py-2 text-foreground hover:text-primary transition-colors font-medium text-left w-full">
+                Key Technologies
+              </button>
+              <button onClick={() => scrollToSection('vegam-journey')} className="block py-2 text-foreground hover:text-primary transition-colors font-medium text-left w-full">
+                Vegam Journey
+              </button>
+              <button onClick={() => scrollToSection('global-partnerships')} className="block py-2 text-foreground hover:text-primary transition-colors font-medium text-left w-full">
+                Partnerships
+              </button>
+              <button onClick={() => scrollToSection('offerings')} className="block py-2 text-foreground hover:text-primary transition-colors font-medium text-left w-full">
+                Offerings
+              </button>
+              <button onClick={() => scrollToSection('automation-portfolio')} className="block py-2 text-foreground hover:text-primary transition-colors font-medium text-left w-full">
+                Automation Portfolio
+              </button>
+              <button onClick={() => scrollToSection('why-vegam')} className="block py-2 text-foreground hover:text-primary transition-colors font-medium text-left w-full">
+                Why Vegam
+              </button>
               <ContactDialog>
                 <Button className="w-full mt-4 bg-gradient-primary hover:shadow-glow text-white font-semibold">
                   Contact Us
