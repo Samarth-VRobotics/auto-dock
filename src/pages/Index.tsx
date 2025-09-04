@@ -311,18 +311,18 @@ const Index = () => {
           
           <div className="mt-16 text-center">
             <p className="body-lg text-muted-foreground mb-8">Trusted by Global Manufacturing Leaders</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
-              <div className="bg-muted/50 h-16 rounded-lg flex items-center justify-center">
-                <span className="body-base font-semibold">Partner Logo</span>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-70">
+              <div className="bg-white/80 h-16 rounded-lg flex items-center justify-center p-4">
+                <img src="https://vegam.co/lovable-uploads/1a590db5-6790-4c96-846f-1908fd8142ea.png" alt="Bostik" className="max-h-10 max-w-full object-contain" />
               </div>
-              <div className="bg-muted/50 h-16 rounded-lg flex items-center justify-center">
-                <span className="body-base font-semibold">Partner Logo</span>
+              <div className="bg-white/80 h-16 rounded-lg flex items-center justify-center p-4">
+                <img src="https://vegam.co/lovable-uploads/a130b90f-7ac1-4960-920e-a0474132e26f.png" alt="Emerson" className="max-h-10 max-w-full object-contain" />
               </div>
-              <div className="bg-muted/50 h-16 rounded-lg flex items-center justify-center">
-                <span className="body-base font-semibold">Partner Logo</span>
+              <div className="bg-white/80 h-16 rounded-lg flex items-center justify-center p-4">
+                <img src="https://vegam.co/lovable-uploads/c0b6dbaa-39e8-4181-8f27-a1e1e3a63bda.png" alt="LG Electronics" className="max-h-10 max-w-full object-contain" />
               </div>
-              <div className="bg-muted/50 h-16 rounded-lg flex items-center justify-center">
-                <span className="body-base font-semibold">Partner Logo</span>
+              <div className="bg-white/80 h-16 rounded-lg flex items-center justify-center p-4">
+                <img src="https://vegam.co/lovable-uploads/fcf8d687-3ef1-4c16-993e-16dd3eb46b83.png" alt="Saint-Gobain" className="max-h-10 max-w-full object-contain" />
               </div>
             </div>
           </div>
