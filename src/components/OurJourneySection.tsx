@@ -103,8 +103,8 @@ const OurJourneySection = () => {
 
   return <section className="py-16 bg-background relative overflow-hidden min-h-screen">
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-full mx-auto">
+      <div className="w-full px-2 sm:px-4 lg:px-6 relative">
+        <div className="w-full mx-auto">
           {/* Section Header - More integrated style */}
           <div className="text-center mb-8">
             
@@ -118,15 +118,15 @@ const OurJourneySection = () => {
           </div>
 
           {/* Row 1: First Paragraph + Image (Text Left, Image Right) */}
-          <div className="grid md:grid-cols-2 gap-16 mb-24 items-center">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-primary/10 
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
-                          transition-all duration-500 ease-out group">
-              <p className="text-foreground/80 leading-relaxed text-xl group-hover:text-foreground transition-colors duration-300">
+                          transition-all duration-500 ease-out group w-full">
+              <p className="text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
                 At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. We take immense pride in calling it our alma mater, a place that offered us not only knowledge but also a thriving ecosystem of mentorship, opportunities, and innovation.
               </p>
             </div>
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-96 group
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
               <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="KLETU campus buildings with beautiful architecture" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
@@ -139,8 +139,8 @@ const OurJourneySection = () => {
           </div>
 
           {/* Row 2: Second Image + Paragraph (Image Left, Text Right) */}
-          <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
               {/* Student Portraits Slideshow */}
               {studentPortraits.map((portrait, index) => (
@@ -162,25 +162,25 @@ const OurJourneySection = () => {
                 <p className="text-base font-medium">Leadership & Vision</p>
               </div>
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10 
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
-                          transition-all duration-500 ease-out group">
-              <p className="text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
+                          transition-all duration-500 ease-out group w-full">
+              <p className="text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
                 Under the leadership of Dr. Ashok Shetter, the university fostered a culture that celebrates research-driven excellence and bold ideas. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry the vision forward, preparing the next generation of robotics engineers.
               </p>
             </div>
           </div>
 
           {/* Row 3: Third Paragraph + Image (Text Left, Image Right) */}
-          <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10 
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
-                          transition-all duration-500 ease-out group">
-              <p className="text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
+                          transition-all duration-500 ease-out group w-full">
+              <p className="text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
                 Among our greatest guiding lights, Prof. Arun Giriyapur, former HOD, has been far more than a teacher. A lifelong mentor, he encouraged our wildest ideas, anchored us with wisdom, and inspired us to keep pushing the boundaries of robotics. The faith he placed in us during our early years still drives our journey.
               </p>
             </div>
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
               {/* Slideshow Images */}
               {slideshowImages.map((image, index) => (
@@ -222,10 +222,10 @@ const OurJourneySection = () => {
           </div>
 
           {/* From University to Industry */}
-          <div className="grid md:grid-cols-2 gap-12 mb-20 items-stretch">            
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-stretch w-full max-w-[95vw] mx-auto">            
             {/* Industry Visual */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl group
-                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl w-full group
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out h-80 lg:h-[500px]">
               {/* Industry Images Slideshow */}
               {industryImages.map((image, index) => (
                 <img 
@@ -260,10 +260,10 @@ const OurJourneySection = () => {
             </div>
             
             {/* Text Content */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
-                          transition-all duration-500 ease-out group">
-              <div className="space-y-6 text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
+                          transition-all duration-500 ease-out group w-full">
+              <div className="space-y-8 text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
                 <p>It all started in the university labs, where late nights were spent building humanoids, mobile robots, automated systems, and vision-based inspection platforms. Each project was more than a technical challenge. It was proof that engineering could solve real problems.</p>
                 
                 <p>This bridge from academia to industry was shaped by mentors like Prof. Arun Giriyapur, who pushed us to think beyond textbooks, and by the vision of our CEO Subramanyam Kasibhat, whose belief in robotics as a driver of manufacturing transformation inspired us to take our ideas into the real world.</p>
