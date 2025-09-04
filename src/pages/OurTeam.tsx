@@ -265,14 +265,27 @@ const OurTeam = () => {
                 <div className="col-span-2 row-span-3 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 border border-primary/10">
                   <h3 className="text-xl font-bold text-primary mb-6 text-center">Robotics Team</h3>
                   <div className="space-y-4">
-                    {[
-                      { name: "Faizan Pathan", initials: "FP", role: "Autonomy & Embedded Systems" },
-                      { name: "Rani Kinnal", initials: "RK", role: "Systems & Simulation" },
-                      { name: "Amrut Kurtakoti", initials: "AK", role: "Coordination & Business" },
-                      { name: "Samarth Vengurlekar", initials: "SV", role: "UI & Integration" },
-                      { name: "Ashutosh Kangralkar", initials: "AS", role: "Mechanical Design" }
-                    ].map((member, index) => (
-                       <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
+                    {[{
+                    name: "Faizan Pathan",
+                    initials: "FP",
+                    role: "Autonomy & Embedded Systems"
+                  }, {
+                    name: "Rani Kinnal",
+                    initials: "RK",
+                    role: "Systems & Simulation"
+                  }, {
+                    name: "Amrut Kurtakoti",
+                    initials: "AK",
+                    role: "Coordination & Business"
+                  }, {
+                    name: "Samarth Vengurlekar",
+                    initials: "SV",
+                    role: "UI & Integration"
+                  }, {
+                    name: "Ashutosh Kangralkar",
+                    initials: "AS",
+                    role: "Mechanical Design"
+                  }].map((member, index) => <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
                          <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
                            {member.initials}
                          </div>
@@ -280,8 +293,7 @@ const OurTeam = () => {
                            <h4 className="text-base font-semibold leading-tight">{member.name}</h4>
                            <p className="text-sm text-primary/70 leading-tight">{member.role}</p>
                          </div>
-                       </div>
-                    ))}
+                       </div>)}
                   </div>
                 </div>
 
@@ -289,14 +301,27 @@ const OurTeam = () => {
                 <div className="col-span-2 row-span-3 bg-gradient-to-br from-secondary/5 to-accent/5 rounded-2xl p-6 border border-secondary/10">
                   <h3 className="text-xl font-bold text-secondary mb-6 text-center">AI Team</h3>
                   <div className="space-y-4">
-                    {[
-                      { name: "Tunga Santosh Kumar", initials: "TS", role: "Software Architect" },
-                      { name: "Varadharajan N M", initials: "VN", role: "Software Architect" },
-                      { name: "Sachin Vishwakarma", initials: "SV", role: "Software Architect" },
-                      { name: "Pratish Gandhi", initials: "PG", role: "Software Architect" },
-                      { name: "Vishweshwar Kapse", initials: "VK", role: "Software Architect" }
-                    ].map((member, index) => (
-                       <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
+                    {[{
+                    name: "Tunga Santosh Kumar",
+                    initials: "TS",
+                    role: "Software Architect"
+                  }, {
+                    name: "Varadharajan N M",
+                    initials: "VN",
+                    role: "Software Architect"
+                  }, {
+                    name: "Sachin Vishwakarma",
+                    initials: "SV",
+                    role: "Software Architect"
+                  }, {
+                    name: "Pratish Gandhi",
+                    initials: "PG",
+                    role: "Software Architect"
+                  }, {
+                    name: "Vishweshwar Kapse",
+                    initials: "VK",
+                    role: "Software Architect"
+                  }].map((member, index) => <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
                          <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
                            {member.initials}
                          </div>
@@ -304,8 +329,7 @@ const OurTeam = () => {
                            <h4 className="text-base font-semibold leading-tight">{member.name}</h4>
                            <p className="text-sm text-secondary/70 leading-tight">{member.role}</p>
                          </div>
-                       </div>
-                    ))}
+                       </div>)}
                   </div>
                 </div>
 
@@ -313,14 +337,27 @@ const OurTeam = () => {
                 <div className="col-span-2 row-span-3 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl p-6 border border-accent/10">
                   <h3 className="text-xl font-bold text-accent mb-6 text-center">Embedded Team</h3>
                   <div className="space-y-4">
-                    {[
-                      { name: "Sreenivasa Yarram", initials: "SY", role: "Software Architect" },
-                      { name: "Sirajudheen NH", initials: "SN", role: "Software Architect" },
-                      { name: "Sushin C", initials: "SC", role: "Software Architect" },
-                      { name: "Ajay K", initials: "AJ", role: "Technical Lead" },
-                      { name: "Shreeja M S", initials: "SM", role: "Senior Software Engineer" }
-                    ].map((member, index) => (
-                       <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
+                    {[{
+                    name: "Sreenivasa Yarram",
+                    initials: "SY",
+                    role: "Software Architect"
+                  }, {
+                    name: "Sirajudheen NH",
+                    initials: "SN",
+                    role: "Software Architect"
+                  }, {
+                    name: "Sushin C",
+                    initials: "SC",
+                    role: "Software Architect"
+                  }, {
+                    name: "Ajay K",
+                    initials: "AJ",
+                    role: "Technical Lead"
+                  }, {
+                    name: "Shreeja M S",
+                    initials: "SM",
+                    role: "Senior Software Engineer"
+                  }].map((member, index) => <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
                          <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
                            {member.initials}
                          </div>
@@ -328,8 +365,7 @@ const OurTeam = () => {
                            <h4 className="text-base font-semibold leading-tight">{member.name}</h4>
                            <p className="text-sm text-accent/70 leading-tight">{member.role}</p>
                          </div>
-                       </div>
-                    ))}
+                       </div>)}
                   </div>
                 </div>
 
@@ -337,36 +373,93 @@ const OurTeam = () => {
                 <div className="col-span-6 row-span-3 bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-8 border border-slate-200">
                   <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Subject Matter Experts – Digital Factory Module</h3>
                   <div className="grid grid-cols-5 gap-6">
-                    {[
-                      { name: "Aman Saxena", initials: "AS", role: "Senior Functional Consultant" },
-                      { name: "Balaji Kumar", initials: "BK", role: "Senior Functional Consultant" },
-                      { name: "Rohan Patil", initials: "RP", role: "Senior Functional Consultant" },
-                      { name: "Ann Maria Jess Kurian", initials: "AJ", role: "Lead Functional Consultant" },
-                      { name: "Kanakaraddi C Radder", initials: "KR", role: "Senior Functional Consultant" },
-                      { name: "Pramod BP", initials: "PB", role: "Lead Functional Consultant" },
-                      { name: "Subha J", initials: "SJ", role: "Lead Functional Consultant" },
-                      { name: "Venkatesh HS", initials: "VH", role: "Lead Functional Consultant" },
-                      { name: "Chaithra N", initials: "CN", role: "Lead Functional Consultant" },
-                      { name: "Arun Kumar", initials: "AR", role: "Senior Consultant" },
-                      { name: "Priya Sharma", initials: "PS", role: "Business Analyst" },
-                      { name: "Ravi Mehta", initials: "RM", role: "Process Engineer" },
-                      { name: "Kavya Reddy", initials: "KV", role: "Quality Analyst" },
-                      { name: "Deepak Singh", initials: "DS", role: "Integration Specialist" },
-                      { name: "Neha Gupta", initials: "NG", role: "System Administrator" },
-                      { name: "Vikram Joshi", initials: "VJ", role: "Database Engineer" },
-                      { name: "Anita Rao", initials: "AR", role: "UI/UX Designer" },
-                      { name: "Suresh Kumar", initials: "SK", role: "DevOps Engineer" },
-                      { name: "Pooja Nair", initials: "PN", role: "Project Coordinator" },
-                      { name: "Manoj Verma", initials: "MV", role: "Security Analyst" }
-                    ].map((member, index) => (
-                      <div key={index} className="text-center group hover:scale-105 transition-all duration-200">
+                    {[{
+                    name: "Aman Saxena",
+                    initials: "AS",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Balaji Kumar",
+                    initials: "BK",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Rohan Patil",
+                    initials: "RP",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Ann Maria Jess Kurian",
+                    initials: "AJ",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Kanakaraddi C Radder",
+                    initials: "KR",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Pramod BP",
+                    initials: "PB",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Subha J",
+                    initials: "SJ",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Venkatesh HS",
+                    initials: "VH",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Chaithra N",
+                    initials: "CN",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Arun Kumar",
+                    initials: "AR",
+                    role: "Senior Consultant"
+                  }, {
+                    name: "Priya Sharma",
+                    initials: "PS",
+                    role: "Business Analyst"
+                  }, {
+                    name: "Ravi Mehta",
+                    initials: "RM",
+                    role: "Process Engineer"
+                  }, {
+                    name: "Kavya Reddy",
+                    initials: "KV",
+                    role: "Quality Analyst"
+                  }, {
+                    name: "Deepak Singh",
+                    initials: "DS",
+                    role: "Integration Specialist"
+                  }, {
+                    name: "Neha Gupta",
+                    initials: "NG",
+                    role: "System Administrator"
+                  }, {
+                    name: "Vikram Joshi",
+                    initials: "VJ",
+                    role: "Database Engineer"
+                  }, {
+                    name: "Anita Rao",
+                    initials: "AR",
+                    role: "UI/UX Designer"
+                  }, {
+                    name: "Suresh Kumar",
+                    initials: "SK",
+                    role: "DevOps Engineer"
+                  }, {
+                    name: "Pooja Nair",
+                    initials: "PN",
+                    role: "Project Coordinator"
+                  }, {
+                    name: "Manoj Verma",
+                    initials: "MV",
+                    role: "Security Analyst"
+                  }].map((member, index) => <div key={index} className="text-center group hover:scale-105 transition-all duration-200">
                         <div className="w-24 h-24 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-lg font-bold shadow-lg group-hover:shadow-xl transition-all duration-200">
                           {member.initials}
                         </div>
                         <h4 className="text-sm font-semibold leading-tight mb-1">{member.name}</h4>
                         <p className="text-xs text-foreground/60 leading-tight">{member.role}</p>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
               </div>
@@ -380,14 +473,27 @@ const OurTeam = () => {
                 <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 border border-primary/10">
                   <h3 className="text-xl font-bold text-primary mb-6 text-center">Leadership Team</h3>
                   <div className="grid grid-cols-1 gap-4">
-                    {[
-                      { name: "Faizan Pathan", initials: "FP", role: "Autonomy & Embedded Systems" },
-                      { name: "Rani Kinnal", initials: "RK", role: "Systems & Simulation" },
-                      { name: "Amrut Kurtakoti", initials: "AK", role: "Coordination & Business" },
-                      { name: "Samarth Vengurlekar", initials: "SV", role: "UI & Integration" },
-                      { name: "Ashutosh Kangralkar", initials: "AS", role: "Mechanical Design" }
-                    ].map((member, index) => (
-                       <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
+                    {[{
+                    name: "Faizan Pathan",
+                    initials: "FP",
+                    role: "Autonomy & Embedded Systems"
+                  }, {
+                    name: "Rani Kinnal",
+                    initials: "RK",
+                    role: "Systems & Simulation"
+                  }, {
+                    name: "Amrut Kurtakoti",
+                    initials: "AK",
+                    role: "Coordination & Business"
+                  }, {
+                    name: "Samarth Vengurlekar",
+                    initials: "SV",
+                    role: "UI & Integration"
+                  }, {
+                    name: "Ashutosh Kangralkar",
+                    initials: "AS",
+                    role: "Mechanical Design"
+                  }].map((member, index) => <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
                          <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-white text-base font-bold">
                            {member.initials}
                          </div>
@@ -395,8 +501,7 @@ const OurTeam = () => {
                            <h4 className="text-base font-semibold">{member.name}</h4>
                            <p className="text-sm text-primary/70">{member.role}</p>
                          </div>
-                       </div>
-                    ))}
+                       </div>)}
                   </div>
                 </div>
 
@@ -404,14 +509,27 @@ const OurTeam = () => {
                 <div className="bg-gradient-to-br from-secondary/5 to-accent/5 rounded-2xl p-6 border border-secondary/10">
                   <h3 className="text-xl font-bold text-secondary mb-6 text-center">Software Architects</h3>
                   <div className="grid grid-cols-1 gap-4">
-                    {[
-                      { name: "Tunga Santosh Kumar", initials: "TS", role: "Software Architect" },
-                      { name: "Varadharajan N M", initials: "VN", role: "Software Architect" },
-                      { name: "Sachin Vishwakarma", initials: "SV", role: "Software Architect" },
-                      { name: "Pratish Gandhi", initials: "PG", role: "Software Architect" },
-                      { name: "Vishweshwar Kapse", initials: "VK", role: "Software Architect" }
-                    ].map((member, index) => (
-                       <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
+                    {[{
+                    name: "Tunga Santosh Kumar",
+                    initials: "TS",
+                    role: "Software Architect"
+                  }, {
+                    name: "Varadharajan N M",
+                    initials: "VN",
+                    role: "Software Architect"
+                  }, {
+                    name: "Sachin Vishwakarma",
+                    initials: "SV",
+                    role: "Software Architect"
+                  }, {
+                    name: "Pratish Gandhi",
+                    initials: "PG",
+                    role: "Software Architect"
+                  }, {
+                    name: "Vishweshwar Kapse",
+                    initials: "VK",
+                    role: "Software Architect"
+                  }].map((member, index) => <div key={index} className="flex items-center space-x-4 hover:bg-white/50 rounded-lg p-3 transition-all duration-200">
                          <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center text-white text-base font-bold">
                            {member.initials}
                          </div>
@@ -419,8 +537,7 @@ const OurTeam = () => {
                            <h4 className="text-base font-semibold">{member.name}</h4>
                            <p className="text-sm text-secondary/70">{member.role}</p>
                          </div>
-                       </div>
-                    ))}
+                       </div>)}
                   </div>
                 </div>
               </div>
@@ -430,43 +547,70 @@ const OurTeam = () => {
                 <div className="bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl p-6 border border-accent/10">
                   <h3 className="text-xl font-bold text-accent mb-6 text-center">Technical Leads</h3>
                   <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { name: "Sreenivasa Yarram", initials: "SY", role: "Software Architect" },
-                      { name: "Sirajudheen NH", initials: "SN", role: "Software Architect" },
-                      { name: "Sushin C", initials: "SC", role: "Software Architect" },
-                      { name: "Ajay K", initials: "AJ", role: "Technical Lead" },
-                      { name: "Shreeja M S", initials: "SM", role: "Senior Software Engineer" }
-                    ].map((member, index) => (
-                       <div key={index} className="text-center">
+                    {[{
+                    name: "Sreenivasa Yarram",
+                    initials: "SY",
+                    role: "Software Architect"
+                  }, {
+                    name: "Sirajudheen NH",
+                    initials: "SN",
+                    role: "Software Architect"
+                  }, {
+                    name: "Sushin C",
+                    initials: "SC",
+                    role: "Software Architect"
+                  }, {
+                    name: "Ajay K",
+                    initials: "AJ",
+                    role: "Technical Lead"
+                  }, {
+                    name: "Shreeja M S",
+                    initials: "SM",
+                    role: "Senior Software Engineer"
+                  }].map((member, index) => <div key={index} className="text-center">
                          <div className="w-20 h-20 bg-gradient-accent rounded-full mx-auto mb-3 flex items-center justify-center text-white text-base font-bold">
                            {member.initials}
                          </div>
                          <h4 className="text-base font-semibold">{member.name}</h4>
                          <p className="text-sm text-accent/70">{member.role}</p>
-                       </div>
-                    ))}
+                       </div>)}
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-6 border border-slate-200">
                   <h3 className="text-xl font-bold text-foreground mb-6 text-center">Functional Consultants (Partial View)</h3>
                   <div className="grid grid-cols-3 gap-4">
-                    {[
-                      { name: "Aman Saxena", initials: "AS", role: "Senior Functional Consultant" },
-                      { name: "Balaji Kumar", initials: "BK", role: "Senior Functional Consultant" },
-                      { name: "Rohan Patil", initials: "RP", role: "Senior Functional Consultant" },
-                      { name: "Ann Maria Jess", initials: "AJ", role: "Lead Functional Consultant" },
-                      { name: "Kanakaraddi Radder", initials: "KR", role: "Senior Functional Consultant" },
-                      { name: "And 15 more...", initials: "...", role: "Various Specialists" }
-                    ].map((member, index) => (
-                       <div key={index} className="text-center">
+                    {[{
+                    name: "Aman Saxena",
+                    initials: "AS",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Balaji Kumar",
+                    initials: "BK",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Rohan Patil",
+                    initials: "RP",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "Ann Maria Jess",
+                    initials: "AJ",
+                    role: "Lead Functional Consultant"
+                  }, {
+                    name: "Kanakaraddi Radder",
+                    initials: "KR",
+                    role: "Senior Functional Consultant"
+                  }, {
+                    name: "And 15 more...",
+                    initials: "...",
+                    role: "Various Specialists"
+                  }].map((member, index) => <div key={index} className="text-center">
                          <div className="w-18 h-18 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-sm font-bold">
                            {member.initials}
                          </div>
                          <h4 className="text-sm font-semibold">{member.name}</h4>
                          <p className="text-sm text-foreground/60">{member.role}</p>
-                       </div>
-                    ))}
+                       </div>)}
                   </div>
                 </div>
               </div>
@@ -474,34 +618,82 @@ const OurTeam = () => {
 
             {/* Mobile: Stacked Layout */}
             <div className="md:hidden space-y-8">
-              {[
-                { title: "Leadership Team", color: "primary", members: [
-                  { name: "Faizan Pathan", initials: "FP", role: "Autonomy & Embedded Systems" },
-                  { name: "Rani Kinnal", initials: "RK", role: "Systems & Simulation" },
-                  { name: "Amrut Kurtakoti", initials: "AK", role: "Coordination & Business" },
-                  { name: "Samarth Vengurlekar", initials: "SV", role: "UI & Integration" },
-                  { name: "Ashutosh Kangralkar", initials: "AS", role: "Mechanical Design" }
-                ]},
-                { title: "Software Architects", color: "secondary", members: [
-                  { name: "Tunga Santosh Kumar", initials: "TS", role: "Software Architect" },
-                  { name: "Varadharajan N M", initials: "VN", role: "Software Architect" },
-                  { name: "Sachin Vishwakarma", initials: "SV", role: "Software Architect" },
-                  { name: "Pratish Gandhi", initials: "PG", role: "Software Architect" },
-                  { name: "Vishweshwar Kapse", initials: "VK", role: "Software Architect" }
-                ]},
-                { title: "Technical Leads", color: "accent", members: [
-                  { name: "Sreenivasa Yarram", initials: "SY", role: "Software Architect" },
-                  { name: "Sirajudheen NH", initials: "SN", role: "Software Architect" },
-                  { name: "Sushin C", initials: "SC", role: "Software Architect" },
-                  { name: "Ajay K", initials: "AJ", role: "Technical Lead" },
-                  { name: "Shreeja M S", initials: "SM", role: "Senior Software Engineer" }
-                ]}
-              ].map((team, teamIndex) => (
-                <div key={teamIndex} className={`bg-gradient-to-br from-${team.color}/5 to-${team.color}/10 rounded-2xl p-6 border border-${team.color}/10`}>
+              {[{
+              title: "Leadership Team",
+              color: "primary",
+              members: [{
+                name: "Faizan Pathan",
+                initials: "FP",
+                role: "Autonomy & Embedded Systems"
+              }, {
+                name: "Rani Kinnal",
+                initials: "RK",
+                role: "Systems & Simulation"
+              }, {
+                name: "Amrut Kurtakoti",
+                initials: "AK",
+                role: "Coordination & Business"
+              }, {
+                name: "Samarth Vengurlekar",
+                initials: "SV",
+                role: "UI & Integration"
+              }, {
+                name: "Ashutosh Kangralkar",
+                initials: "AS",
+                role: "Mechanical Design"
+              }]
+            }, {
+              title: "Software Architects",
+              color: "secondary",
+              members: [{
+                name: "Tunga Santosh Kumar",
+                initials: "TS",
+                role: "Software Architect"
+              }, {
+                name: "Varadharajan N M",
+                initials: "VN",
+                role: "Software Architect"
+              }, {
+                name: "Sachin Vishwakarma",
+                initials: "SV",
+                role: "Software Architect"
+              }, {
+                name: "Pratish Gandhi",
+                initials: "PG",
+                role: "Software Architect"
+              }, {
+                name: "Vishweshwar Kapse",
+                initials: "VK",
+                role: "Software Architect"
+              }]
+            }, {
+              title: "Technical Leads",
+              color: "accent",
+              members: [{
+                name: "Sreenivasa Yarram",
+                initials: "SY",
+                role: "Software Architect"
+              }, {
+                name: "Sirajudheen NH",
+                initials: "SN",
+                role: "Software Architect"
+              }, {
+                name: "Sushin C",
+                initials: "SC",
+                role: "Software Architect"
+              }, {
+                name: "Ajay K",
+                initials: "AJ",
+                role: "Technical Lead"
+              }, {
+                name: "Shreeja M S",
+                initials: "SM",
+                role: "Senior Software Engineer"
+              }]
+            }].map((team, teamIndex) => <div key={teamIndex} className={`bg-gradient-to-br from-${team.color}/5 to-${team.color}/10 rounded-2xl p-6 border border-${team.color}/10`}>
                   <h3 className={`text-lg font-bold text-${team.color} mb-4 text-center`}>{team.title}</h3>
                   <div className="space-y-3">
-                    {team.members.map((member, index) => (
-                      <div key={index} className="flex items-center space-x-3 bg-white/50 rounded-lg p-3">
+                    {team.members.map((member, index) => <div key={index} className="flex items-center space-x-3 bg-white/50 rounded-lg p-3">
                          <div className={`w-16 h-16 bg-gradient-${team.color} rounded-full flex items-center justify-center text-white text-base font-bold`}>
                            {member.initials}
                          </div>
@@ -509,33 +701,38 @@ const OurTeam = () => {
                            <h4 className="text-base font-semibold">{member.name}</h4>
                            <p className={`text-sm text-${team.color}/70`}>{member.role}</p>
                          </div>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
-                </div>
-              ))}
+                </div>)}
 
               {/* Functional Consultants - Mobile */}
               <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-6 border border-slate-200">
                 <h3 className="text-lg font-bold text-foreground mb-4 text-center">Functional Consultants</h3>
                 <p className="text-center text-sm text-foreground/60 mb-4">20 specialists across various domains</p>
                 <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { name: "Aman Saxena", initials: "AS" },
-                    { name: "Balaji Kumar", initials: "BK" },
-                    { name: "Rohan Patil", initials: "RP" },
-                    { name: "Ann Maria Jess", initials: "AJ" },
-                    { name: "View All Team", initials: "..." }
-                  ].map((member, index) => (
-                    <div key={index} className="flex items-center space-x-2 bg-white/50 rounded-lg p-2">
+                  {[{
+                  name: "Aman Saxena",
+                  initials: "AS"
+                }, {
+                  name: "Balaji Kumar",
+                  initials: "BK"
+                }, {
+                  name: "Rohan Patil",
+                  initials: "RP"
+                }, {
+                  name: "Ann Maria Jess",
+                  initials: "AJ"
+                }, {
+                  name: "View All Team",
+                  initials: "..."
+                }].map((member, index) => <div key={index} className="flex items-center space-x-2 bg-white/50 rounded-lg p-2">
                       <div className="w-8 h-8 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full flex items-center justify-center text-white text-xs font-bold">
                         {member.initials}
                       </div>
                       <div>
                         <h4 className="text-xs font-semibold">{member.name}</h4>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -546,31 +743,25 @@ const OurTeam = () => {
       {/* Why We Build Together Section */}
       <div className="w-full px-4 sm:px-6 lg:px-8 mt-16">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mt-8 pt-6 border-t border-foreground/10">
-            <h3 className="text-lg font-semibold mb-3 text-foreground/90">Building Together</h3>
-            <p className="text-sm text-foreground/60 leading-relaxed font-light max-w-3xl mx-auto">Each of us brings unique skills and perspectives, but it's our shared spirit of exploration and problem-solving combined with the flexibility to wear any hat that powers Vegam Robotics. Together, we're shaping the future of robotics, one innovation at a time.</p>
-          </div>
+          
         </div>
       </div>
 
-      {/* Our Vision: Lights-Out Manufacturing */}
+      {/* Vegam Robotics: Scaling Innovation */}
       <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Our Vision: Lights-Out Manufacturing</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Vegam Robotics: Scaling Innovation</h2>
             
             {/* Key Stats */}
             
 
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p className="text-lg">
-                At Vegam, we are shaping the future of manufacturing by building fully autonomous factories that run continuously with minimal human intervention. Our goal is to create production ecosystems where robotics, AI, and digital intelligence work seamlessly together making operations safer, smarter, and self-optimizing.
+                Vegam today is not just about robotics — it is about building end-to-end solutions for the future of manufacturing. With over 300+ plants powered by Vegam's digital backbone, we are integrating robotics into smart factory software, creating safer workplaces, improving quality, and reducing risk in industries dealing with high complexities and hazardous environments.
               </p>
               <p className="text-lg">
-                With 300+ plants already powered by our digital backbone, we are leading the transformation from connected factories to truly autonomous ones. By integrating adaptive robotics, generative AI, and predictive intelligence, we are pioneering a new era of manufacturing where risks are prevented before they arise, quality is inherent in every process, and efficiency knows no boundaries.
-              </p>
-              <p className="text-lg">
-                For us, robotics isn't just an extension of digital manufacturing, it is the foundation of a world where factories never stop, innovation never slows, and Lights-Out becomes reality.
+                With clarity of thought and a strong belief in robotics as a natural extension of digital manufacturing, this vision continues to guide and inspire the way we scale our solutions globally.
               </p>
             </div>
           </div>
