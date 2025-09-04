@@ -46,38 +46,8 @@ const AutoDockAdvantage = () => {
             <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Always%20Ready,%20Always%20On.gif" alt="Always Ready, Always On - AutoDock in action" className="w-full h-full object-cover" />
           </div>;
       case 'dashboard':
-        return <div className="relative bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-8 h-64 overflow-hidden">
-            {/* Multiple trucks flowing */}
-            <div className="absolute top-4 left-0 right-0 flex justify-between px-4">
-              {[0, 1, 2].map(i => <div key={i} className="flex flex-col items-center">
-                  <Truck className="w-6 h-6 text-primary/70 transition-all duration-1000 animate-bounce" style={{
-                animationDelay: `${i * 0.3}s`
-              }} />
-                  <div className="w-1 h-8 bg-primary/30 rounded-full mt-2 relative overflow-hidden">
-                    <div className="absolute bottom-0 w-full bg-primary rounded-full transition-all duration-2000 ease-out" style={{
-                  height: '100%',
-                  animationDelay: `${i * 0.5}s`
-                }}></div>
-                  </div>
-                </div>)}
-            </div>
-
-            {/* Multiple dock stations */}
-            <div className="absolute bottom-8 left-0 right-0 flex justify-between px-6">
-              {[0, 1, 2].map(i => <div key={i} className="w-12 h-8 bg-gradient-to-t from-primary/30 to-primary/10 rounded-lg border border-primary/20 relative">
-                  <div className="absolute top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rounded-full animate-pulse" style={{
-                animationDelay: `${i * 0.4}s`
-              }}></div>
-                  <div className="absolute -top-1 right-0 w-3 h-3 bg-accent rounded-full opacity-60"></div>
-                </div>)}
-            </div>
-
-            {/* Central orchestration indicator */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
-              <Network className="w-4 h-4 text-accent animate-spin" style={{
-              animationDuration: '4s'
-            }} />
-            </div>
+        return <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 p-4 h-80 overflow-hidden bg-white">
+            <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Scales%20Without%20Slowing%20Down.gif" alt="Scales Without Slowing Down - AutoDock scaling visualization" className="w-full h-full object-cover" />
           </div>;
       case 'ai-brain':
         return <div className="relative bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl p-8 h-64 flex items-center justify-center overflow-hidden">
