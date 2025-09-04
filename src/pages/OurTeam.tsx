@@ -254,8 +254,8 @@ const OurTeam = () => {
         </div>
         
         {/* 6×6 Matrix Team Structure */}
-        <div className="container mx-auto px-6 mt-16">
-          <div className="max-w-7xl mx-auto">
+        <div className="w-full px-4 sm:px-6 lg:px-8 mt-16">
+          <div className="w-full">
             
             {/* Desktop: 6×6 Grid Layout */}
             <div className="hidden lg:block">
@@ -544,7 +544,7 @@ const OurTeam = () => {
       </section>
 
       {/* Why We Build Together Section */}
-      <div className="container mx-auto px-6 mt-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8 mt-16">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
             <h3 className="text-2xl font-bold mb-4 text-primary">Building Together</h3>
