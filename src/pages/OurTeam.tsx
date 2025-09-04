@@ -874,7 +874,7 @@ const OurTeam = () => {
               </div>
 
               <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
-                <img src="/lovable-uploads/9463cff9-0962-4f79-9e14-fb3c9a9ee73d.png" alt="Team at demonstration lab" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                
                 
                 <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                   <p className="text-sm font-medium">Demonstration Lab</p>
