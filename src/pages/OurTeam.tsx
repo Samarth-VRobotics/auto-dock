@@ -553,21 +553,24 @@ const OurTeam = () => {
         </div>
       </div>
 
-      {/* Vegam Robotics: Scaling Innovation */}
+      {/* Our Vision: Lights-Out Manufacturing */}
       <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Vegam Robotics: Scaling Innovation</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Our Vision: Lights-Out Manufacturing</h2>
             
             {/* Key Stats */}
             
 
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p className="text-lg">
-                Vegam today is not just about robotics — it is about building end-to-end solutions for the future of manufacturing. With over 300+ plants powered by Vegam's digital backbone, we are integrating robotics into smart factory software, creating safer workplaces, improving quality, and reducing risk in industries dealing with high complexities and hazardous environments.
+                Vegam's ultimate vision is Lights-Out Manufacturing — fully autonomous factories that run continuously with minimal human intervention. We see a future where robotics, AI, and digital intelligence converge to create production ecosystems that are safer, smarter, and self-optimizing.
               </p>
               <p className="text-lg">
-                With clarity of thought and a strong belief in robotics as a natural extension of digital manufacturing, this vision continues to guide and inspire the way we scale our solutions globally.
+                With 300+ plants already powered by our digital backbone, we are transforming today's connected factories into tomorrow's autonomous ones. By integrating adaptive robotics, generative AI, and predictive systems, we are pioneering a new era of manufacturing — where risk is anticipated, quality is assured, and efficiency knows no boundaries.
+              </p>
+              <p className="text-lg">
+                For us, robotics is not just an extension of digital manufacturing; it is the foundation of a world where factories never stop, innovation never slows, and Lights-Out Manufacturing becomes reality.
               </p>
             </div>
           </div>
