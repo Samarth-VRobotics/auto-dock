@@ -42,46 +42,12 @@ const AutoDockAdvantage = () => {
     const IconComponent = icon;
     switch (visual) {
       case 'truck-docking':
-        return <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 h-64 overflow-hidden">
-            <div className="flex items-center justify-between h-full">
-              {/* Incoming truck with detection sensor */}
-              <div className="relative flex items-center gap-4">
-                <div className="relative">
-                  <Truck className="w-12 h-12 text-muted-foreground transition-all duration-1000 animate-pulse" />
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-ping"></div>
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full"></div>
-                </div>
-                
-                {/* Detection waves */}
-                <div className="flex gap-1">
-                  <div className="w-1 h-8 bg-primary/60 rounded-full animate-pulse" style={{
-                  animationDelay: '0s'
-                }}></div>
-                  <div className="w-1 h-6 bg-primary/40 rounded-full animate-pulse" style={{
-                  animationDelay: '0.2s'
-                }}></div>
-                  <div className="w-1 h-4 bg-primary/20 rounded-full animate-pulse" style={{
-                  animationDelay: '0.4s'
-                }}></div>
-                </div>
-              </div>
-
-              {/* Auto-configuring dock */}
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-16 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg border border-primary/30 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-pulse" style={{
-                  animationDuration: '2s'
-                }}></div>
-                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rounded-full animate-bounce"></div>
-                </div>
-                <div className="text-xs text-primary font-medium">Auto-Config</div>
-              </div>
-
-              {/* Flow indicator */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                <Zap className="w-6 h-6 text-primary animate-pulse" />
-              </div>
-            </div>
+        return <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-4 h-64 overflow-hidden">
+            <img 
+              src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Always%20Ready,%20Always%20On.gif" 
+              alt="Always Ready, Always On - AutoDock in action"
+              className="w-full h-full object-contain rounded-xl"
+            />
           </div>;
       case 'dashboard':
         return <div className="relative bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl p-8 h-64 overflow-hidden">
