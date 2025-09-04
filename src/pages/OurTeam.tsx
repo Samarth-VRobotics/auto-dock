@@ -137,6 +137,43 @@ const OurTeam = () => {
                 </Card>)}
             </div>
             
+            {/* Extended Team Section */}
+            <div className="mt-16">
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">Our Extended Team</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-16">
+                {[
+                  { name: "Aman Saxena", initials: "AS" },
+                  { name: "Balaji Kumar", initials: "BK" },
+                  { name: "Rohan Patil", initials: "RP" },
+                  { name: "Shreeja M S", initials: "SM" },
+                  { name: "Ann Maria Jess Kurian", initials: "AJ" },
+                  { name: "Kanakaraddi C Radder", initials: "KR" },
+                  { name: "Pramod BP", initials: "PB" },
+                  { name: "Subha J", initials: "SJ" },
+                  { name: "Ajay K", initials: "AK" },
+                  { name: "Venkatesh HS", initials: "VH" },
+                  { name: "Tunga Santosh Kumar Reddy", initials: "TS" },
+                  { name: "Varadharajan N M", initials: "VN" },
+                  { name: "Sachin Vishwakarma", initials: "SV" },
+                  { name: "Pratish RameshChandra Gandhi", initials: "PG" },
+                  { name: "Vishweshwar Kapse", initials: "VK" },
+                  { name: "Sreenivasa Yarram", initials: "SY" },
+                  { name: "Sirajudheen NH", initials: "SN" },
+                  { name: "Sushin C", initials: "SC" },
+                  { name: "Chaithra N", initials: "CN" }
+                ].map((member, index) => (
+                  <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <CardContent className="p-4 text-center">
+                      <div className="w-16 h-16 bg-gradient-primary rounded-full mx-auto mb-3 flex items-center justify-center text-white text-sm font-bold">
+                        {member.initials}
+                      </div>
+                      <h4 className="text-sm font-semibold text-center leading-tight">{member.name}</h4>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
             {/* Why We Build Together Section */}
             <div className="mt-16 text-center max-w-4xl mx-auto">
               <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
