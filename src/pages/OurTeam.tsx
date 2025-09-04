@@ -377,7 +377,7 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-3">Smart Factory Experts</h3>
                   <p className="text-foreground/60 text-lg">Digital factory solutions and process optimization specialists</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
                   {[{
                   name: "Aman Saxena",
                   initials: "AS",
@@ -463,7 +463,7 @@ const OurTeam = () => {
                         {member.initials}
                       </div>
                       <h4 className="font-bold text-foreground text-lg mb-2">{member.name}</h4>
-                      <p className="text-foreground/60 text-sm leading-relaxed">{member.role}</p>
+                      <Linkedin className="w-5 h-5 text-primary hover:text-secondary transition-colors cursor-pointer" />
                     </div>)}
                 </div>
               </div>
