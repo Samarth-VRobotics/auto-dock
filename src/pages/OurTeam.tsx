@@ -891,20 +891,13 @@ const OurTeam = () => {
 
               {/* Videos */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300 md:col-span-2">
-                <video src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/CAAR%20lab.mp4" controls className="w-full h-64 object-cover" poster="/lovable-uploads/2eb8d899-f40d-4991-bd0b-94b5ed5454c6.png">
-                  Your browser does not support the video tag.
-                </video>
+                
                 <div className="absolute bottom-4 left-4 text-white">
                   <p className="text-sm font-medium bg-black/50 px-2 py-1 rounded">CAAR Lab Tour</p>
                 </div>
               </div>
 
-              <div className="relative rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300">
-                
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-medium bg-black/50 px-2 py-1 rounded">Team Insights</p>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
