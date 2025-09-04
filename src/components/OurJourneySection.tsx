@@ -31,10 +31,9 @@ const OurJourneySection = () => {
 
   // Industry transition slideshow
   const industryImages = [
-    { src: modernRoboticsFacility, alt: "Modern robotics facility with advanced automation" },
-    { src: universityLabScene, alt: "University laboratory transitioning to industry" },
-    { src: studentPortrait3, alt: "Engineers in professional setting" },
-    { src: studentPortrait4, alt: "Industry professionals at work" }
+    { src: "/lovable-uploads/1ce695c8-00a1-4a19-8a83-6a5447c4e299.png", alt: "Vegam robot in industrial setting with worker" },
+    { src: "/lovable-uploads/c0401a95-0838-4dc5-ae67-d6184ac3abf5.png", alt: "Team showcasing MAYA 1.0 robot at exhibition" },
+    { src: "/lovable-uploads/cdfeba0e-e1a6-4714-a55d-180e813b74c6.png", alt: "Team working in robotics lab with MAYA robot" }
   ];
   const projects = [{
     title: "Humanoid Robots",
@@ -239,18 +238,13 @@ const OurJourneySection = () => {
                   }`} 
                 />
               ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
-                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300 z-20"></div>
-              <div className="absolute bottom-6 left-6 text-white transform 
-                            group-hover:translate-y-[-4px] transition-transform duration-300 z-30">
-                <h5 className="text-xl font-bold mb-2">Industry Impact</h5>
-                <p className="text-base">300+ plants powered by our solutions</p>
-                {/* Slide indicators */}
-                <div className="flex space-x-2 mt-3">
+              {/* Slide indicators only */}
+              <div className="absolute bottom-6 right-6 z-30">
+                <div className="flex space-x-2">
                   {industryImages.map((_, index) => (
                     <div 
                       key={index}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
                         index === industrySlide ? 'bg-white' : 'bg-white/50'
                       }`}
                     />
