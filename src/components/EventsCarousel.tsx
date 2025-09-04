@@ -52,8 +52,8 @@ const eventsData = [
     id: 4,
     title: "KLE Technological University Expo",
     description: "We also returned to our roots, setting up demonstrations at KLETU. Presenting our solutions on campus was more than just showcasing technology — it was about inspiring students, giving back, and keeping the cycle of learning alive.",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format",
-    imageAlt: "University expo presentation"
+    imageUrl: "/lovable-uploads/f6a9af8e-0b56-400b-ae59-09e92f7b93a6.png",
+    imageAlt: "Vegam team at KLE Technological University Expo showcasing robotics solutions"
   }
 ];
 
