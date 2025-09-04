@@ -89,7 +89,21 @@ const OurJourneySection = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              <img src={studentPortrait1} alt="Student working on robotics project" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              {/* 2x2 Image Collage */}
+              <div className="grid grid-cols-2 gap-1 h-full">
+                <div className="relative overflow-hidden">
+                  <img src={studentPortrait1} alt="Student portrait 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+                </div>
+                <div className="relative overflow-hidden">
+                  <img src={studentPortrait2} alt="Student portrait 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+                </div>
+                <div className="relative overflow-hidden">
+                  <img src={studentPortrait3} alt="Student portrait 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+                </div>
+                <div className="relative overflow-hidden">
+                  <img src={studentPortrait4} alt="Student portrait 4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+                </div>
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
