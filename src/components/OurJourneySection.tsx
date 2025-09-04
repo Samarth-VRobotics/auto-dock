@@ -12,6 +12,7 @@ import studentPortrait4 from "@/assets/student-portrait-4.jpg";
 const OurJourneySection = () => {
   const [activeProject, setActiveProject] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [studentSlide, setStudentSlide] = useState(0);
   
   // Slideshow images for mentorship section
   const slideshowImages = [
@@ -19,6 +20,14 @@ const OurJourneySection = () => {
     { src: universityLabScene, alt: "University laboratory scene with robotics equipment" },
     { src: studentPortrait1, alt: "Student working on robotics project" },
     { src: studentPortrait2, alt: "Mentorship session in progress" }
+  ];
+
+  // Student portraits slideshow
+  const studentPortraits = [
+    { src: studentPortrait1, alt: "Student working on robotics project" },
+    { src: studentPortrait2, alt: "Student in engineering lab" },
+    { src: studentPortrait3, alt: "Robotics team member" },
+    { src: studentPortrait4, alt: "Student researcher" }
   ];
   const projects = [{
     title: "Humanoid Robots",
@@ -67,6 +76,15 @@ const OurJourneySection = () => {
     return () => clearInterval(interval);
   }, [slideshowImages.length]);
 
+  // Auto-advance student slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStudentSlide((prev) => (prev + 1) % studentPortraits.length);
+    }, 2500); // Change image every 2.5 seconds
+
+    return () => clearInterval(interval);
+  }, [studentPortraits.length]);
+
   return <section className="py-8 bg-background relative overflow-hidden">
       
       <div className="container mx-auto px-6 relative">
@@ -108,21 +126,19 @@ const OurJourneySection = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              {/* Asymmetric Image Collage */}
-              <div className="grid grid-cols-3 grid-rows-3 gap-1 h-full">
-                <div className="relative overflow-hidden col-span-2 row-span-2">
-                  <img src={studentPortrait1} alt="Student portrait 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
-                </div>
-                <div className="relative overflow-hidden col-span-1 row-span-1">
-                  <img src={studentPortrait2} alt="Student portrait 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
-                </div>
-                <div className="relative overflow-hidden col-span-1 row-span-2">
-                  <img src={studentPortrait3} alt="Student portrait 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
-                </div>
-                <div className="relative overflow-hidden col-span-2 row-span-1">
-                  <img src={studentPortrait4} alt="Student portrait 4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
-                </div>
-              </div>
+              {/* Student Portraits Slideshow */}
+              {studentPortraits.map((portrait, index) => (
+                <img 
+                  key={index}
+                  src={portrait.src} 
+                  alt={portrait.alt} 
+                  className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
+                    index === studentSlide 
+                      ? 'opacity-100 z-10' 
+                      : 'opacity-0 z-0'
+                  }`} 
+                />
+              ))}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
