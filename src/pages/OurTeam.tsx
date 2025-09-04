@@ -360,7 +360,7 @@ const OurTeam = () => {
                       { name: "Manoj Verma", initials: "MV", role: "Security Analyst" }
                     ].map((member, index) => (
                       <div key={index} className="text-center group hover:scale-105 transition-all duration-200">
-                        <div className="w-16 h-16 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-sm font-bold shadow-lg group-hover:shadow-xl transition-all duration-200">
+                        <div className="w-24 h-24 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-lg font-bold shadow-lg group-hover:shadow-xl transition-all duration-200">
                           {member.initials}
                         </div>
                         <h4 className="text-sm font-semibold leading-tight mb-1">{member.name}</h4>
