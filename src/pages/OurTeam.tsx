@@ -458,10 +458,6 @@ const OurTeam = () => {
                   name: "Ramesh Kumar",
                   initials: "RK",
                   role: "Project Coordinator"
-                }, {
-                  name: "Manoj Verma",
-                  initials: "MV",
-                  role: "Security Analyst"
                 }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
                       <div className="w-24 h-24 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                         {member.initials}
