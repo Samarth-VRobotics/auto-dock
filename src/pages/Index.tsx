@@ -4,55 +4,27 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
-import { 
-  ArrowRight, 
-  Brain, 
-  Cog, 
-  Zap, 
-  Network, 
-  Clock, 
-  Shield, 
-  BarChart3, 
-  Users, 
-  Globe, 
-  Building2, 
-  Truck, 
-  Factory, 
-  Boxes, 
-  Package, 
-  FlaskConical, 
-  FileText, 
-  Download,
-  CheckCircle2,
-  Star,
-  TrendingUp,
-  Target
-} from "lucide-react";
+import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target } from "lucide-react";
 import autonomousProductionLine from "@/assets/autonomous-production-line.jpg";
 import smartFactoryHall from "@/assets/smart-factory-hall.jpg";
 import manufacturingEvolutionLab from "@/assets/manufacturing-evolution-lab.jpg";
 import futureOfWorkBg from "@/assets/future-of-work-bg.jpg";
-
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
       
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
-          <img 
-            src={autonomousProductionLine} 
-            alt="Autonomous robotic arms on production line" 
-            className="w-full h-full object-cover"
-          />
+          <img src={autonomousProductionLine} alt="Autonomous robotic arms on production line" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/30"></div>
         </div>
@@ -64,23 +36,23 @@ const Index = () => {
               <span className="block text-primary">The Era of Autonomous Factories</span>
             </h1>
             
-            <div className="flex flex-wrap gap-3 mb-8 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
+            <div className="flex flex-wrap gap-3 mb-8 animate-fade-in" style={{
+            animationDelay: '0.3s',
+            animationFillMode: 'both'
+          }}>
               <Badge className="badge-primary">Digital Factories</Badge>
               <Badge className="badge-primary">Industrial IoT</Badge>
               <Badge className="badge-secondary">Robotics & Automation</Badge>
               <Badge className="badge-secondary">Data Sciences AI/ML</Badge>
             </div>
 
-            <p className="body-lg text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
-              By: Vegam Team | Date:
-            </p>
+            
 
-            <div className="flex flex-col sm:flex-row gap-6 animate-fade-in" style={{ animationDelay: '0.9s', animationFillMode: 'both' }}>
-              <Button 
-                size="lg" 
-                className="px-10 py-6 body-lg font-bold hover:scale-105 transition-transform"
-                onClick={() => scrollToSection('future-manufacturing')}
-              >
+            <div className="flex flex-col sm:flex-row gap-6 animate-fade-in" style={{
+            animationDelay: '0.9s',
+            animationFillMode: 'both'
+          }}>
+              <Button size="lg" className="px-10 py-6 body-lg font-bold hover:scale-105 transition-transform" onClick={() => scrollToSection('future-manufacturing')}>
                 Explore the Vision
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -109,11 +81,7 @@ const Index = () => {
             </div>
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src={smartFactoryHall} 
-                  alt="Smart factory hall with robotic cells and digital signage" 
-                  className="w-full h-full object-cover"
-                />
+                <img src={smartFactoryHall} alt="Smart factory hall with robotic cells and digital signage" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -121,7 +89,11 @@ const Index = () => {
       </section>
 
       {/* Industry Evolution Section */}
-      <section id="industry-evolution" className="section-padding relative" style={{ backgroundImage: `url(${futureOfWorkBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section id="industry-evolution" className="section-padding relative" style={{
+      backgroundImage: `url(${futureOfWorkBg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}>
         <div className="absolute inset-0 bg-background/90"></div>
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="section-header">
@@ -291,11 +263,7 @@ const Index = () => {
               </div>
               
               <div className="mt-8">
-                <img 
-                  src={manufacturingEvolutionLab} 
-                  alt="Modern control room and manufacturing evolution lab" 
-                  className="w-full rounded-lg"
-                />
+                <img src={manufacturingEvolutionLab} alt="Modern control room and manufacturing evolution lab" className="w-full rounded-lg" />
               </div>
             </div>
           </div>
@@ -679,8 +647,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
