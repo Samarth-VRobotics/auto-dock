@@ -240,9 +240,7 @@ const OurJourneySection = () => {
           <div className="text-center mb-20 w-full max-w-[95vw] mx-auto">
             <h4 className="text-6xl font-bold text-primary mb-8 hover:text-primary/80 transition-colors duration-300">Events & Experiences</h4>
             <div className="w-32 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full mb-12"></div>
-            <p className="text-foreground/80 leading-loose text-xl lg:text-2xl max-w-[90vw] lg:max-w-[80vw] mx-auto">
-              At Vegam, our journey extends beyond the lab and into real-world interactions — with customers, industry leaders, and students alike. From hosting our own expos to showcasing solutions on global stages, these moments capture how we share ideas, learn, and grow together.
-            </p>
+            
           </div>
 
           {/* Events Carousel */}
