@@ -116,34 +116,26 @@ const EventsCarousel = () => {
                     {/* Image Section */}
                     <div className="relative h-64 md:h-[500px] overflow-hidden group">
                       {event.images && event.images.length > 1 ? (
-                        // Multiple images slideshow
-                        <>
+                        // Image collage for events with multiple images
+                        <div className="grid grid-cols-2 grid-rows-2 gap-1 h-full">
                           {event.images.map((image, imgIndex) => (
-                            <img 
+                            <div 
                               key={imgIndex}
-                              src={image.url} 
-                              alt={image.alt}
-                              className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
-                                imgIndex === (imageSlides[index] || 0) 
-                                  ? 'opacity-100 z-10' 
-                                  : 'opacity-0 z-0'
+                              className={`relative overflow-hidden ${
+                                imgIndex === 0 ? 'col-span-1 row-span-1' :
+                                imgIndex === 1 ? 'col-span-1 row-span-1' :
+                                imgIndex === 2 ? 'col-span-1 row-span-1' :
+                                'col-span-1 row-span-1'
                               }`}
-                            />
-                          ))}
-                          {/* Image indicators */}
-                          <div className="absolute bottom-16 left-6 z-20">
-                            <div className="flex space-x-2">
-                              {event.images.map((_, imgIndex) => (
-                                <div 
-                                  key={imgIndex}
-                                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                    imgIndex === (imageSlides[index] || 0) ? 'bg-white' : 'bg-white/50'
-                                  }`}
-                                />
-                              ))}
+                            >
+                              <img 
+                                src={image.url} 
+                                alt={image.alt}
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                              />
                             </div>
-                          </div>
-                        </>
+                          ))}
+                        </div>
                       ) : (
                         // Single image
                         <img 
@@ -153,9 +145,9 @@ const EventsCarousel = () => {
                         />
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
-                                    group-hover:from-black/60 group-hover:to-transparent transition-all duration-300 z-15"></div>
+                                    group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
                       <div className="absolute bottom-6 left-6 text-white transform 
-                                    group-hover:translate-y-[-4px] transition-transform duration-300 z-20">
+                                    group-hover:translate-y-[-4px] transition-transform duration-300">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
                       </div>
                     </div>
