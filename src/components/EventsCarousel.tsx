@@ -40,7 +40,7 @@ const eventsData = [
   {
     id: 3,
     title: "Industry Visits & Engagements",
-    description: "As a team, we make it a point to step into real-world shop floors and plants. These visits — often with helmets on and sleeves rolled up — deepen our understanding of industrial needs and ground our solutions in practical reality.",
+    description: "Hard hats, shop floors, and the hum of industry from chemical labs to steel and aluminum plants, we've been there. Each visit is a reminder that robotics isn't just about technology; it's about people, processes, and solving challenges where they matter most.",
     images: [
       { url: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png", alt: "Team visit to industrial facility with safety helmets" },
       { url: "/lovable-uploads/7e619b3d-0110-4751-9e58-75c59c40d7e4.png", alt: "Team meeting with industry professionals at BASF facility" }
