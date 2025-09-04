@@ -104,78 +104,38 @@ const OurJourneySection = () => {
             </div>
           </div>
 
-          {/* Row 2: Random Frames + Paragraph (Images randomly positioned, Text Right) */}
-          <div className="relative mb-20">
-            {/* Random positioned image frames */}
-            <div className="absolute inset-0 pointer-events-none">
-              {slideshowImages.map((image, index) => (
-                <div 
-                  key={index}
-                  className={`absolute w-32 h-32 rounded-2xl overflow-hidden shadow-lg transition-all duration-1000 ease-out ${
-                    index === currentSlide 
-                      ? 'opacity-100 scale-100 z-10' 
-                      : 'opacity-0 scale-95 z-0'
-                  }`}
-                  style={{
-                    top: index === 0 ? '10%' : index === 1 ? '60%' : index === 2 ? '20%' : '75%',
-                    left: index === 0 ? '5%' : index === 1 ? '8%' : index === 2 ? '15%' : '12%',
-                    transform: `rotate(${index === 0 ? '-5deg' : index === 1 ? '8deg' : index === 2 ? '-12deg' : '6deg'})`
-                  }}
-                >
-                  <img 
-                    src={image.src} 
-                    alt={image.alt} 
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
+          {/* Row 2: Second Image + Paragraph (Image Left, Text Right) */}
+          <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 group
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
+              {/* Asymmetric Image Collage */}
+              <div className="grid grid-cols-3 grid-rows-3 gap-1 h-full">
+                <div className="relative overflow-hidden col-span-2 row-span-2">
+                  <img src={studentPortrait1} alt="Student portrait 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
-              ))}
-              
-              {/* Additional random frames on the right */}
-              {slideshowImages.map((image, index) => (
-                <div 
-                  key={`right-${index}`}
-                  className={`absolute w-24 h-24 rounded-xl overflow-hidden shadow-md transition-all duration-1000 ease-out ${
-                    index === currentSlide 
-                      ? 'opacity-80 scale-100 z-5' 
-                      : 'opacity-0 scale-90 z-0'
-                  }`}
-                  style={{
-                    top: index === 0 ? '35%' : index === 1 ? '15%' : index === 2 ? '65%' : '85%',
-                    right: index === 0 ? '8%' : index === 1 ? '15%' : index === 2 ? '5%' : '12%',
-                    transform: `rotate(${index === 0 ? '12deg' : index === 1 ? '-8deg' : index === 2 ? '15deg' : '-10deg'})`
-                  }}
-                >
-                  <img 
-                    src={image.src} 
-                    alt={image.alt} 
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
+                <div className="relative overflow-hidden col-span-1 row-span-1">
+                  <img src={studentPortrait2} alt="Student portrait 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
-              ))}
-            </div>
-
-            {/* Content with proper spacing */}
-            <div className="relative z-20 max-w-2xl mx-auto">
-              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-primary/10 
-                            hover:shadow-2xl hover:scale-[1.02] hover:bg-white/95 
-                            transition-all duration-500 ease-out group">
-                <p className="text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300 text-center">
-                  Under the leadership of Dr. Ashok Shetter, the university fostered a culture that celebrates research-driven excellence and bold ideas. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry the vision forward, preparing the next generation of robotics engineers.
-                </p>
-                
-                {/* Slide indicators */}
-                <div className="flex justify-center space-x-2 mt-8">
-                  {slideshowImages.map((_, index) => (
-                    <div 
-                      key={index}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-                        index === currentSlide ? 'bg-primary' : 'bg-primary/30'
-                      }`}
-                      onClick={() => setCurrentSlide(index)}
-                    />
-                  ))}
+                <div className="relative overflow-hidden col-span-1 row-span-2">
+                  <img src={studentPortrait3} alt="Student portrait 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+                </div>
+                <div className="relative overflow-hidden col-span-2 row-span-1">
+                  <img src={studentPortrait4} alt="Student portrait 4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
               </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
+                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
+              <div className="absolute bottom-6 left-6 text-white transform 
+                            group-hover:translate-y-[-4px] transition-transform duration-300">
+                <p className="text-base font-medium">Leadership & Vision</p>
+              </div>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-primary/10 
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group">
+              <p className="text-foreground/80 leading-relaxed text-lg group-hover:text-foreground transition-colors duration-300">
+                Under the leadership of Dr. Ashok Shetter, the university fostered a culture that celebrates research-driven excellence and bold ideas. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry the vision forward, preparing the next generation of robotics engineers.
+              </p>
             </div>
           </div>
 
