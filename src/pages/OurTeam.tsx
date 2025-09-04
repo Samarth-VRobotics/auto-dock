@@ -311,7 +311,7 @@ const OurTeam = () => {
 
                 {/* Technical Leads - Middle Right (2x3 section) */}
                 <div className="col-span-2 row-span-3 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl p-6 border border-accent/10">
-                  <h3 className="text-xl font-bold text-accent mb-6 text-center">Technical Leads</h3>
+                  <h3 className="text-xl font-bold text-accent mb-6 text-center">Embedded Team</h3>
                   <div className="space-y-4">
                     {[
                       { name: "Sreenivasa Yarram", initials: "SY", role: "Software Architect" },
