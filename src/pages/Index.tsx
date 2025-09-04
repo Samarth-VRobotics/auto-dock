@@ -3,43 +3,22 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
-
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
       
       {/* Sticky Jump Navigation */}
       <nav className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center py-2 text-sm font-medium">
-            <div className="flex flex-wrap items-center gap-1 md:gap-4">
-              <button onClick={() => scrollToSection('hero')} className="px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">Hero</button>
-              <span className="text-muted-foreground">•</span>
-              <button onClick={() => scrollToSection('future')} className="px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">Future of Manufacturing</button>
-              <span className="text-muted-foreground">•</span>
-              <button onClick={() => scrollToSection('evolution')} className="px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">Industry Evolution</button>
-              <span className="text-muted-foreground">•</span>
-              <button onClick={() => scrollToSection('technologies')} className="px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">Key Technologies</button>
-              <span className="text-muted-foreground">•</span>
-              <button onClick={() => scrollToSection('journey')} className="px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">Vegam Journey</button>
-              <span className="text-muted-foreground">•</span>
-              <button onClick={() => scrollToSection('partnerships')} className="px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">Partnerships</button>
-              <span className="text-muted-foreground">•</span>
-              <button onClick={() => scrollToSection('offerings')} className="px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">Offerings</button>
-              <span className="text-muted-foreground">•</span>
-              <button onClick={() => scrollToSection('portfolio')} className="px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">Automation Portfolio</button>
-              <span className="text-muted-foreground">•</span>
-              <button onClick={() => scrollToSection('why-vegam')} className="px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">Why Vegam</button>
-            </div>
-          </div>
+          
         </div>
       </nav>
 
@@ -55,9 +34,7 @@ const Index = () => {
                   <span className="text-primary block mt-4">Light's Out Manufacturing:</span>
                   <span className="block">The Era of Autonomous factories</span>
                 </h1>
-                <p className="body-lg text-muted-foreground">
-                  By: Vegam Team Date:
-                </p>
+                
               </div>
 
               {/* CTA Buttons */}
@@ -656,8 +633,6 @@ const Index = () => {
 
       {/* Footer */}
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
