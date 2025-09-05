@@ -91,7 +91,7 @@ const ShopFloorPortfolio = () => {
   const innerRadius = 120;
   const outerRadius = 240;
   const ringWidth = outerRadius - innerRadius;
-  const iconRadius = innerRadius + 25; // Just outside center circle periphery
+  const iconRadius = innerRadius; // Exactly at center circle border for half-in/half-out effect
   const labelRadius = innerRadius + ringWidth * 0.85; // Closer to outer edge to avoid overlap
 
   const getSegmentPath = (index: number) => {
@@ -209,6 +209,22 @@ const ShopFloorPortfolio = () => {
                   opacity="0.3"
                 />
                 
+                {/* Connector lines from segments to cards */}
+                {segments.map((segment, index) => {
+                  const isActive = activeSegment === index;
+                  return (
+                    <path
+                      key={`connector-${index}`}
+                      d={getConnectorPath(index)}
+                      stroke={isActive ? "#ef4444" : "#d1d5db"}
+                      strokeWidth={isActive ? "2" : "1"}
+                      fill="none"
+                      className="transition-all duration-150"
+                      opacity="0.6"
+                    />
+                  );
+                })}
+                
                 {/* Segments */}
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
@@ -254,7 +270,7 @@ const ShopFloorPortfolio = () => {
                         <circle
                           cx={iconX}
                           cy={iconY}
-                          r="16"
+                          r="24"
                           fill="white"
                           stroke={isActive ? "#ef4444" : "#d1d5db"}
                           strokeWidth={isActive ? "2" : "1"}
@@ -265,15 +281,15 @@ const ShopFloorPortfolio = () => {
                           }}
                         />
                         <foreignObject
-                          x={iconX - 12}
-                          y={iconY - 12}
-                          width="24"
-                          height="24"
+                          x={iconX - 16.5}
+                          y={iconY - 16.5}
+                          width="33"
+                          height="33"
                           className="pointer-events-none"
                         >
                           <div className="w-full h-full flex items-center justify-center">
                             <IconComponent 
-                              size={22} 
+                              size={33} 
                               className={`transition-all duration-150 ${
                                 isActive ? "text-red-500" : "text-gray-600"
                               }`}
@@ -282,24 +298,67 @@ const ShopFloorPortfolio = () => {
                         </foreignObject>
                       </g>
                       
-                      {/* Upright segment label */}
-                      <text 
-                        x={labelX}
-                        y={labelY}
-                        textAnchor="middle"
-                        dominantBaseline="central"
-                        className={`text-sm font-medium tracking-tight pointer-events-none transition-all duration-150 ${
-                          isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
-                        }`}
-                        style={{ 
-                          fontSize: window.innerWidth < 768 ? '11px' : '13px',
-                          fontWeight: isActive ? '600' : '500',
-                          opacity: isActive ? 1.0 : 0.8,
-                          filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none'
-                        }}
-                      >
-                        {window.innerWidth < 768 ? segment.shortTitle : segment.title}
-                      </text>
+                      {/* Upright segment label with multi-line support */}
+                      <g className="pointer-events-none">
+                        {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ? (
+                          // Multi-line labels for segments with "/"
+                          <>
+                            <text
+                              x={labelX}
+                              y={labelY - 8}
+                              textAnchor="middle"
+                              dominantBaseline="central"
+                              className={`text-sm font-medium tracking-tight transition-all duration-150 ${
+                                isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
+                              }`}
+                              style={{ 
+                                fontSize: window.innerWidth < 768 ? '11px' : '13px',
+                                fontWeight: isActive ? '600' : '500',
+                                opacity: isActive ? 1.0 : 0.8,
+                                filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none'
+                              }}
+                            >
+                              {segment.title.split(' / ')[0]}/
+                            </text>
+                            <text
+                              x={labelX}
+                              y={labelY + 8}
+                              textAnchor="middle"
+                              dominantBaseline="central"
+                              className={`text-sm font-medium tracking-tight transition-all duration-150 ${
+                                isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
+                              }`}
+                              style={{ 
+                                fontSize: window.innerWidth < 768 ? '10px' : '12px',
+                                fontWeight: isActive ? '600' : '500',
+                                opacity: isActive ? 1.0 : 0.8,
+                                filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none'
+                              }}
+                            >
+                              {segment.title.split(' / ')[1].toLowerCase()}
+                            </text>
+                          </>
+                        ) : (
+                          // Single line labels
+                          <text 
+                            x={labelX}
+                            y={labelY}
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            className={`text-sm font-medium tracking-tight transition-all duration-150 ${
+                              isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
+                            }`}
+                            style={{ 
+                              fontSize: window.innerWidth < 768 ? '11px' : '13px',
+                              fontWeight: isActive ? '600' : '500',
+                              opacity: isActive ? 1.0 : 0.8,
+                              filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none'
+                            }}
+                          >
+                            {window.innerWidth < 768 ? segment.shortTitle : segment.title}
+                          </text>
+                        )}
+                      </g>
                     </g>
                   );
                 })}
@@ -476,11 +535,37 @@ const ShopFloorPortfolio = () => {
                 opacity="0.3"
               />
               
+              {/* Connector lines for mobile */}
+              {segments.map((segment, index) => {
+                const isActive = activeSegment === index;
+                const angle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                const startX = centerX + Math.cos(angle) * (outerRadius * 0.5); // Scale down for mobile
+                const startY = centerY + Math.sin(angle) * (outerRadius * 0.5);
+                
+                // Mobile cards position (simplified - just show lines going outward)
+                const endX = centerX + Math.cos(angle) * (outerRadius * 0.7);
+                const endY = centerY + Math.sin(angle) * (outerRadius * 0.7);
+                
+                return (
+                  <line
+                    key={`mobile-connector-${index}`}
+                    x1={startX}
+                    y1={startY}
+                    x2={endX}
+                    y2={endY}
+                    stroke={isActive ? "#ef4444" : "#d1d5db"}
+                    strokeWidth={isActive ? "1.5" : "0.5"}
+                    className="transition-all duration-150"
+                    opacity="0.4"
+                  />
+                );
+              })}
+              
               {/* Segments */}
               {segments.map((segment, index) => {
                 const isActive = activeSegment === index;
                 const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                const mobileIconRadius = innerRadius + 20; // Adjusted for mobile
+                const mobileIconRadius = innerRadius; // Exactly at center circle border for mobile too
                 const iconX = centerX + Math.cos(iconAngle) * mobileIconRadius;
                 const iconY = centerY + Math.sin(iconAngle) * mobileIconRadius;
                 
@@ -505,44 +590,85 @@ const ShopFloorPortfolio = () => {
                           <circle
                             cx={iconX}
                             cy={iconY}
-                            r="12"
+                            r="16"
                             fill="white"
                             stroke={isActive ? "#ef4444" : "#d1d5db"}
                             strokeWidth="1"
                           />
                           <foreignObject
-                            x={iconX - 7}
-                            y={iconY - 7}
-                            width="14"
-                            height="14"
+                            x={iconX - 10}
+                            y={iconY - 10}
+                            width="20"
+                            height="20"
                             className="pointer-events-none"
                           >
                             <div className="w-full h-full flex items-center justify-center">
                               <segment.icon 
-                                size={12} 
+                                size={18} 
                                 className={isActive ? "text-red-500" : "text-gray-600"}
                               />
                             </div>
                           </foreignObject>
                         </g>
                         
-                        {/* Upright mobile label */}
-                        <text 
-                          x={labelX}
-                          y={labelY}
-                          textAnchor="middle"
-                          dominantBaseline="central"
-                          className={`text-xs font-medium tracking-tight pointer-events-none transition-all duration-150 ${
-                            isActive ? "fill-gray-900" : "fill-gray-600"
-                          }`}
-                          style={{ 
-                            fontSize: '10px',
-                            fontWeight: isActive ? '600' : '500',
-                            opacity: isActive ? 1.0 : 0.8
-                          }}
-                        >
-                          {segment.shortTitle}
-                        </text>
+                        {/* Upright mobile label with multi-line support */}
+                        <g className="pointer-events-none">
+                          {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ? (
+                            // Multi-line labels for segments with "/"
+                            <>
+                              <text
+                                x={labelX}
+                                y={labelY - 6}
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                className={`text-xs font-medium tracking-tight transition-all duration-150 ${
+                                  isActive ? "fill-gray-900" : "fill-gray-600"
+                                }`}
+                                style={{ 
+                                  fontSize: '9px',
+                                  fontWeight: isActive ? '600' : '500',
+                                  opacity: isActive ? 1.0 : 0.8
+                                }}
+                              >
+                                {segment.title.split(' / ')[0]}/
+                              </text>
+                              <text
+                                x={labelX}
+                                y={labelY + 6}
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                className={`text-xs font-medium tracking-tight transition-all duration-150 ${
+                                  isActive ? "fill-gray-900" : "fill-gray-600"
+                                }`}
+                                style={{ 
+                                  fontSize: '8px',
+                                  fontWeight: isActive ? '600' : '500',
+                                  opacity: isActive ? 1.0 : 0.8
+                                }}
+                              >
+                                {segment.title.split(' / ')[1].toLowerCase()}
+                              </text>
+                            </>
+                          ) : (
+                            // Single line labels
+                            <text 
+                              x={labelX}
+                              y={labelY}
+                              textAnchor="middle"
+                              dominantBaseline="central"
+                              className={`text-xs font-medium tracking-tight transition-all duration-150 ${
+                                isActive ? "fill-gray-900" : "fill-gray-600"
+                              }`}
+                              style={{ 
+                                fontSize: '10px',
+                                fontWeight: isActive ? '600' : '500',
+                                opacity: isActive ? 1.0 : 0.8
+                              }}
+                            >
+                              {segment.shortTitle}
+                            </text>
+                          )}
+                        </g>
                       </g>
                 );
               })}
