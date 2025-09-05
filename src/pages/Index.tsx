@@ -701,10 +701,10 @@ const Index = () => {
           {/* Torch Light Beam Effect */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/2 left-8 lg:left-1/4 w-96 h-96 -translate-y-1/2 opacity-20">
-              <div className="w-full h-full bg-gradient-radial from-orange-300/40 via-yellow-200/30 to-transparent rounded-full blur-2xl"></div>
+              <div className="w-full h-full bg-gradient-radial from-red-300/40 via-red-200/30 to-transparent rounded-full blur-2xl"></div>
             </div>
             <div className="absolute top-1/2 left-8 lg:left-1/4 w-[800px] h-[400px] -translate-y-1/2 opacity-10">
-              <div className="w-full h-full bg-gradient-to-r from-orange-200/60 via-yellow-100/40 to-blue-100/20 transform -skew-y-12 blur-3xl"></div>
+              <div className="w-full h-full bg-gradient-to-r from-red-200/60 via-red-100/40 to-blue-100/20 transform -skew-y-12 blur-3xl"></div>
             </div>
           </div>
           
@@ -712,18 +712,18 @@ const Index = () => {
             {/* Left Block - Torch Source */}
             <div className="relative">
               {/* Torch Glow Effect */}
-              <div className="absolute -right-4 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent via-orange-200/30 to-yellow-200/20 blur-sm"></div>
+              <div className="absolute -right-4 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent via-red-200/30 to-red-200/20 blur-sm"></div>
               
-              <div className="bg-white rounded-2xl p-8 shadow-xl shadow-orange-100/50 border border-orange-100/50 relative">
-                <div className="absolute top-4 right-4 w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
+              <div className="bg-white rounded-2xl p-8 shadow-xl shadow-red-100/50 border border-red-100/50 relative">
+                <div className="absolute top-4 right-4 w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
                 <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full"></div>
+                  <div className="w-8 h-8 bg-gradient-to-r from-red-400 to-red-500 rounded-full"></div>
                   Core Enterprise Value Drivers
                 </h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4 group">
-                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-orange-300/50 transition-all duration-300">
+                    <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-gray-300/50 transition-all duration-300">
                       <Settings className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -733,7 +733,7 @@ const Index = () => {
                   </div>
                   
                   <div className="flex items-start space-x-4 group">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-blue-300/50 transition-all duration-300">
+                    <div className="w-12 h-12 bg-slate-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-slate-300/50 transition-all duration-300">
                       <BarChart3 className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -743,7 +743,7 @@ const Index = () => {
                   </div>
                   
                   <div className="flex items-start space-x-4 group">
-                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-green-300/50 transition-all duration-300">
+                    <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-gray-300/50 transition-all duration-300">
                       <Database className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -753,7 +753,7 @@ const Index = () => {
                   </div>
                   
                   <div className="flex items-start space-x-4 group">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-purple-300/50 transition-all duration-300">
+                    <div className="w-12 h-12 bg-zinc-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-zinc-300/50 transition-all duration-300">
                       <Hand className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -763,7 +763,7 @@ const Index = () => {
                   </div>
                   
                   <div className="flex items-start space-x-4 group">
-                    <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-red-300/50 transition-all duration-300">
+                    <div className="w-12 h-12 bg-stone-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-stone-300/50 transition-all duration-300">
                       <Target className="w-6 h-6 text-white" />
                     </div>
                     <div>
