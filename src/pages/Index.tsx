@@ -323,38 +323,8 @@ const Index = () => {
             </div>
 
             {/* Company Logos Grid */}
-            <div className="grid grid-cols-5 gap-4 mb-8">
-              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
-                <img src="https://vegam.co/lovable-uploads/1a590db5-6790-4c96-846f-1908fd8142ea.png" alt="Bostik" className="max-w-full max-h-full object-contain" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
-                <img src="https://vegam.co/lovable-uploads/a130b90f-7ac1-4960-920e-a0474132e26f.png" alt="Emerson" className="max-w-full max-h-full object-contain" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
-                <img src="https://vegam.co/lovable-uploads/a566f628-b7a5-488d-ae06-e4f4dc306e28.png" alt="JSL Jindal Stainless" className="max-w-full max-h-full object-contain" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
-                <img src="https://vegam.co/lovable-uploads/83bbbced-e06e-48c3-b1e2-1a0879172c1c.png" alt="Indorama" className="max-w-full max-h-full object-contain" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
-                <img src="https://vegam.co/lovable-uploads/c0b6dbaa-39e8-4181-8f27-a1e1e3a63bda.png" alt="LG Electronics" className="max-w-full max-h-full object-contain" />
-              </div>
-              
-              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
-                <img src="https://vegam.co/lovable-uploads/3a453a0d-1d64-4438-b964-ce77b954bdb1.png" alt="JSW Steel" className="max-w-full max-h-full object-contain" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
-                <img src="https://vegam.co/lovable-uploads/fcf8d687-3ef1-4c16-993e-16dd3eb46b83.png" alt="Saint-Gobain" className="max-w-full max-h-full object-contain" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
-                <img src="https://vegam.co/lovable-uploads/5693a6a3-2dff-454a-9982-d16213261092.png" alt="SEP India" className="max-w-full max-h-full object-contain" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
-                <img src="https://vegam.co/lovable-uploads/28ac4552-9267-4e43-9929-9dff1c9e7f86.png" alt="SKF" className="max-w-full max-h-full object-contain" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
-                <img src="https://vegam.co/lovable-uploads/66fde0cf-949d-4508-81a6-02eeeb41e212.png" alt="Solex Logistics" className="max-w-full max-h-full object-contain" />
-              </div>
+            <div className="flex justify-center mb-8">
+              <img src="/lovable-uploads/85aadf10-6770-458d-a137-5836196e9f54.png" alt="Global partner company logos including ARKEMA, BASF, BELCO, BOSTIK, EMERSON, EVONIK, HENKEL, Saint-Gobain, SEP, Avery Dennison, SKF, SOLEX, Unilever, Vedanta, INDORAMA, JSL, JSW Steel, LG Electronics, MRCC, Target, and OKW" className="max-w-full h-auto" />
             </div>
           </div>
 
