@@ -86,7 +86,7 @@ const ShopFloorPortfolio = () => {
   ];
 
   // Rotation offset to align wedges with cards (anticlockwise rotation)
-  const rotationOffset = -30; // Rotate 30 degrees anticlockwise for better alignment
+  const rotationOffset = -50; // Rotate 50 degrees anticlockwise for better alignment
 
   const getSegmentPath = (index: number) => {
     const angleStart = (index * 60 - 90 + rotationOffset) * Math.PI / 180;
