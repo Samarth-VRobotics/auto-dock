@@ -599,7 +599,7 @@ const Index = () => {
                 </g>
 
                 {/* 8) 2026 (future) */}
-                <g className="milestone" data-key="2026" transform="translate(1064,135)" tabIndex={0} 
+                <g className="milestone" data-key="2026" transform="translate(1064,114)" tabIndex={0} 
                    aria-label="2026 — Projected First Fully Autonomous Plant">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
