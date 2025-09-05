@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
-import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target } from "lucide-react";
+import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Settings, Database, Hand, Cpu, Gauge, Lightbulb } from "lucide-react";
 import autonomousProductionLine from "@/assets/autonomous-production-line.jpg";
 import smartFactoryHall from "@/assets/smart-factory-hall.jpg";
 import manufacturingEvolutionLab from "@/assets/manufacturing-evolution-lab.jpg";
@@ -740,93 +740,105 @@ const Index = () => {
             <h2 className="heading-lg mb-4">Why Vegam?</h2>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div className="bg-card rounded-2xl p-8 border shadow-lg">
-              <h3 className="heading-md mb-8 text-primary">Core Enterprise Value Drivers</h3>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Left Side - Core Enterprise Value Drivers */}
+            <div className="bg-muted/20 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-foreground mb-8">Core Enterprise Value Drivers</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center flex-shrink-0 border-2 border-border">
+                    <Settings className="w-6 h-6 text-muted-foreground" />
+                  </div>
                   <div>
-                    <h4 className="heading-sm mb-2">Modular & Scalable</h4>
-                    <p className="body-base text-muted-foreground">Designed to grow with enterprise needs.</p>
+                    <h4 className="font-bold text-foreground mb-1">Modular & Scalable</h4>
+                    <p className="text-sm text-muted-foreground">Designed to grow with enterprise needs.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center flex-shrink-0 border-2 border-border">
+                    <BarChart3 className="w-6 h-6 text-muted-foreground" />
+                  </div>
                   <div>
-                    <h4 className="heading-sm mb-2">Digital Transformation Ready</h4>
-                    <p className="body-base text-muted-foreground">Roadmap toward Industry 4.0.</p>
+                    <h4 className="font-bold text-foreground mb-1">Digital Transformation Ready</h4>
+                    <p className="text-sm text-muted-foreground">Roadmap toward Industry 4.0.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center flex-shrink-0 border-2 border-border">
+                    <Database className="w-6 h-6 text-muted-foreground" />
+                  </div>
                   <div>
-                    <h4 className="heading-sm mb-2">Unified Data Management</h4>
-                    <p className="body-base text-muted-foreground">Integrated data to boost innovation.</p>
+                    <h4 className="font-bold text-foreground mb-1">Unified Data Management</h4>
+                    <p className="text-sm text-muted-foreground">Integrated data to boost innovation.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center flex-shrink-0 border-2 border-border">
+                    <Hand className="w-6 h-6 text-muted-foreground" />
+                  </div>
                   <div>
-                    <h4 className="heading-sm mb-2">Complete Ownership</h4>
-                    <p className="body-base text-muted-foreground">On-premise deployment with full control.</p>
+                    <h4 className="font-bold text-foreground mb-1">Complete Ownership</h4>
+                    <p className="text-sm text-muted-foreground">On-premise deployment with full control.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center flex-shrink-0 border-2 border-border">
+                    <Target className="w-6 h-6 text-muted-foreground" />
+                  </div>
                   <div>
-                    <h4 className="heading-sm mb-2">Customized Optimization</h4>
-                    <p className="body-base text-muted-foreground">Proprietary algorithms for competitive edge.</p>
+                    <h4 className="font-bold text-foreground mb-1">Customized Optimization</h4>
+                    <p className="text-sm text-muted-foreground">Proprietary algorithms for competitive edge.</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="bg-card rounded-2xl p-8 border shadow-lg">
-              <h3 className="heading-md mb-8 text-secondary">Future-Ready, Autonomous Factories</h3>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="heading-sm mb-2">Autonomous Operations</h4>
-                    <p className="body-base text-muted-foreground">Self-driven execution across plants & processes.</p>
+            {/* Right Side - Future-Ready, Autonomous Factories */}
+            <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold text-white mb-8">Future-Ready, Autonomous Factories</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/95 rounded-xl p-4 text-center">
+                  <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                    <Cog className="w-8 h-8 text-blue-600" />
                   </div>
+                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Autonomous Operations</h4>
+                  <p className="text-xs text-gray-600">Self-driven execution across plants & processes.</p>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="heading-sm mb-2">Proactive Risk Mitigation</h4>
-                    <p className="body-base text-muted-foreground">AI-enabled robotics predict & prevent hazards.</p>
+                <div className="bg-white/95 rounded-xl p-4 text-center">
+                  <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                    <Shield className="w-8 h-8 text-blue-600" />
                   </div>
+                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Proactive Risk Mitigation</h4>
+                  <p className="text-xs text-gray-600">AI-enabled robotics predict & prevent hazards.</p>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="heading-sm mb-2">Hyper-Scalable Manufacturing</h4>
-                    <p className="body-base text-muted-foreground">Intelligent orchestration across geographies.</p>
+                <div className="bg-white/95 rounded-xl p-4 text-center">
+                  <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                    <Cpu className="w-8 h-8 text-blue-600" />
                   </div>
+                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Hyper-Scalable Manufacturing</h4>
+                  <p className="text-xs text-gray-600">Intelligent orchestration across geographies.</p>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="heading-sm mb-2">Continuous Optimization</h4>
-                    <p className="body-base text-muted-foreground">Real-time workflow, energy & downtime efficiency.</p>
+                <div className="bg-white/95 rounded-xl p-4 text-center">
+                  <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                    <Gauge className="w-8 h-8 text-blue-600" />
                   </div>
+                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Continuous Optimization</h4>
+                  <p className="text-xs text-gray-600">Real-time workflow, energy & downtime efficiency.</p>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="heading-sm mb-2">Transformational Growth</h4>
-                    <p className="body-base text-muted-foreground">Unlock new business models & value creation.</p>
+                <div className="bg-white/95 rounded-xl p-4 text-center col-span-2">
+                  <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                    <Lightbulb className="w-8 h-8 text-blue-600" />
                   </div>
+                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Transformational Growth</h4>
+                  <p className="text-xs text-gray-600">Unlock new business models & value creation.</p>
                 </div>
               </div>
             </div>
