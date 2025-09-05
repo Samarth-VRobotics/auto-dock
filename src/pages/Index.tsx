@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import ShopFloorPortfolio from "@/components/ShopFloorPortfolio";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
 import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Settings, Database, Hand, Cpu, Gauge, Lightbulb } from "lucide-react";
@@ -526,25 +527,27 @@ const Index = () => {
           </div>
           
           {/* Strategic Partnerships */}
-          <div className="space-y-8 mb-16">
-            <div className="bg-blue-100/80 rounded-lg p-6 border border-blue-200">
-              <div className="flex items-center gap-3 mb-4">
-                <Hand className="w-6 h-6 text-blue-600" />
-                <h3 className="heading-sm text-blue-900">Strategic Partnerships</h3>
+          <Card className="mb-16">
+            <CardContent className="space-y-8 p-8">
+              <div className="bg-blue-100/80 rounded-lg p-6 border border-blue-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <Hand className="w-6 h-6 text-blue-600" />
+                  <h3 className="heading-sm text-blue-900">Strategic Partnerships</h3>
+                </div>
               </div>
-            </div>
-            
-            <div className="text-center mb-8">
-              <p className="text-lg font-medium text-gray-800 mb-8">
-                Trusted Long-Term Partner to Global Leaders in Chemicals & Manufacturing
-              </p>
-            </div>
+              
+              <div className="text-center mb-8">
+                <p className="text-lg font-medium text-gray-800 mb-8">
+                  Trusted Long-Term Partner to Global Leaders in Chemicals & Manufacturing
+                </p>
+              </div>
 
-            {/* Company Logos Grid */}
-            <div className="flex justify-center mb-8">
-              <img src="/lovable-uploads/85aadf10-6770-458d-a137-5836196e9f54.png" alt="Global partner company logos including ARKEMA, BASF, BELCO, BOSTIK, EMERSON, EVONIK, HENKEL, Saint-Gobain, SEP, Avery Dennison, SKF, SOLEX, Unilever, Vedanta, INDORAMA, JSL, JSW Steel, LG Electronics, MRCC, Target, and OKW" className="max-w-full h-auto" />
-            </div>
-          </div>
+              {/* Company Logos Grid */}
+              <div className="flex justify-center mb-8">
+                <img src="/lovable-uploads/85aadf10-6770-458d-a137-5836196e9f54.png" alt="Global partner company logos including ARKEMA, BASF, BELCO, BOSTIK, EMERSON, EVONIK, HENKEL, Saint-Gobain, SEP, Avery Dennison, SKF, SOLEX, Unilever, Vedanta, INDORAMA, JSL, JSW Steel, LG Electronics, MRCC, Target, and OKW" className="max-w-full h-auto" />
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Implementation Excellence */}
           <div className="space-y-6 mb-16">
