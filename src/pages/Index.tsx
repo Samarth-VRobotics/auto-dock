@@ -455,17 +455,17 @@ const Index = () => {
                   </feMerge>
                 </filter>
                 <clipPath id="imageClip">
-                  <rect x="20" y="20" width="450" height="180" rx="16"/>
+                  <rect x="20" y="20" width="675" height="270" rx="16"/>
                 </clipPath>
               </defs>
 
-              {/* Manufacturing Evolution Image - Top Left (2x smaller) */}
+              {/* Manufacturing Evolution Image - Top Left (1.5x bigger) */}
               <image 
                 href="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png"
                 x="20" 
                 y="20" 
-                width="450" 
-                height="180"
+                width="675" 
+                height="270"
                 clipPath="url(#imageClip)"
                 className="manufacturing-image"
                 style={{ filter: 'drop-shadow(0 8px 25px hsl(var(--foreground) / 0.15))' }}
@@ -473,8 +473,8 @@ const Index = () => {
               <rect 
                 x="20" 
                 y="20" 
-                width="450" 
-                height="180" 
+                width="675" 
+                height="270" 
                 rx="16" 
                 fill="none" 
                 stroke="hsl(var(--border))" 
