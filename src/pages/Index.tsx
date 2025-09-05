@@ -370,7 +370,7 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Vegam's <span className="text-red-600">Offerings</span></h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Row 1: MOM and GOM */}
             <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift h-full">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
