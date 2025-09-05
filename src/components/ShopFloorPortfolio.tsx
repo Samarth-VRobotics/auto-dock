@@ -198,21 +198,6 @@ const ShopFloorPortfolio = () => {
             <div className="absolute inset-0 flex items-center justify-center">
               <svg ref={svgRef} width="640" height="640" viewBox="0 0 640 640" className="overflow-visible">
                 <defs>
-                  {/* Arrowhead marker */}
-                  <marker
-                    id="arrowhead"
-                    markerWidth="10"
-                    markerHeight="7"
-                    refX="10"
-                    refY="3.5"
-                    orient="auto"
-                  >
-                    <polygon
-                      points="0 0, 10 3.5, 0 7"
-                      fill="#ef4444"
-                    />
-                  </marker>
-                  
                   {/* Glow filter */}
                   <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                     <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -294,7 +279,7 @@ const ShopFloorPortfolio = () => {
                   );
                 })}
                 
-                {/* Connector lines with arrowheads */}
+                {/* Connector lines */}
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
                   const connectorPath = getConnectorPath(index);
@@ -308,7 +293,6 @@ const ShopFloorPortfolio = () => {
                       fill="none"
                       className="transition-all duration-150"
                       opacity={isActive ? 1 : 0.6}
-                      markerEnd="url(#arrowhead)"
                     />
                   );
                 })}
