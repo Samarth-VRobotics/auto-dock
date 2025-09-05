@@ -233,16 +233,22 @@ const ShopFloorPortfolio = () => {
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
                   const centroid = getSegmentCentroid(index);
+                  const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                  const iconRadius = (innerRadius + outerRadius) / 2;
+                  const iconX = centerX + Math.cos(iconAngle) * iconRadius;
+                  const iconY = centerY + Math.sin(iconAngle) * iconRadius;
+                  const IconComponent = segment.icon;
                   
                   return (
                     <g key={segment.id}>
+                      {/* Main segment path */}
                       <path
                         id={`segment-${index}`}
                         d={getSegmentPath(index)}
                         fill={isActive ? "#fef2f2" : "white"}
                         stroke={isActive ? "#ef4444" : "#e5e7eb"}
                         strokeWidth={isActive ? "3" : "1"}
-                        className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50"
+                        className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2"
                         style={{
                           transform: isActive ? 'scale(1.06)' : 'scale(1)',
                           transformOrigin: `${centroid.x}px ${centroid.y}px`,
@@ -259,9 +265,44 @@ const ShopFloorPortfolio = () => {
                         onKeyDown={(e) => handleKeyDown(e, index)}
                       />
                       
+                      {/* Icon on segment */}
+                      <g className="pointer-events-none">
+                        <circle
+                          cx={iconX}
+                          cy={iconY}
+                          r="18"
+                          fill="white"
+                          stroke={isActive ? "#ef4444" : "#d1d5db"}
+                          strokeWidth={isActive ? "2" : "1"}
+                          className="transition-all duration-150"
+                          style={{
+                            transform: isActive ? 'scale(1.1)' : 'scale(1)',
+                            transformOrigin: `${iconX}px ${iconY}px`
+                          }}
+                        />
+                        <foreignObject
+                          x={iconX - 10}
+                          y={iconY - 10}
+                          width="20"
+                          height="20"
+                          className="pointer-events-none"
+                        >
+                          <div className="w-full h-full flex items-center justify-center">
+                            <IconComponent 
+                              size={18} 
+                              className={`transition-all duration-150 ${
+                                isActive ? "text-red-500" : "text-gray-600"
+                              }`}
+                            />
+                          </div>
+                        </foreignObject>
+                      </g>
+                      
                       {/* Curved segment label */}
                       <text 
-                        className="text-sm font-medium fill-gray-700 pointer-events-none"
+                        className={`text-sm font-medium pointer-events-none transition-all duration-150 ${
+                          isActive ? "fill-red-600 font-semibold" : "fill-gray-700"
+                        }`}
                         style={{ 
                           fontSize: window.innerWidth < 768 ? '11px' : '13px',
                           fontWeight: isActive ? '600' : '500'
@@ -344,15 +385,7 @@ const ShopFloorPortfolio = () => {
                           onMouseEnter={() => setActiveSegment(segmentIndex)}
                           onClick={() => setActiveSegment(segmentIndex)}
                         >
-                          <div className="flex items-center space-x-3 mb-4">
-                            <div className={`p-2 rounded-lg ${
-                              isActive ? 'bg-red-100' : 'bg-gray-100'
-                            }`}>
-                              <IconComponent 
-                                size={20} 
-                                className={isActive ? 'text-red-600' : 'text-gray-600'} 
-                              />
-                            </div>
+                          <div className="mb-4">
                             <h3 className={`text-lg font-bold transition-colors ${
                               isActive ? 'text-red-600' : 'text-gray-900'
                             }`}>
@@ -407,15 +440,7 @@ const ShopFloorPortfolio = () => {
                           onMouseEnter={() => setActiveSegment(segmentIndex)}
                           onClick={() => setActiveSegment(segmentIndex)}
                         >
-                          <div className="flex items-center space-x-3 mb-4">
-                            <div className={`p-2 rounded-lg ${
-                              isActive ? 'bg-red-100' : 'bg-gray-100'
-                            }`}>
-                              <IconComponent 
-                                size={20} 
-                                className={isActive ? 'text-red-600' : 'text-gray-600'} 
-                              />
-                            </div>
+                          <div className="mb-4">
                             <h3 className={`text-lg font-bold transition-colors ${
                               isActive ? 'text-red-600' : 'text-gray-900'
                             }`}>
@@ -471,25 +496,52 @@ const ShopFloorPortfolio = () => {
               {segments.map((segment, index) => {
                 const isActive = activeSegment === index;
                 return (
-                  <g key={segment.id}>
-                    <path
-                      d={getSegmentPath(index)}
-                      fill={isActive ? "#fef2f2" : "white"}
-                      stroke={isActive ? "#ef4444" : "#e5e7eb"}
-                      strokeWidth={isActive ? "2" : "1"}
-                      className="cursor-pointer transition-all duration-150"
-                      onClick={() => setActiveSegment(index)}
-                    />
-                    <text className="text-xs font-medium fill-gray-700 pointer-events-none">
-                      <textPath 
-                        href={`#mobile-textpath-${index}`} 
-                        startOffset="50%" 
-                        textAnchor="middle"
-                      >
-                        {segment.shortTitle}
-                      </textPath>
-                    </text>
-                  </g>
+                      <g key={segment.id}>
+                        <path
+                          d={getSegmentPath(index)}
+                          fill={isActive ? "#fef2f2" : "white"}
+                          stroke={isActive ? "#ef4444" : "#e5e7eb"}
+                          strokeWidth={isActive ? "2" : "1"}
+                          className="cursor-pointer transition-all duration-150 hover:fill-red-50 hover:stroke-red-400"
+                          onClick={() => setActiveSegment(index)}
+                        />
+                        
+                        {/* Mobile segment icon */}
+                        <g className="pointer-events-none">
+                          <circle
+                            cx={centerX + Math.cos((index * 60 - 90 + 30 - 60) * Math.PI / 180) * ((innerRadius + outerRadius) / 2)}
+                            cy={centerY + Math.sin((index * 60 - 90 + 30 - 60) * Math.PI / 180) * ((innerRadius + outerRadius) / 2)}
+                            r="14"
+                            fill="white"
+                            stroke={isActive ? "#ef4444" : "#d1d5db"}
+                            strokeWidth="1"
+                          />
+                          <foreignObject
+                            x={centerX + Math.cos((index * 60 - 90 + 30 - 60) * Math.PI / 180) * ((innerRadius + outerRadius) / 2) - 8}
+                            y={centerY + Math.sin((index * 60 - 90 + 30 - 60) * Math.PI / 180) * ((innerRadius + outerRadius) / 2) - 8}
+                            width="16"
+                            height="16"
+                            className="pointer-events-none"
+                          >
+                            <div className="w-full h-full flex items-center justify-center">
+                              <segment.icon 
+                                size={14} 
+                                className={isActive ? "text-red-500" : "text-gray-600"}
+                              />
+                            </div>
+                          </foreignObject>
+                        </g>
+                        
+                        <text className="text-xs font-medium fill-gray-700 pointer-events-none">
+                          <textPath 
+                            href={`#mobile-textpath-${index}`} 
+                            startOffset="50%" 
+                            textAnchor="middle"
+                          >
+                            {segment.shortTitle}
+                          </textPath>
+                        </text>
+                      </g>
                 );
               })}
               
@@ -542,15 +594,7 @@ const ShopFloorPortfolio = () => {
                   onClick={() => setActiveSegment(activeSegment === index ? -1 : index)}
                 >
                   <div className="p-5 flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className={`p-2 rounded-lg ${
-                        isActive ? 'bg-red-100' : 'bg-gray-100'
-                      }`}>
-                        <IconComponent 
-                          size={18} 
-                          className={isActive ? 'text-red-600' : 'text-gray-600'} 
-                        />
-                      </div>
+                    <div>
                       <h3 className={`font-bold ${
                         isActive ? 'text-red-600' : 'text-gray-900'
                       }`}>
