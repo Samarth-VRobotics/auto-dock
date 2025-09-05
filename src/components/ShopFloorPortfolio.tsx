@@ -141,18 +141,18 @@ const ShopFloorPortfolio = () => {
 
   const getArrowPath = (index: number) => {
     const segment = segments[index];
-    const anchorPos = getAnchorPosition(index);
+    const iconPos = getIconPosition(index);
     const isLeft = segment.side === 'left';
     
     // Card positions - vertical center of each card
     const cardCenterY = 100 + (segment.slot * 180) + 90; // Card vertical center
-    const cardEdgeX = isLeft ? 60 + 260 : 540; // Card edge (left edge for left cards, right edge for right cards)
+    const cardEdgeX = isLeft ? 60 + 260 - 4 : 540 + 4; // Card edge with 4px inside offset
     
-    // Straight line from anchor port to card edge
-    const startX = anchorPos.x;
-    const endX = cardEdgeX + (isLeft ? -4 : 4); // Terminate just inside card edge (2-4px)
+    // Straight line from icon node center to card edge
+    const startX = iconPos.x;
+    const startY = iconPos.y;
     
-    return `M ${startX} ${anchorPos.y} L ${endX} ${cardCenterY}`;
+    return `M ${startX} ${startY} L ${cardEdgeX} ${cardCenterY}`;
   };
 
   return (
@@ -187,13 +187,13 @@ const ShopFloorPortfolio = () => {
                   <marker
                     id="arrowhead"
                     markerWidth="10"
-                    markerHeight="8"
+                    markerHeight="10"
                     refX="9"
-                    refY="4"
+                    refY="5"
                     orient="auto"
                     fill="#ef4444"
                   >
-                    <polygon points="0 0, 10 4, 0 8" fill="#ef4444" />
+                    <polygon points="0 0, 10 5, 0 10" fill="#ef4444" />
                   </marker>
                   
                   <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -246,7 +246,7 @@ const ShopFloorPortfolio = () => {
                   );
                 })}
                 
-                {/* Arrows - from anchor ports to cards */}
+                {/* Arrows - from icon nodes to cards */}
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
                   const arrowPath = getArrowPath(index);
@@ -255,8 +255,8 @@ const ShopFloorPortfolio = () => {
                     <path
                       key={`arrow-${index}`}
                       d={arrowPath}
-                      stroke={isActive ? "#ef4444" : "#d1d5db"}
-                      strokeWidth={isActive ? "2.5" : "2"}
+                      stroke={isActive ? "#ef4444" : "#ef4444"}
+                      strokeWidth="2"
                       fill="none"
                       markerEnd="url(#arrowhead)"
                       className="transition-all duration-200"
@@ -300,26 +300,6 @@ const ShopFloorPortfolio = () => {
                   );
                 })}
                 
-                {/* Anchor Ports */}
-                {segments.map((segment, index) => {
-                  const pos = getAnchorPosition(index);
-                  const isActive = activeSegment === index;
-                  
-                  return (
-                    <circle
-                      key={`port-${segment.id}`}
-                      cx={pos.x}
-                      cy={pos.y}
-                      r="6"
-                      fill="white"
-                      stroke={isActive ? "#ef4444" : "#d1d5db"}
-                      strokeWidth="1"
-                      className="transition-all duration-200"
-                      style={{ zIndex: 2 }}
-                    />
-                  );
-                })}
-                
                 {/* Icon Nodes */}
                 {segments.map((segment, index) => {
                   const pos = getIconPosition(index);
@@ -336,11 +316,13 @@ const ShopFloorPortfolio = () => {
                         fill="white"
                         stroke={isActive ? "#ef4444" : "#d1d5db"}
                         strokeWidth={isActive ? "2" : "1"}
-                        className="transition-all duration-200"
+                        className="cursor-pointer transition-all duration-200"
                         style={{
                           transform: isActive ? 'scale(1.06)' : 'scale(1)',
                           transformOrigin: `${pos.x}px ${pos.y}px`
                         }}
+                        onMouseEnter={() => setActiveSegment(index)}
+                        onClick={() => setActiveSegment(index)}
                       />
                       
                       {/* Icon */}
