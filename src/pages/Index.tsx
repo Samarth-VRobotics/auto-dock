@@ -307,9 +307,11 @@ const Index = () => {
       <section className="vegam-journey section-padding bg-gradient-to-br from-background via-muted/30 to-accent/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 opacity-40"></div>
         <div className="container mx-auto px-6 lg:px-8 relative">
-          <div className="text-center mb-16">
-            <h2 className="heading-lg mb-4 text-foreground">Vegam Journey: Proven History in Manufacturing Transformation</h2>
-            <p className="body-lg text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 text-foreground px-4">
+              Vegam Journey: Proven History in Manufacturing Transformation
+            </h2>
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto px-4 leading-relaxed">
               Over two decades of experience in digitalizing and transforming manufacturing operations across the globe.
             </p>
           </div>
@@ -440,10 +442,24 @@ const Index = () => {
               
               /* Mobile responsive adjustments */
               @media (max-width: 768px) {
-                .vj-svg { padding: 20px 10px; }
-                .vj-year { font-size: 16px; }
-                .vj-year-visible { font-size: 14px; }
-                .vj-cap { font-size: 12px; }
+                .vj-svg { padding: 25px 15px; }
+                .vj-year { font-size: 20px; }
+                .vj-year-visible { font-size: 18px; font-weight: 700; }
+                .vj-cap { font-size: 14px; font-weight: 600; }
+                .vj-node { r: 28; }
+                .vj-node-ring { r: 35; }
+                .vj-card rect { height: 60; rx: 16; }
+              }
+              
+              /* Tablet responsive adjustments */
+              @media (min-width: 769px) and (max-width: 1024px) {
+                .vj-svg { padding: 30px 20px; }
+                .vj-year { font-size: 22px; }
+                .vj-year-visible { font-size: 20px; font-weight: 700; }
+                .vj-cap { font-size: 16px; font-weight: 600; }
+                .vj-node { r: 30; }
+                .vj-node-ring { r: 38; }
+                .vj-card rect { height: 65; rx: 18; }
               }
             `}</style>
             <svg className="vj-svg" viewBox="0 0 1360 600" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">

@@ -171,8 +171,8 @@ const ShopFloorPortfolio = () => {
       }}
     >
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 md:mb-6 px-4 leading-tight">
             Our Integrated Shop Floor Automation Portfolio
           </h2>
         </div>
@@ -293,8 +293,8 @@ const ShopFloorPortfolio = () => {
                     const labelX = centerX + Math.cos(labelAngle) * labelRadius;
                     const labelY = centerY + Math.sin(labelAngle) * labelRadius;
                     
-                    // Larger icon sizing (doubled from 22-24px to 40-48px desktop)
-                    const iconSize = window.innerWidth < 768 ? 32 : window.innerWidth < 1024 ? 40 : 48;
+                    // Enhanced icon sizing for better mobile/tablet experience
+                    const iconSize = window.innerWidth < 768 ? 40 : window.innerWidth < 1024 ? 48 : 52;
                     const iconBgRadius = iconSize / 2 + 4;
                     
                     return (
@@ -511,14 +511,20 @@ const ShopFloorPortfolio = () => {
           </div>
         </div>
 
-        {/* Mobile Layout */}
+        {/* Mobile & Tablet Layout */}
         <div className="lg:hidden">
-          <div className="flex justify-center mb-12">
-            <svg width="320" height="320" viewBox="0 0 640 640">
+          <div className="flex justify-center mb-12 md:mb-16">
+            <svg 
+              width="100%" 
+              height="400" 
+              viewBox="0 0 640 640" 
+              className="drop-shadow-lg max-w-sm md:max-w-md"
+              style={{ minHeight: '350px' }}
+            >
               <defs>
-                {/* Glow filter */}
+                {/* Enhanced Glow filter */}
                 <filter id="mobile-glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
                   <feMerge>
                     <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="SourceGraphic"/>
@@ -587,27 +593,32 @@ const ShopFloorPortfolio = () => {
                           onClick={() => setActiveSegment(index)}
                         />
                         
-                        {/* Mobile segment icon */}
+                        {/* Enhanced Mobile segment icon */}
                         <g className="pointer-events-none">
                           <circle
                             cx={iconX}
                             cy={iconY}
-                            r="16"
+                            r="22"
                             fill="white"
                             stroke={isActive ? "#ef4444" : "#d1d5db"}
-                            strokeWidth="1"
+                            strokeWidth={isActive ? "2" : "1"}
+                            className="transition-all duration-150"
+                            style={{
+                              transform: isActive ? 'scale(1.1)' : 'scale(1)',
+                              transformOrigin: `${iconX}px ${iconY}px`
+                            }}
                           />
                           <foreignObject
-                            x={iconX - 10}
-                            y={iconY - 10}
-                            width="20"
-                            height="20"
+                            x={iconX - 14}
+                            y={iconY - 14}
+                            width="28"
+                            height="28"
                             className="pointer-events-none"
                           >
                             <div className="w-full h-full flex items-center justify-center">
                               <segment.icon 
-                                size={18} 
-                                className={isActive ? "text-red-500" : "text-gray-600"}
+                                size={24} 
+                                className={`transition-all duration-150 ${isActive ? "text-red-500" : "text-gray-600"}`}
                               />
                             </div>
                           </foreignObject>
@@ -709,8 +720,8 @@ const ShopFloorPortfolio = () => {
             </svg>
           </div>
           
-          {/* Mobile Cards */}
-          <div className="space-y-4">
+          {/* Enhanced Mobile & Tablet Cards */}
+          <div className="space-y-4 md:space-y-6 px-4">
             {segments.map((segment, index) => {
               const isActive = activeSegment === index;
               const IconComponent = segment.icon;
@@ -718,28 +729,35 @@ const ShopFloorPortfolio = () => {
               return (
                 <div
                   key={segment.id}
-                  className={`bg-white rounded-2xl border cursor-pointer transition-all duration-150 ${
-                    isActive ? 'border-red-400 shadow-xl' : 'border-gray-200 shadow-lg'
+                  className={`bg-white rounded-2xl md:rounded-3xl border cursor-pointer transition-all duration-150 ${
+                    isActive ? 'border-red-400 shadow-xl scale-[1.02]' : 'border-gray-200 shadow-lg hover:shadow-xl'
                   }`}
                   onClick={() => setActiveSegment(activeSegment === index ? -1 : index)}
                 >
-                  <div className="p-5 flex items-center justify-between">
-                    <div>
-                      <h3 className={`font-bold ${
-                        isActive ? 'text-red-600' : 'text-gray-900'
-                      }`}>
-                        {segment.title}
-                      </h3>
+                  <div className="p-6 md:p-8 flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      <div className={`p-3 md:p-4 rounded-xl ${
+                        isActive ? 'bg-red-50 text-red-500' : 'bg-gray-50 text-gray-600'
+                      } transition-colors duration-150`}>
+                        <IconComponent size={24} className="md:w-7 md:h-7" />
+                      </div>
+                      <div>
+                        <h3 className={`text-lg md:text-xl font-bold leading-tight ${
+                          isActive ? 'text-red-600' : 'text-gray-900'
+                        }`}>
+                          {segment.title}
+                        </h3>
+                      </div>
                     </div>
                   </div>
                   
                   {isActive && (
-                    <div className="px-5 pb-5 animate-accordion-down">
-                      <ul className="space-y-2.5 ml-10">
+                    <div className="px-6 md:px-8 pb-6 md:pb-8 animate-accordion-down">
+                      <ul className="space-y-3 md:space-y-4 ml-2">
                         {segment.description.map((point, pointIndex) => (
-                          <li key={pointIndex} className="flex items-start space-x-3 text-sm text-gray-600">
-                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-500 flex-shrink-0"></span>
-                            <span className="leading-relaxed">{point}</span>
+                          <li key={pointIndex} className="flex items-start space-x-4 text-base md:text-lg text-gray-600">
+                            <span className="mt-2 w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-red-500 flex-shrink-0"></span>
+                            <span className="leading-relaxed font-medium">{point}</span>
                           </li>
                         ))}
                       </ul>
