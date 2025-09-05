@@ -329,6 +329,11 @@ const Index = () => {
                 fill: hsl(var(--foreground)); 
                 transition: all 0.3s ease;
               }
+              .vj-year-visible {
+                font: 600 16px/1.2 Inter, system-ui;
+                fill: hsl(var(--muted-foreground));
+                transition: all 0.3s ease;
+              }
               .vj-cap { 
                 font: 500 14px/1.45 Inter, system-ui; 
                 fill: hsl(var(--muted-foreground)); 
@@ -396,6 +401,12 @@ const Index = () => {
               .milestone.active .vj-year {
                 fill: hsl(var(--primary));
               }
+              .milestone:hover .vj-year-visible,
+              .milestone.active .vj-year-visible {
+                fill: hsl(var(--primary));
+                transform: scale(1.1);
+                font-weight: 700;
+              }
               .milestone:hover .vj-cap,
               .milestone.active .vj-cap {
                 fill: hsl(var(--foreground));
@@ -408,6 +419,12 @@ const Index = () => {
                 filter: drop-shadow(0 15px 35px hsl(var(--primary) / 0.2));
                 transform: translateY(-2px);
               }
+              .manufacturing-image {
+                transition: all 0.3s ease;
+              }
+              .manufacturing-image:hover {
+                filter: drop-shadow(0 12px 30px hsl(var(--foreground) / 0.2)) brightness(1.05);
+              }
               /* Ensure layering */
               .vj-layer-line { isolation: isolate; z-index: 1; }
               .vj-layer-nodes { isolation: isolate; z-index: 2; }
@@ -416,6 +433,7 @@ const Index = () => {
               @media (max-width: 768px) {
                 .vj-svg { padding: 20px 10px; }
                 .vj-year { font-size: 16px; }
+                .vj-year-visible { font-size: 14px; }
                 .vj-cap { font-size: 12px; }
               }
             `}</style>
@@ -437,7 +455,33 @@ const Index = () => {
                     <feMergeNode in="SourceGraphic"/>
                   </feMerge>
                 </filter>
+                <clipPath id="imageClip">
+                  <rect x="20" y="20" width="300" height="120" rx="16"/>
+                </clipPath>
               </defs>
+
+              {/* Manufacturing Evolution Image - Top Left */}
+              <image 
+                href="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png"
+                x="20" 
+                y="20" 
+                width="300" 
+                height="120"
+                clipPath="url(#imageClip)"
+                className="manufacturing-image"
+                style={{ filter: 'drop-shadow(0 8px 25px hsl(var(--foreground) / 0.15))' }}
+              />
+              <rect 
+                x="20" 
+                y="20" 
+                width="300" 
+                height="120" 
+                rx="16" 
+                fill="none" 
+                stroke="hsl(var(--border))" 
+                strokeWidth="2"
+                opacity="0.3"
+              />
 
               {/* diagonal growth line (behind everything) */}
               <g className="vj-layer-line">
@@ -453,8 +497,13 @@ const Index = () => {
                    aria-label="2000 — Foundation with digital factory vision">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
+                  
+                  {/* Year label always visible */}
+                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2000</text>
+                  
+                  {/* Hover card */}
                   <g className="vj-card" transform="translate(-120,28)">
-                    <rect width={240} height={70}></rect>
+                    <rect width={240} height={70} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-year" x={12} y={24}>2000</text>
                     <text className="vj-cap" x={12} y={44}>Foundation with digital factory vision</text>
                   </g>
@@ -465,8 +514,11 @@ const Index = () => {
                    aria-label="2007 — First plant fully digitalized">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
+                  
+                  <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
+                  
                   <g className="vj-card" transform="translate(24,-100)">
-                    <rect width={220} height={62}></rect>
+                    <rect width={220} height={62} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-year" x={12} y={24}>2007</text>
                     <text className="vj-cap" x={12} y={44}>First plant fully digitalized</text>
                   </g>
@@ -477,8 +529,11 @@ const Index = () => {
                    aria-label="2013 — 18 plants connected in network">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
+                  
+                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2013</text>
+                  
                   <g className="vj-card" transform="translate(-210,28)">
-                    <rect width={260} height={68}></rect>
+                    <rect width={260} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-year" x={12} y={24}>2013</text>
                     <text className="vj-cap" x={12} y={44}><tspan fontWeight="700">18</tspan> plants connected in network</text>
                   </g>
@@ -489,8 +544,11 @@ const Index = () => {
                    aria-label="2016 — Scaled to 70 plants globally">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
+                  
+                  <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
+                  
                   <g className="vj-card" transform="translate(24,-96)">
-                    <rect width={240} height={68}></rect>
+                    <rect width={240} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-year" x={12} y={24}>2016</text>
                     <text className="vj-cap" x={12} y={44}>Scaled to <tspan fontWeight="700">70</tspan> plants globally</text>
                   </g>
@@ -501,8 +559,11 @@ const Index = () => {
                    aria-label="2019 — Milestone of 100+ plants achieved">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
+                  
+                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2019</text>
+                  
                   <g className="vj-card" transform="translate(-220,28)">
-                    <rect width={270} height={68}></rect>
+                    <rect width={270} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-year" x={12} y={24}>2019</text>
                     <text className="vj-cap" x={12} y={44}>Milestone of <tspan fontWeight="700">100+</tspan> plants achieved</text>
                   </g>
@@ -513,8 +574,11 @@ const Index = () => {
                    aria-label="2023 — Foundation for Autonomous factories">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
+                  
+                  <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
+                  
                   <g className="vj-card" transform="translate(24,-100)">
-                    <rect width={270} height={68}></rect>
+                    <rect width={270} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-year" x={12} y={24}>2023</text>
                     <text className="vj-cap" x={12} y={44}>Foundation for Autonomous factories</text>
                   </g>
@@ -525,8 +589,11 @@ const Index = () => {
                    aria-label="2025 — Milestone of 300+ plants achieved">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
+                  
+                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2025</text>
+                  
                   <g className="vj-card" transform="translate(-240,28)">
-                    <rect width={290} height={68}></rect>
+                    <rect width={290} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-year" x={12} y={24}>2025</text>
                     <text className="vj-cap" x={12} y={44}>Milestone of <tspan fontWeight="700">300+</tspan> plants achieved</text>
                   </g>
@@ -537,8 +604,11 @@ const Index = () => {
                    aria-label="2026 — Projected First Fully Autonomous Plant">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
+                  
+                  <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
+                  
                   <g className="vj-card" transform="translate(24,-96)">
-                    <rect width={300} height={68}></rect>
+                    <rect width={300} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={2}></rect>
                     <text className="vj-year" x={12} y={24} fill="hsl(var(--destructive))">2026</text>
                     <text className="vj-cap" x={12} y={44}>Projected First Fully Autonomous Plant</text>
                   </g>
@@ -549,26 +619,29 @@ const Index = () => {
                    aria-label="2030 — 1000 Autonomous Plants">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
+                  
+                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2030</text>
+                  
                   <g className="vj-card" transform="translate(-230,28)">
-                    <rect width={260} height={68}></rect>
+                    <rect width={260} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={2}></rect>
                     <text className="vj-year" x={12} y={24} fill="hsl(var(--destructive))">2030</text>
                     <text className="vj-cap" x={12} y={44}><tspan fontWeight="700">1000</tspan> Autonomous Plants</text>
                   </g>
                 </g>
+              </g>
 
-                {/* Strong Foundation card */}
-                <g className="vj-foundation-card" transform="translate(60,470)">
-                  <rect width={360} height={110} fill="hsl(var(--muted))" rx={16}></rect>
-                  <text className="vj-year" x={16} y={32} style={{fontSize:'16px'}} fill="hsl(var(--primary))">
-                    STRONG FOUNDATION FOR INNOVATION
-                  </text>
-                  <circle cx={22} cy={50} r={4} fill="hsl(var(--destructive))"></circle>
-                  <text className="vj-cap" x={34} y={54}>230+ dedicated R&D professionals in India</text>
-                  <circle cx={22} cy={68} r={4} fill="hsl(var(--destructive))"></circle>
-                  <text className="vj-cap" x={34} y={72}>ISO 27001 certified for information security</text>
-                  <circle cx={22} cy={86} r={4} fill="hsl(var(--destructive))"></circle>
-                  <text className="vj-cap" x={34} y={90}>ISO 9001 certified for quality management</text>
-                </g>
+              {/* Strong Foundation card - Bottom Right */}
+              <g className="vj-foundation-card" transform="translate(820,460)">
+                <rect width={360} height={110} fill="hsl(var(--muted))" rx={16} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                <text className="vj-year" x={16} y={32} style={{fontSize:'16px'}} fill="hsl(var(--primary))">
+                  STRONG FOUNDATION FOR INNOVATION
+                </text>
+                <circle cx={22} cy={50} r={4} fill="hsl(var(--destructive))"></circle>
+                <text className="vj-cap" x={34} y={54}>230+ dedicated R&D professionals in India</text>
+                <circle cx={22} cy={68} r={4} fill="hsl(var(--destructive))"></circle>
+                <text className="vj-cap" x={34} y={72}>ISO 27001 certified for information security</text>
+                <circle cx={22} cy={86} r={4} fill="hsl(var(--destructive))"></circle>
+                <text className="vj-cap" x={34} y={90}>ISO 9001 certified for quality management</text>
               </g>
             </svg>
 
