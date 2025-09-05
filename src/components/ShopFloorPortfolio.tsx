@@ -135,6 +135,12 @@ const ShopFloorPortfolio = () => {
   const getConnectorPath = (index: number) => {
     const segment = segments[index];
     const startPos = getSegmentCentroid(index);
+    
+    // Ensure startPos exists and has x, y properties
+    if (!startPos || typeof startPos.x !== 'number' || typeof startPos.y !== 'number') {
+      return ''; // Return empty path if position is invalid
+    }
+    
     const isLeft = segment.side === 'left';
     
     // Calculate card center position based on grid
@@ -299,10 +305,15 @@ const ShopFloorPortfolio = () => {
                 {/* Connector Lines */}
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
+                  const connectorPath = getConnectorPath(index);
+                  
+                  // Only render connector if path is valid
+                  if (!connectorPath) return null;
+                  
                   return (
                     <path
                       key={`connector-${index}`}
-                      d={getConnectorPath(index)}
+                      d={connectorPath}
                       stroke={isActive ? "hsl(var(--primary))" : "hsl(var(--border))"}
                       strokeWidth={isActive ? "2.5" : "1.5"}
                       fill="none"
