@@ -305,143 +305,339 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Vegam Journey Section - SVG Timeline */}
-      <section className="vegam-journey section-padding bg-muted/30">
-        <div className="container mx-auto px-6 lg:px-8">
+      {/* Vegam Journey Section - Enhanced Interactive Timeline */}
+      <section className="vegam-journey section-padding bg-gradient-to-br from-background via-muted/30 to-accent/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 opacity-40"></div>
+        <div className="container mx-auto px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <h2 className="heading-lg mb-4">Vegam Journey: Proven History in Manufacturing Transformation</h2>
+            <h2 className="heading-lg mb-4 text-foreground">Vegam Journey: Proven History in Manufacturing Transformation</h2>
             <p className="body-lg text-muted-foreground max-w-3xl mx-auto">
               Over two decades of experience in digitalizing and transforming manufacturing operations across the globe.
             </p>
           </div>
 
-          <svg viewBox="0 0 1200 600" width="100%" role="img" aria-label="Vegam journey diagonal timeline with milestones from 2000 to 2030">
-            <defs>
-              {/* Arrow marker for the end of the diagonal */}
-              <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
-                <path d="M0,0 L0,6 L9,3 z" fill="url(#grad)"></path>
-              </marker>
-              {/* Gradient for the growth line */}
-              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#E53935" />
-                <stop offset="50%" stopColor="#7B61FF" />
-                <stop offset="100%" stopColor="#0D47A1" />
-              </linearGradient>
-              <style>
-                {`.year { font: 700 20px/1.2 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#0D2748; }
-                .cap { font: 500 15px/1.4 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#243B55; }
-                .nodePast { fill:#0D47A1; }
-                .nodeFuture { fill:#E53935; }
-                .nodeRing { fill:#fff; stroke:#ffffff; stroke-width:4; }
-                .card { filter: drop-shadow(0 6px 18px rgba(13,39,72,0.12)); }
-                .card rect { fill:#fff; rx:14; }
-                .card text { font: 500 14px/1.5 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#334; }
-                .pill { font: 800 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#fff; }
-                .pillRect { fill:#E53935; rx:18; }
-                .bullet { fill:#E53935; }
-                .foundation h1 { font: 800 16px/1.2 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#0D2748; }
-                .foundation li { font: 500 14px/1.5 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:#243B55; }`}
-              </style>
-            </defs>
+          <div className="timeline-container relative max-w-6xl mx-auto">
+            <style>{`
+              .vj-svg { 
+                width: 100%; 
+                height: auto; 
+                display: block; 
+                filter: drop-shadow(0 4px 20px hsl(var(--primary) / 0.1));
+              }
+              .vj-year { 
+                font: 700 18px/1.2 Inter, system-ui; 
+                fill: hsl(var(--foreground)); 
+                transition: all 0.3s ease;
+              }
+              .vj-cap { 
+                font: 500 14px/1.45 Inter, system-ui; 
+                fill: hsl(var(--muted-foreground)); 
+                transition: all 0.3s ease;
+              }
+              .vj-cap strong { font-weight: 700; }
+              .vj-node-ring { 
+                fill: hsl(var(--background)); 
+                stroke: hsl(var(--background)); 
+                stroke-width: 5; 
+                filter: drop-shadow(0 2px 8px hsl(var(--foreground) / 0.1));
+              }
+              .vj-node--past { 
+                fill: hsl(var(--primary)); 
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+              }
+              .vj-node--future { 
+                fill: hsl(var(--destructive)); 
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+              }
+              .vj-line { 
+                stroke-width: 3; 
+                fill: none; 
+                filter: drop-shadow(0 2px 4px hsl(var(--primary) / 0.2));
+              }
+              .vj-card rect { 
+                fill: hsl(var(--card)); 
+                rx: 16; 
+                transition: all 0.3s ease;
+              }
+              .vj-card { 
+                filter: drop-shadow(0 8px 25px hsl(var(--foreground) / 0.1)); 
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+              }
+              .milestone { 
+                cursor: pointer; 
+                outline: none; 
+                transition: all 0.3s ease;
+              }
+              .milestone .vj-node { 
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+                transform-origin: center; 
+              }
+              .milestone .vj-card { 
+                opacity: 0; 
+                pointer-events: none; 
+                transform: translateY(10px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+              }
+              .milestone:hover .vj-node,
+              .milestone:focus-within .vj-node,
+              .milestone.active .vj-node { 
+                transform: scale(1.15); 
+                filter: drop-shadow(0 4px 12px hsl(var(--primary) / 0.3));
+              }
+              .milestone:hover .vj-card,
+              .milestone:focus-within .vj-card,
+              .milestone.active .vj-card { 
+                opacity: 1; 
+                pointer-events: auto; 
+                transform: translateY(0);
+                filter: drop-shadow(0 12px 30px hsl(var(--foreground) / 0.15));
+              }
+              .milestone:hover .vj-year,
+              .milestone.active .vj-year {
+                fill: hsl(var(--primary));
+              }
+              .milestone:hover .vj-cap,
+              .milestone.active .vj-cap {
+                fill: hsl(var(--foreground));
+              }
+              .vj-foundation-card {
+                filter: drop-shadow(0 10px 25px hsl(var(--primary) / 0.15));
+                transition: all 0.3s ease;
+              }
+              .vj-foundation-card:hover {
+                filter: drop-shadow(0 15px 35px hsl(var(--primary) / 0.2));
+                transform: translateY(-2px);
+              }
+              /* Ensure layering */
+              .vj-layer-line { isolation: isolate; z-index: 1; }
+              .vj-layer-nodes { isolation: isolate; z-index: 2; }
+              
+              /* Mobile responsive adjustments */
+              @media (max-width: 768px) {
+                .vj-svg { padding: 20px 10px; }
+                .vj-year { font-size: 16px; }
+                .vj-cap { font-size: 12px; }
+              }
+            `}</style>
+            <svg className="vj-svg" viewBox="0 0 1200 600" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
+              <defs>
+                <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(var(--destructive))"/>
+                  <stop offset="35%" stopColor="hsl(var(--accent))"/>
+                  <stop offset="70%" stopColor="hsl(var(--primary))"/>
+                  <stop offset="100%" stopColor="hsl(var(--primary))"/>
+                </linearGradient>
+                <marker id="vj-arrow" markerWidth={12} markerHeight={12} refX={9} refY={6} orient="auto">
+                  <path d="M0,0 L0,12 L12,6 z" fill="url(#vj-grad)"></path>
+                </marker>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation={3} result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
 
-            {/* DIAGONAL GROWTH LINE (straight) */}
-            <path d="M 100 500 L 1100 100" stroke="url(#grad)" strokeWidth="3" fill="none" markerEnd="url(#arrow)" />
+              {/* diagonal growth line (behind everything) */}
+              <g className="vj-layer-line">
+                <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)"
+                      d="M 100 500 L 1100 100"/>
+              </g>
 
-            {/* ===== MILESTONES (explicit coordinates) ===== */}
-            {/* Coordinates chosen by equal spacing along the straight diagonal */}
-            {/* 1) 2000 */}
-            <g transform="translate(100,500)">
-              <circle r="22" className="nodeRing"></circle>
-              <circle r="18" className="nodePast"></circle>
-              <text className="year" x="-40" y="55">2000</text>
-              <text className="cap" x="-40" y="78">Foundation with</text>
-              <text className="cap" x="-40" y="98">digital factory vision</text>
-            </g>
+              {/* NODES + CARDS (above the line) */}
+              <g className="vj-layer-nodes" aria-label="timeline milestones" tabIndex={-1}>
+                
+                {/* 1) 2000 */}
+                <g className="milestone" data-key="2000" transform="translate(100,500)" tabIndex={0} 
+                   aria-label="2000 — Foundation with digital factory vision">
+                  <circle className="vj-node-ring" r={26}></circle>
+                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <g className="vj-card" transform="translate(-120,28)">
+                    <rect width={240} height={70}></rect>
+                    <text className="vj-year" x={12} y={24}>2000</text>
+                    <text className="vj-cap" x={12} y={44}>Foundation with digital factory vision</text>
+                  </g>
+                </g>
 
-            {/* 2) 2007 */}
-            <g transform="translate(238,445)">
-              <circle r="22" className="nodeRing"></circle>
-              <circle r="18" className="nodePast"></circle>
-              <text className="year" x="18" y="6">2007</text>
-              <text className="cap" x="18" y="28">First plant fully</text>
-              <text className="cap" x="18" y="48">digitalized</text>
-            </g>
+                {/* 2) 2007 */}
+                <g className="milestone" data-key="2007" transform="translate(238,445)" tabIndex={0} 
+                   aria-label="2007 — First plant fully digitalized">
+                  <circle className="vj-node-ring" r={26}></circle>
+                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <g className="vj-card" transform="translate(24,-100)">
+                    <rect width={220} height={62}></rect>
+                    <text className="vj-year" x={12} y={24}>2007</text>
+                    <text className="vj-cap" x={12} y={44}>First plant fully digitalized</text>
+                  </g>
+                </g>
 
-            {/* 3) 2013 */}
-            <g transform="translate(376,390)">
-              <circle r="22" className="nodeRing"></circle>
-              <circle r="18" className="nodePast"></circle>
-              <text className="year" x="-120" y="-10">2013</text>
-              <text className="cap" x="-120" y="12"><tspan fontWeight="700">18</tspan> plants connected</text>
-              <text className="cap" x="-120" y="32">in network</text>
-            </g>
+                {/* 3) 2013 */}
+                <g className="milestone" data-key="2013" transform="translate(376,390)" tabIndex={0} 
+                   aria-label="2013 — 18 plants connected in network">
+                  <circle className="vj-node-ring" r={26}></circle>
+                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <g className="vj-card" transform="translate(-210,28)">
+                    <rect width={260} height={68}></rect>
+                    <text className="vj-year" x={12} y={24}>2013</text>
+                    <text className="vj-cap" x={12} y={44}><tspan fontWeight="700">18</tspan> plants connected in network</text>
+                  </g>
+                </g>
 
-            {/* 4) 2016 */}
-            <g transform="translate(514,335)">
-              <circle r="22" className="nodeRing"></circle>
-              <circle r="18" className="nodePast"></circle>
-              <text className="year" x="20" y="6">2016</text>
-              <text className="cap" x="20" y="28">Scaled to <tspan fontWeight="700">70</tspan></text>
-              <text className="cap" x="20" y="48">plants globally</text>
-            </g>
+                {/* 4) 2016 */}
+                <g className="milestone" data-key="2016" transform="translate(514,335)" tabIndex={0} 
+                   aria-label="2016 — Scaled to 70 plants globally">
+                  <circle className="vj-node-ring" r={26}></circle>
+                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <g className="vj-card" transform="translate(24,-96)">
+                    <rect width={240} height={68}></rect>
+                    <text className="vj-year" x={12} y={24}>2016</text>
+                    <text className="vj-cap" x={12} y={44}>Scaled to <tspan fontWeight="700">70</tspan> plants globally</text>
+                  </g>
+                </g>
 
-            {/* 5) 2019 */}
-            <g transform="translate(652,280)">
-              <circle r="22" className="nodeRing"></circle>
-              <circle r="18" className="nodePast"></circle>
-              <text className="year" x="-110" y="-8">2019</text>
-              <text className="cap" x="-110" y="14">Milestone of <tspan fontWeight="700">100+</tspan></text>
-              <text className="cap" x="-110" y="34">plants achieved</text>
-            </g>
+                {/* 5) 2019 */}
+                <g className="milestone" data-key="2019" transform="translate(652,280)" tabIndex={0} 
+                   aria-label="2019 — Milestone of 100+ plants achieved">
+                  <circle className="vj-node-ring" r={26}></circle>
+                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <g className="vj-card" transform="translate(-220,28)">
+                    <rect width={270} height={68}></rect>
+                    <text className="vj-year" x={12} y={24}>2019</text>
+                    <text className="vj-cap" x={12} y={44}>Milestone of <tspan fontWeight="700">100+</tspan> plants achieved</text>
+                  </g>
+                </g>
 
-            {/* 6) 2023 */}
-            <g transform="translate(790,225)">
-              <circle r="22" className="nodeRing"></circle>
-              <circle r="18" className="nodePast"></circle>
-              <text className="year" x="20" y="6">2023</text>
-              <text className="cap" x="20" y="28">Foundation for</text>
-              <text className="cap" x="20" y="48">Autonomous factories</text>
-            </g>
+                {/* 6) 2023 */}
+                <g className="milestone" data-key="2023" transform="translate(790,225)" tabIndex={0} 
+                   aria-label="2023 — Foundation for Autonomous factories">
+                  <circle className="vj-node-ring" r={26}></circle>
+                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <g className="vj-card" transform="translate(24,-100)">
+                    <rect width={270} height={68}></rect>
+                    <text className="vj-year" x={12} y={24}>2023</text>
+                    <text className="vj-cap" x={12} y={44}>Foundation for Autonomous factories</text>
+                  </g>
+                </g>
 
-            {/* 7) 2025 */}
-            <g transform="translate(928,170)">
-              <circle r="22" className="nodeRing"></circle>
-              <circle r="18" className="nodePast"></circle>
-              <text className="year" x="-150" y="-10">2025</text>
-              <text className="cap" x="-150" y="12">Milestone of <tspan fontWeight="700">300+</tspan></text>
-              <text className="cap" x="-150" y="32">plants achieved</text>
-            </g>
+                {/* 7) 2025 */}
+                <g className="milestone" data-key="2025" transform="translate(928,170)" tabIndex={0} 
+                   aria-label="2025 — Milestone of 300+ plants achieved">
+                  <circle className="vj-node-ring" r={26}></circle>
+                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <g className="vj-card" transform="translate(-240,28)">
+                    <rect width={290} height={68}></rect>
+                    <text className="vj-year" x={12} y={24}>2025</text>
+                    <text className="vj-cap" x={12} y={44}>Milestone of <tspan fontWeight="700">300+</tspan> plants achieved</text>
+                  </g>
+                </g>
 
-            {/* 8) 2026 (FUTURE) */}
-            <g transform="translate(1064,135)">
-              <circle r="22" className="nodeRing"></circle>
-              <circle r="18" className="nodeFuture"></circle>
-              <text className="year" x="24" y="6" fill="#E53935">2026</text>
-              <text className="cap" x="24" y="28">Projected First Fully</text>
-              <text className="cap" x="24" y="48">Autonomous Plant</text>
-            </g>
+                {/* 8) 2026 (future) */}
+                <g className="milestone" data-key="2026" transform="translate(1064,135)" tabIndex={0} 
+                   aria-label="2026 — Projected First Fully Autonomous Plant">
+                  <circle className="vj-node-ring" r={26}></circle>
+                  <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
+                  <g className="vj-card" transform="translate(24,-96)">
+                    <rect width={300} height={68}></rect>
+                    <text className="vj-year" x={12} y={24} fill="hsl(var(--destructive))">2026</text>
+                    <text className="vj-cap" x={12} y={44}>Projected First Fully Autonomous Plant</text>
+                  </g>
+                </g>
 
-            {/* 9) 2030 (FUTURE) */}
-            <g transform="translate(1100,100)">
-              <circle r="22" className="nodeRing"></circle>
-              <circle r="18" className="nodeFuture"></circle>
-              <text className="year" x="-110" y="-10" fill="#E53935">2030</text>
-              <text className="cap" x="-110" y="12"><tspan fontWeight="700">1000</tspan> Autonomous</text>
-              <text className="cap" x="-110" y="32">Plants</text>
-            </g>
+                {/* 9) 2030 (future) */}
+                <g className="milestone" data-key="2030" transform="translate(1100,100)" tabIndex={0} 
+                   aria-label="2030 — 1000 Autonomous Plants">
+                  <circle className="vj-node-ring" r={26}></circle>
+                  <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
+                  <g className="vj-card" transform="translate(-230,28)">
+                    <rect width={260} height={68}></rect>
+                    <text className="vj-year" x={12} y={24} fill="hsl(var(--destructive))">2030</text>
+                    <text className="vj-cap" x={12} y={44}><tspan fontWeight="700">1000</tspan> Autonomous Plants</text>
+                  </g>
+                </g>
 
-            {/* STRONG FOUNDATION FOR INNOVATION CARD (bottom-left) */}
-            <g className="card foundation">
-              <rect x="820" y="460" width="320" height="110" rx="16" fill="#E8F0FE"></rect>
-              <text x="840" y="488" className="year" style={{fontSize:'16px'}}>STRONG FOUNDATION FOR INNOVATION</text>
-              <circle className="bullet" cx="840" cy="504" r="4"></circle>
-              <text className="cap" x="852" y="508">230+ dedicated R&amp;D professionals in India</text>
-              <circle className="bullet" cx="840" cy="524" r="4"></circle>
-              <text className="cap" x="852" y="528">ISO 27001 certified for information security</text>
-              <circle className="bullet" cx="840" cy="544" r="4"></circle>
-              <text className="cap" x="852" y="548">ISO 9001 certified for quality management</text>
-            </g>
-          </svg>
+                {/* Strong Foundation card */}
+                <g className="vj-foundation-card" transform="translate(60,470)">
+                  <rect width={360} height={110} fill="hsl(var(--muted))" rx={16}></rect>
+                  <text className="vj-year" x={16} y={32} style={{fontSize:'16px'}} fill="hsl(var(--primary))">
+                    STRONG FOUNDATION FOR INNOVATION
+                  </text>
+                  <circle cx={22} cy={50} r={4} fill="hsl(var(--destructive))"></circle>
+                  <text className="vj-cap" x={34} y={54}>230+ dedicated R&D professionals in India</text>
+                  <circle cx={22} cy={68} r={4} fill="hsl(var(--destructive))"></circle>
+                  <text className="vj-cap" x={34} y={72}>ISO 27001 certified for information security</text>
+                  <circle cx={22} cy={86} r={4} fill="hsl(var(--destructive))"></circle>
+                  <text className="vj-cap" x={34} y={90}>ISO 9001 certified for quality management</text>
+                </g>
+              </g>
+            </svg>
+
+            <script dangerouslySetInnerHTML={{
+              __html: `
+                // Enhanced interaction script
+                (function() {
+                  const milestones = document.querySelectorAll('.milestone');
+                  let currentActive = null;
+                  
+                  milestones.forEach((ms, index) => {
+                    // Click to pin/unpin milestone
+                    ms.addEventListener('click', (e) => {
+                      e.preventDefault();
+                      const isActive = ms.classList.contains('active');
+                      
+                      // Remove active from all
+                      milestones.forEach(m => m.classList.remove('active'));
+                      
+                      // Add active to clicked (unless it was already active)
+                      if (!isActive) {
+                        ms.classList.add('active');
+                        currentActive = ms;
+                      } else {
+                        currentActive = null;
+                      }
+                    });
+                    
+                    // Keyboard navigation
+                    ms.addEventListener('keydown', (e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        ms.click();
+                      } else if (e.key === 'ArrowRight' && index < milestones.length - 1) {
+                        e.preventDefault();
+                        milestones[index + 1].focus();
+                      } else if (e.key === 'ArrowLeft' && index > 0) {
+                        e.preventDefault();
+                        milestones[index - 1].focus();
+                      }
+                    });
+                    
+                    // Enhanced hover effects
+                    ms.addEventListener('mouseenter', () => {
+                      if (!ms.classList.contains('active')) {
+                        ms.style.transform = 'scale(1.02)';
+                      }
+                    });
+                    
+                    ms.addEventListener('mouseleave', () => {
+                      if (!ms.classList.contains('active')) {
+                        ms.style.transform = 'scale(1)';
+                      }
+                    });
+                  });
+                  
+                  // Auto-highlight sequence on load
+                  setTimeout(() => {
+                    milestones.forEach((ms, i) => {
+                      setTimeout(() => {
+                        ms.style.animation = 'pulse 0.6s ease-in-out';
+                        setTimeout(() => ms.style.animation = '', 600);
+                      }, i * 200);
+                    });
+                  }, 1000);
+                })();
+              `
+            }} />
+          </div>
         </div>
       </section>
 
