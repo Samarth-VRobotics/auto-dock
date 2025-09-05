@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ShopFloorPortfolio from "@/components/ShopFloorPortfolio";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ContactDialog from "@/components/ContactDialog";
@@ -836,6 +837,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Shop Floor Automation Portfolio */}
+      <ShopFloorPortfolio />
 
       <Footer />
     </div>;
