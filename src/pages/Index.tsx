@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
+import { ShopFloorPortfolio } from "@/components/ShopFloorPortfolio";
 import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Settings, Database, Hand, Cpu, Gauge, Lightbulb } from "lucide-react";
 import autonomousProductionLine from "@/assets/autonomous-production-line.jpg";
 import smartFactoryHall from "@/assets/smart-factory-hall.jpg";
@@ -836,6 +837,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <ShopFloorPortfolio />
 
       <Footer />
     </div>;
