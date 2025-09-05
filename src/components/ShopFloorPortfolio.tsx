@@ -132,7 +132,7 @@ const ShopFloorPortfolio = () => {
 
   const getAnchorPosition = (index: number) => {
     const angle = (index * 60 - 90) * Math.PI / 180 + (30 * Math.PI / 180);
-    const radius = 132; // 73% of pie radius for anchor ports (180 * 0.73 ≈ 132)
+    const radius = 132; // 73% of pie radius for anchor points (180 * 0.73 ≈ 132)
     return {
       x: 300 + Math.cos(angle) * radius,
       y: 300 + Math.sin(angle) * radius
@@ -141,18 +141,15 @@ const ShopFloorPortfolio = () => {
 
   const getArrowPath = (index: number) => {
     const segment = segments[index];
-    const iconPos = getIconPosition(index);
+    const anchorPos = getAnchorPosition(index);
     const isLeft = segment.side === 'left';
     
     // Card positions - vertical center of each card
     const cardCenterY = 100 + (segment.slot * 180) + 90; // Card vertical center
     const cardEdgeX = isLeft ? 60 + 260 - 4 : 540 + 4; // Card edge with 4px inside offset
     
-    // Straight line from icon node center to card edge
-    const startX = iconPos.x;
-    const startY = iconPos.y;
-    
-    return `M ${startX} ${startY} L ${cardEdgeX} ${cardCenterY}`;
+    // Straight horizontal line from anchor point to card edge
+    return `M ${anchorPos.x} ${anchorPos.y} L ${cardEdgeX} ${cardCenterY}`;
   };
 
   return (
@@ -184,18 +181,6 @@ const ShopFloorPortfolio = () => {
             <div className="absolute inset-0 flex items-center justify-center">
               <svg width="600" height="600" viewBox="0 0 600 600" className="overflow-visible">
                 <defs>
-                  <marker
-                    id="arrowhead"
-                    markerWidth="10"
-                    markerHeight="10"
-                    refX="9"
-                    refY="5"
-                    orient="auto"
-                    fill="#ef4444"
-                  >
-                    <polygon points="0 0, 10 5, 0 10" fill="#ef4444" />
-                  </marker>
-                  
                   <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                     <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
                     <feMerge>
@@ -246,19 +231,18 @@ const ShopFloorPortfolio = () => {
                   );
                 })}
                 
-                {/* Arrows - from icon nodes to cards */}
+                {/* Connector lines - from anchor points to cards */}
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
                   const arrowPath = getArrowPath(index);
                   
                   return (
                     <path
-                      key={`arrow-${index}`}
+                      key={`line-${index}`}
                       d={arrowPath}
-                      stroke={isActive ? "#ef4444" : "#ef4444"}
-                      strokeWidth="2"
+                      stroke="#ef4444"
+                      strokeWidth={isActive ? "2.5" : "2"}
                       fill="none"
-                      markerEnd="url(#arrowhead)"
                       className="transition-all duration-200"
                       opacity={isActive ? 1 : 0.6}
                       style={{ zIndex: 2 }}
@@ -397,7 +381,7 @@ const ShopFloorPortfolio = () => {
             
             {/* Left Card Stack */}
             <div className="absolute left-0 top-0 w-72 h-full">
-              <div className="grid grid-rows-3 gap-7 h-full py-20">
+              <div className="flex flex-col justify-center h-full py-20 space-y-7">
                 {segments
                   .filter(segment => segment.side === 'left')
                   .sort((a, b) => a.slot - b.slot)
@@ -414,7 +398,7 @@ const ShopFloorPortfolio = () => {
                           id={`card-${segment.id}`}
                           className={`bg-white rounded-2xl p-6 border transition-all duration-200 w-full min-h-[160px] flex flex-col justify-center ${
                             isActive 
-                              ? 'border-red-400 shadow-xl bg-red-50/20' 
+                              ? 'border-red-400 shadow-xl bg-red-50/10' 
                               : 'border-gray-200 shadow-lg'
                           }`}
                           style={{ 
@@ -446,7 +430,7 @@ const ShopFloorPortfolio = () => {
             
             {/* Right Card Stack */}
             <div className="absolute right-0 top-0 w-72 h-full">
-              <div className="grid grid-rows-3 gap-7 h-full py-20">
+              <div className="flex flex-col justify-center h-full py-20 space-y-7">
                 {segments
                   .filter(segment => segment.side === 'right')
                   .sort((a, b) => a.slot - b.slot)
@@ -463,7 +447,7 @@ const ShopFloorPortfolio = () => {
                           id={`card-${segment.id}`}
                           className={`bg-white rounded-2xl p-6 border transition-all duration-200 w-full min-h-[160px] flex flex-col justify-center ${
                             isActive 
-                              ? 'border-red-400 shadow-xl bg-red-50/20' 
+                              ? 'border-red-400 shadow-xl bg-red-50/10' 
                               : 'border-gray-200 shadow-lg'
                           }`}
                           style={{ 
