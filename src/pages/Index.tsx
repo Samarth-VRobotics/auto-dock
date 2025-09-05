@@ -316,7 +316,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="timeline-container relative max-w-6xl mx-auto">
+          <div className="timeline-container relative max-w-6xl mx-auto" style={{ paddingRight: 'min(8vw, 120px)', overflow: 'visible' }}>
             <style>{`
               .vj-svg { 
                 width: 100%; 
@@ -385,8 +385,41 @@ const Index = () => {
               }
               .milestone:hover .vj-node,
               .milestone:focus-within .vj-node { 
-                transform: scale(1.08); 
-                filter: drop-shadow(0 4px 8px hsl(var(--primary) / 0.3));
+                transform: scale(1.10); 
+                filter: drop-shadow(0 4px 14px rgba(0,0,0,0.15));
+              }
+              /* Past milestone hover (≤2025) - blue accent */
+              .milestone[data-key="2000"]:hover .vj-card rect,
+              .milestone[data-key="2007"]:hover .vj-card rect,
+              .milestone[data-key="2013"]:hover .vj-card rect,
+              .milestone[data-key="2016"]:hover .vj-card rect,
+              .milestone[data-key="2019"]:hover .vj-card rect,
+              .milestone[data-key="2023"]:hover .vj-card rect,
+              .milestone[data-key="2025"]:hover .vj-card rect,
+              .milestone[data-key="2000"]:focus-within .vj-card rect,
+              .milestone[data-key="2007"]:focus-within .vj-card rect,
+              .milestone[data-key="2013"]:focus-within .vj-card rect,
+              .milestone[data-key="2016"]:focus-within .vj-card rect,
+              .milestone[data-key="2019"]:focus-within .vj-card rect,
+              .milestone[data-key="2023"]:focus-within .vj-card rect,
+              .milestone[data-key="2025"]:focus-within .vj-card rect {
+                fill: hsl(var(--primary) / 0.05);
+                stroke: hsl(var(--primary));
+                stroke-width: 2;
+              }
+              /* Future milestone hover (2026, 2030) - red accent */
+              .milestone[data-key="2026"]:hover .vj-card rect,
+              .milestone[data-key="2030"]:hover .vj-card rect,
+              .milestone[data-key="2026"]:focus-within .vj-card rect,
+              .milestone[data-key="2030"]:focus-within .vj-card rect {
+                fill: hsl(var(--destructive) / 0.05);
+                stroke: hsl(var(--destructive));
+                stroke-width: 2;
+              }
+              /* Bold year text on hover */
+              .milestone:hover .vj-year,
+              .milestone:focus-within .vj-year {
+                font-weight: 700;
               }
               /* Remove all other hover effects on cards and text */
               .vj-foundation-card {
@@ -414,7 +447,7 @@ const Index = () => {
                 .vj-cap { font-size: 12px; }
               }
             `}</style>
-            <svg className="vj-svg" viewBox="0 0 1200 600" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
+            <svg className="vj-svg" viewBox="0 0 1360 600" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
               <defs>
                 <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="hsl(var(--destructive))"/>
@@ -463,7 +496,7 @@ const Index = () => {
               {/* diagonal growth line (behind everything) - Extended with arrow at top */}
               <g className="vj-layer-line">
                 <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)"
-                      d="M 100 500 L 1200 80"/>
+                      d="M 100 500 L 1300 60"/>
               </g>
 
               {/* NODES + CARDS (above the line) */}
@@ -584,8 +617,8 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
                   
-                  <g className="vj-card" transform="translate(24,-96)">
-                    <rect width={300} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={2}></rect>
+                  <g className="vj-card" transform="translate(-324,-96)">
+                    <rect width={300} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
                     <text className="vj-year" x={12} y={24} fill="hsl(var(--destructive))">2026</text>
                     <text className="vj-cap" x={12} y={44}>Projected First Fully Autonomous Plant</text>
                   </g>
@@ -599,8 +632,8 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2030</text>
                   
-                  <g className="vj-card" transform="translate(-230,28)">
-                    <rect width={260} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={2}></rect>
+                  <g className="vj-card" transform="translate(-284,44)">
+                    <rect width={260} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
                     <text className="vj-year" x={12} y={24} fill="hsl(var(--destructive))">2030</text>
                     <text className="vj-cap" x={12} y={44}><tspan fontWeight="700">1000</tspan> Autonomous Plants</text>
                   </g>
