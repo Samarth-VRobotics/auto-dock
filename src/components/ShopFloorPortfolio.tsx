@@ -15,8 +15,8 @@ const ShopFloorPortfolio = () => {
         'Pallet Handling & Transport'
       ],
       angle: 0, // Top
-      descriptionPosition: 'left-top',
-      cardPosition: { x: 60, y: 100 }
+      side: 'left',
+      slot: 0 // Top slot
     },
     {
       id: 'warehouse',
@@ -28,8 +28,8 @@ const ShopFloorPortfolio = () => {
         'Replenishment Operations'
       ],
       angle: 60, // Top right
-      descriptionPosition: 'right-top',
-      cardPosition: { x: 520, y: 100 }
+      side: 'right',
+      slot: 0 // Top slot
     },
     {
       id: 'dispensing',
@@ -41,8 +41,8 @@ const ShopFloorPortfolio = () => {
         'Cross-docking Operations'
       ],
       angle: 120, // Bottom right
-      descriptionPosition: 'right-middle',
-      cardPosition: { x: 520, y: 250 }
+      side: 'right',
+      slot: 1 // Middle slot
     },
     {
       id: 'manufacturing',
@@ -54,8 +54,8 @@ const ShopFloorPortfolio = () => {
         'Packaging & Batch Processing'
       ],
       angle: 180, // Bottom
-      descriptionPosition: 'right-bottom',
-      cardPosition: { x: 520, y: 400 }
+      side: 'right',
+      slot: 2 // Bottom slot
     },
     {
       id: 'lab',
@@ -67,8 +67,8 @@ const ShopFloorPortfolio = () => {
         'Compliance verification'
       ],
       angle: 240, // Bottom left
-      descriptionPosition: 'left-bottom',
-      cardPosition: { x: 60, y: 400 }
+      side: 'left',
+      slot: 2 // Bottom slot
     },
     {
       id: 'outbound',
@@ -80,8 +80,8 @@ const ShopFloorPortfolio = () => {
         'Truck Loading & Final Verification'
       ],
       angle: 300, // Top left
-      descriptionPosition: 'left-middle',
-      cardPosition: { x: 60, y: 250 }
+      side: 'left',
+      slot: 1 // Middle slot
     }
   ];
 
@@ -121,17 +121,30 @@ const ShopFloorPortfolio = () => {
     };
   };
 
+  const getCardPosition = (side: string, slot: number) => {
+    const baseY = 80; // Starting Y position
+    const slotHeight = 160; // Height between each slot
+    const y = baseY + (slot * slotHeight);
+    
+    return {
+      x: side === 'left' ? 0 : 0, // Grid positioning, not absolute
+      y: y
+    };
+  };
+
   const getConnectorPath = (index: number) => {
     const segment = segments[index];
     const startPos = getSegmentCentroid(index);
-    const cardPos = segment.cardPosition;
+    const isLeft = segment.side === 'left';
     
-    // Create elbow connector
-    const isLeft = cardPos.x < 300;
-    const midX = isLeft ? startPos.x - 40 : startPos.x + 40;
-    const midY = cardPos.y + 60; // Center of card
+    // Calculate card center position based on grid
+    const cardCenterY = 140 + (segment.slot * 160); // Grid slot positioning
+    const cardX = isLeft ? 80 + 140 : 520 + 140; // Card center X
     
-    return `M ${startPos.x} ${startPos.y} L ${midX} ${startPos.y} L ${midX} ${midY} L ${cardPos.x + (isLeft ? 280 : 0)} ${midY}`;
+    // Create elbow connector that avoids other cards
+    const midX = isLeft ? startPos.x - 60 : startPos.x + 60;
+    
+    return `M ${startPos.x} ${startPos.y} L ${midX} ${startPos.y} L ${midX} ${cardCenterY} L ${cardX} ${cardCenterY}`;
   };
 
   return (
@@ -197,7 +210,7 @@ const ShopFloorPortfolio = () => {
                       className="cursor-pointer transition-all duration-150 ease-out hover:fill-primary/10"
                       style={{
                         transform: isActive ? 'scale(1.05)' : 'scale(1)',
-                        transformOrigin: '300px 300px',
+                        transformOrigin: `${300 + Math.cos((index * 60 - 90 + 30) * Math.PI / 180) * 125}px ${300 + Math.sin((index * 60 - 90 + 30) * Math.PI / 180) * 125}px`,
                         filter: isActive ? 'url(#glow)' : 'none',
                         zIndex: isActive ? 2 : 1
                       }}
@@ -303,42 +316,86 @@ const ShopFloorPortfolio = () => {
               </svg>
             </div>
             
-            {/* Fixed Position Description Cards */}
-            {segments.map((segment, index) => {
-              const isActive = activeSegment === index;
-              const cardPos = segment.cardPosition;
-              
-              return (
-                <div
-                  key={`desc-${index}`}
-                  className="absolute w-80 transition-all duration-150"
-                  style={{
-                    left: `${cardPos.x}px`,
-                    top: `${cardPos.y}px`,
-                    zIndex: isActive ? 3 : 1,
-                    transform: isActive ? 'scale(1.02)' : 'scale(1)'
-                  }}
-                >
-                  <div className={`bg-card rounded-2xl p-6 border shadow-lg transition-all duration-150 ${
-                    isActive ? 'border-primary shadow-xl bg-primary/5' : 'border-border'
-                  }`}>
-                    <h3 className={`text-lg font-bold mb-4 transition-colors ${
-                      isActive ? 'text-primary' : 'text-foreground'
-                    }`}>
-                      {segment.title}
-                    </h3>
-                    <ul className="space-y-2">
-                      {segment.description.map((point, pointIndex) => (
-                        <li key={pointIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
-                          <span className="text-primary mt-1 font-bold">•</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              );
-            })}
+            {/* Fixed Grid Description Cards */}
+            {/* Left side grid */}
+            <div className="absolute left-0 top-0 w-80 h-full">
+              <div className="grid grid-rows-3 gap-4 h-full py-20">
+                {segments
+                  .filter(segment => segment.side === 'left')
+                  .sort((a, b) => a.slot - b.slot)
+                  .map((segment, gridIndex) => {
+                    const segmentIndex = segments.findIndex(s => s.id === segment.id);
+                    const isActive = activeSegment === segmentIndex;
+                    
+                    return (
+                      <div
+                        key={`left-${segment.id}`}
+                        className="flex items-center"
+                      >
+                        <div className={`bg-card rounded-2xl p-6 border shadow-lg transition-all duration-150 w-full ${
+                          isActive ? 'border-primary shadow-xl bg-primary/5' : 'border-border'
+                        }`}
+                        style={{ zIndex: isActive ? 3 : 1 }}
+                        >
+                          <h3 className={`text-lg font-bold mb-4 transition-colors ${
+                            isActive ? 'text-primary' : 'text-foreground'
+                          }`}>
+                            {segment.title}
+                          </h3>
+                          <ul className="space-y-2">
+                            {segment.description.map((point, pointIndex) => (
+                              <li key={pointIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
+                                <span className="text-primary mt-1 font-bold">•</span>
+                                <span>{point}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+            
+            {/* Right side grid */}
+            <div className="absolute right-0 top-0 w-80 h-full">
+              <div className="grid grid-rows-3 gap-4 h-full py-20">
+                {segments
+                  .filter(segment => segment.side === 'right')
+                  .sort((a, b) => a.slot - b.slot)
+                  .map((segment, gridIndex) => {
+                    const segmentIndex = segments.findIndex(s => s.id === segment.id);
+                    const isActive = activeSegment === segmentIndex;
+                    
+                    return (
+                      <div
+                        key={`right-${segment.id}`}
+                        className="flex items-center"
+                      >
+                        <div className={`bg-card rounded-2xl p-6 border shadow-lg transition-all duration-150 w-full ${
+                          isActive ? 'border-primary shadow-xl bg-primary/5' : 'border-border'
+                        }`}
+                        style={{ zIndex: isActive ? 3 : 1 }}
+                        >
+                          <h3 className={`text-lg font-bold mb-4 transition-colors ${
+                            isActive ? 'text-primary' : 'text-foreground'
+                          }`}>
+                            {segment.title}
+                          </h3>
+                          <ul className="space-y-2">
+                            {segment.description.map((point, pointIndex) => (
+                              <li key={pointIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
+                                <span className="text-primary mt-1 font-bold">•</span>
+                                <span>{point}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
           </div>
         </div>
 
