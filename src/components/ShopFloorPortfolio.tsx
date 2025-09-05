@@ -91,7 +91,7 @@ const ShopFloorPortfolio = () => {
   const innerRadius = 120;
   const outerRadius = 240;
   const ringWidth = outerRadius - innerRadius;
-  const iconRadius = innerRadius; // Exactly at center circle border for half-in/half-out effect
+  const iconRadius = innerRadius + ringWidth * 0.55; // Move icons into middle of ring for full visibility
   const labelRadius = innerRadius + ringWidth * 0.85; // Closer to outer edge to avoid overlap
 
   const getSegmentPath = (index: number) => {
@@ -209,21 +209,7 @@ const ShopFloorPortfolio = () => {
                   opacity="0.3"
                 />
                 
-                {/* Connector lines from segments to cards */}
-                {segments.map((segment, index) => {
-                  const isActive = activeSegment === index;
-                  return (
-                    <path
-                      key={`connector-${index}`}
-                      d={getConnectorPath(index)}
-                      stroke={isActive ? "#ef4444" : "#d1d5db"}
-                      strokeWidth={isActive ? "2" : "1"}
-                      fill="none"
-                      className="transition-all duration-150"
-                      opacity="0.6"
-                    />
-                  );
-                })}
+                {/* Connector lines removed per requirements */}
                 
                 {/* Segments */}
                 {segments.map((segment, index) => {
@@ -281,15 +267,15 @@ const ShopFloorPortfolio = () => {
                           }}
                         />
                         <foreignObject
-                          x={iconX - 16.5}
-                          y={iconY - 16.5}
-                          width="33"
-                          height="33"
+                          x={iconX - 12}
+                          y={iconY - 12}
+                          width="24"
+                          height="24"
                           className="pointer-events-none"
                         >
                           <div className="w-full h-full flex items-center justify-center">
                             <IconComponent 
-                              size={33} 
+                              size={24} 
                               className={`transition-all duration-150 ${
                                 isActive ? "text-red-500" : "text-gray-600"
                               }`}
@@ -298,7 +284,7 @@ const ShopFloorPortfolio = () => {
                         </foreignObject>
                       </g>
                       
-                      {/* Upright segment label with multi-line support */}
+                      {/* Upright segment label with Title Case and proper sizing */}
                       <g className="pointer-events-none">
                         {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ? (
                           // Multi-line labels for segments with "/"
@@ -308,51 +294,54 @@ const ShopFloorPortfolio = () => {
                               y={labelY - 8}
                               textAnchor="middle"
                               dominantBaseline="central"
-                              className={`text-sm font-medium tracking-tight transition-all duration-150 ${
+                              className={`font-medium tracking-tight transition-all duration-150 ${
                                 isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
                               }`}
                               style={{ 
-                                fontSize: window.innerWidth < 768 ? '11px' : '13px',
+                                fontSize: window.innerWidth < 768 ? '13px' : window.innerWidth < 1024 ? '14px' : '15px',
                                 fontWeight: isActive ? '600' : '500',
                                 opacity: isActive ? 1.0 : 0.8,
-                                filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none'
+                                filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                                letterSpacing: '-0.025em'
                               }}
                             >
-                              {segment.title.split(' / ')[0]}/
+                              {segment.title.split(' / ')[0]} /
                             </text>
                             <text
                               x={labelX}
                               y={labelY + 8}
                               textAnchor="middle"
                               dominantBaseline="central"
-                              className={`text-sm font-medium tracking-tight transition-all duration-150 ${
+                              className={`font-medium tracking-tight transition-all duration-150 ${
                                 isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
                               }`}
                               style={{ 
-                                fontSize: window.innerWidth < 768 ? '10px' : '12px',
+                                fontSize: window.innerWidth < 768 ? '13px' : window.innerWidth < 1024 ? '14px' : '15px',
                                 fontWeight: isActive ? '600' : '500',
                                 opacity: isActive ? 1.0 : 0.8,
-                                filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none'
+                                filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                                letterSpacing: '-0.025em'
                               }}
                             >
-                              {segment.title.split(' / ')[1].toLowerCase()}
+                              {segment.title.split(' / ')[1]}
                             </text>
                           </>
                         ) : (
-                          // Single line labels
+                          // Single line labels in Title Case
                           <text 
                             x={labelX}
                             y={labelY}
                             textAnchor="middle"
                             dominantBaseline="central"
-                            className={`text-sm font-medium tracking-tight transition-all duration-150 ${
+                            className={`font-medium tracking-tight transition-all duration-150 ${
                               isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
                             }`}
                             style={{ 
-                              fontSize: window.innerWidth < 768 ? '11px' : '13px',
+                              fontSize: window.innerWidth < 768 ? '13px' : window.innerWidth < 1024 ? '14px' : '15px',
                               fontWeight: isActive ? '600' : '500',
                               opacity: isActive ? 1.0 : 0.8,
-                              filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none'
+                              filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                              letterSpacing: '-0.025em'
                             }}
                           >
                             {window.innerWidth < 768 ? segment.shortTitle : segment.title}
