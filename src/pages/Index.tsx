@@ -196,12 +196,12 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Horizontal Growth Journey */}
+          <div className="space-y-16">
+            {/* First Line: Growth Timeline (Full Width) */}
             <div className="relative">
               {/* Growth Journey Timeline */}
               <div className="mb-12">
-                <div className="relative overflow-x-auto pb-8">
+                <div className="relative pb-8">
                   {/* Growth Line - SVG for smooth curve */}
                   <svg className="absolute top-16 left-0 w-full h-32 pointer-events-none z-0" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <defs>
@@ -224,7 +224,7 @@ const Index = () => {
                   </svg>
                   
                   {/* Milestones Container */}
-                  <div className="flex justify-between items-end min-w-max px-8 relative z-10" style={{ minWidth: '1000px' }}>
+                  <div className="flex justify-between items-end px-8 relative z-10">
                     {[
                       { year: '2000', title: 'Foundation', desc: 'Started with digital factory vision and early automation concepts', icon: 'lightbulb', size: 'w-12 h-12', yearSize: 'text-xs', bgHeight: 'h-16' },
                       { year: '2007', title: 'First Success', desc: 'First manufacturing plant fully digitalized with integrated systems', icon: 'factory', size: 'w-14 h-14', yearSize: 'text-sm', bgHeight: 'h-20' },
@@ -310,33 +310,37 @@ const Index = () => {
               </div>
             </div>
             
-            {/* Strong Foundation Card */}
-            <div className="bg-card rounded-2xl p-8 border shadow-lg">
-              <h3 className="heading-sm mb-6">Strong Foundation for Innovation</h3>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="body-base">230+ dedicated R&D professionals in India</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="body-base">ISO 27001 certified for information security</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="body-base">ISO 9001 certified for quality management</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="body-base">Proven track record across 60+ countries</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="body-base">24/7 global support infrastructure</span>
+            {/* Second Line: Strong Foundation for Innovation */}
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Text Content */}
+              <div className="bg-card rounded-2xl p-8 border shadow-lg">
+                <h3 className="heading-sm mb-6">Strong Foundation for Innovation</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="body-base">230+ dedicated R&D professionals in India</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="body-base">ISO 27001 certified for information security</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="body-base">ISO 9001 certified for quality management</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="body-base">Proven track record across 60+ countries</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="body-base">24/7 global support infrastructure</span>
+                  </div>
                 </div>
               </div>
               
-              <div className="aspect-[4/3] rounded-lg overflow-hidden">
+              {/* Image Content */}
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <img src={manufacturingEvolutionLab} alt="Modern control room and manufacturing evolution lab" className="w-full h-full object-cover" />
               </div>
             </div>
