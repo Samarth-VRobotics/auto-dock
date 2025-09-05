@@ -81,7 +81,7 @@ const Index = () => {
             </div>
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img src={smartFactoryHall} alt="Smart factory hall with robotic cells and digital signage" className="w-full h-full object-cover" />
+                <img src="/lovable-uploads/e3c6f9fe-fe05-4fde-8134-14dffba60042.png" alt="Production Line 7 with autonomous robotic arms and digital monitoring systems" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
