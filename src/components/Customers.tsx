@@ -2,7 +2,7 @@ import React from "react";
 import { Handshake, Settings, Headphones } from "lucide-react";
 
 const Customers = () => {
-  // Customer logos data matching the reference image
+  // Customer logos data from vegam website
   const customers = [{
     name: "ARKEMA",
     logo: "https://vegam.co/lovable-uploads/1a590db5-6790-4c96-846f-1908fd8142ea.png"
@@ -58,31 +58,27 @@ const Customers = () => {
     name: "Vguard",
     logo: "https://vegam.co/lovable-uploads/5693a6a3-2dff-454a-9982-d16213261092.png"
   }];
-
   return (
-    <section className="py-12 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-6">
         
-        {/* Strategic Partnerships Header */}
-        <div className="bg-blue-100 rounded-lg px-6 py-4 mb-6">
-          <div className="flex items-center justify-center gap-3">
-            <Handshake className="w-6 h-6 text-gray-700" />
-            <h2 className="text-xl font-semibold text-gray-900">Strategic Partnerships</h2>
+        {/* Strategic Partnerships */}
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-3 mb-4 bg-blue-100 py-4 px-8 rounded-lg inline-flex">
+            <Handshake className="w-8 h-8 text-blue-600" />
+            <h2 className="text-2xl font-bold text-gray-900">Strategic Partnerships</h2>
           </div>
-        </div>
-        
-        <div className="text-center mb-8">
-          <h3 className="text-lg font-medium text-gray-800 mb-6">
+          <p className="text-lg text-gray-700 font-medium">
             Trusted Long-Term Partner to Global Leaders in Chemicals & Manufacturing
-          </h3>
+          </p>
         </div>
 
-        {/* Company Logos Grid */}
-        <div className="grid grid-cols-7 gap-4 mb-12">
+        {/* Company Logos Grid - Static */}
+        <div className="grid grid-cols-4 md:grid-cols-7 gap-6 mb-16">
           {customers.map((customer, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-lg border border-gray-200 p-3 flex items-center justify-center h-16 hover:shadow-sm transition-shadow"
+              className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 flex items-center justify-center h-20"
             >
               <img 
                 src={customer.logo} 
@@ -93,30 +89,24 @@ const Customers = () => {
           ))}
         </div>
 
-        {/* Implementation Excellence Header */}
-        <div className="bg-blue-100 rounded-lg px-6 py-4 mb-6">
-          <div className="flex items-center justify-center gap-3">
-            <Settings className="w-6 h-6 text-gray-700" />
-            <h2 className="text-xl font-semibold text-gray-900">Implementation Excellence</h2>
-          </div>
-        </div>
-        
+        {/* Implementation Excellence */}
         <div className="text-center mb-12">
-          <p className="text-base text-gray-700 max-w-4xl mx-auto">
-            Comprehensive digital manufacturing operations management tools with proven track records of delivering sustained improvements across facilities worldwide.
+          <div className="flex items-center justify-center gap-3 mb-4 bg-blue-100 py-4 px-8 rounded-lg inline-flex">
+            <Settings className="w-8 h-8 text-blue-600" />
+            <h2 className="text-2xl font-bold text-gray-900">Implementation Excellence</h2>
+          </div>
+          <p className="text-lg text-gray-700 max-w-4xl mx-auto">
+            Comprehensive digital manufacturing operations management tools with proven track records of delivering sustained improvements across facilities worldwide
           </p>
         </div>
 
-        {/* Continuous Support Header */}
-        <div className="bg-blue-100 rounded-lg px-6 py-4 mb-6">
-          <div className="flex items-center justify-center gap-3">
-            <Headphones className="w-6 h-6 text-gray-700" />
-            <h2 className="text-xl font-semibold text-gray-900">Continuous Support</h2>
-          </div>
-        </div>
-        
+        {/* Continuous Support */}
         <div className="text-center">
-          <p className="text-base text-gray-700 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-3 mb-4 bg-blue-100 py-4 px-8 rounded-lg inline-flex">
+            <Headphones className="w-8 h-8 text-blue-600" />
+            <h2 className="text-2xl font-bold text-gray-900">Continuous Support</h2>
+          </div>
+          <p className="text-lg text-gray-700 max-w-4xl mx-auto">
             24/7 global support infrastructure ensuring optimal operations and rapid troubleshooting for mission-critical manufacturing systems across time zones.
           </p>
         </div>
