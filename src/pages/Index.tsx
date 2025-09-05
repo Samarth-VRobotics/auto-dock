@@ -326,8 +326,8 @@ const Index = () => {
               </div>
             </div>
 
-            {/* SVG Diagonal Growth Line */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
+            {/* SVG Diagonal Growth Line - Behind everything */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="diagonalGradient" x1="0%" y1="100%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.7" />
@@ -348,9 +348,9 @@ const Index = () => {
                 className="animate-fade-in"
                 style={{ animationDelay: '0.5s' }}
               />
-              {/* Arrow head at the end */}
+              {/* Improved arrow head at the end */}
               <polygon 
-                points="1100,150 1090,140 1090,145 1080,145 1080,155 1090,155 1090,160" 
+                points="1100,150 1085,140 1085,147 1090,150 1085,153 1085,160" 
                 fill="hsl(214 100% 50%)" 
                 className="animate-fade-in"
                 style={{ animationDelay: '1s' }}
@@ -359,20 +359,20 @@ const Index = () => {
 
             {/* Strong Foundation for Innovation Card */}
             <div className="absolute top-4 left-4 lg:top-8 lg:left-8 max-w-sm bg-background/95 rounded-2xl p-6 border shadow-xl backdrop-blur-sm z-20">
-              <div className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4 inline-block">
+              <div className="bg-red-600/10 text-red-600 px-4 py-2 rounded-full text-sm font-semibold mb-4 inline-block">
                 Strong Foundation for Innovation
               </div>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0"></div>
                   <span className="text-sm text-muted-foreground">230+ dedicated R&D professionals in India</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0"></div>
                   <span className="text-sm text-muted-foreground">ISO 27001 certified for information security</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0"></div>
                   <span className="text-sm text-muted-foreground">ISO 9001 certified for quality management</span>
                 </div>
               </div>
@@ -381,119 +381,135 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Desktop Timeline Nodes */}
+            {/* Desktop Timeline Nodes - Evenly distributed along diagonal */}
             <div className="hidden lg:block relative z-10 h-full">
               {[
                 {
                   id: 1,
                   year: '2000',
                   title: 'Foundation with digital factory vision.',
-                  position: { left: '8.5%', top: '81%' },
+                  position: { left: '8.3%', top: '81.3%' },
+                  cardPosition: 'below',
                   isPast: true
                 },
                 {
                   id: 2,
                   year: '2007',
                   title: 'First plant fully digitalized.',
-                  position: { left: '20%', top: '71%' },
+                  position: { left: '20.4%', top: '71.9%' },
+                  cardPosition: 'above',
                   isPast: true
                 },
                 {
                   id: 3,
                   year: '2013',
                   title: '18 plants connected in network.',
-                  position: { left: '31%', top: '61%' },
+                  position: { left: '32.5%', top: '62.5%' },
+                  cardPosition: 'below',
                   isPast: true
                 },
                 {
                   id: 4,
                   year: '2016',
                   title: 'Scaled to 70 plants globally.',
-                  position: { left: '42.5%', top: '51%' },
+                  position: { left: '44.6%', top: '53.1%' },
+                  cardPosition: 'above',
                   isPast: true
                 },
                 {
                   id: 5,
                   year: '2019',
                   title: 'Milestone of 100+ plants achieved.',
-                  position: { left: '54%', top: '41%' },
+                  position: { left: '56.7%', top: '43.8%' },
+                  cardPosition: 'below',
                   isPast: true
                 },
                 {
                   id: 6,
                   year: '2023',
                   title: 'Foundation for Autonomous factories.',
-                  position: { left: '65.5%', top: '31%' },
+                  position: { left: '68.8%', top: '34.4%' },
+                  cardPosition: 'above',
                   isPast: true
                 },
                 {
                   id: 7,
                   year: '2025',
                   title: 'Milestone of 300+ plants achieved.',
-                  position: { left: '77%', top: '21%' },
-                  isPast: false
+                  position: { left: '80.9%', top: '25%' },
+                  cardPosition: 'below',
+                  isPast: true
                 },
                 {
                   id: 8,
                   year: '2026',
                   title: 'Projected First Fully Autonomous Plant.',
-                  position: { left: '88.5%', top: '11%' },
+                  position: { left: '87%', top: '20.6%' },
+                  cardPosition: 'above',
                   isPast: false
                 },
                 {
                   id: 9,
                   year: '2030',
                   title: '1000 Autonomous Plants.',
-                  position: { right: '2%', top: '5%' },
+                  position: { left: '93.1%', top: '16.3%' },
+                  cardPosition: 'below',
                   isPast: false
                 }
               ].map((milestone, index) => (
-                <button
-                  key={milestone.id}
-                  className="absolute group cursor-pointer transform -translate-x-1/2 -translate-y-1/2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg"
-                  style={milestone.position}
-                  aria-label={`${milestone.year} — ${milestone.title}`}
-                  tabIndex={0}
-                >
-                  {/* Node Circle */}
-                  <div className="relative flex flex-col items-center">
-                    <div className={`w-6 h-6 rounded-full border-2 transition-all duration-200 group-hover:scale-125 group-focus:scale-125 ${
+                <div key={milestone.id} className="absolute">
+                  {/* Node positioned on the diagonal line */}
+                  <button
+                    className="group cursor-pointer transform -translate-x-1/2 -translate-y-1/2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg z-30"
+                    style={milestone.position}
+                    aria-label={`${milestone.year} — ${milestone.title}`}
+                    tabIndex={0}
+                  >
+                    {/* Node Circle */}
+                    <div className={`w-6 h-6 rounded-full border-2 transition-all duration-200 group-hover:scale-110 group-focus:scale-110 ${
                       milestone.isPast 
-                        ? 'bg-muted border-muted-foreground/60' 
-                        : 'bg-destructive border-destructive'
+                        ? 'bg-slate-400 border-slate-500' 
+                        : 'bg-red-600 border-red-700'
                     }`}>
                       <div className={`absolute inset-0 rounded-full transition-all duration-200 group-hover:animate-ping ${
                         milestone.isPast 
-                          ? 'border border-muted-foreground/30' 
-                          : 'border border-destructive/30'
+                          ? 'border border-slate-400/30' 
+                          : 'border border-red-600/30'
                       }`}></div>
                     </div>
                     
                     {/* Year Label */}
-                    <div className={`mt-3 px-3 py-1 rounded-full text-lg font-bold shadow-sm transition-all duration-200 group-hover:scale-110 group-focus:scale-110 ${
+                    <div className={`absolute ${milestone.cardPosition === 'above' ? 'bottom-8' : 'top-8'} left-1/2 transform -translate-x-1/2 px-3 py-1 rounded-full text-lg font-bold shadow-sm transition-all duration-200 group-hover:scale-105 group-focus:scale-105 whitespace-nowrap z-20 ${
                       milestone.isPast 
-                        ? 'bg-muted text-muted-foreground' 
-                        : 'bg-destructive text-destructive-foreground'
+                        ? 'bg-slate-100 text-slate-700' 
+                        : 'bg-red-600 text-white'
                     }`}>
                       {milestone.year}
                     </div>
 
+                    {/* Connector Line */}
+                    <div className={`absolute left-1/2 w-px ${milestone.cardPosition === 'above' ? 'bottom-16 h-12' : 'top-16 h-12'} transform -translate-x-1/2 ${
+                      milestone.isPast 
+                        ? 'bg-slate-300' 
+                        : 'bg-red-600/50'
+                    }`}></div>
+
                     {/* Caption Card */}
-                    <div className={`mt-4 bg-background rounded-xl p-4 shadow-lg border max-w-80 transition-all duration-200 group-hover:shadow-xl group-hover:-translate-y-1 group-focus:shadow-xl group-focus:-translate-y-1 ${
+                    <div className={`absolute left-1/2 transform -translate-x-1/2 ${milestone.cardPosition === 'above' ? 'bottom-28' : 'top-28'} bg-background rounded-xl p-4 shadow-lg border max-w-80 transition-all duration-200 group-hover:shadow-xl group-hover:-translate-y-1 group-focus:shadow-xl group-focus:-translate-y-1 z-10 ${
                       milestone.isPast 
                         ? 'border-border' 
-                        : 'border-destructive/20'
+                        : 'border-red-600/20'
                     }`}>
                       <p className={`text-sm font-medium leading-relaxed text-center ${
                         milestone.isPast 
                           ? 'text-foreground' 
-                          : 'text-destructive'
+                          : 'text-red-600'
                       }`}>
                         {milestone.title}
                       </p>
                     </div>
-                  </div>
-                </button>
+                  </button>
+                </div>
               ))}
             </div>
 
@@ -507,7 +523,7 @@ const Index = () => {
                   { year: '2016', title: 'Scaled to 70 plants globally.', isPast: true },
                   { year: '2019', title: 'Milestone of 100+ plants achieved.', isPast: true },
                   { year: '2023', title: 'Foundation for Autonomous factories.', isPast: true },
-                  { year: '2025', title: 'Milestone of 300+ plants achieved.', isPast: false },
+                  { year: '2025', title: 'Milestone of 300+ plants achieved.', isPast: true },
                   { year: '2026', title: 'Projected First Fully Autonomous Plant.', isPast: false },
                   { year: '2030', title: '1000 Autonomous Plants.', isPast: false }
                 ].map((milestone, index) => (
@@ -515,8 +531,8 @@ const Index = () => {
                     <div className="flex flex-col items-center">
                       <div className={`w-5 h-5 rounded-full border-2 ${
                         milestone.isPast 
-                          ? 'bg-muted border-muted-foreground/60' 
-                          : 'bg-destructive border-destructive'
+                          ? 'bg-slate-400 border-slate-500' 
+                          : 'bg-red-600 border-red-700'
                       }`}></div>
                       {index < 8 && (
                         <div className="w-px h-8 bg-border mt-2"></div>
@@ -525,15 +541,15 @@ const Index = () => {
                     <div className="flex-1 pb-8">
                       <div className={`inline-block px-3 py-1 rounded-full text-sm font-bold mb-2 ${
                         milestone.isPast 
-                          ? 'bg-muted text-muted-foreground' 
-                          : 'bg-destructive text-destructive-foreground'
+                          ? 'bg-slate-100 text-slate-700' 
+                          : 'bg-red-600 text-white'
                       }`}>
                         {milestone.year}
                       </div>
                       <p className={`text-sm ${
                         milestone.isPast 
                           ? 'text-foreground' 
-                          : 'text-destructive'
+                          : 'text-red-600'
                       }`}>
                         {milestone.title}
                       </p>
