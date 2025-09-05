@@ -91,8 +91,8 @@ const ShopFloorPortfolio = () => {
   const innerRadius = 120;
   const outerRadius = 240;
   const ringWidth = outerRadius - innerRadius;
-  const iconRadius = innerRadius + ringWidth * 0.30; // 25-35% into ring
-  const labelRadius = innerRadius + ringWidth * 0.70; // Outer half of ring
+  const iconRadius = innerRadius + 25; // Just outside center circle periphery
+  const labelRadius = innerRadius + ringWidth * 0.85; // Closer to outer edge to avoid overlap
 
   const getSegmentPath = (index: number) => {
     const angleStart = (index * 60 - 90 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
@@ -480,12 +480,14 @@ const ShopFloorPortfolio = () => {
               {segments.map((segment, index) => {
                 const isActive = activeSegment === index;
                 const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                const iconX = centerX + Math.cos(iconAngle) * iconRadius;
-                const iconY = centerY + Math.sin(iconAngle) * iconRadius;
+                const mobileIconRadius = innerRadius + 20; // Adjusted for mobile
+                const iconX = centerX + Math.cos(iconAngle) * mobileIconRadius;
+                const iconY = centerY + Math.sin(iconAngle) * mobileIconRadius;
                 
                 const labelAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                const labelX = centerX + Math.cos(labelAngle) * labelRadius;
-                const labelY = centerY + Math.sin(labelAngle) * labelRadius;
+                const mobileLabelRadius = innerRadius + ringWidth * 0.80; // Closer to outer edge for mobile
+                const labelX = centerX + Math.cos(labelAngle) * mobileLabelRadius;
+                const labelY = centerY + Math.sin(labelAngle) * mobileLabelRadius;
                 
                 return (
                       <g key={segment.id}>
