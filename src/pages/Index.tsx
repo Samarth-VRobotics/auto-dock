@@ -482,10 +482,10 @@ const Index = () => {
                 opacity="0.3"
               />
 
-              {/* diagonal growth line (behind everything) */}
+              {/* diagonal growth line (behind everything) - Extended with arrow at top */}
               <g className="vj-layer-line">
                 <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)"
-                      d="M 100 500 L 1100 100"/>
+                      d="M 100 500 L 1200 80"/>
               </g>
 
               {/* NODES + CARDS (above the line) */}
