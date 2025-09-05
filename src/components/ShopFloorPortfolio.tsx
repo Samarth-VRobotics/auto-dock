@@ -93,8 +93,8 @@ const ShopFloorPortfolio = () => {
   const labelRadius = 200;
 
   const getSegmentPath = (index: number) => {
-    const angleStart = (index * 60 - 90) * Math.PI / 180;
-    const angleEnd = ((index + 1) * 60 - 90) * Math.PI / 180;
+    const angleStart = (index * 60 - 90 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
+    const angleEnd = ((index + 1) * 60 - 90 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
     
     const x1 = centerX + Math.cos(angleStart) * innerRadius;
     const y1 = centerY + Math.sin(angleStart) * innerRadius;
@@ -109,8 +109,8 @@ const ShopFloorPortfolio = () => {
   };
 
   const getTextPath = (index: number) => {
-    const angleStart = (index * 60 - 90) * Math.PI / 180;
-    const angleEnd = ((index + 1) * 60 - 90) * Math.PI / 180;
+    const angleStart = (index * 60 - 90 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
+    const angleEnd = ((index + 1) * 60 - 90 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
     
     const startX = centerX + Math.cos(angleStart) * labelRadius;
     const startY = centerY + Math.sin(angleStart) * labelRadius;
@@ -121,7 +121,7 @@ const ShopFloorPortfolio = () => {
   };
 
   const getSegmentCentroid = (index: number) => {
-    const angle = (index * 60 - 90 + 30) * Math.PI / 180;
+    const angle = (index * 60 - 90 + 30 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
     const radius = (innerRadius + outerRadius) / 2;
     return {
       x: centerX + Math.cos(angle) * radius,
@@ -131,7 +131,7 @@ const ShopFloorPortfolio = () => {
 
   const getConnectorPath = (index: number) => {
     const segment = segments[index];
-    const angle = (index * 60 - 90 + 30) * Math.PI / 180;
+    const angle = (index * 60 - 90 + 30 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
     const startX = centerX + Math.cos(angle) * outerRadius;
     const startY = centerY + Math.sin(angle) * outerRadius;
     
