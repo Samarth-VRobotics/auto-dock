@@ -420,54 +420,7 @@ const Index = () => {
 
       {/* Shop Floor Automation Portfolio Section */}
       <section id="automation-portfolio" className="section-padding">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="section-header">
-            <h2 className="heading-lg mb-4">Our Integrated Shop Floor Automation Portfolio</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary/10 rounded-full mx-auto flex items-center justify-center">
-                <Truck className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="heading-sm">Inbound & Raw Material Handling</h3>
-            </div>
-            
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full mx-auto flex items-center justify-center">
-                <Cog className="w-8 h-8 text-secondary" />
-              </div>
-              <h3 className="heading-sm">Production & Process Operations</h3>
-            </div>
-            
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-accent/10 rounded-full mx-auto flex items-center justify-center">
-                <Shield className="w-8 h-8 text-accent" />
-              </div>
-              <h3 className="heading-sm">Quality Assurance & Inspection</h3>
-            </div>
-            
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary/10 rounded-full mx-auto flex items-center justify-center">
-                <Package className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="heading-sm">Packaging & Palletization</h3>
-            </div>
-            
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full mx-auto flex items-center justify-center">
-                <Building2 className="w-8 h-8 text-secondary" />
-              </div>
-              <h3 className="heading-sm">Warehousing & Outbound</h3>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <p className="body-base text-muted-foreground">
-              <span className="font-semibold">Truck Entry</span> • Process Flow • <span className="font-semibold">Dispatch</span>
-            </p>
-          </div>
-        </div>
+        
       </section>
 
       {/* Detailed Automation Portfolio Section */}
