@@ -95,21 +95,44 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && <div className="lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur-lg animate-fade-in">
             <div className="container mx-auto px-6 py-4 space-y-4">
-              <a href="#solutions" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
-                Solutions
+              {/* Mobile Robotics Solutions */}
+              <div className="space-y-2">
+                <div className="font-medium text-foreground py-2">Robotics Solutions</div>
+                <div className="pl-4 space-y-2">
+                  <a href="/autodock" className="block py-2 text-muted-foreground hover:text-primary transition-colors group">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full group-hover:scale-125 transition-transform duration-200"></div>
+                      <div>
+                        <div className="font-medium">AutoDock</div>
+                        <div className="text-xs text-muted-foreground">Automated loading and unloading</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="/amrs" className="block py-2 text-muted-foreground hover:text-primary transition-colors group">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary/60 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
+                      <div>
+                        <div className="font-medium">AMRs</div>
+                        <div className="text-xs text-muted-foreground">Autonomous Mobile Robots</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="/asrs" className="block py-2 text-muted-foreground hover:text-primary transition-colors group">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary/60 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
+                      <div>
+                        <div className="font-medium">ASRS</div>
+                        <div className="text-xs text-muted-foreground">Automatic Storage and Retrieval System</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              
+              <a href="/our-team" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
+                Robotics Team
               </a>
-              <a href="#technology" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
-                Technology
-              </a>
-              <a href="#industries" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
-                Industries
-              </a>
-              <a href="https://vegam.co/about" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
-                About
-              </a>
-              <a href="#our-journey" className="block py-2 text-foreground hover:text-primary transition-colors font-medium">
-                Our Journey
-              </a>
+              
               <ContactDialog>
                 <Button className="w-full mt-4 bg-gradient-primary hover:shadow-glow text-white font-semibold">
                   Contact Us
