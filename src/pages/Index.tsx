@@ -445,7 +445,7 @@ const Index = () => {
                   <stop offset="100%" stopColor="hsl(var(--primary))"/>
                 </linearGradient>
                 <marker id="vj-arrow" markerWidth={12} markerHeight={12} refX={9} refY={6} orient="auto">
-                  <path d="M0,0 L0,12 L12,6 z" fill="url(#vj-grad)"></path>
+                  <path d="M0,0 L0,12 L12,6 z" fill="hsl(var(--destructive))"></path>
                 </marker>
                 <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                   <feGaussianBlur stdDeviation={3} result="coloredBlur"/>
@@ -455,17 +455,17 @@ const Index = () => {
                   </feMerge>
                 </filter>
                 <clipPath id="imageClip">
-                  <rect x="20" y="20" width="675" height="270" rx="16"/>
+                  <rect x="20" y="20" width="540" height="216" rx="16"/>
                 </clipPath>
               </defs>
 
-              {/* Manufacturing Evolution Image - Top Left (1.5x bigger) */}
+              {/* Manufacturing Evolution Image - Top Left (0.8x size) */}
               <image 
                 href="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png"
                 x="20" 
                 y="20" 
-                width="675" 
-                height="270"
+                width="540" 
+                height="216"
                 clipPath="url(#imageClip)"
                 className="manufacturing-image"
                 style={{ filter: 'drop-shadow(0 8px 25px hsl(var(--foreground) / 0.15))' }}
@@ -473,8 +473,8 @@ const Index = () => {
               <rect 
                 x="20" 
                 y="20" 
-                width="675" 
-                height="270" 
+                width="540" 
+                height="216" 
                 rx="16" 
                 fill="none" 
                 stroke="hsl(var(--border))" 
