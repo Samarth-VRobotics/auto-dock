@@ -516,10 +516,10 @@ const ShopFloorPortfolio = () => {
           <div className="flex justify-center mb-12 md:mb-16">
             <svg 
               width="100%" 
-              height="400" 
+              height="450" 
               viewBox="0 0 640 640" 
-              className="drop-shadow-lg max-w-sm md:max-w-md"
-              style={{ minHeight: '350px' }}
+              className="drop-shadow-lg max-w-sm md:max-w-lg"
+              style={{ minHeight: '400px' }}
             >
               <defs>
                 {/* Enhanced Glow filter */}
@@ -543,180 +543,180 @@ const ShopFloorPortfolio = () => {
                 opacity="0.3"
               />
               
-              {/* Connector lines for mobile */}
-              {segments.map((segment, index) => {
-                const isActive = activeSegment === index;
-                const angle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                const startX = centerX + Math.cos(angle) * (outerRadius * 0.5); // Scale down for mobile
-                const startY = centerY + Math.sin(angle) * (outerRadius * 0.5);
-                
-                // Mobile cards position (simplified - just show lines going outward)
-                const endX = centerX + Math.cos(angle) * (outerRadius * 0.7);
-                const endY = centerY + Math.sin(angle) * (outerRadius * 0.7);
-                
-                return (
-                  <line
-                    key={`mobile-connector-${index}`}
-                    x1={startX}
-                    y1={startY}
-                    x2={endX}
-                    y2={endY}
-                    stroke={isActive ? "#ef4444" : "#d1d5db"}
-                    strokeWidth={isActive ? "1.5" : "0.5"}
-                    className="transition-all duration-150"
-                    opacity="0.4"
-                  />
-                );
-              })}
+              {/* Segments - Consistent with desktop */}
+              <g id="mobile-pie-slices">
+                {segments.map((segment, index) => {
+                  const isActive = activeSegment === index;
+                  const centroid = getSegmentCentroid(index);
+                  
+                  return (
+                    <path
+                      key={`mobile-segment-${index}`}
+                      d={getSegmentPath(index)}
+                      fill={isActive ? "#fef2f2" : "white"}
+                      stroke={isActive ? "#ef4444" : "#e5e7eb"}
+                      strokeWidth={isActive ? "3" : "1"}
+                      className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2"
+                      style={{
+                        transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                        transformOrigin: `${centroid.x}px ${centroid.y}px`,
+                        filter: isActive ? 'url(#mobile-glow)' : 'none'
+                      }}
+                      onClick={() => setActiveSegment(index)}
+                    />
+                  );
+                })}
+              </g>
               
-              {/* Segments */}
-              {segments.map((segment, index) => {
-                const isActive = activeSegment === index;
-                const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                const mobileIconRadius = innerRadius; // Exactly at center circle border for mobile too
-                const iconX = centerX + Math.cos(iconAngle) * mobileIconRadius;
-                const iconY = centerY + Math.sin(iconAngle) * mobileIconRadius;
-                
-                const labelAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                const mobileLabelRadius = innerRadius + ringWidth * 0.80; // Closer to outer edge for mobile
-                const labelX = centerX + Math.cos(labelAngle) * mobileLabelRadius;
-                const labelY = centerY + Math.sin(labelAngle) * mobileLabelRadius;
-                
-                return (
-                      <g key={segment.id}>
-                        <path
-                          d={getSegmentPath(index)}
-                          fill={isActive ? "#fef2f2" : "white"}
-                          stroke={isActive ? "#ef4444" : "#e5e7eb"}
-                          strokeWidth={isActive ? "2" : "1"}
-                          className="cursor-pointer transition-all duration-150 hover:fill-red-50 hover:stroke-red-400"
-                          onClick={() => setActiveSegment(index)}
-                        />
-                        
-                        {/* Enhanced Mobile segment icon */}
-                        <g className="pointer-events-none">
-                          <circle
-                            cx={iconX}
-                            cy={iconY}
-                            r="22"
-                            fill="white"
-                            stroke={isActive ? "#ef4444" : "#d1d5db"}
-                            strokeWidth={isActive ? "2" : "1"}
-                            className="transition-all duration-150"
-                            style={{
-                              transform: isActive ? 'scale(1.1)' : 'scale(1)',
-                              transformOrigin: `${iconX}px ${iconY}px`
-                            }}
-                          />
-                          <foreignObject
-                            x={iconX - 14}
-                            y={iconY - 14}
-                            width="28"
-                            height="28"
-                            className="pointer-events-none"
-                          >
-                            <div className="w-full h-full flex items-center justify-center">
-                              <segment.icon 
-                                size={24} 
-                                className={`transition-all duration-150 ${isActive ? "text-red-500" : "text-gray-600"}`}
-                              />
-                            </div>
-                          </foreignObject>
-                        </g>
-                        
-                        {/* Upright mobile label with multi-line support */}
-                        <g className="pointer-events-none">
-                          {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ? (
-                            // Multi-line labels for segments with "/"
-                            <>
-                              <text
-                                x={labelX}
-                                y={labelY - 6}
-                                textAnchor="middle"
-                                dominantBaseline="central"
-                                className={`text-xs font-medium tracking-tight transition-all duration-150 ${
-                                  isActive ? "fill-gray-900" : "fill-gray-600"
-                                }`}
-                                style={{ 
-                                  fontSize: '9px',
-                                  fontWeight: isActive ? '600' : '500',
-                                  opacity: isActive ? 1.0 : 0.8
-                                }}
-                              >
-                                {segment.title.split(' / ')[0]}/
-                              </text>
-                              <text
-                                x={labelX}
-                                y={labelY + 6}
-                                textAnchor="middle"
-                                dominantBaseline="central"
-                                className={`text-xs font-medium tracking-tight transition-all duration-150 ${
-                                  isActive ? "fill-gray-900" : "fill-gray-600"
-                                }`}
-                                style={{ 
-                                  fontSize: '8px',
-                                  fontWeight: isActive ? '600' : '500',
-                                  opacity: isActive ? 1.0 : 0.8
-                                }}
-                              >
-                                {segment.title.split(' / ')[1].toLowerCase()}
-                              </text>
-                            </>
-                          ) : (
-                            // Single line labels
-                            <text 
-                              x={labelX}
-                              y={labelY}
-                              textAnchor="middle"
-                              dominantBaseline="central"
-                              className={`text-xs font-medium tracking-tight transition-all duration-150 ${
-                                isActive ? "fill-gray-900" : "fill-gray-600"
-                              }`}
-                              style={{ 
-                                fontSize: '10px',
-                                fontWeight: isActive ? '600' : '500',
-                                opacity: isActive ? 1.0 : 0.8
-                              }}
-                            >
-                              {segment.shortTitle}
-                            </text>
-                          )}
-                        </g>
-                      </g>
-                );
-              })}
-              
-              {/* Center Circle */}
+              {/* Center Circle - Consistent with desktop */}
               <circle
                 cx={centerX}
                 cy={centerY}
                 r={innerRadius}
                 fill="white"
                 stroke="#e5e7eb"
-                strokeWidth="1"
+                strokeWidth="2"
               />
               
-              {/* Center Text */}
+              {/* Center Text - Consistent with desktop */}
               <text
                 x={centerX}
-                y={centerY - 8}
+                y={centerY - 10}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 className="font-bold fill-gray-800"
-                style={{ fontSize: '16px', fontWeight: '800' }}
+                style={{ fontSize: window.innerWidth < 768 ? '16px' : '18px', fontWeight: '800' }}
               >
                 Autonomous
               </text>
               <text
                 x={centerX}
-                y={centerY + 12}
+                y={centerY + 15}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 className="font-bold fill-gray-800"
-                style={{ fontSize: '16px', fontWeight: '800' }}
+                style={{ fontSize: window.innerWidth < 768 ? '16px' : '18px', fontWeight: '800' }}
               >
                 Factories
               </text>
+              
+              {/* Labels and Icons - Consistent with desktop */}
+              <g id="mobile-labels-icons">
+                {segments.map((segment, index) => {
+                  const isActive = activeSegment === index;
+                  const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                  const iconX = centerX + Math.cos(iconAngle) * iconRadius;
+                  const iconY = centerY + Math.sin(iconAngle) * iconRadius;
+                  const IconComponent = segment.icon;
+                  
+                  // Label positioning - consistent with desktop
+                  const labelAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                  const labelX = centerX + Math.cos(labelAngle) * labelRadius;
+                  const labelY = centerY + Math.sin(labelAngle) * labelRadius;
+                  
+                  // Responsive icon sizing
+                  const iconSize = window.innerWidth < 768 ? 36 : 44;
+                  const iconBgRadius = iconSize / 2 + 4;
+                  
+                  return (
+                    <g key={`mobile-icon-label-${index}`} className="pointer-events-none">
+                      {/* Icon with background circle - positioned on inner circle circumference */}
+                      <circle
+                        cx={iconX}
+                        cy={iconY}
+                        r={iconBgRadius}
+                        fill="white"
+                        stroke={isActive ? "#ef4444" : "#d1d5db"}
+                        strokeWidth={isActive ? "3" : "2"}
+                        className="transition-all duration-150"
+                        style={{
+                          transform: isActive ? 'scale(1.07)' : 'scale(1)',
+                          transformOrigin: `${iconX}px ${iconY}px`
+                        }}
+                      />
+                      <foreignObject
+                        x={iconX - iconSize/2}
+                        y={iconY - iconSize/2}
+                        width={iconSize}
+                        height={iconSize}
+                        className="pointer-events-none"
+                      >
+                        <div className="w-full h-full flex items-center justify-center">
+                          <IconComponent 
+                            size={iconSize * 0.7} 
+                            className={`transition-all duration-150 ${
+                              isActive ? "text-red-500" : "text-gray-600"
+                            }`}
+                          />
+                        </div>
+                      </foreignObject>
+                      
+                      {/* Upright segment labels - consistent with desktop */}
+                      {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ? (
+                        // Multi-line labels for segments with "/"
+                        <>
+                          <text
+                            x={labelX}
+                            y={labelY - 8}
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            className={`font-bold tracking-tight transition-all duration-150 ${
+                              isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"
+                            }`}
+                            style={{ 
+                              fontSize: window.innerWidth < 768 ? '12px' : '14px',
+                              fontWeight: '700',
+                              opacity: isActive ? 1.0 : 0.9,
+                              filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                              letterSpacing: '-0.025em'
+                            }}
+                          >
+                            {segment.title.split(' / ')[0]} /
+                          </text>
+                          <text
+                            x={labelX}
+                            y={labelY + 8}
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            className={`font-bold tracking-tight transition-all duration-150 ${
+                              isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"
+                            }`}
+                            style={{ 
+                              fontSize: window.innerWidth < 768 ? '12px' : '14px',
+                              fontWeight: '700',
+                              opacity: isActive ? 1.0 : 0.9,
+                              filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                              letterSpacing: '-0.025em'
+                            }}
+                          >
+                            {segment.title.split(' / ')[1]}
+                          </text>
+                        </>
+                      ) : (
+                        // Single line labels
+                        <text 
+                          x={labelX}
+                          y={labelY}
+                          textAnchor="middle"
+                          dominantBaseline="central"
+                          className={`font-bold tracking-tight transition-all duration-150 ${
+                            isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"
+                          }`}
+                          style={{ 
+                            fontSize: window.innerWidth < 768 ? '12px' : '14px',
+                            fontWeight: '700',
+                            opacity: isActive ? 1.0 : 0.9,
+                            filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                            letterSpacing: '-0.025em'
+                          }}
+                        >
+                          {window.innerWidth < 768 ? segment.shortTitle : segment.title}
+                        </text>
+                      )}
+                    </g>
+                  );
+                })}
+              </g>
             </svg>
           </div>
           
