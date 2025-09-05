@@ -91,7 +91,7 @@ const ShopFloorPortfolio = () => {
   const innerRadius = 120;
   const outerRadius = 240;
   const ringWidth = outerRadius - innerRadius;
-  const iconRadius = innerRadius + ringWidth * 0.55; // Move icons into middle of ring for full visibility
+  const iconRadius = innerRadius; // Position icons on center circle circumference
   const labelRadius = innerRadius + ringWidth * 0.85; // Closer to outer edge to avoid overlap
 
   const getSegmentPath = (index: number) => {
@@ -211,7 +211,7 @@ const ShopFloorPortfolio = () => {
                 
                 {/* Connector lines removed per requirements */}
                 
-                {/* Segments */}
+                {/* Segments - base layer */}
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
                   const centroid = getSegmentCentroid(index);
@@ -251,12 +251,12 @@ const ShopFloorPortfolio = () => {
                         onKeyDown={(e) => handleKeyDown(e, index)}
                       />
                       
-                      {/* Icon on segment */}
-                      <g className="pointer-events-none">
+                      {/* Icon on segment - positioned above segments and center circle */}
+                      <g className="pointer-events-none" style={{ zIndex: 10 }}>
                         <circle
                           cx={iconX}
                           cy={iconY}
-                          r="24"
+                          r="30"
                           fill="white"
                           stroke={isActive ? "#ef4444" : "#d1d5db"}
                           strokeWidth={isActive ? "2" : "1"}
@@ -267,15 +267,15 @@ const ShopFloorPortfolio = () => {
                           }}
                         />
                         <foreignObject
-                          x={iconX - 12}
-                          y={iconY - 12}
-                          width="24"
-                          height="24"
+                          x={iconX - 18}
+                          y={iconY - 18}
+                          width="36"
+                          height="36"
                           className="pointer-events-none"
                         >
                           <div className="w-full h-full flex items-center justify-center">
                             <IconComponent 
-                              size={24} 
+                              size={36} 
                               className={`transition-all duration-150 ${
                                 isActive ? "text-red-500" : "text-gray-600"
                               }`}
@@ -352,7 +352,7 @@ const ShopFloorPortfolio = () => {
                   );
                 })}
                 
-                {/* Inner center circle */}
+                {/* Inner center circle - middle layer */}
                 <circle
                   cx={centerX}
                   cy={centerY}
