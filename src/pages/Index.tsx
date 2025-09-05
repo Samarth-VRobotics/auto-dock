@@ -311,9 +311,6 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 text-foreground px-4">
               Vegam Journey: Proven History in Manufacturing Transformation
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto px-4 leading-relaxed">
-              Over two decades of experience in digitalizing and transforming manufacturing operations across the globe.
-            </p>
           </div>
 
           <div className="timeline-container relative max-w-6xl mx-auto" style={{ paddingRight: 'min(8vw, 120px)', overflow: 'visible' }}>
@@ -440,16 +437,17 @@ const Index = () => {
               .vj-layer-line { isolation: isolate; z-index: 1; }
               .vj-layer-nodes { isolation: isolate; z-index: 2; }
               
-              /* Mobile responsive adjustments */
-              @media (max-width: 768px) {
-                .vj-svg { padding: 25px 15px; }
-                .vj-year { font-size: 20px; }
-                .vj-year-visible { font-size: 18px; font-weight: 700; }
-                .vj-cap { font-size: 14px; font-weight: 600; }
-                .vj-node { r: 28; }
-                .vj-node-ring { r: 35; }
-                .vj-card rect { height: 60; rx: 16; }
-              }
+               /* Mobile responsive adjustments */
+               @media (max-width: 768px) {
+                 .vj-svg { padding: 30px 20px; transform: scale(1.2); transform-origin: center; }
+                 .vj-year { font-size: 24px; }
+                 .vj-year-visible { font-size: 22px; font-weight: 700; }
+                 .vj-cap { font-size: 16px; font-weight: 600; }
+                 .vj-node { r: 32; }
+                 .vj-node-ring { r: 40; }
+                 .vj-card rect { height: 70; rx: 18; }
+                 .timeline-container { padding-right: 0; margin: 0 -20px; }
+               }
               
               /* Tablet responsive adjustments */
               @media (min-width: 769px) and (max-width: 1024px) {
