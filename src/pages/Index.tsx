@@ -316,9 +316,9 @@ const Index = () => {
           </div>
 
           {/* Curved Timeline Container */}
-          <div className="relative min-h-[600px] lg:min-h-[500px]">
+          <div className="relative min-h-[700px] lg:min-h-[600px]">
             {/* Background Grid */}
-            <div className="absolute inset-0 opacity-20">
+            <div className="absolute inset-0 opacity-10">
               <div className="grid grid-cols-12 gap-2 h-full">
                 {Array.from({ length: 12 }, (_, i) => (
                   <div key={i} className="border-l border-muted-foreground/20"></div>
@@ -326,82 +326,82 @@ const Index = () => {
               </div>
             </div>
 
-            {/* SVG Curved Timeline */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet">
+            {/* SVG Curved Timeline - Moved Lower */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
-                  <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
+                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
+                  <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.9" />
                   <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="1" />
                 </linearGradient>
               </defs>
-              {/* Curved timeline path */}
+              {/* Curved timeline path - positioned lower */}
               <path 
-                d="M 60 380 Q 200 300 350 280 Q 500 260 650 240 Q 800 220 950 200 Q 1050 180 1140 160" 
+                d="M 60 450 Q 200 380 350 360 Q 500 340 650 320 Q 800 300 950 280 Q 1050 260 1140 240" 
                 stroke="url(#timelineGradient)" 
-                strokeWidth="3" 
+                strokeWidth="4" 
                 fill="none" 
                 className="animate-fade-in"
                 style={{ animationDelay: '0.5s' }}
               />
             </svg>
 
-            {/* Timeline Nodes */}
+            {/* Timeline Nodes - Positioned on the curve */}
             <div className="relative z-10 h-full">
               {[
                 {
                   id: 1,
                   year: '2000',
                   title: 'Foundation with digital factory vision',
-                  position: { left: '3%', top: '75%' }
+                  position: { left: '5%', top: '75%' }
                 },
                 {
                   id: 2,
                   year: '2007',
                   title: 'First plant fully digitalized',
-                  position: { left: '13%', top: '60%' }
+                  position: { left: '16.5%', top: '63%' }
                 },
                 {
                   id: 3,
                   year: '2013',
                   title: '18 plants connected in network',
-                  position: { left: '26%', top: '55%' }
+                  position: { left: '29%', top: '60%' }
                 },
                 {
                   id: 4,
                   year: '2016',
                   title: 'Scaled to 70 plants globally',
-                  position: { left: '41%', top: '50%' }
+                  position: { left: '42%', top: '57%' }
                 },
                 {
                   id: 5,
                   year: '2019',
                   title: 'Milestone of 100+ plants achieved',
-                  position: { left: '56%', top: '45%' }
+                  position: { left: '54%', top: '53%' }
                 },
                 {
                   id: 6,
                   year: '2023',
                   title: 'Foundation for Autonomous factories',
-                  position: { left: '68%', top: '42%' }
+                  position: { left: '67%', top: '50%' }
                 },
                 {
                   id: 7,
                   year: '2025',
                   title: 'Milestone of 300+ plants achieved',
-                  position: { left: '78%', top: '38%' }
+                  position: { left: '79%', top: '47%' }
                 },
                 {
                   id: 8,
                   year: '2026',
                   title: 'Projected First Fully Autonomous Plant',
-                  position: { left: '85%', top: '35%' }
+                  position: { left: '87%', top: '43%' }
                 },
                 {
                   id: 9,
                   year: '2030',
                   title: '1000 Autonomous Plants',
-                  position: { left: '94%', top: '30%' }
+                  position: { left: '95%', top: '40%' }
                 }
               ].map((milestone) => (
                 <div
@@ -412,10 +412,10 @@ const Index = () => {
                     top: milestone.position.top
                   }}
                 >
-                  {/* Node Circle */}
-                  <div className="relative flex items-center justify-center">
-                    <div className="w-12 h-12 bg-background border-4 border-primary rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:border-red-500 group-hover:shadow-xl group-hover:bg-red-50">
-                      <span className="text-sm font-bold text-primary group-hover:text-red-600 transition-colors">
+                  {/* Node Circle on Curve */}
+                  <div className="relative flex flex-col items-center">
+                    <div className="w-16 h-16 bg-background border-4 border-primary rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:border-red-500 group-hover:shadow-2xl group-hover:bg-red-50 group-hover:-translate-y-2">
+                      <span className="text-lg font-bold text-primary group-hover:text-red-600 transition-colors">
                         {milestone.id}
                       </span>
                     </div>
@@ -424,20 +424,22 @@ const Index = () => {
                     <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
                   </div>
 
-                  {/* Year Label */}
-                  <div className="absolute top-14 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-primary text-white px-3 py-1 rounded-full text-sm font-bold shadow-md group-hover:bg-red-500 group-hover:scale-105 transition-all duration-300">
+                  {/* Always Visible Year Label */}
+                  <div className="mt-4 mb-2">
+                    <div className="bg-primary text-white px-4 py-2 rounded-full text-base font-bold shadow-md group-hover:bg-red-500 group-hover:scale-105 transition-all duration-300">
                       {milestone.year}
                     </div>
                   </div>
 
-                  {/* Hover Card */}
-                  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 bg-background rounded-xl p-4 shadow-xl border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20 min-w-48 translate-y-2 group-hover:translate-y-0">
-                    <p className="text-sm text-foreground font-medium leading-relaxed text-center">
+                  {/* Always Visible Information Card */}
+                  <div className="bg-background/95 rounded-xl p-4 shadow-lg border border-border backdrop-blur-sm min-w-56 max-w-64 group-hover:bg-red-50/95 group-hover:border-red-200 group-hover:shadow-xl transition-all duration-300">
+                    <p className="text-sm text-foreground font-medium leading-relaxed text-center group-hover:text-red-800">
                       {milestone.title}
                     </p>
-                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-background border-l border-t border-border rotate-45"></div>
                   </div>
+
+                  {/* Connection Line to Curve */}
+                  <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-primary/40 transform -translate-x-1/2 -translate-y-4 group-hover:bg-red-400 transition-colors duration-300"></div>
                 </div>
               ))}
             </div>
