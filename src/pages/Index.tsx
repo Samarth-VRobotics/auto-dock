@@ -383,10 +383,16 @@ const Index = () => {
                 transform: translateY(0);
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
               }
+              /* Node circle hover effects */
               .milestone:hover .vj-node,
-              .milestone:focus-within .vj-node { 
-                transform: scale(1.10); 
-                filter: drop-shadow(0 4px 14px rgba(0,0,0,0.15));
+              .milestone:focus-within .vj-node {
+                transform: scale(1.10);
+                filter: drop-shadow(0 4px 14px hsl(var(--foreground) / 0.15));
+              }
+              /* Card hover effects - enlarge instead of transparency */
+              .milestone:hover .vj-card,
+              .milestone:focus-within .vj-card {
+                transform: scale(1.05);
               }
               /* Past milestone hover (≤2025) - blue accent */
               .milestone[data-key="2000"]:hover .vj-card rect,
@@ -415,11 +421,6 @@ const Index = () => {
                 fill: hsl(var(--destructive) / 0.05);
                 stroke: hsl(var(--destructive));
                 stroke-width: 2;
-              }
-              /* Bold year text on hover */
-              .milestone:hover .vj-year,
-              .milestone:focus-within .vj-year {
-                font-weight: 700;
               }
               /* Remove all other hover effects on cards and text */
               .vj-foundation-card {
@@ -511,11 +512,10 @@ const Index = () => {
                   {/* Year label always visible */}
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2000</text>
                   
-                  {/* Hover card */}
+                  {/* Message card */}
                   <g className="vj-card" transform="translate(-120,28)">
-                    <rect width={240} height={70} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-year" x={12} y={24}>2000</text>
-                    <text className="vj-cap" x={12} y={44}>Foundation with digital factory vision</text>
+                    <rect width={240} height={50} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={12} y={30}>Foundation with digital factory vision</text>
                   </g>
                 </g>
 
@@ -527,10 +527,9 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
                   
-                  <g className="vj-card" transform="translate(24,-100)">
-                    <rect width={220} height={62} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-year" x={12} y={24}>2007</text>
-                    <text className="vj-cap" x={12} y={44}>First plant fully digitalized</text>
+                  <g className="vj-card" transform="translate(24,-80)">
+                    <rect width={220} height={42} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={12} y={26}>First plant fully digitalized</text>
                   </g>
                 </g>
 
@@ -543,9 +542,8 @@ const Index = () => {
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2013</text>
                   
                   <g className="vj-card" transform="translate(-210,28)">
-                    <rect width={260} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-year" x={12} y={24}>2013</text>
-                    <text className="vj-cap" x={12} y={44}><tspan fontWeight="700">18</tspan> plants connected in network</text>
+                    <rect width={260} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={12} y={30}><tspan fontWeight="700">18</tspan> plants connected in network</text>
                   </g>
                 </g>
 
@@ -557,10 +555,9 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
                   
-                  <g className="vj-card" transform="translate(24,-96)">
-                    <rect width={240} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-year" x={12} y={24}>2016</text>
-                    <text className="vj-cap" x={12} y={44}>Scaled to <tspan fontWeight="700">70</tspan> plants globally</text>
+                  <g className="vj-card" transform="translate(24,-76)">
+                    <rect width={240} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={12} y={30}>Scaled to <tspan fontWeight="700">70</tspan> plants globally</text>
                   </g>
                 </g>
 
@@ -573,9 +570,8 @@ const Index = () => {
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2019</text>
                   
                   <g className="vj-card" transform="translate(-220,28)">
-                    <rect width={270} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-year" x={12} y={24}>2019</text>
-                    <text className="vj-cap" x={12} y={44}>Milestone of <tspan fontWeight="700">100+</tspan> plants achieved</text>
+                    <rect width={270} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={12} y={30}>Milestone of <tspan fontWeight="700">100+</tspan> plants achieved</text>
                   </g>
                 </g>
 
@@ -587,10 +583,9 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
                   
-                  <g className="vj-card" transform="translate(24,-100)">
-                    <rect width={270} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-year" x={12} y={24}>2023</text>
-                    <text className="vj-cap" x={12} y={44}>Foundation for Autonomous factories</text>
+                  <g className="vj-card" transform="translate(24,-80)">
+                    <rect width={270} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={12} y={30}>Foundation for Autonomous factories</text>
                   </g>
                 </g>
 
@@ -603,9 +598,8 @@ const Index = () => {
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2025</text>
                   
                   <g className="vj-card" transform="translate(-240,28)">
-                    <rect width={290} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-year" x={12} y={24}>2025</text>
-                    <text className="vj-cap" x={12} y={44}>Milestone of <tspan fontWeight="700">300+</tspan> plants achieved</text>
+                    <rect width={290} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={12} y={30}>Milestone of <tspan fontWeight="700">300+</tspan> plants achieved</text>
                   </g>
                 </g>
 
@@ -617,10 +611,9 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
                   
-                  <g className="vj-card" transform="translate(-324,-96)">
-                    <rect width={300} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
-                    <text className="vj-year" x={12} y={24} fill="hsl(var(--destructive))">2026</text>
-                    <text className="vj-cap" x={12} y={44}>Projected First Fully Autonomous Plant</text>
+                  <g className="vj-card" transform="translate(-324,-76)">
+                    <rect width={300} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={12} y={30}>Projected First Fully Autonomous Plant</text>
                   </g>
                 </g>
 
@@ -633,9 +626,8 @@ const Index = () => {
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2030</text>
                   
                   <g className="vj-card" transform="translate(-284,44)">
-                    <rect width={260} height={68} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
-                    <text className="vj-year" x={12} y={24} fill="hsl(var(--destructive))">2030</text>
-                    <text className="vj-cap" x={12} y={44}><tspan fontWeight="700">1000</tspan> Autonomous Plants</text>
+                    <rect width={260} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={12} y={30}><tspan fontWeight="700">1000</tspan> Autonomous Plants</text>
                   </g>
                 </g>
               </g>
