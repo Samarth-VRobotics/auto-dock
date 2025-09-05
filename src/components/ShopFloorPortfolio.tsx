@@ -126,14 +126,15 @@ const ShopFloorPortfolio = () => {
     const iconPos = getIconPosition(index);
     const isLeft = segment.side === 'left';
     
-    // Card vertical center position
-    const cardCenterY = 100 + (segment.slot * 180) + 90; // Card vertical center based on grid slot
+    // Card positions
+    const cardCenterY = 100 + (segment.slot * 180) + 90; // Card vertical center
+    const cardX = isLeft ? 60 : 540; // Card horizontal edge
     
-    // Straight horizontal line from icon center to card edge
-    const startX = iconPos.x + (isLeft ? -16 : 16); // Start from icon edge
-    const endX = isLeft ? 72 : 528; // End at card edge (2-4px inside)
+    // Straight horizontal line from icon to card
+    const startX = iconPos.x + (isLeft ? -16 : 16); // Offset from icon edge
+    const endX = cardX + (isLeft ? 0 : 260); // Card edge
     
-    return `M ${startX} ${iconPos.y} L ${endX} ${cardCenterY}`;
+    return `M ${startX} ${iconPos.y} L ${endX} ${iconPos.y} L ${endX} ${cardCenterY} L ${cardX + (isLeft ? 260 : 0)} ${cardCenterY}`;
   };
 
   return (
