@@ -1,118 +1,74 @@
 import React from "react";
-import { Handshake, Settings, Headphones } from "lucide-react";
-
 const Customers = () => {
   // Customer logos data from vegam website
   const customers = [{
-    name: "ARKEMA",
+    name: "Bostik",
     logo: "https://vegam.co/lovable-uploads/1a590db5-6790-4c96-846f-1908fd8142ea.png"
   }, {
-    name: "BASF",
+    name: "Emerson",
     logo: "https://vegam.co/lovable-uploads/a130b90f-7ac1-4960-920e-a0474132e26f.png"
   }, {
-    name: "Bostik",
-    logo: "https://vegam.co/lovable-uploads/fcf8d687-3ef1-4c16-993e-16dd3eb46b83.png"
-  }, {
-    name: "Emerson",
-    logo: "https://vegam.co/lovable-uploads/c0b6dbaa-39e8-4181-8f27-a1e1e3a63bda.png"
-  }, {
-    name: "Evonik",
-    logo: "https://vegam.co/lovable-uploads/83bbbced-e06e-48c3-b1e2-1a0879172c1c.png"
-  }, {
-    name: "Henkel",
-    logo: "https://vegam.co/lovable-uploads/3a453a0d-1d64-4438-b964-ce77b954bdb1.png"
-  }, {
-    name: "Unilever",
+    name: "JSL Jindal Stainless",
     logo: "https://vegam.co/lovable-uploads/a566f628-b7a5-488d-ae06-e4f4dc306e28.png"
   }, {
-    name: "SEP",
+    name: "Indorama",
+    logo: "https://vegam.co/lovable-uploads/83bbbced-e06e-48c3-b1e2-1a0879172c1c.png"
+  }, {
+    name: "LG Electronics",
+    logo: "https://vegam.co/lovable-uploads/c0b6dbaa-39e8-4181-8f27-a1e1e3a63bda.png"
+  }, {
+    name: "JSW Steel",
+    logo: "https://vegam.co/lovable-uploads/3a453a0d-1d64-4438-b964-ce77b954bdb1.png"
+  }, {
+    name: "Saint-Gobain",
+    logo: "https://vegam.co/lovable-uploads/fcf8d687-3ef1-4c16-993e-16dd3eb46b83.png"
+  }, {
+    name: "SEP India",
     logo: "https://vegam.co/lovable-uploads/5693a6a3-2dff-454a-9982-d16213261092.png"
   }, {
     name: "SKF",
     logo: "https://vegam.co/lovable-uploads/28ac4552-9267-4e43-9929-9dff1c9e7f86.png"
   }, {
-    name: "JSW Steel",
+    name: "Solex Logistics",
     logo: "https://vegam.co/lovable-uploads/66fde0cf-949d-4508-81a6-02eeeb41e212.png"
-  }, {
-    name: "LG Electronics",
-    logo: "https://vegam.co/lovable-uploads/1a590db5-6790-4c96-846f-1908fd8142ea.png"
-  }, {
-    name: "MBCC Group",
-    logo: "https://vegam.co/lovable-uploads/a130b90f-7ac1-4960-920e-a0474132e26f.png"
-  }, {
-    name: "Target",
-    logo: "https://vegam.co/lovable-uploads/fcf8d687-3ef1-4c16-993e-16dd3eb46b83.png"
-  }, {
-    name: "OKW",
-    logo: "https://vegam.co/lovable-uploads/c0b6dbaa-39e8-4181-8f27-a1e1e3a63bda.png"
-  }, {
-    name: "Indorama",
-    logo: "https://vegam.co/lovable-uploads/83bbbced-e06e-48c3-b1e2-1a0879172c1c.png"
-  }, {
-    name: "JSL",
-    logo: "https://vegam.co/lovable-uploads/3a453a0d-1d64-4438-b964-ce77b954bdb1.png"
-  }, {
-    name: "Vedanta",
-    logo: "https://vegam.co/lovable-uploads/a566f628-b7a5-488d-ae06-e4f4dc306e28.png"
-  }, {
-    name: "Vguard",
-    logo: "https://vegam.co/lovable-uploads/5693a6a3-2dff-454a-9982-d16213261092.png"
   }];
-  return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-6">
-        
-        {/* Strategic Partnerships */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4 bg-blue-100 py-4 px-8 rounded-lg inline-flex">
-            <Handshake className="w-8 h-8 text-blue-600" />
-            <h2 className="text-2xl font-bold text-gray-900">Strategic Partnerships</h2>
-          </div>
-          <p className="text-lg text-gray-700 font-medium">
-            Trusted Long-Term Partner to Global Leaders in Chemicals & Manufacturing
-          </p>
+  return <section className="section-padding bg-gradient-surface relative overflow-hidden">
+      {/* Enhanced background decorations */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl opacity-30" />
+      
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.8),transparent_1px)] bg-[length:24px_24px]" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Enhanced header */}
+        <div className="section-header">
+          
+          <h2 className="heading-xl gradient-text mb-6">
+            Trusted by 300+ Plants
+            <br />
+            <span className="text-primary">across 60+ countries</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </div>
 
-        {/* Company Logos Grid - Static */}
-        <div className="grid grid-cols-4 md:grid-cols-7 gap-6 mb-16">
-          {customers.map((customer, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 flex items-center justify-center h-20"
-            >
-              <img 
-                src={customer.logo} 
-                alt={`${customer.name} logo`} 
-                className="max-w-full max-h-full object-contain"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Implementation Excellence */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4 bg-blue-100 py-4 px-8 rounded-lg inline-flex">
-            <Settings className="w-8 h-8 text-blue-600" />
-            <h2 className="text-2xl font-bold text-gray-900">Implementation Excellence</h2>
+        {/* Enhanced scrolling logos */}
+        <div className="relative overflow-hidden rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm border border-white/20 shadow-2xl p-8 mb-16">
+          <div className="flex gap-10 md:gap-16 animate-scroll">
+            {/* First set of logos */}
+            {customers.map((customer, index) => <div key={`first-${index}`} className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 dark:bg-slate-700/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 dark:border-slate-600/50 group">
+                <img src={customer.logo} alt={`${customer.name} logo`} className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+              </div>)}
+            
+            {/* Duplicate set for seamless loop */}
+            {customers.map((customer, index) => <div key={`second-${index}`} className="flex-shrink-0 w-36 h-20 md:w-44 md:h-24 flex items-center justify-center bg-white/90 dark:bg-slate-700/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-1 border border-slate-200/50 dark:border-slate-600/50 group">
+                <img src={customer.logo} alt={`${customer.name} logo`} className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105" />
+              </div>)}
           </div>
-          <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-            Comprehensive digital manufacturing operations management tools with proven track records of delivering sustained improvements across facilities worldwide
-          </p>
-        </div>
-
-        {/* Continuous Support */}
-        <div className="text-center">
-          <div className="flex items-center justify-center gap-3 mb-4 bg-blue-100 py-4 px-8 rounded-lg inline-flex">
-            <Headphones className="w-8 h-8 text-blue-600" />
-            <h2 className="text-2xl font-bold text-gray-900">Continuous Support</h2>
-          </div>
-          <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-            24/7 global support infrastructure ensuring optimal operations and rapid troubleshooting for mission-critical manufacturing systems across time zones.
-          </p>
         </div>
 
       </div>
-    </section>
-  );
+    </section>;
 };
 export default Customers;
