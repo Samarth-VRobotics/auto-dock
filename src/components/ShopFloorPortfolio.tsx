@@ -3,6 +3,7 @@ import { Truck, Settings, Package, Factory, FlaskConical, FileText, Warehouse, B
 
 const ShopFloorPortfolio = () => {
   const [activeSegment, setActiveSegment] = useState(0);
+  const [hoveredSegment, setHoveredSegment] = useState<number | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
   const segments = [
@@ -513,7 +514,33 @@ const ShopFloorPortfolio = () => {
 
         {/* Mobile & Tablet Layout */}
         <div className="lg:hidden">
-          <div className="flex justify-center mb-12 md:mb-16">
+          <div className="flex justify-center mb-12 md:mb-16 relative">
+            {/* Hover Description Popup */}
+            {hoveredSegment !== null && (
+              <div 
+                className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4 z-10 bg-white rounded-xl border border-gray-200 shadow-xl p-4 max-w-xs animate-fade-in"
+                style={{ 
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+                }}
+              >
+                <div className="text-center">
+                  <h4 className="font-bold text-gray-900 mb-3 text-sm">
+                    {segments[hoveredSegment].title}
+                  </h4>
+                  <ul className="space-y-1.5">
+                    {segments[hoveredSegment].description.map((point, index) => (
+                      <li key={index} className="flex items-start space-x-2 text-xs text-gray-600">
+                        <span className="mt-1 w-1 h-1 rounded-full bg-red-500 flex-shrink-0"></span>
+                        <span className="leading-relaxed">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {/* Arrow pointing down */}
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-b border-r border-gray-200 rotate-45"></div>
+              </div>
+            )}
+            
             <svg 
               width="100%" 
               height="450" 
@@ -547,22 +574,25 @@ const ShopFloorPortfolio = () => {
               <g id="mobile-pie-slices">
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
+                  const isHovered = hoveredSegment === index;
                   const centroid = getSegmentCentroid(index);
                   
                   return (
                     <path
                       key={`mobile-segment-${index}`}
                       d={getSegmentPath(index)}
-                      fill={isActive ? "#fef2f2" : "white"}
-                      stroke={isActive ? "#ef4444" : "#e5e7eb"}
-                      strokeWidth={isActive ? "3" : "1"}
+                      fill={isActive ? "#fef2f2" : isHovered ? "#fef7f7" : "white"}
+                      stroke={isActive ? "#ef4444" : isHovered ? "#f87171" : "#e5e7eb"}
+                      strokeWidth={isActive ? "3" : isHovered ? "2" : "1"}
                       className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2"
                       style={{
-                        transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                        transform: isActive ? 'scale(1.05)' : isHovered ? 'scale(1.02)' : 'scale(1)',
                         transformOrigin: `${centroid.x}px ${centroid.y}px`,
                         filter: isActive ? 'url(#mobile-glow)' : 'none'
                       }}
                       onClick={() => setActiveSegment(index)}
+                      onMouseEnter={() => setHoveredSegment(index)}
+                      onMouseLeave={() => setHoveredSegment(null)}
                     />
                   );
                 })}
@@ -604,6 +634,7 @@ const ShopFloorPortfolio = () => {
               <g id="mobile-labels-icons">
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
+                  const isHovered = hoveredSegment === index;
                   const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
                   const iconX = centerX + Math.cos(iconAngle) * iconRadius;
                   const iconY = centerY + Math.sin(iconAngle) * iconRadius;
@@ -626,11 +657,11 @@ const ShopFloorPortfolio = () => {
                         cy={iconY}
                         r={iconBgRadius}
                         fill="white"
-                        stroke={isActive ? "#ef4444" : "#d1d5db"}
-                        strokeWidth={isActive ? "3" : "2"}
+                        stroke={isActive ? "#ef4444" : isHovered ? "#f87171" : "#d1d5db"}
+                        strokeWidth={isActive ? "3" : isHovered ? "2.5" : "2"}
                         className="transition-all duration-150"
                         style={{
-                          transform: isActive ? 'scale(1.07)' : 'scale(1)',
+                          transform: isActive ? 'scale(1.07)' : isHovered ? 'scale(1.03)' : 'scale(1)',
                           transformOrigin: `${iconX}px ${iconY}px`
                         }}
                       />
@@ -645,7 +676,7 @@ const ShopFloorPortfolio = () => {
                           <IconComponent 
                             size={iconSize * 0.7} 
                             className={`transition-all duration-150 ${
-                              isActive ? "text-red-500" : "text-gray-600"
+                              isActive ? "text-red-500" : isHovered ? "text-red-400" : "text-gray-600"
                             }`}
                           />
                         </div>
@@ -661,12 +692,12 @@ const ShopFloorPortfolio = () => {
                             textAnchor="middle"
                             dominantBaseline="central"
                             className={`font-bold tracking-tight transition-all duration-150 ${
-                              isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"
+                              isActive ? "fill-gray-900 drop-shadow-sm" : isHovered ? "fill-gray-800" : "fill-gray-700"
                             }`}
                             style={{ 
                               fontSize: window.innerWidth < 768 ? '12px' : '14px',
                               fontWeight: '700',
-                              opacity: isActive ? 1.0 : 0.9,
+                              opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
                               filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
                               letterSpacing: '-0.025em'
                             }}
@@ -679,12 +710,12 @@ const ShopFloorPortfolio = () => {
                             textAnchor="middle"
                             dominantBaseline="central"
                             className={`font-bold tracking-tight transition-all duration-150 ${
-                              isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"
+                              isActive ? "fill-gray-900 drop-shadow-sm" : isHovered ? "fill-gray-800" : "fill-gray-700"
                             }`}
                             style={{ 
                               fontSize: window.innerWidth < 768 ? '12px' : '14px',
                               fontWeight: '700',
-                              opacity: isActive ? 1.0 : 0.9,
+                              opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
                               filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
                               letterSpacing: '-0.025em'
                             }}
@@ -700,12 +731,12 @@ const ShopFloorPortfolio = () => {
                           textAnchor="middle"
                           dominantBaseline="central"
                           className={`font-bold tracking-tight transition-all duration-150 ${
-                            isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"
+                            isActive ? "fill-gray-900 drop-shadow-sm" : isHovered ? "fill-gray-800" : "fill-gray-700"
                           }`}
                           style={{ 
                             fontSize: window.innerWidth < 768 ? '12px' : '14px',
                             fontWeight: '700',
-                            opacity: isActive ? 1.0 : 0.9,
+                            opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
                             filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
                             letterSpacing: '-0.025em'
                           }}
