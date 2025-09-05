@@ -127,135 +127,76 @@ const OurJourneySection = () => {
             
           </div>
 
-          {/* Vegam Journey Timeline Section */}
-          <div className="grid lg:grid-cols-2 gap-12 mb-24 items-start w-full max-w-[95vw] mx-auto">
-            {/* Timeline Content */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl border border-primary/10">
-              <h3 className="text-3xl lg:text-4xl font-bold text-primary mb-12">
-                Proven History in Manufacturing<br />Transformation
-              </h3>
-              
-              {/* Timeline */}
-              <div className="relative">
-                {/* Timeline Line */}
-                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-primary/30"></div>
-                
-                {/* Timeline Items */}
-                <div className="space-y-8">
-                  {/* 2000 */}
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
-                      1
-                    </div>
-                    <div className="pt-2">
-                      <div className="text-2xl font-bold text-primary mb-1">2000</div>
-                      <div className="text-gray-700 font-medium">Foundation with<br />digital factory vision</div>
-                    </div>
-                  </div>
-                  
-                  {/* 2007 */}
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
-                      2
-                    </div>
-                    <div className="pt-2">
-                      <div className="text-2xl font-bold text-primary mb-1">2007</div>
-                      <div className="text-gray-700 font-medium">First plant fully<br />digitalized</div>
-                    </div>
-                  </div>
-                  
-                  {/* 2013 */}
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
-                      3
-                    </div>
-                    <div className="pt-2">
-                      <div className="text-2xl font-bold text-primary mb-1">2013</div>
-                      <div className="text-gray-700 font-medium"><span className="font-bold">18</span> plants connected<br />in network</div>
-                    </div>
-                  </div>
-                  
-                  {/* 2016 */}
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
-                      4
-                    </div>
-                    <div className="pt-2">
-                      <div className="text-2xl font-bold text-primary mb-1">2016</div>
-                      <div className="text-gray-700 font-medium">Scaled to <span className="font-bold">70</span> plants<br />globally</div>
-                    </div>
-                  </div>
-                  
-                  {/* 2019 */}
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
-                      5
-                    </div>
-                    <div className="pt-2">
-                      <div className="text-2xl font-bold text-primary mb-1">2019</div>
-                      <div className="text-gray-700 font-medium">Milestone of <span className="font-bold">100+</span><br />plants achieved</div>
-                    </div>
-                  </div>
-                  
-                  {/* 2025 */}
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
-                      6
-                    </div>
-                    <div className="pt-2">
-                      <div className="text-2xl font-bold text-red-500 mb-1">2025</div>
-                      <div className="text-gray-700 font-medium">Projected <span className="font-bold">300+</span><br />plants milestone</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Strong Foundation Section */}
-              <div className="mt-12 p-6 bg-blue-50/50 rounded-2xl border border-blue-100">
-                <h4 className="text-xl font-bold text-gray-800 mb-4">Strong Foundation for Innovation</h4>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span><span className="font-bold">230+</span> dedicated R&D professionals in India</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>ISO 27001 certified for information security</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>ISO 9001 certified for quality management</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          {/* Our Journey in Robotics - Section Header */}
+          <div className="text-center mb-20">
             
-            {/* Manufacturing Facility Image */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-[600px] lg:h-[700px] w-full group
-                          hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 ease-out">
-              {/* Industry Images Slideshow */}
-              {industryImages.map((image, index) => (
-                <img 
-                  key={index} 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${
-                    index === industrySlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                  }`} 
-                />
-              ))}
+            
+          </div>
+
+          {/* Row 1: First Paragraph + Image (Text Left, Image Right) */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group w-full">
+              <p className="text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
+                At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. We take immense pride in calling it our alma mater, a place that offered us not only knowledge but also a thriving ecosystem of mentorship, opportunities, and innovation.
+              </p>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
+              <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="KLETU campus buildings with beautiful architecture" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
-              <div className="absolute bottom-6 right-6 z-30">
-                <div className="flex space-x-2">
-                  {industryImages.map((_, index) => (
-                    <div 
-                      key={index} 
-                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                        index === industrySlide ? 'bg-white' : 'bg-white/50'
-                      }`} 
-                    />
-                  ))}
+              <div className="absolute bottom-6 left-6 text-white transform 
+                            group-hover:translate-y-[-4px] transition-transform duration-300">
+                <p className="text-base font-medium">Our Roots at KLETU</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2: Second Image + Paragraph (Image Left, Text Right) */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
+              {/* Student Portraits Slideshow */}
+              {studentPortraits.map((portrait, index) => <img key={index} src={portrait.src} alt={portrait.alt} className={`absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-all duration-1000 ease-out ${index === studentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
+                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
+              <div className="absolute bottom-6 left-6 text-white transform 
+                            group-hover:translate-y-[-4px] transition-transform duration-300">
+                <p className="text-base font-medium">Leadership & Vision</p>
+              </div>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group w-full">
+              <p className="text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
+                Under the leadership of Dr. Ashok Shetter, the university fostered a culture that celebrates research-driven excellence and bold ideas. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry the vision forward, preparing the next generation of robotics engineers.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 3: Third Paragraph + Image (Text Left, Image Right) */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group w-full">
+              <p className="text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
+                Among our greatest guiding lights, Prof. Arun Giriyapur, former HOD, has been far more than a teacher. A lifelong mentor, he encouraged our wildest ideas, anchored us with wisdom, and inspired us to keep pushing the boundaries of robotics. The faith he placed in us during our early years still drives our journey.
+              </p>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
+              {/* Slideshow Images */}
+              {slideshowImages.map((image, index) => <img key={index} src={image.src} alt={image.alt} className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
+                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300 z-20"></div>
+              <div className="absolute bottom-6 left-6 text-white transform 
+                            group-hover:translate-y-[-4px] transition-transform duration-300 z-30">
+                <p className="text-base font-medium">Mentorship & Growth</p>
+                {/* Slide indicators */}
+                <div className="flex space-x-2 mt-2">
+                  {slideshowImages.map((_, index) => <div key={index} className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white' : 'bg-white/50'}`} />)}
                 </div>
               </div>
             </div>
