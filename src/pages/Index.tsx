@@ -528,164 +528,155 @@ const Index = () => {
             <h2 className="heading-lg mb-16">Our Integrated Shop Floor Automation Portfolio</h2>
           </div>
           
-          {/* Professional Infographic Layout matching reference image */}
-          <div className="relative max-w-6xl mx-auto h-[800px]">
+          {/* Professional Infographic Layout matching reference image exactly */}
+          <div className="relative w-full max-w-7xl mx-auto h-[900px]">
             
-            {/* Central Hub - Circular divided into 6 sections */}
+            {/* Central Hub - Circular with 6 sections and icons */}
             <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="relative w-72 h-72 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center border-4 border-blue-300/50 shadow-lg">
+              <div className="relative w-80 h-80 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-100 rounded-full border-4 border-blue-200 shadow-lg overflow-hidden">
                 
-                {/* Warehouse label in center */}
-                <div className="text-2xl font-bold text-blue-800">
-                  Warehouse
+                {/* Warehouse text in center */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-blue-800">Warehouse</span>
                 </div>
                 
-                {/* Six section labels around the circle */}
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm font-semibold text-blue-700">
+                {/* Center icons */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center space-x-4 mt-12">
+                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md border border-blue-200">
+                      <FileText className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-blue-600" />
+                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md border border-blue-200">
+                      <Cog className="w-5 h-5 text-blue-600" />
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Section labels around the circle */}
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-sm font-semibold text-blue-700 whitespace-nowrap">
                   Inbound / Goods Receipt
                 </div>
-                <div className="absolute -right-12 top-6 text-sm font-semibold text-blue-700 rotate-45 origin-left">
-                  Warehouse
+                <div className="absolute -right-16 -top-2 text-sm font-semibold text-blue-700 transform rotate-45 origin-left whitespace-nowrap">
+                  Automated Storage &<br/>Retrieval
                 </div>
-                <div className="absolute -right-12 bottom-6 text-sm font-semibold text-blue-700 rotate-45 origin-left">
-                  Dispensing / Staging
+                <div className="absolute -right-16 bottom-8 text-sm font-semibold text-blue-700 transform rotate-45 origin-left whitespace-nowrap">
+                  Dispensing<br/>/Staging
                 </div>
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm font-semibold text-blue-700">
+                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-sm font-semibold text-blue-700 whitespace-nowrap">
                   Manufacturing
                 </div>
-                <div className="absolute -left-12 bottom-6 text-sm font-semibold text-blue-700 -rotate-45 origin-right">
+                <div className="absolute -left-16 bottom-8 text-sm font-semibold text-blue-700 transform -rotate-45 origin-right whitespace-nowrap">
                   Lab Automation
                 </div>
-                <div className="absolute -left-12 top-6 text-sm font-semibold text-blue-700 -rotate-45 origin-right">
-                  Outbound / Dispatch
+                <div className="absolute -left-16 -top-2 text-sm font-semibold text-blue-700 transform -rotate-45 origin-right whitespace-nowrap">
+                  Outbound /<br/>Dispatch
                 </div>
               </div>
             </div>
             
             {/* Inbound / Goods Receipt - Top Left */}
-            <div className="absolute top-0 left-0 w-80">
-              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <Truck className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold text-blue-800">Inbound / Goods Receipt</h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-700">
+            <div className="absolute top-4 left-4 w-72 flex items-center space-x-4">
+              <div className="bg-slate-100/90 rounded-2xl p-4 border-l-4 border-blue-500 shadow-lg flex-1">
+                <ul className="space-y-1 text-sm text-gray-700">
                   <li>• Docking & Unloading</li>
                   <li>• Verification & Scanning</li>
                   <li>• Pallet Handling & Transport</li>
                 </ul>
               </div>
-              {/* Arrow to center */}
-              <div className="absolute bottom-0 right-0 transform translate-x-4 translate-y-4">
-                <ArrowDownRight className="w-8 h-8 text-blue-500" />
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
+                <img src="/lovable-uploads/318afd9b-1608-4c39-9b68-af9535c69047.png" alt="Inbound operations" className="w-full h-full object-cover" />
               </div>
             </div>
             
-            {/* Warehouse - Top Right */}
-            <div className="absolute top-0 right-0 w-80">
-              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <Building2 className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold text-blue-800">Warehouse</h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-700">
+            {/* Automated Storage & Retrieval - Top Right */}
+            <div className="absolute top-4 right-4 w-72 flex items-center space-x-4">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
+                <img src="/lovable-uploads/5a563870-000a-4169-ba13-0bbccd419c59.png" alt="Automated storage" className="w-full h-full object-cover" />
+              </div>
+              <div className="bg-slate-100/90 rounded-2xl p-4 border-r-4 border-blue-500 shadow-lg flex-1">
+                <ul className="space-y-1 text-sm text-gray-700 text-right">
                   <li>• Automated Storage & Retrieval</li>
                   <li>• Inventory & Condition Monitoring</li>
                   <li>• Replenishment Operations</li>
                 </ul>
               </div>
-              {/* Arrow to center */}
-              <div className="absolute bottom-0 left-0 transform -translate-x-4 translate-y-4">
-                <ArrowDownLeft className="w-8 h-8 text-blue-500" />
-              </div>
             </div>
             
             {/* Dispensing / Staging - Middle Right */}
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-80">
-              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <Package className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold text-blue-800">Dispensing / Staging</h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-700">
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 w-72 flex items-center space-x-4">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
+                <img src="/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png" alt="Dispensing operations" className="w-full h-full object-cover" />
+              </div>
+              <div className="bg-slate-100/90 rounded-2xl p-4 border-r-4 border-blue-500 shadow-lg flex-1">
+                <ul className="space-y-1 text-sm text-gray-700 text-right">
                   <li>• Picking & Kitting</li>
                   <li>• Buffer & Line-side Management</li>
                   <li>• Cross-docking Operations</li>
                 </ul>
               </div>
-              {/* Arrow to center */}
-              <div className="absolute top-1/2 left-0 transform -translate-x-4 -translate-y-1/2">
-                <ArrowLeft className="w-8 h-8 text-blue-500" />
-              </div>
             </div>
             
             {/* Manufacturing - Bottom Right */}
-            <div className="absolute bottom-0 right-0 w-80">
-              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <Cog className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold text-blue-800">Manufacturing</h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-700">
+            <div className="absolute bottom-4 right-4 w-72 flex items-center space-x-4">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
+                <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="Manufacturing operations" className="w-full h-full object-cover" />
+              </div>
+              <div className="bg-slate-100/90 rounded-2xl p-4 border-r-4 border-blue-500 shadow-lg flex-1">
+                <ul className="space-y-1 text-sm text-gray-700 text-right">
                   <li>• Material Handling</li>
                   <li>• Assembly & Processing</li>
                   <li>• Packaging & Batch Processing</li>
                 </ul>
               </div>
-              {/* Arrow to center */}
-              <div className="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
-                <ArrowUpLeft className="w-8 h-8 text-blue-500" />
-              </div>
             </div>
             
             {/* Lab Automation - Bottom Left */}
-            <div className="absolute bottom-0 left-0 w-80">
-              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <Shield className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold text-blue-800">Lab Automation</h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-700">
+            <div className="absolute bottom-4 left-4 w-72 flex items-center space-x-4">
+              <div className="bg-slate-100/90 rounded-2xl p-4 border-l-4 border-blue-500 shadow-lg flex-1">
+                <ul className="space-y-1 text-sm text-gray-700">
                   <li>• Automated Inspection & Testing</li>
                   <li>• Sorting & Defect Isolation</li>
                   <li>• Compliance Verification</li>
                 </ul>
               </div>
-              {/* Arrow to center */}
-              <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4">
-                <ArrowUpRight className="w-8 h-8 text-blue-500" />
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
+                <img src="/lovable-uploads/f191ab51-7c99-400f-8dca-10df86689ff4.png" alt="Lab automation" className="w-full h-full object-cover" />
               </div>
             </div>
             
             {/* Outbound / Dispatch - Middle Left */}
-            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-80">
-              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <Send className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold text-blue-800">Outbound / Dispatch</h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-700">
+            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 w-72 flex items-center space-x-4">
+              <div className="bg-slate-100/90 rounded-2xl p-4 border-l-4 border-blue-500 shadow-lg flex-1">
+                <ul className="space-y-1 text-sm text-gray-700">
                   <li>• Order Picking & Palletizing</li>
                   <li>• Load Sequencing & Transport</li>
                   <li>• Truck Loading & Final Verification</li>
                 </ul>
               </div>
-              {/* Arrow to center */}
-              <div className="absolute top-1/2 right-0 transform translate-x-4 -translate-y-1/2">
-                <ArrowRight className="w-8 h-8 text-blue-500" />
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
+                <img src="/lovable-uploads/2991708b-0967-45b6-941f-9198703ebe8e.png" alt="Outbound operations" className="w-full h-full object-cover" />
               </div>
+            </div>
+            
+            {/* Connecting Lines/Arrows */}
+            <div className="absolute inset-0 pointer-events-none">
+              <svg className="w-full h-full" viewBox="0 0 1200 900">
+                <defs>
+                  <marker id="arrowhead" markerWidth="8" markerHeight="6" 
+                   refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+                    <polygon points="0,0 0,6 8,3" fill="#3b82f6" />
+                  </marker>
+                </defs>
+                
+                {/* Connection lines from outer boxes to center */}
+                <line x1="280" y1="80" x2="460" y2="320" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
+                <line x1="920" y1="80" x2="740" y2="320" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
+                <line x1="1000" y1="450" x2="760" y2="450" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
+                <line x1="920" y1="820" x2="740" y2="580" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
+                <line x1="280" y1="820" x2="460" y2="580" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
+                <line x1="200" y1="450" x2="440" y2="450" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
+              </svg>
             </div>
           </div>
         </div>
