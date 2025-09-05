@@ -202,17 +202,105 @@ const OurJourneySection = () => {
             </div>
           </div>
 
-          {/* From University to Industry - Section Header */}
+          {/* Proven History in Manufacturing Transformation - Section Header */}
           <div className="text-center mb-16">
-            <h4 className="text-5xl font-bold text-primary mb-6 hover:text-primary/80 transition-colors duration-300">From University to Industry</h4>
+            <h4 className="text-4xl lg:text-5xl font-bold text-primary mb-6 hover:text-primary/80 transition-colors duration-300">Proven History in Manufacturing Transformation</h4>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
           </div>
 
-          {/* From University to Industry */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">            
+          {/* Manufacturing Timeline */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-start w-full max-w-[95vw] mx-auto">            
+            {/* Timeline Content */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl border border-primary/10
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group w-full">
+              
+              {/* Timeline */}
+              <div className="relative">
+                {/* Timeline Line */}
+                <div className="absolute left-8 top-12 bottom-0 w-0.5 bg-gradient-to-b from-primary to-primary/30"></div>
+                
+                {/* Timeline Items */}
+                <div className="space-y-8">
+                  {/* 2000 */}
+                  <div className="flex items-start space-x-6">
+                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold shadow-lg">1</div>
+                    <div className="pt-2">
+                      <h5 className="text-2xl font-bold text-primary mb-1">2000</h5>
+                      <p className="text-foreground/70 font-medium">Foundation with digital factory vision</p>
+                    </div>
+                  </div>
+
+                  {/* 2007 */}
+                  <div className="flex items-start space-x-6">
+                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold shadow-lg">2</div>
+                    <div className="pt-2">
+                      <h5 className="text-2xl font-bold text-primary mb-1">2007</h5>
+                      <p className="text-foreground/70 font-medium">First plant fully digitalized</p>
+                    </div>
+                  </div>
+
+                  {/* 2013 */}
+                  <div className="flex items-start space-x-6">
+                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold shadow-lg">3</div>
+                    <div className="pt-2">
+                      <h5 className="text-2xl font-bold text-primary mb-1">2013</h5>
+                      <p className="text-foreground/70 font-medium"><strong>18 plants</strong> connected in network</p>
+                    </div>
+                  </div>
+
+                  {/* 2016 */}
+                  <div className="flex items-start space-x-6">
+                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold shadow-lg">4</div>
+                    <div className="pt-2">
+                      <h5 className="text-2xl font-bold text-primary mb-1">2016</h5>
+                      <p className="text-foreground/70 font-medium">Scaled to <strong>70 plants</strong> globally</p>
+                    </div>
+                  </div>
+
+                  {/* 2019 */}
+                  <div className="flex items-start space-x-6">
+                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold shadow-lg">5</div>
+                    <div className="pt-2">
+                      <h5 className="text-2xl font-bold text-primary mb-1">2019</h5>
+                      <p className="text-foreground/70 font-medium">Milestone of <strong>100+</strong> plants achieved</p>
+                    </div>
+                  </div>
+
+                  {/* 2025 */}
+                  <div className="flex items-start space-x-6">
+                    <div className="flex-shrink-0 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold shadow-lg">6</div>
+                    <div className="pt-2">
+                      <h5 className="text-2xl font-bold text-primary mb-1">2025</h5>
+                      <p className="text-foreground/70 font-medium">Projected <strong>300+</strong> plants milestone</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Strong Foundation Section */}
+              <div className="mt-12 p-6 bg-muted/50 rounded-2xl">
+                <h5 className="text-xl font-bold text-foreground mb-4">Strong Foundation for Innovation</h5>
+                <ul className="space-y-3 text-foreground/70">
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>230+</strong> dedicated R&D professionals in India</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>ISO 27001</strong> certified for information security</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>ISO 9001</strong> certified for quality management</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             {/* Industry Visual */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl w-full group
-                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out h-full mt-8">
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out h-full min-h-[600px]">
               {/* Industry Images Slideshow */}
               {industryImages.map((image, index) => <img key={index} src={image.src} alt={image.alt} className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${index === industrySlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
               {/* Slide indicators only */}
@@ -220,21 +308,6 @@ const OurJourneySection = () => {
                 <div className="flex space-x-2">
                   {industryImages.map((_, index) => <div key={index} className={`w-3 h-3 rounded-full transition-all duration-300 ${index === industrySlide ? 'bg-white' : 'bg-white/50'}`} />)}
                 </div>
-              </div>
-            </div>
-            
-            {/* Text Content */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10
-                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
-                          transition-all duration-500 ease-out group w-full">
-              <div className="space-y-8 text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
-                <p>It all started in the university labs, where late nights were spent building humanoids, mobile robots, automated systems, and vision-based inspection platforms. Each project was more than a technical challenge. It was proof that engineering could solve real problems.</p>
-                
-                <p>This bridge from academia to industry was shaped by mentors like Prof. Arun Giriyapur, who pushed us to think beyond textbooks, and by the vision of our CEO Subramanyam Kasibhat, whose belief in robotics as a driver of manufacturing transformation inspired us to take our ideas into the real world.</p>
-                
-                <p>From humble passion projects to industry-ready solutions, our journey has been shaped by the values we carried from KLE Technological University. Rigor, practicality, and impact remain the compass for everything we design, build, and innovate at Vegam Robotics.</p>
-                
-                
               </div>
             </div>
           </div>
