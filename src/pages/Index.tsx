@@ -31,9 +31,9 @@ const Index = () => {
 
         <div className="relative z-10 container mx-auto px-6 lg:px-8 py-20">
           <div className="max-w-4xl">
-            <h1 className="heading-hero text-foreground mb-8 animate-fade-in-up">
+            <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-8 animate-fade-in-up leading-tight">
               Light's Out Manufacturing: 
-              <span className="block text-primary">The Era of Autonomous Factories</span>
+              <span className="block text-red-600">The Era of Autonomous Factories</span>
             </h1>
             
             <div className="flex flex-wrap gap-3 mb-8 animate-fade-in" style={{
@@ -72,8 +72,8 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div>
-                <h2 className="heading-lg mb-4">Future of Manufacturing</h2>
-                <h3 className="heading-md text-primary mb-6">From Digital to Autonomous Factories</h3>
+                <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">Future of Manufacturing</h2>
+                <h3 className="text-3xl md:text-4xl font-bold text-red-600 mb-6">From Digital to Autonomous Factories</h3>
                 <p className="body-lg text-muted-foreground leading-relaxed">
                   Pioneering the next evolution in manufacturing excellence. Vegam guides industry leaders through the transformation from digital operations to fully autonomous factories, combining decades of expertise with cutting-edge innovation in AI, robotics, and self-optimizing systems.
                 </p>
@@ -97,7 +97,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-background/90"></div>
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="heading-lg mb-4">Industry Evolution</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Industry Evolution</h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-12">
@@ -138,7 +138,7 @@ const Index = () => {
       <section id="key-technologies" className="section-padding">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="heading-lg mb-4">Key Technologies Driving the Shift</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Key Technologies <span className="text-red-600">Driving the Shift</span></h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-12">
@@ -304,7 +304,7 @@ const Index = () => {
       <section id="global-partnerships" className="section-padding">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="heading-lg mb-4">Global Partnerships & Big Wins</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Global Partnerships & <span className="text-red-600">Big Wins</span></h2>
           </div>
           
           {/* Strategic Partnerships */}
@@ -676,7 +676,7 @@ const Index = () => {
       <section id="why-vegam" className="section-padding">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="heading-lg mb-4">Why Vegam?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Why <span className="text-red-600">Vegam?</span></h2>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-8">
