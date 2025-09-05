@@ -708,7 +708,7 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="grid lg:grid-cols-[1fr_2fr] gap-12 relative z-10">
+          <div className="grid lg:grid-cols-[1fr_2fr] gap-12 relative z-10 lg:items-center">
             {/* Left Block - Torch Source */}
             <div className="relative">
               {/* Torch Glow Effect */}
