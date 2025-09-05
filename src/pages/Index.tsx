@@ -188,66 +188,88 @@ const Index = () => {
       {/* Vegam Journey Section */}
       <section id="vegam-journey" className="section-padding bg-muted/30">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="section-header">
-            <h2 className="heading-lg mb-4">Vegam Journey</h2>
+          <div className="text-center mb-16">
+            <h2 className="heading-lg mb-4">Proven History in Manufacturing Transformation</h2>
+            <p className="body-lg text-muted-foreground max-w-3xl mx-auto">
+              Over two decades of experience in digitalizing and transforming manufacturing operations across the globe
+            </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-16 items-start">
-            <div className="lg:col-span-2">
-              <div className="space-y-8">
-                <div className="flex items-center space-x-6">
-                  <div className="w-4 h-4 bg-primary rounded-full flex-shrink-0"></div>
-                  <div>
-                    <span className="heading-sm text-primary">2000</span>
-                    <p className="body-base text-muted-foreground">Foundation with digital factory vision</p>
-                  </div>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Timeline */}
+            <div className="space-y-12">
+              <div className="relative">
+                {/* Vertical line */}
+                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20"></div>
                 
-                <div className="flex items-center space-x-6">
-                  <div className="w-4 h-4 bg-primary rounded-full flex-shrink-0"></div>
-                  <div>
-                    <span className="heading-sm text-primary">2007</span>
-                    <p className="body-base text-muted-foreground">First plant fully digitalized</p>
+                <div className="space-y-12">
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 relative z-10">
+                      <span className="text-sm font-bold text-primary">2000</span>
+                    </div>
+                    <div className="pt-3">
+                      <h3 className="heading-sm text-primary mb-2">Foundation</h3>
+                      <p className="body-base text-muted-foreground">Started with digital factory vision and early automation concepts</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-center space-x-6">
-                  <div className="w-4 h-4 bg-primary rounded-full flex-shrink-0"></div>
-                  <div>
-                    <span className="heading-sm text-primary">2013</span>
-                    <p className="body-base text-muted-foreground">18 plants connected in network</p>
+                  
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 relative z-10">
+                      <span className="text-sm font-bold text-primary">2007</span>
+                    </div>
+                    <div className="pt-3">
+                      <h3 className="heading-sm text-primary mb-2">First Success</h3>
+                      <p className="body-base text-muted-foreground">First manufacturing plant fully digitalized with integrated systems</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-center space-x-6">
-                  <div className="w-4 h-4 bg-primary rounded-full flex-shrink-0"></div>
-                  <div>
-                    <span className="heading-sm text-primary">2016</span>
-                    <p className="body-base text-muted-foreground">Scaled to 70 plants globally</p>
+                  
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 relative z-10">
+                      <span className="text-sm font-bold text-primary">2013</span>
+                    </div>
+                    <div className="pt-3">
+                      <h3 className="heading-sm text-primary mb-2">Network Expansion</h3>
+                      <p className="body-base text-muted-foreground">18 plants connected in integrated manufacturing network</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-center space-x-6">
-                  <div className="w-4 h-4 bg-primary rounded-full flex-shrink-0"></div>
-                  <div>
-                    <span className="heading-sm text-primary">2019</span>
-                    <p className="body-base text-muted-foreground">Milestone of 100+ plants achieved</p>
+                  
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 relative z-10">
+                      <span className="text-sm font-bold text-primary">2016</span>
+                    </div>
+                    <div className="pt-3">
+                      <h3 className="heading-sm text-primary mb-2">Global Scale</h3>
+                      <p className="body-base text-muted-foreground">Scaled operations to 70 manufacturing plants globally</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-center space-x-6">
-                  <div className="w-4 h-4 bg-secondary rounded-full flex-shrink-0"></div>
-                  <div>
-                    <span className="heading-sm text-secondary">2025</span>
-                    <p className="body-base text-muted-foreground">Projected 300+ plants milestone</p>
+                  
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 relative z-10">
+                      <span className="text-sm font-bold text-primary">2019</span>
+                    </div>
+                    <div className="pt-3">
+                      <h3 className="heading-sm text-primary mb-2">Century Mark</h3>
+                      <p className="body-base text-muted-foreground">Achieved milestone of 100+ plants under digital transformation</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 relative z-10">
+                      <span className="text-sm font-bold text-secondary">2025</span>
+                    </div>
+                    <div className="pt-3">
+                      <h3 className="heading-sm text-secondary mb-2">Future Vision</h3>
+                      <p className="body-base text-muted-foreground">Targeting 300+ plants with autonomous manufacturing capabilities</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             
+            {/* Strong Foundation Card */}
             <div className="bg-card rounded-2xl p-8 border shadow-lg">
               <h3 className="heading-sm mb-6">Strong Foundation for Innovation</h3>
-              <div className="space-y-4">
+              <div className="space-y-4 mb-8">
                 <div className="flex items-center space-x-3">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                   <span className="body-base">230+ dedicated R&D professionals in India</span>
@@ -260,10 +282,18 @@ const Index = () => {
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                   <span className="body-base">ISO 9001 certified for quality management</span>
                 </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="body-base">Proven track record across 60+ countries</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="body-base">24/7 global support infrastructure</span>
+                </div>
               </div>
               
-              <div className="mt-8">
-                <img src={manufacturingEvolutionLab} alt="Modern control room and manufacturing evolution lab" className="w-full rounded-lg" />
+              <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                <img src={manufacturingEvolutionLab} alt="Modern control room and manufacturing evolution lab" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
