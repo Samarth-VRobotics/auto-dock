@@ -31,35 +31,33 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/30"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 lg:px-8 py-20">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="max-w-4xl">
-            <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-8 animate-fade-in-up leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 sm:mb-8 animate-fade-in-up leading-tight">
               Light's Out Manufacturing: 
-              <span className="block text-red-600">The Era of Autonomous Factories</span>
+              <span className="block text-red-600 mt-2">The Era of Autonomous Factories</span>
             </h1>
             
-            <div className="flex flex-wrap gap-3 mb-8 animate-fade-in" style={{
-            animationDelay: '0.3s',
-            animationFillMode: 'both'
-          }}>
-              <Badge className="badge-primary">Digital Factories</Badge>
-              <Badge className="badge-primary">Industrial IoT</Badge>
-              <Badge className="badge-secondary">Robotics & Automation</Badge>
-              <Badge className="badge-secondary">Data Sciences AI/ML</Badge>
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 animate-fade-in" style={{
+              animationDelay: '0.3s',
+              animationFillMode: 'both'
+            }}>
+              <Badge className="badge-primary text-xs sm:text-sm">Digital Factories</Badge>
+              <Badge className="badge-primary text-xs sm:text-sm">Industrial IoT</Badge>
+              <Badge className="badge-secondary text-xs sm:text-sm">Robotics & Automation</Badge>
+              <Badge className="badge-secondary text-xs sm:text-sm">Data Sciences AI/ML</Badge>
             </div>
 
-            
-
-            <div className="flex flex-col sm:flex-row gap-6 animate-fade-in" style={{
-            animationDelay: '0.9s',
-            animationFillMode: 'both'
-          }}>
-              <Button size="lg" className="px-10 py-6 body-lg font-bold hover:scale-105 transition-transform" onClick={() => scrollToSection('future-manufacturing')}>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-in" style={{
+              animationDelay: '0.9s',
+              animationFillMode: 'both'
+            }}>
+              <Button size="lg" className="w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 text-sm sm:text-base lg:text-lg font-bold hover:scale-105 transition-transform" onClick={() => scrollToSection('future-manufacturing')}>
                 Explore the Vision
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
               <ContactDialog>
-                <Button variant="outline" size="lg" className="px-10 py-6 body-lg font-bold hover:scale-105 transition-transform">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 text-sm sm:text-base lg:text-lg font-bold hover:scale-105 transition-transform">
                   Contact Vegam
                 </Button>
               </ContactDialog>
@@ -69,20 +67,20 @@ const Index = () => {
       </section>
 
       {/* Future of Manufacturing Section */}
-      <section id="future-manufacturing" className="section-padding bg-gradient-to-br from-background to-muted/30">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+      <section id="future-manufacturing" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-background to-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
               <div>
-                <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">Future of Manufacturing</h2>
-                <h3 className="text-3xl md:text-4xl font-bold text-red-600 mb-6">From Digital to Autonomous Factories</h3>
-                <p className="body-lg text-muted-foreground leading-relaxed">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-3 sm:mb-4">Future of Manufacturing</h2>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-red-600 mb-4 sm:mb-6">From Digital to Autonomous Factories</h3>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
                   Pioneering the next evolution in manufacturing excellence. Vegam guides industry leaders through the transformation from digital operations to fully autonomous factories, combining decades of expertise with cutting-edge innovation in AI, robotics, and self-optimizing systems.
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative order-1 lg:order-2">
+              <div className="aspect-[4/3] rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden shadow-xl lg:shadow-2xl">
                 <img src="/lovable-uploads/e3c6f9fe-fe05-4fde-8134-14dffba60042.png" alt="Production Line 7 with autonomous robotic arms and digital monitoring systems" className="w-full h-full object-cover" />
               </div>
             </div>
