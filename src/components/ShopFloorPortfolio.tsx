@@ -14,9 +14,9 @@ const ShopFloorPortfolio = () => {
         'Verification & Scanning',
         'Pallet Handling & Transport'
       ],
-      angle: 0, // Top
+      angle: 0,
       side: 'left',
-      slot: 0 // Top slot
+      slot: 0
     },
     {
       id: 'warehouse',
@@ -27,9 +27,9 @@ const ShopFloorPortfolio = () => {
         'Inventory & Condition Monitoring',
         'Replenishment Operations'
       ],
-      angle: 60, // Top right
+      angle: 60,
       side: 'right',
-      slot: 0 // Top slot
+      slot: 0
     },
     {
       id: 'dispensing',
@@ -40,9 +40,9 @@ const ShopFloorPortfolio = () => {
         'Buffer & Line-side Management',
         'Cross-docking Operations'
       ],
-      angle: 120, // Bottom right
+      angle: 120,
       side: 'right',
-      slot: 1 // Middle slot
+      slot: 1
     },
     {
       id: 'manufacturing',
@@ -53,9 +53,9 @@ const ShopFloorPortfolio = () => {
         'Assembly & Processing',
         'Packaging & Batch Processing'
       ],
-      angle: 180, // Bottom
+      angle: 180,
       side: 'right',
-      slot: 2 // Bottom slot
+      slot: 2
     },
     {
       id: 'lab',
@@ -66,9 +66,9 @@ const ShopFloorPortfolio = () => {
         'Sorting & Defect Isolation',
         'Compliance verification'
       ],
-      angle: 240, // Bottom left
+      angle: 240,
       side: 'left',
-      slot: 2 // Bottom slot
+      slot: 2
     },
     {
       id: 'outbound',
@@ -79,16 +79,16 @@ const ShopFloorPortfolio = () => {
         'Load Sequencing & Transport',
         'Truck Loading & Final Verification'
       ],
-      angle: 300, // Top left
+      angle: 300,
       side: 'left',
-      slot: 1 // Middle slot
+      slot: 1
     }
   ];
 
   const getSegmentPath = (index: number) => {
     const angleStart = (index * 60 - 90) * Math.PI / 180;
     const angleEnd = ((index + 1) * 60 - 90) * Math.PI / 180;
-    const innerRadius = 90; // Increased for safety padding around center
+    const innerRadius = 100;
     const outerRadius = 160;
     
     const x1 = 300 + Math.cos(angleStart) * innerRadius;
@@ -105,7 +105,7 @@ const ShopFloorPortfolio = () => {
 
   const getSegmentCentroid = (index: number) => {
     const angle = (index * 60 - 90) * Math.PI / 180 + (30 * Math.PI / 180);
-    const radius = 160; // Outer radius for connector start point
+    const radius = 160;
     return {
       x: 300 + Math.cos(angle) * radius,
       y: 300 + Math.sin(angle) * radius
@@ -114,21 +114,10 @@ const ShopFloorPortfolio = () => {
 
   const getIconPosition = (index: number) => {
     const angle = (index * 60 - 90) * Math.PI / 180 + (30 * Math.PI / 180);
-    const radius = 60; // Icon ring radius between center and segments
+    const radius = 68;
     return {
       x: 300 + Math.cos(angle) * radius,
       y: 300 + Math.sin(angle) * radius
-    };
-  };
-
-  const getCardPosition = (side: string, slot: number) => {
-    const baseY = 80; // Starting Y position
-    const slotHeight = 160; // Height between each slot
-    const y = baseY + (slot * slotHeight);
-    
-    return {
-      x: side === 'left' ? 0 : 0, // Grid positioning, not absolute
-      y: y
     };
   };
 
@@ -136,25 +125,22 @@ const ShopFloorPortfolio = () => {
     const segment = segments[index];
     const startPos = getSegmentCentroid(index);
     
-    // Ensure startPos exists and has x, y properties
     if (!startPos || typeof startPos.x !== 'number' || typeof startPos.y !== 'number') {
-      return ''; // Return empty path if position is invalid
+      return '';
     }
     
     const isLeft = segment.side === 'left';
+    const slotHeight = 200;
+    const startY = 50;
+    const cardCenterY = startY + (segment.slot * slotHeight) + 100;
+    const cardX = isLeft ? 320 : 380;
+    const midX = isLeft ? 120 : 580;
     
-    // Calculate card center position based on grid
-    const cardCenterY = 140 + (segment.slot * 160); // Grid slot positioning
-    const cardX = isLeft ? 80 + 140 : 520 + 140; // Card center X
-    
-    // Create elbow connector that avoids other cards
-    const midX = isLeft ? startPos.x - 60 : startPos.x + 60;
-    
-    return `M ${startPos.x} ${startPos.y} L ${midX} ${startPos.y} L ${midX} ${cardCenterY} L ${cardX} ${cardCenterY}`;
+    return `M ${startPos.x},${startPos.y} L ${midX},${startPos.y} Q ${midX},${cardCenterY} ${midX + (isLeft ? 10 : -10)},${cardCenterY} L ${cardX},${cardCenterY}`;
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-background to-muted/30">
+    <section className="py-24 bg-[#F7F9FB]">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -164,28 +150,30 @@ const ShopFloorPortfolio = () => {
 
         {/* Desktop Layout */}
         <div className="hidden lg:block relative">
-          <div className="relative max-w-7xl mx-auto h-[600px]" aria-live="polite">
+          <div 
+            className="relative max-w-7xl mx-auto h-[700px]" 
+            aria-live="polite"
+            aria-label="Interactive shop floor automation portfolio diagram"
+          >
             {/* SVG Circular Diagram */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <svg width="600" height="600" viewBox="0 0 600 600" className="overflow-visible">
-                {/* Definitions for gradients and markers */}
+              <svg width="700" height="700" viewBox="0 0 600 600" className="overflow-visible">
                 <defs>
                   <marker
                     id="arrowhead"
-                    markerWidth="8"
-                    markerHeight="6"
-                    refX="7"
-                    refY="3"
+                    markerWidth="10"
+                    markerHeight="8"
+                    refX="9"
+                    refY="4"
                     orient="auto"
+                    fill="#ef4444"
                   >
-                    <polygon
-                      points="0 0, 8 3, 0 6"
-                      fill="hsl(var(--primary))"
-                    />
+                    <polygon points="0 0, 10 4, 0 8" fill="#ef4444" />
                   </marker>
+                  
                   <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                    <feMerge> 
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge>
                       <feMergeNode in="coloredBlur"/>
                       <feMergeNode in="SourceGraphic"/>
                     </feMerge>
@@ -200,33 +188,37 @@ const ShopFloorPortfolio = () => {
                   fill="none"
                   stroke="hsl(var(--border))"
                   strokeWidth="1"
-                  opacity="0.3"
+                  opacity="0.2"
                 />
                 
                 {/* Segments */}
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
+                  const centroid = getSegmentCentroid(index);
+                  
                   return (
-                    <path
-                      key={segment.id}
-                      d={getSegmentPath(index)}
-                      fill={isActive ? "hsl(var(--primary) / 0.15)" : "hsl(var(--card))"}
-                      stroke={isActive ? "hsl(var(--primary))" : "hsl(var(--border))"}
-                      strokeWidth={isActive ? "2" : "1"}
-                      className="cursor-pointer transition-all duration-150 ease-out hover:fill-primary/10"
-                      style={{
-                        transform: isActive ? 'scale(1.05)' : 'scale(1)',
-                        transformOrigin: `${300 + Math.cos((index * 60 - 90 + 30) * Math.PI / 180) * 125}px ${300 + Math.sin((index * 60 - 90 + 30) * Math.PI / 180) * 125}px`,
-                        filter: isActive ? 'url(#glow)' : 'none',
-                        zIndex: isActive ? 2 : 1
-                      }}
-                      onMouseEnter={() => setActiveSegment(index)}
-                      onFocus={() => setActiveSegment(index)}
-                      tabIndex={0}
-                      role="button"
-                      aria-label={`${segment.title} - ${segment.description.join(', ')}`}
-                      aria-expanded={isActive}
-                    />
+                    <g key={segment.id}>
+                      <path
+                        d={getSegmentPath(index)}
+                        fill={isActive ? "hsl(var(--card))" : "hsl(var(--card))"}
+                        stroke={isActive ? "#ef4444" : "hsl(var(--border))"}
+                        strokeWidth={isActive ? "2" : "1"}
+                        className="cursor-pointer transition-all duration-200 ease-out hover:fill-red-50"
+                        style={{
+                          transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                          transformOrigin: `${centroid.x}px ${centroid.y}px`,
+                          filter: isActive ? 'url(#glow)' : 'none',
+                          zIndex: 1
+                        }}
+                        onMouseEnter={() => setActiveSegment(index)}
+                        onFocus={() => setActiveSegment(index)}
+                        tabIndex={0}
+                        role="button"
+                        aria-label={`${segment.title} segment`}
+                        aria-controls={`card-${segment.id}`}
+                        aria-expanded={isActive}
+                      />
+                    </g>
                   );
                 })}
                 
@@ -234,24 +226,27 @@ const ShopFloorPortfolio = () => {
                 <circle
                   cx="300"
                   cy="300"
-                  r="80"
-                  fill="hsl(var(--card))"
-                  stroke="hsl(var(--primary))"
-                  strokeWidth="2"
-                  style={{ zIndex: 3 }}
+                  r="85"
+                  fill="white"
+                  stroke="#ef4444"
+                  strokeWidth="1"
+                  style={{ zIndex: 4 }}
                 />
                 
                 {/* Center Text */}
                 <text
                   x="300"
-                  y="295"
+                  y="292"
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  className="font-bold fill-primary"
+                  className="font-bold"
                   style={{ 
-                    fontSize: 'clamp(14px, 1.6vw, 20px)',
-                    lineHeight: '1.2',
-                    fontWeight: '700'
+                    fontSize: 'clamp(16px, 1.8vw, 22px)',
+                    fontWeight: '800',
+                    letterSpacing: '0.2px',
+                    lineHeight: '1.15',
+                    fill: '#ef4444',
+                    zIndex: 4
                   }}
                 >
                   Autonomous
@@ -261,11 +256,14 @@ const ShopFloorPortfolio = () => {
                   y="315"
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  className="font-bold fill-primary"
+                  className="font-bold"
                   style={{ 
-                    fontSize: 'clamp(14px, 1.6vw, 20px)',
-                    lineHeight: '1.2',
-                    fontWeight: '700'
+                    fontSize: 'clamp(16px, 1.8vw, 22px)',
+                    fontWeight: '800',
+                    letterSpacing: '0.2px',
+                    lineHeight: '1.15',
+                    fill: '#ef4444',
+                    zIndex: 4
                   }}
                 >
                   Factories
@@ -280,22 +278,22 @@ const ShopFloorPortfolio = () => {
                   return (
                     <foreignObject
                       key={`icon-${index}`}
-                      x={pos.x - 14}
-                      y={pos.y - 14}
-                      width="28"
-                      height="28"
+                      x={pos.x - 16}
+                      y={pos.y - 16}
+                      width="32"
+                      height="32"
                       className="pointer-events-none"
-                      style={{ zIndex: 2 }}
+                      style={{ zIndex: 3 }}
                     >
-                      <div className={`w-7 h-7 rounded-full bg-card border flex items-center justify-center transition-all duration-150 ${
-                        isActive ? 'scale-110 border-primary shadow-md' : 'border-border'
+                      <div className={`w-8 h-8 rounded-full bg-white border-2 flex items-center justify-center transition-all duration-200 ${
+                        isActive ? 'scale-110 border-red-400 shadow-lg' : 'border-gray-200'
                       }`}>
                         <IconComponent 
-                          size={16} 
-                          className={`transition-all duration-150 ${
-                            isActive ? "text-primary" : "text-muted-foreground"
+                          size={18} 
+                          className={`transition-all duration-200 ${
+                            isActive ? "text-red-500 stroke-2" : "text-gray-600"
                           }`}
-                          style={{ opacity: isActive ? 1 : 0.7 }}
+                          style={{ opacity: isActive ? 1 : 0.75 }}
                         />
                       </div>
                     </foreignObject>
@@ -307,30 +305,28 @@ const ShopFloorPortfolio = () => {
                   const isActive = activeSegment === index;
                   const connectorPath = getConnectorPath(index);
                   
-                  // Only render connector if path is valid
                   if (!connectorPath) return null;
                   
                   return (
                     <path
                       key={`connector-${index}`}
                       d={connectorPath}
-                      stroke={isActive ? "hsl(var(--primary))" : "hsl(var(--border))"}
-                      strokeWidth={isActive ? "2.5" : "1.5"}
+                      stroke={isActive ? "#ef4444" : "#d1d5db"}
+                      strokeWidth={isActive ? "2.5" : "1.75"}
                       fill="none"
                       markerEnd="url(#arrowhead)"
-                      className="transition-all duration-150"
-                      opacity={isActive ? 1 : 0.6}
-                      style={{ zIndex: 1 }}
+                      className="transition-all duration-200"
+                      opacity={isActive ? 1 : 0.7}
+                      style={{ zIndex: 2 }}
                     />
                   );
                 })}
               </svg>
             </div>
             
-            {/* Fixed Grid Description Cards */}
             {/* Left side grid */}
             <div className="absolute left-0 top-0 w-80 h-full">
-              <div className="grid grid-rows-3 gap-4 h-full py-20">
+              <div className="grid grid-rows-3 gap-7 h-full py-12">
                 {segments
                   .filter(segment => segment.side === 'left')
                   .sort((a, b) => a.slot - b.slot)
@@ -341,23 +337,32 @@ const ShopFloorPortfolio = () => {
                     return (
                       <div
                         key={`left-${segment.id}`}
-                        className="flex items-center"
+                        className="flex items-center min-h-[180px]"
                       >
-                        <div className={`bg-card rounded-2xl p-6 border shadow-lg transition-all duration-150 w-full ${
-                          isActive ? 'border-primary shadow-xl bg-primary/5' : 'border-border'
-                        }`}
-                        style={{ zIndex: isActive ? 3 : 1 }}
+                        <div 
+                          id={`card-${segment.id}`}
+                          className={`bg-white rounded-2xl p-6 border transition-all duration-200 w-full min-h-[180px] ${
+                            isActive 
+                              ? 'border-red-400 shadow-2xl bg-red-50/30' 
+                              : 'border-gray-200 shadow-lg'
+                          }`}
+                          style={{ 
+                            zIndex: isActive ? 3 : 1,
+                            boxShadow: isActive 
+                              ? '0 8px 32px rgba(239, 68, 68, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1)' 
+                              : '0 8px 24px rgba(0, 0, 0, 0.06)'
+                          }}
                         >
                           <h3 className={`text-lg font-bold mb-4 transition-colors ${
-                            isActive ? 'text-primary' : 'text-foreground'
+                            isActive ? 'text-red-600' : 'text-gray-900'
                           }`}>
                             {segment.title}
                           </h3>
-                          <ul className="space-y-2">
+                          <ul className="space-y-3">
                             {segment.description.map((point, pointIndex) => (
-                              <li key={pointIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
-                                <span className="text-primary mt-1 font-bold">•</span>
-                                <span>{point}</span>
+                              <li key={pointIndex} className="flex items-start space-x-3 text-sm text-gray-600">
+                                <span className="text-red-500 mt-1 font-bold text-base">•</span>
+                                <span className="leading-relaxed">{point}</span>
                               </li>
                             ))}
                           </ul>
@@ -370,7 +375,7 @@ const ShopFloorPortfolio = () => {
             
             {/* Right side grid */}
             <div className="absolute right-0 top-0 w-80 h-full">
-              <div className="grid grid-rows-3 gap-4 h-full py-20">
+              <div className="grid grid-rows-3 gap-7 h-full py-12">
                 {segments
                   .filter(segment => segment.side === 'right')
                   .sort((a, b) => a.slot - b.slot)
@@ -381,23 +386,32 @@ const ShopFloorPortfolio = () => {
                     return (
                       <div
                         key={`right-${segment.id}`}
-                        className="flex items-center"
+                        className="flex items-center min-h-[180px]"
                       >
-                        <div className={`bg-card rounded-2xl p-6 border shadow-lg transition-all duration-150 w-full ${
-                          isActive ? 'border-primary shadow-xl bg-primary/5' : 'border-border'
-                        }`}
-                        style={{ zIndex: isActive ? 3 : 1 }}
+                        <div 
+                          id={`card-${segment.id}`}
+                          className={`bg-white rounded-2xl p-6 border transition-all duration-200 w-full min-h-[180px] ${
+                            isActive 
+                              ? 'border-red-400 shadow-2xl bg-red-50/30' 
+                              : 'border-gray-200 shadow-lg'
+                          }`}
+                          style={{ 
+                            zIndex: isActive ? 3 : 1,
+                            boxShadow: isActive 
+                              ? '0 8px 32px rgba(239, 68, 68, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1)' 
+                              : '0 8px 24px rgba(0, 0, 0, 0.06)'
+                          }}
                         >
                           <h3 className={`text-lg font-bold mb-4 transition-colors ${
-                            isActive ? 'text-primary' : 'text-foreground'
+                            isActive ? 'text-red-600' : 'text-gray-900'
                           }`}>
                             {segment.title}
                           </h3>
-                          <ul className="space-y-2">
+                          <ul className="space-y-3">
                             {segment.description.map((point, pointIndex) => (
-                              <li key={pointIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
-                                <span className="text-primary mt-1 font-bold">•</span>
-                                <span>{point}</span>
+                              <li key={pointIndex} className="flex items-start space-x-3 text-sm text-gray-600">
+                                <span className="text-red-500 mt-1 font-bold text-base">•</span>
+                                <span className="leading-relaxed">{point}</span>
                               </li>
                             ))}
                           </ul>
@@ -413,7 +427,7 @@ const ShopFloorPortfolio = () => {
         {/* Mobile Layout */}
         <div className="lg:hidden">
           <div className="flex justify-center mb-12">
-            <svg width="280" height="280" viewBox="0 0 600 600">
+            <svg width="300" height="300" viewBox="0 0 600 600">
               {/* Background Circle */}
               <circle
                 cx="300"
@@ -429,20 +443,20 @@ const ShopFloorPortfolio = () => {
               <circle
                 cx="300"
                 cy="300"
-                r="80"
-                fill="hsl(var(--card))"
-                stroke="hsl(var(--primary))"
+                r="85"
+                fill="white"
+                stroke="#ef4444"
                 strokeWidth="2"
               />
               
               {/* Center Text */}
               <text
                 x="300"
-                y="295"
+                y="292"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                className="text-xs font-bold fill-primary"
-                style={{ fontSize: '12px' }}
+                className="font-bold"
+                style={{ fontSize: '14px', fontWeight: '800', fill: '#ef4444' }}
               >
                 Autonomous
               </text>
@@ -451,8 +465,8 @@ const ShopFloorPortfolio = () => {
                 y="315"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                className="text-xs font-bold fill-primary"
-                style={{ fontSize: '12px' }}
+                className="font-bold"
+                style={{ fontSize: '14px', fontWeight: '800', fill: '#ef4444' }}
               >
                 Factories
               </text>
@@ -462,8 +476,8 @@ const ShopFloorPortfolio = () => {
                 <path
                   key={segment.id}
                   d={getSegmentPath(index)}
-                  fill={activeSegment === index ? "hsl(var(--primary) / 0.15)" : "hsl(var(--card))"}
-                  stroke={activeSegment === index ? "hsl(var(--primary))" : "hsl(var(--border))"}
+                  fill={activeSegment === index ? "hsl(var(--red-50))" : "hsl(var(--card))"}
+                  stroke={activeSegment === index ? "#ef4444" : "hsl(var(--border))"}
                   strokeWidth={activeSegment === index ? "3" : "1"}
                   className="cursor-pointer"
                   onClick={() => setActiveSegment(index)}
@@ -478,16 +492,16 @@ const ShopFloorPortfolio = () => {
                 return (
                   <foreignObject
                     key={`icon-${index}`}
-                    x={pos.x - 10}
-                    y={pos.y - 10}
-                    width="20"
-                    height="20"
+                    x={pos.x - 12}
+                    y={pos.y - 12}
+                    width="24"
+                    height="24"
                     className="pointer-events-none"
                   >
-                    <div className="w-5 h-5 rounded-full bg-card border border-border flex items-center justify-center">
+                    <div className="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center">
                       <IconComponent 
-                        size={12} 
-                        className={activeSegment === index ? "text-primary" : "text-muted-foreground"}
+                        size={14} 
+                        className={activeSegment === index ? "text-red-500" : "text-gray-600"}
                       />
                     </div>
                   </foreignObject>
@@ -497,30 +511,35 @@ const ShopFloorPortfolio = () => {
           </div>
           
           {/* Mobile Accordion */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             {segments.map((segment, index) => (
               <div
                 key={segment.id}
-                className={`bg-card rounded-2xl border cursor-pointer transition-all duration-150 ${
-                  activeSegment === index ? 'border-primary shadow-lg' : 'border-border'
+                className={`bg-white rounded-2xl border cursor-pointer transition-all duration-200 ${
+                  activeSegment === index ? 'border-red-400 shadow-xl' : 'border-gray-200 shadow-lg'
                 }`}
                 onClick={() => setActiveSegment(activeSegment === index ? -1 : index)}
               >
-                <div className="p-4 flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <segment.icon size={20} className={activeSegment === index ? "text-primary" : "text-muted-foreground"} />
-                    <h3 className={`font-bold ${activeSegment === index ? 'text-primary' : 'text-foreground'}`}>
+                <div className="p-5 flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    <segment.icon 
+                      size={24} 
+                      className={activeSegment === index ? "text-red-500" : "text-gray-600"} 
+                    />
+                    <h3 className={`font-bold text-lg ${
+                      activeSegment === index ? 'text-red-600' : 'text-gray-900'
+                    }`}>
                       {segment.title}
                     </h3>
                   </div>
                 </div>
                 
                 {activeSegment === index && (
-                  <div className="px-4 pb-4 animate-accordion-down">
-                    <ul className="space-y-2 ml-8">
+                  <div className="px-5 pb-5 animate-accordion-down">
+                    <ul className="space-y-3 ml-10">
                       {segment.description.map((point, pointIndex) => (
-                        <li key={pointIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
-                          <span className="text-primary mt-1 font-bold">•</span>
+                        <li key={pointIndex} className="flex items-start space-x-3 text-sm text-gray-600">
+                          <span className="text-red-500 mt-1 font-bold">•</span>
                           <span>{point}</span>
                         </li>
                       ))}
