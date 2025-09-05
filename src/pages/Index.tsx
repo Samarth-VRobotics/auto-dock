@@ -366,7 +366,7 @@ const Index = () => {
       <section id="offerings" className="section-padding bg-muted/30">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="heading-lg mb-4">Vegam's Offerings</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Vegam's <span className="text-red-600">Offerings</span></h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-12">
