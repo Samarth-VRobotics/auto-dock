@@ -93,6 +93,7 @@ export default {
 				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-surface': 'var(--gradient-surface)',
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 			},
 			keyframes: {
 				'accordion-down': {

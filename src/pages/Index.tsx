@@ -692,117 +692,156 @@ const Index = () => {
 
 
       {/* Why Vegam Section */}
-      <section id="why-vegam" className="section-padding">
-        <div className="container mx-auto px-6 lg:px-8">
+      <section id="why-vegam" className="section-padding relative bg-gradient-to-r from-gray-100 via-gray-50 to-blue-50 overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-8 relative">
           <div className="section-header">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Why <span className="text-red-600">Vegam?</span></h2>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Left Side - Core Enterprise Value Drivers */}
-            <div className="bg-muted/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-8">Core Enterprise Value Drivers</h3>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center flex-shrink-0 border-2 border-border">
-                    <Settings className="w-6 h-6 text-muted-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground mb-1">Modular & Scalable</h4>
-                    <p className="text-sm text-muted-foreground">Designed to grow with enterprise needs.</p>
-                  </div>
-                </div>
+          {/* Torch Light Beam Effect */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/2 left-8 lg:left-1/4 w-96 h-96 -translate-y-1/2 opacity-20">
+              <div className="w-full h-full bg-gradient-radial from-orange-300/40 via-yellow-200/30 to-transparent rounded-full blur-2xl"></div>
+            </div>
+            <div className="absolute top-1/2 left-8 lg:left-1/4 w-[800px] h-[400px] -translate-y-1/2 opacity-10">
+              <div className="w-full h-full bg-gradient-to-r from-orange-200/60 via-yellow-100/40 to-blue-100/20 transform -skew-y-12 blur-3xl"></div>
+            </div>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 relative z-10">
+            {/* Left Block - Torch Source */}
+            <div className="relative">
+              {/* Torch Glow Effect */}
+              <div className="absolute -right-4 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent via-orange-200/30 to-yellow-200/20 blur-sm"></div>
+              
+              <div className="bg-white rounded-2xl p-8 shadow-xl shadow-orange-100/50 border border-orange-100/50 relative">
+                <div className="absolute top-4 right-4 w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
+                <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full"></div>
+                  Core Enterprise Value Drivers
+                </h3>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center flex-shrink-0 border-2 border-border">
-                    <BarChart3 className="w-6 h-6 text-muted-foreground" />
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4 group">
+                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-orange-300/50 transition-all duration-300">
+                      <Settings className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-foreground mb-1">Modular & Scalable</h4>
+                      <p className="text-sm text-muted-foreground">Designed to grow with enterprise needs.</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-foreground mb-1">Digital Transformation Ready</h4>
-                    <p className="text-sm text-muted-foreground">Roadmap toward Industry 4.0.</p>
+                  
+                  <div className="flex items-start space-x-4 group">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-blue-300/50 transition-all duration-300">
+                      <BarChart3 className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-foreground mb-1">Digital Transformation Ready</h4>
+                      <p className="text-sm text-muted-foreground">Roadmap toward Industry 4.0.</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center flex-shrink-0 border-2 border-border">
-                    <Database className="w-6 h-6 text-muted-foreground" />
+                  
+                  <div className="flex items-start space-x-4 group">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-green-300/50 transition-all duration-300">
+                      <Database className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-foreground mb-1">Unified Data Management</h4>
+                      <p className="text-sm text-muted-foreground">Integrated data to boost innovation.</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-foreground mb-1">Unified Data Management</h4>
-                    <p className="text-sm text-muted-foreground">Integrated data to boost innovation.</p>
+                  
+                  <div className="flex items-start space-x-4 group">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-purple-300/50 transition-all duration-300">
+                      <Hand className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-foreground mb-1">Complete Ownership</h4>
+                      <p className="text-sm text-muted-foreground">On-premise deployment with full control.</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center flex-shrink-0 border-2 border-border">
-                    <Hand className="w-6 h-6 text-muted-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground mb-1">Complete Ownership</h4>
-                    <p className="text-sm text-muted-foreground">On-premise deployment with full control.</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center flex-shrink-0 border-2 border-border">
-                    <Target className="w-6 h-6 text-muted-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground mb-1">Customized Optimization</h4>
-                    <p className="text-sm text-muted-foreground">Proprietary algorithms for competitive edge.</p>
+                  
+                  <div className="flex items-start space-x-4 group">
+                    <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-red-300/50 transition-all duration-300">
+                      <Target className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-foreground mb-1">Customized Optimization</h4>
+                      <p className="text-sm text-muted-foreground">Proprietary algorithms for competitive edge.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Right Side - Future-Ready, Autonomous Factories */}
-            <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold text-white mb-8">Future-Ready, Autonomous Factories</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/95 rounded-xl p-4 text-center">
-                  <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                    <Cog className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Autonomous Operations</h4>
-                  <p className="text-xs text-gray-600">Self-driven execution across plants & processes.</p>
+            {/* Right Block - Illuminated Area */}
+            <div className="relative">
+              {/* Illumination Effect Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-white/20 to-blue-200/30 rounded-2xl blur-sm"></div>
+              
+              <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl shadow-blue-200/30 border border-blue-200/50">
+                {/* Header with accent background */}
+                <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6">
+                  <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                    <Lightbulb className="w-8 h-8 text-yellow-300" />
+                    Future-Ready, Autonomous Factories
+                  </h3>
                 </div>
                 
-                <div className="bg-white/95 rounded-xl p-4 text-center">
-                  <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                    <Shield className="w-8 h-8 text-blue-600" />
+                <div className="p-8">
+                  <div className="grid grid-cols-2 gap-6 mb-6">
+                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100">
+                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Cog className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className="font-bold text-gray-900 mb-2 text-sm">Autonomous Operations</h4>
+                      <p className="text-xs text-gray-600">Self-driven execution across plants & processes.</p>
+                    </div>
+                    
+                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100">
+                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Shield className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className="font-bold text-gray-900 mb-2 text-sm">Proactive Risk Mitigation</h4>
+                      <p className="text-xs text-gray-600">AI-enabled robotics predict & prevent hazards.</p>
+                    </div>
+                    
+                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100">
+                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Cpu className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className="font-bold text-gray-900 mb-2 text-sm">Hyper-Scalable Manufacturing</h4>
+                      <p className="text-xs text-gray-600">Intelligent orchestration across geographies.</p>
+                    </div>
+                    
+                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100">
+                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Gauge className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className="font-bold text-gray-900 mb-2 text-sm">Continuous Optimization</h4>
+                      <p className="text-xs text-gray-600">Real-time workflow, energy & downtime efficiency.</p>
+                    </div>
                   </div>
-                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Proactive Risk Mitigation</h4>
-                  <p className="text-xs text-gray-600">AI-enabled robotics predict & prevent hazards.</p>
-                </div>
-                
-                <div className="bg-white/95 rounded-xl p-4 text-center">
-                  <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                    <Cpu className="w-8 h-8 text-blue-600" />
+                  
+                  {/* Full-width bottom card */}
+                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Lightbulb className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900 mb-1">Transformational Growth</h4>
+                        <p className="text-sm text-gray-600">Unlock new business models & value creation opportunities.</p>
+                      </div>
+                    </div>
                   </div>
-                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Hyper-Scalable Manufacturing</h4>
-                  <p className="text-xs text-gray-600">Intelligent orchestration across geographies.</p>
-                </div>
-                
-                <div className="bg-white/95 rounded-xl p-4 text-center">
-                  <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                    <Gauge className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Continuous Optimization</h4>
-                  <p className="text-xs text-gray-600">Real-time workflow, energy & downtime efficiency.</p>
-                </div>
-                
-                <div className="bg-white/95 rounded-xl p-4 text-center col-span-2">
-                  <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                    <Lightbulb className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Transformational Growth</h4>
-                  <p className="text-xs text-gray-600">Unlock new business models & value creation.</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="mt-16 text-center space-y-8">
+          <div className="mt-16 text-center space-y-8 relative z-10">
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <ContactDialog>
                 <Button size="lg" className="px-10 py-6 body-lg font-bold">
