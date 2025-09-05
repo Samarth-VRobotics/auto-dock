@@ -91,7 +91,7 @@ const ShopFloorPortfolio = () => {
   const innerRadius = 120;
   const outerRadius = 240;
   const ringWidth = outerRadius - innerRadius;
-  const iconRadius = innerRadius; // Position icons on center circle circumference
+  const iconRadius = innerRadius + ringWidth * 0.55; // Position icons in ring for full visibility
   const labelRadius = innerRadius + ringWidth * 0.85; // Closer to outer edge to avoid overlap
 
   const getSegmentPath = (index: number) => {
@@ -211,24 +211,15 @@ const ShopFloorPortfolio = () => {
                 
                 {/* Connector lines removed per requirements */}
                 
-                {/* Segments - base layer */}
-                {segments.map((segment, index) => {
-                  const isActive = activeSegment === index;
-                  const centroid = getSegmentCentroid(index);
-                  const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                  const iconX = centerX + Math.cos(iconAngle) * iconRadius;
-                  const iconY = centerY + Math.sin(iconAngle) * iconRadius;
-                  const IconComponent = segment.icon;
-                  
-                  // Label positioning for upright text
-                  const labelAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                  const labelX = centerX + Math.cos(labelAngle) * labelRadius;
-                  const labelY = centerY + Math.sin(labelAngle) * labelRadius;
-                  
-                  return (
-                    <g key={segment.id}>
-                      {/* Main segment path */}
+                {/* Segments - base layer (ring/slices only) */}
+                <g id="pie-slices">
+                  {segments.map((segment, index) => {
+                    const isActive = activeSegment === index;
+                    const centroid = getSegmentCentroid(index);
+                    
+                    return (
                       <path
+                        key={`segment-${index}`}
                         id={`segment-${index}`}
                         d={getSegmentPath(index)}
                         fill={isActive ? "#fef2f2" : "white"}
@@ -236,7 +227,7 @@ const ShopFloorPortfolio = () => {
                         strokeWidth={isActive ? "3" : "1"}
                         className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2"
                         style={{
-                          transform: isActive ? 'scale(1.06)' : 'scale(1)',
+                          transform: isActive ? 'scale(1.07)' : 'scale(1)',
                           transformOrigin: `${centroid.x}px ${centroid.y}px`,
                           filter: isActive ? 'url(#glow)' : 'none'
                         }}
@@ -250,42 +241,96 @@ const ShopFloorPortfolio = () => {
                         onClick={() => handleSegmentClick(index)}
                         onKeyDown={(e) => handleKeyDown(e, index)}
                       />
-                      
-                      {/* Icon on segment - positioned above segments and center circle */}
-                      <g className="pointer-events-none" style={{ zIndex: 10 }}>
+                    );
+                  })}
+                </g>
+                
+                {/* Center circle - middle layer */}
+                <g id="center">
+                  <circle
+                    cx={centerX}
+                    cy={centerY}
+                    r={innerRadius}
+                    fill="white"
+                    stroke="#e5e7eb"
+                    strokeWidth="2"
+                  />
+                  
+                  {/* Center text */}
+                  <text
+                    x={centerX}
+                    y={centerY - 10}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    className="font-bold fill-gray-800"
+                    style={{ fontSize: '20px', fontWeight: '800' }}
+                  >
+                    Autonomous
+                  </text>
+                  <text
+                    x={centerX}
+                    y={centerY + 15}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    className="font-bold fill-gray-800"
+                    style={{ fontSize: '20px', fontWeight: '800' }}
+                  >
+                    Factories
+                  </text>
+                </g>
+                
+                {/* Labels and Icons - foreground layer */}
+                <g id="labels-icons">
+                  {segments.map((segment, index) => {
+                    const isActive = activeSegment === index;
+                    const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                    const iconX = centerX + Math.cos(iconAngle) * iconRadius;
+                    const iconY = centerY + Math.sin(iconAngle) * iconRadius;
+                    const IconComponent = segment.icon;
+                    
+                    // Label positioning for upright text
+                    const labelAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                    const labelX = centerX + Math.cos(labelAngle) * labelRadius;
+                    const labelY = centerY + Math.sin(labelAngle) * labelRadius;
+                    
+                    // Responsive icon sizing
+                    const iconSize = window.innerWidth < 768 ? 18 : window.innerWidth < 1024 ? 20 : 22;
+                    const iconBgRadius = iconSize + 6;
+                    
+                    return (
+                      <g key={`icon-label-${index}`} className="pointer-events-none">
+                        {/* Icon with background circle */}
                         <circle
                           cx={iconX}
                           cy={iconY}
-                          r="30"
+                          r={iconBgRadius}
                           fill="white"
                           stroke={isActive ? "#ef4444" : "#d1d5db"}
                           strokeWidth={isActive ? "2" : "1"}
                           className="transition-all duration-150"
                           style={{
-                            transform: isActive ? 'scale(1.1)' : 'scale(1)',
+                            transform: isActive ? 'scale(1.07)' : 'scale(1)',
                             transformOrigin: `${iconX}px ${iconY}px`
                           }}
                         />
                         <foreignObject
-                          x={iconX - 18}
-                          y={iconY - 18}
-                          width="36"
-                          height="36"
+                          x={iconX - iconSize/2}
+                          y={iconY - iconSize/2}
+                          width={iconSize}
+                          height={iconSize}
                           className="pointer-events-none"
                         >
                           <div className="w-full h-full flex items-center justify-center">
                             <IconComponent 
-                              size={36} 
+                              size={iconSize} 
                               className={`transition-all duration-150 ${
                                 isActive ? "text-red-500" : "text-gray-600"
                               }`}
                             />
                           </div>
                         </foreignObject>
-                      </g>
-                      
-                      {/* Upright segment label with Title Case and proper sizing */}
-                      <g className="pointer-events-none">
+                        
+                        {/* Upright segment label with Title Case and proper sizing */}
                         {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ? (
                           // Multi-line labels for segments with "/"
                           <>
@@ -348,41 +393,9 @@ const ShopFloorPortfolio = () => {
                           </text>
                         )}
                       </g>
-                    </g>
-                  );
-                })}
-                
-                {/* Inner center circle - middle layer */}
-                <circle
-                  cx={centerX}
-                  cy={centerY}
-                  r={innerRadius}
-                  fill="white"
-                  stroke="#e5e7eb"
-                  strokeWidth="2"
-                />
-                
-                {/* Center text */}
-                <text
-                  x={centerX}
-                  y={centerY - 10}
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className="font-bold fill-gray-800"
-                  style={{ fontSize: '20px', fontWeight: '800' }}
-                >
-                  Autonomous
-                </text>
-                <text
-                  x={centerX}
-                  y={centerY + 15}
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className="font-bold fill-gray-800"
-                  style={{ fontSize: '20px', fontWeight: '800' }}
-                >
-                  Factories
-                </text>
+                    );
+                  })}
+                </g>
               </svg>
             </div>
             
