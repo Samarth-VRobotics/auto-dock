@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Customers from "@/components/Customers";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ContactDialog from "@/components/ContactDialog";
@@ -301,23 +302,7 @@ const Index = () => {
       </section>
 
       {/* Global Partnerships Section */}
-      <section id="global-partnerships" className="section-padding">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="section-header">
-            <h2 className="heading-lg mb-4">Global Partnerships & Big Wins</h2>
-          </div>
-          
-          <div className="space-y-8">
-            
-            
-            
-            
-            
-          </div>
-          
-          
-        </div>
-      </section>
+      <Customers />
 
       {/* Vegam's Offerings Section */}
       <section id="offerings" className="section-padding bg-muted/30">
