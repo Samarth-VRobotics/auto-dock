@@ -121,18 +121,9 @@ const ShopFloorPortfolio = () => {
     };
   };
 
-  const getTitlePosition = (index: number) => {
+  const getWedgeOuterPosition = (index: number) => {
     const angle = (index * 60 - 90) * Math.PI / 180 + (30 * Math.PI / 180);
-    const radius = 120; // 67% of pie radius for titles (180 * 0.67 ≈ 120)
-    return {
-      x: 300 + Math.cos(angle) * radius,
-      y: 300 + Math.sin(angle) * radius
-    };
-  };
-
-  const getAnchorPosition = (index: number) => {
-    const angle = (index * 60 - 90) * Math.PI / 180 + (30 * Math.PI / 180);
-    const radius = 132; // 73% of pie radius for anchor points (180 * 0.73 ≈ 132)
+    const radius = 180; // Outer radius of the wedge
     return {
       x: 300 + Math.cos(angle) * radius,
       y: 300 + Math.sin(angle) * radius
@@ -141,15 +132,15 @@ const ShopFloorPortfolio = () => {
 
   const getArrowPath = (index: number) => {
     const segment = segments[index];
-    const anchorPos = getAnchorPosition(index);
+    const wedgePos = getWedgeOuterPosition(index);
     const isLeft = segment.side === 'left';
     
     // Card positions - vertical center of each card
     const cardCenterY = 100 + (segment.slot * 180) + 90; // Card vertical center
     const cardEdgeX = isLeft ? 60 + 260 - 4 : 540 + 4; // Card edge with 4px inside offset
     
-    // Straight horizontal line from anchor point to card edge
-    return `M ${anchorPos.x} ${anchorPos.y} L ${cardEdgeX} ${cardCenterY}`;
+    // Straight horizontal line from wedge outer edge to card edge
+    return `M ${wedgePos.x} ${wedgePos.y} L ${cardEdgeX} ${cardCenterY}`;
   };
 
   return (
@@ -231,7 +222,7 @@ const ShopFloorPortfolio = () => {
                   );
                 })}
                 
-                {/* Connector lines - from anchor points to cards */}
+                {/* Connector lines - from wedge outer edges to cards */}
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
                   const arrowPath = getArrowPath(index);
@@ -250,41 +241,7 @@ const ShopFloorPortfolio = () => {
                   );
                 })}
                 
-                {/* Segment Titles */}
-                {segments.map((segment, index) => {
-                  const pos = getTitlePosition(index);
-                  const isActive = activeSegment === index;
-                  
-                  return (
-                    <text
-                      key={`title-${index}`}
-                      x={pos.x}
-                      y={pos.y}
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className={`cursor-pointer transition-all duration-200 select-none ${
-                        isActive ? "fill-red-600" : "fill-gray-900"
-                      }`}
-                      style={{
-                        fontSize: 'clamp(12px, 1.1vw, 14px)',
-                        fontWeight: '700',
-                        letterSpacing: '0.2px',
-                        zIndex: 2
-                      }}
-                      onMouseEnter={() => setActiveSegment(index)}
-                      onClick={() => setActiveSegment(index)}
-                      tabIndex={0}
-                      role="button"
-                      aria-label={`${segment.title} section`}
-                      aria-controls={`card-${segment.id}`}
-                      aria-expanded={isActive}
-                    >
-                      {segment.title}
-                    </text>
-                  );
-                })}
-                
-                {/* Icon Nodes */}
+                {/* Icon Nodes - Decorative only */}
                 {segments.map((segment, index) => {
                   const pos = getIconPosition(index);
                   const IconComponent = segment.icon;
@@ -300,13 +257,11 @@ const ShopFloorPortfolio = () => {
                         fill="white"
                         stroke={isActive ? "#ef4444" : "#d1d5db"}
                         strokeWidth={isActive ? "2" : "1"}
-                        className="cursor-pointer transition-all duration-200"
+                        className="transition-all duration-200"
                         style={{
                           transform: isActive ? 'scale(1.06)' : 'scale(1)',
                           transformOrigin: `${pos.x}px ${pos.y}px`
                         }}
-                        onMouseEnter={() => setActiveSegment(index)}
-                        onClick={() => setActiveSegment(index)}
                       />
                       
                       {/* Icon */}
@@ -396,7 +351,7 @@ const ShopFloorPortfolio = () => {
                       >
                         <div 
                           id={`card-${segment.id}`}
-                          className={`bg-white rounded-2xl p-6 border transition-all duration-200 w-full min-h-[160px] flex flex-col justify-center ${
+                          className={`bg-white rounded-2xl p-6 border transition-all duration-200 w-full min-h-[160px] flex flex-col justify-center cursor-pointer ${
                             isActive 
                               ? 'border-red-400 shadow-xl bg-red-50/10' 
                               : 'border-gray-200 shadow-lg'
@@ -407,6 +362,9 @@ const ShopFloorPortfolio = () => {
                               ? '0 8px 32px rgba(239, 68, 68, 0.15)' 
                               : '0 8px 24px rgba(0, 0, 0, 0.06)'
                           }}
+                          onMouseEnter={() => setActiveSegment(segmentIndex)}
+                          onMouseLeave={() => setActiveSegment(0)}
+                          onClick={() => setActiveSegment(segmentIndex)}
                         >
                           <h3 className={`text-lg font-bold mb-4 transition-colors ${
                             isActive ? 'text-red-600' : 'text-gray-900'
@@ -445,7 +403,7 @@ const ShopFloorPortfolio = () => {
                       >
                         <div 
                           id={`card-${segment.id}`}
-                          className={`bg-white rounded-2xl p-6 border transition-all duration-200 w-full min-h-[160px] flex flex-col justify-center ${
+                          className={`bg-white rounded-2xl p-6 border transition-all duration-200 w-full min-h-[160px] flex flex-col justify-center cursor-pointer ${
                             isActive 
                               ? 'border-red-400 shadow-xl bg-red-50/10' 
                               : 'border-gray-200 shadow-lg'
@@ -456,6 +414,9 @@ const ShopFloorPortfolio = () => {
                               ? '0 8px 32px rgba(239, 68, 68, 0.15)' 
                               : '0 8px 24px rgba(0, 0, 0, 0.06)'
                           }}
+                          onMouseEnter={() => setActiveSegment(segmentIndex)}
+                          onMouseLeave={() => setActiveSegment(0)}
+                          onClick={() => setActiveSegment(segmentIndex)}
                         >
                           <h3 className={`text-lg font-bold mb-4 transition-colors ${
                             isActive ? 'text-red-600' : 'text-gray-900'
@@ -538,32 +499,6 @@ const ShopFloorPortfolio = () => {
                   onClick={() => setActiveSegment(index)}
                 />
               ))}
-              
-              {/* Segment Titles */}
-              {segments.map((segment, index) => {
-                const pos = getTitlePosition(index);
-                
-                return (
-                  <text
-                    key={`mobile-title-${index}`}
-                    x={pos.x}
-                    y={pos.y}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    className={`cursor-pointer transition-all duration-200 select-none ${
-                      activeSegment === index ? "fill-red-600" : "fill-gray-900"
-                    }`}
-                    style={{
-                      fontSize: '10px',
-                      fontWeight: '700',
-                      letterSpacing: '0.1px'
-                    }}
-                    onClick={() => setActiveSegment(index)}
-                  >
-                    {segment.title.length > 12 ? segment.title.split(' ').slice(0, 2).join(' ') : segment.title}
-                  </text>
-                );
-              })}
               
               {/* Icon Nodes */}
               {segments.map((segment, index) => {
