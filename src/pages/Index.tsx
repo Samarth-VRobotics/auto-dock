@@ -90,154 +90,181 @@ const Index = () => {
       </section>
 
       {/* Industry Evolution Section */}
-      <section id="industry-evolution" className="section-padding relative bg-gradient-to-r from-slate-100 via-blue-50 to-red-50">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-200/30 via-blue-200/30 to-red-200/30"></div>
+      <section id="industry-evolution" className="section-padding relative bg-gradient-to-r from-slate-50 via-blue-50 to-red-50">
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-100/40 via-blue-100/40 to-red-100/40"></div>
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-16">Industry Evolution</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-20">Industry Evolution</h2>
           </div>
           
           {/* Desktop Timeline */}
           <div className="hidden md:block relative">
-            {/* Progress Line */}
-            <div className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2">
-              <div className="h-full bg-gradient-to-r from-slate-400 via-blue-500 to-red-500 rounded-full shadow-sm"></div>
-              {/* Glow Effect */}
-              <div className="absolute inset-0 h-full bg-gradient-to-r from-slate-400/50 via-blue-500/50 to-red-500/50 rounded-full blur-sm"></div>
+            {/* Progressive Timeline Arrow */}
+            <div className="absolute top-1/2 left-16 right-16 -translate-y-1/2">
+              {/* Main Progressive Line */}
+              <div className="relative h-2">
+                {/* Background line */}
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-300 via-blue-400 to-red-500 rounded-full"></div>
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-400/30 via-blue-500/50 to-red-600/70 rounded-full blur-sm"></div>
+                {/* Growth emphasis - line gets thicker */}
+                <div className="absolute left-0 top-1/2 w-1/3 h-1 bg-slate-400 rounded-full -translate-y-1/2"></div>
+                <div className="absolute left-1/3 top-1/2 w-1/3 h-1.5 bg-blue-500 rounded-full -translate-y-1/2"></div>
+                <div className="absolute right-0 top-1/2 w-1/3 h-2 bg-red-500 rounded-full -translate-y-1/2"></div>
+              </div>
+              
+              {/* Large Arrowhead at the end */}
+              <div className="absolute -right-4 top-1/2 -translate-y-1/2">
+                <div className="w-8 h-8 bg-red-500 transform rotate-45 rounded-sm shadow-lg"></div>
+                <div className="absolute inset-0 w-8 h-8 bg-red-400 transform rotate-45 rounded-sm blur-sm opacity-50"></div>
+              </div>
             </div>
             
-            {/* Timeline Nodes */}
-            <div className="flex justify-between items-center py-16">
-              {/* Yesterday Node */}
+            {/* Timeline Nodes with Growth Emphasis */}
+            <div className="flex justify-between items-center py-20 px-16">
+              {/* Yesterday Node - Smaller, Muted */}
               <div 
-                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-300 hover:scale-110 focus:scale-110 focus:outline-none"
+                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-500 hover:scale-110 focus:scale-110 focus:outline-none"
                 tabIndex={0}
                 role="button"
                 aria-label="Yesterday: Manual Operations – Paper-driven processes with limited automation capabilities"
               >
                 {/* Node Circle */}
                 <div className="relative">
-                  <div className="w-20 h-20 bg-slate-300 rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:border-slate-400 group-focus:border-slate-400 transition-all duration-300 group-hover:shadow-xl group-focus:shadow-xl">
-                    <Users className="w-10 h-10 text-slate-600 group-hover:text-slate-800 group-focus:text-slate-800 transition-colors duration-300" />
+                  <div className="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center shadow-md border-3 border-white group-hover:border-slate-400 group-focus:border-slate-400 transition-all duration-500 group-hover:shadow-xl group-focus:shadow-xl group-hover:w-18 group-hover:h-18 group-focus:w-18 group-focus:h-18">
+                    <Users className="w-8 h-8 text-slate-500 group-hover:text-slate-700 group-focus:text-slate-700 transition-colors duration-500" />
                   </div>
                   {/* Pulse Effect on Hover */}
-                  <div className="absolute inset-0 w-20 h-20 bg-slate-400 rounded-full opacity-0 group-hover:opacity-20 group-focus:opacity-20 group-hover:animate-ping group-focus:animate-ping"></div>
+                  <div className="absolute inset-0 w-16 h-16 bg-slate-400 rounded-full opacity-0 group-hover:opacity-20 group-focus:opacity-20 group-hover:animate-ping group-focus:animate-ping"></div>
                 </div>
                 
                 {/* Content Card */}
-                <div className="mt-8 max-w-xs text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border group-hover:shadow-xl group-focus:shadow-xl group-hover:bg-white group-focus:bg-white transition-all duration-300">
-                  <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-slate-900 group-focus:text-slate-900 transition-colors duration-300">Yesterday: Manual Operations</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 group-focus:text-slate-700 transition-colors duration-300">
-                    Paper-driven processes with limited automation capabilities. Heavily dependent on human oversight for quality control, maintenance, and operational decisions.
+                <div className="mt-6 max-w-xs text-center bg-slate-50/90 backdrop-blur-sm rounded-xl p-5 shadow-md border border-slate-200 group-hover:shadow-xl group-focus:shadow-xl group-hover:bg-white group-focus:bg-white transition-all duration-500">
+                  <h3 className="text-lg font-bold text-slate-700 mb-2 group-hover:text-slate-900 group-focus:text-slate-900 transition-colors duration-500">Yesterday: Manual Operations</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed group-hover:text-slate-800 group-focus:text-slate-800 transition-colors duration-500">
+                    Paper-driven processes with limited automation capabilities. Heavily dependent on human oversight.
                   </p>
-                </div>
-                
-                {/* Arrow Indicator */}
-                <div className="absolute -right-12 top-1/2 transform -translate-y-1/2 opacity-60 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300">
-                  <div className="w-8 h-8 text-slate-500 group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">
-                    <ArrowRight className="w-full h-full" />
-                  </div>
                 </div>
               </div>
               
-              {/* Today Node */}
+              {/* Today Node - Medium, Blue Emphasis */}
               <div 
-                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-300 hover:scale-110 focus:scale-110 focus:outline-none"
+                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-500 hover:scale-110 focus:scale-110 focus:outline-none"
                 tabIndex={0}
                 role="button"
                 aria-label="Today: Digital Factories – Connected operations with data-driven insights"
               >
                 {/* Node Circle */}
                 <div className="relative">
-                  <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:border-blue-400 group-focus:border-blue-400 transition-all duration-300 group-hover:shadow-xl group-focus:shadow-xl">
-                    <BarChart3 className="w-10 h-10 text-blue-600 group-hover:text-blue-800 group-focus:text-blue-800 transition-colors duration-300" />
+                  <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:border-blue-400 group-focus:border-blue-400 transition-all duration-500 group-hover:shadow-2xl group-focus:shadow-2xl group-hover:w-24 group-hover:h-24 group-focus:w-24 group-focus:h-24">
+                    <BarChart3 className="w-10 h-10 text-blue-600 group-hover:text-blue-800 group-focus:text-blue-800 transition-colors duration-500" />
                   </div>
                   {/* Pulse Effect on Hover */}
-                  <div className="absolute inset-0 w-20 h-20 bg-blue-500 rounded-full opacity-0 group-hover:opacity-20 group-focus:opacity-20 group-hover:animate-ping group-focus:animate-ping"></div>
+                  <div className="absolute inset-0 w-20 h-20 bg-blue-500 rounded-full opacity-0 group-hover:opacity-30 group-focus:opacity-30 group-hover:animate-ping group-focus:animate-ping"></div>
                 </div>
                 
                 {/* Content Card */}
-                <div className="mt-8 max-w-xs text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border group-hover:shadow-xl group-focus:shadow-xl group-hover:bg-white group-focus:bg-white transition-all duration-300">
-                  <h3 className="text-xl font-bold text-blue-800 mb-3 group-hover:text-blue-900 group-focus:text-blue-900 transition-colors duration-300">Today: Digital Factories</h3>
-                  <p className="text-sm text-blue-600 leading-relaxed group-hover:text-blue-700 group-focus:text-blue-700 transition-colors duration-300">
-                    Connected operations with data-driven insights. Digital tools enable enhanced visibility but still require significant human intervention for optimization and decision-making.
+                <div className="mt-6 max-w-sm text-center bg-blue-50/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-blue-200 group-hover:shadow-2xl group-focus:shadow-2xl group-hover:bg-white group-focus:bg-white transition-all duration-500">
+                  <h3 className="text-xl font-bold text-blue-800 mb-3 group-hover:text-blue-900 group-focus:text-blue-900 transition-colors duration-500">Today: Digital Factories</h3>
+                  <p className="text-sm text-blue-700 leading-relaxed group-hover:text-blue-800 group-focus:text-blue-800 transition-colors duration-500">
+                    Connected operations with data-driven insights. Digital tools enable enhanced visibility but still require human intervention.
                   </p>
                 </div>
                 
-                {/* Arrow Indicator */}
-                <div className="absolute -right-12 top-1/2 transform -translate-y-1/2 opacity-60 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300">
-                  <div className="w-8 h-8 text-blue-500 group-hover:text-red-500 group-focus:text-red-500 transition-colors duration-300">
-                    <ArrowRight className="w-full h-full" />
-                  </div>
+                {/* "Current State" Badge */}
+                <div className="absolute -top-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
+                  Current State
                 </div>
               </div>
               
-              {/* Tomorrow Node */}
+              {/* Tomorrow Node - Largest, Red Future Vision */}
               <div 
-                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-300 hover:scale-110 focus:scale-110 focus:outline-none"
+                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-500 hover:scale-110 focus:scale-110 focus:outline-none"
                 tabIndex={0}
                 role="button"
                 aria-label="Tomorrow: Autonomous Factories – Self-optimizing systems powered by AI and advanced robotics"
               >
                 {/* Node Circle */}
                 <div className="relative">
-                  <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:border-red-400 group-focus:border-red-400 transition-all duration-300 group-hover:shadow-xl group-focus:shadow-xl">
-                    <Brain className="w-10 h-10 text-red-600 group-hover:text-red-800 group-focus:text-red-800 transition-colors duration-300" />
+                  <div className="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center shadow-xl border-4 border-white group-hover:border-red-400 group-focus:border-red-400 transition-all duration-500 group-hover:shadow-2xl group-focus:shadow-2xl group-hover:w-28 group-hover:h-28 group-focus:w-28 group-focus:h-28">
+                    <Brain className="w-12 h-12 text-red-600 group-hover:text-red-800 group-focus:text-red-800 transition-colors duration-500" />
                   </div>
                   {/* Pulse Effect on Hover */}
-                  <div className="absolute inset-0 w-20 h-20 bg-red-500 rounded-full opacity-0 group-hover:opacity-20 group-focus:opacity-20 group-hover:animate-ping group-focus:animate-ping"></div>
+                  <div className="absolute inset-0 w-24 h-24 bg-red-500 rounded-full opacity-0 group-hover:opacity-40 group-focus:opacity-40 group-hover:animate-ping group-focus:animate-ping"></div>
                 </div>
                 
                 {/* Content Card */}
-                <div className="mt-8 max-w-xs text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border group-hover:shadow-xl group-focus:shadow-xl group-hover:bg-white group-focus:bg-white transition-all duration-300">
-                  <h3 className="text-xl font-bold text-red-800 mb-3 group-hover:text-red-900 group-focus:text-red-900 transition-colors duration-300">Tomorrow: Autonomous Factories</h3>
-                  <p className="text-sm text-red-600 leading-relaxed group-hover:text-red-700 group-focus:text-red-700 transition-colors duration-300">
-                    Self-optimizing systems powered by AI and advanced robotics. Minimal human intervention required as facilities automatically adapt to changing conditions and requirements.
+                <div className="mt-6 max-w-sm text-center bg-red-50/90 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-red-200 group-hover:shadow-2xl group-focus:shadow-2xl group-hover:bg-white group-focus:bg-white transition-all duration-500">
+                  <h3 className="text-xl font-bold text-red-800 mb-3 group-hover:text-red-900 group-focus:text-red-900 transition-colors duration-500">Tomorrow: Autonomous Factories</h3>
+                  <p className="text-sm text-red-700 leading-relaxed group-hover:text-red-800 group-focus:text-red-800 transition-colors duration-500">
+                    Self-optimizing systems powered by AI and advanced robotics. Minimal human intervention required as facilities automatically adapt.
                   </p>
                 </div>
+                
+                {/* "Future Vision" Badge */}
+                <div className="absolute -top-4 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
+                  Future Vision
+                </div>
               </div>
+            </div>
+            
+            {/* Growth Indicators */}
+            <div className="flex justify-between items-center mt-8 px-16 text-sm font-medium">
+              <div className="text-slate-500">Basic Automation</div>
+              <div className="text-blue-600">Digital Integration</div>
+              <div className="text-red-600 font-bold">Full Autonomy</div>
             </div>
           </div>
           
           {/* Mobile Vertical Timeline */}
-          <div className="md:hidden space-y-12">
+          <div className="md:hidden space-y-16">
             {/* Yesterday */}
-            <div className="group relative flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 focus:scale-105">
-              <div className="w-16 h-16 bg-slate-300 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <Users className="w-8 h-8 text-slate-600 group-hover:text-slate-800 transition-colors duration-300" />
+            <div className="group relative flex flex-col items-center text-center transform transition-all duration-500 hover:scale-105 focus:scale-105">
+              <div className="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center shadow-md group-hover:shadow-xl transition-all duration-500">
+                <Users className="w-8 h-8 text-slate-500 group-hover:text-slate-700 transition-colors duration-500" />
               </div>
-              <div className="w-1 h-12 bg-gradient-to-b from-slate-400 to-blue-400 my-4"></div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-sm group-hover:shadow-xl group-hover:bg-white transition-all duration-300">
-                <h3 className="text-lg font-bold text-slate-800 mb-3 group-hover:text-slate-900 transition-colors duration-300">Yesterday: Manual Operations</h3>
-                <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
-                  Paper-driven processes with limited automation capabilities. Heavily dependent on human oversight for quality control, maintenance, and operational decisions.
+              <div className="w-2 h-16 bg-gradient-to-b from-slate-400 to-blue-400 my-6 rounded-full shadow-sm"></div>
+              <div className="bg-slate-50/90 backdrop-blur-sm rounded-xl p-6 shadow-md max-w-sm group-hover:shadow-xl group-hover:bg-white transition-all duration-500">
+                <h3 className="text-lg font-bold text-slate-700 mb-3 group-hover:text-slate-900 transition-colors duration-500">Yesterday: Manual Operations</h3>
+                <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors duration-500">
+                  Paper-driven processes with limited automation capabilities. Heavily dependent on human oversight.
                 </p>
               </div>
             </div>
             
             {/* Today */}
-            <div className="group relative flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 focus:scale-105">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <BarChart3 className="w-8 h-8 text-blue-600 group-hover:text-blue-800 transition-colors duration-300" />
+            <div className="group relative flex flex-col items-center text-center transform transition-all duration-500 hover:scale-105 focus:scale-105">
+              <div className="relative">
+                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-500">
+                  <BarChart3 className="w-10 h-10 text-blue-600 group-hover:text-blue-800 transition-colors duration-500" />
+                </div>
+                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                  Current
+                </div>
               </div>
-              <div className="w-1 h-12 bg-gradient-to-b from-blue-400 to-red-400 my-4"></div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-sm group-hover:shadow-xl group-hover:bg-white transition-all duration-300">
-                <h3 className="text-lg font-bold text-blue-800 mb-3 group-hover:text-blue-900 transition-colors duration-300">Today: Digital Factories</h3>
-                <p className="text-sm text-blue-600 leading-relaxed group-hover:text-blue-700 transition-colors duration-300">
-                  Connected operations with data-driven insights. Digital tools enable enhanced visibility but still require significant human intervention for optimization and decision-making.
+              <div className="w-2 h-16 bg-gradient-to-b from-blue-400 to-red-400 my-6 rounded-full shadow-sm"></div>
+              <div className="bg-blue-50/90 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-sm group-hover:shadow-xl group-hover:bg-white transition-all duration-500">
+                <h3 className="text-lg font-bold text-blue-800 mb-3 group-hover:text-blue-900 transition-colors duration-500">Today: Digital Factories</h3>
+                <p className="text-sm text-blue-700 leading-relaxed group-hover:text-blue-800 transition-colors duration-500">
+                  Connected operations with data-driven insights. Digital tools enable enhanced visibility but still require human intervention.
                 </p>
               </div>
             </div>
             
             {/* Tomorrow */}
-            <div className="group relative flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 focus:scale-105">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <Brain className="w-8 h-8 text-red-600 group-hover:text-red-800 transition-colors duration-300" />
+            <div className="group relative flex flex-col items-center text-center transform transition-all duration-500 hover:scale-105 focus:scale-105">
+              <div className="relative">
+                <div className="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                  <Brain className="w-12 h-12 text-red-600 group-hover:text-red-800 transition-colors duration-500" />
+                </div>
+                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-500 to-red-600 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                  Future
+                </div>
               </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-sm group-hover:shadow-xl group-hover:bg-white transition-all duration-300">
-                <h3 className="text-lg font-bold text-red-800 mb-3 group-hover:text-red-900 transition-colors duration-300">Tomorrow: Autonomous Factories</h3>
-                <p className="text-sm text-red-600 leading-relaxed group-hover:text-red-700 transition-colors duration-300">
-                  Self-optimizing systems powered by AI and advanced robotics. Minimal human intervention required as facilities automatically adapt to changing conditions and requirements.
+              <div className="bg-red-50/90 backdrop-blur-sm rounded-xl p-6 shadow-xl max-w-sm group-hover:shadow-2xl group-hover:bg-white transition-all duration-500">
+                <h3 className="text-lg font-bold text-red-800 mb-3 group-hover:text-red-900 transition-colors duration-500">Tomorrow: Autonomous Factories</h3>
+                <p className="text-sm text-red-700 leading-relaxed group-hover:text-red-800 transition-colors duration-500">
+                  Self-optimizing systems powered by AI and advanced robotics. Minimal human intervention required as facilities automatically adapt.
                 </p>
               </div>
             </div>
