@@ -874,7 +874,7 @@ const Index = () => {
                 <h3 className="text-3xl font-bold text-foreground mb-6">The Lights-Out Vision</h3>
                 
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
+                  <div className="space-y-4 md:border-r md:border-gray-200 md:pr-8">
                     <p className="body-base text-muted-foreground leading-relaxed">
                       Autonomous operations transform manufacturing by creating self-sustaining production ecosystems that operate continuously with minimal human intervention. These facilities leverage predictive robotics with proactive risk mitigation capabilities to anticipate and resolve potential issues before they impact operations.
                     </p>
