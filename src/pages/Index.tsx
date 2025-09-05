@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
-import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target } from "lucide-react";
+import { ArrowRight, ArrowDown, ArrowUp, ArrowLeft, ArrowUpRight, ArrowDownRight, ArrowUpLeft, ArrowDownLeft, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Send } from "lucide-react";
 import autonomousProductionLine from "@/assets/autonomous-production-line.jpg";
 import smartFactoryHall from "@/assets/smart-factory-hall.jpg";
 import manufacturingEvolutionLab from "@/assets/manufacturing-evolution-lab.jpg";
@@ -521,205 +521,170 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Detailed Automation Portfolio Section */}
-      <section id="detailed-portfolio" className="section-padding bg-muted/30">
+      {/* Our Integrated Shop Floor Automation Portfolio Section */}
+      <section id="detailed-portfolio" className="section-padding bg-gradient-to-br from-slate-50 to-blue-50/30">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="heading-lg mb-4">Our Integrated Shop Floor Automation Portfolio</h2>
+            <h2 className="heading-lg mb-16">Our Integrated Shop Floor Automation Portfolio</h2>
           </div>
           
-          {/* Circular Layout matching reference image */}
-          <div className="relative max-w-7xl mx-auto min-h-[600px]">
-            {/* Central Circle with Warehouse and icons */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative w-80 h-80 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 rounded-full flex items-center justify-center border-2 border-primary/30">
-                {/* Warehouse label at top */}
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                  <span className="text-xl font-bold text-primary">Warehouse</span>
+          {/* Professional Infographic Layout matching reference image */}
+          <div className="relative max-w-6xl mx-auto h-[800px]">
+            
+            {/* Central Hub - Circular divided into 6 sections */}
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="relative w-72 h-72 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center border-4 border-blue-300/50 shadow-lg">
+                
+                {/* Warehouse label in center */}
+                <div className="text-2xl font-bold text-blue-800">
+                  Warehouse
                 </div>
                 
-                {/* Central icons */}
-                <div className="flex items-center justify-center space-x-8">
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-primary/20">
-                    <FileText className="w-8 h-8 text-primary" />
-                  </div>
-                  <ArrowRight className="w-6 h-6 text-primary" />
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-secondary/20">
-                    <Cog className="w-8 h-8 text-secondary" />
-                  </div>
+                {/* Six section labels around the circle */}
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm font-semibold text-blue-700">
+                  Inbound / Goods Receipt
                 </div>
-                
-                {/* Bottom section labels */}
-                <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-12">
-                  <span className="text-sm font-medium text-primary">Lab Automation</span>
-                  <span className="text-sm font-medium text-secondary">Manufacturing</span>
+                <div className="absolute -right-12 top-6 text-sm font-semibold text-blue-700 rotate-45 origin-left">
+                  Warehouse
                 </div>
-                
-                {/* Side section labels */}
-                <div className="absolute left-8 top-1/2 transform -translate-y-1/2 -rotate-90">
-                  <span className="text-sm font-medium text-accent whitespace-nowrap">Outbound / Dispatch</span>
+                <div className="absolute -right-12 bottom-6 text-sm font-semibold text-blue-700 rotate-45 origin-left">
+                  Dispensing / Staging
                 </div>
-                <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90">
-                  <span className="text-sm font-medium text-accent whitespace-nowrap">Dispensing /Staging</span>
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm font-semibold text-blue-700">
+                  Manufacturing
+                </div>
+                <div className="absolute -left-12 bottom-6 text-sm font-semibold text-blue-700 -rotate-45 origin-right">
+                  Lab Automation
+                </div>
+                <div className="absolute -left-12 top-6 text-sm font-semibold text-blue-700 -rotate-45 origin-right">
+                  Outbound / Dispatch
                 </div>
               </div>
             </div>
             
-            {/* Inbound/Goods Receipt - Top Left */}
-            <div className="absolute top-0 left-0 max-w-xs">
-              <div className="bg-slate-100 rounded-lg p-4 border-l-4 border-primary">
-                <ul className="space-y-1 text-sm text-slate-700">
+            {/* Inbound / Goods Receipt - Top Left */}
+            <div className="absolute top-0 left-0 w-80">
+              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                    <Truck className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-blue-800">Inbound / Goods Receipt</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-gray-700">
                   <li>• Docking & Unloading</li>
                   <li>• Verification & Scanning</li>
                   <li>• Pallet Handling & Transport</li>
                 </ul>
               </div>
-              <div className="flex justify-end mt-2">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-primary/20 overflow-hidden">
-                  <img src="/lovable-uploads/318afd9b-1608-4c39-9b68-af9535c69047.png" alt="Docking operations" className="w-full h-full object-cover" />
-                </div>
-              </div>
-              <div className="text-center mt-2">
-                <span className="text-sm font-semibold text-primary">Inbound / Goods Receipt</span>
+              {/* Arrow to center */}
+              <div className="absolute bottom-0 right-0 transform translate-x-4 translate-y-4">
+                <ArrowDownRight className="w-8 h-8 text-blue-500" />
               </div>
             </div>
             
-            {/* Automated Storage & Retrieval - Top Right */}
-            <div className="absolute top-0 right-0 max-w-xs text-right">
-              <div className="bg-slate-100 rounded-lg p-4 border-r-4 border-secondary">
-                <ul className="space-y-1 text-sm text-slate-700">
+            {/* Warehouse - Top Right */}
+            <div className="absolute top-0 right-0 w-80">
+              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                    <Building2 className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-blue-800">Warehouse</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-gray-700">
                   <li>• Automated Storage & Retrieval</li>
                   <li>• Inventory & Condition Monitoring</li>
                   <li>• Replenishment Operations</li>
                 </ul>
               </div>
-              <div className="flex justify-start mt-2">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-secondary/20 overflow-hidden">
-                  <img src="/lovable-uploads/5a563870-000a-4169-ba13-0bbccd419c59.png" alt="Automated storage" className="w-full h-full object-cover" />
-                </div>
+              {/* Arrow to center */}
+              <div className="absolute bottom-0 left-0 transform -translate-x-4 translate-y-4">
+                <ArrowDownLeft className="w-8 h-8 text-blue-500" />
               </div>
             </div>
             
-            {/* Dispensing/Staging - Middle Right */}
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 max-w-xs text-right">
-              <div className="bg-slate-100 rounded-lg p-4 border-r-4 border-accent">
-                <ul className="space-y-1 text-sm text-slate-700">
+            {/* Dispensing / Staging - Middle Right */}
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-80">
+              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                    <Package className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-blue-800">Dispensing / Staging</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-gray-700">
                   <li>• Picking & Kitting</li>
                   <li>• Buffer & Line-side Management</li>
                   <li>• Cross-docking Operations</li>
                 </ul>
               </div>
-              <div className="flex justify-start mt-2">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-accent/20 overflow-hidden">
-                  <img src="/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png" alt="Picking and kitting" className="w-full h-full object-cover" />
-                </div>
+              {/* Arrow to center */}
+              <div className="absolute top-1/2 left-0 transform -translate-x-4 -translate-y-1/2">
+                <ArrowLeft className="w-8 h-8 text-blue-500" />
               </div>
             </div>
             
             {/* Manufacturing - Bottom Right */}
-            <div className="absolute bottom-0 right-0 max-w-xs text-right">
-              <div className="text-center mb-2">
-                <span className="text-sm font-semibold text-secondary">Material Handling</span>
-              </div>
-              <div className="flex justify-start mb-2">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-secondary/20 overflow-hidden">
-                  <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="Material handling" className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 right-0 w-80">
+              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                    <Cog className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-blue-800">Manufacturing</h3>
                 </div>
-              </div>
-              <div className="bg-slate-100 rounded-lg p-4 border-r-4 border-secondary">
-                <ul className="space-y-1 text-sm text-slate-700">
+                <ul className="space-y-2 text-sm text-gray-700">
                   <li>• Material Handling</li>
                   <li>• Assembly & Processing</li>
                   <li>• Packaging & Batch Processing</li>
                 </ul>
               </div>
+              {/* Arrow to center */}
+              <div className="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
+                <ArrowUpLeft className="w-8 h-8 text-blue-500" />
+              </div>
             </div>
             
             {/* Lab Automation - Bottom Left */}
-            <div className="absolute bottom-0 left-0 max-w-xs">
-              <div className="text-center mb-2">
-                <span className="text-sm font-semibold text-primary">Automated Inspection & Testing</span>
-              </div>
-              <div className="flex justify-end mb-2">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-primary/20 overflow-hidden">
-                  <img src="/lovable-uploads/f191ab51-7c99-400f-8dca-10df86689ff4.png" alt="Lab automation" className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 w-80">
+              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                    <Shield className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-blue-800">Lab Automation</h3>
                 </div>
-              </div>
-              <div className="bg-slate-100 rounded-lg p-4 border-l-4 border-primary">
-                <ul className="space-y-1 text-sm text-slate-700">
+                <ul className="space-y-2 text-sm text-gray-700">
                   <li>• Automated Inspection & Testing</li>
                   <li>• Sorting & Defect Isolation</li>
-                  <li>• Compliance verification</li>
+                  <li>• Compliance Verification</li>
                 </ul>
+              </div>
+              {/* Arrow to center */}
+              <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4">
+                <ArrowUpRight className="w-8 h-8 text-blue-500" />
               </div>
             </div>
             
-            {/* Outbound/Dispatch - Middle Left */}
-            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 max-w-xs">
-              <div className="bg-slate-100 rounded-lg p-4 border-l-4 border-accent">
-                <ul className="space-y-1 text-sm text-slate-700">
+            {/* Outbound / Dispatch - Middle Left */}
+            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-80">
+              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                    <Send className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-blue-800">Outbound / Dispatch</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-gray-700">
                   <li>• Order Picking & Palletizing</li>
                   <li>• Load Sequencing & Transport</li>
                   <li>• Truck Loading & Final Verification</li>
                 </ul>
               </div>
-              <div className="flex justify-end mt-2">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-accent/20 overflow-hidden">
-                  <img src="/lovable-uploads/2991708b-0967-45b6-941f-9198703ebe8e.png" alt="Outbound operations" className="w-full h-full object-cover" />
-                </div>
-              </div>
-            </div>
-            
-            {/* Connecting arrows */}
-            <div className="absolute inset-0 pointer-events-none">
-              <svg className="w-full h-full" viewBox="0 0 800 600">
-                <defs>
-                  <marker id="arrowhead" markerWidth="10" markerHeight="7" 
-                   refX="0" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="hsl(var(--primary))" opacity="0.6" />
-                  </marker>
-                </defs>
-                
-                {/* Flow lines */}
-                <line x1="200" y1="150" x2="300" y2="200" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
-                <line x1="600" y1="150" x2="500" y2="200" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
-                <line x1="650" y1="300" x2="550" y2="300" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
-                <line x1="600" y1="450" x2="500" y2="400" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
-                <line x1="200" y1="450" x2="300" y2="400" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
-                <line x1="150" y1="300" x2="250" y2="300" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
-              </svg>
-            </div>
-          </div>
-          
-          {/* Bottom Technology Foundation */}
-          <div className="mt-20 bg-white rounded-2xl p-6 border-2 border-dashed border-primary/20 shadow-sm">
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              <div className="space-y-3">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
-                  <Cog className="w-6 h-6 text-primary" />
-                </div>
-                <h4 className="font-bold text-sm">Autonomous Material Handling and transport</h4>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto">
-                  <Users className="w-6 h-6 text-secondary" />
-                </div>
-                <h4 className="font-bold text-sm">Collaborative Robotics (Cobots)</h4>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto">
-                  <Brain className="w-6 h-6 text-accent" />
-                </div>
-                <h4 className="font-bold text-sm">AI Driven Control & Orchestration</h4>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
-                  <Target className="w-6 h-6 text-primary" />
-                </div>
-                <h4 className="font-bold text-sm">Smart inspection and Quality Control</h4>
+              {/* Arrow to center */}
+              <div className="absolute top-1/2 right-0 transform translate-x-4 -translate-y-1/2">
+                <ArrowRight className="w-8 h-8 text-blue-500" />
               </div>
             </div>
           </div>
