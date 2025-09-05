@@ -305,216 +305,195 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Vegam Journey Section */}
+      {/* Vegam Journey Section - Curved Timeline */}
       <section id="vegam-journey" className="section-padding bg-muted/30">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="heading-lg mb-4">Proven History in Manufacturing Transformation</h2>
+            <h2 className="heading-lg mb-4">Vegam Journey: Proven History in Manufacturing Transformation</h2>
             <p className="body-lg text-muted-foreground max-w-3xl mx-auto">
               Over two decades of experience in digitalizing and transforming manufacturing operations across the globe
             </p>
           </div>
-          
-          <div className="space-y-16">
-            {/* First Line: Growth Timeline (Full Width) */}
-            <div className="relative">
-              {/* Growth Journey Timeline */}
-              <div className="mb-12">
-                <div className="relative pb-8">
-                  {/* Growth Line - SVG for smooth curve */}
-                  <svg className="absolute top-16 left-0 w-full h-32 pointer-events-none z-0" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <defs>
-                      <linearGradient id="growthGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
-                        <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
-                        <stop offset="100%" stopColor="hsl(--secondary)" stopOpacity="0.9" />
-                      </linearGradient>
-                    </defs>
-                    {/* Curved growth line that rises over time */}
-                    <path d="M 60 80 Q 300 70 500 50 Q 700 35 900 25 Q 1000 20 1140 15" stroke="url(#growthGradient)" strokeWidth="4" fill="none" strokeDasharray="0" className="animate-fade-in" style={{
-                    animationDelay: '0.5s'
-                  }} />
-                  </svg>
-                  
-                  {/* Milestones Container */}
-                  <div className="flex justify-between items-end px-8 relative z-10">
-                    {[{
-                    year: '2000',
-                    title: 'Foundation',
-                    desc: 'Started with digital factory vision and early automation concepts',
-                    icon: 'lightbulb',
-                    size: 'w-12 h-12',
-                    yearSize: 'text-xs',
-                    bgHeight: 'h-16'
-                  }, {
-                    year: '2007',
-                    title: 'First Success',
-                    desc: 'First manufacturing plant fully digitalized with integrated systems',
-                    icon: 'factory',
-                    size: 'w-14 h-14',
-                    yearSize: 'text-sm',
-                    bgHeight: 'h-20'
-                  }, {
-                    year: '2013',
-                    title: 'Network Expansion',
-                    desc: '18 plants connected in integrated manufacturing network',
-                    icon: 'network',
-                    size: 'w-16 h-16',
-                    yearSize: 'text-sm',
-                    bgHeight: 'h-24'
-                  }, {
-                    year: '2016',
-                    title: 'Global Scale',
-                    desc: 'Scaled operations to 70 manufacturing plants globally',
-                    icon: 'globe',
-                    size: 'w-18 h-18',
-                    yearSize: 'text-base',
-                    bgHeight: 'h-28'
-                  }, {
-                    year: '2019',
-                    title: 'Century Mark',
-                    desc: 'Achieved milestone of 100+ plants under digital transformation',
-                    icon: 'award',
-                    size: 'w-20 h-20',
-                    yearSize: 'text-base',
-                    bgHeight: 'h-32'
-                  }, {
-                    year: '2025',
-                    title: 'Future Vision',
-                    desc: 'Targeting 300+ plants with autonomous manufacturing capabilities',
-                    icon: 'rocket',
-                    size: 'w-24 h-24',
-                    yearSize: 'text-lg',
-                    bgHeight: 'h-36'
-                  }].map((milestone, index) => <div key={milestone.year} className="flex flex-col items-center group cursor-pointer relative" style={{
-                    animationDelay: `${0.8 + index * 0.2}s`
-                  }}>
-                        {/* Milestone Node */}
-                        <div className={`relative ${milestone.bgHeight} flex flex-col items-center justify-end mb-4 transition-all duration-300 group-hover:scale-110`}>
-                          {/* Growth Bar (visual emphasis) */}
-                          <div className={`${milestone.bgHeight} w-3 bg-gradient-to-t from-primary/20 to-primary/60 rounded-full mb-2 transition-all duration-300 group-hover:from-red-400 group-hover:to-red-600`}></div>
-                          
-                          {/* Icon Node */}
-                          <div className={`${milestone.size} bg-gradient-to-br from-primary/10 to-primary/20 rounded-full flex items-center justify-center border-2 border-primary/30 shadow-lg group-hover:border-red-500 group-hover:shadow-xl transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-red-50 group-hover:to-red-100 relative z-10`}>
-                            {milestone.icon === 'lightbulb' && <Lightbulb className="w-5 h-5 text-primary group-hover:text-red-600 transition-colors" />}
-                            {milestone.icon === 'factory' && <Factory className="w-6 h-6 text-primary group-hover:text-red-600 transition-colors" />}
-                            {milestone.icon === 'network' && <Network className="w-6 h-6 text-primary group-hover:text-red-600 transition-colors" />}
-                            {milestone.icon === 'globe' && <Globe className="w-7 h-7 text-primary group-hover:text-red-600 transition-colors" />}
-                            {milestone.icon === 'award' && <Star className="w-7 h-7 text-primary group-hover:text-red-600 transition-colors" />}
-                            {milestone.icon === 'rocket' && <TrendingUp className="w-8 h-8 text-secondary group-hover:text-red-600 transition-colors" />}
-                          </div>
-                        </div>
-                        
-                        {/* Year Badge */}
-                        <div className={`${milestone.year === '2025' ? 'bg-gradient-to-r from-red-500 to-red-600' : 'bg-gradient-to-r from-primary to-primary'} text-white px-3 py-1 rounded-full ${milestone.yearSize} font-bold mb-2 shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
-                          {milestone.year}
-                        </div>
-                        
-                        {/* Title */}
-                        <h4 className="font-bold text-sm text-center text-foreground group-hover:text-red-600 transition-colors duration-300 mb-1 max-w-24">
-                          {milestone.title}
-                        </h4>
-                        
-                        {/* Hover Description Panel */}
-                        <div className="absolute top-full mt-4 bg-white rounded-xl p-4 shadow-xl border max-w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20 transform translate-y-2 group-hover:translate-y-0">
-                          <p className="text-xs text-muted-foreground leading-relaxed">
-                            {milestone.desc}
-                          </p>
-                          <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t rotate-45"></div>
-                        </div>
-                      </div>)}
-                  </div>
-                </div>
+
+          {/* Curved Timeline Container */}
+          <div className="relative min-h-[600px] lg:min-h-[500px]">
+            {/* Background Grid */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="grid grid-cols-12 gap-2 h-full">
+                {Array.from({ length: 12 }, (_, i) => (
+                  <div key={i} className="border-l border-muted-foreground/20"></div>
+                ))}
               </div>
-              
-              {/* Mobile Slider Version */}
-              <div className="md:hidden">
-                <div className="flex overflow-x-scroll gap-6 pb-4 snap-x snap-mandatory">
-                  {[{
+            </div>
+
+            {/* SVG Curved Timeline */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
+                  <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="1" />
+                </linearGradient>
+              </defs>
+              {/* Curved timeline path */}
+              <path 
+                d="M 60 380 Q 200 300 350 280 Q 500 260 650 240 Q 800 220 950 200 Q 1050 180 1140 160" 
+                stroke="url(#timelineGradient)" 
+                strokeWidth="3" 
+                fill="none" 
+                className="animate-fade-in"
+                style={{ animationDelay: '0.5s' }}
+              />
+            </svg>
+
+            {/* Timeline Nodes */}
+            <div className="relative z-10 h-full">
+              {[
+                {
+                  id: 1,
                   year: '2000',
-                  title: 'Foundation',
-                  desc: 'Started with digital factory vision and early automation concepts',
-                  icon: 'lightbulb'
-                }, {
+                  title: 'Foundation with digital factory vision',
+                  position: { left: '3%', top: '75%' }
+                },
+                {
+                  id: 2,
                   year: '2007',
-                  title: 'First Success',
-                  desc: 'First manufacturing plant fully digitalized with integrated systems',
-                  icon: 'factory'
-                }, {
+                  title: 'First plant fully digitalized',
+                  position: { left: '13%', top: '60%' }
+                },
+                {
+                  id: 3,
                   year: '2013',
-                  title: 'Network Expansion',
-                  desc: '18 plants connected in integrated manufacturing network',
-                  icon: 'network'
-                }, {
+                  title: '18 plants connected in network',
+                  position: { left: '26%', top: '55%' }
+                },
+                {
+                  id: 4,
                   year: '2016',
-                  title: 'Global Scale',
-                  desc: 'Scaled operations to 70 manufacturing plants globally',
-                  icon: 'globe'
-                }, {
+                  title: 'Scaled to 70 plants globally',
+                  position: { left: '41%', top: '50%' }
+                },
+                {
+                  id: 5,
                   year: '2019',
-                  title: 'Century Mark',
-                  desc: 'Achieved milestone of 100+ plants under digital transformation',
-                  icon: 'award'
-                }, {
+                  title: 'Milestone of 100+ plants achieved',
+                  position: { left: '56%', top: '45%' }
+                },
+                {
+                  id: 6,
+                  year: '2023',
+                  title: 'Foundation for Autonomous factories',
+                  position: { left: '68%', top: '42%' }
+                },
+                {
+                  id: 7,
                   year: '2025',
-                  title: 'Future Vision',
-                  desc: 'Targeting 300+ plants with autonomous manufacturing capabilities',
-                  icon: 'rocket'
-                }].map((milestone, index) => <div key={milestone.year} className="flex-shrink-0 w-72 bg-card rounded-2xl p-6 border shadow-lg snap-center">
-                      <div className="flex items-center space-x-4 mb-4">
-                        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                          {milestone.icon === 'lightbulb' && <Lightbulb className="w-6 h-6 text-primary" />}
-                          {milestone.icon === 'factory' && <Factory className="w-6 h-6 text-primary" />}
-                          {milestone.icon === 'network' && <Network className="w-6 h-6 text-primary" />}
-                          {milestone.icon === 'globe' && <Globe className="w-6 h-6 text-primary" />}
-                          {milestone.icon === 'award' && <Star className="w-6 h-6 text-primary" />}
-                          {milestone.icon === 'rocket' && <TrendingUp className="w-6 h-6 text-secondary" />}
-                        </div>
-                        <div className={`${milestone.year === '2025' ? 'bg-secondary' : 'bg-primary'} text-white px-3 py-1 rounded-full text-sm font-bold`}>
-                          {milestone.year}
-                        </div>
-                      </div>
-                      <h4 className="font-bold text-lg text-foreground mb-2">{milestone.title}</h4>
-                      <p className="text-sm text-muted-foreground">{milestone.desc}</p>
-                    </div>)}
+                  title: 'Milestone of 300+ plants achieved',
+                  position: { left: '78%', top: '38%' }
+                },
+                {
+                  id: 8,
+                  year: '2026',
+                  title: 'Projected First Fully Autonomous Plant',
+                  position: { left: '85%', top: '35%' }
+                },
+                {
+                  id: 9,
+                  year: '2030',
+                  title: '1000 Autonomous Plants',
+                  position: { left: '94%', top: '30%' }
+                }
+              ].map((milestone) => (
+                <div
+                  key={milestone.id}
+                  className="absolute group cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
+                  style={{
+                    left: milestone.position.left,
+                    top: milestone.position.top
+                  }}
+                >
+                  {/* Node Circle */}
+                  <div className="relative flex items-center justify-center">
+                    <div className="w-12 h-12 bg-background border-4 border-primary rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:border-red-500 group-hover:shadow-xl group-hover:bg-red-50">
+                      <span className="text-sm font-bold text-primary group-hover:text-red-600 transition-colors">
+                        {milestone.id}
+                      </span>
+                    </div>
+                    
+                    {/* Pulsing Ring Effect on Hover */}
+                    <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
+                  </div>
+
+                  {/* Year Label */}
+                  <div className="absolute top-14 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-primary text-white px-3 py-1 rounded-full text-sm font-bold shadow-md group-hover:bg-red-500 group-hover:scale-105 transition-all duration-300">
+                      {milestone.year}
+                    </div>
+                  </div>
+
+                  {/* Hover Card */}
+                  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 bg-background rounded-xl p-4 shadow-xl border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20 min-w-48 translate-y-2 group-hover:translate-y-0">
+                    <p className="text-sm text-foreground font-medium leading-relaxed text-center">
+                      {milestone.title}
+                    </p>
+                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-background border-l border-t border-border rotate-45"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Side Content - Strong Foundation */}
+            <div className="absolute top-4 left-4 max-w-xs bg-background/95 rounded-xl p-6 border shadow-lg backdrop-blur-sm">
+              <h3 className="font-bold text-lg mb-4 text-foreground">Strong Foundation for Innovation</h3>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-sm text-muted-foreground">230+ dedicated R&D professionals in India</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-sm text-muted-foreground">ISO 27001 certified for information security</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-sm text-muted-foreground">ISO 9001 certified for quality management</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-sm text-muted-foreground">Proven track record across 60+ countries</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-sm text-muted-foreground">24/7 global support infrastructure</span>
                 </div>
               </div>
             </div>
-            
-            {/* Second Line: Strong Foundation for Innovation */}
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              {/* Text Content */}
-              <div className="bg-card rounded-2xl p-8 border shadow-lg">
-                <h3 className="heading-sm mb-6">Strong Foundation for Innovation</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="body-base">230+ dedicated R&D professionals in India</span>
+
+            {/* Mobile Version */}
+            <div className="lg:hidden absolute inset-0 bg-background/90 rounded-xl p-4">
+              <div className="grid grid-cols-3 gap-4 h-full">
+                {[
+                  { year: '2000', title: 'Foundation', id: 1 },
+                  { year: '2007', title: 'First Success', id: 2 },
+                  { year: '2013', title: 'Network', id: 3 },
+                  { year: '2016', title: 'Global Scale', id: 4 },
+                  { year: '2019', title: '100+ Plants', id: 5 },
+                  { year: '2023', title: 'Autonomous', id: 6 },
+                  { year: '2025', title: '300+ Plants', id: 7 },
+                  { year: '2026', title: 'First Auto', id: 8 },
+                  { year: '2030', title: '1000 Plants', id: 9 }
+                ].map((milestone) => (
+                  <div key={milestone.id} className="flex flex-col items-center justify-center p-2 bg-card rounded-lg border group cursor-pointer hover:shadow-lg transition-all duration-300">
+                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      <span className="text-xs font-bold text-white">{milestone.id}</span>
+                    </div>
+                    <div className="text-xs font-bold text-primary mb-1">{milestone.year}</div>
+                    <div className="text-xs text-center text-muted-foreground">{milestone.title}</div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="body-base">ISO 27001 certified for information security</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="body-base">ISO 9001 certified for quality management</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="body-base">Proven track record across 60+ countries</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="body-base">24/7 global support infrastructure</span>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Image Content */}
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-                <img src={manufacturingEvolutionLab} alt="Modern control room and manufacturing evolution lab" className="w-full h-full object-cover" />
+                ))}
               </div>
             </div>
+
           </div>
         </div>
       </section>
