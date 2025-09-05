@@ -21,7 +21,7 @@ const ShopFloorPortfolio = () => {
     {
       id: 'warehouse',
       title: 'Warehouse', 
-      icon: Settings,
+      icon: Factory,
       description: [
         'Automated Storage & Retrieval',
         'Inventory & Condition Monitoring',
@@ -47,7 +47,7 @@ const ShopFloorPortfolio = () => {
     {
       id: 'manufacturing',
       title: 'Manufacturing',
-      icon: Factory,
+      icon: Settings,
       description: [
         'Material Handling',
         'Assembly & Processing', 
@@ -256,7 +256,7 @@ const ShopFloorPortfolio = () => {
                       <circle
                         cx={pos.x}
                         cy={pos.y}
-                        r="16"
+                        r="20"
                         fill="white"
                         stroke={isActive ? "#ef4444" : "#d1d5db"}
                         strokeWidth={isActive ? "2" : "1"}
@@ -269,15 +269,15 @@ const ShopFloorPortfolio = () => {
                       
                       {/* Icon */}
                       <foreignObject
-                        x={pos.x - 10}
-                        y={pos.y - 10}
-                        width="20"
-                        height="20"
+                        x={pos.x - 12}
+                        y={pos.y - 12}
+                        width="24"
+                        height="24"
                         className="pointer-events-none"
                       >
                         <div className="w-full h-full flex items-center justify-center">
                           <IconComponent 
-                            size={16} 
+                            size={20} 
                             className={`transition-all duration-200 ${
                               isActive ? "text-red-500" : "text-gray-600"
                             }`}
@@ -513,21 +513,21 @@ const ShopFloorPortfolio = () => {
                     <circle
                       cx={pos.x}
                       cy={pos.y}
-                      r="12"
+                      r="16"
                       fill="white"
                       stroke={activeSegment === index ? "#ef4444" : "#d1d5db"}
                       strokeWidth="1"
                     />
                     <foreignObject
-                      x={pos.x - 8}
-                      y={pos.y - 8}
-                      width="16"
-                      height="16"
+                      x={pos.x - 10}
+                      y={pos.y - 10}
+                      width="20"
+                      height="20"
                       className="pointer-events-none"
                     >
                       <div className="w-full h-full flex items-center justify-center">
                         <IconComponent 
-                          size={12} 
+                          size={16} 
                           className={activeSegment === index ? "text-red-500" : "text-gray-600"}
                         />
                       </div>
