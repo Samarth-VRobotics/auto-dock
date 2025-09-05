@@ -307,9 +307,122 @@ const Index = () => {
             <h2 className="heading-lg mb-4">Global Partnerships & Big Wins</h2>
           </div>
           
-          
-          
-          
+          {/* Strategic Partnerships */}
+          <div className="space-y-8 mb-16">
+            <div className="bg-blue-100/80 rounded-lg p-6 border border-blue-200">
+              <div className="flex items-center gap-3 mb-4">
+                <Hand className="w-6 h-6 text-blue-600" />
+                <h3 className="heading-sm text-blue-900">Strategic Partnerships</h3>
+              </div>
+            </div>
+            
+            <div className="text-center mb-8">
+              <p className="text-lg font-medium text-gray-800 mb-8">
+                Trusted Long-Term Partner to Global Leaders in Chemicals & Manufacturing
+              </p>
+            </div>
+
+            {/* Company Logos Grid */}
+            <div className="grid grid-cols-7 gap-4 mb-8">
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/00b20230-98af-4b65-9605-650061216508.png" alt="ARKEMA" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/00ffd763-89d4-4678-90d5-f35cca980b83.png" alt="BASF" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/127f84ed-6feb-4a52-8312-09490f83dda7.png" alt="BELCO" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/136b6fa0-b665-4a14-8d04-6534a80379b0.png" alt="BOSTIK" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/1ce695c8-00a1-4a19-8a83-6a5447c4e299.png" alt="EMERSON" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/2991708b-0967-45b6-941f-9198703ebe8e.png" alt="EVONIK" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/2eb8d899-f40d-4991-bd0b-94b5ed5454c6.png" alt="HENKEL" className="max-w-full max-h-full object-contain" />
+              </div>
+              
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/2f4eb91c-0584-44e0-85f3-fa040b217476.png" alt="JSL JINDAL STAINLESS" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/2f5b3683-c1f1-4ab8-93da-c3246e6b6f98.png" alt="SEP" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/318afd9b-1608-4c39-9b68-af9535c69047.png" alt="AVERY DENNISON" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/351602e8-b3e2-4c08-82b9-da40410d555f.png" alt="SKF" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/382c3799-75d7-4d93-b7c6-c480e30542a7.png" alt="SOLEX" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/49c9f88f-fd22-45f9-a115-f78e0e6ea848.png" alt="UNILEVER" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/49fef62f-3ef6-4c23-8ef3-f0e8bdfa7fe7.png" alt="VEDANTA" className="max-w-full max-h-full object-contain" />
+              </div>
+              
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/52c835ce-39ec-41bb-a91c-ce18cc6b08be.png" alt="INDORAMA" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/53dfb58d-8b84-4489-87ce-eac0c604e1da.png" alt="JSW Steel" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/5a563870-000a-4169-ba13-0bbccd419c59.png" alt="LG Electronics" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/5b02adb6-dcd6-41da-bf83-2a3a6f2583d0.png" alt="MRCC" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/5fd9a1e2-f41c-4f50-8fd4-0e5707c4282a.png" alt="Target" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/61765257-0fe4-49fc-bae1-cea024290b99.png" alt="OKW" className="max-w-full max-h-full object-contain" />
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-center h-16">
+                <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="VEGAM" className="max-w-full max-h-full object-contain" />
+              </div>
+            </div>
+          </div>
+
+          {/* Implementation Excellence */}
+          <div className="space-y-6 mb-16">
+            <div className="bg-blue-100/80 rounded-lg p-6 border border-blue-200">
+              <div className="flex items-center gap-3 mb-4">
+                <Settings className="w-6 h-6 text-blue-600" />
+                <h3 className="heading-sm text-blue-900">Implementation Excellence</h3>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <p className="text-lg text-gray-700 max-w-4xl mx-auto">
+                Comprehensive digital manufacturing operations management tools with proven track records of delivering sustained improvements across facilities worldwide.
+              </p>
+            </div>
+          </div>
+
+          {/* Continuous Support */}
+          <div className="space-y-6">
+            <div className="bg-blue-100/80 rounded-lg p-6 border border-blue-200">
+              <div className="flex items-center gap-3 mb-4">
+                <Clock className="w-6 h-6 text-blue-600" />
+                <h3 className="heading-sm text-blue-900">Continuous Support</h3>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <p className="text-lg text-gray-700 max-w-4xl mx-auto">
+                24/7 global support infrastructure ensuring optimal operations and rapid troubleshooting for mission-critical manufacturing systems across time zones.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
