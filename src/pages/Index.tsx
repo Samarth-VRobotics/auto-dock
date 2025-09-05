@@ -698,21 +698,35 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Why <span className="text-red-600">Vegam?</span></h2>
           </div>
           
-          {/* Torch Light Beam Effect */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/2 left-8 lg:left-1/4 w-96 h-96 -translate-y-1/2 opacity-20">
-              <div className="w-full h-full bg-gradient-radial from-red-300/40 via-red-200/30 to-transparent rounded-full blur-2xl"></div>
+          {/* Enhanced Torch Light Beam Effect */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {/* Main horizontal beam - wider cone effect */}
+            <div className="absolute top-1/2 left-8 lg:left-1/4 w-[600px] lg:w-[800px] h-[300px] lg:h-[400px] -translate-y-1/2 opacity-30">
+              <div className="w-full h-full bg-gradient-to-r from-red-500/60 via-red-300/40 via-red-200/30 to-red-100/20 transform rotate-3 lg:rotate-0 lg:skew-y-3 blur-xl"></div>
             </div>
-            <div className="absolute top-1/2 left-8 lg:left-1/4 w-[800px] h-[400px] -translate-y-1/2 opacity-10">
-              <div className="w-full h-full bg-gradient-to-r from-red-200/60 via-red-100/40 to-blue-100/20 transform -skew-y-12 blur-3xl"></div>
+            
+            {/* Secondary beam layer for intensity */}
+            <div className="absolute top-1/2 left-8 lg:left-1/4 w-[400px] lg:w-[600px] h-[200px] lg:h-[250px] -translate-y-1/2 opacity-25">
+              <div className="w-full h-full bg-gradient-to-r from-red-600/70 via-red-400/50 to-red-200/30 transform rotate-2 lg:rotate-0 lg:skew-y-2 blur-2xl"></div>
+            </div>
+            
+            {/* Core beam - most intense */}
+            <div className="absolute top-1/2 left-8 lg:left-1/4 w-[300px] lg:w-[500px] h-[150px] lg:h-[200px] -translate-y-1/2 opacity-20">
+              <div className="w-full h-full bg-gradient-to-r from-red-700/80 via-red-500/60 to-red-300/40 transform rotate-1 lg:rotate-0 lg:skew-y-1 blur-lg"></div>
+            </div>
+            
+            {/* Mobile vertical beam effect */}
+            <div className="lg:hidden absolute top-0 left-1/2 w-[300px] h-[600px] -translate-x-1/2 opacity-20">
+              <div className="w-full h-full bg-gradient-to-b from-red-600/60 via-red-400/40 to-red-200/20 transform skew-x-2 blur-2xl"></div>
             </div>
           </div>
           
           <div className="grid lg:grid-cols-[1fr_2fr] gap-12 relative z-10 lg:items-center">
             {/* Left Block - Torch Source */}
             <div className="relative">
-              {/* Torch Glow Effect */}
-              <div className="absolute -right-4 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent via-red-200/30 to-red-200/20 blur-sm"></div>
+              {/* Torch emission glow */}
+              <div className="absolute -right-8 top-0 bottom-0 w-16 bg-gradient-to-r from-transparent via-red-400/30 to-red-300/40 blur-md lg:block hidden"></div>
+              <div className="absolute -right-4 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent via-red-500/40 to-red-400/50 blur-sm lg:block hidden"></div>
               
               <div className="bg-white rounded-2xl p-8 shadow-xl shadow-red-100/50 border border-red-100/50 relative">
                 <div className="absolute top-4 right-4 w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
@@ -775,12 +789,16 @@ const Index = () => {
               </div>
             </div>
             
-            {/* Right Block - Illuminated Area */}
+            {/* Right Block - Illuminated Future */}
             <div className="relative">
-              {/* Illumination Effect Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-white/20 to-blue-200/30 rounded-2xl blur-sm"></div>
+              {/* Red glow halo around edges where light lands */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-red-200/30 via-red-100/20 to-transparent rounded-3xl blur-xl lg:block hidden"></div>
+              <div className="absolute -inset-2 bg-gradient-to-br from-red-300/20 via-red-200/15 to-transparent rounded-2xl blur-lg lg:block hidden"></div>
               
-              <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl shadow-blue-200/30 border border-blue-200/50">
+              {/* Illumination Effect Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-red-50/60 via-white/40 to-red-50/40 rounded-2xl blur-sm"></div>
+              
+              <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl shadow-red-200/30 border border-red-200/50">
                 {/* Header with accent background */}
                 <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6">
                   <h3 className="text-2xl font-bold text-white text-center">
