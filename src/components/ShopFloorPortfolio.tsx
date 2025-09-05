@@ -91,8 +91,8 @@ const ShopFloorPortfolio = () => {
   const innerRadius = 120;
   const outerRadius = 240;
   const ringWidth = outerRadius - innerRadius;
-  const iconRadius = innerRadius + ringWidth * 0.55; // Position icons in ring for full visibility
-  const labelRadius = innerRadius + ringWidth * 0.85; // Closer to outer edge to avoid overlap
+  const iconRadius = innerRadius; // Icons positioned exactly on inner circle circumference
+  const labelRadius = innerRadius + ringWidth * 0.6; // Labels inside wedges, above icons
 
   const getSegmentPath = (index: number) => {
     const angleStart = (index * 60 - 90 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
@@ -288,25 +288,25 @@ const ShopFloorPortfolio = () => {
                     const iconY = centerY + Math.sin(iconAngle) * iconRadius;
                     const IconComponent = segment.icon;
                     
-                    // Label positioning for upright text
+                    // Label positioning inside wedges, above icons
                     const labelAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
                     const labelX = centerX + Math.cos(labelAngle) * labelRadius;
                     const labelY = centerY + Math.sin(labelAngle) * labelRadius;
                     
-                    // Responsive icon sizing
-                    const iconSize = window.innerWidth < 768 ? 18 : window.innerWidth < 1024 ? 20 : 22;
-                    const iconBgRadius = iconSize + 6;
+                    // Larger icon sizing (doubled from 22-24px to 40-48px desktop)
+                    const iconSize = window.innerWidth < 768 ? 32 : window.innerWidth < 1024 ? 40 : 48;
+                    const iconBgRadius = iconSize / 2 + 4;
                     
                     return (
                       <g key={`icon-label-${index}`} className="pointer-events-none">
-                        {/* Icon with background circle */}
+                        {/* Icon with background circle - positioned on inner circle circumference */}
                         <circle
                           cx={iconX}
                           cy={iconY}
                           r={iconBgRadius}
                           fill="white"
                           stroke={isActive ? "#ef4444" : "#d1d5db"}
-                          strokeWidth={isActive ? "2" : "1"}
+                          strokeWidth={isActive ? "3" : "2"}
                           className="transition-all duration-150"
                           style={{
                             transform: isActive ? 'scale(1.07)' : 'scale(1)',
@@ -322,7 +322,7 @@ const ShopFloorPortfolio = () => {
                         >
                           <div className="w-full h-full flex items-center justify-center">
                             <IconComponent 
-                              size={iconSize} 
+                              size={iconSize * 0.7} 
                               className={`transition-all duration-150 ${
                                 isActive ? "text-red-500" : "text-gray-600"
                               }`}
@@ -330,22 +330,22 @@ const ShopFloorPortfolio = () => {
                           </div>
                         </foreignObject>
                         
-                        {/* Upright segment label with Title Case and proper sizing */}
+                        {/* Upright segment labels inside wedges, Title Case, bold */}
                         {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ? (
                           // Multi-line labels for segments with "/"
                           <>
                             <text
                               x={labelX}
-                              y={labelY - 8}
+                              y={labelY - 10}
                               textAnchor="middle"
                               dominantBaseline="central"
-                              className={`font-medium tracking-tight transition-all duration-150 ${
-                                isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
+                              className={`font-bold tracking-tight transition-all duration-150 ${
+                                isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"
                               }`}
                               style={{ 
-                                fontSize: window.innerWidth < 768 ? '13px' : window.innerWidth < 1024 ? '14px' : '15px',
-                                fontWeight: isActive ? '600' : '500',
-                                opacity: isActive ? 1.0 : 0.8,
+                                fontSize: window.innerWidth < 768 ? '15px' : window.innerWidth < 1024 ? '16px' : '18px',
+                                fontWeight: '700',
+                                opacity: isActive ? 1.0 : 0.9,
                                 filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
                                 letterSpacing: '-0.025em'
                               }}
@@ -354,16 +354,16 @@ const ShopFloorPortfolio = () => {
                             </text>
                             <text
                               x={labelX}
-                              y={labelY + 8}
+                              y={labelY + 10}
                               textAnchor="middle"
                               dominantBaseline="central"
-                              className={`font-medium tracking-tight transition-all duration-150 ${
-                                isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
+                              className={`font-bold tracking-tight transition-all duration-150 ${
+                                isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"
                               }`}
                               style={{ 
-                                fontSize: window.innerWidth < 768 ? '13px' : window.innerWidth < 1024 ? '14px' : '15px',
-                                fontWeight: isActive ? '600' : '500',
-                                opacity: isActive ? 1.0 : 0.8,
+                                fontSize: window.innerWidth < 768 ? '15px' : window.innerWidth < 1024 ? '16px' : '18px',
+                                fontWeight: '700',
+                                opacity: isActive ? 1.0 : 0.9,
                                 filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
                                 letterSpacing: '-0.025em'
                               }}
@@ -378,13 +378,13 @@ const ShopFloorPortfolio = () => {
                             y={labelY}
                             textAnchor="middle"
                             dominantBaseline="central"
-                            className={`font-medium tracking-tight transition-all duration-150 ${
-                              isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
+                            className={`font-bold tracking-tight transition-all duration-150 ${
+                              isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"
                             }`}
                             style={{ 
-                              fontSize: window.innerWidth < 768 ? '13px' : window.innerWidth < 1024 ? '14px' : '15px',
-                              fontWeight: isActive ? '600' : '500',
-                              opacity: isActive ? 1.0 : 0.8,
+                              fontSize: window.innerWidth < 768 ? '15px' : window.innerWidth < 1024 ? '16px' : '18px',
+                              fontWeight: '700',
+                              opacity: isActive ? 1.0 : 0.9,
                               filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
                               letterSpacing: '-0.025em'
                             }}
