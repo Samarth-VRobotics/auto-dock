@@ -526,24 +526,22 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Global Partnerships & <span className="text-red-600">Big Wins</span></h2>
           </div>
           
-          {/* Three-Card Feature Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16">
-            
-            {/* Strategic Partnerships Card */}
+          {/* Strategic Partnerships - Full Width Row */}
+          <div className="mt-16 mb-12">
             <Card className="group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 rounded-2xl border-0 shadow-lg bg-gradient-to-br from-white to-blue-50/20">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-red-200 transition-colors duration-300">
-                    <Handshake className="w-8 h-8 text-red-600" />
+              <CardContent className="p-8 lg:p-12">
+                <div className="text-center mb-8">
+                  <div className="w-20 h-20 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-red-200 transition-colors duration-300">
+                    <Handshake className="w-10 h-10 text-red-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">Strategic Partnerships</h3>
-                  <p className="text-sm text-muted-foreground mb-6">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">Strategic Partnerships</h3>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                     Trusted Long-Term Partner to Global Leaders in Chemicals & Manufacturing
                   </p>
                 </div>
                 
                 {/* Company Logos Grid */}
-                <div className="bg-white/60 rounded-xl p-4 backdrop-blur-sm">
+                <div className="bg-white/60 rounded-2xl p-6 lg:p-8 backdrop-blur-sm">
                   <img 
                     src="/lovable-uploads/85aadf10-6770-458d-a137-5836196e9f54.png" 
                     alt="Global partner company logos including ARKEMA, BASF, BELCO, BOSTIK, EMERSON, EVONIK, HENKEL, Saint-Gobain, SEP, Avery Dennison, SKF, SOLEX, Unilever, Vedanta, INDORAMA, JSL, JSW Steel, LG Electronics, MRCC, Target, and OKW" 
@@ -552,12 +550,16 @@ const Index = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
 
+          {/* Implementation Excellence & Continuous Support - Two Cards Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
             {/* Implementation Excellence Card */}
             <Card className="group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 rounded-2xl border-0 shadow-lg bg-gradient-to-br from-white to-green-50/20">
               <CardContent className="p-8">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 group-hover:pulse transition-all duration-300">
                     <Settings className="w-8 h-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">Implementation Excellence</h3>
@@ -567,7 +569,7 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-green-100/20 rounded-xl -z-10"></div>
                   <div className="bg-white/60 rounded-xl p-6 backdrop-blur-sm">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:pulse">
                         <Factory className="w-6 h-6 text-white" />
                       </div>
                       <p className="text-sm text-muted-foreground leading-relaxed">
@@ -583,7 +585,7 @@ const Index = () => {
             <Card className="group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 rounded-2xl border-0 shadow-lg bg-gradient-to-br from-white to-purple-50/20">
               <CardContent className="p-8">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 group-hover:pulse transition-all duration-300">
                     <Headphones className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">Continuous Support</h3>
@@ -593,7 +595,7 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-green-100/20 to-blue-100/20 rounded-xl -z-10"></div>
                   <div className="bg-white/60 rounded-xl p-6 backdrop-blur-sm">
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:pulse">
                         <Globe className="w-6 h-6 text-white" />
                       </div>
                       <div>
