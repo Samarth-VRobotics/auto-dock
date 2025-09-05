@@ -90,46 +90,156 @@ const Index = () => {
       </section>
 
       {/* Industry Evolution Section */}
-      <section id="industry-evolution" className="section-padding relative" style={{
-      backgroundImage: `url(${futureOfWorkBg})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
-    }}>
-        <div className="absolute inset-0 bg-background/90"></div>
+      <section id="industry-evolution" className="section-padding relative bg-gradient-to-r from-slate-100 via-blue-50 to-red-50">
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-200/30 via-blue-200/30 to-red-200/30"></div>
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Industry Evolution</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-16">Industry Evolution</h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center space-y-6">
-              <div className="w-16 h-16 bg-slate-300 rounded-full mx-auto flex items-center justify-center">
-                <Users className="w-8 h-8 text-slate-600" />
-              </div>
-              <h3 className="heading-sm">Yesterday: Manual Operations</h3>
-              <p className="body-base text-muted-foreground">
-                Paper-driven processes with limited automation capabilities. Heavily dependent on human oversight for quality control, maintenance, and operational decisions.
-              </p>
+          {/* Desktop Timeline */}
+          <div className="hidden md:block relative">
+            {/* Progress Line */}
+            <div className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2">
+              <div className="h-full bg-gradient-to-r from-slate-400 via-blue-500 to-red-500 rounded-full shadow-sm"></div>
+              {/* Glow Effect */}
+              <div className="absolute inset-0 h-full bg-gradient-to-r from-slate-400/50 via-blue-500/50 to-red-500/50 rounded-full blur-sm"></div>
             </div>
             
-            <div className="text-center space-y-6">
-              <div className="w-16 h-16 bg-secondary/20 rounded-full mx-auto flex items-center justify-center">
-                <BarChart3 className="w-8 h-8 text-secondary" />
+            {/* Timeline Nodes */}
+            <div className="flex justify-between items-center py-16">
+              {/* Yesterday Node */}
+              <div 
+                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-300 hover:scale-110 focus:scale-110 focus:outline-none"
+                tabIndex={0}
+                role="button"
+                aria-label="Yesterday: Manual Operations – Paper-driven processes with limited automation capabilities"
+              >
+                {/* Node Circle */}
+                <div className="relative">
+                  <div className="w-20 h-20 bg-slate-300 rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:border-slate-400 group-focus:border-slate-400 transition-all duration-300 group-hover:shadow-xl group-focus:shadow-xl">
+                    <Users className="w-10 h-10 text-slate-600 group-hover:text-slate-800 group-focus:text-slate-800 transition-colors duration-300" />
+                  </div>
+                  {/* Pulse Effect on Hover */}
+                  <div className="absolute inset-0 w-20 h-20 bg-slate-400 rounded-full opacity-0 group-hover:opacity-20 group-focus:opacity-20 group-hover:animate-ping group-focus:animate-ping"></div>
+                </div>
+                
+                {/* Content Card */}
+                <div className="mt-8 max-w-xs text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border group-hover:shadow-xl group-focus:shadow-xl group-hover:bg-white group-focus:bg-white transition-all duration-300">
+                  <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-slate-900 group-focus:text-slate-900 transition-colors duration-300">Yesterday: Manual Operations</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 group-focus:text-slate-700 transition-colors duration-300">
+                    Paper-driven processes with limited automation capabilities. Heavily dependent on human oversight for quality control, maintenance, and operational decisions.
+                  </p>
+                </div>
+                
+                {/* Arrow Indicator */}
+                <div className="absolute -right-12 top-1/2 transform -translate-y-1/2 opacity-60 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 text-slate-500 group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">
+                    <ArrowRight className="w-full h-full" />
+                  </div>
+                </div>
               </div>
-              <h3 className="heading-sm">Today: Digital Factories</h3>
-              <p className="body-base text-muted-foreground">
-                Connected operations with data-driven insights. Digital tools enable enhanced visibility but still require significant human intervention for optimization and decision-making.
-              </p>
+              
+              {/* Today Node */}
+              <div 
+                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-300 hover:scale-110 focus:scale-110 focus:outline-none"
+                tabIndex={0}
+                role="button"
+                aria-label="Today: Digital Factories – Connected operations with data-driven insights"
+              >
+                {/* Node Circle */}
+                <div className="relative">
+                  <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:border-blue-400 group-focus:border-blue-400 transition-all duration-300 group-hover:shadow-xl group-focus:shadow-xl">
+                    <BarChart3 className="w-10 h-10 text-blue-600 group-hover:text-blue-800 group-focus:text-blue-800 transition-colors duration-300" />
+                  </div>
+                  {/* Pulse Effect on Hover */}
+                  <div className="absolute inset-0 w-20 h-20 bg-blue-500 rounded-full opacity-0 group-hover:opacity-20 group-focus:opacity-20 group-hover:animate-ping group-focus:animate-ping"></div>
+                </div>
+                
+                {/* Content Card */}
+                <div className="mt-8 max-w-xs text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border group-hover:shadow-xl group-focus:shadow-xl group-hover:bg-white group-focus:bg-white transition-all duration-300">
+                  <h3 className="text-xl font-bold text-blue-800 mb-3 group-hover:text-blue-900 group-focus:text-blue-900 transition-colors duration-300">Today: Digital Factories</h3>
+                  <p className="text-sm text-blue-600 leading-relaxed group-hover:text-blue-700 group-focus:text-blue-700 transition-colors duration-300">
+                    Connected operations with data-driven insights. Digital tools enable enhanced visibility but still require significant human intervention for optimization and decision-making.
+                  </p>
+                </div>
+                
+                {/* Arrow Indicator */}
+                <div className="absolute -right-12 top-1/2 transform -translate-y-1/2 opacity-60 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-8 text-blue-500 group-hover:text-red-500 group-focus:text-red-500 transition-colors duration-300">
+                    <ArrowRight className="w-full h-full" />
+                  </div>
+                </div>
+              </div>
+              
+              {/* Tomorrow Node */}
+              <div 
+                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-300 hover:scale-110 focus:scale-110 focus:outline-none"
+                tabIndex={0}
+                role="button"
+                aria-label="Tomorrow: Autonomous Factories – Self-optimizing systems powered by AI and advanced robotics"
+              >
+                {/* Node Circle */}
+                <div className="relative">
+                  <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:border-red-400 group-focus:border-red-400 transition-all duration-300 group-hover:shadow-xl group-focus:shadow-xl">
+                    <Brain className="w-10 h-10 text-red-600 group-hover:text-red-800 group-focus:text-red-800 transition-colors duration-300" />
+                  </div>
+                  {/* Pulse Effect on Hover */}
+                  <div className="absolute inset-0 w-20 h-20 bg-red-500 rounded-full opacity-0 group-hover:opacity-20 group-focus:opacity-20 group-hover:animate-ping group-focus:animate-ping"></div>
+                </div>
+                
+                {/* Content Card */}
+                <div className="mt-8 max-w-xs text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border group-hover:shadow-xl group-focus:shadow-xl group-hover:bg-white group-focus:bg-white transition-all duration-300">
+                  <h3 className="text-xl font-bold text-red-800 mb-3 group-hover:text-red-900 group-focus:text-red-900 transition-colors duration-300">Tomorrow: Autonomous Factories</h3>
+                  <p className="text-sm text-red-600 leading-relaxed group-hover:text-red-700 group-focus:text-red-700 transition-colors duration-300">
+                    Self-optimizing systems powered by AI and advanced robotics. Minimal human intervention required as facilities automatically adapt to changing conditions and requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Mobile Vertical Timeline */}
+          <div className="md:hidden space-y-12">
+            {/* Yesterday */}
+            <div className="group relative flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 focus:scale-105">
+              <div className="w-16 h-16 bg-slate-300 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <Users className="w-8 h-8 text-slate-600 group-hover:text-slate-800 transition-colors duration-300" />
+              </div>
+              <div className="w-1 h-12 bg-gradient-to-b from-slate-400 to-blue-400 my-4"></div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-sm group-hover:shadow-xl group-hover:bg-white transition-all duration-300">
+                <h3 className="text-lg font-bold text-slate-800 mb-3 group-hover:text-slate-900 transition-colors duration-300">Yesterday: Manual Operations</h3>
+                <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                  Paper-driven processes with limited automation capabilities. Heavily dependent on human oversight for quality control, maintenance, and operational decisions.
+                </p>
+              </div>
             </div>
             
-            <div className="text-center space-y-6">
-              <div className="w-16 h-16 bg-primary/20 rounded-full mx-auto flex items-center justify-center">
-                <Brain className="w-8 h-8 text-primary" />
+            {/* Today */}
+            <div className="group relative flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 focus:scale-105">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <BarChart3 className="w-8 h-8 text-blue-600 group-hover:text-blue-800 transition-colors duration-300" />
               </div>
-              <h3 className="heading-sm">Tomorrow: Autonomous Factories</h3>
-              <p className="body-base text-muted-foreground">
-                Self-optimizing systems powered by AI and advanced robotics. Minimal human intervention required as facilities automatically adapt to changing conditions and requirements.
-              </p>
+              <div className="w-1 h-12 bg-gradient-to-b from-blue-400 to-red-400 my-4"></div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-sm group-hover:shadow-xl group-hover:bg-white transition-all duration-300">
+                <h3 className="text-lg font-bold text-blue-800 mb-3 group-hover:text-blue-900 transition-colors duration-300">Today: Digital Factories</h3>
+                <p className="text-sm text-blue-600 leading-relaxed group-hover:text-blue-700 transition-colors duration-300">
+                  Connected operations with data-driven insights. Digital tools enable enhanced visibility but still require significant human intervention for optimization and decision-making.
+                </p>
+              </div>
+            </div>
+            
+            {/* Tomorrow */}
+            <div className="group relative flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 focus:scale-105">
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <Brain className="w-8 h-8 text-red-600 group-hover:text-red-800 transition-colors duration-300" />
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-sm group-hover:shadow-xl group-hover:bg-white transition-all duration-300">
+                <h3 className="text-lg font-bold text-red-800 mb-3 group-hover:text-red-900 transition-colors duration-300">Tomorrow: Autonomous Factories</h3>
+                <p className="text-sm text-red-600 leading-relaxed group-hover:text-red-700 transition-colors duration-300">
+                  Self-optimizing systems powered by AI and advanced robotics. Minimal human intervention required as facilities automatically adapt to changing conditions and requirements.
+                </p>
+              </div>
             </div>
           </div>
         </div>
