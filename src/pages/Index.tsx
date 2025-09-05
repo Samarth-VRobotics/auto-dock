@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
-import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Settings, Database, Hand, Cpu, Gauge, Lightbulb } from "lucide-react";
+import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Settings, Database, Hand, Cpu, Gauge, Lightbulb, Handshake, Headphones, MapPin } from "lucide-react";
 import autonomousProductionLine from "@/assets/autonomous-production-line.jpg";
 import smartFactoryHall from "@/assets/smart-factory-hall.jpg";
 import manufacturingEvolutionLab from "@/assets/manufacturing-evolution-lab.jpg";
@@ -520,65 +520,113 @@ const Index = () => {
       </section>
 
       {/* Global Partnerships Section */}
-      <section id="global-partnerships" className="section-padding">
+      <section id="global-partnerships" className="section-padding bg-gradient-to-br from-gray-50/50 to-blue-50/30">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="section-header">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Global Partnerships & <span className="text-red-600">Big Wins</span></h2>
           </div>
           
-          {/* Strategic Partnerships */}
-          <Card className="mb-16">
-            <CardContent className="space-y-8 p-8">
-              <div className="bg-blue-100/80 rounded-lg p-6 border border-blue-200">
-                <div className="flex items-center gap-3 mb-4">
-                  <Hand className="w-6 h-6 text-blue-600" />
-                  <h3 className="heading-sm text-blue-900">Strategic Partnerships</h3>
+          {/* Three-Card Feature Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16">
+            
+            {/* Strategic Partnerships Card */}
+            <Card className="group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 rounded-2xl border-0 shadow-lg bg-gradient-to-br from-white to-blue-50/20">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-red-200 transition-colors duration-300">
+                    <Handshake className="w-8 h-8 text-red-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Strategic Partnerships</h3>
+                  <p className="text-sm text-muted-foreground mb-6">
+                    Trusted Long-Term Partner to Global Leaders in Chemicals & Manufacturing
+                  </p>
                 </div>
-              </div>
-              
-              <div className="text-center mb-8">
-                <p className="text-lg font-medium text-gray-800 mb-8">
-                  Trusted Long-Term Partner to Global Leaders in Chemicals & Manufacturing
-                </p>
-              </div>
+                
+                {/* Company Logos Grid */}
+                <div className="bg-white/60 rounded-xl p-4 backdrop-blur-sm">
+                  <img 
+                    src="/lovable-uploads/85aadf10-6770-458d-a137-5836196e9f54.png" 
+                    alt="Global partner company logos including ARKEMA, BASF, BELCO, BOSTIK, EMERSON, EVONIK, HENKEL, Saint-Gobain, SEP, Avery Dennison, SKF, SOLEX, Unilever, Vedanta, INDORAMA, JSL, JSW Steel, LG Electronics, MRCC, Target, and OKW" 
+                    className="w-full h-auto hover:scale-105 transition-transform duration-300 cursor-pointer"
+                  />
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Company Logos Grid */}
-              <div className="flex justify-center mb-8">
-                <img src="/lovable-uploads/85aadf10-6770-458d-a137-5836196e9f54.png" alt="Global partner company logos including ARKEMA, BASF, BELCO, BOSTIK, EMERSON, EVONIK, HENKEL, Saint-Gobain, SEP, Avery Dennison, SKF, SOLEX, Unilever, Vedanta, INDORAMA, JSL, JSW Steel, LG Electronics, MRCC, Target, and OKW" className="max-w-full h-auto" />
-              </div>
-            </CardContent>
-          </Card>
+            {/* Implementation Excellence Card */}
+            <Card className="group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 rounded-2xl border-0 shadow-lg bg-gradient-to-br from-white to-green-50/20">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                    <Settings className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Implementation Excellence</h3>
+                </div>
+                
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-green-100/20 rounded-xl -z-10"></div>
+                  <div className="bg-white/60 rounded-xl p-6 backdrop-blur-sm">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Factory className="w-6 h-6 text-white" />
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Comprehensive digital manufacturing operations management tools with proven track records of delivering sustained improvements across facilities worldwide.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-          {/* Implementation Excellence */}
-          <div className="space-y-6 mb-16">
-            <div className="bg-blue-100/80 rounded-lg p-6 border border-blue-200">
-              <div className="flex items-center gap-3 mb-4">
-                <Settings className="w-6 h-6 text-blue-600" />
-                <h3 className="heading-sm text-blue-900">Implementation Excellence</h3>
-              </div>
-            </div>
+            {/* Continuous Support Card */}
+            <Card className="group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 rounded-2xl border-0 shadow-lg bg-gradient-to-br from-white to-purple-50/20">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                    <Headphones className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Continuous Support</h3>
+                </div>
+                
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-100/20 to-blue-100/20 rounded-xl -z-10"></div>
+                  <div className="bg-white/60 rounded-xl p-6 backdrop-blur-sm">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Globe className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <Clock className="w-4 h-4 text-green-600" />
+                          <span className="text-xs font-medium text-green-600">24/7 GLOBAL</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Always-on global support infrastructure ensuring optimal operations and rapid troubleshooting for mission-critical systems.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Time Zone Indicators */}
+                    <div className="flex justify-between items-center pt-4 border-t border-gray-200/50">
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3 text-gray-400" />
+                        <span className="text-xs text-gray-500">Americas</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3 text-gray-400" />
+                        <span className="text-xs text-gray-500">EMEA</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3 text-gray-400" />
+                        <span className="text-xs text-gray-500">APAC</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
             
-            <div className="text-center">
-              <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-                Comprehensive digital manufacturing operations management tools with proven track records of delivering sustained improvements across facilities worldwide.
-              </p>
-            </div>
-          </div>
-
-          {/* Continuous Support */}
-          <div className="space-y-6">
-            <div className="bg-blue-100/80 rounded-lg p-6 border border-blue-200">
-              <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-6 h-6 text-blue-600" />
-                <h3 className="heading-sm text-blue-900">Continuous Support</h3>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-                24/7 global support infrastructure ensuring optimal operations and rapid troubleshooting for mission-critical manufacturing systems across time zones.
-              </p>
-            </div>
           </div>
         </div>
       </section>
