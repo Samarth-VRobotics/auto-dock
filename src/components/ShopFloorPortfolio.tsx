@@ -15,7 +15,8 @@ const ShopFloorPortfolio = () => {
         'Pallet Handling & Transport'
       ],
       angle: 0, // Top
-      descriptionPosition: 'left-top'
+      descriptionPosition: 'left-top',
+      cardPosition: { x: 60, y: 100 }
     },
     {
       id: 'warehouse',
@@ -27,7 +28,8 @@ const ShopFloorPortfolio = () => {
         'Replenishment Operations'
       ],
       angle: 60, // Top right
-      descriptionPosition: 'right-top'
+      descriptionPosition: 'right-top',
+      cardPosition: { x: 520, y: 100 }
     },
     {
       id: 'dispensing',
@@ -39,7 +41,8 @@ const ShopFloorPortfolio = () => {
         'Cross-docking Operations'
       ],
       angle: 120, // Bottom right
-      descriptionPosition: 'right-bottom'
+      descriptionPosition: 'right-middle',
+      cardPosition: { x: 520, y: 250 }
     },
     {
       id: 'manufacturing',
@@ -51,7 +54,8 @@ const ShopFloorPortfolio = () => {
         'Packaging & Batch Processing'
       ],
       angle: 180, // Bottom
-      descriptionPosition: 'right-bottom'
+      descriptionPosition: 'right-bottom',
+      cardPosition: { x: 520, y: 400 }
     },
     {
       id: 'lab',
@@ -63,7 +67,8 @@ const ShopFloorPortfolio = () => {
         'Compliance verification'
       ],
       angle: 240, // Bottom left
-      descriptionPosition: 'left-bottom'
+      descriptionPosition: 'left-bottom',
+      cardPosition: { x: 60, y: 400 }
     },
     {
       id: 'outbound',
@@ -75,78 +80,58 @@ const ShopFloorPortfolio = () => {
         'Truck Loading & Final Verification'
       ],
       angle: 300, // Top left
-      descriptionPosition: 'left-top'
+      descriptionPosition: 'left-middle',
+      cardPosition: { x: 60, y: 250 }
     }
   ];
 
   const getSegmentPath = (index: number) => {
     const angleStart = (index * 60 - 90) * Math.PI / 180;
     const angleEnd = ((index + 1) * 60 - 90) * Math.PI / 180;
-    const innerRadius = 80;
+    const innerRadius = 90; // Increased for safety padding around center
     const outerRadius = 160;
     
-    const x1 = 250 + Math.cos(angleStart) * innerRadius;
-    const y1 = 250 + Math.sin(angleStart) * innerRadius;
-    const x2 = 250 + Math.cos(angleStart) * outerRadius;
-    const y2 = 250 + Math.sin(angleStart) * outerRadius;
-    const x3 = 250 + Math.cos(angleEnd) * outerRadius;
-    const y3 = 250 + Math.sin(angleEnd) * outerRadius;
-    const x4 = 250 + Math.cos(angleEnd) * innerRadius;
-    const y4 = 250 + Math.sin(angleEnd) * innerRadius;
+    const x1 = 300 + Math.cos(angleStart) * innerRadius;
+    const y1 = 300 + Math.sin(angleStart) * innerRadius;
+    const x2 = 300 + Math.cos(angleStart) * outerRadius;
+    const y2 = 300 + Math.sin(angleStart) * outerRadius;
+    const x3 = 300 + Math.cos(angleEnd) * outerRadius;
+    const y3 = 300 + Math.sin(angleEnd) * outerRadius;
+    const x4 = 300 + Math.cos(angleEnd) * innerRadius;
+    const y4 = 300 + Math.sin(angleEnd) * innerRadius;
     
     return `M ${x1} ${y1} L ${x2} ${y2} A ${outerRadius} ${outerRadius} 0 0 1 ${x3} ${y3} L ${x4} ${y4} A ${innerRadius} ${innerRadius} 0 0 0 ${x1} ${y1} Z`;
   };
 
-  const getIconPosition = (index: number) => {
+  const getSegmentCentroid = (index: number) => {
     const angle = (index * 60 - 90) * Math.PI / 180 + (30 * Math.PI / 180);
-    const radius = 120;
+    const radius = 160; // Outer radius for connector start point
     return {
-      x: 250 + Math.cos(angle) * radius,
-      y: 250 + Math.sin(angle) * radius
+      x: 300 + Math.cos(angle) * radius,
+      y: 300 + Math.sin(angle) * radius
     };
   };
 
-  const getCenterIconPosition = (index: number) => {
-    const angle = (index * 60) * Math.PI / 180;
-    const radius = 50;
+  const getIconPosition = (index: number) => {
+    const angle = (index * 60 - 90) * Math.PI / 180 + (30 * Math.PI / 180);
+    const radius = 60; // Icon ring radius between center and segments
     return {
-      x: 250 + Math.cos(angle) * radius,
-      y: 250 + Math.sin(angle) * radius
+      x: 300 + Math.cos(angle) * radius,
+      y: 300 + Math.sin(angle) * radius
     };
   };
 
   const getConnectorPath = (index: number) => {
     const segment = segments[index];
-    const iconPos = getIconPosition(index);
+    const startPos = getSegmentCentroid(index);
+    const cardPos = segment.cardPosition;
     
-    // Define target positions for description blocks
-    const targets = {
-      'left-top': { x: 50, y: 120 },
-      'right-top': { x: 450, y: 120 },
-      'right-bottom': { x: 450, y: 380 },
-      'left-bottom': { x: 50, y: 380 }
-    };
+    // Create elbow connector
+    const isLeft = cardPos.x < 300;
+    const midX = isLeft ? startPos.x - 40 : startPos.x + 40;
+    const midY = cardPos.y + 60; // Center of card
     
-    const targetPos = segment.descriptionPosition === 'left-top' ? targets['left-top'] :
-                     segment.descriptionPosition === 'right-top' ? targets['right-top'] :
-                     segment.descriptionPosition === 'right-bottom' ? targets['right-bottom'] :
-                     targets['left-bottom'];
-    
-    return `M ${iconPos.x} ${iconPos.y} L ${targetPos.x} ${targetPos.y}`;
-  };
-
-  const getDescriptionBlockPosition = (position: string) => {
-    switch (position) {
-      case 'left-top':
-        return 'absolute top-8 left-0 w-80';
-      case 'right-top':
-        return 'absolute top-8 right-0 w-80';
-      case 'right-bottom':
-        return 'absolute bottom-8 right-0 w-80';
-      case 'left-bottom':
-      default:
-        return 'absolute bottom-8 left-0 w-80';
-    }
+    return `M ${startPos.x} ${startPos.y} L ${midX} ${startPos.y} L ${midX} ${midY} L ${cardPos.x + (isLeft ? 280 : 0)} ${midY}`;
   };
 
   return (
@@ -160,14 +145,38 @@ const ShopFloorPortfolio = () => {
 
         {/* Desktop Layout */}
         <div className="hidden lg:block relative">
-          <div className="relative max-w-6xl mx-auto h-[600px]">
+          <div className="relative max-w-7xl mx-auto h-[600px]" aria-live="polite">
             {/* SVG Circular Diagram */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <svg width="500" height="500" viewBox="0 0 500 500" className="overflow-visible">
+              <svg width="600" height="600" viewBox="0 0 600 600" className="overflow-visible">
+                {/* Definitions for gradients and markers */}
+                <defs>
+                  <marker
+                    id="arrowhead"
+                    markerWidth="8"
+                    markerHeight="6"
+                    refX="7"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <polygon
+                      points="0 0, 8 3, 0 6"
+                      fill="hsl(var(--primary))"
+                    />
+                  </marker>
+                  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                
                 {/* Background Circle */}
                 <circle
-                  cx="250"
-                  cy="250"
+                  cx="300"
+                  cy="300"
                   r="160"
                   fill="none"
                   stroke="hsl(var(--border))"
@@ -175,78 +184,102 @@ const ShopFloorPortfolio = () => {
                   opacity="0.3"
                 />
                 
-                {/* Inner Circle */}
-                <circle
-                  cx="250"
-                  cy="250"
-                  r="80"
-                  fill="hsl(var(--card))"
-                  stroke="hsl(var(--primary))"
-                  strokeWidth="2"
-                />
-                
-                {/* Center Text */}
-                <text
-                  x="250"
-                  y="250"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className="text-sm font-bold fill-primary"
-                  style={{ fontSize: '14px' }}
-                >
-                  Autonomous
-                </text>
-                <text
-                  x="250"
-                  y="265"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className="text-sm font-bold fill-primary"
-                  style={{ fontSize: '14px' }}
-                >
-                  Factories
-                </text>
-                
-                {/* Center Icons Ring */}
-                {segments.map((_, index) => {
-                  const pos = getCenterIconPosition(index);
-                  return (
-                    <circle
-                      key={`center-icon-${index}`}
-                      cx={pos.x}
-                      cy={pos.y}
-                      r="12"
-                      fill="hsl(var(--muted))"
-                      stroke="hsl(var(--border))"
-                      strokeWidth="1"
-                    />
-                  );
-                })}
-                
                 {/* Segments */}
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
                   return (
-                    <g key={segment.id}>
-                      <path
-                        d={getSegmentPath(index)}
-                        fill={isActive ? "hsl(var(--primary) / 0.15)" : "hsl(var(--card))"}
-                        stroke={isActive ? "hsl(var(--primary))" : "hsl(var(--border))"}
-                        strokeWidth={isActive ? "3" : "1"}
-                        className="cursor-pointer transition-all duration-300 hover:fill-primary/10"
-                        style={{
-                          transform: isActive ? 'scale(1.08)' : 'scale(1)',
-                          transformOrigin: '250px 250px',
-                          filter: isActive ? 'drop-shadow(0 4px 8px hsl(var(--primary) / 0.3))' : 'none'
-                        }}
-                        onMouseEnter={() => setActiveSegment(index)}
-                        onFocus={() => setActiveSegment(index)}
-                        tabIndex={0}
-                        role="button"
-                        aria-label={segment.title}
-                        aria-expanded={isActive}
-                      />
-                    </g>
+                    <path
+                      key={segment.id}
+                      d={getSegmentPath(index)}
+                      fill={isActive ? "hsl(var(--primary) / 0.15)" : "hsl(var(--card))"}
+                      stroke={isActive ? "hsl(var(--primary))" : "hsl(var(--border))"}
+                      strokeWidth={isActive ? "2" : "1"}
+                      className="cursor-pointer transition-all duration-150 ease-out hover:fill-primary/10"
+                      style={{
+                        transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                        transformOrigin: '300px 300px',
+                        filter: isActive ? 'url(#glow)' : 'none',
+                        zIndex: isActive ? 2 : 1
+                      }}
+                      onMouseEnter={() => setActiveSegment(index)}
+                      onFocus={() => setActiveSegment(index)}
+                      tabIndex={0}
+                      role="button"
+                      aria-label={`${segment.title} - ${segment.description.join(', ')}`}
+                      aria-expanded={isActive}
+                    />
+                  );
+                })}
+                
+                {/* Inner Center Circle */}
+                <circle
+                  cx="300"
+                  cy="300"
+                  r="80"
+                  fill="hsl(var(--card))"
+                  stroke="hsl(var(--primary))"
+                  strokeWidth="2"
+                  style={{ zIndex: 3 }}
+                />
+                
+                {/* Center Text */}
+                <text
+                  x="300"
+                  y="295"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  className="font-bold fill-primary"
+                  style={{ 
+                    fontSize: 'clamp(14px, 1.6vw, 20px)',
+                    lineHeight: '1.2',
+                    fontWeight: '700'
+                  }}
+                >
+                  Autonomous
+                </text>
+                <text
+                  x="300"
+                  y="315"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  className="font-bold fill-primary"
+                  style={{ 
+                    fontSize: 'clamp(14px, 1.6vw, 20px)',
+                    lineHeight: '1.2',
+                    fontWeight: '700'
+                  }}
+                >
+                  Factories
+                </text>
+                
+                {/* Icon Ring */}
+                {segments.map((segment, index) => {
+                  const pos = getIconPosition(index);
+                  const IconComponent = segment.icon;
+                  const isActive = activeSegment === index;
+                  
+                  return (
+                    <foreignObject
+                      key={`icon-${index}`}
+                      x={pos.x - 14}
+                      y={pos.y - 14}
+                      width="28"
+                      height="28"
+                      className="pointer-events-none"
+                      style={{ zIndex: 2 }}
+                    >
+                      <div className={`w-7 h-7 rounded-full bg-card border flex items-center justify-center transition-all duration-150 ${
+                        isActive ? 'scale-110 border-primary shadow-md' : 'border-border'
+                      }`}>
+                        <IconComponent 
+                          size={16} 
+                          className={`transition-all duration-150 ${
+                            isActive ? "text-primary" : "text-muted-foreground"
+                          }`}
+                          style={{ opacity: isActive ? 1 : 0.7 }}
+                        />
+                      </div>
+                    </foreignObject>
                   );
                 })}
                 
@@ -258,73 +291,36 @@ const ShopFloorPortfolio = () => {
                       key={`connector-${index}`}
                       d={getConnectorPath(index)}
                       stroke={isActive ? "hsl(var(--primary))" : "hsl(var(--border))"}
-                      strokeWidth={isActive ? "2" : "1"}
+                      strokeWidth={isActive ? "2.5" : "1.5"}
                       fill="none"
                       markerEnd="url(#arrowhead)"
-                      className="transition-all duration-300"
-                      opacity={isActive ? 1 : 0.5}
+                      className="transition-all duration-150"
+                      opacity={isActive ? 1 : 0.6}
+                      style={{ zIndex: 1 }}
                     />
-                  );
-                })}
-                
-                {/* Arrow marker */}
-                <defs>
-                  <marker
-                    id="arrowhead"
-                    markerWidth="10"
-                    markerHeight="7"
-                    refX="9"
-                    refY="3.5"
-                    orient="auto"
-                  >
-                    <polygon
-                      points="0 0, 10 3.5, 0 7"
-                      fill="hsl(var(--primary))"
-                    />
-                  </marker>
-                </defs>
-                
-                {/* Segment Icons */}
-                {segments.map((segment, index) => {
-                  const pos = getIconPosition(index);
-                  const IconComponent = segment.icon;
-                  const isActive = activeSegment === index;
-                  
-                  return (
-                    <foreignObject
-                      key={`icon-${index}`}
-                      x={pos.x - 12}
-                      y={pos.y - 12}
-                      width="24"
-                      height="24"
-                      className="pointer-events-none"
-                    >
-                      <IconComponent 
-                        size={24} 
-                        className={`transition-all duration-300 ${
-                          isActive ? "text-primary scale-110" : "text-muted-foreground"
-                        }`}
-                      />
-                    </foreignObject>
                   );
                 })}
               </svg>
             </div>
             
-            {/* Description Blocks */}
+            {/* Fixed Position Description Cards */}
             {segments.map((segment, index) => {
               const isActive = activeSegment === index;
-              const positionClass = getDescriptionBlockPosition(segment.descriptionPosition);
+              const cardPos = segment.cardPosition;
               
               return (
                 <div
                   key={`desc-${index}`}
-                  className={`${positionClass} transition-all duration-300 ${
-                    isActive ? 'opacity-100 scale-100' : 'opacity-60 scale-95'
-                  }`}
+                  className="absolute w-80 transition-all duration-150"
+                  style={{
+                    left: `${cardPos.x}px`,
+                    top: `${cardPos.y}px`,
+                    zIndex: isActive ? 3 : 1,
+                    transform: isActive ? 'scale(1.02)' : 'scale(1)'
+                  }}
                 >
-                  <div className={`bg-card rounded-2xl p-6 border shadow-lg ${
-                    isActive ? 'border-primary shadow-xl' : 'border-border'
+                  <div className={`bg-card rounded-2xl p-6 border shadow-lg transition-all duration-150 ${
+                    isActive ? 'border-primary shadow-xl bg-primary/5' : 'border-border'
                   }`}>
                     <h3 className={`text-lg font-bold mb-4 transition-colors ${
                       isActive ? 'text-primary' : 'text-foreground'
@@ -334,7 +330,7 @@ const ShopFloorPortfolio = () => {
                     <ul className="space-y-2">
                       {segment.description.map((point, pointIndex) => (
                         <li key={pointIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
-                          <span className="text-primary mt-1">•</span>
+                          <span className="text-primary mt-1 font-bold">•</span>
                           <span>{point}</span>
                         </li>
                       ))}
@@ -349,11 +345,11 @@ const ShopFloorPortfolio = () => {
         {/* Mobile Layout */}
         <div className="lg:hidden">
           <div className="flex justify-center mb-12">
-            <svg width="300" height="300" viewBox="0 0 500 500">
+            <svg width="280" height="280" viewBox="0 0 600 600">
               {/* Background Circle */}
               <circle
-                cx="250"
-                cy="250"
+                cx="300"
+                cy="300"
                 r="160"
                 fill="none"
                 stroke="hsl(var(--border))"
@@ -363,8 +359,8 @@ const ShopFloorPortfolio = () => {
               
               {/* Inner Circle */}
               <circle
-                cx="250"
-                cy="250"
+                cx="300"
+                cy="300"
                 r="80"
                 fill="hsl(var(--card))"
                 stroke="hsl(var(--primary))"
@@ -373,8 +369,8 @@ const ShopFloorPortfolio = () => {
               
               {/* Center Text */}
               <text
-                x="250"
-                y="250"
+                x="300"
+                y="295"
                 textAnchor="middle"
                 dominantBaseline="middle"
                 className="text-xs font-bold fill-primary"
@@ -383,8 +379,8 @@ const ShopFloorPortfolio = () => {
                 Autonomous
               </text>
               <text
-                x="250"
-                y="265"
+                x="300"
+                y="315"
                 textAnchor="middle"
                 dominantBaseline="middle"
                 className="text-xs font-bold fill-primary"
@@ -406,7 +402,7 @@ const ShopFloorPortfolio = () => {
                 />
               ))}
               
-              {/* Segment Icons */}
+              {/* Icon Ring */}
               {segments.map((segment, index) => {
                 const pos = getIconPosition(index);
                 const IconComponent = segment.icon;
@@ -420,10 +416,12 @@ const ShopFloorPortfolio = () => {
                     height="20"
                     className="pointer-events-none"
                   >
-                    <IconComponent 
-                      size={20} 
-                      className={activeSegment === index ? "text-primary" : "text-muted-foreground"}
-                    />
+                    <div className="w-5 h-5 rounded-full bg-card border border-border flex items-center justify-center">
+                      <IconComponent 
+                        size={12} 
+                        className={activeSegment === index ? "text-primary" : "text-muted-foreground"}
+                      />
+                    </div>
                   </foreignObject>
                 );
               })}
@@ -435,7 +433,7 @@ const ShopFloorPortfolio = () => {
             {segments.map((segment, index) => (
               <div
                 key={segment.id}
-                className={`bg-card rounded-2xl border cursor-pointer transition-all duration-300 ${
+                className={`bg-card rounded-2xl border cursor-pointer transition-all duration-150 ${
                   activeSegment === index ? 'border-primary shadow-lg' : 'border-border'
                 }`}
                 onClick={() => setActiveSegment(activeSegment === index ? -1 : index)}
@@ -454,7 +452,7 @@ const ShopFloorPortfolio = () => {
                     <ul className="space-y-2 ml-8">
                       {segment.description.map((point, pointIndex) => (
                         <li key={pointIndex} className="flex items-start space-x-2 text-sm text-muted-foreground">
-                          <span className="text-primary mt-1">•</span>
+                          <span className="text-primary mt-1 font-bold">•</span>
                           <span>{point}</span>
                         </li>
                       ))}
