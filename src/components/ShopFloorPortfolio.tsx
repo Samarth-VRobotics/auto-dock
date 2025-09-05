@@ -279,24 +279,6 @@ const ShopFloorPortfolio = () => {
                   );
                 })}
                 
-                {/* Connector lines */}
-                {segments.map((segment, index) => {
-                  const isActive = activeSegment === index;
-                  const connectorPath = getConnectorPath(index);
-                  
-                  return (
-                    <path
-                      key={`connector-${index}`}
-                      d={connectorPath}
-                      stroke="#ef4444"
-                      strokeWidth={isActive ? "2.5" : "2"}
-                      fill="none"
-                      className="transition-all duration-150"
-                      opacity={isActive ? 1 : 0.6}
-                    />
-                  );
-                })}
-                
                 {/* Inner center circle */}
                 <circle
                   cx={centerX}
