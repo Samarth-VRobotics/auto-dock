@@ -305,8 +305,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Vegam Journey Section - Curved Timeline */}
-      <section id="vegam-journey" className="section-padding bg-muted/30">
+      {/* Vegam Journey Section - SVG Timeline */}
+      <section className="vegam-journey section-padding bg-muted/30">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="heading-lg mb-4">Vegam Journey: Proven History in Manufacturing Transformation</h2>
@@ -315,250 +315,133 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Diagonal Growth Timeline */}
-          <div className="relative min-h-[800px] lg:min-h-[700px] overflow-hidden">
-            {/* Background Grid */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="grid grid-cols-12 gap-4 h-full">
-                {Array.from({ length: 12 }, (_, i) => (
-                  <div key={i} className="border-l border-muted-foreground/30"></div>
-                ))}
-              </div>
-            </div>
+          <svg viewBox="0 0 1200 600" width="100%" role="img" aria-label="Vegam journey diagonal timeline with milestones from 2000 to 2030">
+            <defs>
+              {/* Arrow marker for the end of the diagonal */}
+              <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L0,6 L9,3 z" fill="url(#grad)"></path>
+              </marker>
+              {/* Gradient for the growth line */}
+              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#E53935" />
+                <stop offset="50%" stopColor="#7B61FF" />
+                <stop offset="100%" stopColor="#0D47A1" />
+              </linearGradient>
+              <style>
+                {`.year { font: 700 20px/1.2 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#0D2748; }
+                .cap { font: 500 15px/1.4 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#243B55; }
+                .nodePast { fill:#0D47A1; }
+                .nodeFuture { fill:#E53935; }
+                .nodeRing { fill:#fff; stroke:#ffffff; stroke-width:4; }
+                .card { filter: drop-shadow(0 6px 18px rgba(13,39,72,0.12)); }
+                .card rect { fill:#fff; rx:14; }
+                .card text { font: 500 14px/1.5 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#334; }
+                .pill { font: 800 13px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#fff; }
+                .pillRect { fill:#E53935; rx:18; }
+                .bullet { fill:#E53935; }
+                .foundation h1 { font: 800 16px/1.2 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#0D2748; }
+                .foundation li { font: 500 14px/1.5 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:#243B55; }`}
+              </style>
+            </defs>
 
-            {/* SVG Diagonal Growth Line - Behind everything */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
-              <defs>
-                <linearGradient id="diagonalGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.7" />
-                  <stop offset="70%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="hsl(214 100% 50%)" stopOpacity="1" />
-                </linearGradient>
-                <filter id="lineShadow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="hsl(var(--primary))" floodOpacity="0.3"/>
-                </filter>
-              </defs>
-              {/* Diagonal growth line from bottom-left to upper-right */}
-              <path 
-                d="M 100 650 L 1100 150" 
-                stroke="url(#diagonalGradient)" 
-                strokeWidth="3" 
-                fill="none" 
-                filter="url(#lineShadow)"
-                className="animate-fade-in"
-                style={{ animationDelay: '0.5s' }}
-              />
-              {/* Improved arrow head at the end */}
-              <polygon 
-                points="1100,150 1085,140 1085,147 1090,150 1085,153 1085,160" 
-                fill="hsl(214 100% 50%)" 
-                className="animate-fade-in"
-                style={{ animationDelay: '1s' }}
-              />
-            </svg>
+            {/* DIAGONAL GROWTH LINE (straight) */}
+            <path d="M 100 500 L 1100 100" stroke="url(#grad)" strokeWidth="3" fill="none" markerEnd="url(#arrow)" />
 
-            {/* Strong Foundation for Innovation Card */}
-            <div className="absolute top-4 left-4 lg:top-8 lg:left-8 max-w-sm bg-background/95 rounded-2xl p-6 border shadow-xl backdrop-blur-sm z-20">
-              <div className="bg-red-600/10 text-red-600 px-4 py-2 rounded-full text-sm font-semibold mb-4 inline-block">
-                Strong Foundation for Innovation
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0"></div>
-                  <span className="text-sm text-muted-foreground">230+ dedicated R&D professionals in India</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0"></div>
-                  <span className="text-sm text-muted-foreground">ISO 27001 certified for information security</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0"></div>
-                  <span className="text-sm text-muted-foreground">ISO 9001 certified for quality management</span>
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground mt-4 italic">
-                Proven track record across global deployments & 24/7 support.
-              </p>
-            </div>
+            {/* ===== MILESTONES (explicit coordinates) ===== */}
+            {/* Coordinates chosen by equal spacing along the straight diagonal */}
+            {/* 1) 2000 */}
+            <g transform="translate(100,500)">
+              <circle r="22" className="nodeRing"></circle>
+              <circle r="18" className="nodePast"></circle>
+              <text className="year" x="-40" y="55">2000</text>
+              <text className="cap" x="-40" y="78">Foundation with</text>
+              <text className="cap" x="-40" y="98">digital factory vision</text>
+            </g>
 
-            {/* Desktop Timeline Nodes - Evenly distributed along diagonal */}
-            <div className="hidden lg:block relative z-10 h-full">
-              {[
-                {
-                  id: 1,
-                  year: '2000',
-                  title: 'Foundation with digital factory vision.',
-                  position: { left: '8.3%', top: '81.3%' },
-                  cardPosition: 'below',
-                  isPast: true
-                },
-                {
-                  id: 2,
-                  year: '2007',
-                  title: 'First plant fully digitalized.',
-                  position: { left: '20.4%', top: '71.9%' },
-                  cardPosition: 'above',
-                  isPast: true
-                },
-                {
-                  id: 3,
-                  year: '2013',
-                  title: '18 plants connected in network.',
-                  position: { left: '32.5%', top: '62.5%' },
-                  cardPosition: 'below',
-                  isPast: true
-                },
-                {
-                  id: 4,
-                  year: '2016',
-                  title: 'Scaled to 70 plants globally.',
-                  position: { left: '44.6%', top: '53.1%' },
-                  cardPosition: 'above',
-                  isPast: true
-                },
-                {
-                  id: 5,
-                  year: '2019',
-                  title: 'Milestone of 100+ plants achieved.',
-                  position: { left: '56.7%', top: '43.8%' },
-                  cardPosition: 'below',
-                  isPast: true
-                },
-                {
-                  id: 6,
-                  year: '2023',
-                  title: 'Foundation for Autonomous factories.',
-                  position: { left: '68.8%', top: '34.4%' },
-                  cardPosition: 'above',
-                  isPast: true
-                },
-                {
-                  id: 7,
-                  year: '2025',
-                  title: 'Milestone of 300+ plants achieved.',
-                  position: { left: '80.9%', top: '25%' },
-                  cardPosition: 'below',
-                  isPast: true
-                },
-                {
-                  id: 8,
-                  year: '2026',
-                  title: 'Projected First Fully Autonomous Plant.',
-                  position: { left: '87%', top: '20.6%' },
-                  cardPosition: 'above',
-                  isPast: false
-                },
-                {
-                  id: 9,
-                  year: '2030',
-                  title: '1000 Autonomous Plants.',
-                  position: { left: '93.1%', top: '16.3%' },
-                  cardPosition: 'below',
-                  isPast: false
-                }
-              ].map((milestone, index) => (
-                <div key={milestone.id} className="absolute">
-                  {/* Node positioned on the diagonal line */}
-                  <button
-                    className="group cursor-pointer transform -translate-x-1/2 -translate-y-1/2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg z-30"
-                    style={milestone.position}
-                    aria-label={`${milestone.year} — ${milestone.title}`}
-                    tabIndex={0}
-                  >
-                    {/* Node Circle */}
-                    <div className={`w-6 h-6 rounded-full border-2 transition-all duration-200 group-hover:scale-110 group-focus:scale-110 ${
-                      milestone.isPast 
-                        ? 'bg-slate-400 border-slate-500' 
-                        : 'bg-red-600 border-red-700'
-                    }`}>
-                      <div className={`absolute inset-0 rounded-full transition-all duration-200 group-hover:animate-ping ${
-                        milestone.isPast 
-                          ? 'border border-slate-400/30' 
-                          : 'border border-red-600/30'
-                      }`}></div>
-                    </div>
-                    
-                    {/* Year Label */}
-                    <div className={`absolute ${milestone.cardPosition === 'above' ? 'bottom-8' : 'top-8'} left-1/2 transform -translate-x-1/2 px-3 py-1 rounded-full text-lg font-bold shadow-sm transition-all duration-200 group-hover:scale-105 group-focus:scale-105 whitespace-nowrap z-20 ${
-                      milestone.isPast 
-                        ? 'bg-slate-100 text-slate-700' 
-                        : 'bg-red-600 text-white'
-                    }`}>
-                      {milestone.year}
-                    </div>
+            {/* 2) 2007 */}
+            <g transform="translate(238,445)">
+              <circle r="22" className="nodeRing"></circle>
+              <circle r="18" className="nodePast"></circle>
+              <text className="year" x="18" y="6">2007</text>
+              <text className="cap" x="18" y="28">First plant fully</text>
+              <text className="cap" x="18" y="48">digitalized</text>
+            </g>
 
-                    {/* Connector Line */}
-                    <div className={`absolute left-1/2 w-px ${milestone.cardPosition === 'above' ? 'bottom-16 h-12' : 'top-16 h-12'} transform -translate-x-1/2 ${
-                      milestone.isPast 
-                        ? 'bg-slate-300' 
-                        : 'bg-red-600/50'
-                    }`}></div>
+            {/* 3) 2013 */}
+            <g transform="translate(376,390)">
+              <circle r="22" className="nodeRing"></circle>
+              <circle r="18" className="nodePast"></circle>
+              <text className="year" x="-120" y="-10">2013</text>
+              <text className="cap" x="-120" y="12"><tspan fontWeight="700">18</tspan> plants connected</text>
+              <text className="cap" x="-120" y="32">in network</text>
+            </g>
 
-                    {/* Caption Card */}
-                    <div className={`absolute left-1/2 transform -translate-x-1/2 ${milestone.cardPosition === 'above' ? 'bottom-28' : 'top-28'} bg-background rounded-xl p-4 shadow-lg border max-w-80 transition-all duration-200 group-hover:shadow-xl group-hover:-translate-y-1 group-focus:shadow-xl group-focus:-translate-y-1 z-10 ${
-                      milestone.isPast 
-                        ? 'border-border' 
-                        : 'border-red-600/20'
-                    }`}>
-                      <p className={`text-sm font-medium leading-relaxed text-center ${
-                        milestone.isPast 
-                          ? 'text-foreground' 
-                          : 'text-red-600'
-                      }`}>
-                        {milestone.title}
-                      </p>
-                    </div>
-                  </button>
-                </div>
-              ))}
-            </div>
+            {/* 4) 2016 */}
+            <g transform="translate(514,335)">
+              <circle r="22" className="nodeRing"></circle>
+              <circle r="18" className="nodePast"></circle>
+              <text className="year" x="20" y="6">2016</text>
+              <text className="cap" x="20" y="28">Scaled to <tspan fontWeight="700">70</tspan></text>
+              <text className="cap" x="20" y="48">plants globally</text>
+            </g>
 
-            {/* Mobile Vertical Timeline */}
-            <div className="lg:hidden relative z-10 pt-64">
-              <div className="space-y-8 px-4">
-                {[
-                  { year: '2000', title: 'Foundation with digital factory vision.', isPast: true },
-                  { year: '2007', title: 'First plant fully digitalized.', isPast: true },
-                  { year: '2013', title: '18 plants connected in network.', isPast: true },
-                  { year: '2016', title: 'Scaled to 70 plants globally.', isPast: true },
-                  { year: '2019', title: 'Milestone of 100+ plants achieved.', isPast: true },
-                  { year: '2023', title: 'Foundation for Autonomous factories.', isPast: true },
-                  { year: '2025', title: 'Milestone of 300+ plants achieved.', isPast: true },
-                  { year: '2026', title: 'Projected First Fully Autonomous Plant.', isPast: false },
-                  { year: '2030', title: '1000 Autonomous Plants.', isPast: false }
-                ].map((milestone, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="flex flex-col items-center">
-                      <div className={`w-5 h-5 rounded-full border-2 ${
-                        milestone.isPast 
-                          ? 'bg-slate-400 border-slate-500' 
-                          : 'bg-red-600 border-red-700'
-                      }`}></div>
-                      {index < 8 && (
-                        <div className="w-px h-8 bg-border mt-2"></div>
-                      )}
-                    </div>
-                    <div className="flex-1 pb-8">
-                      <div className={`inline-block px-3 py-1 rounded-full text-sm font-bold mb-2 ${
-                        milestone.isPast 
-                          ? 'bg-slate-100 text-slate-700' 
-                          : 'bg-red-600 text-white'
-                      }`}>
-                        {milestone.year}
-                      </div>
-                      <p className={`text-sm ${
-                        milestone.isPast 
-                          ? 'text-foreground' 
-                          : 'text-red-600'
-                      }`}>
-                        {milestone.title}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+            {/* 5) 2019 */}
+            <g transform="translate(652,280)">
+              <circle r="22" className="nodeRing"></circle>
+              <circle r="18" className="nodePast"></circle>
+              <text className="year" x="-110" y="-8">2019</text>
+              <text className="cap" x="-110" y="14">Milestone of <tspan fontWeight="700">100+</tspan></text>
+              <text className="cap" x="-110" y="34">plants achieved</text>
+            </g>
+
+            {/* 6) 2023 */}
+            <g transform="translate(790,225)">
+              <circle r="22" className="nodeRing"></circle>
+              <circle r="18" className="nodePast"></circle>
+              <text className="year" x="20" y="6">2023</text>
+              <text className="cap" x="20" y="28">Foundation for</text>
+              <text className="cap" x="20" y="48">Autonomous factories</text>
+            </g>
+
+            {/* 7) 2025 */}
+            <g transform="translate(928,170)">
+              <circle r="22" className="nodeRing"></circle>
+              <circle r="18" className="nodePast"></circle>
+              <text className="year" x="-150" y="-10">2025</text>
+              <text className="cap" x="-150" y="12">Milestone of <tspan fontWeight="700">300+</tspan></text>
+              <text className="cap" x="-150" y="32">plants achieved</text>
+            </g>
+
+            {/* 8) 2026 (FUTURE) */}
+            <g transform="translate(1064,135)">
+              <circle r="22" className="nodeRing"></circle>
+              <circle r="18" className="nodeFuture"></circle>
+              <text className="year" x="24" y="6" fill="#E53935">2026</text>
+              <text className="cap" x="24" y="28">Projected First Fully</text>
+              <text className="cap" x="24" y="48">Autonomous Plant</text>
+            </g>
+
+            {/* 9) 2030 (FUTURE) */}
+            <g transform="translate(1100,100)">
+              <circle r="22" className="nodeRing"></circle>
+              <circle r="18" className="nodeFuture"></circle>
+              <text className="year" x="-110" y="-10" fill="#E53935">2030</text>
+              <text className="cap" x="-110" y="12"><tspan fontWeight="700">1000</tspan> Autonomous</text>
+              <text className="cap" x="-110" y="32">Plants</text>
+            </g>
+
+            {/* STRONG FOUNDATION FOR INNOVATION CARD (bottom-left) */}
+            <g className="card foundation">
+              <rect x="820" y="460" width="320" height="110" rx="16" fill="#E8F0FE"></rect>
+              <text x="840" y="488" className="year" style={{fontSize:'16px'}}>STRONG FOUNDATION FOR INNOVATION</text>
+              <circle className="bullet" cx="840" cy="504" r="4"></circle>
+              <text className="cap" x="852" y="508">230+ dedicated R&amp;D professionals in India</text>
+              <circle className="bullet" cx="840" cy="524" r="4"></circle>
+              <text className="cap" x="852" y="528">ISO 27001 certified for information security</text>
+              <circle className="bullet" cx="840" cy="544" r="4"></circle>
+              <text className="cap" x="852" y="548">ISO 9001 certified for quality management</text>
+            </g>
+          </svg>
         </div>
       </section>
 
