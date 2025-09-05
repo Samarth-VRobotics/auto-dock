@@ -412,12 +412,11 @@ const Index = () => {
                 fill: hsl(var(--foreground));
               }
               .vj-foundation-card {
-                filter: drop-shadow(0 10px 25px hsl(var(--primary) / 0.15));
+                cursor: pointer;
                 transition: all 0.3s ease;
               }
               .vj-foundation-card:hover {
-                filter: drop-shadow(0 15px 35px hsl(var(--primary) / 0.2));
-                transform: translateY(-2px);
+                filter: drop-shadow(0 8px 20px hsl(var(--primary) / 0.25));
               }
               .manufacturing-image {
                 transition: all 0.3s ease;
@@ -456,17 +455,17 @@ const Index = () => {
                   </feMerge>
                 </filter>
                 <clipPath id="imageClip">
-                  <rect x="20" y="20" width="300" height="120" rx="16"/>
+                  <rect x="20" y="20" width="900" height="360" rx="16"/>
                 </clipPath>
               </defs>
 
-              {/* Manufacturing Evolution Image - Top Left */}
+              {/* Manufacturing Evolution Image - Top Left (3x larger) */}
               <image 
                 href="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png"
                 x="20" 
                 y="20" 
-                width="300" 
-                height="120"
+                width="900" 
+                height="360"
                 clipPath="url(#imageClip)"
                 className="manufacturing-image"
                 style={{ filter: 'drop-shadow(0 8px 25px hsl(var(--foreground) / 0.15))' }}
@@ -474,8 +473,8 @@ const Index = () => {
               <rect 
                 x="20" 
                 y="20" 
-                width="300" 
-                height="120" 
+                width="900" 
+                height="360" 
                 rx="16" 
                 fill="none" 
                 stroke="hsl(var(--border))" 
@@ -630,18 +629,18 @@ const Index = () => {
                 </g>
               </g>
 
-              {/* Strong Foundation card - Bottom Right */}
-              <g className="vj-foundation-card" transform="translate(820,460)">
-                <rect width={360} height={110} fill="hsl(var(--muted))" rx={16} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                <text className="vj-year" x={16} y={32} style={{fontSize:'16px'}} fill="hsl(var(--primary))">
+              {/* Strong Foundation card - Bottom Right (Bigger) */}
+              <g className="vj-foundation-card" transform="translate(750,420)">
+                <rect width={430} height={150} fill="hsl(var(--muted))" rx={16} stroke="hsl(var(--border))" strokeWidth={2}></rect>
+                <text className="vj-year" x={20} y={40} style={{fontSize:'20px'}} fill="hsl(var(--primary))">
                   STRONG FOUNDATION FOR INNOVATION
                 </text>
-                <circle cx={22} cy={50} r={4} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={34} y={54}>230+ dedicated R&D professionals in India</text>
-                <circle cx={22} cy={68} r={4} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={34} y={72}>ISO 27001 certified for information security</text>
-                <circle cx={22} cy={86} r={4} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={34} y={90}>ISO 9001 certified for quality management</text>
+                <circle cx={28} cy={65} r={6} fill="hsl(var(--destructive))"></circle>
+                <text className="vj-cap" x={45} y={72} style={{fontSize:'16px'}}>230+ dedicated R&D professionals in India</text>
+                <circle cx={28} cy={95} r={6} fill="hsl(var(--destructive))"></circle>
+                <text className="vj-cap" x={45} y={102} style={{fontSize:'16px'}}>ISO 27001 certified for information security</text>
+                <circle cx={28} cy={125} r={6} fill="hsl(var(--destructive))"></circle>
+                <text className="vj-cap" x={45} y={132} style={{fontSize:'16px'}}>ISO 9001 certified for quality management</text>
               </g>
             </svg>
 
