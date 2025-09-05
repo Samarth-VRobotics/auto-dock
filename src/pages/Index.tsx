@@ -370,49 +370,48 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Vegam's <span className="text-red-600">Offerings</span></h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <Factory className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="heading-sm mb-4">Manufacturing Operations Management (MOM)</h3>
-                <p className="body-base text-muted-foreground">End-to-end digitalization of shop floor operations with real-time visibility and control</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Row 1: MOM and GOM */}
+            <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift h-full">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                <Factory className="w-6 h-6 text-primary" />
               </div>
-              
-              <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift">
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
-                  <Globe className="w-6 h-6 text-secondary" />
-                </div>
-                <h3 className="heading-sm mb-4">Global Operations Management (GOM)</h3>
-                <p className="body-base text-muted-foreground">Cross-facility optimization with standardized metrics and centralized control capabilities</p>
-              </div>
-              
-              <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-                  <Target className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="heading-sm mb-4">Unified KPIs</h3>
-                <p className="body-base text-muted-foreground">Standardized performance metrics across regions and plants for true global optimization</p>
-              </div>
+              <h3 className="heading-sm mb-4">Manufacturing Operations Management (MOM)</h3>
+              <p className="body-base text-muted-foreground">End-to-end digitalization of shop floor operations with real-time visibility and control</p>
             </div>
             
-            <div className="space-y-8">
-              <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <Brain className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="heading-sm mb-4">AI, ML & Generative AI Integration</h3>
-                <p className="body-base text-muted-foreground">Advanced analytics that transform data into actionable insights and autonomous decisions</p>
+            <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift h-full">
+              <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
+                <Globe className="w-6 h-6 text-secondary" />
               </div>
-              
-              <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift">
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
-                  <Network className="w-6 h-6 text-secondary" />
-                </div>
-                <h3 className="heading-sm mb-4">Robotics & Smart IIoT</h3>
-                <p className="body-base text-muted-foreground">Seamless integration of physical systems with digital infrastructure for autonomous operations</p>
+              <h3 className="heading-sm mb-4">Global Operations Management (GOM)</h3>
+              <p className="body-base text-muted-foreground">Cross-facility optimization with standardized metrics and centralized control capabilities</p>
+            </div>
+            
+            {/* Row 2: AI/ML and Robotics */}
+            <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift h-full">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                <Brain className="w-6 h-6 text-primary" />
               </div>
+              <h3 className="heading-sm mb-4">AI, ML & Generative AI Integration</h3>
+              <p className="body-base text-muted-foreground">Advanced analytics that transform data into actionable insights and autonomous decisions</p>
+            </div>
+            
+            <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift h-full">
+              <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
+                <Network className="w-6 h-6 text-secondary" />
+              </div>
+              <h3 className="heading-sm mb-4">Robotics & Smart IIoT</h3>
+              <p className="body-base text-muted-foreground">Seamless integration of physical systems with digital infrastructure for autonomous operations</p>
+            </div>
+            
+            {/* Row 3: Unified KPIs (centered) */}
+            <div className="bg-card rounded-2xl p-8 border shadow-lg hover-lift h-full md:col-span-2 md:max-w-md md:mx-auto">
+              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+                <Target className="w-6 h-6 text-accent" />
+              </div>
+              <h3 className="heading-sm mb-4">Unified KPIs</h3>
+              <p className="body-base text-muted-foreground">Standardized performance metrics across regions and plants for true global optimization</p>
             </div>
           </div>
         </div>
