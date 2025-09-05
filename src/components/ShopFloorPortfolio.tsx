@@ -90,7 +90,9 @@ const ShopFloorPortfolio = () => {
   const centerY = 320;
   const innerRadius = 120;
   const outerRadius = 240;
-  const labelRadius = 200;
+  const ringWidth = outerRadius - innerRadius;
+  const iconRadius = innerRadius + ringWidth * 0.30; // 25-35% into ring
+  const labelRadius = innerRadius + ringWidth * 0.70; // Outer half of ring
 
   const getSegmentPath = (index: number) => {
     const angleStart = (index * 60 - 90 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
@@ -106,18 +108,6 @@ const ShopFloorPortfolio = () => {
     const y4 = centerY + Math.sin(angleEnd) * innerRadius;
     
     return `M ${x1} ${y1} L ${x2} ${y2} A ${outerRadius} ${outerRadius} 0 0 1 ${x3} ${y3} L ${x4} ${y4} A ${innerRadius} ${innerRadius} 0 0 0 ${x1} ${y1} Z`;
-  };
-
-  const getTextPath = (index: number) => {
-    const angleStart = (index * 60 - 90 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
-    const angleEnd = ((index + 1) * 60 - 90 - 60) * Math.PI / 180; // Added -60 for one segment anticlockwise rotation
-    
-    const startX = centerX + Math.cos(angleStart) * labelRadius;
-    const startY = centerY + Math.sin(angleStart) * labelRadius;
-    const endX = centerX + Math.cos(angleEnd) * labelRadius;
-    const endY = centerY + Math.sin(angleEnd) * labelRadius;
-    
-    return `M ${startX} ${startY} A ${labelRadius} ${labelRadius} 0 0 1 ${endX} ${endY}`;
   };
 
   const getSegmentCentroid = (index: number) => {
@@ -206,16 +196,6 @@ const ShopFloorPortfolio = () => {
                       <feMergeNode in="SourceGraphic"/>
                     </feMerge>
                   </filter>
-                  
-                  {/* Text paths for curved labels */}
-                  {segments.map((segment, index) => (
-                    <path
-                      key={`textpath-${index}`}
-                      id={`textpath-${index}`}
-                      d={getTextPath(index)}
-                      fill="none"
-                    />
-                  ))}
                 </defs>
                 
                 {/* Background Circle */}
@@ -234,10 +214,14 @@ const ShopFloorPortfolio = () => {
                   const isActive = activeSegment === index;
                   const centroid = getSegmentCentroid(index);
                   const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                  const iconRadius = (innerRadius + outerRadius) / 2;
                   const iconX = centerX + Math.cos(iconAngle) * iconRadius;
                   const iconY = centerY + Math.sin(iconAngle) * iconRadius;
                   const IconComponent = segment.icon;
+                  
+                  // Label positioning for upright text
+                  const labelAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                  const labelX = centerX + Math.cos(labelAngle) * labelRadius;
+                  const labelY = centerY + Math.sin(labelAngle) * labelRadius;
                   
                   return (
                     <g key={segment.id}>
@@ -270,7 +254,7 @@ const ShopFloorPortfolio = () => {
                         <circle
                           cx={iconX}
                           cy={iconY}
-                          r="18"
+                          r="16"
                           fill="white"
                           stroke={isActive ? "#ef4444" : "#d1d5db"}
                           strokeWidth={isActive ? "2" : "1"}
@@ -281,15 +265,15 @@ const ShopFloorPortfolio = () => {
                           }}
                         />
                         <foreignObject
-                          x={iconX - 10}
-                          y={iconY - 10}
-                          width="20"
-                          height="20"
+                          x={iconX - 12}
+                          y={iconY - 12}
+                          width="24"
+                          height="24"
                           className="pointer-events-none"
                         >
                           <div className="w-full h-full flex items-center justify-center">
                             <IconComponent 
-                              size={18} 
+                              size={22} 
                               className={`transition-all duration-150 ${
                                 isActive ? "text-red-500" : "text-gray-600"
                               }`}
@@ -298,23 +282,23 @@ const ShopFloorPortfolio = () => {
                         </foreignObject>
                       </g>
                       
-                      {/* Curved segment label */}
+                      {/* Upright segment label */}
                       <text 
-                        className={`text-sm font-medium pointer-events-none transition-all duration-150 ${
-                          isActive ? "fill-red-600 font-semibold" : "fill-gray-700"
+                        x={labelX}
+                        y={labelY}
+                        textAnchor="middle"
+                        dominantBaseline="central"
+                        className={`text-sm font-medium tracking-tight pointer-events-none transition-all duration-150 ${
+                          isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-600"
                         }`}
                         style={{ 
                           fontSize: window.innerWidth < 768 ? '11px' : '13px',
-                          fontWeight: isActive ? '600' : '500'
+                          fontWeight: isActive ? '600' : '500',
+                          opacity: isActive ? 1.0 : 0.8,
+                          filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none'
                         }}
                       >
-                        <textPath 
-                          href={`#textpath-${index}`} 
-                          startOffset="50%" 
-                          textAnchor="middle"
-                        >
-                          {window.innerWidth < 768 ? segment.shortTitle : segment.title}
-                        </textPath>
+                        {window.innerWidth < 768 ? segment.shortTitle : segment.title}
                       </text>
                     </g>
                   );
@@ -471,14 +455,14 @@ const ShopFloorPortfolio = () => {
           <div className="flex justify-center mb-12">
             <svg width="320" height="320" viewBox="0 0 640 640">
               <defs>
-                {segments.map((segment, index) => (
-                  <path
-                    key={`mobile-textpath-${index}`}
-                    id={`mobile-textpath-${index}`}
-                    d={getTextPath(index)}
-                    fill="none"
-                  />
-                ))}
+                {/* Glow filter */}
+                <filter id="mobile-glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
               </defs>
               
               {/* Background Circle */}
@@ -495,6 +479,14 @@ const ShopFloorPortfolio = () => {
               {/* Segments */}
               {segments.map((segment, index) => {
                 const isActive = activeSegment === index;
+                const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                const iconX = centerX + Math.cos(iconAngle) * iconRadius;
+                const iconY = centerY + Math.sin(iconAngle) * iconRadius;
+                
+                const labelAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                const labelX = centerX + Math.cos(labelAngle) * labelRadius;
+                const labelY = centerY + Math.sin(labelAngle) * labelRadius;
+                
                 return (
                       <g key={segment.id}>
                         <path
@@ -509,37 +501,45 @@ const ShopFloorPortfolio = () => {
                         {/* Mobile segment icon */}
                         <g className="pointer-events-none">
                           <circle
-                            cx={centerX + Math.cos((index * 60 - 90 + 30 - 60) * Math.PI / 180) * ((innerRadius + outerRadius) / 2)}
-                            cy={centerY + Math.sin((index * 60 - 90 + 30 - 60) * Math.PI / 180) * ((innerRadius + outerRadius) / 2)}
-                            r="14"
+                            cx={iconX}
+                            cy={iconY}
+                            r="12"
                             fill="white"
                             stroke={isActive ? "#ef4444" : "#d1d5db"}
                             strokeWidth="1"
                           />
                           <foreignObject
-                            x={centerX + Math.cos((index * 60 - 90 + 30 - 60) * Math.PI / 180) * ((innerRadius + outerRadius) / 2) - 8}
-                            y={centerY + Math.sin((index * 60 - 90 + 30 - 60) * Math.PI / 180) * ((innerRadius + outerRadius) / 2) - 8}
-                            width="16"
-                            height="16"
+                            x={iconX - 7}
+                            y={iconY - 7}
+                            width="14"
+                            height="14"
                             className="pointer-events-none"
                           >
                             <div className="w-full h-full flex items-center justify-center">
                               <segment.icon 
-                                size={14} 
+                                size={12} 
                                 className={isActive ? "text-red-500" : "text-gray-600"}
                               />
                             </div>
                           </foreignObject>
                         </g>
                         
-                        <text className="text-xs font-medium fill-gray-700 pointer-events-none">
-                          <textPath 
-                            href={`#mobile-textpath-${index}`} 
-                            startOffset="50%" 
-                            textAnchor="middle"
-                          >
-                            {segment.shortTitle}
-                          </textPath>
+                        {/* Upright mobile label */}
+                        <text 
+                          x={labelX}
+                          y={labelY}
+                          textAnchor="middle"
+                          dominantBaseline="central"
+                          className={`text-xs font-medium tracking-tight pointer-events-none transition-all duration-150 ${
+                            isActive ? "fill-gray-900" : "fill-gray-600"
+                          }`}
+                          style={{ 
+                            fontSize: '10px',
+                            fontWeight: isActive ? '600' : '500',
+                            opacity: isActive ? 1.0 : 0.8
+                          }}
+                        >
+                          {segment.shortTitle}
                         </text>
                       </g>
                 );
