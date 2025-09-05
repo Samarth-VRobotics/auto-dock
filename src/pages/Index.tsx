@@ -525,7 +525,7 @@ const Index = () => {
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
-                  <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
+                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
                   
                   <g className="vj-card" transform="translate(24,-80)">
                     <rect width={220} height={42} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
@@ -553,7 +553,7 @@ const Index = () => {
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
-                  <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
+                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
                   
                   <g className="vj-card" transform="translate(24,-76)">
                     <rect width={240} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
@@ -581,7 +581,7 @@ const Index = () => {
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
-                  <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
+                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
                   
                   <g className="vj-card" transform="translate(24,-80)">
                     <rect width={270} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
@@ -609,7 +609,7 @@ const Index = () => {
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
                   
-                  <text className="vj-year-visible" x={0} y={45} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
+                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
                   
                   <g className="vj-card" transform="translate(-324,-76)">
                     <rect width={300} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
