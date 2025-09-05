@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
-import { ArrowRight, ArrowDown, ArrowUp, ArrowLeft, ArrowUpRight, ArrowDownRight, ArrowUpLeft, ArrowDownLeft, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Send } from "lucide-react";
+import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target } from "lucide-react";
 import autonomousProductionLine from "@/assets/autonomous-production-line.jpg";
 import smartFactoryHall from "@/assets/smart-factory-hall.jpg";
 import manufacturingEvolutionLab from "@/assets/manufacturing-evolution-lab.jpg";
@@ -521,162 +521,213 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Integrated Shop Floor Automation Portfolio Section */}
-      <section id="detailed-portfolio" className="section-padding bg-gradient-to-br from-slate-50 to-blue-50/30">
+      {/* Detailed Automation Portfolio Section */}
+      <section id="detailed-portfolio" className="section-padding bg-muted/30">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="heading-lg mb-16">Our Integrated Shop Floor Automation Portfolio</h2>
+            <h2 className="heading-lg mb-4">Our Integrated Shop Floor Automation Portfolio</h2>
           </div>
           
-          {/* Professional Infographic Layout matching reference image exactly */}
-          <div className="relative w-full max-w-7xl mx-auto h-[900px]">
+          {/* Circular Ring Layout */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Background ring decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5 rounded-full"></div>
             
-            {/* Central Hub - Circular with 6 sections and icons */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="relative w-80 h-80 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-100 rounded-full border-4 border-blue-200 shadow-lg overflow-hidden">
-                
-                {/* Warehouse text in center */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-blue-800">Warehouse</span>
-                </div>
-                
-                {/* Center icons */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex items-center space-x-4 mt-12">
-                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md border border-blue-200">
-                      <FileText className="w-5 h-5 text-blue-600" />
+            {/* Central Hub */}
+            <div className="relative flex items-center justify-center h-[800px]">
+              <div className="absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex flex-col items-center justify-center border-2 border-primary/20 shadow-xl">
+                <Building2 className="w-12 h-12 text-primary mb-2" />
+                <span className="text-lg font-bold text-center text-primary">Warehouse</span>
+                <span className="text-sm text-muted-foreground text-center">Central Hub</span>
+              </div>
+              
+              {/* Ring Items */}
+              {/* Inbound/Goods Receipt - Top Left */}
+              <div className="absolute top-8 left-8">
+                <div className="flex items-start space-x-4 max-w-sm">
+                  <div className="flex flex-col items-center space-y-4">
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/30 shadow-lg">
+                      <Truck className="w-8 h-8 text-primary" />
                     </div>
-                    <ArrowRight className="w-4 h-4 text-blue-600" />
-                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md border border-blue-200">
-                      <Cog className="w-5 h-5 text-blue-600" />
-                    </div>
+                    <div className="w-0.5 h-8 bg-primary/20"></div>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="font-bold text-foreground text-sm">Inbound / Goods Receipt</h3>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      <li>• Docking & Unloading</li>
+                      <li>• Verification & Scanning</li>
+                      <li>• Pallet Handling & Transport</li>
+                    </ul>
                   </div>
                 </div>
-                
-                {/* Section labels around the circle */}
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-sm font-semibold text-blue-700 whitespace-nowrap">
-                  Inbound / Goods Receipt
+              </div>
+              
+              {/* Warehouse - Top Right */}
+              <div className="absolute top-8 right-8">
+                <div className="flex items-start space-x-4 max-w-sm flex-row-reverse">
+                  <div className="flex flex-col items-center space-y-4">
+                    <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center border-2 border-secondary/30 shadow-lg">
+                      <Building2 className="w-8 h-8 text-secondary" />
+                    </div>
+                    <div className="w-0.5 h-8 bg-secondary/20"></div>
+                  </div>
+                  <div className="space-y-2 text-right">
+                    <h3 className="font-bold text-foreground text-sm">Automated Storage & Retrieval</h3>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      <li>• Inventory & Condition Monitoring</li>
+                      <li>• Replenishment Operations</li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="absolute -right-16 -top-2 text-sm font-semibold text-blue-700 transform rotate-45 origin-left whitespace-nowrap">
-                  Automated Storage &<br/>Retrieval
+              </div>
+              
+              {/* Dispensing/Staging - Middle Right */}
+              <div className="absolute right-8 top-1/2 transform -translate-y-1/2">
+                <div className="flex items-start space-x-4 max-w-sm flex-row-reverse">
+                  <div className="flex flex-col items-center space-y-4">
+                    <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center border-2 border-accent/30 shadow-lg">
+                      <Boxes className="w-8 h-8 text-accent" />
+                    </div>
+                    <div className="w-0.5 h-8 bg-accent/20"></div>
+                  </div>
+                  <div className="space-y-2 text-right">
+                    <h3 className="font-bold text-foreground text-sm">Dispensing / Staging</h3>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      <li>• Picking & Kitting</li>
+                      <li>• Buffer & Line-side Management</li>
+                      <li>• Cross-docking Operations</li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="absolute -right-16 bottom-8 text-sm font-semibold text-blue-700 transform rotate-45 origin-left whitespace-nowrap">
-                  Dispensing<br/>/Staging
+              </div>
+              
+              {/* Manufacturing - Bottom Right */}
+              <div className="absolute bottom-8 right-8">
+                <div className="flex items-start space-x-4 max-w-sm flex-row-reverse">
+                  <div className="flex flex-col items-center space-y-4">
+                    <div className="w-0.5 h-8 bg-primary/20"></div>
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/30 shadow-lg">
+                      <Factory className="w-8 h-8 text-primary" />
+                    </div>
+                  </div>
+                  <div className="space-y-2 text-right">
+                    <h3 className="font-bold text-foreground text-sm">Manufacturing</h3>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      <li>• Material Handling</li>
+                      <li>• Assembly & Processing</li>
+                      <li>• Packaging & Batch Processing</li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-sm font-semibold text-blue-700 whitespace-nowrap">
-                  Manufacturing
+              </div>
+              
+              {/* Lab Automation - Bottom Left */}
+              <div className="absolute bottom-8 left-8">
+                <div className="flex items-start space-x-4 max-w-sm">
+                  <div className="flex flex-col items-center space-y-4">
+                    <div className="w-0.5 h-8 bg-secondary/20"></div>
+                    <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center border-2 border-secondary/30 shadow-lg">
+                      <FlaskConical className="w-8 h-8 text-secondary" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="font-bold text-foreground text-sm">Lab Automation</h3>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      <li>• Automated Inspection & Testing</li>
+                      <li>• Sorting & Defect Isolation</li>
+                      <li>• Compliance verification</li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="absolute -left-16 bottom-8 text-sm font-semibold text-blue-700 transform -rotate-45 origin-right whitespace-nowrap">
-                  Lab Automation
+              </div>
+              
+              {/* Outbound/Dispatch - Middle Left */}
+              <div className="absolute left-8 top-1/2 transform -translate-y-1/2">
+                <div className="flex items-start space-x-4 max-w-sm">
+                  <div className="flex flex-col items-center space-y-4">
+                    <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center border-2 border-accent/30 shadow-lg">
+                      <Package className="w-8 h-8 text-accent" />
+                    </div>
+                    <div className="w-0.5 h-8 bg-accent/20"></div>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="font-bold text-foreground text-sm">Outbound / Dispatch</h3>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      <li>• Order Picking & Palletizing</li>
+                      <li>• Load Sequencing & Transport</li>
+                      <li>• Truck Loading & Final Verification</li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="absolute -left-16 -top-2 text-sm font-semibold text-blue-700 transform -rotate-45 origin-right whitespace-nowrap">
-                  Outbound /<br/>Dispatch
+              </div>
+              
+              {/* Connecting Flow Lines */}
+              <div className="absolute inset-0 pointer-events-none">
+                {/* Curved connecting lines between sections */}
+                <svg className="w-full h-full" viewBox="0 0 800 800">
+                  <defs>
+                    <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
+                      <stop offset="100%" stopColor="hsl(var(--secondary))" stopOpacity="0.3" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Ring connection */}
+                  <circle 
+                    cx="400" 
+                    cy="400" 
+                    r="280" 
+                    fill="none" 
+                    stroke="url(#flowGradient)" 
+                    strokeWidth="2" 
+                    strokeDasharray="10,10"
+                    opacity="0.5"
+                  />
+                  
+                  {/* Flow arrows */}
+                  <g fill="hsl(var(--primary))" opacity="0.6">
+                    <polygon points="200,150 210,145 210,155" />
+                    <polygon points="650,150 660,145 660,155" />
+                    <polygon points="650,400 660,395 660,405" />
+                    <polygon points="650,650 660,645 660,655" />
+                    <polygon points="200,650 210,645 210,655" />
+                    <polygon points="200,400 210,395 210,405" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          {/* Bottom Technology Foundation */}
+          <div className="mt-16 bg-card rounded-2xl p-8 border shadow-lg">
+            <div className="grid md:grid-cols-4 gap-8 text-center">
+              <div className="space-y-3">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
+                  <Cog className="w-6 h-6 text-primary" />
                 </div>
+                <h4 className="font-bold text-sm">Autonomous Material Handling and Transport</h4>
               </div>
-            </div>
-            
-            {/* Inbound / Goods Receipt - Top Left */}
-            <div className="absolute top-4 left-4 w-72 flex items-center space-x-4">
-              <div className="bg-slate-100/90 rounded-2xl p-4 border-l-4 border-blue-500 shadow-lg flex-1">
-                <ul className="space-y-1 text-sm text-gray-700">
-                  <li>• Docking & Unloading</li>
-                  <li>• Verification & Scanning</li>
-                  <li>• Pallet Handling & Transport</li>
-                </ul>
+              
+              <div className="space-y-3">
+                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto">
+                  <Users className="w-6 h-6 text-secondary" />
+                </div>
+                <h4 className="font-bold text-sm">Collaborative Robotics (Cobots)</h4>
               </div>
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
-                <img src="/lovable-uploads/318afd9b-1608-4c39-9b68-af9535c69047.png" alt="Inbound operations" className="w-full h-full object-cover" />
+              
+              <div className="space-y-3">
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto">
+                  <Brain className="w-6 h-6 text-accent" />
+                </div>
+                <h4 className="font-bold text-sm">AI Driven Control & Orchestration</h4>
               </div>
-            </div>
-            
-            {/* Automated Storage & Retrieval - Top Right */}
-            <div className="absolute top-4 right-4 w-72 flex items-center space-x-4">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
-                <img src="/lovable-uploads/5a563870-000a-4169-ba13-0bbccd419c59.png" alt="Automated storage" className="w-full h-full object-cover" />
+              
+              <div className="space-y-3">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
+                  <Target className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="font-bold text-sm">Smart Inspection and Quality Control</h4>
               </div>
-              <div className="bg-slate-100/90 rounded-2xl p-4 border-r-4 border-blue-500 shadow-lg flex-1">
-                <ul className="space-y-1 text-sm text-gray-700 text-right">
-                  <li>• Automated Storage & Retrieval</li>
-                  <li>• Inventory & Condition Monitoring</li>
-                  <li>• Replenishment Operations</li>
-                </ul>
-              </div>
-            </div>
-            
-            {/* Dispensing / Staging - Middle Right */}
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 w-72 flex items-center space-x-4">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
-                <img src="/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png" alt="Dispensing operations" className="w-full h-full object-cover" />
-              </div>
-              <div className="bg-slate-100/90 rounded-2xl p-4 border-r-4 border-blue-500 shadow-lg flex-1">
-                <ul className="space-y-1 text-sm text-gray-700 text-right">
-                  <li>• Picking & Kitting</li>
-                  <li>• Buffer & Line-side Management</li>
-                  <li>• Cross-docking Operations</li>
-                </ul>
-              </div>
-            </div>
-            
-            {/* Manufacturing - Bottom Right */}
-            <div className="absolute bottom-4 right-4 w-72 flex items-center space-x-4">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
-                <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="Manufacturing operations" className="w-full h-full object-cover" />
-              </div>
-              <div className="bg-slate-100/90 rounded-2xl p-4 border-r-4 border-blue-500 shadow-lg flex-1">
-                <ul className="space-y-1 text-sm text-gray-700 text-right">
-                  <li>• Material Handling</li>
-                  <li>• Assembly & Processing</li>
-                  <li>• Packaging & Batch Processing</li>
-                </ul>
-              </div>
-            </div>
-            
-            {/* Lab Automation - Bottom Left */}
-            <div className="absolute bottom-4 left-4 w-72 flex items-center space-x-4">
-              <div className="bg-slate-100/90 rounded-2xl p-4 border-l-4 border-blue-500 shadow-lg flex-1">
-                <ul className="space-y-1 text-sm text-gray-700">
-                  <li>• Automated Inspection & Testing</li>
-                  <li>• Sorting & Defect Isolation</li>
-                  <li>• Compliance Verification</li>
-                </ul>
-              </div>
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
-                <img src="/lovable-uploads/f191ab51-7c99-400f-8dca-10df86689ff4.png" alt="Lab automation" className="w-full h-full object-cover" />
-              </div>
-            </div>
-            
-            {/* Outbound / Dispatch - Middle Left */}
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 w-72 flex items-center space-x-4">
-              <div className="bg-slate-100/90 rounded-2xl p-4 border-l-4 border-blue-500 shadow-lg flex-1">
-                <ul className="space-y-1 text-sm text-gray-700">
-                  <li>• Order Picking & Palletizing</li>
-                  <li>• Load Sequencing & Transport</li>
-                  <li>• Truck Loading & Final Verification</li>
-                </ul>
-              </div>
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 overflow-hidden flex-shrink-0">
-                <img src="/lovable-uploads/2991708b-0967-45b6-941f-9198703ebe8e.png" alt="Outbound operations" className="w-full h-full object-cover" />
-              </div>
-            </div>
-            
-            {/* Connecting Lines/Arrows */}
-            <div className="absolute inset-0 pointer-events-none">
-              <svg className="w-full h-full" viewBox="0 0 1200 900">
-                <defs>
-                  <marker id="arrowhead" markerWidth="8" markerHeight="6" 
-                   refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
-                    <polygon points="0,0 0,6 8,3" fill="#3b82f6" />
-                  </marker>
-                </defs>
-                
-                {/* Connection lines from outer boxes to center */}
-                <line x1="280" y1="80" x2="460" y2="320" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
-                <line x1="920" y1="80" x2="740" y2="320" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
-                <line x1="1000" y1="450" x2="760" y2="450" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
-                <line x1="920" y1="820" x2="740" y2="580" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
-                <line x1="280" y1="820" x2="460" y2="580" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
-                <line x1="200" y1="450" x2="440" y2="450" stroke="#3b82f6" strokeWidth="2" markerEnd="url(#arrowhead)" opacity="0.7" />
-              </svg>
             </div>
           </div>
         </div>
