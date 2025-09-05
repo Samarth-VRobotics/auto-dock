@@ -85,9 +85,12 @@ const ShopFloorPortfolio = () => {
     }
   ];
 
+  // Rotation offset to align wedges with cards (anticlockwise rotation)
+  const rotationOffset = -30; // Rotate 30 degrees anticlockwise for better alignment
+
   const getSegmentPath = (index: number) => {
-    const angleStart = (index * 60 - 90) * Math.PI / 180;
-    const angleEnd = ((index + 1) * 60 - 90) * Math.PI / 180;
+    const angleStart = (index * 60 - 90 + rotationOffset) * Math.PI / 180;
+    const angleEnd = ((index + 1) * 60 - 90 + rotationOffset) * Math.PI / 180;
     const innerRadius = 110; // Safety radius around center
     const outerRadius = 180;
     
@@ -104,7 +107,7 @@ const ShopFloorPortfolio = () => {
   };
 
   const getSegmentCentroid = (index: number) => {
-    const angle = (index * 60 - 90) * Math.PI / 180 + (30 * Math.PI / 180);
+    const angle = (index * 60 - 90 + rotationOffset) * Math.PI / 180 + (30 * Math.PI / 180);
     const radius = 145; // Midpoint of segment for transform origin
     return {
       x: 300 + Math.cos(angle) * radius,
@@ -113,7 +116,7 @@ const ShopFloorPortfolio = () => {
   };
 
   const getIconPosition = (index: number) => {
-    const angle = (index * 60 - 90) * Math.PI / 180 + (30 * Math.PI / 180);
+    const angle = (index * 60 - 90 + rotationOffset) * Math.PI / 180 + (30 * Math.PI / 180);
     const radius = 105; // 58% of pie radius (180 * 0.58 ≈ 105)
     return {
       x: 300 + Math.cos(angle) * radius,
@@ -122,7 +125,7 @@ const ShopFloorPortfolio = () => {
   };
 
   const getWedgeOuterPosition = (index: number) => {
-    const angle = (index * 60 - 90) * Math.PI / 180 + (30 * Math.PI / 180);
+    const angle = (index * 60 - 90 + rotationOffset) * Math.PI / 180 + (30 * Math.PI / 180);
     const radius = 180; // Outer radius of the wedge
     return {
       x: 300 + Math.cos(angle) * radius,
