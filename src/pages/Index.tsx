@@ -528,184 +528,177 @@ const Index = () => {
             <h2 className="heading-lg mb-4">Our Integrated Shop Floor Automation Portfolio</h2>
           </div>
           
-          {/* Circular Ring Layout */}
-          <div className="relative max-w-6xl mx-auto">
-            {/* Background ring decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5 rounded-full"></div>
+          {/* Circular Layout matching reference image */}
+          <div className="relative max-w-7xl mx-auto min-h-[600px]">
+            {/* Central Circle with Warehouse and icons */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative w-80 h-80 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 rounded-full flex items-center justify-center border-2 border-primary/30">
+                {/* Warehouse label at top */}
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                  <span className="text-xl font-bold text-primary">Warehouse</span>
+                </div>
+                
+                {/* Central icons */}
+                <div className="flex items-center justify-center space-x-8">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-primary/20">
+                    <FileText className="w-8 h-8 text-primary" />
+                  </div>
+                  <ArrowRight className="w-6 h-6 text-primary" />
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-secondary/20">
+                    <Cog className="w-8 h-8 text-secondary" />
+                  </div>
+                </div>
+                
+                {/* Bottom section labels */}
+                <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-12">
+                  <span className="text-sm font-medium text-primary">Lab Automation</span>
+                  <span className="text-sm font-medium text-secondary">Manufacturing</span>
+                </div>
+                
+                {/* Side section labels */}
+                <div className="absolute left-8 top-1/2 transform -translate-y-1/2 -rotate-90">
+                  <span className="text-sm font-medium text-accent whitespace-nowrap">Outbound / Dispatch</span>
+                </div>
+                <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90">
+                  <span className="text-sm font-medium text-accent whitespace-nowrap">Dispensing /Staging</span>
+                </div>
+              </div>
+            </div>
             
-            {/* Central Hub */}
-            <div className="relative flex items-center justify-center h-[800px]">
-              <div className="absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex flex-col items-center justify-center border-2 border-primary/20 shadow-xl">
-                <Building2 className="w-12 h-12 text-primary mb-2" />
-                <span className="text-lg font-bold text-center text-primary">Warehouse</span>
-                <span className="text-sm text-muted-foreground text-center">Central Hub</span>
+            {/* Inbound/Goods Receipt - Top Left */}
+            <div className="absolute top-0 left-0 max-w-xs">
+              <div className="bg-slate-100 rounded-lg p-4 border-l-4 border-primary">
+                <ul className="space-y-1 text-sm text-slate-700">
+                  <li>• Docking & Unloading</li>
+                  <li>• Verification & Scanning</li>
+                  <li>• Pallet Handling & Transport</li>
+                </ul>
               </div>
-              
-              {/* Ring Items */}
-              {/* Inbound/Goods Receipt - Top Left */}
-              <div className="absolute top-8 left-8">
-                <div className="flex items-start space-x-4 max-w-sm">
-                  <div className="flex flex-col items-center space-y-4">
-                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/30 shadow-lg">
-                      <Truck className="w-8 h-8 text-primary" />
-                    </div>
-                    <div className="w-0.5 h-8 bg-primary/20"></div>
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="font-bold text-foreground text-sm">Inbound / Goods Receipt</h3>
-                    <ul className="text-xs text-muted-foreground space-y-1">
-                      <li>• Docking & Unloading</li>
-                      <li>• Verification & Scanning</li>
-                      <li>• Pallet Handling & Transport</li>
-                    </ul>
-                  </div>
+              <div className="flex justify-end mt-2">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-primary/20 overflow-hidden">
+                  <img src="/lovable-uploads/318afd9b-1608-4c39-9b68-af9535c69047.png" alt="Docking operations" className="w-full h-full object-cover" />
                 </div>
               </div>
-              
-              {/* Warehouse - Top Right */}
-              <div className="absolute top-8 right-8">
-                <div className="flex items-start space-x-4 max-w-sm flex-row-reverse">
-                  <div className="flex flex-col items-center space-y-4">
-                    <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center border-2 border-secondary/30 shadow-lg">
-                      <Building2 className="w-8 h-8 text-secondary" />
-                    </div>
-                    <div className="w-0.5 h-8 bg-secondary/20"></div>
-                  </div>
-                  <div className="space-y-2 text-right">
-                    <h3 className="font-bold text-foreground text-sm">Automated Storage & Retrieval</h3>
-                    <ul className="text-xs text-muted-foreground space-y-1">
-                      <li>• Inventory & Condition Monitoring</li>
-                      <li>• Replenishment Operations</li>
-                    </ul>
-                  </div>
+              <div className="text-center mt-2">
+                <span className="text-sm font-semibold text-primary">Inbound / Goods Receipt</span>
+              </div>
+            </div>
+            
+            {/* Automated Storage & Retrieval - Top Right */}
+            <div className="absolute top-0 right-0 max-w-xs text-right">
+              <div className="bg-slate-100 rounded-lg p-4 border-r-4 border-secondary">
+                <ul className="space-y-1 text-sm text-slate-700">
+                  <li>• Automated Storage & Retrieval</li>
+                  <li>• Inventory & Condition Monitoring</li>
+                  <li>• Replenishment Operations</li>
+                </ul>
+              </div>
+              <div className="flex justify-start mt-2">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-secondary/20 overflow-hidden">
+                  <img src="/lovable-uploads/5a563870-000a-4169-ba13-0bbccd419c59.png" alt="Automated storage" className="w-full h-full object-cover" />
                 </div>
               </div>
-              
-              {/* Dispensing/Staging - Middle Right */}
-              <div className="absolute right-8 top-1/2 transform -translate-y-1/2">
-                <div className="flex items-start space-x-4 max-w-sm flex-row-reverse">
-                  <div className="flex flex-col items-center space-y-4">
-                    <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center border-2 border-accent/30 shadow-lg">
-                      <Boxes className="w-8 h-8 text-accent" />
-                    </div>
-                    <div className="w-0.5 h-8 bg-accent/20"></div>
-                  </div>
-                  <div className="space-y-2 text-right">
-                    <h3 className="font-bold text-foreground text-sm">Dispensing / Staging</h3>
-                    <ul className="text-xs text-muted-foreground space-y-1">
-                      <li>• Picking & Kitting</li>
-                      <li>• Buffer & Line-side Management</li>
-                      <li>• Cross-docking Operations</li>
-                    </ul>
-                  </div>
+            </div>
+            
+            {/* Dispensing/Staging - Middle Right */}
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 max-w-xs text-right">
+              <div className="bg-slate-100 rounded-lg p-4 border-r-4 border-accent">
+                <ul className="space-y-1 text-sm text-slate-700">
+                  <li>• Picking & Kitting</li>
+                  <li>• Buffer & Line-side Management</li>
+                  <li>• Cross-docking Operations</li>
+                </ul>
+              </div>
+              <div className="flex justify-start mt-2">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-accent/20 overflow-hidden">
+                  <img src="/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png" alt="Picking and kitting" className="w-full h-full object-cover" />
                 </div>
               </div>
-              
-              {/* Manufacturing - Bottom Right */}
-              <div className="absolute bottom-8 right-8">
-                <div className="flex items-start space-x-4 max-w-sm flex-row-reverse">
-                  <div className="flex flex-col items-center space-y-4">
-                    <div className="w-0.5 h-8 bg-primary/20"></div>
-                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/30 shadow-lg">
-                      <Factory className="w-8 h-8 text-primary" />
-                    </div>
-                  </div>
-                  <div className="space-y-2 text-right">
-                    <h3 className="font-bold text-foreground text-sm">Manufacturing</h3>
-                    <ul className="text-xs text-muted-foreground space-y-1">
-                      <li>• Material Handling</li>
-                      <li>• Assembly & Processing</li>
-                      <li>• Packaging & Batch Processing</li>
-                    </ul>
-                  </div>
+            </div>
+            
+            {/* Manufacturing - Bottom Right */}
+            <div className="absolute bottom-0 right-0 max-w-xs text-right">
+              <div className="text-center mb-2">
+                <span className="text-sm font-semibold text-secondary">Material Handling</span>
+              </div>
+              <div className="flex justify-start mb-2">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-secondary/20 overflow-hidden">
+                  <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="Material handling" className="w-full h-full object-cover" />
                 </div>
               </div>
-              
-              {/* Lab Automation - Bottom Left */}
-              <div className="absolute bottom-8 left-8">
-                <div className="flex items-start space-x-4 max-w-sm">
-                  <div className="flex flex-col items-center space-y-4">
-                    <div className="w-0.5 h-8 bg-secondary/20"></div>
-                    <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center border-2 border-secondary/30 shadow-lg">
-                      <FlaskConical className="w-8 h-8 text-secondary" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="font-bold text-foreground text-sm">Lab Automation</h3>
-                    <ul className="text-xs text-muted-foreground space-y-1">
-                      <li>• Automated Inspection & Testing</li>
-                      <li>• Sorting & Defect Isolation</li>
-                      <li>• Compliance verification</li>
-                    </ul>
-                  </div>
+              <div className="bg-slate-100 rounded-lg p-4 border-r-4 border-secondary">
+                <ul className="space-y-1 text-sm text-slate-700">
+                  <li>• Material Handling</li>
+                  <li>• Assembly & Processing</li>
+                  <li>• Packaging & Batch Processing</li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Lab Automation - Bottom Left */}
+            <div className="absolute bottom-0 left-0 max-w-xs">
+              <div className="text-center mb-2">
+                <span className="text-sm font-semibold text-primary">Automated Inspection & Testing</span>
+              </div>
+              <div className="flex justify-end mb-2">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-primary/20 overflow-hidden">
+                  <img src="/lovable-uploads/f191ab51-7c99-400f-8dca-10df86689ff4.png" alt="Lab automation" className="w-full h-full object-cover" />
                 </div>
               </div>
-              
-              {/* Outbound/Dispatch - Middle Left */}
-              <div className="absolute left-8 top-1/2 transform -translate-y-1/2">
-                <div className="flex items-start space-x-4 max-w-sm">
-                  <div className="flex flex-col items-center space-y-4">
-                    <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center border-2 border-accent/30 shadow-lg">
-                      <Package className="w-8 h-8 text-accent" />
-                    </div>
-                    <div className="w-0.5 h-8 bg-accent/20"></div>
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="font-bold text-foreground text-sm">Outbound / Dispatch</h3>
-                    <ul className="text-xs text-muted-foreground space-y-1">
-                      <li>• Order Picking & Palletizing</li>
-                      <li>• Load Sequencing & Transport</li>
-                      <li>• Truck Loading & Final Verification</li>
-                    </ul>
-                  </div>
+              <div className="bg-slate-100 rounded-lg p-4 border-l-4 border-primary">
+                <ul className="space-y-1 text-sm text-slate-700">
+                  <li>• Automated Inspection & Testing</li>
+                  <li>• Sorting & Defect Isolation</li>
+                  <li>• Compliance verification</li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Outbound/Dispatch - Middle Left */}
+            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 max-w-xs">
+              <div className="bg-slate-100 rounded-lg p-4 border-l-4 border-accent">
+                <ul className="space-y-1 text-sm text-slate-700">
+                  <li>• Order Picking & Palletizing</li>
+                  <li>• Load Sequencing & Transport</li>
+                  <li>• Truck Loading & Final Verification</li>
+                </ul>
+              </div>
+              <div className="flex justify-end mt-2">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-accent/20 overflow-hidden">
+                  <img src="/lovable-uploads/2991708b-0967-45b6-941f-9198703ebe8e.png" alt="Outbound operations" className="w-full h-full object-cover" />
                 </div>
               </div>
-              
-              {/* Connecting Flow Lines */}
-              <div className="absolute inset-0 pointer-events-none">
-                {/* Curved connecting lines between sections */}
-                <svg className="w-full h-full" viewBox="0 0 800 800">
-                  <defs>
-                    <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
-                      <stop offset="100%" stopColor="hsl(var(--secondary))" stopOpacity="0.3" />
-                    </linearGradient>
-                  </defs>
-                  
-                  {/* Ring connection */}
-                  <circle 
-                    cx="400" 
-                    cy="400" 
-                    r="280" 
-                    fill="none" 
-                    stroke="url(#flowGradient)" 
-                    strokeWidth="2" 
-                    strokeDasharray="10,10"
-                    opacity="0.5"
-                  />
-                  
-                  {/* Flow arrows */}
-                  <g fill="hsl(var(--primary))" opacity="0.6">
-                    <polygon points="200,150 210,145 210,155" />
-                    <polygon points="650,150 660,145 660,155" />
-                    <polygon points="650,400 660,395 660,405" />
-                    <polygon points="650,650 660,645 660,655" />
-                    <polygon points="200,650 210,645 210,655" />
-                    <polygon points="200,400 210,395 210,405" />
-                  </g>
-                </svg>
-              </div>
+            </div>
+            
+            {/* Connecting arrows */}
+            <div className="absolute inset-0 pointer-events-none">
+              <svg className="w-full h-full" viewBox="0 0 800 600">
+                <defs>
+                  <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                   refX="0" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="hsl(var(--primary))" opacity="0.6" />
+                  </marker>
+                </defs>
+                
+                {/* Flow lines */}
+                <line x1="200" y1="150" x2="300" y2="200" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
+                <line x1="600" y1="150" x2="500" y2="200" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
+                <line x1="650" y1="300" x2="550" y2="300" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
+                <line x1="600" y1="450" x2="500" y2="400" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
+                <line x1="200" y1="450" x2="300" y2="400" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
+                <line x1="150" y1="300" x2="250" y2="300" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" markerEnd="url(#arrowhead)" />
+              </svg>
             </div>
           </div>
           
           {/* Bottom Technology Foundation */}
-          <div className="mt-16 bg-card rounded-2xl p-8 border shadow-lg">
+          <div className="mt-20 bg-white rounded-2xl p-6 border-2 border-dashed border-primary/20 shadow-sm">
             <div className="grid md:grid-cols-4 gap-8 text-center">
               <div className="space-y-3">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
                   <Cog className="w-6 h-6 text-primary" />
                 </div>
-                <h4 className="font-bold text-sm">Autonomous Material Handling and Transport</h4>
+                <h4 className="font-bold text-sm">Autonomous Material Handling and transport</h4>
               </div>
               
               <div className="space-y-3">
@@ -726,7 +719,7 @@ const Index = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
                   <Target className="w-6 h-6 text-primary" />
                 </div>
-                <h4 className="font-bold text-sm">Smart Inspection and Quality Control</h4>
+                <h4 className="font-bold text-sm">Smart inspection and Quality Control</h4>
               </div>
             </div>
           </div>
