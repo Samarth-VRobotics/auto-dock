@@ -599,17 +599,14 @@ const Index = () => {
       {/* Future-Ready Autonomous Factories Section */}
       <section id="future-ready-autonomous" className="section-padding bg-muted/30">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="section-header">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-blue-600">Future-Ready</span>
-              <br />
-              <span className="text-blue-600">Autonomous Factories</span>
-            </h2>
-          </div>
-          
           <div className="grid lg:grid-cols-5 gap-12 items-start">
-            {/* Long Image */}
-            <div className="lg:col-span-2">
+            {/* Long Image with Title beside it */}
+            <div className="lg:col-span-2 space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <span className="text-blue-600">Future-Ready</span>
+                <br />
+                <span className="text-blue-600">Autonomous Factories</span>
+              </h2>
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                 <img src="/lovable-uploads/307df0c7-0ffd-4137-837b-c62ab2530f85.png" alt="Precision manufacturing robotic arm with advanced sensors and lighting" className="w-full h-full object-cover" />
               </div>
