@@ -599,10 +599,6 @@ const Index = () => {
       {/* Future-Ready Autonomous Factories Section */}
       <section id="future-ready-autonomous" className="section-padding bg-muted/30">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="section-header">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Future-Ready <span className="text-red-600">Autonomous Factories</span></h2>
-          </div>
-          
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
@@ -612,6 +608,7 @@ const Index = () => {
             
             <div className="space-y-8">
               <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Future-Ready <span className="text-red-600">Autonomous Factories</span></h2>
                 <h3 className="text-3xl font-bold text-foreground mb-6">The Lights-Out Vision</h3>
                 
                 <div className="grid md:grid-cols-2 gap-8">
