@@ -378,39 +378,17 @@ const Index = () => {
                 transform-origin: center; 
               }
               .milestone .vj-card { 
-                opacity: 0; 
-                pointer-events: none; 
-                transform: translateY(10px);
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-              }
-              .milestone:hover .vj-node,
-              .milestone:focus-within .vj-node,
-              .milestone.active .vj-node { 
-                transform: scale(1.15); 
-                filter: drop-shadow(0 4px 12px hsl(var(--primary) / 0.3));
-              }
-              .milestone:hover .vj-card,
-              .milestone:focus-within .vj-card,
-              .milestone.active .vj-card { 
                 opacity: 1; 
                 pointer-events: auto; 
                 transform: translateY(0);
-                filter: drop-shadow(0 12px 30px hsl(var(--foreground) / 0.15));
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
               }
-              .milestone:hover .vj-year,
-              .milestone.active .vj-year {
-                fill: hsl(var(--primary));
+              .milestone:hover .vj-node,
+              .milestone:focus-within .vj-node { 
+                transform: scale(1.08); 
+                filter: drop-shadow(0 4px 8px hsl(var(--primary) / 0.3));
               }
-              .milestone:hover .vj-year-visible,
-              .milestone.active .vj-year-visible {
-                fill: hsl(var(--primary));
-                transform: scale(1.1);
-                font-weight: 700;
-              }
-              .milestone:hover .vj-cap,
-              .milestone.active .vj-cap {
-                fill: hsl(var(--foreground));
-              }
+              /* Remove all other hover effects on cards and text */
               .vj-foundation-card {
                 cursor: pointer;
                 transition: all 0.3s ease;
@@ -643,72 +621,6 @@ const Index = () => {
                 <text className="vj-cap" x={45} y={132} style={{fontSize:'16px'}}>ISO 9001 certified for quality management</text>
               </g>
             </svg>
-
-            <script dangerouslySetInnerHTML={{
-              __html: `
-                // Enhanced interaction script
-                (function() {
-                  const milestones = document.querySelectorAll('.milestone');
-                  let currentActive = null;
-                  
-                  milestones.forEach((ms, index) => {
-                    // Click to pin/unpin milestone
-                    ms.addEventListener('click', (e) => {
-                      e.preventDefault();
-                      const isActive = ms.classList.contains('active');
-                      
-                      // Remove active from all
-                      milestones.forEach(m => m.classList.remove('active'));
-                      
-                      // Add active to clicked (unless it was already active)
-                      if (!isActive) {
-                        ms.classList.add('active');
-                        currentActive = ms;
-                      } else {
-                        currentActive = null;
-                      }
-                    });
-                    
-                    // Keyboard navigation
-                    ms.addEventListener('keydown', (e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        ms.click();
-                      } else if (e.key === 'ArrowRight' && index < milestones.length - 1) {
-                        e.preventDefault();
-                        milestones[index + 1].focus();
-                      } else if (e.key === 'ArrowLeft' && index > 0) {
-                        e.preventDefault();
-                        milestones[index - 1].focus();
-                      }
-                    });
-                    
-                    // Enhanced hover effects
-                    ms.addEventListener('mouseenter', () => {
-                      if (!ms.classList.contains('active')) {
-                        ms.style.transform = 'scale(1.02)';
-                      }
-                    });
-                    
-                    ms.addEventListener('mouseleave', () => {
-                      if (!ms.classList.contains('active')) {
-                        ms.style.transform = 'scale(1)';
-                      }
-                    });
-                  });
-                  
-                  // Auto-highlight sequence on load
-                  setTimeout(() => {
-                    milestones.forEach((ms, i) => {
-                      setTimeout(() => {
-                        ms.style.animation = 'pulse 0.6s ease-in-out';
-                        setTimeout(() => ms.style.animation = '', 600);
-                      }, i * 200);
-                    });
-                  }, 1000);
-                })();
-              `
-            }} />
           </div>
         </div>
       </section>
