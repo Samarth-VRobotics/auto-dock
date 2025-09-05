@@ -311,191 +311,237 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="heading-lg mb-4">Vegam Journey: Proven History in Manufacturing Transformation</h2>
             <p className="body-lg text-muted-foreground max-w-3xl mx-auto">
-              Over two decades of experience in digitalizing and transforming manufacturing operations across the globe
+              Over two decades of experience in digitalizing and transforming manufacturing operations across the globe.
             </p>
           </div>
 
-          {/* Curved Timeline Container */}
-          <div className="relative min-h-[700px] lg:min-h-[600px]">
+          {/* Diagonal Growth Timeline */}
+          <div className="relative min-h-[800px] lg:min-h-[700px] overflow-hidden">
             {/* Background Grid */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="grid grid-cols-12 gap-2 h-full">
+            <div className="absolute inset-0 opacity-5">
+              <div className="grid grid-cols-12 gap-4 h-full">
                 {Array.from({ length: 12 }, (_, i) => (
-                  <div key={i} className="border-l border-muted-foreground/20"></div>
+                  <div key={i} className="border-l border-muted-foreground/30"></div>
                 ))}
               </div>
             </div>
 
-            {/* SVG Curved Timeline - Moved Lower */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
+            {/* SVG Diagonal Growth Line */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
               <defs>
-                <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
-                  <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="1" />
+                <linearGradient id="diagonalGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.7" />
+                  <stop offset="70%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="hsl(214 100% 50%)" stopOpacity="1" />
                 </linearGradient>
+                <filter id="lineShadow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="hsl(var(--primary))" floodOpacity="0.3"/>
+                </filter>
               </defs>
-              {/* Curved timeline path - positioned lower */}
+              {/* Diagonal growth line from bottom-left to upper-right */}
               <path 
-                d="M 60 450 Q 200 380 350 360 Q 500 340 650 320 Q 800 300 950 280 Q 1050 260 1140 240" 
-                stroke="url(#timelineGradient)" 
-                strokeWidth="4" 
+                d="M 100 650 L 1100 150" 
+                stroke="url(#diagonalGradient)" 
+                strokeWidth="3" 
                 fill="none" 
+                filter="url(#lineShadow)"
                 className="animate-fade-in"
                 style={{ animationDelay: '0.5s' }}
               />
+              {/* Arrow head at the end */}
+              <polygon 
+                points="1100,150 1090,140 1090,145 1080,145 1080,155 1090,155 1090,160" 
+                fill="hsl(214 100% 50%)" 
+                className="animate-fade-in"
+                style={{ animationDelay: '1s' }}
+              />
             </svg>
 
-            {/* Timeline Nodes - Positioned on the curve */}
-            <div className="relative z-10 h-full">
+            {/* Strong Foundation for Innovation Card */}
+            <div className="absolute top-4 left-4 lg:top-8 lg:left-8 max-w-sm bg-background/95 rounded-2xl p-6 border shadow-xl backdrop-blur-sm z-20">
+              <div className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4 inline-block">
+                Strong Foundation for Innovation
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-sm text-muted-foreground">230+ dedicated R&D professionals in India</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-sm text-muted-foreground">ISO 27001 certified for information security</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-sm text-muted-foreground">ISO 9001 certified for quality management</span>
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4 italic">
+                Proven track record across global deployments & 24/7 support.
+              </p>
+            </div>
+
+            {/* Desktop Timeline Nodes */}
+            <div className="hidden lg:block relative z-10 h-full">
               {[
                 {
                   id: 1,
                   year: '2000',
-                  title: 'Foundation with digital factory vision',
-                  position: { left: '5%', top: '75%' }
+                  title: 'Foundation with digital factory vision.',
+                  position: { left: '8.5%', top: '81%' },
+                  isPast: true
                 },
                 {
                   id: 2,
                   year: '2007',
-                  title: 'First plant fully digitalized',
-                  position: { left: '16.5%', top: '63%' }
+                  title: 'First plant fully digitalized.',
+                  position: { left: '20%', top: '71%' },
+                  isPast: true
                 },
                 {
                   id: 3,
                   year: '2013',
-                  title: '18 plants connected in network',
-                  position: { left: '29%', top: '60%' }
+                  title: '18 plants connected in network.',
+                  position: { left: '31%', top: '61%' },
+                  isPast: true
                 },
                 {
                   id: 4,
                   year: '2016',
-                  title: 'Scaled to 70 plants globally',
-                  position: { left: '42%', top: '57%' }
+                  title: 'Scaled to 70 plants globally.',
+                  position: { left: '42.5%', top: '51%' },
+                  isPast: true
                 },
                 {
                   id: 5,
                   year: '2019',
-                  title: 'Milestone of 100+ plants achieved',
-                  position: { left: '54%', top: '53%' }
+                  title: 'Milestone of 100+ plants achieved.',
+                  position: { left: '54%', top: '41%' },
+                  isPast: true
                 },
                 {
                   id: 6,
                   year: '2023',
-                  title: 'Foundation for Autonomous factories',
-                  position: { left: '67%', top: '50%' }
+                  title: 'Foundation for Autonomous factories.',
+                  position: { left: '65.5%', top: '31%' },
+                  isPast: true
                 },
                 {
                   id: 7,
                   year: '2025',
-                  title: 'Milestone of 300+ plants achieved',
-                  position: { left: '79%', top: '47%' }
+                  title: 'Milestone of 300+ plants achieved.',
+                  position: { left: '77%', top: '21%' },
+                  isPast: false
                 },
                 {
                   id: 8,
                   year: '2026',
-                  title: 'Projected First Fully Autonomous Plant',
-                  position: { left: '87%', top: '43%' }
+                  title: 'Projected First Fully Autonomous Plant.',
+                  position: { left: '88.5%', top: '11%' },
+                  isPast: false
                 },
                 {
                   id: 9,
                   year: '2030',
-                  title: '1000 Autonomous Plants',
-                  position: { left: '95%', top: '40%' }
+                  title: '1000 Autonomous Plants.',
+                  position: { right: '2%', top: '5%' },
+                  isPast: false
                 }
-              ].map((milestone) => (
-                <div
+              ].map((milestone, index) => (
+                <button
                   key={milestone.id}
-                  className="absolute group cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
-                  style={{
-                    left: milestone.position.left,
-                    top: milestone.position.top
-                  }}
+                  className="absolute group cursor-pointer transform -translate-x-1/2 -translate-y-1/2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg"
+                  style={milestone.position}
+                  aria-label={`${milestone.year} — ${milestone.title}`}
+                  tabIndex={0}
                 >
-                  {/* Node Circle on Curve */}
+                  {/* Node Circle */}
                   <div className="relative flex flex-col items-center">
-                    <div className="w-16 h-16 bg-background border-4 border-primary rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:border-red-500 group-hover:shadow-2xl group-hover:bg-red-50 group-hover:-translate-y-2">
-                      <span className="text-lg font-bold text-primary group-hover:text-red-600 transition-colors">
-                        {milestone.id}
-                      </span>
+                    <div className={`w-6 h-6 rounded-full border-2 transition-all duration-200 group-hover:scale-125 group-focus:scale-125 ${
+                      milestone.isPast 
+                        ? 'bg-muted border-muted-foreground/60' 
+                        : 'bg-destructive border-destructive'
+                    }`}>
+                      <div className={`absolute inset-0 rounded-full transition-all duration-200 group-hover:animate-ping ${
+                        milestone.isPast 
+                          ? 'border border-muted-foreground/30' 
+                          : 'border border-destructive/30'
+                      }`}></div>
                     </div>
                     
-                    {/* Pulsing Ring Effect on Hover */}
-                    <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
-                  </div>
-
-                  {/* Always Visible Year Label */}
-                  <div className="mt-4 mb-2">
-                    <div className="bg-primary text-white px-4 py-2 rounded-full text-base font-bold shadow-md group-hover:bg-red-500 group-hover:scale-105 transition-all duration-300">
+                    {/* Year Label */}
+                    <div className={`mt-3 px-3 py-1 rounded-full text-lg font-bold shadow-sm transition-all duration-200 group-hover:scale-110 group-focus:scale-110 ${
+                      milestone.isPast 
+                        ? 'bg-muted text-muted-foreground' 
+                        : 'bg-destructive text-destructive-foreground'
+                    }`}>
                       {milestone.year}
                     </div>
-                  </div>
 
-                  {/* Always Visible Information Card */}
-                  <div className="bg-background/95 rounded-xl p-4 shadow-lg border border-border backdrop-blur-sm min-w-56 max-w-64 group-hover:bg-red-50/95 group-hover:border-red-200 group-hover:shadow-xl transition-all duration-300">
-                    <p className="text-sm text-foreground font-medium leading-relaxed text-center group-hover:text-red-800">
-                      {milestone.title}
-                    </p>
+                    {/* Caption Card */}
+                    <div className={`mt-4 bg-background rounded-xl p-4 shadow-lg border max-w-80 transition-all duration-200 group-hover:shadow-xl group-hover:-translate-y-1 group-focus:shadow-xl group-focus:-translate-y-1 ${
+                      milestone.isPast 
+                        ? 'border-border' 
+                        : 'border-destructive/20'
+                    }`}>
+                      <p className={`text-sm font-medium leading-relaxed text-center ${
+                        milestone.isPast 
+                          ? 'text-foreground' 
+                          : 'text-destructive'
+                      }`}>
+                        {milestone.title}
+                      </p>
+                    </div>
                   </div>
-
-                  {/* Connection Line to Curve */}
-                  <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-primary/40 transform -translate-x-1/2 -translate-y-4 group-hover:bg-red-400 transition-colors duration-300"></div>
-                </div>
+                </button>
               ))}
             </div>
 
-            {/* Side Content - Strong Foundation */}
-            <div className="absolute top-4 left-4 max-w-xs bg-background/95 rounded-xl p-6 border shadow-lg backdrop-blur-sm">
-              <h3 className="font-bold text-lg mb-4 text-foreground">Strong Foundation for Innovation</h3>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-muted-foreground">230+ dedicated R&D professionals in India</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-muted-foreground">ISO 27001 certified for information security</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-muted-foreground">ISO 9001 certified for quality management</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-muted-foreground">Proven track record across 60+ countries</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-muted-foreground">24/7 global support infrastructure</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile Version */}
-            <div className="lg:hidden absolute inset-0 bg-background/90 rounded-xl p-4">
-              <div className="grid grid-cols-3 gap-4 h-full">
+            {/* Mobile Vertical Timeline */}
+            <div className="lg:hidden relative z-10 pt-64">
+              <div className="space-y-8 px-4">
                 {[
-                  { year: '2000', title: 'Foundation', id: 1 },
-                  { year: '2007', title: 'First Success', id: 2 },
-                  { year: '2013', title: 'Network', id: 3 },
-                  { year: '2016', title: 'Global Scale', id: 4 },
-                  { year: '2019', title: '100+ Plants', id: 5 },
-                  { year: '2023', title: 'Autonomous', id: 6 },
-                  { year: '2025', title: '300+ Plants', id: 7 },
-                  { year: '2026', title: 'First Auto', id: 8 },
-                  { year: '2030', title: '1000 Plants', id: 9 }
-                ].map((milestone) => (
-                  <div key={milestone.id} className="flex flex-col items-center justify-center p-2 bg-card rounded-lg border group cursor-pointer hover:shadow-lg transition-all duration-300">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
-                      <span className="text-xs font-bold text-white">{milestone.id}</span>
+                  { year: '2000', title: 'Foundation with digital factory vision.', isPast: true },
+                  { year: '2007', title: 'First plant fully digitalized.', isPast: true },
+                  { year: '2013', title: '18 plants connected in network.', isPast: true },
+                  { year: '2016', title: 'Scaled to 70 plants globally.', isPast: true },
+                  { year: '2019', title: 'Milestone of 100+ plants achieved.', isPast: true },
+                  { year: '2023', title: 'Foundation for Autonomous factories.', isPast: true },
+                  { year: '2025', title: 'Milestone of 300+ plants achieved.', isPast: false },
+                  { year: '2026', title: 'Projected First Fully Autonomous Plant.', isPast: false },
+                  { year: '2030', title: '1000 Autonomous Plants.', isPast: false }
+                ].map((milestone, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="flex flex-col items-center">
+                      <div className={`w-5 h-5 rounded-full border-2 ${
+                        milestone.isPast 
+                          ? 'bg-muted border-muted-foreground/60' 
+                          : 'bg-destructive border-destructive'
+                      }`}></div>
+                      {index < 8 && (
+                        <div className="w-px h-8 bg-border mt-2"></div>
+                      )}
                     </div>
-                    <div className="text-xs font-bold text-primary mb-1">{milestone.year}</div>
-                    <div className="text-xs text-center text-muted-foreground">{milestone.title}</div>
+                    <div className="flex-1 pb-8">
+                      <div className={`inline-block px-3 py-1 rounded-full text-sm font-bold mb-2 ${
+                        milestone.isPast 
+                          ? 'bg-muted text-muted-foreground' 
+                          : 'bg-destructive text-destructive-foreground'
+                      }`}>
+                        {milestone.year}
+                      </div>
+                      <p className={`text-sm ${
+                        milestone.isPast 
+                          ? 'text-foreground' 
+                          : 'text-destructive'
+                      }`}>
+                        {milestone.title}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </section>
