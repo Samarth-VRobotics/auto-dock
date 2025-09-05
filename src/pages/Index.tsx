@@ -123,12 +123,7 @@ const Index = () => {
             {/* Timeline Nodes with Growth Emphasis */}
             <div className="flex justify-between items-center py-20 px-16">
               {/* Yesterday Node - Smaller, Muted */}
-              <div 
-                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-500 hover:scale-110 focus:scale-110 focus:outline-none"
-                tabIndex={0}
-                role="button"
-                aria-label="Yesterday: Manual Operations – Paper-driven processes with limited automation capabilities"
-              >
+              <div className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-500 hover:scale-110 focus:scale-110 focus:outline-none" tabIndex={0} role="button" aria-label="Yesterday: Manual Operations – Paper-driven processes with limited automation capabilities">
                 {/* Node Circle */}
                 <div className="relative">
                   <div className="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center shadow-md border-3 border-white group-hover:border-slate-400 group-focus:border-slate-400 transition-all duration-500 group-hover:shadow-xl group-focus:shadow-xl group-hover:w-18 group-hover:h-18 group-focus:w-18 group-focus:h-18">
@@ -148,12 +143,7 @@ const Index = () => {
               </div>
               
               {/* Today Node - Medium, Blue Emphasis */}
-              <div 
-                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-500 hover:scale-110 focus:scale-110 focus:outline-none"
-                tabIndex={0}
-                role="button"
-                aria-label="Today: Digital Factories – Connected operations with data-driven insights"
-              >
+              <div className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-500 hover:scale-110 focus:scale-110 focus:outline-none" tabIndex={0} role="button" aria-label="Today: Digital Factories – Connected operations with data-driven insights">
                 {/* Node Circle */}
                 <div className="relative">
                   <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:border-blue-400 group-focus:border-blue-400 transition-all duration-500 group-hover:shadow-2xl group-focus:shadow-2xl group-hover:w-24 group-hover:h-24 group-focus:w-24 group-focus:h-24">
@@ -178,12 +168,7 @@ const Index = () => {
               </div>
               
               {/* Tomorrow Node - Largest, Red Future Vision */}
-              <div 
-                className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-500 hover:scale-110 focus:scale-110 focus:outline-none"
-                tabIndex={0}
-                role="button"
-                aria-label="Tomorrow: Autonomous Factories – Self-optimizing systems powered by AI and advanced robotics"
-              >
+              <div className="group relative flex flex-col items-center cursor-pointer transform transition-all duration-500 hover:scale-110 focus:scale-110 focus:outline-none" tabIndex={0} role="button" aria-label="Tomorrow: Autonomous Factories – Self-optimizing systems powered by AI and advanced robotics">
                 {/* Node Circle */}
                 <div className="relative">
                   <div className="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center shadow-xl border-4 border-white group-hover:border-red-400 group-focus:border-red-400 transition-all duration-500 group-hover:shadow-2xl group-focus:shadow-2xl group-hover:w-28 group-hover:h-28 group-focus:w-28 group-focus:h-28">
@@ -209,11 +194,7 @@ const Index = () => {
             </div>
             
             {/* Growth Indicators */}
-            <div className="flex justify-between items-center mt-8 px-16 text-sm font-medium">
-              <div className="text-slate-500">Basic Automation</div>
-              <div className="text-blue-600">Digital Integration</div>
-              <div className="text-red-600 font-bold">Full Autonomy</div>
-            </div>
+            
           </div>
           
           {/* Mobile Vertical Timeline */}
@@ -349,32 +330,64 @@ const Index = () => {
                       </linearGradient>
                     </defs>
                     {/* Curved growth line that rises over time */}
-                    <path 
-                      d="M 60 80 Q 300 70 500 50 Q 700 35 900 25 Q 1000 20 1140 15" 
-                      stroke="url(#growthGradient)" 
-                      strokeWidth="4" 
-                      fill="none"
-                      strokeDasharray="0"
-                      className="animate-fade-in"
-                      style={{ animationDelay: '0.5s' }}
-                    />
+                    <path d="M 60 80 Q 300 70 500 50 Q 700 35 900 25 Q 1000 20 1140 15" stroke="url(#growthGradient)" strokeWidth="4" fill="none" strokeDasharray="0" className="animate-fade-in" style={{
+                    animationDelay: '0.5s'
+                  }} />
                   </svg>
                   
                   {/* Milestones Container */}
                   <div className="flex justify-between items-end px-8 relative z-10">
-                    {[
-                      { year: '2000', title: 'Foundation', desc: 'Started with digital factory vision and early automation concepts', icon: 'lightbulb', size: 'w-12 h-12', yearSize: 'text-xs', bgHeight: 'h-16' },
-                      { year: '2007', title: 'First Success', desc: 'First manufacturing plant fully digitalized with integrated systems', icon: 'factory', size: 'w-14 h-14', yearSize: 'text-sm', bgHeight: 'h-20' },
-                      { year: '2013', title: 'Network Expansion', desc: '18 plants connected in integrated manufacturing network', icon: 'network', size: 'w-16 h-16', yearSize: 'text-sm', bgHeight: 'h-24' },
-                      { year: '2016', title: 'Global Scale', desc: 'Scaled operations to 70 manufacturing plants globally', icon: 'globe', size: 'w-18 h-18', yearSize: 'text-base', bgHeight: 'h-28' },
-                      { year: '2019', title: 'Century Mark', desc: 'Achieved milestone of 100+ plants under digital transformation', icon: 'award', size: 'w-20 h-20', yearSize: 'text-base', bgHeight: 'h-32' },
-                      { year: '2025', title: 'Future Vision', desc: 'Targeting 300+ plants with autonomous manufacturing capabilities', icon: 'rocket', size: 'w-24 h-24', yearSize: 'text-lg', bgHeight: 'h-36' }
-                    ].map((milestone, index) => (
-                      <div 
-                        key={milestone.year} 
-                        className="flex flex-col items-center group cursor-pointer relative"
-                        style={{ animationDelay: `${0.8 + index * 0.2}s` }}
-                      >
+                    {[{
+                    year: '2000',
+                    title: 'Foundation',
+                    desc: 'Started with digital factory vision and early automation concepts',
+                    icon: 'lightbulb',
+                    size: 'w-12 h-12',
+                    yearSize: 'text-xs',
+                    bgHeight: 'h-16'
+                  }, {
+                    year: '2007',
+                    title: 'First Success',
+                    desc: 'First manufacturing plant fully digitalized with integrated systems',
+                    icon: 'factory',
+                    size: 'w-14 h-14',
+                    yearSize: 'text-sm',
+                    bgHeight: 'h-20'
+                  }, {
+                    year: '2013',
+                    title: 'Network Expansion',
+                    desc: '18 plants connected in integrated manufacturing network',
+                    icon: 'network',
+                    size: 'w-16 h-16',
+                    yearSize: 'text-sm',
+                    bgHeight: 'h-24'
+                  }, {
+                    year: '2016',
+                    title: 'Global Scale',
+                    desc: 'Scaled operations to 70 manufacturing plants globally',
+                    icon: 'globe',
+                    size: 'w-18 h-18',
+                    yearSize: 'text-base',
+                    bgHeight: 'h-28'
+                  }, {
+                    year: '2019',
+                    title: 'Century Mark',
+                    desc: 'Achieved milestone of 100+ plants under digital transformation',
+                    icon: 'award',
+                    size: 'w-20 h-20',
+                    yearSize: 'text-base',
+                    bgHeight: 'h-32'
+                  }, {
+                    year: '2025',
+                    title: 'Future Vision',
+                    desc: 'Targeting 300+ plants with autonomous manufacturing capabilities',
+                    icon: 'rocket',
+                    size: 'w-24 h-24',
+                    yearSize: 'text-lg',
+                    bgHeight: 'h-36'
+                  }].map((milestone, index) => <div key={milestone.year} className="flex flex-col items-center group cursor-pointer relative" style={{
+                    animationDelay: `${0.8 + index * 0.2}s`
+                  }}>
                         {/* Milestone Node */}
                         <div className={`relative ${milestone.bgHeight} flex flex-col items-center justify-end mb-4 transition-all duration-300 group-hover:scale-110`}>
                           {/* Growth Bar (visual emphasis) */}
@@ -408,8 +421,7 @@ const Index = () => {
                           </p>
                           <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-l border-t rotate-45"></div>
                         </div>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
               </div>
@@ -417,15 +429,37 @@ const Index = () => {
               {/* Mobile Slider Version */}
               <div className="md:hidden">
                 <div className="flex overflow-x-scroll gap-6 pb-4 snap-x snap-mandatory">
-                  {[
-                    { year: '2000', title: 'Foundation', desc: 'Started with digital factory vision and early automation concepts', icon: 'lightbulb' },
-                    { year: '2007', title: 'First Success', desc: 'First manufacturing plant fully digitalized with integrated systems', icon: 'factory' },
-                    { year: '2013', title: 'Network Expansion', desc: '18 plants connected in integrated manufacturing network', icon: 'network' },
-                    { year: '2016', title: 'Global Scale', desc: 'Scaled operations to 70 manufacturing plants globally', icon: 'globe' },
-                    { year: '2019', title: 'Century Mark', desc: 'Achieved milestone of 100+ plants under digital transformation', icon: 'award' },
-                    { year: '2025', title: 'Future Vision', desc: 'Targeting 300+ plants with autonomous manufacturing capabilities', icon: 'rocket' }
-                  ].map((milestone, index) => (
-                    <div key={milestone.year} className="flex-shrink-0 w-72 bg-card rounded-2xl p-6 border shadow-lg snap-center">
+                  {[{
+                  year: '2000',
+                  title: 'Foundation',
+                  desc: 'Started with digital factory vision and early automation concepts',
+                  icon: 'lightbulb'
+                }, {
+                  year: '2007',
+                  title: 'First Success',
+                  desc: 'First manufacturing plant fully digitalized with integrated systems',
+                  icon: 'factory'
+                }, {
+                  year: '2013',
+                  title: 'Network Expansion',
+                  desc: '18 plants connected in integrated manufacturing network',
+                  icon: 'network'
+                }, {
+                  year: '2016',
+                  title: 'Global Scale',
+                  desc: 'Scaled operations to 70 manufacturing plants globally',
+                  icon: 'globe'
+                }, {
+                  year: '2019',
+                  title: 'Century Mark',
+                  desc: 'Achieved milestone of 100+ plants under digital transformation',
+                  icon: 'award'
+                }, {
+                  year: '2025',
+                  title: 'Future Vision',
+                  desc: 'Targeting 300+ plants with autonomous manufacturing capabilities',
+                  icon: 'rocket'
+                }].map((milestone, index) => <div key={milestone.year} className="flex-shrink-0 w-72 bg-card rounded-2xl p-6 border shadow-lg snap-center">
                       <div className="flex items-center space-x-4 mb-4">
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                           {milestone.icon === 'lightbulb' && <Lightbulb className="w-6 h-6 text-primary" />}
@@ -441,8 +475,7 @@ const Index = () => {
                       </div>
                       <h4 className="font-bold text-lg text-foreground mb-2">{milestone.title}</h4>
                       <p className="text-sm text-muted-foreground">{milestone.desc}</p>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
