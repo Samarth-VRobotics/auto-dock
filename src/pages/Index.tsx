@@ -783,40 +783,39 @@ const Index = () => {
               <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl shadow-blue-200/30 border border-blue-200/50">
                 {/* Header with accent background */}
                 <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6">
-                  <h3 className="text-2xl font-bold text-white flex items-center gap-3">
-                    <Lightbulb className="w-8 h-8 text-yellow-300" />
+                  <h3 className="text-2xl font-bold text-white text-center">
                     Future-Ready, Autonomous Factories
                   </h3>
                 </div>
                 
                 <div className="p-8">
                   <div className="grid grid-cols-2 gap-6 mb-6">
-                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100">
-                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
+                      <div className="w-12 h-12 mx-auto mb-4 bg-gray-600 rounded-xl flex items-center justify-center">
                         <Cog className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-bold text-gray-900 mb-2 text-sm">Autonomous Operations</h4>
                       <p className="text-xs text-gray-600">Self-driven execution across plants & processes.</p>
                     </div>
                     
-                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100">
-                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
+                      <div className="w-12 h-12 mx-auto mb-4 bg-slate-600 rounded-xl flex items-center justify-center">
                         <Shield className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-bold text-gray-900 mb-2 text-sm">Proactive Risk Mitigation</h4>
                       <p className="text-xs text-gray-600">AI-enabled robotics predict & prevent hazards.</p>
                     </div>
                     
-                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100">
-                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
+                      <div className="w-12 h-12 mx-auto mb-4 bg-zinc-600 rounded-xl flex items-center justify-center">
                         <Cpu className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-bold text-gray-900 mb-2 text-sm">Hyper-Scalable Manufacturing</h4>
                       <p className="text-xs text-gray-600">Intelligent orchestration across geographies.</p>
                     </div>
                     
-                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100">
-                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
+                      <div className="w-12 h-12 mx-auto mb-4 bg-stone-600 rounded-xl flex items-center justify-center">
                         <Gauge className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-bold text-gray-900 mb-2 text-sm">Continuous Optimization</h4>
@@ -825,9 +824,9 @@ const Index = () => {
                   </div>
                   
                   {/* Full-width bottom card */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="w-12 h-12 bg-gray-700 rounded-xl flex items-center justify-center">
                         <Lightbulb className="w-6 h-6 text-white" />
                       </div>
                       <div>
