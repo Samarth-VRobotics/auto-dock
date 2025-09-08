@@ -54,8 +54,56 @@ const AutoDockAdvantage = () => {
             <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/AI%20That%20Understands%20Logistics.gif" alt="AI That Understands Logistics - AutoDock AI visualization" className="w-full h-full object-cover" />
           </div>;
       case 'integrations':
-        return <div className="relative h-80 overflow-hidden flex items-center justify-center">
-            <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Enterprise%20Integration,%20Simplified.gif" alt="Enterprise Integration, Simplified - AutoDock integration visualization" className="w-full h-full object-cover" />
+        return <div className="relative bg-gradient-to-br from-muted/20 to-muted/10 rounded-2xl p-8 h-64 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full max-w-xs">
+              {/* External systems */}
+              <div className="absolute -left-8 top-0 space-y-3">
+                <div className="w-12 h-6 bg-gradient-to-r from-slate-600 to-slate-500 rounded text-white text-xs font-bold flex items-center justify-center shadow-sm">
+                  SAP
+                </div>
+                <div className="w-12 h-6 bg-gradient-to-r from-blue-600 to-blue-500 rounded text-white text-xs font-bold flex items-center justify-center shadow-sm">
+                  ERP
+                </div>
+                <div className="w-12 h-6 bg-gradient-to-r from-green-600 to-green-500 rounded text-white text-xs font-bold flex items-center justify-center shadow-sm">
+                  WMS
+                </div>
+              </div>
+
+              {/* Connection lines with animation */}
+              <div className="absolute left-4 top-3 w-12 h-px bg-gradient-to-r from-primary/60 to-transparent">
+                <div className="w-2 h-px bg-primary animate-pulse" style={{
+                animationDelay: '0s'
+              }}></div>
+              </div>
+              <div className="absolute left-4 top-9 w-12 h-px bg-gradient-to-r from-accent/60 to-transparent">
+                <div className="w-2 h-px bg-accent animate-pulse" style={{
+                animationDelay: '0.5s'
+              }}></div>
+              </div>
+              <div className="absolute left-4 top-15 w-12 h-px bg-gradient-to-r from-secondary/60 to-transparent">
+                <div className="w-2 h-px bg-secondary animate-pulse" style={{
+                animationDelay: '1s'
+              }}></div>
+              </div>
+
+              {/* Central AutoDock hub */}
+              <div className="w-20 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg border border-primary/30 flex items-center justify-center relative">
+                <span className="text-xs font-bold text-primary">AutoDock</span>
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary/10 to-transparent animate-pulse"></div>
+                <Plug className="absolute -top-2 -right-2 w-4 h-4 text-primary" />
+              </div>
+
+              {/* Data flow indicators */}
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-1">
+                <div className="w-8 h-1 bg-gradient-to-r from-primary to-transparent rounded-full animate-pulse"></div>
+                <div className="w-6 h-1 bg-gradient-to-r from-accent to-transparent rounded-full animate-pulse" style={{
+                animationDelay: '0.3s'
+              }}></div>
+                <div className="w-4 h-1 bg-gradient-to-r from-secondary to-transparent rounded-full animate-pulse" style={{
+                animationDelay: '0.6s'
+              }}></div>
+              </div>
+            </div>
           </div>;
       case 'safety':
         return <div className="relative bg-gradient-to-br from-emerald-50 to-emerald-25 rounded-2xl p-8 h-64 flex items-center justify-center overflow-hidden">
