@@ -308,11 +308,7 @@ const Index = () => {
       <section className="vegam-journey section-padding bg-gradient-to-br from-background via-muted/30 to-accent/5 relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 opacity-60">
-          <img 
-            src="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png" 
-            alt="Manufacturing evolution background" 
-            className="w-full h-full object-cover brightness-75"
-          />
+          <img src="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png" alt="Manufacturing evolution background" className="w-full h-full object-cover brightness-75" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/20 to-background/40"></div>
         <div className="container mx-auto px-6 lg:px-8 relative">
@@ -620,7 +616,7 @@ const Index = () => {
           {/* Our Strengths Panel */}
           <div className="mt-16 max-w-4xl mx-auto">
             <div className="text-center mb-8">
-              <h3 className="text-3xl md:text-4xl font-bold text-foreground">Our Strengths</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-foreground">Strong Foundation For Innovation</h3>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
