@@ -449,11 +449,13 @@ const OurTeam = () => {
                 }, {
                   name: "Subha J",
                   initials: "SJ",
-                  role: "Lead Functional Consultant"
+                  role: "Lead Functional Consultant",
+                  image: "/lovable-uploads/8884082c-70c9-40f7-b1e5-daa47dd94d21.png"
                 }, {
                   name: "Ajay K",
                   initials: "AK",
-                  role: "Technical Lead"
+                  role: "Technical Lead",
+                  image: "/lovable-uploads/b893342a-f6f5-4d8a-b6f0-6c2ba15fa002.png"
                 }, {
                   name: "Chaithra N",
                   initials: "CN",
@@ -473,11 +475,13 @@ const OurTeam = () => {
                 }, {
                   name: "Sachin Vishwakarma",
                   initials: "SV",
-                  role: "Quality Analyst"
+                  role: "Quality Analyst",
+                  image: "/lovable-uploads/5b0d2e84-1357-4b91-862b-84b8878527f9.png"
                 }, {
                   name: "Pratish RameshChandra Gandhi",
                   initials: "PRG",
-                  role: "Integration Specialist"
+                  role: "Integration Specialist",
+                  image: "/lovable-uploads/de81c39a-3c55-4b86-b164-e91bed668082.png"
                 }, {
                   name: "Vishweshwar Kapse",
                   initials: "VK",
