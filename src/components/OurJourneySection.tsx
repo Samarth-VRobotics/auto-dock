@@ -44,14 +44,14 @@ const OurJourneySection = () => {
 
   // Industry transition slideshow
   const industryImages = [{
-    src: "/lovable-uploads/1ce695c8-00a1-4a19-8a83-6a5447c4e299.png",
-    alt: "Vegam robot in industrial setting with worker"
+    src: "/lovable-uploads/1ccc1e73-ce2e-4ee2-87bd-36e04a13d87a.png",
+    alt: "Vegam robot assisting worker in industrial warehouse setting"
   }, {
-    src: "/lovable-uploads/2f5b3683-c1f1-4ab8-93da-c3246e6b6f98.png",
-    alt: "Team showcasing MAYA 1.0 robot at university exhibition"
+    src: "/lovable-uploads/4cac744e-506c-4379-9351-b2a26753b864.png",
+    alt: "Team members presenting MAYA 1.0 humanoid robot at university exhibition"
   }, {
-    src: "/lovable-uploads/cdfeba0e-e1a6-4714-a55d-180e813b74c6.png",
-    alt: "Team working in robotics lab with MAYA robot"
+    src: "/lovable-uploads/d1138e05-882d-4ae5-bdf5-affd1d1597cb.png",
+    alt: "Students collaborating in robotics laboratory with MAYA robot and equipment"
   }];
   const projects = [{
     title: "Humanoid Robots",
