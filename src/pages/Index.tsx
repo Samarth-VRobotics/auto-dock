@@ -312,17 +312,17 @@ const Index = () => {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/20 to-background/40"></div>
         <div className="container mx-auto px-6 lg:px-8 relative">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 text-foreground px-4">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 text-foreground px-4">
               Vegam Journey: Proven History in Manufacturing Transformation
             </h2>
           </div>
 
-          <div className="timeline-container relative max-w-6xl mx-auto" style={{
+          <div className="timeline-container relative max-w-7xl mx-auto" style={{
           paddingRight: 'min(8vw, 140px)',
           paddingLeft: 'min(4vw, 80px)',
-          paddingBottom: 'min(16vh, 200px)',
-          paddingTop: 'min(6vh, 100px)',
+          paddingBottom: 'min(18vh, 240px)',
+          paddingTop: 'min(8vh, 120px)',
           overflow: 'visible'
         }}>
             <style>{`
@@ -333,39 +333,39 @@ const Index = () => {
                 filter: drop-shadow(0 4px 20px hsl(var(--primary) / 0.1));
               }
                .vj-year { 
-                 font: 800 20px/1.2 Inter, system-ui; 
+                 font: 800 24px/1.2 Inter, system-ui; 
                  fill: hsl(var(--foreground)); 
                  transition: all 0.2s ease-out;
                  text-anchor: middle;
                  font-weight: 800;
                  letter-spacing: 0.5px;
                }
-               .vj-year-visible {
-                 font: 700 18px/1.2 Inter, system-ui;
-                 fill: hsl(var(--foreground));
-                 transition: all 0.2s ease-out;
-                 text-anchor: middle;
-                 font-weight: 700;
-                 letter-spacing: 0.5px;
-               }
-               .vj-cap { 
-                 font: 600 16px/1.4 Inter, system-ui; 
-                 fill: hsl(var(--foreground)); 
-                 transition: all 0.2s ease-out;
-                 text-anchor: start;
-                 font-weight: 600;
-                 letter-spacing: 0.2px;
-                 white-space: normal;
-                 overflow: visible;
-                 text-overflow: clip;
-               }
+                .vj-year-visible {
+                  font: 700 22px/1.2 Inter, system-ui;
+                  fill: hsl(var(--foreground));
+                  transition: all 0.2s ease-out;
+                  text-anchor: middle;
+                  font-weight: 700;
+                  letter-spacing: 0.5px;
+                }
+                .vj-cap { 
+                  font: 600 18px/1.4 Inter, system-ui; 
+                  fill: hsl(var(--foreground)); 
+                  transition: all 0.2s ease-out;
+                  text-anchor: start;
+                  font-weight: 600;
+                  letter-spacing: 0.2px;
+                  white-space: normal;
+                  overflow: visible;
+                  text-overflow: clip;
+                }
               .vj-cap strong { font-weight: 700; }
-              .vj-node-ring { 
-                fill: hsl(var(--background)); 
-                stroke: hsl(var(--background)); 
-                stroke-width: 5; 
-                filter: drop-shadow(0 2px 8px hsl(var(--foreground) / 0.1));
-              }
+               .vj-node-ring { 
+                 fill: hsl(var(--background)); 
+                 stroke: hsl(var(--background)); 
+                 stroke-width: 6; 
+                 filter: drop-shadow(0 3px 10px hsl(var(--foreground) / 0.15));
+               }
               .vj-node--past { 
                 fill: hsl(var(--primary)); 
                 transition: all 0.2s ease-out;
@@ -374,20 +374,20 @@ const Index = () => {
                 fill: hsl(var(--destructive)); 
                 transition: all 0.2s ease-out;
               }
-              .vj-line { 
-                stroke-width: 3; 
-                fill: none; 
-                filter: drop-shadow(0 2px 4px hsl(var(--primary) / 0.2));
-              }
-              .vj-card rect { 
-                fill: hsl(var(--card)); 
-                rx: 16; 
-                transition: all 0.2s ease-out;
-                stroke: hsl(var(--border));
-                stroke-width: 1;
-              }
+               .vj-line { 
+                 stroke-width: 4; 
+                 fill: none; 
+                 filter: drop-shadow(0 3px 6px hsl(var(--primary) / 0.25));
+               }
+               .vj-card rect { 
+                 fill: hsl(var(--card)); 
+                 rx: 16; 
+                 transition: all 0.2s ease-out;
+                 stroke: hsl(var(--border));
+                 stroke-width: 2;
+               }
                .vj-card { 
-                 filter: drop-shadow(0 8px 25px hsl(var(--foreground) / 0.1)); 
+                 filter: drop-shadow(0 10px 30px hsl(var(--foreground) / 0.12)); 
                  transition: all 0.2s ease-out;
                  transform-origin: top center;
                }
@@ -456,31 +456,31 @@ const Index = () => {
               .vj-layer-line { isolation: isolate; z-index: 1; }
               .vj-layer-nodes { isolation: isolate; z-index: 2; }
               
-               /* Mobile responsive adjustments */
-               @media (max-width: 768px) {
-                 .vj-svg { padding: 30px 20px 120px 20px; transform: scale(1.2); transform-origin: center top; }
-                 .vj-year { font-size: 24px; }
-                 .vj-year-visible { font-size: 22px; font-weight: 700; }
-                 .vj-cap { font-size: 16px; font-weight: 600; }
-                 .vj-node { r: 32; }
-                 .vj-node-ring { r: 40; }
-                 .vj-card rect { height: auto; min-height: 70px; rx: 18; }
-                 .timeline-container { padding-right: 0; margin: 0 -20px; padding-bottom: min(16vh, 180px); }
-               }
+                /* Mobile responsive adjustments */
+                @media (max-width: 768px) {
+                  .vj-svg { padding: 40px 25px 140px 25px; transform: scale(1.4); transform-origin: center top; }
+                  .vj-year { font-size: 28px; }
+                  .vj-year-visible { font-size: 26px; font-weight: 700; }
+                  .vj-cap { font-size: 18px; font-weight: 600; }
+                  .vj-node { r: 36; }
+                  .vj-node-ring { r: 44; }
+                  .vj-card rect { height: auto; min-height: 80px; rx: 20; }
+                  .timeline-container { padding-right: 0; margin: 0 -20px; padding-bottom: min(20vh, 220px); }
+                }
               
-              /* Tablet responsive adjustments */
-              @media (min-width: 769px) and (max-width: 1024px) {
-                .vj-svg { padding: 30px 20px 100px 20px; }
-                .vj-year { font-size: 22px; }
-                .vj-year-visible { font-size: 20px; font-weight: 700; }
-                .vj-cap { font-size: 16px; font-weight: 600; }
-                .vj-node { r: 30; }
-                .vj-node-ring { r: 38; }
-                .vj-card rect { height: auto; min-height: 65px; rx: 18; }
-                .timeline-container { padding-bottom: min(15vh, 170px); }
-              }
+               /* Tablet responsive adjustments */
+               @media (min-width: 769px) and (max-width: 1024px) {
+                 .vj-svg { padding: 40px 30px 120px 30px; transform: scale(1.15); transform-origin: center top; }
+                 .vj-year { font-size: 26px; }
+                 .vj-year-visible { font-size: 24px; font-weight: 700; }
+                 .vj-cap { font-size: 18px; font-weight: 600; }
+                 .vj-node { r: 34; }
+                 .vj-node-ring { r: 42; }
+                 .vj-card rect { height: auto; min-height: 75px; rx: 20; }
+                 .timeline-container { padding-bottom: min(18vh, 200px); }
+               }
             `}</style>
-            <svg className="vj-svg" viewBox="0 0 1400 800" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
+            <svg className="vj-svg" viewBox="0 0 1500 900" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
               <defs>
                 <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="hsl(var(--destructive))" />
@@ -510,33 +510,33 @@ const Index = () => {
                 
                 {/* 1) 2000 */}
                 <g className="milestone" data-key="2000" transform="translate(100,520)" tabIndex={0} aria-label="2000 — Foundation with digital factory vision" aria-describedby="milestone-2000">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <circle className="vj-node-ring" r={32}></circle>
+                  <circle className="vj-node vj-node--past" r={24}></circle>
                   
                   {/* Year label always visible */}
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2000</text>
+                  <text className="vj-year-visible" x={0} y={-40} textAnchor="middle" fill="hsl(var(--foreground))">2000</text>
                   
                   {/* Message card - aligned with node */}
-                  <g className="vj-card" transform="translate(-140,35)" id="milestone-2000">
-                    <rect width={280} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Foundation with digital factory vision</tspan>
+                  <g className="vj-card" transform="translate(-140,40)" id="milestone-2000">
+                    <rect width={280} height={50} fill="hsl(var(--card))" rx={16} stroke="hsl(var(--border))" strokeWidth={2}></rect>
+                    <text className="vj-cap" x={16} y={32}>
+                      <tspan x="16" dy="0" fontSize="16" fontWeight="600" fill="hsl(var(--foreground))">Foundation with digital factory vision</tspan>
                     </text>
                   </g>
                 </g>
 
                 {/* 2) 2007 */}
                 <g className="milestone" data-key="2007" transform="translate(240,460)" tabIndex={0} aria-label="2007 — First plant fully digitalized" aria-describedby="milestone-2007">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <circle className="vj-node-ring" r={32}></circle>
+                  <circle className="vj-node vj-node--past" r={24}></circle>
                   
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
+                  <text className="vj-year-visible" x={0} y={-40} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
                   
                   {/* Message card - aligned with node */}
-                  <g className="vj-card" transform="translate(-120,35)" id="milestone-2007">
-                    <rect width={240} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">First plant fully digitalized</tspan>
+                  <g className="vj-card" transform="translate(-120,40)" id="milestone-2007">
+                    <rect width={240} height={50} fill="hsl(var(--card))" rx={16} stroke="hsl(var(--border))" strokeWidth={2}></rect>
+                    <text className="vj-cap" x={16} y={32}>
+                      <tspan x="16" dy="0" fontSize="16" fontWeight="600" fill="hsl(var(--foreground))">First plant fully digitalized</tspan>
                     </text>
                   </g>
                 </g>
@@ -559,16 +559,16 @@ const Index = () => {
 
                 {/* 4) 2016 */}
                 <g className="milestone" data-key="2016" transform="translate(500,330)" tabIndex={0} aria-label="2016 — Scaled to 70 plants globally" aria-describedby="milestone-2016">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <circle className="vj-node-ring" r={32}></circle>
+                  <circle className="vj-node vj-node--past" r={24}></circle>
                   
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
+                  <text className="vj-year-visible" x={0} y={-40} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
                   
                   {/* Message card - aligned with node */}
-                  <g className="vj-card" transform="translate(-130,35)" id="milestone-2016">
-                    <rect width={260} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Scaled to <tspan fontWeight="700">70</tspan> plants globally</tspan>
+                  <g className="vj-card" transform="translate(-130,40)" id="milestone-2016">
+                    <rect width={260} height={50} fill="hsl(var(--card))" rx={16} stroke="hsl(var(--border))" strokeWidth={2}></rect>
+                    <text className="vj-cap" x={16} y={32}>
+                      <tspan x="16" dy="0" fontSize="16" fontWeight="600" fill="hsl(var(--foreground))">Scaled to <tspan fontWeight="700">70</tspan> plants globally</tspan>
                     </text>
                   </g>
                 </g>
@@ -591,64 +591,64 @@ const Index = () => {
 
                 {/* 6) 2023 */}
                 <g className="milestone" data-key="2023" transform="translate(760,230)" tabIndex={0} aria-label="2023 — Foundation for Autonomous factories" aria-describedby="milestone-2023">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <circle className="vj-node-ring" r={32}></circle>
+                  <circle className="vj-node vj-node--past" r={24}></circle>
                   
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
+                  <text className="vj-year-visible" x={0} y={-40} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
                   
                   {/* Message card - aligned with node */}
-                  <g className="vj-card" transform="translate(-150,35)" id="milestone-2023">
-                    <rect width={300} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Foundation for Autonomous factories</tspan>
+                  <g className="vj-card" transform="translate(-150,40)" id="milestone-2023">
+                    <rect width={300} height={50} fill="hsl(var(--card))" rx={16} stroke="hsl(var(--border))" strokeWidth={2}></rect>
+                    <text className="vj-cap" x={16} y={32}>
+                      <tspan x="16" dy="0" fontSize="16" fontWeight="600" fill="hsl(var(--foreground))">Foundation for Autonomous factories</tspan>
                     </text>
                   </g>
                 </g>
 
                 {/* 7) 2025 */}
                 <g className="milestone" data-key="2025" transform="translate(890,180)" tabIndex={0} aria-label="2025 — Milestone of 300+ plants achieved" aria-describedby="milestone-2025">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
+                  <circle className="vj-node-ring" r={32}></circle>
+                  <circle className="vj-node vj-node--past" r={24}></circle>
                   
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2025</text>
+                  <text className="vj-year-visible" x={0} y={-40} textAnchor="middle" fill="hsl(var(--foreground))">2025</text>
                   
                   {/* Message card - aligned with node */}
-                  <g className="vj-card" transform="translate(-160,35)" id="milestone-2025">
-                    <rect width={320} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Milestone of <tspan fontWeight="700">300+</tspan> plants achieved</tspan>
+                  <g className="vj-card" transform="translate(-160,40)" id="milestone-2025">
+                    <rect width={320} height={50} fill="hsl(var(--card))" rx={16} stroke="hsl(var(--border))" strokeWidth={2}></rect>
+                    <text className="vj-cap" x={16} y={32}>
+                      <tspan x="16" dy="0" fontSize="16" fontWeight="600" fill="hsl(var(--foreground))">Milestone of <tspan fontWeight="700">300+</tspan> plants achieved</tspan>
                     </text>
                   </g>
                 </g>
 
                 {/* 8) 2026 (future) */}
                 <g className="milestone" data-key="2026" transform="translate(1020,130)" tabIndex={0} aria-label="2026 — Projected First Fully Autonomous Plant" aria-describedby="milestone-2026">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
+                  <circle className="vj-node-ring" r={32}></circle>
+                  <circle className="vj-node vj-node--future" r={24} filter="url(#glow)"></circle>
                   
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
+                  <text className="vj-year-visible" x={0} y={-40} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
                   
                   {/* Message card - aligned with node */}
-                  <g className="vj-card" transform="translate(-170,35)" id="milestone-2026">
-                    <rect width={340} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Projected First Fully Autonomous Plant</tspan>
+                  <g className="vj-card" transform="translate(-170,40)" id="milestone-2026">
+                    <rect width={340} height={50} fill="hsl(var(--card))" rx={16} stroke="hsl(var(--destructive))" strokeWidth={2}></rect>
+                    <text className="vj-cap" x={16} y={32}>
+                      <tspan x="16" dy="0" fontSize="16" fontWeight="600" fill="hsl(var(--foreground))">Projected First Fully Autonomous Plant</tspan>
                     </text>
                   </g>
                 </g>
 
                 {/* 9) 2030 (future) */}
                 <g className="milestone" data-key="2030" transform="translate(1200,80)" tabIndex={0} aria-label="2030 — 1000 Autonomous Plants" aria-describedby="milestone-2030">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
+                  <circle className="vj-node-ring" r={32}></circle>
+                  <circle className="vj-node vj-node--future" r={24} filter="url(#glow)"></circle>
                   
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2030</text>
+                  <text className="vj-year-visible" x={0} y={-40} textAnchor="middle" fill="hsl(var(--destructive))">2030</text>
                   
                   {/* Message card - aligned with node */}
-                  <g className="vj-card" transform="translate(-140,35)" id="milestone-2030">
-                    <rect width={280} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))"><tspan fontWeight="700">1000</tspan> Autonomous Plants</tspan>
+                  <g className="vj-card" transform="translate(-140,40)" id="milestone-2030">
+                    <rect width={280} height={50} fill="hsl(var(--card))" rx={16} stroke="hsl(var(--destructive))" strokeWidth={2}></rect>
+                    <text className="vj-cap" x={16} y={32}>
+                      <tspan x="16" dy="0" fontSize="16" fontWeight="600" fill="hsl(var(--foreground))"><tspan fontWeight="700">1000</tspan> Autonomous Plants</tspan>
                     </text>
                   </g>
                 </g>
