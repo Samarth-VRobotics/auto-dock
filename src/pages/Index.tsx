@@ -339,120 +339,163 @@ const Index = () => {
           {/* Clean Timeline Layout */}
           <div className="max-w-7xl mx-auto">
             {/* Desktop/Tablet Timeline */}
-            <div className="hidden md:block relative">
-              {/* Central Timeline Line */}
-              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-slate-300 via-blue-400 to-red-500 transform -translate-y-1/2 rounded-full shadow-lg"></div>
-              <div className="absolute top-1/2 left-0 right-0 h-3 bg-gradient-to-r from-slate-300/30 via-blue-400/30 to-red-500/30 transform -translate-y-1/2 rounded-full blur-sm"></div>
+            <div className="hidden md:block relative py-20">
+              {/* Diagonal Upward Arrow Path */}
+              <div className="absolute inset-0 flex items-center">
+                <svg 
+                  viewBox="0 0 1200 400" 
+                  className="w-full h-full max-h-96"
+                  preserveAspectRatio="none"
+                >
+                  {/* Main diagonal arrow path */}
+                  <defs>
+                    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" style={{stopColor:'#64748b', stopOpacity:1}} />
+                      <stop offset="40%" style={{stopColor:'#3b82f6', stopOpacity:1}} />
+                      <stop offset="100%" style={{stopColor:'#dc2626', stopOpacity:1}} />
+                    </linearGradient>
+                    <linearGradient id="arrowGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" style={{stopColor:'#64748b', stopOpacity:0.3}} />
+                      <stop offset="40%" style={{stopColor:'#3b82f6', stopOpacity:0.4}} />
+                      <stop offset="100%" style={{stopColor:'#dc2626', stopOpacity:0.5}} />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Glow effect */}
+                  <path 
+                    d="M 50 350 Q 300 320 600 250 Q 900 180 1120 150" 
+                    stroke="url(#arrowGlow)" 
+                    strokeWidth="8" 
+                    fill="none"
+                    className="blur-sm"
+                  />
+                  
+                  {/* Main path */}
+                  <path 
+                    d="M 50 350 Q 300 320 600 250 Q 900 180 1120 150" 
+                    stroke="url(#arrowGradient)" 
+                    strokeWidth="4" 
+                    fill="none"
+                  />
+                  
+                  {/* Arrow head */}
+                  <path 
+                    d="M 1120 150 L 1105 140 L 1105 160 Z" 
+                    fill="#dc2626" 
+                    className="drop-shadow-sm"
+                  />
+                </svg>
+              </div>
               
-              {/* Timeline Points */}
-              <div className="flex justify-between items-center py-20 relative">
+              {/* Timeline Points positioned along the diagonal */}
+              <div className="relative h-96">
                 
-                {/* 2000 - Below */}
-                <div className="flex flex-col items-center group">
+                {/* 2000 - Bottom Left */}
+                <div className="absolute flex flex-col items-center group" style={{left: '4%', top: '75%'}}>
                   <div className="relative">
-                    <div className="w-6 h-6 bg-red-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
-                    <div className="absolute inset-0 w-6 h-6 bg-red-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                    <div className="w-8 h-8 bg-slate-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-8 h-8 bg-slate-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
-                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-bold text-slate-800 mb-2">2000</div>
+                  <div className="mt-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-slate-200 max-w-[220px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-xl font-bold text-slate-800 mb-3">2000</div>
                     <p className="text-sm text-slate-600 leading-relaxed">Foundation with digital factory vision</p>
                   </div>
                 </div>
 
-                {/* 2007 - Above */}
-                <div className="flex flex-col items-center group">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-bold text-slate-800 mb-2">2007</div>
-                    <p className="text-sm text-slate-600 leading-relaxed">First plant fully digitalized</p>
+                {/* 2007 - Above the line */}
+                <div className="absolute flex flex-col items-center group" style={{left: '16%', top: '25%'}}>
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center mb-8 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-xl font-bold text-blue-800 mb-3">2007</div>
+                    <p className="text-sm text-blue-700 leading-relaxed">First plant fully digitalized</p>
                   </div>
                   <div className="relative">
-                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
-                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                    <div className="w-8 h-8 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-8 h-8 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
                 </div>
 
-                {/* 2013 - Below */}
-                <div className="flex flex-col items-center group">
+                {/* 2013 - Below the line */}
+                <div className="absolute flex flex-col items-center group" style={{left: '28%', top: '60%'}}>
                   <div className="relative">
-                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
-                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                    <div className="w-8 h-8 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-8 h-8 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
-                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-bold text-slate-800 mb-2">2013</div>
-                    <p className="text-sm text-slate-600 leading-relaxed"><span className="font-bold text-blue-600">18</span> plants connected in network</p>
+                  <div className="mt-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-xl font-bold text-blue-800 mb-3">2013</div>
+                    <p className="text-sm text-blue-700 leading-relaxed"><span className="font-bold text-blue-600">18</span> plants connected in network</p>
                   </div>
                 </div>
 
-                {/* 2016 - Above */}
-                <div className="flex flex-col items-center group">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-bold text-slate-800 mb-2">2016</div>
-                    <p className="text-sm text-slate-600 leading-relaxed">Scaled to <span className="font-bold text-blue-600">70</span> plants globally</p>
+                {/* 2016 - Above the line */}
+                <div className="absolute flex flex-col items-center group" style={{left: '40%', top: '20%'}}>
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center mb-8 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-xl font-bold text-blue-800 mb-3">2016</div>
+                    <p className="text-sm text-blue-700 leading-relaxed">Scaled to <span className="font-bold text-blue-600">70</span> plants globally</p>
                   </div>
                   <div className="relative">
-                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
-                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                    <div className="w-8 h-8 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-8 h-8 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
                 </div>
 
-                {/* 2019 - Below */}
-                <div className="flex flex-col items-center group">
+                {/* 2019 - Below the line */}
+                <div className="absolute flex flex-col items-center group" style={{left: '52%', top: '50%'}}>
                   <div className="relative">
-                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
-                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                    <div className="w-8 h-8 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-8 h-8 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
-                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-bold text-slate-800 mb-2">2019</div>
-                    <p className="text-sm text-slate-600 leading-relaxed">Milestone of <span className="font-bold text-blue-600">100+</span> plants achieved</p>
+                  <div className="mt-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-xl font-bold text-blue-800 mb-3">2019</div>
+                    <p className="text-sm text-blue-700 leading-relaxed">Milestone of <span className="font-bold text-blue-600">100+</span> plants achieved</p>
                   </div>
                 </div>
 
-                {/* 2023 - Above */}
-                <div className="flex flex-col items-center group">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-bold text-slate-800 mb-2">2023</div>
-                    <p className="text-sm text-slate-600 leading-relaxed">Foundation for Autonomous factories</p>
+                {/* 2023 - Above the line */}
+                <div className="absolute flex flex-col items-center group" style={{left: '64%', top: '15%'}}>
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center mb-8 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-xl font-bold text-blue-800 mb-3">2023</div>
+                    <p className="text-sm text-blue-700 leading-relaxed">Foundation for Autonomous factories</p>
                   </div>
                   <div className="relative">
-                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
-                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                    <div className="w-8 h-8 bg-blue-600 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-8 h-8 bg-blue-500 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
                 </div>
 
-                {/* 2025 - Below */}
-                <div className="flex flex-col items-center group">
+                {/* 2025 - Below the line */}
+                <div className="absolute flex flex-col items-center group" style={{left: '76%', top: '40%'}}>
                   <div className="relative">
-                    <div className="w-6 h-6 bg-blue-600 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
-                    <div className="absolute inset-0 w-6 h-6 bg-blue-500 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                    <div className="w-8 h-8 bg-blue-600 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-8 h-8 bg-blue-500 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
-                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-bold text-slate-800 mb-2">2025</div>
-                    <p className="text-sm text-slate-600 leading-relaxed">Milestone of <span className="font-bold text-blue-600">300+</span> plants achieved</p>
+                  <div className="mt-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-xl font-bold text-blue-800 mb-3">2025</div>
+                    <p className="text-sm text-blue-700 leading-relaxed">Milestone of <span className="font-bold text-blue-600">300+</span> plants achieved</p>
                   </div>
                 </div>
 
-                {/* 2026 - Above (Future) */}
-                <div className="flex flex-col items-center group">
-                  <div className="bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-red-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-bold text-red-600 mb-2">2026</div>
+                {/* 2026 - Above the line (Future) */}
+                <div className="absolute flex flex-col items-center group" style={{left: '88%', top: '10%'}}>
+                  <div className="bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-red-200 max-w-[220px] text-center mb-8 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-xl font-bold text-red-600 mb-3">2026</div>
                     <p className="text-sm text-red-700 leading-relaxed">Projected First Fully Autonomous Plant</p>
                   </div>
                   <div className="relative">
-                    <div className="w-6 h-6 bg-red-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
-                    <div className="absolute inset-0 w-6 h-6 bg-red-400 rounded-full animate-ping opacity-40 group-hover:opacity-60"></div>
+                    <div className="w-8 h-8 bg-red-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-8 h-8 bg-red-400 rounded-full animate-ping opacity-40 group-hover:opacity-60"></div>
                   </div>
                 </div>
 
-                {/* 2030 - Below (Future) */}
-                <div className="flex flex-col items-center group">
+                {/* 2030 - Endpoint (Future) */}
+                <div className="absolute flex flex-col items-center group" style={{left: '92%', top: '30%'}}>
                   <div className="relative">
-                    <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-xl border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-xl border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                      <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
-                    <div className="absolute inset-0 w-8 h-8 bg-red-400 rounded-full animate-pulse opacity-50"></div>
+                    <div className="absolute inset-0 w-10 h-10 bg-red-400 rounded-full animate-pulse opacity-50"></div>
                   </div>
-                  <div className="mt-6 bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-5 shadow-xl border border-red-200 max-w-[200px] text-center group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-lg font-bold text-red-600 mb-2">2030</div>
+                  <div className="mt-8 bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-red-200 max-w-[220px] text-center group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-xl font-bold text-red-600 mb-3">2030</div>
                     <p className="text-sm text-red-700 leading-relaxed"><span className="font-bold text-red-600">1000</span> Autonomous Plants</p>
                   </div>
                 </div>
