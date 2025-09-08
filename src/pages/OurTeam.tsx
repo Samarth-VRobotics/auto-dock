@@ -267,7 +267,7 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-primary mb-3">Robotics Experts</h3>
                   <p className="text-foreground/60 text-lg">Building autonomous systems that redefine industrial operations</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
                   {[{
                   name: "Faizan Pathan",
                   initials: "FP",
@@ -305,7 +305,7 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-3">AI Experts</h3>
                   <p className="text-foreground/60 text-lg">Developing intelligent software architectures and automation solutions</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
                   {[{
                   name: "Falgun",
                   initials: "F",
@@ -359,7 +359,7 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-accent mb-3">Embedded Experts</h3>
                   <p className="text-foreground/60 text-lg">Specializing in hardware-software integration and embedded systems</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
                   {[{
                   name: "Vishwanath Garagad",
                   initials: "VG",
@@ -414,7 +414,7 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-3">Smart Factory Experts</h3>
                   <p className="text-foreground/60 text-lg">Digital factory solutions and process optimization specialists</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
                   {[{
                   name: "Aman Saxena",
                   initials: "AS",
