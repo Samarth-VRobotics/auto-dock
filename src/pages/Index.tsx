@@ -339,72 +339,74 @@ const Index = () => {
           {/* Clean Timeline Layout */}
           <div className="max-w-7xl mx-auto">
             {/* Desktop/Tablet Timeline */}
-            <div className="hidden md:block relative py-20">
-              {/* Diagonal Upward Arrow Path */}
+            <div className="hidden md:block relative py-32">
+              {/* Exponential Growth Curve */}
               <div className="absolute inset-0 flex items-center">
                 <svg 
-                  viewBox="0 0 1200 400" 
-                  className="w-full h-full max-h-96"
+                  viewBox="0 0 1200 500" 
+                  className="w-full h-full max-h-[500px]"
                   preserveAspectRatio="none"
                 >
-                  {/* Main diagonal arrow path */}
+                  {/* Exponential curve path */}
                   <defs>
-                    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient id="exponentialGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" style={{stopColor:'#64748b', stopOpacity:1}} />
-                      <stop offset="40%" style={{stopColor:'#3b82f6', stopOpacity:1}} />
-                      <stop offset="100%" style={{stopColor:'#dc2626', stopOpacity:1}} />
+                      <stop offset="30%" style={{stopColor:'#3b82f6', stopOpacity:1}} />
+                      <stop offset="70%" style={{stopColor:'#dc2626', stopOpacity:1}} />
+                      <stop offset="100%" style={{stopColor:'#b91c1c', stopOpacity:1}} />
                     </linearGradient>
-                    <linearGradient id="arrowGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient id="exponentialGlow" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" style={{stopColor:'#64748b', stopOpacity:0.3}} />
-                      <stop offset="40%" style={{stopColor:'#3b82f6', stopOpacity:0.4}} />
-                      <stop offset="100%" style={{stopColor:'#dc2626', stopOpacity:0.5}} />
+                      <stop offset="30%" style={{stopColor:'#3b82f6', stopOpacity:0.4}} />
+                      <stop offset="70%" style={{stopColor:'#dc2626', stopOpacity:0.6}} />
+                      <stop offset="100%" style={{stopColor:'#b91c1c', stopOpacity:0.7}} />
                     </linearGradient>
                   </defs>
                   
                   {/* Glow effect */}
                   <path 
-                    d="M 50 350 Q 300 320 600 250 Q 900 180 1120 150" 
-                    stroke="url(#arrowGlow)" 
-                    strokeWidth="8" 
+                    d="M 80 420 Q 200 400 350 350 Q 500 280 650 200 Q 800 100 950 60 Q 1050 30 1140 20" 
+                    stroke="url(#exponentialGlow)" 
+                    strokeWidth="12" 
                     fill="none"
                     className="blur-sm"
                   />
                   
-                  {/* Main path */}
+                  {/* Main exponential curve */}
                   <path 
-                    d="M 50 350 Q 300 320 600 250 Q 900 180 1120 150" 
-                    stroke="url(#arrowGradient)" 
-                    strokeWidth="4" 
+                    d="M 80 420 Q 200 400 350 350 Q 500 280 650 200 Q 800 100 950 60 Q 1050 30 1140 20" 
+                    stroke="url(#exponentialGradient)" 
+                    strokeWidth="5" 
                     fill="none"
                   />
                   
-                  {/* Arrow head */}
+                  {/* Arrow head pointing upward */}
                   <path 
-                    d="M 1120 150 L 1105 140 L 1105 160 Z" 
-                    fill="#dc2626" 
-                    className="drop-shadow-sm"
+                    d="M 1140 20 L 1125 30 L 1125 10 Z" 
+                    fill="#b91c1c" 
+                    className="drop-shadow-lg"
                   />
                 </svg>
               </div>
               
-              {/* Timeline Points positioned along the diagonal */}
-              <div className="relative h-96">
+              {/* Timeline Points positioned along exponential curve */}
+              <div className="relative h-[500px]">
                 
-                {/* 2000 - Bottom Left */}
-                <div className="absolute flex flex-col items-center group" style={{left: '4%', top: '75%'}}>
+                {/* 2000 - Starting point, bottom */}
+                <div className="absolute flex flex-col items-center group" style={{left: '6%', top: '78%'}}>
                   <div className="relative">
                     <div className="w-8 h-8 bg-slate-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
                     <div className="absolute inset-0 w-8 h-8 bg-slate-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
-                  <div className="mt-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-slate-200 max-w-[220px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                  <div className="mt-10 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-xl font-bold text-slate-800 mb-3">2000</div>
                     <p className="text-sm text-slate-600 leading-relaxed">Foundation with digital factory vision</p>
                   </div>
                 </div>
 
-                {/* 2007 - Above the line */}
-                <div className="absolute flex flex-col items-center group" style={{left: '16%', top: '25%'}}>
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center mb-8 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                {/* 2007 - Slight rise, above curve */}
+                <div className="absolute flex flex-col items-center group" style={{left: '18%', top: '45%'}}>
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[200px] text-center mb-10 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-xl font-bold text-blue-800 mb-3">2007</div>
                     <p className="text-sm text-blue-700 leading-relaxed">First plant fully digitalized</p>
                   </div>
@@ -414,21 +416,21 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2013 - Below the line */}
-                <div className="absolute flex flex-col items-center group" style={{left: '28%', top: '60%'}}>
+                {/* 2013 - Below curve, more spacing */}
+                <div className="absolute flex flex-col items-center group" style={{left: '32%', top: '58%'}}>
                   <div className="relative">
                     <div className="w-8 h-8 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
                     <div className="absolute inset-0 w-8 h-8 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
-                  <div className="mt-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                  <div className="mt-10 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-xl font-bold text-blue-800 mb-3">2013</div>
                     <p className="text-sm text-blue-700 leading-relaxed"><span className="font-bold text-blue-600">18</span> plants connected in network</p>
                   </div>
                 </div>
 
-                {/* 2016 - Above the line */}
-                <div className="absolute flex flex-col items-center group" style={{left: '40%', top: '20%'}}>
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center mb-8 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                {/* 2016 - Above curve, accelerating growth */}
+                <div className="absolute flex flex-col items-center group" style={{left: '46%', top: '25%'}}>
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[200px] text-center mb-10 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-xl font-bold text-blue-800 mb-3">2016</div>
                     <p className="text-sm text-blue-700 leading-relaxed">Scaled to <span className="font-bold text-blue-600">70</span> plants globally</p>
                   </div>
@@ -438,21 +440,21 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2019 - Below the line */}
-                <div className="absolute flex flex-col items-center group" style={{left: '52%', top: '50%'}}>
+                {/* 2019 - Below curve, steady growth */}
+                <div className="absolute flex flex-col items-center group" style={{left: '58%', top: '48%'}}>
                   <div className="relative">
                     <div className="w-8 h-8 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
                     <div className="absolute inset-0 w-8 h-8 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
-                  <div className="mt-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                  <div className="mt-10 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-xl font-bold text-blue-800 mb-3">2019</div>
                     <p className="text-sm text-blue-700 leading-relaxed">Milestone of <span className="font-bold text-blue-600">100+</span> plants achieved</p>
                   </div>
                 </div>
 
-                {/* 2023 - Above the line */}
-                <div className="absolute flex flex-col items-center group" style={{left: '64%', top: '15%'}}>
-                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center mb-8 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                {/* 2023 - Above curve, exponential acceleration begins */}
+                <div className="absolute flex flex-col items-center group" style={{left: '68%', top: '8%'}}>
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[200px] text-center mb-10 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-xl font-bold text-blue-800 mb-3">2023</div>
                     <p className="text-sm text-blue-700 leading-relaxed">Foundation for Autonomous factories</p>
                   </div>
@@ -462,41 +464,41 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2025 - Below the line */}
-                <div className="absolute flex flex-col items-center group" style={{left: '76%', top: '40%'}}>
+                {/* 2025 - Below curve, rapid growth phase */}
+                <div className="absolute flex flex-col items-center group" style={{left: '78%', top: '30%'}}>
                   <div className="relative">
                     <div className="w-8 h-8 bg-blue-600 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
                     <div className="absolute inset-0 w-8 h-8 bg-blue-500 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
                   </div>
-                  <div className="mt-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200 max-w-[220px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-xl font-bold text-blue-800 mb-3">2025</div>
-                    <p className="text-sm text-blue-700 leading-relaxed">Milestone of <span className="font-bold text-blue-600">300+</span> plants achieved</p>
+                  <div className="mt-10 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-red-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-xl font-bold text-red-800 mb-3">2025</div>
+                    <p className="text-sm text-red-700 leading-relaxed">Milestone of <span className="font-bold text-red-600">300+</span> plants achieved</p>
                   </div>
                 </div>
 
-                {/* 2026 - Above the line (Future) */}
-                <div className="absolute flex flex-col items-center group" style={{left: '88%', top: '10%'}}>
-                  <div className="bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-red-200 max-w-[220px] text-center mb-8 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                {/* 2026 - Above curve, future projections steepen */}
+                <div className="absolute flex flex-col items-center group" style={{left: '86%', top: '2%'}}>
+                  <div className="bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-red-200 max-w-[200px] text-center mb-10 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-xl font-bold text-red-600 mb-3">2026</div>
                     <p className="text-sm text-red-700 leading-relaxed">Projected First Fully Autonomous Plant</p>
                   </div>
                   <div className="relative">
-                    <div className="w-8 h-8 bg-red-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
-                    <div className="absolute inset-0 w-8 h-8 bg-red-400 rounded-full animate-ping opacity-40 group-hover:opacity-60"></div>
+                    <div className="w-9 h-9 bg-red-500 rounded-full shadow-lg border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-9 h-9 bg-red-400 rounded-full animate-ping opacity-40 group-hover:opacity-60"></div>
                   </div>
                 </div>
 
-                {/* 2030 - Endpoint (Future) */}
-                <div className="absolute flex flex-col items-center group" style={{left: '92%', top: '30%'}}>
+                {/* 2030 - Peak endpoint, dramatic exponential growth */}
+                <div className="absolute flex flex-col items-center group" style={{left: '92%', top: '18%'}}>
                   <div className="relative">
-                    <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-xl border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                      <div className="w-3 h-3 bg-white rounded-full"></div>
+                    <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-xl border-4 border-white relative z-20 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                      <div className="w-4 h-4 bg-white rounded-full animate-pulse"></div>
                     </div>
-                    <div className="absolute inset-0 w-10 h-10 bg-red-400 rounded-full animate-pulse opacity-50"></div>
+                    <div className="absolute inset-0 w-12 h-12 bg-red-400 rounded-full animate-pulse opacity-60"></div>
                   </div>
-                  <div className="mt-8 bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-red-200 max-w-[220px] text-center group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
-                    <div className="text-xl font-bold text-red-600 mb-3">2030</div>
-                    <p className="text-sm text-red-700 leading-relaxed"><span className="font-bold text-red-600">1000</span> Autonomous Plants</p>
+                  <div className="mt-10 bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-red-200 max-w-[200px] text-center group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-2xl font-bold text-red-600 mb-3">2030</div>
+                    <p className="text-sm text-red-700 leading-relaxed font-semibold"><span className="font-bold text-red-600 text-lg">1000</span> Autonomous Plants</p>
                   </div>
                 </div>
               </div>
