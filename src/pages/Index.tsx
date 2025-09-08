@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
-import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Settings, Database, Hand, Cpu, Gauge, Lightbulb, Handshake, Headphones, MapPin } from "lucide-react";
+import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Settings, Database, Hand, Cpu, Gauge, Lightbulb, Handshake, Headphones, MapPin, Bot, RocketIcon, Sparkles } from "lucide-react";
 import autonomousProductionLine from "@/assets/autonomous-production-line.jpg";
 import smartFactoryHall from "@/assets/smart-factory-hall.jpg";
 import manufacturingEvolutionLab from "@/assets/manufacturing-evolution-lab.jpg";
@@ -305,146 +305,158 @@ const Index = () => {
         </div>
       </section>
 
-{/* Vegam's Journey: Diagonal Timeline with Manufacturing Evolution */}
+{/* Vegam's Journey: Modern Horizontal Timeline */}
       <section className="py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/30 relative overflow-hidden">
-        {/* Manufacturing Evolution Background Image */}
+        {/* Subtle Manufacturing Background */}
         <div className="absolute inset-0">
           <img 
             src={manufacturingEvolutionHero}
             alt="Manufacturing evolution from traditional to autonomous factories" 
-            className="w-full h-full object-cover opacity-25"
+            className="w-full h-full object-cover opacity-15 blur-sm"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/60 to-white/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/85 to-white/90"></div>
         </div>
-        
-        {/* Subtle Pattern Overlay */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0)`,
-          backgroundSize: '24px 24px'
-        }}></div>
         
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           {/* Title */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-              Vegam's Journey: 
+              Vegam's Journey:
               <span className="block text-red-600 mt-2">
                 Decades of History in Manufacturing Transformation
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-blue-500 via-red-500 to-red-600 mx-auto rounded-full shadow-lg"></div>
           </div>
 
-          <div className="grid lg:grid-cols-[2fr_1fr] gap-16 items-start">
-            {/* Diagonal Timeline Section */}
+          <div className="grid lg:grid-cols-[3fr_1fr] gap-20 items-start">
+            {/* Horizontal Timeline Section */}
             <div className="relative">
-              {/* Desktop Diagonal Timeline */}
-              <div className="hidden md:block relative h-[600px]">
-                {/* Diagonal Timeline Line */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="timelineGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#64748b" />
-                      <stop offset="30%" stopColor="#3b82f6" />
-                      <stop offset="70%" stopColor="#3b82f6" />
-                      <stop offset="100%" stopColor="#ef4444" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M 10 90 Q 30 70 50 50 T 90 10" stroke="url(#timelineGradient)" strokeWidth="0.5" fill="none" className="drop-shadow-lg" />
-                  <path d="M 10 90 Q 30 70 50 50 T 90 10" stroke="url(#timelineGradient)" strokeWidth="1.5" fill="none" opacity="0.3" className="blur-sm" />
-                </svg>
-
-                {/* Timeline Milestones */}
-                <div className="absolute inset-0">
-                  {[
-                    { year: "2000", text: "Foundation with digital factory vision", x: "10%", y: "90%", icon: "🏗️" },
-                    { year: "2007", text: "First plant fully digitalized", x: "23%", y: "75%", icon: "🏭" },
-                    { year: "2013", text: "18 plants connected in network", x: "36%", y: "60%", icon: "🌐" },
-                    { year: "2016", text: "Scaled to 70 plants globally", x: "49%", y: "45%", icon: "📈" },
-                    { year: "2019", text: "Milestone of 100+ plants achieved", x: "62%", y: "30%", icon: "🎯" },
-                    { year: "2023", text: "Foundation for Autonomous factories", x: "75%", y: "20%", icon: "🤖" },
-                    { year: "2025", text: "Milestone of 300+ plants achieved", x: "82%", y: "15%", icon: "⚡" },
-                    { year: "2026", text: "Projected First Fully Autonomous Plant", x: "88%", y: "12%", icon: "🚀", future: true },
-                    { year: "2030", text: "1000 Autonomous Plants", x: "94%", y: "8%", icon: "✨", future: true },
-                  ].map((milestone, index) => (
-                    <div 
-                      key={milestone.year}
-                      className="absolute group cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
-                      style={{ left: milestone.x, top: milestone.y }}
-                    >
-                      {/* Milestone Circle */}
-                      <div className="relative">
-                        <div className={`w-6 h-6 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-125 transition-all duration-300 ${
-                          milestone.future ? 'bg-gradient-to-r from-red-500 to-red-600' : 
-                          index < 6 ? 'bg-blue-500' : 'bg-red-500'
-                        }`}>
-                          <div className="absolute inset-0 rounded-full opacity-30 group-hover:opacity-50 animate-ping" style={{
-                            backgroundColor: milestone.future ? '#ef4444' : index < 6 ? '#3b82f6' : '#ef4444'
-                          }}></div>
-                        </div>
-                      </div>
-
-                      {/* Milestone Text Box */}
-                      <div className={`absolute ${index % 2 === 0 ? 'top-8' : 'bottom-8'} left-1/2 transform -translate-x-1/2 group-hover:scale-105 transition-all duration-300`}>
-                        <div className={`max-w-[180px] text-center rounded-2xl p-4 shadow-lg border backdrop-blur-sm ${
-                          milestone.future 
-                            ? 'bg-gradient-to-br from-red-50 to-red-100 border-red-200' 
-                            : 'bg-white/90 border-slate-200'
-                        } group-hover:shadow-xl`}>
-                          <div className="text-lg mb-1">{milestone.icon}</div>
-                          <div className={`text-lg font-bold mb-2 ${milestone.future ? 'text-red-600' : 'text-slate-800'}`}>
-                            {milestone.year}
+              {/* Desktop Horizontal Timeline */}
+              <div className="hidden lg:block">
+                {/* Timeline Container with proper spacing */}
+                <div className="relative pb-16">
+                  {/* Horizontal Timeline Line */}
+                  <div className="absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-600 to-red-500 rounded-full shadow-lg"></div>
+                  <div className="absolute top-19 left-0 right-0 h-3 bg-gradient-to-r from-blue-500/20 via-blue-600/20 to-red-500/20 rounded-full blur-sm"></div>
+                  
+                  {/* Timeline Milestones */}
+                  <div className="grid grid-cols-9 gap-2 relative">
+                    {[
+                      { year: "2000", text: "Foundation with digital factory vision", Icon: Building2, status: "past" },
+                      { year: "2007", text: "First plant fully digitalized", Icon: Factory, status: "past" },
+                      { year: "2013", text: "18 plants connected in network", Icon: Network, status: "past" },
+                      { year: "2016", text: "Scaled to 70 plants globally", Icon: TrendingUp, status: "past" },
+                      { year: "2019", text: "Milestone of 100+ plants achieved", Icon: Target, status: "past" },
+                      { year: "2023", text: "Foundation for Autonomous factories", Icon: Bot, status: "current" },
+                      { year: "2025", text: "Milestone of 300+ plants achieved", Icon: Zap, status: "current" },
+                      { year: "2026", text: "Projected First Fully Autonomous Plant", Icon: RocketIcon, status: "future" },
+                      { year: "2030", text: "1000 Autonomous Plants", Icon: Sparkles, status: "future" },
+                    ].map((milestone, index) => (
+                      <div key={milestone.year} className="relative group">
+                        {/* Milestone Point */}
+                        <div className="flex justify-center relative z-10">
+                          <div className={`w-10 h-10 rounded-full shadow-lg border-4 border-white relative group-hover:scale-110 transition-all duration-300 flex items-center justify-center ${
+                            milestone.status === 'future' 
+                              ? 'bg-gradient-to-br from-red-500 to-red-600' 
+                              : milestone.status === 'current'
+                              ? 'bg-gradient-to-br from-blue-500 to-blue-600'
+                              : 'bg-gradient-to-br from-slate-500 to-slate-600'
+                          }`}>
+                            <milestone.Icon className="w-5 h-5 text-white" />
+                            <div className={`absolute inset-0 rounded-full animate-ping opacity-30 ${
+                              milestone.status === 'future' ? 'bg-red-400' : 
+                              milestone.status === 'current' ? 'bg-blue-400' : 'bg-slate-400'
+                            }`}></div>
                           </div>
-                          <p className={`text-xs leading-relaxed ${milestone.future ? 'text-red-700' : 'text-slate-600'}`}>
-                            {milestone.text}
-                          </p>
+                        </div>
+
+                        {/* Milestone Card - Alternating Above/Below */}
+                        <div className={`absolute left-1/2 transform -translate-x-1/2 w-40 group-hover:scale-105 transition-all duration-300 ${
+                          index % 2 === 0 ? '-top-32' : 'top-16'
+                        }`}>
+                          <div className={`rounded-2xl p-4 shadow-xl border backdrop-blur-sm group-hover:shadow-2xl ${
+                            milestone.status === 'future' 
+                              ? 'bg-gradient-to-br from-red-50 to-red-100/80 border-red-200' 
+                              : milestone.status === 'current'
+                              ? 'bg-gradient-to-br from-blue-50 to-blue-100/80 border-blue-200'
+                              : 'bg-white/95 border-slate-200'
+                          }`}>
+                            {/* Connector Line */}
+                            <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-6 ${
+                              milestone.status === 'future' ? 'bg-red-300' : 
+                              milestone.status === 'current' ? 'bg-blue-300' : 'bg-slate-300'
+                            } ${index % 2 === 0 ? 'top-full' : 'bottom-full'}`}></div>
+                            
+                            <div className="text-center">
+                              <div className={`text-lg font-bold mb-2 ${
+                                milestone.status === 'future' ? 'text-red-600' : 
+                                milestone.status === 'current' ? 'text-blue-600' : 'text-slate-800'
+                              }`}>
+                                {milestone.year}
+                              </div>
+                              <p className={`text-xs leading-relaxed ${
+                                milestone.status === 'future' ? 'text-red-700' : 
+                                milestone.status === 'current' ? 'text-blue-700' : 'text-slate-600'
+                              }`}>
+                                {milestone.text}
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* Mobile Timeline */}
-              <div className="md:hidden space-y-6">
+              {/* Mobile Timeline - Vertical Stack */}
+              <div className="lg:hidden space-y-6">
                 {[
-                  { year: "2000", text: "Foundation with digital factory vision", icon: "🏗️" },
-                  { year: "2007", text: "First plant fully digitalized", icon: "🏭" },
-                  { year: "2013", text: "18 plants connected in network", icon: "🌐" },
-                  { year: "2016", text: "Scaled to 70 plants globally", icon: "📈" },
-                  { year: "2019", text: "Milestone of 100+ plants achieved", icon: "🎯" },
-                  { year: "2023", text: "Foundation for Autonomous factories", icon: "🤖" },
-                  { year: "2025", text: "Milestone of 300+ plants achieved", icon: "⚡" },
-                  { year: "2026", text: "Projected First Fully Autonomous Plant", icon: "🚀", future: true },
-                  { year: "2030", text: "1000 Autonomous Plants", icon: "✨", future: true },
+                  { year: "2000", text: "Foundation with digital factory vision", Icon: Building2, status: "past" },
+                  { year: "2007", text: "First plant fully digitalized", Icon: Factory, status: "past" },
+                  { year: "2013", text: "18 plants connected in network", Icon: Network, status: "past" },
+                  { year: "2016", text: "Scaled to 70 plants globally", Icon: TrendingUp, status: "past" },
+                  { year: "2019", text: "Milestone of 100+ plants achieved", Icon: Target, status: "past" },
+                  { year: "2023", text: "Foundation for Autonomous factories", Icon: Bot, status: "current" },
+                  { year: "2025", text: "Milestone of 300+ plants achieved", Icon: Zap, status: "current" },
+                  { year: "2026", text: "Projected First Fully Autonomous Plant", Icon: RocketIcon, status: "future" },
+                  { year: "2030", text: "1000 Autonomous Plants", Icon: Sparkles, status: "future" },
                 ].map((milestone, index) => (
                   <div key={milestone.year} className="flex items-center group">
-                    <div className="flex-shrink-0 mr-4">
+                    <div className="flex-shrink-0 mr-6">
                       <div className="relative">
-                        <div className={`w-6 h-6 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300 ${
-                          milestone.future ? 'bg-gradient-to-r from-red-500 to-red-600' : 
-                          index < 6 ? 'bg-blue-500' : 'bg-red-500'
-                        }`}></div>
-                        <div className={`absolute inset-0 w-6 h-6 rounded-full animate-ping opacity-30 ${
-                          milestone.future ? 'bg-red-400' : index < 6 ? 'bg-blue-400' : 'bg-red-400'
-                        }`}></div>
-                      </div>
-                      {index < 8 && (
-                        <div className="w-1 h-8 bg-gradient-to-b from-slate-300 to-blue-400 mt-2 mx-auto rounded-full"></div>
-                      )}
-                    </div>
-                    <div className={`flex-1 rounded-2xl p-4 shadow-lg border backdrop-blur-sm group-hover:shadow-xl group-hover:scale-[1.02] transition-all duration-300 ${
-                      milestone.future 
-                        ? 'bg-gradient-to-br from-red-50 to-red-100 border-red-200' 
-                        : 'bg-white/90 border-slate-200'
-                    }`}>
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-lg">{milestone.icon}</span>
-                        <div className={`text-lg font-bold ${milestone.future ? 'text-red-600' : 'text-slate-800'}`}>
-                          {milestone.year}
+                        <div className={`w-12 h-12 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-all duration-300 flex items-center justify-center ${
+                          milestone.status === 'future' 
+                            ? 'bg-gradient-to-br from-red-500 to-red-600' 
+                            : milestone.status === 'current'
+                            ? 'bg-gradient-to-br from-blue-500 to-blue-600'
+                            : 'bg-gradient-to-br from-slate-500 to-slate-600'
+                        }`}>
+                          <milestone.Icon className="w-6 h-6 text-white" />
                         </div>
+                        {index < 8 && (
+                          <div className="w-1 h-8 bg-gradient-to-b from-slate-300 to-blue-400 mt-2 mx-auto rounded-full"></div>
+                        )}
                       </div>
-                      <p className={`text-sm leading-relaxed ${milestone.future ? 'text-red-700' : 'text-slate-600'}`}>
+                    </div>
+                    <div className={`flex-1 rounded-2xl p-5 shadow-lg border backdrop-blur-sm group-hover:shadow-xl group-hover:scale-[1.02] transition-all duration-300 ${
+                      milestone.status === 'future' 
+                        ? 'bg-gradient-to-br from-red-50 to-red-100/80 border-red-200' 
+                        : milestone.status === 'current'
+                        ? 'bg-gradient-to-br from-blue-50 to-blue-100/80 border-blue-200'
+                        : 'bg-white/95 border-slate-200'
+                    }`}>
+                      <div className={`text-xl font-bold mb-2 ${
+                        milestone.status === 'future' ? 'text-red-600' : 
+                        milestone.status === 'current' ? 'text-blue-600' : 'text-slate-800'
+                      }`}>
+                        {milestone.year}
+                      </div>
+                      <p className={`text-sm leading-relaxed ${
+                        milestone.status === 'future' ? 'text-red-700' : 
+                        milestone.status === 'current' ? 'text-blue-700' : 'text-slate-600'
+                      }`}>
                         {milestone.text}
                       </p>
                     </div>
