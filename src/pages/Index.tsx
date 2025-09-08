@@ -306,6 +306,14 @@ const Index = () => {
 
       {/* Vegam Journey Section - Enhanced Interactive Timeline */}
       <section className="vegam-journey section-padding bg-gradient-to-br from-background via-muted/30 to-accent/5 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png" 
+            alt="Manufacturing evolution background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 opacity-40"></div>
         <div className="container mx-auto px-6 lg:px-8 relative">
           <div className="text-center mb-12 md:mb-16">
@@ -431,12 +439,6 @@ const Index = () => {
               .vj-foundation-card:hover {
                 filter: drop-shadow(0 8px 20px hsl(var(--primary) / 0.25));
               }
-              .manufacturing-image {
-                transition: all 0.3s ease;
-              }
-              .manufacturing-image:hover {
-                filter: drop-shadow(0 12px 30px hsl(var(--foreground) / 0.2)) brightness(1.05);
-              }
               /* Ensure layering */
               .vj-layer-line { isolation: isolate; z-index: 1; }
               .vj-layer-nodes { isolation: isolate; z-index: 2; }
@@ -482,16 +484,7 @@ const Index = () => {
                     <feMergeNode in="SourceGraphic" />
                   </feMerge>
                 </filter>
-                <clipPath id="imageClip">
-                  <rect x="20" y="20" width="540" height="216" rx="16" />
-                </clipPath>
               </defs>
-
-              {/* Manufacturing Evolution Image - Top Left (0.8x size) */}
-              <image href="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png" x="20" y="20" width="540" height="216" clipPath="url(#imageClip)" className="manufacturing-image" style={{
-              filter: 'drop-shadow(0 8px 25px hsl(var(--foreground) / 0.15))'
-            }} />
-              <rect x="20" y="20" width="540" height="216" rx="16" fill="none" stroke="hsl(var(--border))" strokeWidth="2" opacity="0.3" />
 
               {/* diagonal growth line (behind everything) - Extended with arrow at top */}
               <g className="vj-layer-line">
