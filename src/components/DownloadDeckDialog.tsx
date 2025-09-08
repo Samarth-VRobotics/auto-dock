@@ -32,18 +32,40 @@ const DownloadDeckDialog = ({ children }: DownloadDeckDialogProps) => {
       }
 
       // Trigger PDF download
-      const pdfUrl = 'https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Vegam%20Robotic%20brochure%20(1).pdf';
-      const link = document.createElement('a');
-      link.href = pdfUrl;
-      link.download = 'Vegam-Robotics-Brochure.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      try {
+        const pdfUrl = 'https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Vegam%20Robotic%20brochure%20(1).pdf';
+        
+        // Try direct download first
+        const link = document.createElement('a');
+        link.href = pdfUrl;
+        link.download = 'Vegam-Robotics-Brochure.pdf';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        
+        // Temporarily add to DOM for better browser compatibility
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Fallback: open in new tab if download doesn't work
+        setTimeout(() => {
+          window.open(pdfUrl, '_blank');
+        }, 100);
 
-      toast({
-        title: "Success!",
-        description: "Your download will begin shortly.",
-      });
+        toast({
+          title: "Success!",
+          description: "Your download will begin shortly. If it doesn't start automatically, check your downloads folder or popup blocker.",
+        });
+      } catch (downloadError) {
+        console.error('Download error:', downloadError);
+        // Fallback to opening in new tab
+        window.open('https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Vegam%20Robotic%20brochure%20(1).pdf', '_blank');
+        
+        toast({
+          title: "Download initiated",
+          description: "The PDF has been opened in a new tab. You can save it from there.",
+        });
+      }
 
       // Reset form and close dialog
       setName("");
