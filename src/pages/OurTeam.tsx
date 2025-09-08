@@ -346,7 +346,7 @@ const OurTeam = () => {
                   name: "Vishwanath Garagad",
                   initials: "VG",
                   role: "Software Architect",
-                  image: "/lovable-uploads/e6dcb3fb-9309-445f-b034-b0c52e068181.png"
+                  image: "/lovable-uploads/d86864c8-a1db-485e-ba3c-628a4d873a12.png"
                 }, {
                   name: "Vijaylakshmi",
                   initials: "VL",
@@ -365,7 +365,8 @@ const OurTeam = () => {
                 }, {
                   name: "Shridhar",
                   initials: "SH",
-                  role: "Senior Software Engineer"
+                  role: "Senior Software Engineer",
+                  image: "/lovable-uploads/e6dcb3fb-9309-445f-b034-b0c52e068181.png"
                 }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
                       {member.image ? (
                         <Avatar className="w-24 h-24 mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
