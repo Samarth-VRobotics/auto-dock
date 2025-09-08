@@ -471,7 +471,8 @@ const OurTeam = () => {
                 }, {
                   name: "Varadharajan N M",
                   initials: "VN",
-                  role: "Process Engineer"
+                  role: "Process Engineer",
+                  image: "/lovable-uploads/27f82965-f871-462e-9d19-dfe00fc021bd.png"
                 }, {
                   name: "Sachin Vishwakarma",
                   initials: "SV",
@@ -485,11 +486,13 @@ const OurTeam = () => {
                 }, {
                   name: "Vishweshwar Kapse",
                   initials: "VK",
-                  role: "System Administrator"
+                  role: "System Administrator",
+                  image: "/lovable-uploads/9a4c8e4c-3359-4f38-982c-675544f01a4a.png"
                 }, {
                   name: "Sreenivasa Yarram",
                   initials: "SY",
-                  role: "Database Engineer"
+                  role: "Database Engineer",
+                  image: "/lovable-uploads/1ef3df60-aed7-4450-b3be-a92ffd78423c.png"
                 }, {
                   name: "Sirajudheen NH",
                   initials: "SN",
@@ -497,7 +500,8 @@ const OurTeam = () => {
                 }, {
                   name: "Sushin C",
                   initials: "SC",
-                  role: "DevOps Engineer"
+                  role: "DevOps Engineer",
+                  image: "/lovable-uploads/deb7b8e5-9c2d-4e19-bead-676533360f9d.png"
                 }, {
                   name: "Ramesh Kumar",
                   initials: "RK",
