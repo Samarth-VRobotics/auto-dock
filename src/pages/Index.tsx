@@ -319,9 +319,8 @@ const Index = () => {
           </div>
 
           <div className="timeline-container relative max-w-6xl mx-auto" style={{
-          paddingRight: 'min(8vw, 140px)',
-          paddingLeft: 'min(4vw, 80px)',
-          paddingBottom: 'min(16vh, 200px)',
+          paddingRight: 'min(8vw, 120px)',
+          paddingBottom: 'min(14vh, 160px)',
           overflow: 'visible'
         }}>
             <style>{`
@@ -513,7 +512,7 @@ const Index = () => {
                 .timeline-container { padding-bottom: min(15vh, 170px); }
               }
             `}</style>
-            <svg className="vj-svg" viewBox="0 0 1400 800" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
+            <svg className="vj-svg" viewBox="0 0 1360 600" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
               <defs>
                 <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="hsl(var(--destructive))" />
@@ -553,11 +552,11 @@ const Index = () => {
                   <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
                   
                   {/* Message card - drops downward */}
-                  <g className="vj-card" transform="translate(-140,43)" id="milestone-2000">
-                    <rect width={280} height={80} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={14} y={30}>
-                      <tspan x="14" dy="0" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">Foundation with digital</tspan>
-                      <tspan x="14" dy="18" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">factory vision</tspan>
+                  <g className="vj-card" transform="translate(-140,35)" id="milestone-2000">
+                    <rect width={280} height={55} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={14} y={25}>
+                      <tspan x="14" dy="0" fontSize="18" fontWeight="700" fill="hsl(var(--foreground))">2000</tspan>
+                      <tspan x="14" dy="20" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Foundation with digital factory vision</tspan>
                     </text>
                   </g>
                 </g>
@@ -569,15 +568,15 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
                   
-                  {/* Pointer from node to message box - alternated position above */}
-                  <polygon className="vj-pointer" points="0,-26 -8,-35 8,-35" transform="translate(0,0)"></polygon>
+                  {/* Pointer from node to message box */}
+                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
                   
-                  {/* Message card - drops upward for alternation */}
-                  <g className="vj-card" transform="translate(-140,-123)" id="milestone-2007">
-                    <rect width={280} height={80} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={14} y={30}>
-                      <tspan x="14" dy="0" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">First plant fully</tspan>
-                      <tspan x="14" dy="18" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">digitalized</tspan>
+                  {/* Message card - drops downward */}
+                  <g className="vj-card" transform="translate(-120,35)" id="milestone-2007">
+                    <rect width={240} height={55} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={14} y={25}>
+                      <tspan x="14" dy="0" fontSize="18" fontWeight="700" fill="hsl(var(--foreground))">2007</tspan>
+                      <tspan x="14" dy="20" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">First plant fully digitalized</tspan>
                     </text>
                   </g>
                 </g>
@@ -593,11 +592,11 @@ const Index = () => {
                   <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
                   
                   {/* Message card - drops downward */}
-                  <g className="vj-card" transform="translate(-140,43)" id="milestone-2013">
-                    <rect width={280} height={80} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(-140,35)" id="milestone-2013">
+                    <rect width={280} height={55} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))"><tspan fontWeight="700">18</tspan> plants connected</tspan>
-                      <tspan x="14" dy="18" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">in network</tspan>
+                      <tspan x="14" dy="0" fontSize="18" fontWeight="700" fill="hsl(var(--foreground))">2013</tspan>
+                      <tspan x="14" dy="20" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))"><tspan fontWeight="700">18</tspan> plants connected in network</tspan>
                     </text>
                   </g>
                 </g>
@@ -609,15 +608,15 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
                   
-                  {/* Pointer from node to message box - alternated position above */}
-                  <polygon className="vj-pointer" points="0,-26 -8,-35 8,-35" transform="translate(0,0)"></polygon>
+                  {/* Pointer from node to message box */}
+                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
                   
-                  {/* Message card - drops upward for alternation */}
-                  <g className="vj-card" transform="translate(-140,-123)" id="milestone-2016">
-                    <rect width={280} height={80} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  {/* Message card - drops downward */}
+                  <g className="vj-card" transform="translate(-130,35)" id="milestone-2016">
+                    <rect width={260} height={55} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">Scaled to <tspan fontWeight="700">70</tspan> plants</tspan>
-                      <tspan x="14" dy="18" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">globally</tspan>
+                      <tspan x="14" dy="0" fontSize="18" fontWeight="700" fill="hsl(var(--foreground))">2016</tspan>
+                      <tspan x="14" dy="20" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Scaled to <tspan fontWeight="700">70</tspan> plants globally</tspan>
                     </text>
                   </g>
                 </g>
@@ -633,11 +632,11 @@ const Index = () => {
                   <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
                   
                   {/* Message card - drops downward */}
-                  <g className="vj-card" transform="translate(-140,43)" id="milestone-2019">
-                    <rect width={280} height={80} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(-150,35)" id="milestone-2019">
+                    <rect width={300} height={55} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">Milestone of</tspan>
-                      <tspan x="14" dy="18" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))"><tspan fontWeight="700">100+</tspan> plants achieved</tspan>
+                      <tspan x="14" dy="0" fontSize="18" fontWeight="700" fill="hsl(var(--foreground))">2019</tspan>
+                      <tspan x="14" dy="20" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Milestone of <tspan fontWeight="700">100+</tspan> plants achieved</tspan>
                     </text>
                   </g>
                 </g>
@@ -649,15 +648,15 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
                   
-                  {/* Pointer from node to message box - alternated position above */}
-                  <polygon className="vj-pointer" points="0,-26 -8,-35 8,-35" transform="translate(0,0)"></polygon>
+                  {/* Pointer from node to message box */}
+                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
                   
-                  {/* Message card - drops upward for alternation */}
-                  <g className="vj-card" transform="translate(-140,-123)" id="milestone-2023">
-                    <rect width={280} height={80} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  {/* Message card - drops downward */}
+                  <g className="vj-card" transform="translate(-150,35)" id="milestone-2023">
+                    <rect width={300} height={55} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">Foundation for</tspan>
-                      <tspan x="14" dy="18" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">Autonomous factories</tspan>
+                      <tspan x="14" dy="0" fontSize="18" fontWeight="700" fill="hsl(var(--foreground))">2023</tspan>
+                      <tspan x="14" dy="20" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Foundation for Autonomous factories</tspan>
                     </text>
                   </g>
                 </g>
@@ -673,11 +672,11 @@ const Index = () => {
                   <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
                   
                   {/* Message card - drops downward */}
-                  <g className="vj-card" transform="translate(-140,43)" id="milestone-2025">
-                    <rect width={280} height={80} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(-160,35)" id="milestone-2025">
+                    <rect width={320} height={55} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">Milestone of</tspan>
-                      <tspan x="14" dy="18" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))"><tspan fontWeight="700">300+</tspan> plants achieved</tspan>
+                      <tspan x="14" dy="0" fontSize="18" fontWeight="700" fill="hsl(var(--foreground))">2025</tspan>
+                      <tspan x="14" dy="20" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Milestone of <tspan fontWeight="700">300+</tspan> plants achieved</tspan>
                     </text>
                   </g>
                 </g>
@@ -689,15 +688,15 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
                   
-                  {/* Pointer from node to message box - alternated position above */}
-                  <polygon className="vj-pointer" points="0,-26 -8,-35 8,-35" transform="translate(0,0)"></polygon>
+                  {/* Pointer from node to message box */}
+                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
                   
-                  {/* Message card - drops upward for alternation */}
-                  <g className="vj-card" transform="translate(-140,-123)" id="milestone-2026">
-                    <rect width={280} height={80} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
+                  {/* Message card - drops downward */}
+                  <g className="vj-card" transform="translate(-170,35)" id="milestone-2026">
+                    <rect width={340} height={55} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">Projected First Fully</tspan>
-                      <tspan x="14" dy="18" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">Autonomous Plant</tspan>
+                      <tspan x="14" dy="0" fontSize="18" fontWeight="700" fill="hsl(var(--destructive))">2026</tspan>
+                      <tspan x="14" dy="20" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))">Projected First Fully Autonomous Plant</tspan>
                     </text>
                   </g>
                 </g>
@@ -713,11 +712,11 @@ const Index = () => {
                   <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
                   
                   {/* Message card - drops downward */}
-                  <g className="vj-card" transform="translate(-140,43)" id="milestone-2030">
-                    <rect width={280} height={80} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(-140,35)" id="milestone-2030">
+                    <rect width={280} height={55} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
-                      <tspan x="14" dy="0" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))"><tspan fontWeight="700">1000</tspan> Autonomous</tspan>
-                      <tspan x="14" dy="18" fontSize="13" fontWeight="500" fill="hsl(var(--foreground))">Plants</tspan>
+                      <tspan x="14" dy="0" fontSize="18" fontWeight="700" fill="hsl(var(--destructive))">2030</tspan>
+                      <tspan x="14" dy="20" fontSize="14" fontWeight="600" fill="hsl(var(--foreground))"><tspan fontWeight="700">1000</tspan> Autonomous Plants</tspan>
                     </text>
                   </g>
                 </g>
