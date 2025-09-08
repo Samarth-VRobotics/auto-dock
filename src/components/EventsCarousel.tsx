@@ -220,8 +220,8 @@ const EventsCarousel = () => {
         </CarouselContent>
         
         {/* Navigation arrows */}
-        <CarouselPrevious className="left-4 w-16 h-16 bg-white/20 hover:bg-white/30 border-white/30 backdrop-blur-sm" />
-        <CarouselNext className="right-4 w-16 h-16 bg-white/20 hover:bg-white/30 border-white/30 backdrop-blur-sm" />
+        <CarouselPrevious className="left-4 w-16 h-16 bg-white/20 hover:bg-white/30 border-white/30" />
+        <CarouselNext className="right-4 w-16 h-16 bg-white/20 hover:bg-white/30 border-white/30" />
       </Carousel>
 
       {/* Dots indicator */}
