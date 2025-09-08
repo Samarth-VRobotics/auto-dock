@@ -329,21 +329,30 @@ const Index = () => {
                 display: block; 
                 filter: drop-shadow(0 4px 20px hsl(var(--primary) / 0.1));
               }
-              .vj-year { 
-                font: 700 18px/1.2 Inter, system-ui; 
-                fill: hsl(var(--foreground)); 
-                transition: all 0.3s ease;
-              }
-              .vj-year-visible {
-                font: 600 16px/1.2 Inter, system-ui;
-                fill: hsl(var(--muted-foreground));
-                transition: all 0.3s ease;
-              }
-              .vj-cap { 
-                font: 500 14px/1.45 Inter, system-ui; 
-                fill: hsl(var(--muted-foreground)); 
-                transition: all 0.3s ease;
-              }
+               .vj-year { 
+                 font: 800 20px/1.2 Inter, system-ui; 
+                 fill: hsl(var(--foreground)); 
+                 transition: all 0.3s ease;
+                 text-anchor: middle;
+                 font-weight: 800;
+                 letter-spacing: 0.5px;
+               }
+               .vj-year-visible {
+                 font: 700 18px/1.2 Inter, system-ui;
+                 fill: hsl(var(--foreground));
+                 transition: all 0.3s ease;
+                 text-anchor: middle;
+                 font-weight: 700;
+                 letter-spacing: 0.5px;
+               }
+               .vj-cap { 
+                 font: 600 16px/1.4 Inter, system-ui; 
+                 fill: hsl(var(--foreground)); 
+                 transition: all 0.3s ease;
+                 text-anchor: start;
+                 font-weight: 600;
+                 letter-spacing: 0.2px;
+               }
               .vj-cap strong { font-weight: 700; }
               .vj-node-ring { 
                 fill: hsl(var(--background)); 
