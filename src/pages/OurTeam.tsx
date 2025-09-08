@@ -432,7 +432,7 @@ const OurTeam = () => {
                   name: "Shreeja M S",
                   initials: "SMS",
                   role: "Senior Functional Consultant",
-                  image: "/lovable-uploads/aaba0cb6-b9cd-4fca-95c1-3cfa2ebf16bc.png"
+                  image: "/lovable-uploads/e50606a0-da85-43fa-ba84-e9fa043c459b.png"
                 }, {
                   name: "Ann Maria Jess Kurian",
                   initials: "AJ",
@@ -501,7 +501,7 @@ const OurTeam = () => {
                   name: "Sirajudheen NH",
                   initials: "SN",
                   role: "UI/UX Designer",
-                  image: "/lovable-uploads/e50606a0-da85-43fa-ba84-e9fa043c459b.png"
+                  image: "/lovable-uploads/aaba0cb6-b9cd-4fca-95c1-3cfa2ebf16bc.png"
                 }, {
                   name: "Sushin C",
                   initials: "SC",
