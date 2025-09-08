@@ -622,7 +622,7 @@ const Index = () => {
             </svg>
 
             {/* Our Strengths Panel - Bottom Right Position */}
-            <div className="absolute bottom-6 right-6 bg-card/95 backdrop-blur-sm rounded-xl p-6 border shadow-xl max-w-xs">
+            <div className="absolute bottom-2 right-2 bg-card/95 backdrop-blur-sm rounded-xl p-6 border shadow-xl max-w-xs">
               <h3 className="text-xl font-bold text-foreground mb-4 text-center">Our Strengths</h3>
               
               <div className="space-y-4">
