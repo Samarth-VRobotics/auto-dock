@@ -441,11 +441,13 @@ const OurTeam = () => {
                 }, {
                   name: "Kanakaraddi C Radder",
                   initials: "KR",
-                  role: "Senior Functional Consultant"
+                  role: "Senior Functional Consultant",
+                  image: "/lovable-uploads/e410257f-58da-483b-b232-679ecee0a73d.png"
                 }, {
                   name: "Pramod BP",
                   initials: "PB",
-                  role: "Lead Functional Consultant"
+                  role: "Lead Functional Consultant",
+                  image: "/lovable-uploads/9ed852e5-407a-4b29-8eae-29f48055e52c.png"
                 }, {
                   name: "Subha J",
                   initials: "SJ",
@@ -463,11 +465,13 @@ const OurTeam = () => {
                 }, {
                   name: "Venkatesh HS",
                   initials: "VH",
-                  role: "Senior Consultant"
+                  role: "Senior Consultant",
+                  image: "/lovable-uploads/79c22532-d762-481d-a996-4f13deb1878d.png"
                 }, {
                   name: "Tunga Santosh Kumar Reddy",
                   initials: "TSR",
-                  role: "Business Analyst"
+                  role: "Business Analyst",
+                  image: "/lovable-uploads/3d63daaa-3e71-42b1-af1b-f18016227d10.png"
                 }, {
                   name: "Varadharajan N M",
                   initials: "VN",
@@ -496,7 +500,8 @@ const OurTeam = () => {
                 }, {
                   name: "Sirajudheen NH",
                   initials: "SN",
-                  role: "UI/UX Designer"
+                  role: "UI/UX Designer",
+                  image: "/lovable-uploads/e50606a0-da85-43fa-ba84-e9fa043c459b.png"
                 }, {
                   name: "Sushin C",
                   initials: "SC",
