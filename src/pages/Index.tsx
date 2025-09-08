@@ -456,38 +456,38 @@ const Index = () => {
               .vj-layer-line { isolation: isolate; z-index: 1; }
               .vj-layer-nodes { isolation: isolate; z-index: 2; }
               
-                 /* Mobile responsive adjustments */
-                 @media (max-width: 768px) {
-                   .vj-svg { padding: 40px 25px 140px 25px; transform: scale(0.8); transform-origin: center top; }
-                   .vj-year { font-size: 42px; }
-                   .vj-year-visible { font-size: 39px; font-weight: 700; }
+                  /* Mobile responsive adjustments */
+                  @media (max-width: 768px) {
+                    .vj-svg { padding: 40px 25px 140px 25px; transform: scale(0.8); transform-origin: center top; }
+                    .vj-year { font-size: 42px; }
+                    .vj-year-visible { font-size: 39px; font-weight: 700; }
+                    .vj-cap { font-size: 27px; font-weight: 600; }
+                    .vj-node { r: 54; }
+                    .vj-node-ring { r: 66; }
+                    .vj-card rect { height: auto; min-height: 120px; rx: 30; }
+                    .timeline-container { padding-right: 0; margin: 0 -20px; padding-bottom: min(30vh, 320px); }
+                    .vj-strengths-panel { transform: translate(500, 350) scale(0.6); }
+                  }
+               
+                 /* Tablet responsive adjustments */
+                 @media (min-width: 769px) and (max-width: 1024px) {
+                   .vj-svg { padding: 40px 30px 120px 30px; transform: scale(0.75); transform-origin: center top; }
+                   .vj-year { font-size: 39px; }
+                   .vj-year-visible { font-size: 36px; font-weight: 700; }
                    .vj-cap { font-size: 27px; font-weight: 600; }
-                   .vj-node { r: 54; }
-                   .vj-node-ring { r: 66; }
-                   .vj-card rect { height: auto; min-height: 120px; rx: 30; }
-                   .timeline-container { padding-right: 0; margin: 0 -20px; padding-bottom: min(30vh, 320px); }
-                   .vj-strengths-panel { transform: translate(600, 400) scale(0.6); }
+                   .vj-node { r: 51; }
+                   .vj-node-ring { r: 63; }
+                   .vj-card rect { height: auto; min-height: 113px; rx: 30; }
+                   .timeline-container { padding-bottom: min(25vh, 280px); }
+                   .vj-strengths-panel { transform: translate(700, 450) scale(0.8); }
                  }
                
-                /* Tablet responsive adjustments */
-                @media (min-width: 769px) and (max-width: 1024px) {
-                  .vj-svg { padding: 40px 30px 120px 30px; transform: scale(0.75); transform-origin: center top; }
-                  .vj-year { font-size: 39px; }
-                  .vj-year-visible { font-size: 36px; font-weight: 700; }
-                  .vj-cap { font-size: 27px; font-weight: 600; }
-                  .vj-node { r: 51; }
-                  .vj-node-ring { r: 63; }
-                  .vj-card rect { height: auto; min-height: 113px; rx: 30; }
-                  .timeline-container { padding-bottom: min(25vh, 280px); }
-                  .vj-strengths-panel { transform: translate(800, 550) scale(0.8); }
-                }
-               
-                /* Desktop responsive adjustments */
-                @media (min-width: 1025px) {
-                  .vj-svg { transform: scale(0.7); transform-origin: center top; }
-                  .timeline-container { padding-bottom: min(20vh, 250px); }
-                  .vj-strengths-panel { transform: translate(900, 600) scale(0.9); }
-                }
+                 /* Desktop responsive adjustments */
+                 @media (min-width: 1025px) {
+                   .vj-svg { transform: scale(0.7); transform-origin: center top; }
+                   .timeline-container { padding-bottom: min(20vh, 250px); }
+                   .vj-strengths-panel { transform: translate(800, 500) scale(0.9); }
+                 }
             `}</style>
             <svg className="vj-svg" viewBox="0 0 1700 1100" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
               <defs>
@@ -509,10 +509,10 @@ const Index = () => {
                 </filter>
               </defs>
 
-              {/* diagonal growth line (behind everything) - Extended with arrow at top */}
-              <g className="vj-layer-line">
-                <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 100 520 L 1350 50" />
-              </g>
+               {/* diagonal growth line (behind everything) - Extended with arrow at top */}
+               <g className="vj-layer-line">
+                 <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 100 520 L 1500 30" />
+               </g>
 
               {/* NODES + CARDS (above the line) */}
               <g className="vj-layer-nodes" aria-label="timeline milestones" tabIndex={-1}>
@@ -662,8 +662,8 @@ const Index = () => {
                     </g>
                  </g>
 
-                  {/* Our Strengths Panel - Integrated into SVG */}
-                  <g className="vj-strengths-panel" transform="translate(1000,700)" aria-label="Our company strengths">
+                   {/* Our Strengths Panel - Integrated into SVG */}
+                   <g className="vj-strengths-panel" transform="translate(900,550)" aria-label="Our company strengths">
                     {/* Panel background */}
                     <rect width="640" height="360" fill="hsl(var(--card) / 0.95)" rx="20" stroke="hsl(var(--border))" strokeWidth="3" 
                           filter="drop-shadow(0 15px 40px hsl(var(--foreground) / 0.15))" />
