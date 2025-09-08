@@ -493,7 +493,7 @@ const Index = () => {
 
               {/* diagonal growth line (behind everything) - Extended with arrow at top */}
               <g className="vj-layer-line">
-                <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 100 500 L 1300 60" />
+                <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 100 520 L 1350 50" />
               </g>
 
               {/* NODES + CARDS (above the line) */}
@@ -508,8 +508,8 @@ const Index = () => {
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2000</text>
                   
                   {/* Message card */}
-                  <g className="vj-card" transform="translate(-120,35)">
-                    <rect width={240} height={50} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(-140,35)">
+                    <rect width={280} height={55} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={12} y={30}>Foundation with digital factory vision</text>
                   </g>
                 </g>
@@ -521,9 +521,9 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
                   
-                  <g className="vj-card" transform="translate(24,-90)">
-                    <rect width={220} height={42} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={26}>First plant fully digitalized</text>
+                  <g className="vj-card" transform="translate(24,-95)">
+                    <rect width={240} height={50} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                    <text className="vj-cap" x={12} y={30}>First plant fully digitalized</text>
                   </g>
                 </g>
 
@@ -534,8 +534,8 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2013</text>
                   
-                  <g className="vj-card" transform="translate(-230,35)">
-                    <rect width={260} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(-250,35)">
+                    <rect width={280} height={55} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={12} y={30}><tspan fontWeight="700">18</tspan> plants connected in network</text>
                   </g>
                 </g>
@@ -547,8 +547,8 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
                   
-                  <g className="vj-card" transform="translate(24,-90)">
-                    <rect width={240} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(24,-95)">
+                    <rect width={260} height={55} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={12} y={30}>Scaled to <tspan fontWeight="700">70</tspan> plants globally</text>
                   </g>
                 </g>
@@ -560,8 +560,8 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2019</text>
                   
-                  <g className="vj-card" transform="translate(-240,35)">
-                    <rect width={270} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(-260,35)">
+                    <rect width={300} height={55} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={12} y={30}>Milestone of <tspan fontWeight="700">100+</tspan> plants achieved</text>
                   </g>
                 </g>
@@ -573,8 +573,8 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
                   
-                  <g className="vj-card" transform="translate(24,-90)">
-                    <rect width={270} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(24,-95)">
+                    <rect width={300} height={55} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={12} y={30}>Foundation for Autonomous factories</text>
                   </g>
                 </g>
@@ -586,8 +586,8 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2025</text>
                   
-                  <g className="vj-card" transform="translate(-260,35)">
-                    <rect width={290} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(-280,35)">
+                    <rect width={320} height={55} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={12} y={30}>Milestone of <tspan fontWeight="700">300+</tspan> plants achieved</text>
                   </g>
                 </g>
@@ -599,21 +599,21 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
                   
-                  <g className="vj-card" transform="translate(-340,-90)">
-                    <rect width={300} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(-360,-95)">
+                    <rect width={340} height={55} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={12} y={30}>Projected First Fully Autonomous Plant</text>
                   </g>
                 </g>
 
                 {/* 9) 2030 (future) */}
-                <g className="milestone" data-key="2030" transform="translate(1150,80)" tabIndex={0} aria-label="2030 — 1000 Autonomous Plants">
+                <g className="milestone" data-key="2030" transform="translate(1200,80)" tabIndex={0} aria-label="2030 — 1000 Autonomous Plants">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2030</text>
                   
-                  <g className="vj-card" transform="translate(-240,35)">
-                    <rect width={260} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
+                  <g className="vj-card" transform="translate(-260,35)">
+                    <rect width={280} height={55} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={12} y={30}><tspan fontWeight="700">1000</tspan> Autonomous Plants</text>
                   </g>
                 </g>
