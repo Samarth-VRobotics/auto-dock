@@ -337,14 +337,14 @@ const Index = () => {
                  font-weight: 800;
                  letter-spacing: 0.5px;
                }
-               .vj-year-visible {
-                 font: 700 18px/1.2 Inter, system-ui;
-                 fill: hsl(var(--foreground));
-                 transition: all 0.3s ease;
-                 text-anchor: middle;
-                 font-weight: 700;
-                 letter-spacing: 0.5px;
-               }
+                .vj-year-visible {
+                  font: 700 24px/1.2 Inter, system-ui;
+                  fill: hsl(var(--foreground));
+                  transition: all 0.3s ease;
+                  text-anchor: middle;
+                  font-weight: 700;
+                  letter-spacing: 0.5px;
+                }
                .vj-cap { 
                  font: 600 16px/1.4 Inter, system-ui; 
                  fill: hsl(var(--foreground)); 
