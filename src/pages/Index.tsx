@@ -614,28 +614,52 @@ const Index = () => {
                 </g>
               </g>
 
-              {/* Strong Foundation card - Bottom Right (Bigger) */}
-              <g className="vj-foundation-card" transform="translate(750,420)">
-                <rect width={430} height={150} fill="hsl(var(--muted))" rx={16} stroke="hsl(var(--border))" strokeWidth={2}></rect>
-                <text className="vj-year" x={20} y={40} style={{
-                fontSize: '20px'
-              }} fill="hsl(var(--primary))">
-                  STRONG FOUNDATION FOR INNOVATION
-                </text>
-                <circle cx={28} cy={65} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={72} style={{
-                fontSize: '16px'
-              }}>230+ dedicated R&D professionals in India</text>
-                <circle cx={28} cy={95} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={102} style={{
-                fontSize: '16px'
-              }}>ISO 27001 certified for information security</text>
-                <circle cx={28} cy={125} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={132} style={{
-                fontSize: '16px'
-              }}>ISO 9001 certified for quality management</text>
-              </g>
             </svg>
+          </div>
+
+          {/* Our Strengths Panel */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl md:text-4xl font-bold text-foreground">Our Strengths</h3>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              {/* Strength 1: R&D Professionals */}
+              <div className="bg-card rounded-xl p-6 border shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-3 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
+                  <Users className="w-6 h-6 text-primary mr-3" />
+                  <span className="text-2xl font-bold text-primary">230+</span>
+                </div>
+                <p className="text-foreground font-medium text-center">
+                  Dedicated R&D professionals in India
+                </p>
+              </div>
+
+              {/* Strength 2: ISO 27001 */}
+              <div className="bg-card rounded-xl p-6 border shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-3 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
+                  <Shield className="w-6 h-6 text-primary mr-3" />
+                  <span className="text-lg font-bold text-primary">ISO 27001</span>
+                </div>
+                <p className="text-foreground font-medium text-center">
+                  Certified for information security
+                </p>
+              </div>
+
+              {/* Strength 3: ISO 9001 */}
+              <div className="bg-card rounded-xl p-6 border shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-3 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
+                  <CheckCircle2 className="w-6 h-6 text-primary mr-3" />
+                  <span className="text-lg font-bold text-primary">ISO 9001</span>
+                </div>
+                <p className="text-foreground font-medium text-center">
+                  Certified for quality management
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
