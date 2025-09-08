@@ -347,7 +347,7 @@ const Index = () => {
               {/* Timeline Points */}
               <div className="flex justify-between items-center py-20 relative">
                 
-                {/* 2000 */}
+                {/* 2000 - Below */}
                 <div className="flex flex-col items-center group">
                   <div className="relative">
                     <div className="w-6 h-6 bg-red-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
@@ -359,7 +359,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2007 */}
+                {/* 2007 - Above */}
                 <div className="flex flex-col items-center group">
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-lg font-bold text-slate-800 mb-2">2007</div>
@@ -371,7 +371,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2013 */}
+                {/* 2013 - Below */}
                 <div className="flex flex-col items-center group">
                   <div className="relative">
                     <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
@@ -383,7 +383,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2016 */}
+                {/* 2016 - Above */}
                 <div className="flex flex-col items-center group">
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-lg font-bold text-slate-800 mb-2">2016</div>
@@ -395,7 +395,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2019 */}
+                {/* 2019 - Below */}
                 <div className="flex flex-col items-center group">
                   <div className="relative">
                     <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
@@ -407,7 +407,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2023 */}
+                {/* 2023 - Above */}
                 <div className="flex flex-col items-center group">
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-lg font-bold text-slate-800 mb-2">2023</div>
@@ -419,7 +419,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2025 */}
+                {/* 2025 - Below */}
                 <div className="flex flex-col items-center group">
                   <div className="relative">
                     <div className="w-6 h-6 bg-blue-600 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
@@ -431,7 +431,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2026 - Future */}
+                {/* 2026 - Above (Future) */}
                 <div className="flex flex-col items-center group">
                   <div className="bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-red-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <div className="text-lg font-bold text-red-600 mb-2">2026</div>
@@ -443,7 +443,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* 2030 - Future */}
+                {/* 2030 - Below (Future) */}
                 <div className="flex flex-col items-center group">
                   <div className="relative">
                     <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-xl border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
