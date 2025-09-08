@@ -611,49 +611,41 @@ const Index = () => {
               </g>
 
             </svg>
-          </div>
 
-          {/* Our Strengths Panel */}
-          <div className="mt-16 max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h3 className="text-3xl md:text-4xl font-bold text-foreground">Strong Foundation For Innovation</h3>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              {/* Strength 1: R&D Professionals */}
-              <div className="bg-card rounded-xl p-6 border shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <div className="flex items-center mb-4">
-                  <div className="w-3 h-3 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
-                  <Users className="w-6 h-6 text-primary mr-3" />
-                  <span className="text-2xl font-bold text-primary">230+</span>
+            {/* Our Strengths Panel - Bottom Right Position */}
+            <div className="absolute bottom-6 right-6 bg-card/95 backdrop-blur-sm rounded-xl p-6 border shadow-xl max-w-xs">
+              <h3 className="text-xl font-bold text-foreground mb-4 text-center">Our Strengths</h3>
+              
+              <div className="space-y-4">
+                {/* Strength 1: R&D Professionals */}
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
+                  <Users className="w-4 h-4 text-primary mr-2" />
+                  <div>
+                    <span className="text-lg font-bold text-primary">230+</span>
+                    <p className="text-xs text-foreground">R&D professionals in India</p>
+                  </div>
                 </div>
-                <p className="text-foreground font-medium text-center">
-                  Dedicated R&D professionals in India
-                </p>
-              </div>
 
-              {/* Strength 2: ISO 27001 */}
-              <div className="bg-card rounded-xl p-6 border shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <div className="flex items-center mb-4">
-                  <div className="w-3 h-3 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
-                  <Shield className="w-6 h-6 text-primary mr-3" />
-                  <span className="text-lg font-bold text-primary">ISO 27001</span>
+                {/* Strength 2: ISO 27001 */}
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
+                  <Shield className="w-4 h-4 text-primary mr-2" />
+                  <div>
+                    <span className="text-sm font-bold text-primary">ISO 27001</span>
+                    <p className="text-xs text-foreground">Information security certified</p>
+                  </div>
                 </div>
-                <p className="text-foreground font-medium text-center">
-                  Certified for information security
-                </p>
-              </div>
 
-              {/* Strength 3: ISO 9001 */}
-              <div className="bg-card rounded-xl p-6 border shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <div className="flex items-center mb-4">
-                  <div className="w-3 h-3 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
-                  <CheckCircle2 className="w-6 h-6 text-primary mr-3" />
-                  <span className="text-lg font-bold text-primary">ISO 9001</span>
+                {/* Strength 3: ISO 9001 */}
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
+                  <CheckCircle2 className="w-4 h-4 text-primary mr-2" />
+                  <div>
+                    <span className="text-sm font-bold text-primary">ISO 9001</span>
+                    <p className="text-xs text-foreground">Quality management certified</p>
+                  </div>
                 </div>
-                <p className="text-foreground font-medium text-center">
-                  Certified for quality management
-                </p>
               </div>
             </div>
           </div>
