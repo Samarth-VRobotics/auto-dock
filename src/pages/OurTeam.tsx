@@ -308,7 +308,8 @@ const OurTeam = () => {
                   {[{
                   name: "Falgun",
                   initials: "F",
-                  role: "Software Architect"
+                  role: "Software Architect",
+                  image: "/lovable-uploads/c7f3629b-de5b-4d24-b053-24ac3ecf879f.png"
                 }, {
                   name: "J. S. Ranjith",
                   initials: "JSR",
@@ -316,7 +317,8 @@ const OurTeam = () => {
                 }, {
                   name: "Parikshith Palegar",
                   initials: "PP",
-                  role: "Software Architect"
+                  role: "Software Architect",
+                  image: "/lovable-uploads/dccb7189-5c8d-4a95-b2c2-1cafdba7fb45.png"
                 }, {
                   name: "MANOKARTHI J",
                   initials: "MJ",
@@ -324,11 +326,25 @@ const OurTeam = () => {
                 }, {
                   name: "Nieander Pranesh",
                   initials: "NP",
-                  role: "Software Architect"
+                  role: "Software Architect",
+                  image: "/lovable-uploads/56cc3bd2-28b1-49c7-94be-6eb09506c3c8.png"
                 }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
-                      <div className="w-24 h-24 rounded-full bg-gradient-secondary flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                        {member.initials}
-                      </div>
+                      {member.image ? (
+                        <Avatar className="w-24 h-24 mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                          <AvatarImage 
+                            src={member.image} 
+                            alt={member.name}
+                            className="object-cover object-center"
+                          />
+                          <AvatarFallback className="bg-gradient-secondary text-white font-bold text-xl">
+                            {member.initials}
+                          </AvatarFallback>
+                        </Avatar>
+                      ) : (
+                        <div className="w-24 h-24 rounded-full bg-gradient-secondary flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                          {member.initials}
+                        </div>
+                      )}
                       <h4 className="font-bold text-foreground text-lg mb-2">{member.name}</h4>
                       <Linkedin className="w-5 h-5 text-primary hover:text-secondary transition-colors cursor-pointer" />
                     </div>)}
