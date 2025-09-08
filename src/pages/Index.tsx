@@ -319,8 +319,10 @@ const Index = () => {
           </div>
 
           <div className="timeline-container relative max-w-6xl mx-auto" style={{
-          paddingRight: 'min(8vw, 120px)',
-          paddingBottom: 'min(14vh, 160px)',
+          paddingRight: 'min(8vw, 140px)',
+          paddingLeft: 'min(4vw, 80px)',
+          paddingBottom: 'min(16vh, 200px)',
+          paddingTop: 'min(6vh, 100px)',
           overflow: 'visible'
         }}>
             <style>{`
@@ -384,17 +386,11 @@ const Index = () => {
                 stroke: hsl(var(--border));
                 stroke-width: 1;
               }
-              .vj-card { 
-                filter: drop-shadow(0 8px 25px hsl(var(--foreground) / 0.1)); 
-                transition: all 0.2s ease-out;
-                transform-origin: top center;
-              }
-              .vj-pointer {
-                fill: hsl(var(--card));
-                stroke: hsl(var(--border));
-                stroke-width: 1;
-                transition: all 0.2s ease-out;
-              }
+               .vj-card { 
+                 filter: drop-shadow(0 8px 25px hsl(var(--foreground) / 0.1)); 
+                 transition: all 0.2s ease-out;
+                 transform-origin: top center;
+               }
               .milestone { 
                 cursor: pointer; 
                 outline: none; 
@@ -417,66 +413,38 @@ const Index = () => {
                 transform: scale(1.09);
                 filter: drop-shadow(0 4px 14px hsl(var(--foreground) / 0.15));
               }
-              /* Card hover effects - gentle enlarge with shadow */
-              .milestone:hover .vj-card,
-              .milestone:focus-visible .vj-card {
-                transform: scale(1.04);
-                filter: drop-shadow(0 12px 30px hsl(var(--foreground) / 0.15));
-              }
-              .milestone:hover .vj-pointer,
-              .milestone:focus-visible .vj-pointer {
-                transform: scale(1.04);
-              }
-              /* Past milestone hover (≤2025) - blue accent */
-              .milestone[data-key="2000"]:hover .vj-card rect,
-              .milestone[data-key="2007"]:hover .vj-card rect,
-              .milestone[data-key="2013"]:hover .vj-card rect,
-              .milestone[data-key="2016"]:hover .vj-card rect,
-              .milestone[data-key="2019"]:hover .vj-card rect,
-              .milestone[data-key="2023"]:hover .vj-card rect,
-              .milestone[data-key="2025"]:hover .vj-card rect,
-              .milestone[data-key="2000"]:focus-visible .vj-card rect,
-              .milestone[data-key="2007"]:focus-visible .vj-card rect,
-              .milestone[data-key="2013"]:focus-visible .vj-card rect,
-              .milestone[data-key="2016"]:focus-visible .vj-card rect,
-              .milestone[data-key="2019"]:focus-visible .vj-card rect,
-              .milestone[data-key="2023"]:focus-visible .vj-card rect,
-              .milestone[data-key="2025"]:focus-visible .vj-card rect {
-                stroke: hsl(var(--primary));
-                stroke-width: 2;
-              }
-              .milestone[data-key="2000"]:hover .vj-pointer,
-              .milestone[data-key="2007"]:hover .vj-pointer,
-              .milestone[data-key="2013"]:hover .vj-pointer,
-              .milestone[data-key="2016"]:hover .vj-pointer,
-              .milestone[data-key="2019"]:hover .vj-pointer,
-              .milestone[data-key="2023"]:hover .vj-pointer,
-              .milestone[data-key="2025"]:hover .vj-pointer,
-              .milestone[data-key="2000"]:focus-visible .vj-pointer,
-              .milestone[data-key="2007"]:focus-visible .vj-pointer,
-              .milestone[data-key="2013"]:focus-visible .vj-pointer,
-              .milestone[data-key="2016"]:focus-visible .vj-pointer,
-              .milestone[data-key="2019"]:focus-visible .vj-pointer,
-              .milestone[data-key="2023"]:focus-visible .vj-pointer,
-              .milestone[data-key="2025"]:focus-visible .vj-pointer {
-                stroke: hsl(var(--primary));
-                stroke-width: 2;
-              }
-              /* Future milestone hover (2026, 2030) - red accent */
-              .milestone[data-key="2026"]:hover .vj-card rect,
-              .milestone[data-key="2030"]:hover .vj-card rect,
-              .milestone[data-key="2026"]:focus-visible .vj-card rect,
-              .milestone[data-key="2030"]:focus-visible .vj-card rect {
-                stroke: hsl(var(--destructive));
-                stroke-width: 2;
-              }
-              .milestone[data-key="2026"]:hover .vj-pointer,
-              .milestone[data-key="2030"]:hover .vj-pointer,
-              .milestone[data-key="2026"]:focus-visible .vj-pointer,
-              .milestone[data-key="2030"]:focus-visible .vj-pointer {
-                stroke: hsl(var(--destructive));
-                stroke-width: 2;
-              }
+               /* Card hover effects - gentle enlarge with shadow */
+               .milestone:hover .vj-card,
+               .milestone:focus-visible .vj-card {
+                 transform: scale(1.04);
+                 filter: drop-shadow(0 12px 30px hsl(var(--foreground) / 0.15));
+               }
+               /* Past milestone hover (≤2025) - blue accent */
+               .milestone[data-key="2000"]:hover .vj-card rect,
+               .milestone[data-key="2007"]:hover .vj-card rect,
+               .milestone[data-key="2013"]:hover .vj-card rect,
+               .milestone[data-key="2016"]:hover .vj-card rect,
+               .milestone[data-key="2019"]:hover .vj-card rect,
+               .milestone[data-key="2023"]:hover .vj-card rect,
+               .milestone[data-key="2025"]:hover .vj-card rect,
+               .milestone[data-key="2000"]:focus-visible .vj-card rect,
+               .milestone[data-key="2007"]:focus-visible .vj-card rect,
+               .milestone[data-key="2013"]:focus-visible .vj-card rect,
+               .milestone[data-key="2016"]:focus-visible .vj-card rect,
+               .milestone[data-key="2019"]:focus-visible .vj-card rect,
+               .milestone[data-key="2023"]:focus-visible .vj-card rect,
+               .milestone[data-key="2025"]:focus-visible .vj-card rect {
+                 stroke: hsl(var(--primary));
+                 stroke-width: 2;
+               }
+               /* Future milestone hover (2026, 2030) - red accent */
+               .milestone[data-key="2026"]:hover .vj-card rect,
+               .milestone[data-key="2030"]:hover .vj-card rect,
+               .milestone[data-key="2026"]:focus-visible .vj-card rect,
+               .milestone[data-key="2030"]:focus-visible .vj-card rect {
+                 stroke: hsl(var(--destructive));
+                 stroke-width: 2;
+               }
               .vj-foundation-card {
                 cursor: pointer;
                 transition: all 0.2s ease-out;
@@ -512,7 +480,7 @@ const Index = () => {
                 .timeline-container { padding-bottom: min(15vh, 170px); }
               }
             `}</style>
-            <svg className="vj-svg" viewBox="0 0 1360 600" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
+            <svg className="vj-svg" viewBox="0 0 1400 800" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
               <defs>
                 <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="hsl(var(--destructive))" />
@@ -548,10 +516,7 @@ const Index = () => {
                   {/* Year label always visible */}
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2000</text>
                   
-                  {/* Pointer from node to message box */}
-                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
-                  
-                  {/* Message card - drops downward */}
+                  {/* Message card - aligned with node */}
                   <g className="vj-card" transform="translate(-140,35)" id="milestone-2000">
                     <rect width={280} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
@@ -567,10 +532,7 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
                   
-                  {/* Pointer from node to message box */}
-                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
-                  
-                  {/* Message card - drops downward */}
+                  {/* Message card - aligned with node */}
                   <g className="vj-card" transform="translate(-120,35)" id="milestone-2007">
                     <rect width={240} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
@@ -586,10 +548,7 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2013</text>
                   
-                  {/* Pointer from node to message box */}
-                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
-                  
-                  {/* Message card - drops downward */}
+                  {/* Message card - aligned with node */}
                   <g className="vj-card" transform="translate(-140,35)" id="milestone-2013">
                     <rect width={280} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
@@ -605,10 +564,7 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
                   
-                  {/* Pointer from node to message box */}
-                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
-                  
-                  {/* Message card - drops downward */}
+                  {/* Message card - aligned with node */}
                   <g className="vj-card" transform="translate(-130,35)" id="milestone-2016">
                     <rect width={260} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
@@ -624,10 +580,7 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2019</text>
                   
-                  {/* Pointer from node to message box */}
-                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
-                  
-                  {/* Message card - drops downward */}
+                  {/* Message card - aligned with node */}
                   <g className="vj-card" transform="translate(-150,35)" id="milestone-2019">
                     <rect width={300} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
@@ -643,10 +596,7 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
                   
-                  {/* Pointer from node to message box */}
-                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
-                  
-                  {/* Message card - drops downward */}
+                  {/* Message card - aligned with node */}
                   <g className="vj-card" transform="translate(-150,35)" id="milestone-2023">
                     <rect width={300} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
@@ -662,10 +612,7 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2025</text>
                   
-                  {/* Pointer from node to message box */}
-                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
-                  
-                  {/* Message card - drops downward */}
+                  {/* Message card - aligned with node */}
                   <g className="vj-card" transform="translate(-160,35)" id="milestone-2025">
                     <rect width={320} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--border))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
@@ -681,10 +628,7 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
                   
-                  {/* Pointer from node to message box */}
-                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
-                  
-                  {/* Message card - drops downward */}
+                  {/* Message card - aligned with node */}
                   <g className="vj-card" transform="translate(-170,35)" id="milestone-2026">
                     <rect width={340} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
@@ -700,10 +644,7 @@ const Index = () => {
                   
                   <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2030</text>
                   
-                  {/* Pointer from node to message box */}
-                  <polygon className="vj-pointer" points="0,26 -8,35 8,35" transform="translate(0,0)"></polygon>
-                  
-                  {/* Message card - drops downward */}
+                  {/* Message card - aligned with node */}
                   <g className="vj-card" transform="translate(-140,35)" id="milestone-2030">
                     <rect width={280} height={40} fill="hsl(var(--card))" rx={14} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
                     <text className="vj-cap" x={14} y={25}>
