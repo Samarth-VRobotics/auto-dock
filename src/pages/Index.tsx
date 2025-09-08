@@ -307,14 +307,14 @@ const Index = () => {
       {/* Vegam Journey Section - Enhanced Interactive Timeline */}
       <section className="vegam-journey section-padding bg-gradient-to-br from-background via-muted/30 to-accent/5 relative overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-40">
           <img 
             src="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png" 
             alt="Manufacturing evolution background" 
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-background/80"></div>
         <div className="container mx-auto px-6 lg:px-8 relative">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 text-foreground px-4">
