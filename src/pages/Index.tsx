@@ -647,51 +647,61 @@ const Index = () => {
                   {/* Message card - aligned with node */}
                   <g className="vj-card" transform="translate(-140,40)" id="milestone-2030">
                     <rect width={280} height={50} fill="hsl(var(--card))" rx={16} stroke="hsl(var(--destructive))" strokeWidth={2}></rect>
-                    <text className="vj-cap" x={16} y={32}>
-                      <tspan x="16" dy="0" fontSize="16" fontWeight="600" fill="hsl(var(--foreground))"><tspan fontWeight="700">1000</tspan> Autonomous Plants</tspan>
-                    </text>
-                  </g>
-                </g>
-              </g>
+                     <text className="vj-cap" x={16} y={32}>
+                       <tspan x="16" dy="0" fontSize="16" fontWeight="600" fill="hsl(var(--foreground))"><tspan fontWeight="700">1000</tspan> Autonomous Plants</tspan>
+                     </text>
+                   </g>
+                 </g>
+
+                 {/* Our Strengths Panel - Integrated into SVG */}
+                 <g className="vj-strengths-panel" transform="translate(1100,650)" aria-label="Our company strengths">
+                   {/* Panel background */}
+                   <rect width="320" height="180" fill="hsl(var(--card) / 0.95)" rx="16" stroke="hsl(var(--border))" strokeWidth="2" 
+                         filter="drop-shadow(0 10px 30px hsl(var(--foreground) / 0.12))" />
+                   
+                   {/* Title */}
+                   <text x="160" y="30" textAnchor="middle" fontSize="18" fontWeight="700" fill="hsl(var(--foreground))">Our Strengths</text>
+                   
+                   {/* Strength 1: R&D Professionals */}
+                   <g transform="translate(20,50)">
+                     <circle cx="6" cy="12" r="3" fill="hsl(var(--destructive))" />
+                     {/* Users icon approximation */}
+                     <g transform="translate(20,6)">
+                       <circle cx="4" cy="4" r="2" fill="hsl(var(--primary))" strokeWidth="1" stroke="hsl(var(--primary))" />
+                       <circle cx="12" cy="4" r="2" fill="hsl(var(--primary))" strokeWidth="1" stroke="hsl(var(--primary))" />
+                       <path d="M0 14c0-2.2 1.8-4 4-4s4 1.8 4 4M8 14c0-2.2 1.8-4 4-4s4 1.8 4 4" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
+                     </g>
+                     <text x="45" y="12" fontSize="16" fontWeight="700" fill="hsl(var(--primary))">230+</text>
+                     <text x="45" y="25" fontSize="12" fill="hsl(var(--foreground))">R&amp;D professionals in India</text>
+                   </g>
+                   
+                   {/* Strength 2: ISO 27001 */}
+                   <g transform="translate(20,85)">
+                     <circle cx="6" cy="12" r="3" fill="hsl(var(--destructive))" />
+                     {/* Shield icon approximation */}
+                     <g transform="translate(20,6)">
+                       <path d="M8 2L3 6v6c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V6l-5-4H8Z" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
+                       <path d="M8 8l2 2 4-4" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
+                     </g>
+                     <text x="45" y="12" fontSize="13" fontWeight="700" fill="hsl(var(--primary))">ISO 27001</text>
+                     <text x="45" y="25" fontSize="12" fill="hsl(var(--foreground))">Information security certified</text>
+                   </g>
+                   
+                   {/* Strength 3: ISO 9001 */}
+                   <g transform="translate(20,120)">
+                     <circle cx="6" cy="12" r="3" fill="hsl(var(--destructive))" />
+                     {/* Check circle icon approximation */}
+                     <g transform="translate(20,6)">
+                       <circle cx="8" cy="8" r="8" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
+                       <path d="M6 8l2 2 4-4" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
+                     </g>
+                     <text x="45" y="12" fontSize="13" fontWeight="700" fill="hsl(var(--primary))">ISO 9001</text>
+                     <text x="45" y="25" fontSize="12" fill="hsl(var(--foreground))">Quality management certified</text>
+                   </g>
+                 </g>
+               </g>
 
             </svg>
-
-            {/* Our Strengths Panel - Bottom Right Position */}
-            <div className="absolute bottom-2 right-2 bg-card/95 backdrop-blur-sm rounded-xl p-6 border shadow-xl max-w-xs">
-              <h3 className="text-xl font-bold text-foreground mb-4 text-center">Our Strengths</h3>
-              
-              <div className="space-y-4">
-                {/* Strength 1: R&D Professionals */}
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
-                  <Users className="w-4 h-4 text-primary mr-2" />
-                  <div>
-                    <span className="text-lg font-bold text-primary">230+</span>
-                    <p className="text-xs text-foreground">R&D professionals in India</p>
-                  </div>
-                </div>
-
-                {/* Strength 2: ISO 27001 */}
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
-                  <Shield className="w-4 h-4 text-primary mr-2" />
-                  <div>
-                    <span className="text-sm font-bold text-primary">ISO 27001</span>
-                    <p className="text-xs text-foreground">Information security certified</p>
-                  </div>
-                </div>
-
-                {/* Strength 3: ISO 9001 */}
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-destructive rounded-full mr-3 flex-shrink-0"></div>
-                  <CheckCircle2 className="w-4 h-4 text-primary mr-2" />
-                  <div>
-                    <span className="text-sm font-bold text-primary">ISO 9001</span>
-                    <p className="text-xs text-foreground">Quality management certified</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
