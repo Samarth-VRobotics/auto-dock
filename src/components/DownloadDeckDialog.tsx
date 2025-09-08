@@ -31,39 +31,24 @@ const DownloadDeckDialog = ({ children }: DownloadDeckDialogProps) => {
         throw error;
       }
 
-      // Trigger PDF download
-      try {
-        const pdfUrl = 'https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Vegam%20Robotic%20brochure%20(1).pdf';
+      // Trigger PDF download/open
+      const pdfUrl = 'https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Vegam%20Robotic%20brochure%20(1).pdf';
+      
+      // Open PDF in new tab - this is more reliable than download
+      const newWindow = window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+      
+      if (!newWindow) {
+        // If popup was blocked, try direct navigation
+        window.location.href = pdfUrl;
         
-        // Try direct download first
-        const link = document.createElement('a');
-        link.href = pdfUrl;
-        link.download = 'Vegam-Robotics-Brochure.pdf';
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        
-        // Temporarily add to DOM for better browser compatibility
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        // Fallback: open in new tab if download doesn't work
-        setTimeout(() => {
-          window.open(pdfUrl, '_blank');
-        }, 100);
-
+        toast({
+          title: "PDF Opening",
+          description: "If the PDF doesn't open, please check your popup blocker settings.",
+        });
+      } else {
         toast({
           title: "Success!",
-          description: "Your download will begin shortly. If it doesn't start automatically, check your downloads folder or popup blocker.",
-        });
-      } catch (downloadError) {
-        console.error('Download error:', downloadError);
-        // Fallback to opening in new tab
-        window.open('https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Vegam%20Robotic%20brochure%20(1).pdf', '_blank');
-        
-        toast({
-          title: "Download initiated",
-          description: "The PDF has been opened in a new tab. You can save it from there.",
+          description: "PDF opened in new tab. Data saved successfully.",
         });
       }
 
