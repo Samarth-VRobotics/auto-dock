@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ShopFloorPortfolio from "@/components/ShopFloorPortfolio";
+import DownloadDeckDialog from "@/components/DownloadDeckDialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -1009,10 +1010,12 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </ContactDialog>
-              <Button variant="outline" size="lg" className="px-10 py-6 body-lg font-bold">
-                <Download className="mr-2 h-5 w-5" />
-                Download Deck
-              </Button>
+              <DownloadDeckDialog>
+                <Button variant="outline" size="lg" className="px-10 py-6 body-lg font-bold">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Deck
+                </Button>
+              </DownloadDeckDialog>
             </div>
           </div>
         </div>
