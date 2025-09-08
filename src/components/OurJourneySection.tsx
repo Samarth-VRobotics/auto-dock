@@ -212,9 +212,19 @@ const OurJourneySection = () => {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">            
             {/* Industry Visual */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl w-full group
-                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out h-full mt-8">
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out 
+                          h-64 sm:h-80 md:h-96 lg:h-[500px] mt-8">
               {/* Industry Images Slideshow */}
-              {industryImages.map((image, index) => <img key={index} src={image.src} alt={image.alt} className={`absolute inset-0 w-full h-full object-contain group-hover:scale-110 transition-all duration-1000 ease-out ${index === industrySlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
+              {industryImages.map((image, index) => 
+                <img 
+                  key={index} 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className={`absolute inset-0 w-full h-full object-contain object-center
+                            group-hover:scale-110 transition-all duration-1000 ease-out 
+                            ${index === industrySlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                />
+              )}
               {/* Slide indicators only */}
               <div className="absolute bottom-6 right-6 z-30">
                 <div className="flex space-x-2">
