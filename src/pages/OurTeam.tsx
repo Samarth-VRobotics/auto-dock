@@ -350,8 +350,7 @@ const OurTeam = () => {
                 }, {
                   name: "Vijaylakshmi",
                   initials: "VL",
-                  role: "Software Architect",
-                  image: "/lovable-uploads/d86864c8-a1db-485e-ba3c-628a4d873a12.png"
+                  role: "Software Architect"
                 }, {
                   name: "Samuel Mara",
                   initials: "SM",
