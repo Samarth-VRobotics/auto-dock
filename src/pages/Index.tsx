@@ -7,11 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
-import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Settings, Database, Hand, Cpu, Gauge, Lightbulb, Handshake, Headphones, MapPin, Bot, RocketIcon, Sparkles } from "lucide-react";
+import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Settings, Database, Hand, Cpu, Gauge, Lightbulb, Handshake, Headphones, MapPin } from "lucide-react";
 import autonomousProductionLine from "@/assets/autonomous-production-line.jpg";
 import smartFactoryHall from "@/assets/smart-factory-hall.jpg";
 import manufacturingEvolutionLab from "@/assets/manufacturing-evolution-lab.jpg";
-import manufacturingEvolutionHero from "@/assets/manufacturing-evolution-hero.jpg";
 import futureOfWorkBg from "@/assets/future-of-work-bg.jpg";
 const Index = () => {
   const scrollToSection = (sectionId: string) => {
@@ -305,208 +304,232 @@ const Index = () => {
         </div>
       </section>
 
-{/* Vegam's Journey: Modern Horizontal Timeline */}
+{/* Vegam Journey Section - Clean Professional Timeline */}
       <section className="py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/30 relative overflow-hidden">
-        {/* Subtle Manufacturing Background */}
+        {/* Subtle Background Image - Faded */}
         <div className="absolute inset-0">
           <img 
-            src={manufacturingEvolutionHero}
-            alt="Manufacturing evolution from traditional to autonomous factories" 
-            className="w-full h-full object-cover opacity-15 blur-sm"
+            src={manufacturingEvolutionLab}
+            alt="Manufacturing evolution background" 
+            className="w-full h-full object-cover opacity-20 blur-sm"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/85 to-white/90"></div>
         </div>
         
+        {/* Enhanced Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/70"></div>
+        
+        {/* Subtle Pattern Overlay */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0)`,
+          backgroundSize: '24px 24px'
+        }}></div>
+        
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
-          {/* Title */}
+          {/* Prominent Title */}
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-              Vegam's Journey:
+              Vegam Journey: 
               <span className="block text-red-600 mt-2">
-                Decades of History in Manufacturing Transformation
+                Proven History in Manufacturing Transformation
               </span>
             </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-blue-500 via-red-500 to-red-600 mx-auto rounded-full shadow-lg"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid lg:grid-cols-[3fr_1fr] gap-20 items-start">
-            {/* Horizontal Timeline Section */}
-            <div className="relative">
-              {/* Desktop Horizontal Timeline */}
-              <div className="hidden lg:block">
-                {/* Timeline Container with proper spacing */}
-                <div className="relative pb-16">
-                  {/* Horizontal Timeline Line */}
-                  <div className="absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-600 to-red-500 rounded-full shadow-lg"></div>
-                  <div className="absolute top-19 left-0 right-0 h-3 bg-gradient-to-r from-blue-500/20 via-blue-600/20 to-red-500/20 rounded-full blur-sm"></div>
-                  
-                  {/* Timeline Milestones */}
-                  <div className="grid grid-cols-9 gap-2 relative">
-                    {[
-                      { year: "2000", text: "Foundation with digital factory vision", Icon: Building2, status: "past" },
-                      { year: "2007", text: "First plant fully digitalized", Icon: Factory, status: "past" },
-                      { year: "2013", text: "18 plants connected in network", Icon: Network, status: "past" },
-                      { year: "2016", text: "Scaled to 70 plants globally", Icon: TrendingUp, status: "past" },
-                      { year: "2019", text: "Milestone of 100+ plants achieved", Icon: Target, status: "past" },
-                      { year: "2023", text: "Foundation for Autonomous factories", Icon: Bot, status: "current" },
-                      { year: "2025", text: "Milestone of 300+ plants achieved", Icon: Zap, status: "current" },
-                      { year: "2026", text: "Projected First Fully Autonomous Plant", Icon: RocketIcon, status: "future" },
-                      { year: "2030", text: "1000 Autonomous Plants", Icon: Sparkles, status: "future" },
-                    ].map((milestone, index) => (
-                      <div key={milestone.year} className="relative group">
-                        {/* Milestone Point */}
-                        <div className="flex justify-center relative z-10">
-                          <div className={`w-10 h-10 rounded-full shadow-lg border-4 border-white relative group-hover:scale-110 transition-all duration-300 flex items-center justify-center ${
-                            milestone.status === 'future' 
-                              ? 'bg-gradient-to-br from-red-500 to-red-600' 
-                              : milestone.status === 'current'
-                              ? 'bg-gradient-to-br from-blue-500 to-blue-600'
-                              : 'bg-gradient-to-br from-slate-500 to-slate-600'
-                          }`}>
-                            <milestone.Icon className="w-5 h-5 text-white" />
-                            <div className={`absolute inset-0 rounded-full animate-ping opacity-30 ${
-                              milestone.status === 'future' ? 'bg-red-400' : 
-                              milestone.status === 'current' ? 'bg-blue-400' : 'bg-slate-400'
-                            }`}></div>
-                          </div>
-                        </div>
-
-                        {/* Milestone Card - Alternating Above/Below */}
-                        <div className={`absolute left-1/2 transform -translate-x-1/2 w-40 group-hover:scale-105 transition-all duration-300 ${
-                          index % 2 === 0 ? '-top-32' : 'top-16'
-                        }`}>
-                          <div className={`rounded-2xl p-4 shadow-xl border backdrop-blur-sm group-hover:shadow-2xl ${
-                            milestone.status === 'future' 
-                              ? 'bg-gradient-to-br from-red-50 to-red-100/80 border-red-200' 
-                              : milestone.status === 'current'
-                              ? 'bg-gradient-to-br from-blue-50 to-blue-100/80 border-blue-200'
-                              : 'bg-white/95 border-slate-200'
-                          }`}>
-                            {/* Connector Line */}
-                            <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 h-6 ${
-                              milestone.status === 'future' ? 'bg-red-300' : 
-                              milestone.status === 'current' ? 'bg-blue-300' : 'bg-slate-300'
-                            } ${index % 2 === 0 ? 'top-full' : 'bottom-full'}`}></div>
-                            
-                            <div className="text-center">
-                              <div className={`text-lg font-bold mb-2 ${
-                                milestone.status === 'future' ? 'text-red-600' : 
-                                milestone.status === 'current' ? 'text-blue-600' : 'text-slate-800'
-                              }`}>
-                                {milestone.year}
-                              </div>
-                              <p className={`text-xs leading-relaxed ${
-                                milestone.status === 'future' ? 'text-red-700' : 
-                                milestone.status === 'current' ? 'text-blue-700' : 'text-slate-600'
-                              }`}>
-                                {milestone.text}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+          {/* Clean Timeline Layout */}
+          <div className="max-w-7xl mx-auto">
+            {/* Desktop/Tablet Timeline */}
+            <div className="hidden md:block relative">
+              {/* Central Timeline Line */}
+              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-slate-300 via-blue-400 to-red-500 transform -translate-y-1/2 rounded-full shadow-lg"></div>
+              <div className="absolute top-1/2 left-0 right-0 h-3 bg-gradient-to-r from-slate-300/30 via-blue-400/30 to-red-500/30 transform -translate-y-1/2 rounded-full blur-sm"></div>
+              
+              {/* Timeline Points */}
+              <div className="flex justify-between items-center py-20 relative">
+                
+                {/* 2000 - Below */}
+                <div className="flex flex-col items-center group">
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-red-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-red-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2000</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">Foundation with digital factory vision</p>
                   </div>
                 </div>
-              </div>
 
-              {/* Mobile Timeline - Vertical Stack */}
-              <div className="lg:hidden space-y-6">
-                {[
-                  { year: "2000", text: "Foundation with digital factory vision", Icon: Building2, status: "past" },
-                  { year: "2007", text: "First plant fully digitalized", Icon: Factory, status: "past" },
-                  { year: "2013", text: "18 plants connected in network", Icon: Network, status: "past" },
-                  { year: "2016", text: "Scaled to 70 plants globally", Icon: TrendingUp, status: "past" },
-                  { year: "2019", text: "Milestone of 100+ plants achieved", Icon: Target, status: "past" },
-                  { year: "2023", text: "Foundation for Autonomous factories", Icon: Bot, status: "current" },
-                  { year: "2025", text: "Milestone of 300+ plants achieved", Icon: Zap, status: "current" },
-                  { year: "2026", text: "Projected First Fully Autonomous Plant", Icon: RocketIcon, status: "future" },
-                  { year: "2030", text: "1000 Autonomous Plants", Icon: Sparkles, status: "future" },
-                ].map((milestone, index) => (
-                  <div key={milestone.year} className="flex items-center group">
-                    <div className="flex-shrink-0 mr-6">
-                      <div className="relative">
-                        <div className={`w-12 h-12 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-all duration-300 flex items-center justify-center ${
-                          milestone.status === 'future' 
-                            ? 'bg-gradient-to-br from-red-500 to-red-600' 
-                            : milestone.status === 'current'
-                            ? 'bg-gradient-to-br from-blue-500 to-blue-600'
-                            : 'bg-gradient-to-br from-slate-500 to-slate-600'
-                        }`}>
-                          <milestone.Icon className="w-6 h-6 text-white" />
-                        </div>
-                        {index < 8 && (
-                          <div className="w-1 h-8 bg-gradient-to-b from-slate-300 to-blue-400 mt-2 mx-auto rounded-full"></div>
-                        )}
-                      </div>
-                    </div>
-                    <div className={`flex-1 rounded-2xl p-5 shadow-lg border backdrop-blur-sm group-hover:shadow-xl group-hover:scale-[1.02] transition-all duration-300 ${
-                      milestone.status === 'future' 
-                        ? 'bg-gradient-to-br from-red-50 to-red-100/80 border-red-200' 
-                        : milestone.status === 'current'
-                        ? 'bg-gradient-to-br from-blue-50 to-blue-100/80 border-blue-200'
-                        : 'bg-white/95 border-slate-200'
-                    }`}>
-                      <div className={`text-xl font-bold mb-2 ${
-                        milestone.status === 'future' ? 'text-red-600' : 
-                        milestone.status === 'current' ? 'text-blue-600' : 'text-slate-800'
-                      }`}>
-                        {milestone.year}
-                      </div>
-                      <p className={`text-sm leading-relaxed ${
-                        milestone.status === 'future' ? 'text-red-700' : 
-                        milestone.status === 'current' ? 'text-blue-700' : 'text-slate-600'
-                      }`}>
-                        {milestone.text}
-                      </p>
-                    </div>
+                {/* 2007 - Above */}
+                <div className="flex flex-col items-center group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2007</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">First plant fully digitalized</p>
                   </div>
-                ))}
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                </div>
+
+                {/* 2013 - Below */}
+                <div className="flex flex-col items-center group">
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2013</div>
+                    <p className="text-sm text-slate-600 leading-relaxed"><span className="font-bold text-blue-600">18</span> plants connected in network</p>
+                  </div>
+                </div>
+
+                {/* 2016 - Above */}
+                <div className="flex flex-col items-center group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2016</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">Scaled to <span className="font-bold text-blue-600">70</span> plants globally</p>
+                  </div>
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                </div>
+
+                {/* 2019 - Below */}
+                <div className="flex flex-col items-center group">
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2019</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">Milestone of <span className="font-bold text-blue-600">100+</span> plants achieved</p>
+                  </div>
+                </div>
+
+                {/* 2023 - Above */}
+                <div className="flex flex-col items-center group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2023</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">Foundation for Autonomous factories</p>
+                  </div>
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                </div>
+
+                {/* 2025 - Below */}
+                <div className="flex flex-col items-center group">
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-600 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-500 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2025</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">Milestone of <span className="font-bold text-blue-600">300+</span> plants achieved</p>
+                  </div>
+                </div>
+
+                {/* 2026 - Above (Future) */}
+                <div className="flex flex-col items-center group">
+                  <div className="bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-red-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-red-600 mb-2">2026</div>
+                    <p className="text-sm text-red-700 leading-relaxed">Projected First Fully Autonomous Plant</p>
+                  </div>
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-red-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-red-400 rounded-full animate-ping opacity-40 group-hover:opacity-60"></div>
+                  </div>
+                </div>
+
+                {/* 2030 - Below (Future) */}
+                <div className="flex flex-col items-center group">
+                  <div className="relative">
+                    <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-xl border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                    </div>
+                    <div className="absolute inset-0 w-8 h-8 bg-red-400 rounded-full animate-pulse opacity-50"></div>
+                  </div>
+                  <div className="mt-6 bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-5 shadow-xl border border-red-200 max-w-[200px] text-center group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-red-600 mb-2">2030</div>
+                    <p className="text-sm text-red-700 leading-relaxed"><span className="font-bold text-red-600">1000</span> Autonomous Plants</p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Our Strengths Panel */}
-            <div className="bg-gradient-to-br from-slate-100 to-blue-100/50 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-slate-200 sticky top-8">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3">Our Strengths</h3>
+            {/* Mobile Timeline */}
+            <div className="md:hidden space-y-8">
+              {[
+                { year: "2000", text: "Foundation with digital factory vision", color: "red" },
+                { year: "2007", text: "First plant fully digitalized", color: "blue" },
+                { year: "2013", text: "18 plants connected in network", color: "blue", highlight: "18" },
+                { year: "2016", text: "Scaled to 70 plants globally", color: "blue", highlight: "70" },
+                { year: "2019", text: "Milestone of 100+ plants achieved", color: "blue", highlight: "100+" },
+                { year: "2023", text: "Foundation for Autonomous factories", color: "blue" },
+                { year: "2025", text: "Milestone of 300+ plants achieved", color: "blue", highlight: "300+" },
+                { year: "2026", text: "Projected First Fully Autonomous Plant", color: "red", future: true },
+                { year: "2030", text: "1000 Autonomous Plants", color: "red", highlight: "1000", future: true },
+              ].map((item, index) => (
+                <div key={item.year} className="flex items-center group">
+                  <div className="flex-shrink-0 mr-6">
+                    <div className="relative">
+                      <div className={`w-6 h-6 ${item.color === 'red' ? 'bg-red-500' : 'bg-blue-500'} rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300`}></div>
+                      <div className={`absolute inset-0 w-6 h-6 ${item.color === 'red' ? 'bg-red-400' : 'bg-blue-400'} rounded-full animate-ping opacity-30`}></div>
+                    </div>
+                    {index < 8 && (
+                      <div className="w-1 h-12 bg-gradient-to-b from-slate-300 to-blue-400 mt-2 mx-auto rounded-full"></div>
+                    )}
+                  </div>
+                  <div className={`flex-1 ${item.future ? 'bg-gradient-to-br from-red-50 to-red-100 border-red-200' : 'bg-white/90 border-slate-200'} backdrop-blur-sm rounded-2xl p-4 shadow-lg border group-hover:shadow-xl group-hover:scale-[1.02] transition-all duration-300`}>
+                    <div className={`text-lg font-bold ${item.future ? 'text-red-600' : 'text-slate-800'} mb-2`}>{item.year}</div>
+                    <p className={`text-sm ${item.future ? 'text-red-700' : 'text-slate-600'} leading-relaxed`}>
+                      {item.highlight ? (
+                        <>
+                          {item.text.split(item.highlight)[0]}
+                          <span className={`font-bold ${item.color === 'red' ? 'text-red-600' : 'text-blue-600'}`}>{item.highlight}</span>
+                          {item.text.split(item.highlight)[1]}
+                        </>
+                      ) : item.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Strong Foundation Section - Integrated Design */}
+          <div className="mt-20">
+            <div className="bg-gradient-to-br from-slate-100 to-blue-100/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-200 max-w-4xl mx-auto">
+              <div className="text-center mb-10">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3">Strong Foundation for Innovation</h3>
                 <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-red-500 mx-auto rounded-full"></div>
               </div>
               
-              <div className="space-y-6">
+              <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-xl hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                      <Users className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-blue-600">230+</div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Users className="w-6 h-6 text-white" />
                   </div>
-                  <p className="text-sm text-slate-700 leading-relaxed">
-                    Dedicated R&D professionals in India
-                  </p>
+                  <div className="text-2xl font-bold text-blue-600 mb-2">230+</div>
+                  <p className="text-sm text-slate-700 leading-relaxed">Dedicated R&D professionals in Hubballi, Karnataka, India</p>
                 </div>
                 
                 <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-xl hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg">
-                      <Shield className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-lg font-bold text-emerald-600">ISO 27001</div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Shield className="w-6 h-6 text-white" />
                   </div>
-                  <p className="text-sm text-slate-700 leading-relaxed">
-                    Certified for information security
-                  </p>
+                  <div className="text-lg font-bold text-emerald-600 mb-2">ISO 27001</div>
+                  <p className="text-sm text-slate-700 leading-relaxed">Certified for information security management</p>
                 </div>
                 
                 <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-xl hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                      <CheckCircle2 className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-lg font-bold text-purple-600">ISO 9001</div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <CheckCircle2 className="w-6 h-6 text-white" />
                   </div>
-                  <p className="text-sm text-slate-700 leading-relaxed">
-                    Certified for quality management
-                  </p>
+                  <div className="text-lg font-bold text-purple-600 mb-2">ISO 9001</div>
+                  <p className="text-sm text-slate-700 leading-relaxed">Certified for quality management systems</p>
                 </div>
               </div>
             </div>
