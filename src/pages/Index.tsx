@@ -471,7 +471,7 @@ const Index = () => {
                 .vj-card rect { height: 65; rx: 18; }
               }
             `}</style>
-            <svg className="vj-svg" viewBox="0 0 1360 600" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
+            <svg className="vj-svg" viewBox="0 0 1500 620" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
               <defs>
                 <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="hsl(var(--destructive))" />
@@ -493,14 +493,14 @@ const Index = () => {
 
               {/* diagonal growth line (behind everything) - Extended with arrow at top */}
               <g className="vj-layer-line">
-                <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 100 520 L 1350 50" />
+                <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 50 580 L 1450 20" />
               </g>
 
               {/* NODES + CARDS (above the line) */}
               <g className="vj-layer-nodes" aria-label="timeline milestones" tabIndex={-1}>
                 
                 {/* 1) 2000 */}
-                <g className="milestone" data-key="2000" transform="translate(100,520)" tabIndex={0} aria-label="2000 — Foundation with digital factory vision">
+                <g className="milestone" data-key="2000" transform="translate(50,580)" tabIndex={0} aria-label="2000 — Foundation with digital factory vision">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -515,7 +515,7 @@ const Index = () => {
                 </g>
 
                 {/* 2) 2007 */}
-                <g className="milestone" data-key="2007" transform="translate(240,460)" tabIndex={0} aria-label="2007 — First plant fully digitalized">
+                <g className="milestone" data-key="2007" transform="translate(225,510)" tabIndex={0} aria-label="2007 — First plant fully digitalized">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -528,7 +528,7 @@ const Index = () => {
                 </g>
 
                 {/* 3) 2013 */}
-                <g className="milestone" data-key="2013" transform="translate(370,390)" tabIndex={0} aria-label="2013 — 18 plants connected in network">
+                <g className="milestone" data-key="2013" transform="translate(400,440)" tabIndex={0} aria-label="2013 — 18 plants connected in network">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -541,7 +541,7 @@ const Index = () => {
                 </g>
 
                 {/* 4) 2016 */}
-                <g className="milestone" data-key="2016" transform="translate(500,330)" tabIndex={0} aria-label="2016 — Scaled to 70 plants globally">
+                <g className="milestone" data-key="2016" transform="translate(575,370)" tabIndex={0} aria-label="2016 — Scaled to 70 plants globally">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -554,7 +554,7 @@ const Index = () => {
                 </g>
 
                 {/* 5) 2019 */}
-                <g className="milestone" data-key="2019" transform="translate(630,280)" tabIndex={0} aria-label="2019 — Milestone of 100+ plants achieved">
+                <g className="milestone" data-key="2019" transform="translate(750,300)" tabIndex={0} aria-label="2019 — Milestone of 100+ plants achieved">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -567,7 +567,7 @@ const Index = () => {
                 </g>
 
                 {/* 6) 2023 */}
-                <g className="milestone" data-key="2023" transform="translate(760,230)" tabIndex={0} aria-label="2023 — Foundation for Autonomous factories">
+                <g className="milestone" data-key="2023" transform="translate(925,230)" tabIndex={0} aria-label="2023 — Foundation for Autonomous factories">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -580,7 +580,7 @@ const Index = () => {
                 </g>
 
                 {/* 7) 2025 */}
-                <g className="milestone" data-key="2025" transform="translate(890,180)" tabIndex={0} aria-label="2025 — Milestone of 300+ plants achieved">
+                <g className="milestone" data-key="2025" transform="translate(1100,160)" tabIndex={0} aria-label="2025 — Milestone of 300+ plants achieved">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -593,7 +593,7 @@ const Index = () => {
                 </g>
 
                 {/* 8) 2026 (future) */}
-                <g className="milestone" data-key="2026" transform="translate(1020,130)" tabIndex={0} aria-label="2026 — Projected First Fully Autonomous Plant">
+                <g className="milestone" data-key="2026" transform="translate(1275,90)" tabIndex={0} aria-label="2026 — Projected First Fully Autonomous Plant">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
                   
@@ -606,7 +606,7 @@ const Index = () => {
                 </g>
 
                 {/* 9) 2030 (future) */}
-                <g className="milestone" data-key="2030" transform="translate(1200,80)" tabIndex={0} aria-label="2030 — 1000 Autonomous Plants">
+                <g className="milestone" data-key="2030" transform="translate(1450,20)" tabIndex={0} aria-label="2030 — 1000 Autonomous Plants">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
                   
