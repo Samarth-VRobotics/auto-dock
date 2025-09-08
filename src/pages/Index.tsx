@@ -456,31 +456,39 @@ const Index = () => {
               .vj-layer-line { isolation: isolate; z-index: 1; }
               .vj-layer-nodes { isolation: isolate; z-index: 2; }
               
-                /* Mobile responsive adjustments */
-                @media (max-width: 768px) {
-                  .vj-svg { padding: 40px 25px 140px 25px; transform: scale(1.4); transform-origin: center top; }
-                  .vj-year { font-size: 28px; }
-                  .vj-year-visible { font-size: 26px; font-weight: 700; }
+                 /* Mobile responsive adjustments */
+                 @media (max-width: 768px) {
+                   .vj-svg { padding: 40px 25px 140px 25px; transform: scale(1.1); transform-origin: center top; }
+                   .vj-year { font-size: 28px; }
+                   .vj-year-visible { font-size: 26px; font-weight: 700; }
+                   .vj-cap { font-size: 18px; font-weight: 600; }
+                   .vj-node { r: 36; }
+                   .vj-node-ring { r: 44; }
+                   .vj-card rect { height: auto; min-height: 80px; rx: 20; }
+                   .timeline-container { padding-right: 0; margin: 0 -20px; padding-bottom: min(30vh, 320px); }
+                   .vj-strengths-panel { transform: translate(800, 550) scale(0.6); }
+                 }
+               
+                /* Tablet responsive adjustments */
+                @media (min-width: 769px) and (max-width: 1024px) {
+                  .vj-svg { padding: 40px 30px 120px 30px; transform: scale(0.95); transform-origin: center top; }
+                  .vj-year { font-size: 26px; }
+                  .vj-year-visible { font-size: 24px; font-weight: 700; }
                   .vj-cap { font-size: 18px; font-weight: 600; }
-                  .vj-node { r: 36; }
-                  .vj-node-ring { r: 44; }
-                  .vj-card rect { height: auto; min-height: 80px; rx: 20; }
-                  .timeline-container { padding-right: 0; margin: 0 -20px; padding-bottom: min(20vh, 220px); }
+                  .vj-node { r: 34; }
+                  .vj-node-ring { r: 42; }
+                  .vj-card rect { height: auto; min-height: 75px; rx: 20; }
+                  .timeline-container { padding-bottom: min(25vh, 280px); }
+                  .vj-strengths-panel { transform: translate(900, 650) scale(0.8); }
                 }
-              
-               /* Tablet responsive adjustments */
-               @media (min-width: 769px) and (max-width: 1024px) {
-                 .vj-svg { padding: 40px 30px 120px 30px; transform: scale(1.15); transform-origin: center top; }
-                 .vj-year { font-size: 26px; }
-                 .vj-year-visible { font-size: 24px; font-weight: 700; }
-                 .vj-cap { font-size: 18px; font-weight: 600; }
-                 .vj-node { r: 34; }
-                 .vj-node-ring { r: 42; }
-                 .vj-card rect { height: auto; min-height: 75px; rx: 20; }
-                 .timeline-container { padding-bottom: min(18vh, 200px); }
-               }
+               
+                /* Desktop responsive adjustments */
+                @media (min-width: 1025px) {
+                  .vj-svg { transform: scale(0.85); transform-origin: center top; }
+                  .timeline-container { padding-bottom: min(20vh, 250px); }
+                }
             `}</style>
-            <svg className="vj-svg" viewBox="0 0 1500 900" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
+            <svg className="vj-svg" viewBox="0 0 1700 1100" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
               <defs>
                 <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="hsl(var(--destructive))" />
@@ -653,52 +661,33 @@ const Index = () => {
                    </g>
                  </g>
 
-                 {/* Our Strengths Panel - Integrated into SVG */}
-                 <g className="vj-strengths-panel" transform="translate(1100,650)" aria-label="Our company strengths">
-                   {/* Panel background */}
-                   <rect width="320" height="180" fill="hsl(var(--card) / 0.95)" rx="16" stroke="hsl(var(--border))" strokeWidth="2" 
-                         filter="drop-shadow(0 10px 30px hsl(var(--foreground) / 0.12))" />
-                   
-                   {/* Title */}
-                   <text x="160" y="30" textAnchor="middle" fontSize="18" fontWeight="700" fill="hsl(var(--foreground))">Our Strengths</text>
-                   
-                   {/* Strength 1: R&D Professionals */}
-                   <g transform="translate(20,50)">
-                     <circle cx="6" cy="12" r="3" fill="hsl(var(--destructive))" />
-                     {/* Users icon approximation */}
-                     <g transform="translate(20,6)">
-                       <circle cx="4" cy="4" r="2" fill="hsl(var(--primary))" strokeWidth="1" stroke="hsl(var(--primary))" />
-                       <circle cx="12" cy="4" r="2" fill="hsl(var(--primary))" strokeWidth="1" stroke="hsl(var(--primary))" />
-                       <path d="M0 14c0-2.2 1.8-4 4-4s4 1.8 4 4M8 14c0-2.2 1.8-4 4-4s4 1.8 4 4" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                     </g>
-                     <text x="45" y="12" fontSize="16" fontWeight="700" fill="hsl(var(--primary))">230+</text>
-                     <text x="45" y="25" fontSize="12" fill="hsl(var(--foreground))">R&amp;D professionals in India</text>
-                   </g>
-                   
-                   {/* Strength 2: ISO 27001 */}
-                   <g transform="translate(20,85)">
-                     <circle cx="6" cy="12" r="3" fill="hsl(var(--destructive))" />
-                     {/* Shield icon approximation */}
-                     <g transform="translate(20,6)">
-                       <path d="M8 2L3 6v6c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V6l-5-4H8Z" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                       <path d="M8 8l2 2 4-4" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                     </g>
-                     <text x="45" y="12" fontSize="13" fontWeight="700" fill="hsl(var(--primary))">ISO 27001</text>
-                     <text x="45" y="25" fontSize="12" fill="hsl(var(--foreground))">Information security certified</text>
-                   </g>
-                   
-                   {/* Strength 3: ISO 9001 */}
-                   <g transform="translate(20,120)">
-                     <circle cx="6" cy="12" r="3" fill="hsl(var(--destructive))" />
-                     {/* Check circle icon approximation */}
-                     <g transform="translate(20,6)">
-                       <circle cx="8" cy="8" r="8" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                       <path d="M6 8l2 2 4-4" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                     </g>
-                     <text x="45" y="12" fontSize="13" fontWeight="700" fill="hsl(var(--primary))">ISO 9001</text>
-                     <text x="45" y="25" fontSize="12" fill="hsl(var(--foreground))">Quality management certified</text>
-                   </g>
-                 </g>
+                  {/* Our Strengths Panel - Integrated into SVG */}
+                  <g className="vj-strengths-panel" transform="translate(1000,700)" aria-label="Our company strengths">
+                    {/* Panel background */}
+                    <rect width="640" height="360" fill="hsl(var(--card) / 0.95)" rx="20" stroke="hsl(var(--border))" strokeWidth="3" 
+                          filter="drop-shadow(0 15px 40px hsl(var(--foreground) / 0.15))" />
+                    
+                    {/* Title */}
+                    <text x="320" y="50" textAnchor="middle" fontSize="36" fontWeight="700" fill="hsl(var(--foreground))">Our Strengths</text>
+                    
+                    {/* Strength 1: R&D Professionals */}
+                    <g transform="translate(40,100)">
+                      <text x="0" y="25" fontSize="32" fontWeight="700" fill="hsl(var(--primary))">230+</text>
+                      <text x="0" y="50" fontSize="24" fill="hsl(var(--foreground))">R&amp;D professionals in India</text>
+                    </g>
+                    
+                    {/* Strength 2: ISO 27001 */}
+                    <g transform="translate(40,180)">
+                      <text x="0" y="25" fontSize="26" fontWeight="700" fill="hsl(var(--primary))">ISO 27001</text>
+                      <text x="0" y="50" fontSize="24" fill="hsl(var(--foreground))">Information security certified</text>
+                    </g>
+                    
+                    {/* Strength 3: ISO 9001 */}
+                    <g transform="translate(40,260)">
+                      <text x="0" y="25" fontSize="26" fontWeight="700" fill="hsl(var(--primary))">ISO 9001</text>
+                      <text x="0" y="50" fontSize="24" fill="hsl(var(--foreground))">Quality management certified</text>
+                    </g>
+                  </g>
                </g>
 
             </svg>
