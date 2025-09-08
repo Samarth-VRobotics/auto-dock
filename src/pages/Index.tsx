@@ -304,338 +304,235 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Vegam Journey Section - Enhanced Interactive Timeline */}
-      <section className="vegam-journey section-padding bg-gradient-to-br from-background via-muted/30 to-accent/5 relative overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 opacity-60">
+{/* Vegam Journey Section - Clean Professional Timeline */}
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50/30 relative overflow-hidden">
+        {/* Subtle Background Image - Faded */}
+        <div className="absolute inset-0">
           <img 
-            src="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png" 
+            src={manufacturingEvolutionLab}
             alt="Manufacturing evolution background" 
-            className="w-full h-full object-cover brightness-75"
+            className="w-full h-full object-cover opacity-20 blur-sm"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/20 to-background/40"></div>
-        <div className="container mx-auto px-6 lg:px-8 relative">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 text-foreground px-4">
-              Vegam Journey: Proven History in Manufacturing Transformation
+        
+        {/* Enhanced Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/70"></div>
+        
+        {/* Subtle Pattern Overlay */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0)`,
+          backgroundSize: '24px 24px'
+        }}></div>
+        
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          {/* Prominent Title */}
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+              Vegam Journey: 
+              <span className="block text-red-600 mt-2">
+                Proven History in Manufacturing Transformation
+              </span>
             </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
           </div>
 
-          <div className="timeline-container relative max-w-6xl mx-auto" style={{
-          paddingRight: 'min(8vw, 120px)',
-          overflow: 'visible'
-        }}>
-            <style>{`
-              .vj-svg { 
-                width: 100%; 
-                height: auto; 
-                display: block; 
-                filter: drop-shadow(0 4px 20px hsl(var(--primary) / 0.1));
-              }
-              .vj-year { 
-                font: 700 18px/1.2 Inter, system-ui; 
-                fill: hsl(var(--foreground)); 
-                transition: all 0.3s ease;
-              }
-              .vj-year-visible {
-                font: 600 16px/1.2 Inter, system-ui;
-                fill: hsl(var(--muted-foreground));
-                transition: all 0.3s ease;
-              }
-              .vj-cap { 
-                font: 500 14px/1.45 Inter, system-ui; 
-                fill: hsl(var(--muted-foreground)); 
-                transition: all 0.3s ease;
-              }
-              .vj-cap strong { font-weight: 700; }
-              .vj-node-ring { 
-                fill: hsl(var(--background)); 
-                stroke: hsl(var(--background)); 
-                stroke-width: 5; 
-                filter: drop-shadow(0 2px 8px hsl(var(--foreground) / 0.1));
-              }
-              .vj-node--past { 
-                fill: hsl(var(--primary)); 
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-              }
-              .vj-node--future { 
-                fill: hsl(var(--destructive)); 
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-              }
-              .vj-line { 
-                stroke-width: 3; 
-                fill: none; 
-                filter: drop-shadow(0 2px 4px hsl(var(--primary) / 0.2));
-              }
-              .vj-card rect { 
-                fill: hsl(var(--card)); 
-                rx: 16; 
-                transition: all 0.3s ease;
-              }
-              .vj-card { 
-                filter: drop-shadow(0 8px 25px hsl(var(--foreground) / 0.1)); 
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-              }
-              .milestone { 
-                cursor: pointer; 
-                outline: none; 
-                transition: all 0.3s ease;
-              }
-              .milestone .vj-node { 
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-                transform-origin: center; 
-              }
-              .milestone .vj-card { 
-                opacity: 1; 
-                pointer-events: auto; 
-                transform: translateY(0);
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-              }
-              /* Node circle hover effects */
-              .milestone:hover .vj-node,
-              .milestone:focus-within .vj-node {
-                transform: scale(1.10);
-                filter: drop-shadow(0 4px 14px hsl(var(--foreground) / 0.15));
-              }
-              /* Card hover effects - enlarge instead of transparency */
-              .milestone:hover .vj-card,
-              .milestone:focus-within .vj-card {
-                transform: scale(1.05);
-              }
-              /* Past milestone hover (≤2025) - blue accent */
-              .milestone[data-key="2000"]:hover .vj-card rect,
-              .milestone[data-key="2007"]:hover .vj-card rect,
-              .milestone[data-key="2013"]:hover .vj-card rect,
-              .milestone[data-key="2016"]:hover .vj-card rect,
-              .milestone[data-key="2019"]:hover .vj-card rect,
-              .milestone[data-key="2023"]:hover .vj-card rect,
-              .milestone[data-key="2025"]:hover .vj-card rect,
-              .milestone[data-key="2000"]:focus-within .vj-card rect,
-              .milestone[data-key="2007"]:focus-within .vj-card rect,
-              .milestone[data-key="2013"]:focus-within .vj-card rect,
-              .milestone[data-key="2016"]:focus-within .vj-card rect,
-              .milestone[data-key="2019"]:focus-within .vj-card rect,
-              .milestone[data-key="2023"]:focus-within .vj-card rect,
-              .milestone[data-key="2025"]:focus-within .vj-card rect {
-                fill: hsl(var(--primary) / 0.05);
-                stroke: hsl(var(--primary));
-                stroke-width: 2;
-              }
-              /* Future milestone hover (2026, 2030) - red accent */
-              .milestone[data-key="2026"]:hover .vj-card rect,
-              .milestone[data-key="2030"]:hover .vj-card rect,
-              .milestone[data-key="2026"]:focus-within .vj-card rect,
-              .milestone[data-key="2030"]:focus-within .vj-card rect {
-                fill: hsl(var(--destructive) / 0.05);
-                stroke: hsl(var(--destructive));
-                stroke-width: 2;
-              }
-              /* Remove all other hover effects on cards and text */
-              .vj-foundation-card {
-                cursor: pointer;
-                transition: all 0.3s ease;
-              }
-              .vj-foundation-card:hover {
-                filter: drop-shadow(0 8px 20px hsl(var(--primary) / 0.25));
-              }
-              /* Ensure layering */
-              .vj-layer-line { isolation: isolate; z-index: 1; }
-              .vj-layer-nodes { isolation: isolate; z-index: 2; }
+          {/* Clean Timeline Layout */}
+          <div className="max-w-7xl mx-auto">
+            {/* Desktop/Tablet Timeline */}
+            <div className="hidden md:block relative">
+              {/* Central Timeline Line */}
+              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-slate-300 via-blue-400 to-red-500 transform -translate-y-1/2 rounded-full shadow-lg"></div>
+              <div className="absolute top-1/2 left-0 right-0 h-3 bg-gradient-to-r from-slate-300/30 via-blue-400/30 to-red-500/30 transform -translate-y-1/2 rounded-full blur-sm"></div>
               
-               /* Mobile responsive adjustments */
-               @media (max-width: 768px) {
-                 .vj-svg { padding: 30px 20px; transform: scale(1.2); transform-origin: center; }
-                 .vj-year { font-size: 24px; }
-                 .vj-year-visible { font-size: 22px; font-weight: 700; }
-                 .vj-cap { font-size: 16px; font-weight: 600; }
-                 .vj-node { r: 32; }
-                 .vj-node-ring { r: 40; }
-                 .vj-card rect { height: 70; rx: 18; }
-                 .timeline-container { padding-right: 0; margin: 0 -20px; }
-               }
-              
-              /* Tablet responsive adjustments */
-              @media (min-width: 769px) and (max-width: 1024px) {
-                .vj-svg { padding: 30px 20px; }
-                .vj-year { font-size: 22px; }
-                .vj-year-visible { font-size: 20px; font-weight: 700; }
-                .vj-cap { font-size: 16px; font-weight: 600; }
-                .vj-node { r: 30; }
-                .vj-node-ring { r: 38; }
-                .vj-card rect { height: 65; rx: 18; }
-              }
-            `}</style>
-            <svg className="vj-svg" viewBox="0 0 1360 600" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
-              <defs>
-                <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--destructive))" />
-                  <stop offset="35%" stopColor="hsl(var(--accent))" />
-                  <stop offset="70%" stopColor="hsl(var(--primary))" />
-                  <stop offset="100%" stopColor="hsl(var(--primary))" />
-                </linearGradient>
-                <marker id="vj-arrow" markerWidth={12} markerHeight={12} refX={9} refY={6} orient="auto">
-                  <path d="M0,0 L0,12 L12,6 z" fill="hsl(var(--destructive))"></path>
-                </marker>
-                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation={3} result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-
-              {/* diagonal growth line (behind everything) - Extended with arrow at top */}
-              <g className="vj-layer-line">
-                <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 100 500 L 1300 60" />
-              </g>
-
-              {/* NODES + CARDS (above the line) */}
-              <g className="vj-layer-nodes" aria-label="timeline milestones" tabIndex={-1}>
+              {/* Timeline Points */}
+              <div className="flex justify-between items-center py-20 relative">
                 
-                {/* 1) 2000 */}
-                <g className="milestone" data-key="2000" transform="translate(100,500)" tabIndex={0} aria-label="2000 — Foundation with digital factory vision">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  {/* Year label always visible */}
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2000</text>
-                  
-                  {/* Message card */}
-                  <g className="vj-card" transform="translate(-120,28)">
-                    <rect width={240} height={50} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Foundation with digital factory vision</text>
-                  </g>
-                </g>
+                {/* 2000 */}
+                <div className="flex flex-col items-center group">
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-red-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-red-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2000</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">Foundation with digital factory vision</p>
+                  </div>
+                </div>
 
-                {/* 2) 2007 */}
-                <g className="milestone" data-key="2007" transform="translate(225,450)" tabIndex={0} aria-label="2007 — First plant fully digitalized">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
-                  
-                  <g className="vj-card" transform="translate(24,-80)">
-                    <rect width={220} height={42} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={26}>First plant fully digitalized</text>
-                  </g>
-                </g>
+                {/* 2007 */}
+                <div className="flex flex-col items-center group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2007</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">First plant fully digitalized</p>
+                  </div>
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                </div>
 
-                {/* 3) 2013 */}
-                <g className="milestone" data-key="2013" transform="translate(350,400)" tabIndex={0} aria-label="2013 — 18 plants connected in network">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2013</text>
-                  
-                  <g className="vj-card" transform="translate(-210,28)">
-                    <rect width={260} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}><tspan fontWeight="700">18</tspan> plants connected in network</text>
-                  </g>
-                </g>
+                {/* 2013 */}
+                <div className="flex flex-col items-center group">
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2013</div>
+                    <p className="text-sm text-slate-600 leading-relaxed"><span className="font-bold text-blue-600">18</span> plants connected in network</p>
+                  </div>
+                </div>
 
-                {/* 4) 2016 */}
-                <g className="milestone" data-key="2016" transform="translate(475,350)" tabIndex={0} aria-label="2016 — Scaled to 70 plants globally">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
-                  
-                  <g className="vj-card" transform="translate(24,-76)">
-                    <rect width={240} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Scaled to <tspan fontWeight="700">70</tspan> plants globally</text>
-                  </g>
-                </g>
+                {/* 2016 */}
+                <div className="flex flex-col items-center group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2016</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">Scaled to <span className="font-bold text-blue-600">70</span> plants globally</p>
+                  </div>
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                </div>
 
-                {/* 5) 2019 */}
-                <g className="milestone" data-key="2019" transform="translate(600,300)" tabIndex={0} aria-label="2019 — Milestone of 100+ plants achieved">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2019</text>
-                  
-                  <g className="vj-card" transform="translate(-220,28)">
-                    <rect width={270} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Milestone of <tspan fontWeight="700">100+</tspan> plants achieved</text>
-                  </g>
-                </g>
+                {/* 2019 */}
+                <div className="flex flex-col items-center group">
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2019</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">Milestone of <span className="font-bold text-blue-600">100+</span> plants achieved</p>
+                  </div>
+                </div>
 
-                {/* 6) 2023 */}
-                <g className="milestone" data-key="2023" transform="translate(725,250)" tabIndex={0} aria-label="2023 — Foundation for Autonomous factories">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
-                  
-                  <g className="vj-card" transform="translate(24,-80)">
-                    <rect width={270} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Foundation for Autonomous factories</text>
-                  </g>
-                </g>
+                {/* 2023 */}
+                <div className="flex flex-col items-center group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2023</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">Foundation for Autonomous factories</p>
+                  </div>
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                </div>
 
-                {/* 7) 2025 */}
-                <g className="milestone" data-key="2025" transform="translate(850,200)" tabIndex={0} aria-label="2025 — Milestone of 300+ plants achieved">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2025</text>
-                  
-                  <g className="vj-card" transform="translate(-240,28)">
-                    <rect width={290} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Milestone of <tspan fontWeight="700">300+</tspan> plants achieved</text>
-                  </g>
-                </g>
+                {/* 2025 */}
+                <div className="flex flex-col items-center group">
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-blue-600 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-blue-500 rounded-full animate-ping opacity-30 group-hover:opacity-50"></div>
+                  </div>
+                  <div className="mt-6 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-slate-200 max-w-[200px] text-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-slate-800 mb-2">2025</div>
+                    <p className="text-sm text-slate-600 leading-relaxed">Milestone of <span className="font-bold text-blue-600">300+</span> plants achieved</p>
+                  </div>
+                </div>
 
-                {/* 8) 2026 (future) */}
-                <g className="milestone" data-key="2026" transform="translate(975,150)" tabIndex={0} aria-label="2026 — Projected First Fully Autonomous Plant">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
-                  
-                  <g className="vj-card" transform="translate(-324,-76)">
-                    <rect width={300} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Projected First Fully Autonomous Plant</text>
-                  </g>
-                </g>
+                {/* 2026 - Future */}
+                <div className="flex flex-col items-center group">
+                  <div className="bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-red-200 max-w-[200px] text-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-red-600 mb-2">2026</div>
+                    <p className="text-sm text-red-700 leading-relaxed">Projected First Fully Autonomous Plant</p>
+                  </div>
+                  <div className="relative">
+                    <div className="w-6 h-6 bg-red-500 rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 w-6 h-6 bg-red-400 rounded-full animate-ping opacity-40 group-hover:opacity-60"></div>
+                  </div>
+                </div>
 
-                {/* 9) 2030 (future) */}
-                <g className="milestone" data-key="2030" transform="translate(1100,100)" tabIndex={0} aria-label="2030 — 1000 Autonomous Plants">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2030</text>
-                  
-                  <g className="vj-card" transform="translate(-284,44)">
-                    <rect width={260} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}><tspan fontWeight="700">1000</tspan> Autonomous Plants</text>
-                  </g>
-                </g>
-              </g>
+                {/* 2030 - Future */}
+                <div className="flex flex-col items-center group">
+                  <div className="relative">
+                    <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-xl border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                    </div>
+                    <div className="absolute inset-0 w-8 h-8 bg-red-400 rounded-full animate-pulse opacity-50"></div>
+                  </div>
+                  <div className="mt-6 bg-gradient-to-br from-red-50 to-red-100 backdrop-blur-sm rounded-2xl p-5 shadow-xl border border-red-200 max-w-[200px] text-center group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300">
+                    <div className="text-lg font-bold text-red-600 mb-2">2030</div>
+                    <p className="text-sm text-red-700 leading-relaxed"><span className="font-bold text-red-600">1000</span> Autonomous Plants</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-              {/* Strong Foundation card - Bottom Right (Bigger) */}
-              <g className="vj-foundation-card" transform="translate(750,420)">
-                <rect width={430} height={150} fill="hsl(var(--muted))" rx={16} stroke="hsl(var(--border))" strokeWidth={2}></rect>
-                <text className="vj-year" x={20} y={40} style={{
-                fontSize: '20px'
-              }} fill="hsl(var(--primary))">
-                  STRONG FOUNDATION FOR INNOVATION
-                </text>
-                <circle cx={28} cy={65} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={72} style={{
-                fontSize: '16px'
-              }}>230+ dedicated R&D professionals in India</text>
-                <circle cx={28} cy={95} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={102} style={{
-                fontSize: '16px'
-              }}>ISO 27001 certified for information security</text>
-                <circle cx={28} cy={125} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={132} style={{
-                fontSize: '16px'
-              }}>ISO 9001 certified for quality management</text>
-              </g>
-            </svg>
+            {/* Mobile Timeline */}
+            <div className="md:hidden space-y-8">
+              {[
+                { year: "2000", text: "Foundation with digital factory vision", color: "red" },
+                { year: "2007", text: "First plant fully digitalized", color: "blue" },
+                { year: "2013", text: "18 plants connected in network", color: "blue", highlight: "18" },
+                { year: "2016", text: "Scaled to 70 plants globally", color: "blue", highlight: "70" },
+                { year: "2019", text: "Milestone of 100+ plants achieved", color: "blue", highlight: "100+" },
+                { year: "2023", text: "Foundation for Autonomous factories", color: "blue" },
+                { year: "2025", text: "Milestone of 300+ plants achieved", color: "blue", highlight: "300+" },
+                { year: "2026", text: "Projected First Fully Autonomous Plant", color: "red", future: true },
+                { year: "2030", text: "1000 Autonomous Plants", color: "red", highlight: "1000", future: true },
+              ].map((item, index) => (
+                <div key={item.year} className="flex items-center group">
+                  <div className="flex-shrink-0 mr-6">
+                    <div className="relative">
+                      <div className={`w-6 h-6 ${item.color === 'red' ? 'bg-red-500' : 'bg-blue-500'} rounded-full shadow-lg border-4 border-white relative z-10 group-hover:scale-110 transition-transform duration-300`}></div>
+                      <div className={`absolute inset-0 w-6 h-6 ${item.color === 'red' ? 'bg-red-400' : 'bg-blue-400'} rounded-full animate-ping opacity-30`}></div>
+                    </div>
+                    {index < 8 && (
+                      <div className="w-1 h-12 bg-gradient-to-b from-slate-300 to-blue-400 mt-2 mx-auto rounded-full"></div>
+                    )}
+                  </div>
+                  <div className={`flex-1 ${item.future ? 'bg-gradient-to-br from-red-50 to-red-100 border-red-200' : 'bg-white/90 border-slate-200'} backdrop-blur-sm rounded-2xl p-4 shadow-lg border group-hover:shadow-xl group-hover:scale-[1.02] transition-all duration-300`}>
+                    <div className={`text-lg font-bold ${item.future ? 'text-red-600' : 'text-slate-800'} mb-2`}>{item.year}</div>
+                    <p className={`text-sm ${item.future ? 'text-red-700' : 'text-slate-600'} leading-relaxed`}>
+                      {item.highlight ? (
+                        <>
+                          {item.text.split(item.highlight)[0]}
+                          <span className={`font-bold ${item.color === 'red' ? 'text-red-600' : 'text-blue-600'}`}>{item.highlight}</span>
+                          {item.text.split(item.highlight)[1]}
+                        </>
+                      ) : item.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Strong Foundation Section - Integrated Design */}
+          <div className="mt-20">
+            <div className="bg-gradient-to-br from-slate-100 to-blue-100/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-200 max-w-4xl mx-auto">
+              <div className="text-center mb-10">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3">Strong Foundation for Innovation</h3>
+                <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-red-500 mx-auto rounded-full"></div>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-2xl font-bold text-blue-600 mb-2">230+</div>
+                  <p className="text-sm text-slate-700 leading-relaxed">Dedicated R&D professionals in Hubballi, Karnataka, India</p>
+                </div>
+                
+                <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-lg font-bold text-emerald-600 mb-2">ISO 27001</div>
+                  <p className="text-sm text-slate-700 leading-relaxed">Certified for information security management</p>
+                </div>
+                
+                <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <CheckCircle2 className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-lg font-bold text-purple-600 mb-2">ISO 9001</div>
+                  <p className="text-sm text-slate-700 leading-relaxed">Certified for quality management systems</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
