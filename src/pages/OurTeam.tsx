@@ -422,7 +422,7 @@ const OurTeam = () => {
                   name: "Balaji Kumar",
                   initials: "BK",
                   role: "Senior Functional Consultant",
-                  image: "/lovable-uploads/c3c6caf6-4edb-45d1-b318-3e024e67e623.png"
+                  image: "/lovable-uploads/352f28fa-76b2-4fca-843a-8124d22ea580.png"
                 }, {
                   name: "Rohan Patil",
                   initials: "RP",
@@ -437,7 +437,7 @@ const OurTeam = () => {
                   name: "Ann Maria Jess Kurian",
                   initials: "AJ",
                   role: "Lead Functional Consultant",
-                  image: "/lovable-uploads/352f28fa-76b2-4fca-843a-8124d22ea580.png"
+                  image: "/lovable-uploads/c3c6caf6-4edb-45d1-b318-3e024e67e623.png"
                 }, {
                   name: "Kanakaraddi C Radder",
                   initials: "KR",
