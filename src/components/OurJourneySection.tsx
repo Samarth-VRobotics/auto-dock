@@ -208,49 +208,43 @@ const OurJourneySection = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
           </div>
 
-          {/* From University to Industry - Using background image */}
-          <div className="relative w-full max-w-[95vw] mx-auto mb-24 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 ease-out">
-            {/* Background Image */}
-            {industryImages.map((image, index) => 
-              <div 
-                key={index}
-                className={`absolute inset-0 transition-all duration-1000 ease-out ${
-                  index === industrySlide ? 'opacity-100 z-0' : 'opacity-0 z-0'
-                }`}
-                style={{
-                  backgroundImage: `url(${image.src})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
-              />
-            )}
-            
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/60 hover:bg-black/70 transition-all duration-300 z-10"></div>
-            
-            {/* Content */}
-            <div className="relative z-20 p-8 lg:p-16 min-h-[600px] flex items-center">
-              <div className="w-full max-w-4xl mx-auto">
-                <div className="space-y-8 text-white leading-loose text-xl lg:text-2xl">
-                  <p className="text-shadow-lg">It all started in the university labs, where late nights were spent building humanoids, mobile robots, automated systems, and vision-based inspection platforms. Each project was more than a technical challenge. It was proof that engineering could solve real problems.</p>
-                  
-                  <p className="text-shadow-lg">This bridge from academia to industry was shaped by mentors like Prof. Arun Giriyapur, who pushed us to think beyond textbooks, and by the vision of our CEO Subramanyam Kasibhat, whose belief in robotics as a driver of manufacturing transformation inspired us to take our ideas into the real world.</p>
-                  
-                  <p className="text-shadow-lg">From humble passion projects to industry-ready solutions, our journey has been shaped by the values we carried from KLE Technological University. Rigor, practicality, and impact remain the compass for everything we design, build, and innovate at Vegam Robotics.</p>
+          {/* From University to Industry */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">            
+            {/* Industry Visual */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl w-full group
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out 
+                          h-64 sm:h-80 md:h-96 lg:h-[500px] mt-8">
+              {/* Industry Images Slideshow */}
+              {industryImages.map((image, index) => 
+                <img 
+                  key={index} 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className={`absolute inset-0 w-full h-full object-contain object-center
+                            group-hover:scale-110 transition-all duration-1000 ease-out 
+                            ${index === industrySlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                />
+              )}
+              {/* Slide indicators only */}
+              <div className="absolute bottom-6 right-6 z-30">
+                <div className="flex space-x-2">
+                  {industryImages.map((_, index) => <div key={index} className={`w-3 h-3 rounded-full transition-all duration-300 ${index === industrySlide ? 'bg-white' : 'bg-white/50'}`} />)}
                 </div>
+              </div>
+            </div>
+            
+            {/* Text Content */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group w-full">
+              <div className="space-y-8 text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
+                <p>It all started in the university labs, where late nights were spent building humanoids, mobile robots, automated systems, and vision-based inspection platforms. Each project was more than a technical challenge. It was proof that engineering could solve real problems.</p>
                 
-                {/* Slide indicators */}
-                <div className="flex justify-center mt-8 space-x-2">
-                  {industryImages.map((_, index) => 
-                    <div 
-                      key={index} 
-                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                        index === industrySlide ? 'bg-white' : 'bg-white/50'
-                      }`} 
-                    />
-                  )}
-                </div>
+                <p>This bridge from academia to industry was shaped by mentors like Prof. Arun Giriyapur, who pushed us to think beyond textbooks, and by the vision of our CEO Subramanyam Kasibhat, whose belief in robotics as a driver of manufacturing transformation inspired us to take our ideas into the real world.</p>
+                
+                <p>From humble passion projects to industry-ready solutions, our journey has been shaped by the values we carried from KLE Technological University. Rigor, practicality, and impact remain the compass for everything we design, build, and innovate at Vegam Robotics.</p>
+                
+                
               </div>
             </div>
           </div>
