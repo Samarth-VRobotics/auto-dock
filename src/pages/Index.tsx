@@ -40,9 +40,9 @@ const Index = () => {
             </h1>
             
             <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 animate-fade-in" style={{
-              animationDelay: '0.3s',
-              animationFillMode: 'both'
-            }}>
+            animationDelay: '0.3s',
+            animationFillMode: 'both'
+          }}>
               <Badge className="badge-primary text-xs sm:text-sm">Digital Factories</Badge>
               <Badge className="badge-primary text-xs sm:text-sm">Industrial IoT</Badge>
               <Badge className="badge-secondary text-xs sm:text-sm">Robotics & Automation</Badge>
@@ -50,9 +50,9 @@ const Index = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-in" style={{
-              animationDelay: '0.9s',
-              animationFillMode: 'both'
-            }}>
+            animationDelay: '0.9s',
+            animationFillMode: 'both'
+          }}>
               <Button size="lg" className="w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 text-sm sm:text-base lg:text-lg font-bold hover:scale-105 transition-transform" onClick={() => scrollToSection('future-manufacturing')}>
                 Explore the Vision
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
@@ -314,7 +314,10 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="timeline-container relative max-w-6xl mx-auto" style={{ paddingRight: 'min(8vw, 120px)', overflow: 'visible' }}>
+          <div className="timeline-container relative max-w-6xl mx-auto" style={{
+          paddingRight: 'min(8vw, 120px)',
+          overflow: 'visible'
+        }}>
             <style>{`
               .vj-svg { 
                 width: 100%; 
@@ -464,61 +467,42 @@ const Index = () => {
             <svg className="vj-svg" viewBox="0 0 1360 600" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
               <defs>
                 <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--destructive))"/>
-                  <stop offset="35%" stopColor="hsl(var(--accent))"/>
-                  <stop offset="70%" stopColor="hsl(var(--primary))"/>
-                  <stop offset="100%" stopColor="hsl(var(--primary))"/>
+                  <stop offset="0%" stopColor="hsl(var(--destructive))" />
+                  <stop offset="35%" stopColor="hsl(var(--accent))" />
+                  <stop offset="70%" stopColor="hsl(var(--primary))" />
+                  <stop offset="100%" stopColor="hsl(var(--primary))" />
                 </linearGradient>
                 <marker id="vj-arrow" markerWidth={12} markerHeight={12} refX={9} refY={6} orient="auto">
                   <path d="M0,0 L0,12 L12,6 z" fill="hsl(var(--destructive))"></path>
                 </marker>
                 <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation={3} result="coloredBlur"/>
+                  <feGaussianBlur stdDeviation={3} result="coloredBlur" />
                   <feMerge>
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
                   </feMerge>
                 </filter>
                 <clipPath id="imageClip">
-                  <rect x="20" y="20" width="540" height="216" rx="16"/>
+                  <rect x="20" y="20" width="540" height="216" rx="16" />
                 </clipPath>
               </defs>
 
               {/* Manufacturing Evolution Image - Top Left (0.8x size) */}
-              <image 
-                href="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png"
-                x="20" 
-                y="20" 
-                width="540" 
-                height="216"
-                clipPath="url(#imageClip)"
-                className="manufacturing-image"
-                style={{ filter: 'drop-shadow(0 8px 25px hsl(var(--foreground) / 0.15))' }}
-              />
-              <rect 
-                x="20" 
-                y="20" 
-                width="540" 
-                height="216" 
-                rx="16" 
-                fill="none" 
-                stroke="hsl(var(--border))" 
-                strokeWidth="2"
-                opacity="0.3"
-              />
+              <image href="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png" x="20" y="20" width="540" height="216" clipPath="url(#imageClip)" className="manufacturing-image" style={{
+              filter: 'drop-shadow(0 8px 25px hsl(var(--foreground) / 0.15))'
+            }} />
+              <rect x="20" y="20" width="540" height="216" rx="16" fill="none" stroke="hsl(var(--border))" strokeWidth="2" opacity="0.3" />
 
               {/* diagonal growth line (behind everything) - Extended with arrow at top */}
               <g className="vj-layer-line">
-                <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)"
-                      d="M 100 500 L 1300 60"/>
+                <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 100 500 L 1300 60" />
               </g>
 
               {/* NODES + CARDS (above the line) */}
               <g className="vj-layer-nodes" aria-label="timeline milestones" tabIndex={-1}>
                 
                 {/* 1) 2000 */}
-                <g className="milestone" data-key="2000" transform="translate(100,500)" tabIndex={0} 
-                   aria-label="2000 — Foundation with digital factory vision">
+                <g className="milestone" data-key="2000" transform="translate(100,500)" tabIndex={0} aria-label="2000 — Foundation with digital factory vision">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -533,8 +517,7 @@ const Index = () => {
                 </g>
 
                 {/* 2) 2007 */}
-                <g className="milestone" data-key="2007" transform="translate(225,450)" tabIndex={0} 
-                   aria-label="2007 — First plant fully digitalized">
+                <g className="milestone" data-key="2007" transform="translate(225,450)" tabIndex={0} aria-label="2007 — First plant fully digitalized">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -547,8 +530,7 @@ const Index = () => {
                 </g>
 
                 {/* 3) 2013 */}
-                <g className="milestone" data-key="2013" transform="translate(350,400)" tabIndex={0} 
-                   aria-label="2013 — 18 plants connected in network">
+                <g className="milestone" data-key="2013" transform="translate(350,400)" tabIndex={0} aria-label="2013 — 18 plants connected in network">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -561,8 +543,7 @@ const Index = () => {
                 </g>
 
                 {/* 4) 2016 */}
-                <g className="milestone" data-key="2016" transform="translate(475,350)" tabIndex={0} 
-                   aria-label="2016 — Scaled to 70 plants globally">
+                <g className="milestone" data-key="2016" transform="translate(475,350)" tabIndex={0} aria-label="2016 — Scaled to 70 plants globally">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -575,8 +556,7 @@ const Index = () => {
                 </g>
 
                 {/* 5) 2019 */}
-                <g className="milestone" data-key="2019" transform="translate(600,300)" tabIndex={0} 
-                   aria-label="2019 — Milestone of 100+ plants achieved">
+                <g className="milestone" data-key="2019" transform="translate(600,300)" tabIndex={0} aria-label="2019 — Milestone of 100+ plants achieved">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -589,8 +569,7 @@ const Index = () => {
                 </g>
 
                 {/* 6) 2023 */}
-                <g className="milestone" data-key="2023" transform="translate(725,250)" tabIndex={0} 
-                   aria-label="2023 — Foundation for Autonomous factories">
+                <g className="milestone" data-key="2023" transform="translate(725,250)" tabIndex={0} aria-label="2023 — Foundation for Autonomous factories">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -603,8 +582,7 @@ const Index = () => {
                 </g>
 
                 {/* 7) 2025 */}
-                <g className="milestone" data-key="2025" transform="translate(850,200)" tabIndex={0} 
-                   aria-label="2025 — Milestone of 300+ plants achieved">
+                <g className="milestone" data-key="2025" transform="translate(850,200)" tabIndex={0} aria-label="2025 — Milestone of 300+ plants achieved">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--past" r={20}></circle>
                   
@@ -617,8 +595,7 @@ const Index = () => {
                 </g>
 
                 {/* 8) 2026 (future) */}
-                <g className="milestone" data-key="2026" transform="translate(975,150)" tabIndex={0} 
-                   aria-label="2026 — Projected First Fully Autonomous Plant">
+                <g className="milestone" data-key="2026" transform="translate(975,150)" tabIndex={0} aria-label="2026 — Projected First Fully Autonomous Plant">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
                   
@@ -631,8 +608,7 @@ const Index = () => {
                 </g>
 
                 {/* 9) 2030 (future) */}
-                <g className="milestone" data-key="2030" transform="translate(1100,100)" tabIndex={0} 
-                   aria-label="2030 — 1000 Autonomous Plants">
+                <g className="milestone" data-key="2030" transform="translate(1100,100)" tabIndex={0} aria-label="2030 — 1000 Autonomous Plants">
                   <circle className="vj-node-ring" r={26}></circle>
                   <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
                   
@@ -648,15 +624,23 @@ const Index = () => {
               {/* Strong Foundation card - Bottom Right (Bigger) */}
               <g className="vj-foundation-card" transform="translate(750,420)">
                 <rect width={430} height={150} fill="hsl(var(--muted))" rx={16} stroke="hsl(var(--border))" strokeWidth={2}></rect>
-                <text className="vj-year" x={20} y={40} style={{fontSize:'20px'}} fill="hsl(var(--primary))">
+                <text className="vj-year" x={20} y={40} style={{
+                fontSize: '20px'
+              }} fill="hsl(var(--primary))">
                   STRONG FOUNDATION FOR INNOVATION
                 </text>
                 <circle cx={28} cy={65} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={72} style={{fontSize:'16px'}}>230+ dedicated R&D professionals in India</text>
+                <text className="vj-cap" x={45} y={72} style={{
+                fontSize: '16px'
+              }}>230+ dedicated R&D professionals in India</text>
                 <circle cx={28} cy={95} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={102} style={{fontSize:'16px'}}>ISO 27001 certified for information security</text>
+                <text className="vj-cap" x={45} y={102} style={{
+                fontSize: '16px'
+              }}>ISO 27001 certified for information security</text>
                 <circle cx={28} cy={125} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={132} style={{fontSize:'16px'}}>ISO 9001 certified for quality management</text>
+                <text className="vj-cap" x={45} y={132} style={{
+                fontSize: '16px'
+              }}>ISO 9001 certified for quality management</text>
               </g>
             </svg>
           </div>
@@ -667,7 +651,7 @@ const Index = () => {
       <section id="global-partnerships" className="section-padding bg-gradient-to-br from-gray-50/50 to-blue-50/30">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Global Partnerships & <span className="text-red-600">Big Wins</span></h2>
+            
           </div>
           
           {/* Strategic Partnerships - Full Width Row */}
@@ -686,11 +670,7 @@ const Index = () => {
                 
                 {/* Company Logos Grid */}
                 <div className="bg-white/60 rounded-2xl p-6 lg:p-8 backdrop-blur-sm">
-                  <img 
-                    src="/lovable-uploads/85aadf10-6770-458d-a137-5836196e9f54.png" 
-                    alt="Global partner company logos including ARKEMA, BASF, BELCO, BOSTIK, EMERSON, EVONIK, HENKEL, Saint-Gobain, SEP, Avery Dennison, SKF, SOLEX, Unilever, Vedanta, INDORAMA, JSL, JSW Steel, LG Electronics, MRCC, Target, and OKW" 
-                    className="w-full h-auto hover:scale-105 transition-transform duration-300 cursor-pointer"
-                  />
+                  <img src="/lovable-uploads/85aadf10-6770-458d-a137-5836196e9f54.png" alt="Global partner company logos including ARKEMA, BASF, BELCO, BOSTIK, EMERSON, EVONIK, HENKEL, Saint-Gobain, SEP, Avery Dennison, SKF, SOLEX, Unilever, Vedanta, INDORAMA, JSL, JSW Steel, LG Electronics, MRCC, Target, and OKW" className="w-full h-auto hover:scale-105 transition-transform duration-300 cursor-pointer" />
                 </div>
               </CardContent>
             </Card>
