@@ -267,7 +267,7 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-primary mb-3">Robotics Experts</h3>
                   <p className="text-foreground/60 text-lg">Building autonomous systems that redefine industrial operations</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                   {[{
                   name: "Faizan Pathan",
                   initials: "FP",
@@ -288,11 +288,12 @@ const OurTeam = () => {
                   name: "Ashutosh Kangralkar",
                   initials: "AS",
                   role: "Mechanical Design"
-                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
-                      <div className="w-24 h-24 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
+                      <div className="w-32 h-32 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                         {member.initials}
                       </div>
-                      <h4 className="font-bold text-foreground text-lg mb-2">{member.name}</h4>
+                      <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
+                      <p className="text-foreground/60 text-sm mb-4">{member.role}</p>
                       <Linkedin className="w-5 h-5 text-primary hover:text-secondary transition-colors cursor-pointer" />
                     </div>)}
                 </div>
@@ -304,7 +305,7 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-3">AI Experts</h3>
                   <p className="text-foreground/60 text-lg">Developing intelligent software architectures and automation solutions</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                   {[{
                   name: "Falgun",
                   initials: "F",
@@ -328,24 +329,25 @@ const OurTeam = () => {
                   initials: "NP",
                   role: "Software Architect",
                   image: "/lovable-uploads/56cc3bd2-28b1-49c7-94be-6eb09506c3c8.png"
-                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
+                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
                       {member.image ? (
-                        <Avatar className="w-24 h-24 mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           <AvatarImage 
                             src={member.image} 
                             alt={member.name}
                             className="object-cover object-center"
                           />
-                          <AvatarFallback className="bg-gradient-secondary text-white font-bold text-xl">
+                          <AvatarFallback className="bg-gradient-secondary text-white font-bold text-2xl">
                             {member.initials}
                           </AvatarFallback>
                         </Avatar>
                       ) : (
-                        <div className="w-24 h-24 rounded-full bg-gradient-secondary flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <div className="w-32 h-32 rounded-full bg-gradient-secondary flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           {member.initials}
                         </div>
                       )}
-                      <h4 className="font-bold text-foreground text-lg mb-2">{member.name}</h4>
+                      <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
+                      <p className="text-foreground/60 text-sm mb-4">{member.role}</p>
                       <Linkedin className="w-5 h-5 text-primary hover:text-secondary transition-colors cursor-pointer" />
                     </div>)}
                 </div>
@@ -357,50 +359,50 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-accent mb-3">Embedded Experts</h3>
                   <p className="text-foreground/60 text-lg">Specializing in hardware-software integration and embedded systems</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                   {[{
                   name: "Vishwanath Garagad",
                   initials: "VG",
-                  role: "Software Architect",
+                  role: "Product Architect",
                   image: "/lovable-uploads/d86864c8-a1db-485e-ba3c-628a4d873a12.png"
                 }, {
                   name: "Vijaylakshmi",
                   initials: "VL",
-                  role: "Software Architect"
+                  role: "Firmware Architect"
                 }, {
                   name: "Samuel Mara",
                   initials: "SM",
-                  role: "Software Architect",
+                  role: "PCB Design Engineer",
                   image: "/lovable-uploads/acf270f5-7ca6-4283-abc0-8b33227fc799.png"
                 }, {
                   name: "Sarvanan",
                   initials: "SV",
-                  role: "Technical Lead",
+                  role: "Systems Integration Engineer",
                   image: "/lovable-uploads/3616a756-548d-420e-ba06-b93f9a1fa6bd.png"
                 }, {
                   name: "Shridhar",
                   initials: "SH",
                   role: "Senior Software Engineer",
                   image: "/lovable-uploads/e6dcb3fb-9309-445f-b034-b0c52e068181.png"
-                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
+                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
                       {member.image ? (
-                        <Avatar className="w-24 h-24 mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           <AvatarImage 
                             src={member.image} 
                             alt={member.name}
                             className="object-cover object-center"
                           />
-                          <AvatarFallback className="bg-gradient-accent text-white font-bold text-xl">
+                          <AvatarFallback className="bg-gradient-accent text-white font-bold text-2xl">
                             {member.initials}
                           </AvatarFallback>
                         </Avatar>
                       ) : (
-                        <div className="w-24 h-24 rounded-full bg-gradient-accent flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <div className="w-32 h-32 rounded-full bg-gradient-accent flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           {member.initials}
                         </div>
                       )}
-                      <h4 className="font-bold text-foreground text-lg mb-2">{member.name}</h4>
-                      <p className="text-foreground/60 text-sm mb-3">{member.role}</p>
+                      <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
+                      <p className="text-foreground/60 text-sm mb-4">{member.role}</p>
                       <Linkedin className="w-5 h-5 text-primary hover:text-secondary transition-colors cursor-pointer" />
                     </div>)}
                 </div>
@@ -412,7 +414,7 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-3">Smart Factory Experts</h3>
                   <p className="text-foreground/60 text-lg">Digital factory solutions and process optimization specialists</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                   {[{
                   name: "Aman Saxena",
                   initials: "AS",
@@ -431,7 +433,7 @@ const OurTeam = () => {
                 }, {
                   name: "Shreeja M S",
                   initials: "SMS",
-                  role: "Senior Functional Consultant",
+                  role: "Senior Software Engineer",
                   image: "/lovable-uploads/e50606a0-da85-43fa-ba84-e9fa043c459b.png"
                 }, {
                   name: "Ann Maria Jess Kurian",
@@ -465,70 +467,71 @@ const OurTeam = () => {
                 }, {
                   name: "Venkatesh HS",
                   initials: "VH",
-                  role: "Senior Consultant",
+                  role: "Lead Functional Consultant",
                   image: "/lovable-uploads/79c22532-d762-481d-a996-4f13deb1878d.png"
                 }, {
                   name: "Tunga Santosh Kumar Reddy",
                   initials: "TSR",
-                  role: "Business Analyst",
+                  role: "Software Architect",
                   image: "/lovable-uploads/3d63daaa-3e71-42b1-af1b-f18016227d10.png"
                 }, {
                   name: "Varadharajan N M",
                   initials: "VN",
-                  role: "Process Engineer",
+                  role: "Software Architect",
                   image: "/lovable-uploads/27f82965-f871-462e-9d19-dfe00fc021bd.png"
                 }, {
                   name: "Sachin Vishwakarma",
                   initials: "SV",
-                  role: "Quality Analyst",
+                  role: "Software Architect",
                   image: "/lovable-uploads/b893342a-f6f5-4d8a-b6f0-6c2ba15fa002.png"
                 }, {
                   name: "Pratish RameshChandra Gandhi",
                   initials: "PRG",
-                  role: "Integration Specialist",
+                  role: "Software Architect",
                   image: "/lovable-uploads/5b0d2e84-1357-4b91-862b-84b8878527f9.png"
                 }, {
                   name: "Vishweshwar Kapse",
                   initials: "VK",
-                  role: "System Administrator",
+                  role: "Software Architect",
                   image: "/lovable-uploads/9a4c8e4c-3359-4f38-982c-675544f01a4a.png"
                 }, {
                   name: "Sreenivasa Yarram",
                   initials: "SY",
-                  role: "Database Engineer",
+                  role: "Software Architect",
                   image: "/lovable-uploads/1ef3df60-aed7-4450-b3be-a92ffd78423c.png"
                 }, {
                   name: "Sirajudheen NH",
                   initials: "SN",
-                  role: "UI/UX Designer",
+                  role: "Software Architect",
                   image: "/lovable-uploads/aaba0cb6-b9cd-4fca-95c1-3cfa2ebf16bc.png"
                 }, {
                   name: "Sushin C",
                   initials: "SC",
-                  role: "DevOps Engineer",
+                  role: "Software Architect",
                   image: "/lovable-uploads/deb7b8e5-9c2d-4e19-bead-676533360f9d.png"
                 }, {
                   name: "Ramesh Kumar",
                   initials: "RK",
                   role: "Project Coordinator"
-                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
+                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
                       {member.image ? (
-                        <Avatar className="w-24 h-24 mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           <AvatarImage 
                             src={member.image} 
                             alt={member.name}
                             className="object-cover object-center"
                           />
-                          <AvatarFallback className="bg-gradient-to-br from-slate-600 to-slate-700 text-white font-bold text-xl">
+                          <AvatarFallback className="bg-gradient-to-br from-slate-600 to-slate-700 text-white font-bold text-2xl">
                             {member.initials}
                           </AvatarFallback>
                         </Avatar>
                       ) : (
-                        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           {member.initials}
                         </div>
                       )}
-                      <h4 className="font-bold text-foreground text-lg mb-2">{member.name}</h4>
+                      <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
+                      <p className="text-foreground/60 text-sm mb-4">{member.role}</p>
                       <Linkedin className="w-5 h-5 text-primary hover:text-secondary transition-colors cursor-pointer" />
                     </div>)}
                 </div>
