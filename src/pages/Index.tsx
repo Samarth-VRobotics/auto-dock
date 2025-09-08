@@ -304,338 +304,294 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Vegam Journey Section - Enhanced Interactive Timeline */}
-      <section className="vegam-journey section-padding bg-gradient-to-br from-background via-muted/30 to-accent/5 relative overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 opacity-60">
+      {/* Vegam Journey Section - Redesigned Professional Timeline */}
+      <section className="vegam-journey section-padding bg-gradient-to-br from-slate-50 via-blue-50/30 to-teal-50/20 relative overflow-hidden dark:from-slate-900 dark:via-slate-800/30 dark:to-slate-700/20">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0 opacity-20 dark:opacity-30">
           <img 
-            src="/lovable-uploads/1b457b5e-e209-4e7f-93fb-3edebe02a174.png" 
-            alt="Manufacturing evolution background" 
-            className="w-full h-full object-cover brightness-75"
+            src="/src/assets/manufacturing-evolution-hero.jpg" 
+            alt="Manufacturing evolution from traditional to AI-driven smart factories" 
+            className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/20 to-background/40"></div>
-        <div className="container mx-auto px-6 lg:px-8 relative">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 text-foreground px-4">
-              Vegam Journey: Proven History in Manufacturing Transformation
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/90 to-background/95"></div>
+        
+        {/* Subtle Indian Pattern Overlay */}
+        <div className="absolute top-0 right-0 w-96 h-96 opacity-5 dark:opacity-10">
+          <svg viewBox="0 0 100 100" className="w-full h-full text-primary">
+            <pattern id="indianPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.3"/>
+              <path d="M5,5 L15,15 M15,5 L5,15" stroke="currentColor" strokeWidth="0.5" opacity="0.2"/>
+            </pattern>
+            <rect width="100" height="100" fill="url(#indianPattern)"/>
+          </svg>
+        </div>
+
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16 md:mb-20">
+            <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-primary/10 rounded-full">
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Journey</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight">
+              Vegam Journey: <span className="text-primary">Proven History</span><br className="hidden md:block" />
+              in <span className="bg-gradient-to-r from-primary to-teal-600 bg-clip-text text-transparent">Manufacturing Transformation</span>
             </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              From digital vision to autonomous reality - track our milestone achievements in revolutionizing manufacturing across the globe.
+            </p>
           </div>
 
-          <div className="timeline-container relative max-w-6xl mx-auto" style={{
-          paddingRight: 'min(8vw, 120px)',
-          overflow: 'visible'
-        }}>
-            <style>{`
-              .vj-svg { 
-                width: 100%; 
-                height: auto; 
-                display: block; 
-                filter: drop-shadow(0 4px 20px hsl(var(--primary) / 0.1));
-              }
-              .vj-year { 
-                font: 700 18px/1.2 Inter, system-ui; 
-                fill: hsl(var(--foreground)); 
-                transition: all 0.3s ease;
-              }
-              .vj-year-visible {
-                font: 600 16px/1.2 Inter, system-ui;
-                fill: hsl(var(--muted-foreground));
-                transition: all 0.3s ease;
-              }
-              .vj-cap { 
-                font: 500 14px/1.45 Inter, system-ui; 
-                fill: hsl(var(--muted-foreground)); 
-                transition: all 0.3s ease;
-              }
-              .vj-cap strong { font-weight: 700; }
-              .vj-node-ring { 
-                fill: hsl(var(--background)); 
-                stroke: hsl(var(--background)); 
-                stroke-width: 5; 
-                filter: drop-shadow(0 2px 8px hsl(var(--foreground) / 0.1));
-              }
-              .vj-node--past { 
-                fill: hsl(var(--primary)); 
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-              }
-              .vj-node--future { 
-                fill: hsl(var(--destructive)); 
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-              }
-              .vj-line { 
-                stroke-width: 3; 
-                fill: none; 
-                filter: drop-shadow(0 2px 4px hsl(var(--primary) / 0.2));
-              }
-              .vj-card rect { 
-                fill: hsl(var(--card)); 
-                rx: 16; 
-                transition: all 0.3s ease;
-              }
-              .vj-card { 
-                filter: drop-shadow(0 8px 25px hsl(var(--foreground) / 0.1)); 
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-              }
-              .milestone { 
-                cursor: pointer; 
-                outline: none; 
-                transition: all 0.3s ease;
-              }
-              .milestone .vj-node { 
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-                transform-origin: center; 
-              }
-              .milestone .vj-card { 
-                opacity: 1; 
-                pointer-events: auto; 
-                transform: translateY(0);
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-              }
-              /* Node circle hover effects */
-              .milestone:hover .vj-node,
-              .milestone:focus-within .vj-node {
-                transform: scale(1.10);
-                filter: drop-shadow(0 4px 14px hsl(var(--foreground) / 0.15));
-              }
-              /* Card hover effects - enlarge instead of transparency */
-              .milestone:hover .vj-card,
-              .milestone:focus-within .vj-card {
-                transform: scale(1.05);
-              }
-              /* Past milestone hover (≤2025) - blue accent */
-              .milestone[data-key="2000"]:hover .vj-card rect,
-              .milestone[data-key="2007"]:hover .vj-card rect,
-              .milestone[data-key="2013"]:hover .vj-card rect,
-              .milestone[data-key="2016"]:hover .vj-card rect,
-              .milestone[data-key="2019"]:hover .vj-card rect,
-              .milestone[data-key="2023"]:hover .vj-card rect,
-              .milestone[data-key="2025"]:hover .vj-card rect,
-              .milestone[data-key="2000"]:focus-within .vj-card rect,
-              .milestone[data-key="2007"]:focus-within .vj-card rect,
-              .milestone[data-key="2013"]:focus-within .vj-card rect,
-              .milestone[data-key="2016"]:focus-within .vj-card rect,
-              .milestone[data-key="2019"]:focus-within .vj-card rect,
-              .milestone[data-key="2023"]:focus-within .vj-card rect,
-              .milestone[data-key="2025"]:focus-within .vj-card rect {
-                fill: hsl(var(--primary) / 0.05);
-                stroke: hsl(var(--primary));
-                stroke-width: 2;
-              }
-              /* Future milestone hover (2026, 2030) - red accent */
-              .milestone[data-key="2026"]:hover .vj-card rect,
-              .milestone[data-key="2030"]:hover .vj-card rect,
-              .milestone[data-key="2026"]:focus-within .vj-card rect,
-              .milestone[data-key="2030"]:focus-within .vj-card rect {
-                fill: hsl(var(--destructive) / 0.05);
-                stroke: hsl(var(--destructive));
-                stroke-width: 2;
-              }
-              /* Remove all other hover effects on cards and text */
-              .vj-foundation-card {
-                cursor: pointer;
-                transition: all 0.3s ease;
-              }
-              .vj-foundation-card:hover {
-                filter: drop-shadow(0 8px 20px hsl(var(--primary) / 0.25));
-              }
-              /* Ensure layering */
-              .vj-layer-line { isolation: isolate; z-index: 1; }
-              .vj-layer-nodes { isolation: isolate; z-index: 2; }
+          {/* Modern Timeline */}
+          <div className="relative max-w-7xl mx-auto">
+            {/* Central Evolution Image */}
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+              <div className="w-64 h-40 md:w-80 md:h-48 rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-r from-slate-800 to-slate-900 border-4 border-white dark:border-slate-700">
+                <img 
+                  src="/src/assets/manufacturing-evolution-hero.jpg" 
+                  alt="Evolution from traditional to smart manufacturing" 
+                  className="w-full h-full object-cover opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-2 left-3 right-3">
+                  <div className="text-white text-sm font-semibold">Traditional → AI-Driven</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Timeline Path */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <svg className="w-full h-[600px]" viewBox="0 0 1200 600">
+                <defs>
+                  <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="hsl(var(--muted-foreground))" />
+                    <stop offset="50%" stopColor="hsl(var(--primary))" />
+                    <stop offset="100%" stopColor="hsl(var(--destructive))" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M50,550 Q300,450 600,300 Q900,150 1150,50"
+                  stroke="url(#timelineGradient)"
+                  strokeWidth="4"
+                  fill="none"
+                  className="drop-shadow-sm"
+                />
+              </svg>
+            </div>
+
+            {/* Timeline Milestones */}
+            <div className="relative z-30 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
+              {/* 2000 - Foundation */}
+              <div className="milestone-card group">
+                <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-2xl font-bold text-primary mb-1">2000</div>
+                      <h3 className="font-semibold text-foreground mb-2">Foundation with digital factory vision</h3>
+                      <p className="text-sm text-muted-foreground">Established our pioneering vision to transform traditional manufacturing through digital innovation.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2007 - First Digital Plant */}
+              <div className="milestone-card group">
+                <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-2xl font-bold text-primary mb-1">2007</div>
+                      <h3 className="font-semibold text-foreground mb-2">First plant fully digitalized</h3>
+                      <p className="text-sm text-muted-foreground">Achieved complete digital transformation of our first manufacturing facility, setting the industry standard.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2013 - Network Connected */}
+              <div className="milestone-card group">
+                <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-2xl font-bold text-primary mb-1">2013</div>
+                      <h3 className="font-semibold text-foreground mb-2"><span className="text-primary font-bold">18</span> plants connected in network</h3>
+                      <p className="text-sm text-muted-foreground">Created our first interconnected manufacturing ecosystem, enabling real-time data flow and coordination.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2016 - Global Scale */}
+              <div className="milestone-card group">
+                <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-2xl font-bold text-primary mb-1">2016</div>
+                      <h3 className="font-semibold text-foreground mb-2">Scaled to <span className="text-primary font-bold">70</span> plants globally</h3>
+                      <p className="text-sm text-muted-foreground">Expanded our digital manufacturing network across multiple continents and industries.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2019 - Major Milestone */}
+              <div className="milestone-card group">
+                <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-2xl font-bold text-primary mb-1">2019</div>
+                      <h3 className="font-semibold text-foreground mb-2">Milestone of <span className="text-primary font-bold">100+</span> plants achieved</h3>
+                      <p className="text-sm text-muted-foreground">Reached our first major scale milestone, establishing market leadership in digital manufacturing.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2023 - Autonomous Foundation */}
+              <div className="milestone-card group">
+                <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-2xl font-bold text-primary mb-1">2023</div>
+                      <h3 className="font-semibold text-foreground mb-2">Foundation for Autonomous factories</h3>
+                      <p className="text-sm text-muted-foreground">Laid the groundwork for fully autonomous manufacturing with AI-driven decision making capabilities.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2025 - Current Scale */}
+              <div className="milestone-card group">
+                <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-2xl font-bold text-primary mb-1">2025</div>
+                      <h3 className="font-semibold text-foreground mb-2">Milestone of <span className="text-primary font-bold">300+</span> plants achieved</h3>
+                      <p className="text-sm text-muted-foreground">Accelerated growth demonstrating proven scalability and market demand for our solutions.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2026 - Future Vision */}
+              <div className="milestone-card group">
+                <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-destructive/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center group-hover:bg-destructive/20 transition-colors">
+                      <svg className="w-6 h-6 text-destructive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-2xl font-bold text-destructive mb-1">2026</div>
+                      <h3 className="font-semibold text-foreground mb-2">Projected First Fully Autonomous Plant</h3>
+                      <p className="text-sm text-muted-foreground">Pioneering the future with our first completely autonomous manufacturing facility.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2030 - Ultimate Vision */}
+              <div className="milestone-card group">
+                <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-destructive/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center group-hover:bg-destructive/20 transition-colors">
+                      <svg className="w-6 h-6 text-destructive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-2xl font-bold text-destructive mb-1">2030</div>
+                      <h3 className="font-semibold text-foreground mb-2"><span className="text-destructive font-bold">1000</span> Autonomous Plants</h3>
+                      <p className="text-sm text-muted-foreground">Our ambitious vision to transform global manufacturing through widespread autonomous operations.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Strong Foundation Section - Redesigned */}
+          <div className="mt-20">
+            <div className="bg-gradient-to-br from-primary/5 to-teal-500/5 rounded-3xl p-8 md:p-12 border border-primary/10 shadow-lg">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  Strong Foundation for <span className="text-primary">Innovation</span>
+                </h3>
+                <p className="text-muted-foreground text-lg">Built on excellence, certified for trust, powered by expertise</p>
+              </div>
               
-               /* Mobile responsive adjustments */
-               @media (max-width: 768px) {
-                 .vj-svg { padding: 30px 20px; transform: scale(1.2); transform-origin: center; }
-                 .vj-year { font-size: 24px; }
-                 .vj-year-visible { font-size: 22px; font-weight: 700; }
-                 .vj-cap { font-size: 16px; font-weight: 600; }
-                 .vj-node { r: 32; }
-                 .vj-node-ring { r: 40; }
-                 .vj-card rect { height: 70; rx: 18; }
-                 .timeline-container { padding-right: 0; margin: 0 -20px; }
-               }
-              
-              /* Tablet responsive adjustments */
-              @media (min-width: 769px) and (max-width: 1024px) {
-                .vj-svg { padding: 30px 20px; }
-                .vj-year { font-size: 22px; }
-                .vj-year-visible { font-size: 20px; font-weight: 700; }
-                .vj-cap { font-size: 16px; font-weight: 600; }
-                .vj-node { r: 30; }
-                .vj-node-ring { r: 38; }
-                .vj-card rect { height: 65; rx: 18; }
-              }
-            `}</style>
-            <svg className="vj-svg" viewBox="0 0 1360 600" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
-              <defs>
-                <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--destructive))" />
-                  <stop offset="35%" stopColor="hsl(var(--accent))" />
-                  <stop offset="70%" stopColor="hsl(var(--primary))" />
-                  <stop offset="100%" stopColor="hsl(var(--primary))" />
-                </linearGradient>
-                <marker id="vj-arrow" markerWidth={12} markerHeight={12} refX={9} refY={6} orient="auto">
-                  <path d="M0,0 L0,12 L12,6 z" fill="hsl(var(--destructive))"></path>
-                </marker>
-                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation={3} result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold text-primary mb-2">230+</div>
+                  <h4 className="font-semibold text-foreground mb-2">R&D Professionals</h4>
+                  <p className="text-sm text-muted-foreground">Dedicated experts in Hubballi, Karnataka, India driving continuous innovation in manufacturing technology.</p>
+                </div>
 
-              {/* diagonal growth line (behind everything) - Extended with arrow at top */}
-              <g className="vj-layer-line">
-                <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 100 500 L 1300 60" />
-              </g>
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </div>
+                  <div className="text-lg font-bold text-primary mb-2">ISO 27001</div>
+                  <h4 className="font-semibold text-foreground mb-2">Information Security</h4>
+                  <p className="text-sm text-muted-foreground">Certified protection ensuring your sensitive data and intellectual property remain secure at all times.</p>
+                </div>
 
-              {/* NODES + CARDS (above the line) */}
-              <g className="vj-layer-nodes" aria-label="timeline milestones" tabIndex={-1}>
-                
-                {/* 1) 2000 */}
-                <g className="milestone" data-key="2000" transform="translate(100,500)" tabIndex={0} aria-label="2000 — Foundation with digital factory vision">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  {/* Year label always visible */}
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2000</text>
-                  
-                  {/* Message card */}
-                  <g className="vj-card" transform="translate(-120,28)">
-                    <rect width={240} height={50} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Foundation with digital factory vision</text>
-                  </g>
-                </g>
-
-                {/* 2) 2007 */}
-                <g className="milestone" data-key="2007" transform="translate(225,450)" tabIndex={0} aria-label="2007 — First plant fully digitalized">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2007</text>
-                  
-                  <g className="vj-card" transform="translate(24,-80)">
-                    <rect width={220} height={42} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={26}>First plant fully digitalized</text>
-                  </g>
-                </g>
-
-                {/* 3) 2013 */}
-                <g className="milestone" data-key="2013" transform="translate(350,400)" tabIndex={0} aria-label="2013 — 18 plants connected in network">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2013</text>
-                  
-                  <g className="vj-card" transform="translate(-210,28)">
-                    <rect width={260} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}><tspan fontWeight="700">18</tspan> plants connected in network</text>
-                  </g>
-                </g>
-
-                {/* 4) 2016 */}
-                <g className="milestone" data-key="2016" transform="translate(475,350)" tabIndex={0} aria-label="2016 — Scaled to 70 plants globally">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2016</text>
-                  
-                  <g className="vj-card" transform="translate(24,-76)">
-                    <rect width={240} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Scaled to <tspan fontWeight="700">70</tspan> plants globally</text>
-                  </g>
-                </g>
-
-                {/* 5) 2019 */}
-                <g className="milestone" data-key="2019" transform="translate(600,300)" tabIndex={0} aria-label="2019 — Milestone of 100+ plants achieved">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2019</text>
-                  
-                  <g className="vj-card" transform="translate(-220,28)">
-                    <rect width={270} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Milestone of <tspan fontWeight="700">100+</tspan> plants achieved</text>
-                  </g>
-                </g>
-
-                {/* 6) 2023 */}
-                <g className="milestone" data-key="2023" transform="translate(725,250)" tabIndex={0} aria-label="2023 — Foundation for Autonomous factories">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2023</text>
-                  
-                  <g className="vj-card" transform="translate(24,-80)">
-                    <rect width={270} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Foundation for Autonomous factories</text>
-                  </g>
-                </g>
-
-                {/* 7) 2025 */}
-                <g className="milestone" data-key="2025" transform="translate(850,200)" tabIndex={0} aria-label="2025 — Milestone of 300+ plants achieved">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--past" r={20}></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--foreground))">2025</text>
-                  
-                  <g className="vj-card" transform="translate(-240,28)">
-                    <rect width={290} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--border))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Milestone of <tspan fontWeight="700">300+</tspan> plants achieved</text>
-                  </g>
-                </g>
-
-                {/* 8) 2026 (future) */}
-                <g className="milestone" data-key="2026" transform="translate(975,150)" tabIndex={0} aria-label="2026 — Projected First Fully Autonomous Plant">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2026</text>
-                  
-                  <g className="vj-card" transform="translate(-324,-76)">
-                    <rect width={300} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}>Projected First Fully Autonomous Plant</text>
-                  </g>
-                </g>
-
-                {/* 9) 2030 (future) */}
-                <g className="milestone" data-key="2030" transform="translate(1100,100)" tabIndex={0} aria-label="2030 — 1000 Autonomous Plants">
-                  <circle className="vj-node-ring" r={26}></circle>
-                  <circle className="vj-node vj-node--future" r={20} filter="url(#glow)"></circle>
-                  
-                  <text className="vj-year-visible" x={0} y={-35} textAnchor="middle" fill="hsl(var(--destructive))">2030</text>
-                  
-                  <g className="vj-card" transform="translate(-284,44)">
-                    <rect width={260} height={48} fill="hsl(var(--card))" rx={12} stroke="hsl(var(--destructive))" strokeWidth={1}></rect>
-                    <text className="vj-cap" x={12} y={30}><tspan fontWeight="700">1000</tspan> Autonomous Plants</text>
-                  </g>
-                </g>
-              </g>
-
-              {/* Strong Foundation card - Bottom Right (Bigger) */}
-              <g className="vj-foundation-card" transform="translate(750,420)">
-                <rect width={430} height={150} fill="hsl(var(--muted))" rx={16} stroke="hsl(var(--border))" strokeWidth={2}></rect>
-                <text className="vj-year" x={20} y={40} style={{
-                fontSize: '20px'
-              }} fill="hsl(var(--primary))">
-                  STRONG FOUNDATION FOR INNOVATION
-                </text>
-                <circle cx={28} cy={65} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={72} style={{
-                fontSize: '16px'
-              }}>230+ dedicated R&D professionals in India</text>
-                <circle cx={28} cy={95} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={102} style={{
-                fontSize: '16px'
-              }}>ISO 27001 certified for information security</text>
-                <circle cx={28} cy={125} r={6} fill="hsl(var(--destructive))"></circle>
-                <text className="vj-cap" x={45} y={132} style={{
-                fontSize: '16px'
-              }}>ISO 9001 certified for quality management</text>
-              </g>
-            </svg>
+                <div className="text-center group">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                    <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-lg font-bold text-primary mb-2">ISO 9001</div>
+                  <h4 className="font-semibold text-foreground mb-2">Quality Management</h4>
+                  <p className="text-sm text-muted-foreground">Certified commitment to consistent quality and continuous improvement in all our processes and deliverables.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
