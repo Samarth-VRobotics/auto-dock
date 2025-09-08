@@ -144,7 +144,7 @@ const OurJourneySection = () => {
             </div>
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="KLETU campus buildings with beautiful architecture" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="KLETU campus buildings with beautiful architecture" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
@@ -159,7 +159,7 @@ const OurJourneySection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
               {/* Student Portraits Slideshow */}
-              {studentPortraits.map((portrait, index) => <img key={index} src={portrait.src} alt={portrait.alt} className={`absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-all duration-1000 ease-out ${index === studentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
+              {studentPortraits.map((portrait, index) => <img key={index} src={portrait.src} alt={portrait.alt} className={`absolute inset-0 w-full h-full object-contain object-center group-hover:scale-110 transition-all duration-1000 ease-out ${index === studentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
@@ -188,7 +188,7 @@ const OurJourneySection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
               {/* Slideshow Images */}
-              {slideshowImages.map((image, index) => <img key={index} src={image.src} alt={image.alt} className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
+              {slideshowImages.map((image, index) => <img key={index} src={image.src} alt={image.alt} className={`absolute inset-0 w-full h-full object-contain group-hover:scale-110 transition-all duration-1000 ease-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300 z-20"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
@@ -214,7 +214,7 @@ const OurJourneySection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-xl w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out h-full mt-8">
               {/* Industry Images Slideshow */}
-              {industryImages.map((image, index) => <img key={index} src={image.src} alt={image.alt} className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out ${index === industrySlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
+              {industryImages.map((image, index) => <img key={index} src={image.src} alt={image.alt} className={`absolute inset-0 w-full h-full object-contain group-hover:scale-110 transition-all duration-1000 ease-out ${index === industrySlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
               {/* Slide indicators only */}
               <div className="absolute bottom-6 right-6 z-30">
                 <div className="flex space-x-2">
