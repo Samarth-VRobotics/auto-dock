@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Mail, Linkedin } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
 import OurJourneySection from "@/components/OurJourneySection";
@@ -344,28 +345,46 @@ const OurTeam = () => {
                   {[{
                   name: "Vishwanath Garagad",
                   initials: "VG",
-                  role: "Software Architect"
+                  role: "Software Architect",
+                  image: "/lovable-uploads/e6dcb3fb-9309-445f-b034-b0c52e068181.png"
                 }, {
                   name: "Vijaylakshmi",
                   initials: "VL",
-                  role: "Software Architect"
+                  role: "Software Architect",
+                  image: "/lovable-uploads/d86864c8-a1db-485e-ba3c-628a4d873a12.png"
                 }, {
                   name: "Samuel Mara",
                   initials: "SM",
-                  role: "Software Architect"
+                  role: "Software Architect",
+                  image: "/lovable-uploads/acf270f5-7ca6-4283-abc0-8b33227fc799.png"
                 }, {
                   name: "Sarvanan",
                   initials: "SV",
-                  role: "Technical Lead"
+                  role: "Technical Lead",
+                  image: "/lovable-uploads/3616a756-548d-420e-ba06-b93f9a1fa6bd.png"
                 }, {
                   name: "Shridhar",
                   initials: "SH",
                   role: "Senior Software Engineer"
                 }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
-                      <div className="w-24 h-24 rounded-full bg-gradient-accent flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                        {member.initials}
-                      </div>
+                      {member.image ? (
+                        <Avatar className="w-24 h-24 mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                          <AvatarImage 
+                            src={member.image} 
+                            alt={member.name}
+                            className="object-cover object-center"
+                          />
+                          <AvatarFallback className="bg-gradient-accent text-white font-bold text-xl">
+                            {member.initials}
+                          </AvatarFallback>
+                        </Avatar>
+                      ) : (
+                        <div className="w-24 h-24 rounded-full bg-gradient-accent flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                          {member.initials}
+                        </div>
+                      )}
                       <h4 className="font-bold text-foreground text-lg mb-2">{member.name}</h4>
+                      <p className="text-foreground/60 text-sm mb-3">{member.role}</p>
                       <Linkedin className="w-5 h-5 text-primary hover:text-secondary transition-colors cursor-pointer" />
                     </div>)}
                 </div>
