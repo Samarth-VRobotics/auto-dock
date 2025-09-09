@@ -94,7 +94,7 @@ const VegamJourney = () => {
   return (
     <>
       <style>{customStyles}</style>
-      <section className="py-12 lg:py-16 relative overflow-hidden">
+      <section className="py-8 sm:py-12 lg:py-16 relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
@@ -105,34 +105,34 @@ const VegamJourney = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90"></div>
       </div>
       
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2">Vegam Journey</h2>
-          <p className="text-base text-muted-foreground">Milestones that shaped us.</p>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2">Vegam Journey</h2>
+          <p className="text-sm sm:text-base text-muted-foreground">Milestones that shaped us.</p>
         </div>
 
         {/* Desktop & Mobile Timeline */}
-        <div className="relative max-w-4xl mx-auto">
-          {/* Center Line with Animation */}
-          <div className="absolute left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-1 bg-red-600/30 rounded-full"></div>
+        <div className="relative max-w-3xl lg:max-w-4xl mx-auto">
+          {/* Center Line with Animation - Responsive */}
+          <div className="absolute left-3 sm:left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 bg-red-600/30 rounded-full"></div>
           
-          {/* Animated Flow Line */}
-          <div className="absolute left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-1 overflow-hidden rounded-full">
+          {/* Animated Flow Line - Responsive */}
+          <div className="absolute left-3 sm:left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 overflow-hidden rounded-full">
             <div className="w-full h-full bg-gradient-to-b from-red-600 via-red-500 to-transparent opacity-60 animate-pulse"></div>
           </div>
           
-          {/* Flowing Dots Animation */}
-          <div className="absolute left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-1">
+          {/* Flowing Dots Animation - Responsive */}
+          <div className="absolute left-3 sm:left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1">
             <div className="relative w-full h-full">
-              <div className="absolute w-2 h-2 bg-red-500 rounded-full -left-0.5 animate-bounce" 
+              <div className="absolute w-1.5 sm:w-2 h-1.5 sm:h-2 bg-red-500 rounded-full -left-0.5 animate-bounce" 
                    style={{
                      animation: 'flowDown 4s ease-in-out infinite, pulse 1s ease-in-out infinite alternate'
                    }}></div>
-              <div className="absolute w-1.5 h-1.5 bg-red-400 rounded-full -left-0.25 animate-bounce" 
+              <div className="absolute w-1 sm:w-1.5 h-1 sm:h-1.5 bg-red-400 rounded-full -left-0.25 animate-bounce" 
                    style={{
                      animation: 'flowDown 4s ease-in-out infinite 0.5s, pulse 1s ease-in-out infinite alternate 0.5s'
                    }}></div>
-              <div className="absolute w-1 h-1 bg-red-300 rounded-full left-0 animate-bounce" 
+              <div className="absolute w-0.5 sm:w-1 h-0.5 sm:h-1 bg-red-300 rounded-full left-0 animate-bounce" 
                    style={{
                      animation: 'flowDown 4s ease-in-out infinite 1s, pulse 1s ease-in-out infinite alternate 1s'
                    }}></div>
@@ -140,7 +140,7 @@ const VegamJourney = () => {
           </div>
 
           {/* Timeline Items */}
-          <div className="space-y-8 lg:space-y-10">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-10">
             {milestones.map((milestone, index) => (
               <div
                 key={milestone.year}
@@ -154,68 +154,68 @@ const VegamJourney = () => {
                   transitionDelay: `${index * 150}ms`
                 }}
               >
-                {/* Mobile Layout */}
+                {/* Mobile & Tablet Layout */}
                 <div className="lg:hidden flex items-center w-full">
-                  {/* Circular Marker */}
-                  <div className="flex-shrink-0 w-6 h-6 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
-                    <div className="w-1.5 h-1.5 bg-background rounded-full"></div>
+                  {/* Circular Marker - Responsive sizes */}
+                  <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
+                    <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-background rounded-full"></div>
                     <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
                   </div>
                   
-                   {/* Content */}
-                   <div className="ml-6 flex-1">
-                     <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-shadow duration-300">
-                       <CardContent className="p-4">
-                         <h3 className="text-lg font-semibold text-foreground mb-1">{milestone.year}</h3>
-                         <p className="text-sm text-muted-foreground leading-relaxed">{milestone.description}</p>
-                       </CardContent>
-                     </Card>
-                   </div>
+                  {/* Content - Responsive spacing and sizing */}
+                  <div className="ml-4 sm:ml-6 flex-1">
+                    <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-shadow duration-300">
+                      <CardContent className="p-3 sm:p-4">
+                        <h3 className="text-base sm:text-lg font-semibold text-foreground mb-1">{milestone.year}</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{milestone.description}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
 
                 {/* Desktop Layout */}
                 <div className="hidden lg:flex items-center w-full">
                   {index % 2 === 0 ? (
                     <>
-                       {/* Left Side Content */}
-                       <div className="w-1/2 pr-8 text-right">
-                         <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-                           <CardContent className="p-4">
-                             <h3 className="text-lg font-semibold text-foreground mb-1">{milestone.year}</h3>
-                             <p className="text-sm text-muted-foreground leading-relaxed">{milestone.description}</p>
-                           </CardContent>
-                         </Card>
-                       </div>
-                       
-                       {/* Center Marker */}
-                       <div className="flex-shrink-0 w-8 h-8 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
-                         <div className="w-2 h-2 bg-background rounded-full"></div>
-                         <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
-                       </div>
-                       
-                       {/* Right Side Spacer */}
-                       <div className="w-1/2 pl-8"></div>
+                      {/* Left Side Content */}
+                      <div className="w-1/2 pr-6 xl:pr-8 text-right">
+                        <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                          <CardContent className="p-4 xl:p-5">
+                            <h3 className="text-lg xl:text-xl font-semibold text-foreground mb-1">{milestone.year}</h3>
+                            <p className="text-sm xl:text-base text-muted-foreground leading-relaxed">{milestone.description}</p>
+                          </CardContent>
+                        </Card>
+                      </div>
+                      
+                      {/* Center Marker */}
+                      <div className="flex-shrink-0 w-8 h-8 xl:w-10 xl:h-10 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
+                        <div className="w-2 h-2 xl:w-2.5 xl:h-2.5 bg-background rounded-full"></div>
+                        <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
+                      </div>
+                      
+                      {/* Right Side Spacer */}
+                      <div className="w-1/2 pl-6 xl:pl-8"></div>
                     </>
                   ) : (
                     <>
-                       {/* Left Side Spacer */}
-                       <div className="w-1/2 pr-8"></div>
-                       
-                       {/* Center Marker */}
-                       <div className="flex-shrink-0 w-8 h-8 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
-                         <div className="w-2 h-2 bg-background rounded-full"></div>
-                         <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
-                       </div>
-                       
-                       {/* Right Side Content */}
-                       <div className="w-1/2 pl-8">
-                         <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-                           <CardContent className="p-4">
-                             <h3 className="text-lg font-semibold text-foreground mb-1">{milestone.year}</h3>
-                             <p className="text-sm text-muted-foreground leading-relaxed">{milestone.description}</p>
-                           </CardContent>
-                         </Card>
-                       </div>
+                      {/* Left Side Spacer */}
+                      <div className="w-1/2 pr-6 xl:pr-8"></div>
+                      
+                      {/* Center Marker */}
+                      <div className="flex-shrink-0 w-8 h-8 xl:w-10 xl:h-10 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
+                        <div className="w-2 h-2 xl:w-2.5 xl:h-2.5 bg-background rounded-full"></div>
+                        <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
+                      </div>
+                      
+                      {/* Right Side Content */}
+                      <div className="w-1/2 pl-6 xl:pl-8">
+                        <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                          <CardContent className="p-4 xl:p-5">
+                            <h3 className="text-lg xl:text-xl font-semibold text-foreground mb-1">{milestone.year}</h3>
+                            <p className="text-sm xl:text-base text-muted-foreground leading-relaxed">{milestone.description}</p>
+                          </CardContent>
+                        </Card>
+                      </div>
                     </>
                   )}
                 </div>
