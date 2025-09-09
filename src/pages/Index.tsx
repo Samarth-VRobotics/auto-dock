@@ -318,269 +318,154 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="timeline-container relative max-w-7xl mx-auto flex-1 flex items-center justify-center" style={{
-          paddingRight: 'min(4vw, 80px)',
-          paddingLeft: 'min(4vw, 80px)',
-          overflow: 'visible'
-        }}>
-            <style>{`
-              .timeline-svg {
-                width: 100%;
-                height: 100%;
-                background: transparent;
-                border-radius: 0;
-                overflow: visible;
-                filter: none;
-              }
-              
-              /* Timeline path animation */
-              .timeline-path {
-                stroke: url(#timeline-gradient);
-                stroke-width: 4;
-                stroke-linecap: round;
-                fill: none;
-                filter: drop-shadow(0 2px 8px hsl(var(--primary) / 0.3));
-                stroke-dasharray: 2000;
-                stroke-dashoffset: 2000;
-                animation: drawPath 3s ease-out forwards;
-              }
-              
-              @keyframes drawPath {
-                to {
-                  stroke-dashoffset: 0;
-                }
-              }
-              
-              /* Milestone nodes */
-              .milestone-node {
-                cursor: pointer;
-                transition: all 0.3s ease;
-                transform-origin: center;
-              }
-              
-              .milestone-node:hover {
-                transform: scale(1.1);
-              }
-              
-              .milestone-circle {
-                fill: hsl(var(--card));
-                stroke: hsl(var(--primary));
-                stroke-width: 3;
-                filter: drop-shadow(0 2px 6px hsl(var(--foreground) / 0.2));
-                transition: all 0.3s ease;
-              }
-              
-              .milestone-circle.future {
-                stroke: hsl(var(--destructive));
-                fill: hsl(var(--destructive) / 0.1);
-              }
-              
-              .milestone-node:hover .milestone-circle {
-                stroke-width: 4;
-                filter: drop-shadow(0 4px 12px hsl(var(--primary) / 0.4));
-              }
-              
-              .milestone-node:hover .milestone-circle.future {
-                filter: drop-shadow(0 4px 12px hsl(var(--destructive) / 0.4));
-              }
-              
-              /* Year labels */
-              .year-label {
-                font-size: 20px;
-                font-weight: 700;
-                fill: hsl(var(--foreground));
-                text-anchor: middle;
-                dominant-baseline: middle;
-              }
-              
-              .year-label.future {
-                fill: hsl(var(--destructive));
-              }
-              
-              /* Card text styles */
-              .card-text {
-                font-size: 14px;
-                font-weight: 600;
-                fill: hsl(var(--foreground));
-                text-anchor: start;
-                dominant-baseline: middle;
-              }
-              
-              .card-number {
-                font-size: 16px;
-                font-weight: 700;
-                fill: hsl(var(--primary));
-              }
-              
-              .card-number.future {
-                fill: hsl(var(--destructive));
-              }
-              
-              /* Responsive adjustments */
-              @media (max-width: 768px) {
-                .timeline-container > div { 
-                  height: 90vh !important; 
-                  min-height: 600px !important; 
-                }
-                .timeline-svg { 
-                  transform: scale(0.8); 
-                  transform-origin: center; 
-                }
-                .year-label { font-size: 18px; }
-                .card-text { font-size: 12px; }
-                .card-number { font-size: 14px; }
-              }
-              
-              @media (min-width: 769px) and (max-width: 1024px) {
-                .timeline-container > div { 
-                  height: 85vh !important; 
-                  min-height: 650px !important; 
-                }
-                .timeline-svg { 
-                  transform: scale(0.9); 
-                  transform-origin: center; 
-                }
-                .year-label { font-size: 19px; }
-                .card-text { font-size: 13px; }
-                .card-number { font-size: 15px; }
-              }
-            `}</style>
-            
-            <div className="w-full" style={{ height: '80vh', minHeight: '700px', maxHeight: '900px' }}>
-              <svg className="timeline-svg" viewBox="0 0 1600 1000" role="img" 
-                   aria-label="Vegam Journey Timeline from 2000 to 2030" 
-                   style={{ background: 'transparent' }}>
-                
-                {/* Gradients and Definitions */}
-                <defs>
-                  <linearGradient id="timeline-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="hsl(var(--primary))" />
-                    <stop offset="50%" stopColor="hsl(var(--accent))" />
-                    <stop offset="100%" stopColor="hsl(var(--destructive))" />
-                  </linearGradient>
-                  
-                  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                    <feMerge> 
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/> 
-                    </feMerge>
-                  </filter>
-                  
-                  <filter id="text-shadow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feDropShadow dx="2" dy="2" stdDeviation="3" floodColor="hsl(var(--background))" floodOpacity="0.8"/>
-                  </filter>
-                </defs>
-                
-                {/* Main timeline path - diagonal from bottom-left to top-right */}
-                <path className="timeline-path" 
-                      d="M 100 850 L 300 720 L 500 590 L 700 460 L 900 330 L 1100 250 L 1250 200 L 1350 170 L 1500 130"
-                      style={{animationDelay: '0.5s'}} />
-                
-                {/* Timeline Milestones */}
+          {/* Horizontal Timeline inspired by Vegam website */}
+          <div className="timeline-container relative max-w-7xl mx-auto flex-1 flex items-center justify-center py-16">
+            <div className="w-full">
+              {/* Timeline Items */}
+              <div className="flex flex-col lg:flex-row justify-between items-center space-y-12 lg:space-y-0 lg:space-x-8 px-4">
                 
                 {/* 2000 - Foundation */}
-                <g className="milestone-node" tabIndex={0} aria-label="2000 - Foundation with digital factory vision">
-                  <circle className="milestone-circle" cx="100" cy="850" r="18"/>
-                  <text className="year-label" x="100" y="820" filter="url(#text-shadow)">2000</text>
-                  <text className="card-text" x="100" y="885" textAnchor="middle" fontSize="14" fontWeight="600" 
-                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
-                    Foundation with digital factory vision
-                  </text>
-                </g>
-                
-                {/* 2007 - First plant digitalized */}
-                <g className="milestone-node" tabIndex={0} aria-label="2007 - First plant fully digitalized">
-                  <circle className="milestone-circle" cx="300" cy="720" r="18"/>
-                  <text className="year-label" x="300" y="690" filter="url(#text-shadow)">2007</text>
-                  <text className="card-text" x="300" y="755" textAnchor="middle" fontSize="14" fontWeight="600" 
-                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
-                    First plant fully digitalized
-                  </text>
-                </g>
-                
-                {/* 2013 - 18 plants network */}
-                <g className="milestone-node" tabIndex={0} aria-label="2013 - 18 plants connected in network">
-                  <circle className="milestone-circle" cx="500" cy="590" r="18"/>
-                  <text className="year-label" x="500" y="560" filter="url(#text-shadow)">2013</text>
-                  <text className="card-text" x="500" y="620" textAnchor="middle" fontSize="14" fontWeight="600" 
-                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
-                    <tspan className="card-number">18</tspan> plants connected in network
-                  </text>
-                </g>
-                
-                {/* 2016 - 70 plants globally */}
-                <g className="milestone-node" tabIndex={0} aria-label="2016 - Scaled to 70 plants globally">
-                  <circle className="milestone-circle" cx="700" cy="460" r="18"/>
-                  <text className="year-label" x="700" y="430" filter="url(#text-shadow)">2016</text>
-                  <text className="card-text" x="700" y="490" textAnchor="middle" fontSize="14" fontWeight="600" 
-                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
-                    Scaled to <tspan className="card-number">70</tspan> plants globally
-                  </text>
-                </g>
-                
-                {/* 2019 - 100+ plants milestone */}
-                <g className="milestone-node" tabIndex={0} aria-label="2019 - Milestone of 100+ plants achieved">
-                  <circle className="milestone-circle" cx="900" cy="330" r="18"/>
-                  <text className="year-label" x="900" y="300" filter="url(#text-shadow)">2019</text>
-                  <text className="card-text" x="900" y="360" textAnchor="middle" fontSize="14" fontWeight="600" 
-                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
-                    Milestone of <tspan className="card-number">100+</tspan> plants achieved
-                  </text>
-                </g>
-                
+                <div className="flex flex-col items-center group animate-fade-in" style={{animationDelay: '0.1s'}}>
+                  <div className="relative">
+                    <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-primary/90">
+                      Start
+                    </div>
+                    <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-30"></div>
+                  </div>
+                  <div className="text-center mt-4 bg-background/80 backdrop-blur-sm rounded-lg p-3 shadow-md border border-border/50">
+                    <div className="text-lg font-bold text-foreground filter drop-shadow-sm">2000</div>
+                    <div className="text-sm text-muted-foreground mt-1 max-w-32 filter drop-shadow-sm">
+                      Foundation with digital factory vision
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2007 - First plant */}
+                <div className="flex flex-col items-center group animate-fade-in" style={{animationDelay: '0.2s'}}>
+                  <div className="relative">
+                    <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-primary/90">
+                      1
+                    </div>
+                  </div>
+                  <div className="text-center mt-4 bg-background/80 backdrop-blur-sm rounded-lg p-3 shadow-md border border-border/50">
+                    <div className="text-lg font-bold text-foreground filter drop-shadow-sm">2007</div>
+                    <div className="text-sm text-muted-foreground mt-1 max-w-32 filter drop-shadow-sm">
+                      First plant fully digitalized
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2013 - 18 plants */}
+                <div className="flex flex-col items-center group animate-fade-in" style={{animationDelay: '0.3s'}}>
+                  <div className="relative">
+                    <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-primary/90">
+                      18
+                    </div>
+                  </div>
+                  <div className="text-center mt-4 bg-background/80 backdrop-blur-sm rounded-lg p-3 shadow-md border border-border/50">
+                    <div className="text-lg font-bold text-foreground filter drop-shadow-sm">2013</div>
+                    <div className="text-sm text-muted-foreground mt-1 max-w-32 filter drop-shadow-sm">
+                      18 plants connected in network
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2016 - 70 plants */}
+                <div className="flex flex-col items-center group animate-fade-in" style={{animationDelay: '0.4s'}}>
+                  <div className="relative">
+                    <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-primary/90">
+                      70
+                    </div>
+                  </div>
+                  <div className="text-center mt-4 bg-background/80 backdrop-blur-sm rounded-lg p-3 shadow-md border border-border/50">
+                    <div className="text-lg font-bold text-foreground filter drop-shadow-sm">2016</div>
+                    <div className="text-sm text-muted-foreground mt-1 max-w-32 filter drop-shadow-sm">
+                      Scaled to 70 plants globally
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2019 - 100+ plants */}
+                <div className="flex flex-col items-center group animate-fade-in" style={{animationDelay: '0.5s'}}>
+                  <div className="relative">
+                    <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-primary/90">
+                      102
+                    </div>
+                  </div>
+                  <div className="text-center mt-4 bg-background/80 backdrop-blur-sm rounded-lg p-3 shadow-md border border-border/50">
+                    <div className="text-lg font-bold text-foreground filter drop-shadow-sm">2019</div>
+                    <div className="text-sm text-muted-foreground mt-1 max-w-32 filter drop-shadow-sm">
+                      Milestone of 100+ plants achieved
+                    </div>
+                  </div>
+                </div>
+
                 {/* 2023 - Autonomous foundation */}
-                <g className="milestone-node" tabIndex={0} aria-label="2023 - Foundation for Autonomous factories">
-                  <circle className="milestone-circle" cx="1100" cy="250" r="18"/>
-                  <text className="year-label" x="1100" y="220" filter="url(#text-shadow)">2023</text>
-                  <text className="card-text" x="1100" y="280" textAnchor="middle" fontSize="14" fontWeight="600" 
-                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
-                    Foundation for Autonomous factories
-                  </text>
-                </g>
-                
-                {/* 2025 - 300+ plants milestone */}
-                <g className="milestone-node" tabIndex={0} aria-label="2025 - Milestone of 300+ plants achieved">
-                  <circle className="milestone-circle" cx="1250" cy="200" r="18"/>
-                  <text className="year-label" x="1250" y="170" filter="url(#text-shadow)">2025</text>
-                  <text className="card-text" x="1250" y="230" textAnchor="middle" fontSize="14" fontWeight="600" 
-                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
-                    Milestone of <tspan className="card-number">300+</tspan> plants achieved
-                  </text>
-                </g>
-                
-                {/* 2026 - First Fully Autonomous Plant (Future) */}
-                <g className="milestone-node" tabIndex={0} aria-label="2026 - Projected First Fully Autonomous Plant">
-                  <circle className="milestone-circle future" cx="1350" cy="170" r="20" filter="url(#glow)"/>
-                  <text className="year-label future" x="1350" y="140" filter="url(#text-shadow)">2026</text>
-                  <text className="card-text" x="1350" y="200" textAnchor="middle" fontSize="14" fontWeight="600" 
-                        fill="hsl(var(--destructive))" filter="url(#text-shadow)">
-                    Projected First Fully Autonomous Plant
-                  </text>
-                </g>
-                
-                {/* 2030 - 1000 Autonomous Plants (Future) */}
-                <g className="milestone-node" tabIndex={0} aria-label="2030 - 1000 Autonomous Plants">
-                  <circle className="milestone-circle future" cx="1500" cy="130" r="22" filter="url(#glow)"/>
-                  <text className="year-label future" x="1500" y="100" filter="url(#text-shadow)">2030</text>
-                  <text className="card-text" x="1500" y="160" textAnchor="middle" fontSize="14" fontWeight="600" 
-                        fill="hsl(var(--destructive))" filter="url(#text-shadow)">
-                    <tspan className="card-number future">1000</tspan> Autonomous Plants
-                  </text>
-                </g>
-                
-                {/* Company Strengths Panel - Top Left with transparency */}
-                <g transform="translate(50, 50)">
-                  <rect width="280" height="100" fill="hsl(var(--background) / 0.8)" rx="12" 
-                        stroke="hsl(var(--border))" strokeWidth="2" filter="url(#text-shadow)"/>
-                  <text x="140" y="25" textAnchor="middle" fontSize="16" fontWeight="700" 
-                        fill="hsl(var(--primary))">Strong Foundation for Innovation</text>
-                  <text x="20" y="45" fontSize="12" fill="hsl(var(--foreground))">• 230+ dedicated R&D professionals in India</text>
-                  <text x="20" y="60" fontSize="12" fill="hsl(var(--foreground))">• ISO 27001 certified for information security</text>
-                  <text x="20" y="75" fontSize="12" fill="hsl(var(--foreground))">• ISO 9001 certified for quality management</text>
-                </g>
-                
-              </svg>
+                <div className="flex flex-col items-center group animate-fade-in" style={{animationDelay: '0.6s'}}>
+                  <div className="relative">
+                    <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-accent/90">
+                      AI
+                    </div>
+                  </div>
+                  <div className="text-center mt-4 bg-background/80 backdrop-blur-sm rounded-lg p-3 shadow-md border border-border/50">
+                    <div className="text-lg font-bold text-foreground filter drop-shadow-sm">2023</div>
+                    <div className="text-sm text-muted-foreground mt-1 max-w-32 filter drop-shadow-sm">
+                      Foundation for Autonomous factories
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2025 - 300+ plants */}
+                <div className="flex flex-col items-center group animate-fade-in" style={{animationDelay: '0.7s'}}>
+                  <div className="relative">
+                    <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-accent/90">
+                      300
+                    </div>
+                  </div>
+                  <div className="text-center mt-4 bg-background/80 backdrop-blur-sm rounded-lg p-3 shadow-md border border-border/50">
+                    <div className="text-lg font-bold text-foreground filter drop-shadow-sm">2025</div>
+                    <div className="text-sm text-muted-foreground mt-1 max-w-32 filter drop-shadow-sm">
+                      Milestone of 300+ plants achieved
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2026 - First Autonomous Plant */}
+                <div className="flex flex-col items-center group animate-fade-in" style={{animationDelay: '0.8s'}}>
+                  <div className="relative">
+                    <div className="w-20 h-20 bg-destructive rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-destructive/90">
+                      Auto
+                    </div>
+                    <div className="absolute inset-0 bg-destructive rounded-full animate-pulse opacity-30"></div>
+                  </div>
+                  <div className="text-center mt-4 bg-background/80 backdrop-blur-sm rounded-lg p-3 shadow-md border border-destructive/30">
+                    <div className="text-lg font-bold text-destructive filter drop-shadow-sm">2026</div>
+                    <div className="text-sm text-muted-foreground mt-1 max-w-32 filter drop-shadow-sm">
+                      Projected First Fully Autonomous Plant
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2030 - 1000 Autonomous Plants */}
+                <div className="flex flex-col items-center group animate-fade-in" style={{animationDelay: '0.9s'}}>
+                  <div className="relative">
+                    <div className="w-20 h-20 bg-destructive rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 group-hover:bg-destructive/90">
+                      1K
+                    </div>
+                    <div className="absolute inset-0 bg-destructive rounded-full animate-pulse opacity-30"></div>
+                  </div>
+                  <div className="text-center mt-4 bg-background/80 backdrop-blur-sm rounded-lg p-3 shadow-md border border-destructive/30">
+                    <div className="text-lg font-bold text-destructive filter drop-shadow-sm">2030</div>
+                    <div className="text-sm text-muted-foreground mt-1 max-w-32 filter drop-shadow-sm">
+                      1000 Autonomous Plants
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              
+              {/* Timeline connecting line - hidden on mobile, visible on larger screens */}
+              <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-destructive opacity-30 -translate-y-1/2 -z-10"></div>
             </div>
           </div>
         </div>
