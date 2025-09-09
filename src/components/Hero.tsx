@@ -7,8 +7,7 @@ const Hero = () => {
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
         <video autoPlay muted loop playsInline className="w-full h-full object-cover" poster={heroImage}>
-          {/* Placeholder for actual video - replace src with your AMR conveyor demo video */}
-          <source src="/path-to-your-amr-demo-video.mp4" type="video/mp4" />
+          <source src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Pre%20final.mp4" type="video/mp4" />
           {/* Fallback to hero image if video fails to load */}
           <img src={heroImage} alt="AutoDock AMR System" className="w-full h-full object-cover" />
         </video>
