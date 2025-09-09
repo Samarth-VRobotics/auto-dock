@@ -28,11 +28,6 @@ const VideoSlideshow = ({ className = "" }: VideoSlideshowProps) => {
       caption: "Building Tomorrow"
     },
     {
-      src: "https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Photo%20album%20-3.mp4",
-      alt: "Team collaboration moments - Part 3",
-      caption: "Shared Vision"
-    },
-    {
       src: "https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Photo%20album%20-4.mp4",
       alt: "Team collaboration moments - Part 4",
       caption: "Future Reality"
