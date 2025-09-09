@@ -127,6 +127,8 @@
   body {
     @apply bg-background text-foreground font-inter antialiased;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+    overscroll-behavior: contain; /* Prevent overscroll bounce */
   }
   
   /* Typography System */
