@@ -49,7 +49,7 @@ const OurTeam = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-2 relative overflow-hidden min-h-[70vh] flex items-center justify-center">
+      <section className="pt-20 pb-2 relative overflow-hidden min-h-screen flex items-center justify-center">
         {/* Video Background */}
         <video className="absolute inset-0 w-full h-full object-cover z-0" autoPlay loop muted playsInline>
           <source src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/ASRS%20timelasp.mp4" type="video/mp4" />
