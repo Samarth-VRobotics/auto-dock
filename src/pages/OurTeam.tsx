@@ -6,6 +6,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Mail, Linkedin } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
 import OurJourneySection from "@/components/OurJourneySection";
+import { MasonryGallery } from "@/components/GalleryVariants";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import mentorshipScene from "@/assets/mentorship-scene.jpg";
 const OurTeam = () => {
@@ -574,71 +575,8 @@ const OurTeam = () => {
             </p>
           </div>
 
-          {/* Photo Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {/* Team Photo 1 - BASF Shanghai Visit */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300">
-              <img src="/lovable-uploads/be5327f8-cabf-4af1-8479-1c505ef76db1.png" alt="Team visit to BASF Shanghai Coatings Co., Ltd." className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <h4 className="text-lg font-bold mb-1">BASF Shanghai Visit</h4>
-                <p className="text-sm text-white/80">Industrial collaboration</p>
-              </div>
-            </div>
-
-            {/* Team Photo 2 - Industrial Site Visit */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300">
-              <img src="/lovable-uploads/a17db9f5-0af1-464d-b5fc-093a1f4cd328.png" alt="Team at industrial facility with safety gear" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <h4 className="text-lg font-bold mb-1">Plant Operations</h4>
-                <p className="text-sm text-white/80">Safety first approach</p>
-              </div>
-            </div>
-
-            {/* Team Photo 3 - Office Meeting */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300">
-              <img src="/lovable-uploads/127f84ed-6feb-4a52-8312-09490f83dda7.png" alt="Team meeting in modern office with colorful wall art" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <h4 className="text-lg font-bold mb-1">Strategy Session</h4>
-                <p className="text-sm text-white/80">Creative collaboration</p>
-              </div>
-            </div>
-
-            {/* Team Photo 4 - Industrial Facility Visit */}
-            
-
-            {/* Team Photo 5 - Warehouse Operations */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300">
-              <img src="/lovable-uploads/5a563870-000a-4169-ba13-0bbccd419c59.png" alt="Team observing warehouse operations and automated systems" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <h4 className="text-lg font-bold mb-1">Automation Study</h4>
-                <p className="text-sm text-white/80">Warehouse innovation</p>
-              </div>
-            </div>
-
-            {/* Team Photo 6 - Team Meeting */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300">
-              <img src="/lovable-uploads/f8bf2e89-5b97-41d1-a7f7-c96c9eae7c6c.png" alt="Team collaborative session in conference room" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <h4 className="text-lg font-bold mb-1">Team Collaboration</h4>
-                <p className="text-sm text-white/80">Knowledge sharing</p>
-              </div>
-            </div>
-
-            {/* Team Photo 7 - BASF India Visit */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-300 md:col-span-2 lg:col-span-1">
-              <img src="/lovable-uploads/9734a9ad-6047-47eb-922d-60db9a4177ce.png" alt="Team at BASF India Limited facility" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <h4 className="text-lg font-bold mb-1">BASF India Visit</h4>
-                <p className="text-sm text-white/80">Global partnerships</p>
-              </div>
-            </div>
-          </div>
+          {/* Masonry Gallery Layout */}
+          <MasonryGallery />
         </div>
       </section>
 
