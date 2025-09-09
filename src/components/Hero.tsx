@@ -13,13 +13,13 @@ const Hero = () => {
         </video>
         
         {/* Video Fade-in Animation Overlay */}
-        <div className="absolute inset-0 bg-background/20 animate-fade-in" style={{
+        <div className="absolute inset-0 bg-background/10 animate-fade-in" style={{
         animationDuration: '2s'
       }}></div>
         
         {/* Professional Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/40"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-background/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-background/10"></div>
       </div>
 
       {/* Content Overlay */}
