@@ -49,7 +49,7 @@ const OurTeam = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 relative overflow-hidden min-h-[70vh]">
+      <section className="pt-20 pb-8 relative overflow-hidden min-h-[70vh]">
         {/* Video Background */}
         <video 
           className="absolute inset-0 w-full h-full object-cover z-0"
