@@ -9,7 +9,21 @@ import OurJourneySection from "@/components/OurJourneySection";
 import VideoSlideshow from "@/components/VideoSlideshow";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import mentorshipScene from "@/assets/mentorship-scene.jpg";
+import { useState, useEffect } from "react";
 const OurTeam = () => {
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setShowScrollIndicator(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // First row: Faizan, Rani, Amrut
   const firstRowMembers = [{
     initials: "FP",
@@ -71,25 +85,27 @@ const OurTeam = () => {
         </div>
         
         {/* Bottom Positioned Scroll Indicator - Smaller and More Visible */}
-        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-          <div className="flex flex-col items-center space-y-2 transition-all duration-500 hover:scale-110 cursor-pointer animate-bounce" onClick={() => {
-          const nextSection = document.querySelector('#our-journey-section');
-          nextSection?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }}>
-            <div className="w-4 h-7 sm:w-5 sm:h-8 border-2 border-white/80 rounded-full flex justify-center backdrop-blur-md bg-white/20 shadow-2xl">
-              <div className="w-0.5 h-2 sm:w-1 sm:h-3 bg-white rounded-full mt-1.5 animate-[pulse_2s_ease-in-out_infinite]"></div>
+        {showScrollIndicator && (
+          <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+            <div className="flex flex-col items-center space-y-2 transition-all duration-500 hover:scale-110 cursor-pointer animate-bounce" onClick={() => {
+            const nextSection = document.querySelector('#our-journey-section');
+            nextSection?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }}>
+              <div className="w-4 h-7 sm:w-5 sm:h-8 border-2 border-white/80 rounded-full flex justify-center backdrop-blur-md bg-white/20 shadow-2xl">
+                <div className="w-0.5 h-2 sm:w-1 sm:h-3 bg-white rounded-full mt-1.5 animate-[pulse_2s_ease-in-out_infinite]"></div>
+              </div>
+              <div className="animate-[bounce_2s_infinite]">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white drop-shadow-2xl transition-colors duration-300 hover:text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </div>
+              <p className="text-white text-xs font-bold tracking-wider drop-shadow-2xl animate-fade-in bg-black/20 backdrop-blur-sm px-2 py-1 rounded-full">Scroll</p>
             </div>
-            <div className="animate-[bounce_2s_infinite]">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white drop-shadow-2xl transition-colors duration-300 hover:text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
-            <p className="text-white text-xs font-bold tracking-wider drop-shadow-2xl animate-fade-in bg-black/20 backdrop-blur-sm px-2 py-1 rounded-full">Scroll</p>
           </div>
-        </div>
+        )}
       </section>
 
       <div id="our-journey-section">
