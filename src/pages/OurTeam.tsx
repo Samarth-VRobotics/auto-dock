@@ -254,18 +254,10 @@ const OurTeam = () => {
                   role: "Software Architect",
                   image: "/lovable-uploads/c7f3629b-de5b-4d24-b053-24ac3ecf879f.png"
                 }, {
-                  name: "J. S. Ranjith",
-                  initials: "JSR",
-                  role: "Software Architect"
-                }, {
                   name: "Parikshith Palegar",
                   initials: "PP",
                   role: "Software Architect",
                   image: "/lovable-uploads/dccb7189-5c8d-4a95-b2c2-1cafdba7fb45.png"
-                }, {
-                  name: "MANOKARTHI J",
-                  initials: "MJ",
-                  role: "Software Architect"
                 }, {
                   name: "Nieander Pranesh",
                   initials: "NP",
