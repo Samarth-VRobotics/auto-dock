@@ -2,6 +2,23 @@ import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import vegamJourneyBg from "@/assets/vegam-journey-bg.jpg";
 
+// Add custom keyframes for the flowing animation
+const customStyles = `
+  @keyframes flowDown {
+    0% {
+      top: 0;
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+`;
+
 const milestones = [
   {
     year: "2000",
@@ -75,7 +92,9 @@ const VegamJourney = () => {
   }, []);
 
   return (
-    <section className="section-padding relative overflow-hidden">
+    <>
+      <style>{customStyles}</style>
+      <section className="section-padding relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
@@ -94,8 +113,31 @@ const VegamJourney = () => {
 
         {/* Desktop & Mobile Timeline */}
         <div className="relative max-w-4xl mx-auto">
-          {/* Center Line */}
-          <div className="absolute left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/60 to-transparent"></div>
+          {/* Center Line with Animation */}
+          <div className="absolute left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-1 bg-red-600/30 rounded-full"></div>
+          
+          {/* Animated Flow Line */}
+          <div className="absolute left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-1 overflow-hidden rounded-full">
+            <div className="w-full h-full bg-gradient-to-b from-red-600 via-red-500 to-transparent opacity-60 animate-pulse"></div>
+          </div>
+          
+          {/* Flowing Dots Animation */}
+          <div className="absolute left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-1">
+            <div className="relative w-full h-full">
+              <div className="absolute w-2 h-2 bg-red-500 rounded-full -left-0.5 animate-bounce" 
+                   style={{
+                     animation: 'flowDown 4s ease-in-out infinite, pulse 1s ease-in-out infinite alternate'
+                   }}></div>
+              <div className="absolute w-1.5 h-1.5 bg-red-400 rounded-full -left-0.25 animate-bounce" 
+                   style={{
+                     animation: 'flowDown 4s ease-in-out infinite 0.5s, pulse 1s ease-in-out infinite alternate 0.5s'
+                   }}></div>
+              <div className="absolute w-1 h-1 bg-red-300 rounded-full left-0 animate-bounce" 
+                   style={{
+                     animation: 'flowDown 4s ease-in-out infinite 1s, pulse 1s ease-in-out infinite alternate 1s'
+                   }}></div>
+            </div>
+          </div>
 
           {/* Timeline Items */}
           <div className="space-y-16 lg:space-y-20">
@@ -115,8 +157,9 @@ const VegamJourney = () => {
                 {/* Mobile Layout */}
                 <div className="lg:hidden flex items-center w-full">
                   {/* Circular Marker */}
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full border-4 border-background shadow-lg flex items-center justify-center relative z-10">
+                  <div className="flex-shrink-0 w-8 h-8 bg-red-600 rounded-full border-4 border-background shadow-lg flex items-center justify-center relative z-10">
                     <div className="w-2 h-2 bg-background rounded-full"></div>
+                    <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
                   </div>
                   
                   {/* Content */}
@@ -145,8 +188,9 @@ const VegamJourney = () => {
                       </div>
                       
                       {/* Center Marker */}
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full border-4 border-background shadow-lg flex items-center justify-center relative z-10">
+                      <div className="flex-shrink-0 w-12 h-12 bg-red-600 rounded-full border-4 border-background shadow-lg flex items-center justify-center relative z-10">
                         <div className="w-3 h-3 bg-background rounded-full"></div>
+                        <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
                       </div>
                       
                       {/* Right Side Spacer */}
@@ -158,8 +202,9 @@ const VegamJourney = () => {
                       <div className="w-1/2 pr-12"></div>
                       
                       {/* Center Marker */}
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full border-4 border-background shadow-lg flex items-center justify-center relative z-10">
+                      <div className="flex-shrink-0 w-12 h-12 bg-red-600 rounded-full border-4 border-background shadow-lg flex items-center justify-center relative z-10">
                         <div className="w-3 h-3 bg-background rounded-full"></div>
+                        <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
                       </div>
                       
                       {/* Right Side Content */}
@@ -179,7 +224,8 @@ const VegamJourney = () => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 
