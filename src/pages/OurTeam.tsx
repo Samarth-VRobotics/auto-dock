@@ -213,27 +213,37 @@ const OurTeam = () => {
                   {[{
                   name: "Faizan Pathan",
                   initials: "FP",
-                  role: "Autonomy & Embedded Systems"
+                  role: "Autonomy & Embedded Systems",
+                  image: "/lovable-uploads/ec6ab3f2-84b4-41a2-9fc8-3f2a26bf69e9.png"
                 }, {
                   name: "Rani Kinnal",
                   initials: "RK",
-                  role: "Systems & Simulation"
+                  role: "Systems & Simulation",
+                  image: "/lovable-uploads/fb9654bd-cc20-4b43-80d0-bc2007022b1b.png"
                 }, {
                   name: "Amrut Kurtkoti",
                   initials: "AK",
-                  role: "Coordination & Business"
+                  role: "Coordination & Business",
+                  image: "/lovable-uploads/727e42af-80a4-4b73-8d02-12ed7f28a40f.png"
                 }, {
                   name: "Samarth Vengurlekar",
                   initials: "SV",
-                  role: "UI & Integration"
+                  role: "UI & Integration",
+                  image: "/lovable-uploads/4f37e379-47b3-4f19-b3b3-109f70a97148.png"
                 }, {
                   name: "Ashutosh Kangralkar",
                   initials: "AS",
-                  role: "Mechanical Design"
+                  role: "Mechanical Design",
+                  image: "/lovable-uploads/f60531ed-5e73-4d78-bce3-4dbccbbcb92c.png"
                 }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
-                      <div className="w-32 h-32 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                        {member.initials}
-                      </div>
+                      {member.image ? <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                          <AvatarImage src={member.image} alt={member.name} className="object-cover object-center" />
+                          <AvatarFallback className="bg-gradient-primary text-white font-bold text-2xl">
+                            {member.initials}
+                          </AvatarFallback>
+                        </Avatar> : <div className="w-32 h-32 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                          {member.initials}
+                        </div>}
                       <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
                       <p className="text-foreground/60 text-sm mb-4">{member.role}</p>
                       <Linkedin className="w-5 h-5 text-primary hover:text-secondary transition-colors cursor-pointer" />
@@ -381,7 +391,8 @@ const OurTeam = () => {
                 }, {
                   name: "Chaithra N",
                   initials: "CN",
-                  role: "Lead Functional Consultant"
+                  role: "Lead Functional Consultant",
+                  image: "/lovable-uploads/bf479e87-a27e-40c7-ae1f-8f61216d7ed8.png"
                 }, {
                   name: "Venkatesh HS",
                   initials: "VH",
