@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import vegamJourneyBg from "@/assets/vegam-journey-bg.jpg";
 
 const milestones = [
   {
@@ -74,8 +75,18 @@ const VegamJourney = () => {
   }, []);
 
   return (
-    <section className="section-padding bg-gradient-to-br from-slate-50 via-background to-muted/30 relative overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section className="section-padding relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={vegamJourneyBg} 
+          alt="Smart factory background" 
+          className="w-full h-full object-cover opacity-20" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="section-header">
           <h2 className="heading-lg text-foreground mb-4">Vegam Journey</h2>
           <p className="body-lg text-muted-foreground">Milestones that shaped us.</p>
