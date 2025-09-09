@@ -6,7 +6,7 @@ const Hero = () => {
   return <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
-        <video autoPlay muted loop playsInline className="w-full h-full object-cover" poster={heroImage}>
+        <video autoPlay muted loop playsInline className="w-full h-full object-cover">
           <source src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Pre%20final.mp4" type="video/mp4" />
           {/* Fallback to hero image if video fails to load */}
           <img src={heroImage} alt="AutoDock AMR System" className="w-full h-full object-cover" />
