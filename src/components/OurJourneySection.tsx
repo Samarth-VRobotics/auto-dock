@@ -40,8 +40,7 @@ const OurJourneySection = () => {
     alt: "Team group photo at company facility"
   }, {
     src: "/lovable-uploads/136b6fa0-b665-4a14-8d04-6534a80379b0.png",
-    alt: "Students and faculty demonstrating robotics project with leadership",
-    cropTop: true // Show only top half of this image
+    alt: "Students and faculty demonstrating robotics project with leadership"
   }];
 
   // Industry transition slideshow
