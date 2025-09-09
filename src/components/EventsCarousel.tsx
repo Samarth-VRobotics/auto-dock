@@ -41,7 +41,9 @@ const eventsData = [
     title: "Industry Visits & Engagements",
     description: "Hard hats, shop floors, and the hum of industry from chemical labs to steel and aluminum plants, we've been there. Each visit is a reminder that robotics isn't just about technology; it's about people, processes, and solving challenges where they matter most.",
     images: [
-      { url: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png", alt: "Team visit to industrial facility with safety helmets" }
+      { url: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png", alt: "Team visit to industrial facility with safety helmets" },
+      { url: "/lovable-uploads/d8d1c90e-5203-4491-a968-7073761f1348.png", alt: "Team at ROSCon robotics conference with CREATE and India Con banners" },
+      { url: "/lovable-uploads/6695258f-f234-49ae-add5-c781183aa065.png", alt: "Vegam team showcasing robotics solutions at industry trade show" }
     ],
     imageUrl: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png",
     imageAlt: "Industrial facility visit"
@@ -118,17 +120,25 @@ const EventsCarousel = () => {
                     {/* Image Section */}
                     <div className="relative h-64 md:h-[500px] overflow-hidden group">
                       {event.images && event.images.length > 1 ? (
-                        (event.id === 1 || event.id === 2) ? (
-                          // Image collage for Vegam Customer's Engagement Event and NVIDIA GTC
-                          <div className="grid grid-cols-2 grid-rows-2 gap-1 h-full">
+                        (event.id === 1 || event.id === 2 || event.id === 3) ? (
+                          // Image collage for events with multiple images
+                          <div className={`grid gap-1 h-full ${
+                            event.id === 3 ? 'grid-cols-2 grid-rows-2' : 'grid-cols-2 grid-rows-2'
+                          }`}>
                             {event.images.map((image, imgIndex) => (
                               <div 
                                 key={imgIndex}
                                 className={`relative overflow-hidden ${
-                                  imgIndex === 0 ? 'col-span-1 row-span-1' :
-                                  imgIndex === 1 ? 'col-span-1 row-span-1' :
-                                  imgIndex === 2 ? 'col-span-1 row-span-1' :
-                                  'col-span-1 row-span-1'
+                                  event.id === 3 ? (
+                                    imgIndex === 0 ? 'col-span-2 row-span-1' :
+                                    imgIndex === 1 ? 'col-span-1 row-span-1' :
+                                    'col-span-1 row-span-1'
+                                  ) : (
+                                    imgIndex === 0 ? 'col-span-1 row-span-1' :
+                                    imgIndex === 1 ? 'col-span-1 row-span-1' :
+                                    imgIndex === 2 ? 'col-span-1 row-span-1' :
+                                    'col-span-1 row-span-1'
+                                  )
                                 }`}
                               >
                                 <img 
