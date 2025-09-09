@@ -18,17 +18,8 @@ const OurJourneySection = () => {
 
   // Slideshow images for mentorship section
   const slideshowImages = [{
-    src: modernRoboticsFacility,
-    alt: "Modern robotics facility with advanced automation"
-  }, {
-    src: universityLabScene,
-    alt: "University laboratory scene with robotics equipment"
-  }, {
-    src: studentPortrait1,
-    alt: "Student working on robotics project"
-  }, {
-    src: studentPortrait2,
-    alt: "Mentorship session in progress"
+    src: "/lovable-uploads/9f2fbca6-7ae6-4c78-a913-93a2d6c5cf7d.png",
+    alt: "Team photo with Prof. Arun Giriyapur and colleagues at BASF facility"
   }];
 
   // Student portraits slideshow
@@ -146,7 +137,7 @@ const OurJourneySection = () => {
             </div>
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="KLETU campus buildings with beautiful architecture" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="KLETU campus buildings with beautiful architecture" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
