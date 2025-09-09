@@ -219,7 +219,7 @@ const OurTeam = () => {
                   initials: "RK",
                   role: "Systems & Simulation"
                 }, {
-                  name: "Amrut Kurtakoti",
+                  name: "Amrut Kurtkoti",
                   initials: "AK",
                   role: "Coordination & Business"
                 }, {
