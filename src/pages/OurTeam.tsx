@@ -71,20 +71,22 @@ const OurTeam = () => {
         </div>
         
         {/* Animated Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white/80 rounded-full mt-2 animate-pulse"></div>
+        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+          <div className="flex flex-col items-center space-y-3 transition-all duration-500 hover:scale-110">
+            <div className="w-7 h-12 border-2 border-white/70 rounded-full flex justify-center backdrop-blur-sm bg-white/10 shadow-lg">
+              <div className="w-1.5 h-4 bg-white/90 rounded-full mt-2 animate-[pulse_2s_ease-in-out_infinite]"></div>
             </div>
-            <svg 
-              className="w-6 h-6 text-white/70 animate-pulse" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-            <p className="text-white/60 text-sm font-medium tracking-wide">Scroll to explore</p>
+            <div className="animate-[bounce_2s_infinite]">
+              <svg 
+                className="w-7 h-7 text-white/80 drop-shadow-lg transition-colors duration-300 hover:text-white" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+            <p className="text-white/70 text-sm font-semibold tracking-wider drop-shadow-md animate-fade-in">Scroll to explore</p>
           </div>
         </div>
       </section>
