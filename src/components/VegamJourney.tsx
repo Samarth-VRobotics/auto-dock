@@ -1,0 +1,163 @@
+import { useEffect, useRef, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+
+const milestones = [
+  {
+    year: "2015",
+    description: "Founded to transform manufacturing with software + robotics."
+  },
+  {
+    year: "2017", 
+    description: "First enterprise deployment (Henkel POC to production)."
+  },
+  {
+    year: "2019",
+    description: "Launched Vegam SFS; scaled to multi-plant rollouts."
+  },
+  {
+    year: "2022",
+    description: "Introduced OEE/CMS & Robotics initiatives."
+  },
+  {
+    year: "2024", 
+    description: "Native SAP/SFS connectors, open APIs, GenAI pilots."
+  },
+  {
+    year: "2025",
+    description: "AutoDock concept for autonomous loading/unloading."
+  }
+];
+
+const VegamJourney = () => {
+  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(milestones.length).fill(false));
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers = itemRefs.current.map((ref, index) => {
+      if (!ref) return null;
+      
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleItems(prev => {
+              const newVisible = [...prev];
+              newVisible[index] = true;
+              return newVisible;
+            });
+          }
+        },
+        {
+          threshold: 0.3,
+          rootMargin: '0px 0px -100px 0px'
+        }
+      );
+      
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect());
+    };
+  }, []);
+
+  return (
+    <section className="section-padding bg-gradient-to-br from-slate-50 via-background to-muted/30 relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="section-header">
+          <h2 className="heading-lg text-foreground mb-4">Vegam Journey</h2>
+          <p className="body-lg text-muted-foreground">Milestones that shaped us.</p>
+        </div>
+
+        {/* Desktop & Mobile Timeline */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Center Line */}
+          <div className="absolute left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/60 to-transparent"></div>
+
+          {/* Timeline Items */}
+          <div className="space-y-16 lg:space-y-20">
+            {milestones.map((milestone, index) => (
+              <div
+                key={milestone.year}
+                ref={el => itemRefs.current[index] = el}
+                className={`relative flex items-center transition-all duration-700 transform ${
+                  visibleItems[index] 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+                style={{
+                  transitionDelay: `${index * 150}ms`
+                }}
+              >
+                {/* Mobile Layout */}
+                <div className="lg:hidden flex items-center w-full">
+                  {/* Circular Marker */}
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full border-4 border-background shadow-lg flex items-center justify-center relative z-10">
+                    <div className="w-2 h-2 bg-background rounded-full"></div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="ml-8 flex-1">
+                    <Card className="bg-card border border-border shadow-md hover:shadow-lg transition-shadow duration-300">
+                      <CardContent className="p-6">
+                        <h3 className="heading-sm text-foreground mb-2">{milestone.year}</h3>
+                        <p className="body-base text-muted-foreground leading-relaxed">{milestone.description}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+
+                {/* Desktop Layout */}
+                <div className="hidden lg:flex items-center w-full">
+                  {index % 2 === 0 ? (
+                    <>
+                      {/* Left Side Content */}
+                      <div className="w-1/2 pr-12 text-right">
+                        <Card className="bg-card border border-border shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                          <CardContent className="p-6">
+                            <h3 className="heading-sm text-foreground mb-2">{milestone.year}</h3>
+                            <p className="body-base text-muted-foreground leading-relaxed">{milestone.description}</p>
+                          </CardContent>
+                        </Card>
+                      </div>
+                      
+                      {/* Center Marker */}
+                      <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full border-4 border-background shadow-lg flex items-center justify-center relative z-10">
+                        <div className="w-3 h-3 bg-background rounded-full"></div>
+                      </div>
+                      
+                      {/* Right Side Spacer */}
+                      <div className="w-1/2 pl-12"></div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Left Side Spacer */}
+                      <div className="w-1/2 pr-12"></div>
+                      
+                      {/* Center Marker */}
+                      <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full border-4 border-background shadow-lg flex items-center justify-center relative z-10">
+                        <div className="w-3 h-3 bg-background rounded-full"></div>
+                      </div>
+                      
+                      {/* Right Side Content */}
+                      <div className="w-1/2 pl-12">
+                        <Card className="bg-card border border-border shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                          <CardContent className="p-6">
+                            <h3 className="heading-sm text-foreground mb-2">{milestone.year}</h3>
+                            <p className="body-base text-muted-foreground leading-relaxed">{milestone.description}</p>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default VegamJourney;
