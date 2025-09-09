@@ -181,21 +181,12 @@ const OurJourneySection = () => {
                 Among our greatest guiding lights, Prof. Arun Giriyapur, former HOD, has been far more than a teacher. A lifelong mentor, he encouraged our wildest ideas, anchored us with wisdom, and inspired us to keep pushing the boundaries of robotics. The faith he placed in us during our early years still drives our journey.
               </p>
             </div>
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
-                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              {/* Slideshow Images */}
-              {slideshowImages.map((image, index) => <img key={index} src={image.src} alt={image.alt} className={`absolute inset-0 w-full h-full object-contain group-hover:scale-110 transition-all duration-1000 ease-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
-                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300 z-20"></div>
-              <div className="absolute bottom-6 left-6 text-white transform 
-                            group-hover:translate-y-[-4px] transition-transform duration-300 z-30">
-                <p className="text-base font-medium">Mentorship & Growth</p>
-                {/* Slide indicators */}
-                <div className="flex space-x-2 mt-2">
-                  {slideshowImages.map((_, index) => <div key={index} className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white' : 'bg-white/50'}`} />)}
-                </div>
-              </div>
-            </div>
+            <AspectRatioSlideshow
+              images={slideshowImages}
+              autoAdvanceInterval={3000}
+              className="h-80 lg:h-[500px] w-full"
+              caption="Mentorship & Growth"
+            />
           </div>
 
           {/* From University to Industry - Section Header */}
@@ -207,27 +198,13 @@ const OurJourneySection = () => {
           {/* From University to Industry */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">            
             {/* Industry Visual */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl w-full group
-                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out 
-                          h-64 sm:h-80 md:h-96 lg:h-[500px] mt-8">
-              {/* Industry Images Slideshow */}
-              {industryImages.map((image, index) => 
-                <img 
-                  key={index} 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className={`absolute inset-0 w-full h-full object-contain object-center
-                            group-hover:scale-110 transition-all duration-1000 ease-out 
-                            ${index === industrySlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
-                />
-              )}
-              {/* Slide indicators only */}
-              <div className="absolute bottom-6 right-6 z-30">
-                <div className="flex space-x-2">
-                  {industryImages.map((_, index) => <div key={index} className={`w-3 h-3 rounded-full transition-all duration-300 ${index === industrySlide ? 'bg-white' : 'bg-white/50'}`} />)}
-                </div>
-              </div>
-            </div>
+            <AspectRatioSlideshow
+              images={industryImages}
+              autoAdvanceInterval={3500}
+              className="h-64 sm:h-80 md:h-96 lg:h-[500px] w-full mt-8"
+              caption=""
+              showIndicators={true}
+            />
             
             {/* Text Content */}
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10
