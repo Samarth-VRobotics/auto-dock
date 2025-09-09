@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Play, ExternalLink, Code, Eye } from "lucide-react";
 import { useState, useEffect } from "react";
 import EventsCarousel from "@/components/EventsCarousel";
+import AspectRatioSlideshow from "@/components/AspectRatioSlideshow";
 import universityLabScene from "@/assets/university-lab-scene.jpg";
 import modernRoboticsFacility from "@/assets/modern-robotics-facility.jpg";
 import studentPortrait1 from "@/assets/student-portrait-1.jpg";
@@ -156,17 +157,12 @@ const OurJourneySection = () => {
 
           {/* Row 2: Second Image + Paragraph (Image Left, Text Right) */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
-                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
-              {/* Student Portraits Slideshow */}
-              {studentPortraits.map((portrait, index) => <img key={index} src={portrait.src} alt={portrait.alt} className={`absolute inset-0 w-full h-full object-contain object-center group-hover:scale-110 transition-all duration-1000 ease-out ${index === studentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} />)}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
-                            group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
-              <div className="absolute bottom-6 left-6 text-white transform 
-                            group-hover:translate-y-[-4px] transition-transform duration-300">
-                <p className="text-base font-medium">Leadership & Vision</p>
-              </div>
-            </div>
+            <AspectRatioSlideshow
+              images={studentPortraits}
+              autoAdvanceInterval={2500}
+              className="h-80 lg:h-[500px] w-full"
+              caption="Leadership & Vision"
+            />
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
                           transition-all duration-500 ease-out group w-full">
