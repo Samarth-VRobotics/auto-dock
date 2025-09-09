@@ -72,23 +72,18 @@ const OurTeam = () => {
         
         {/* Bottom Positioned Scroll Indicator - Smaller and More Visible */}
         <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-          <div 
-            className="flex flex-col items-center space-y-2 transition-all duration-500 hover:scale-110 cursor-pointer animate-bounce"
-            onClick={() => {
-              const nextSection = document.querySelector('#our-journey-section');
-              nextSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
-          >
+          <div className="flex flex-col items-center space-y-2 transition-all duration-500 hover:scale-110 cursor-pointer animate-bounce" onClick={() => {
+          const nextSection = document.querySelector('#our-journey-section');
+          nextSection?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }}>
             <div className="w-4 h-7 sm:w-5 sm:h-8 border-2 border-white/80 rounded-full flex justify-center backdrop-blur-md bg-white/20 shadow-2xl">
               <div className="w-0.5 h-2 sm:w-1 sm:h-3 bg-white rounded-full mt-1.5 animate-[pulse_2s_ease-in-out_infinite]"></div>
             </div>
             <div className="animate-[bounce_2s_infinite]">
-              <svg 
-                className="w-4 h-4 sm:w-5 sm:h-5 text-white drop-shadow-2xl transition-colors duration-300 hover:text-white/90" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white drop-shadow-2xl transition-colors duration-300 hover:text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </div>
@@ -479,7 +474,7 @@ const OurTeam = () => {
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Photo Gallery</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">Gallery</h2>
             <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
               Behind every innovation is a story of collaboration, late-night breakthroughs, and shared determination.
             </p>
