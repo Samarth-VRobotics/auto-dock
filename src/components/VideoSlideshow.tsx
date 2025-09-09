@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 
 interface VideoItem {
@@ -14,7 +14,7 @@ interface VideoSlideshowProps {
 const VideoSlideshow = ({ className = "" }: VideoSlideshowProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [videoRefs, setVideoRefs] = useState<(HTMLVideoElement | null)[]>([]);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const videos: VideoItem[] = [
     {
@@ -52,17 +52,19 @@ const VideoSlideshow = ({ className = "" }: VideoSlideshowProps) => {
 
   // Handle video play/pause based on current slide
   useEffect(() => {
-    videoRefs.forEach((video, index) => {
+    videoRefs.current.forEach((video, index) => {
       if (video) {
         if (index === currentSlide) {
-          video.play().catch(console.error);
+          video.play().catch(() => {
+            // Silently handle play errors
+          });
         } else {
           video.pause();
           video.currentTime = 0;
         }
       }
     });
-  }, [currentSlide, videoRefs]);
+  }, [currentSlide]);
 
   const nextSlide = () => {
     setCurrentSlide(prev => (prev + 1) % videos.length);
@@ -80,13 +82,9 @@ const VideoSlideshow = ({ className = "" }: VideoSlideshowProps) => {
     setIsPlaying(prev => !prev);
   };
 
-  const setVideoRef = (index: number) => (ref: HTMLVideoElement | null) => {
-    setVideoRefs(prev => {
-      const newRefs = [...prev];
-      newRefs[index] = ref;
-      return newRefs;
-    });
-  };
+  const setVideoRef = useCallback((index: number) => (ref: HTMLVideoElement | null) => {
+    videoRefs.current[index] = ref;
+  }, []);
 
   return (
     <div className={`relative w-full max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl group ${className}`}>
