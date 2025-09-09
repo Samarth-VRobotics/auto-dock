@@ -40,7 +40,8 @@ const OurJourneySection = () => {
     alt: "Team group photo at company facility"
   }, {
     src: "/lovable-uploads/136b6fa0-b665-4a14-8d04-6534a80379b0.png",
-    alt: "Students and faculty demonstrating robotics project with leadership"
+    alt: "Students and faculty demonstrating robotics project with leadership",
+    cropTop: true // Show only top half of this image
   }];
 
   // Industry transition slideshow
@@ -49,7 +50,8 @@ const OurJourneySection = () => {
     alt: "Vegam robot assisting worker in industrial warehouse setting"
   }, {
     src: "/lovable-uploads/4cac744e-506c-4379-9351-b2a26753b864.png",
-    alt: "Team members presenting MAYA 1.0 humanoid robot at university exhibition"
+    alt: "Team members presenting MAYA 1.0 humanoid robot at university exhibition",
+    cropTop: true // Show only top half of this image
   }, {
     src: "/lovable-uploads/d1138e05-882d-4ae5-bdf5-affd1d1597cb.png",
     alt: "Students collaborating in robotics laboratory with MAYA robot and equipment"

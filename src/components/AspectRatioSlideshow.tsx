@@ -5,6 +5,7 @@ interface SlideshowImage {
   src: string;
   alt: string;
   caption?: string;
+  cropTop?: boolean; // New property to crop to top half
 }
 
 interface AspectRatioSlideshowProps {
@@ -63,7 +64,12 @@ const AspectRatioSlideshow = ({
             <img 
               src={image.src} 
               alt={image.alt} 
-              className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
+              className={`w-full h-full transition-transform duration-700 ease-out group-hover:scale-110 ${
+                image.cropTop 
+                  ? 'object-cover object-top' 
+                  : 'object-cover object-center'
+              }`}
+              style={image.cropTop ? { objectPosition: 'center top' } : undefined}
             />
             {/* Individual image overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
