@@ -456,11 +456,11 @@ const Index = () => {
               
                   /* Mobile responsive adjustments */
                   @media (max-width: 768px) {
-                    .timeline-container > div { height: 80vh !important; min-height: 500px !important; }
-                    .vj-svg { transform: scale(0.8); transform-origin: center; }
+                    .timeline-container > div { height: 85vh !important; min-height: 600px !important; }
+                    .vj-svg { transform: scale(0.75); transform-origin: center; }
                     .vj-year { font-size: 42px; }
                     .vj-year-visible { font-size: 39px; font-weight: 700; }
-                    .vj-cap { font-size: 24px; font-weight: 600; }
+                    .vj-cap { font-size: 22px; font-weight: 600; }
                     .vj-node { r: 54; }
                     .vj-node-ring { r: 66; }
                     .vj-card rect { height: auto; min-height: 120px; rx: 30; }
@@ -468,11 +468,11 @@ const Index = () => {
                 
                  /* Tablet responsive adjustments */
                  @media (min-width: 769px) and (max-width: 1024px) {
-                   .timeline-container > div { height: 75vh !important; min-height: 550px !important; }
-                   .vj-svg { transform: scale(0.85); transform-origin: center; }
+                   .timeline-container > div { height: 82vh !important; min-height: 650px !important; }
+                   .vj-svg { transform: scale(0.8); transform-origin: center; }
                    .vj-year { font-size: 39px; }
                    .vj-year-visible { font-size: 36px; font-weight: 700; }
-                   .vj-cap { font-size: 24px; font-weight: 600; }
+                   .vj-cap { font-size: 22px; font-weight: 600; }
                    .vj-node { r: 51; }
                    .vj-node-ring { r: 63; }
                    .vj-card rect { height: auto; min-height: 113px; rx: 30; }
@@ -480,12 +480,12 @@ const Index = () => {
                 
                  /* Desktop responsive adjustments */
                  @media (min-width: 1025px) {
-                   .timeline-container > div { height: 70vh !important; min-height: 600px !important; }
-                   .vj-svg { transform: scale(0.9); transform-origin: center; }
+                   .timeline-container > div { height: 80vh !important; min-height: 700px !important; }
+                   .vj-svg { transform: scale(0.85); transform-origin: center; }
                  }
              `}</style>
-            <div className="w-full" style={{ height: '70vh', minHeight: '600px', maxHeight: '800px' }}>
-            <svg className="vj-svg" viewBox="0 0 1700 1100" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030" 
+            <div className="w-full" style={{ height: '80vh', minHeight: '700px', maxHeight: '900px' }}>
+            <svg className="vj-svg" viewBox="0 0 2000 1400" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030" 
                  style={{ width: '100%', height: '100%' }}>
               <defs>
                 <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -508,14 +508,14 @@ const Index = () => {
 
                {/* diagonal growth line (behind everything) - Evenly spaced from bottom-left to top-right */}
                <g className="vj-layer-line">
-                 <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 150 850 L 1550 150" />
+                 <path className="vj-line" stroke="url(#vj-grad)" markerEnd="url(#vj-arrow)" d="M 200 1200 L 1800 200" />
                </g>
 
               {/* NODES + CARDS (above the line) - Evenly spaced timeline */}
               <g className="vj-layer-nodes" aria-label="timeline milestones" tabIndex={-1}>
                 
                 {/* 1) 2000 */}
-                 <g className="milestone" data-key="2000" transform="translate(150,850)" tabIndex={0} aria-label="2000 — Foundation with digital factory vision" aria-describedby="milestone-2000">
+                 <g className="milestone" data-key="2000" transform="translate(200,1200)" tabIndex={0} aria-label="2000 — Foundation with digital factory vision" aria-describedby="milestone-2000">
                    <circle className="vj-node-ring" r={48}></circle>
                    <circle className="vj-node vj-node--past" r={36}></circle>
                   
@@ -532,7 +532,7 @@ const Index = () => {
                 </g>
 
                 {/* 2) 2007 */}
-                 <g className="milestone" data-key="2007" transform="translate(325,762)" tabIndex={0} aria-label="2007 — First plant fully digitalized" aria-describedby="milestone-2007">
+                 <g className="milestone" data-key="2007" transform="translate(400,1075)" tabIndex={0} aria-label="2007 — First plant fully digitalized" aria-describedby="milestone-2007">
                    <circle className="vj-node-ring" r={48}></circle>
                    <circle className="vj-node vj-node--past" r={36}></circle>
                   
@@ -548,7 +548,7 @@ const Index = () => {
                 </g>
 
                 {/* 3) 2013 */}
-                 <g className="milestone" data-key="2013" transform="translate(500,675)" tabIndex={0} aria-label="2013 — 18 plants connected in network" aria-describedby="milestone-2013">
+                 <g className="milestone" data-key="2013" transform="translate(600,950)" tabIndex={0} aria-label="2013 — 18 plants connected in network" aria-describedby="milestone-2013">
                    <circle className="vj-node-ring" r={48}></circle>
                    <circle className="vj-node vj-node--past" r={36}></circle>
                   
@@ -564,7 +564,7 @@ const Index = () => {
                 </g>
 
                 {/* 4) 2016 */}
-                 <g className="milestone" data-key="2016" transform="translate(675,587)" tabIndex={0} aria-label="2016 — Scaled to 70 plants globally" aria-describedby="milestone-2016">
+                 <g className="milestone" data-key="2016" transform="translate(800,825)" tabIndex={0} aria-label="2016 — Scaled to 70 plants globally" aria-describedby="milestone-2016">
                    <circle className="vj-node-ring" r={48}></circle>
                    <circle className="vj-node vj-node--past" r={36}></circle>
                   
@@ -580,7 +580,7 @@ const Index = () => {
                 </g>
 
                 {/* 5) 2019 */}
-                 <g className="milestone" data-key="2019" transform="translate(850,500)" tabIndex={0} aria-label="2019 — Milestone of 100+ plants achieved" aria-describedby="milestone-2019">
+                 <g className="milestone" data-key="2019" transform="translate(1000,700)" tabIndex={0} aria-label="2019 — Milestone of 100+ plants achieved" aria-describedby="milestone-2019">
                    <circle className="vj-node-ring" r={48}></circle>
                    <circle className="vj-node vj-node--past" r={36}></circle>
                   
@@ -596,7 +596,7 @@ const Index = () => {
                 </g>
 
                 {/* 6) 2023 */}
-                 <g className="milestone" data-key="2023" transform="translate(1025,412)" tabIndex={0} aria-label="2023 — Foundation for Autonomous factories" aria-describedby="milestone-2023">
+                 <g className="milestone" data-key="2023" transform="translate(1200,575)" tabIndex={0} aria-label="2023 — Foundation for Autonomous factories" aria-describedby="milestone-2023">
                    <circle className="vj-node-ring" r={48}></circle>
                    <circle className="vj-node vj-node--past" r={36}></circle>
                   
@@ -612,7 +612,7 @@ const Index = () => {
                 </g>
 
                 {/* 7) 2025 */}
-                 <g className="milestone" data-key="2025" transform="translate(1200,325)" tabIndex={0} aria-label="2025 — Milestone of 300+ plants achieved" aria-describedby="milestone-2025">
+                 <g className="milestone" data-key="2025" transform="translate(1400,450)" tabIndex={0} aria-label="2025 — Milestone of 300+ plants achieved" aria-describedby="milestone-2025">
                    <circle className="vj-node-ring" r={48}></circle>
                    <circle className="vj-node vj-node--past" r={36}></circle>
                   
@@ -628,7 +628,7 @@ const Index = () => {
                 </g>
 
                 {/* 8) 2026 (future) */}
-                 <g className="milestone" data-key="2026" transform="translate(1375,237)" tabIndex={0} aria-label="2026 — Projected First Fully Autonomous Plant" aria-describedby="milestone-2026">
+                 <g className="milestone" data-key="2026" transform="translate(1600,325)" tabIndex={0} aria-label="2026 — Projected First Fully Autonomous Plant" aria-describedby="milestone-2026">
                    <circle className="vj-node-ring" r={48}></circle>
                    <circle className="vj-node vj-node--future" r={36} filter="url(#glow)"></circle>
                   
@@ -644,7 +644,7 @@ const Index = () => {
                 </g>
 
                 {/* 9) 2030 (future) */}
-                 <g className="milestone" data-key="2030" transform="translate(1550,150)" tabIndex={0} aria-label="2030 — 1000 Autonomous Plants" aria-describedby="milestone-2030">
+                 <g className="milestone" data-key="2030" transform="translate(1800,200)" tabIndex={0} aria-label="2030 — 1000 Autonomous Plants" aria-describedby="milestone-2030">
                    <circle className="vj-node-ring" r={48}></circle>
                    <circle className="vj-node vj-node--future" r={36} filter="url(#glow)"></circle>
                   
@@ -659,8 +659,8 @@ const Index = () => {
                     </g>
                  </g>
 
-                   {/* Our Strengths Panel - Repositioned to avoid overlaps */}
-                   <g className="vj-strengths-panel" transform="translate(200,950)" aria-label="Our company strengths">
+                   {/* Our Strengths Panel - Repositioned to fit in larger viewBox */}
+                   <g className="vj-strengths-panel" transform="translate(100,50)" aria-label="Our company strengths">
                     {/* Panel background */}
                     <rect width="640" height="120" fill="hsl(var(--card) / 0.95)" rx="20" stroke="hsl(var(--border))" strokeWidth="3" 
                           filter="drop-shadow(0 15px 40px hsl(var(--foreground) / 0.15))" />
