@@ -17,7 +17,6 @@ const eventsData = [
     images: [
       { url: "/lovable-uploads/318afd9b-1608-4c39-9b68-af9535c69047.png", alt: "Robot demonstration with customer engagement at Vegam expo" },
       { url: "/lovable-uploads/52c835ce-39ec-41bb-a91c-ce18cc6b08be.png", alt: "Interactive presentation with customers and team wall display" },
-      { url: "/lovable-uploads/d3c66e54-a8ee-437e-8013-494f66d658fb.png", alt: "Ceremonial lighting event with team and customers" },
       { url: "/lovable-uploads/d808f01b-6871-4874-82e6-0c036ace0348.png", alt: "Customer networking session with team presentations" },
       { url: "/lovable-uploads/c65c0c7e-e09d-4819-ae8c-8ac2b721d683.png", alt: "Product showcase with industry professionals and demonstrations" }
     ],
@@ -42,18 +41,10 @@ const eventsData = [
     title: "Industry Visits & Engagements",
     description: "Hard hats, shop floors, and the hum of industry from chemical labs to steel and aluminum plants, we've been there. Each visit is a reminder that robotics isn't just about technology; it's about people, processes, and solving challenges where they matter most.",
     images: [
-      { url: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png", alt: "Team visit to industrial facility with safety helmets" },
-      { url: "/lovable-uploads/7e619b3d-0110-4751-9e58-75c59c40d7e4.png", alt: "Team meeting with industry professionals at BASF facility" }
+      { url: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png", alt: "Team visit to industrial facility with safety helmets" }
     ],
     imageUrl: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png",
     imageAlt: "Industrial facility visit"
-  },
-  {
-    id: 4,
-    title: "KLE Technological University Expo",
-    description: "We also returned to our roots, setting up demonstrations at KLETU. Presenting our solutions on campus was more than just showcasing technology — it was about inspiring students, giving back, and keeping the cycle of learning alive.",
-    imageUrl: "/lovable-uploads/f6a9af8e-0b56-400b-ae59-09e92f7b93a6.png",
-    imageAlt: "Vegam team at KLE Technological University Expo showcasing robotics solutions"
   }
 ];
 
@@ -127,8 +118,8 @@ const EventsCarousel = () => {
                     {/* Image Section */}
                     <div className="relative h-64 md:h-[500px] overflow-hidden group">
                       {event.images && event.images.length > 1 ? (
-                        event.id === 2 ? (
-                          // Image collage for NVIDIA GTC only
+                        (event.id === 1 || event.id === 2) ? (
+                          // Image collage for Vegam Customer's Engagement Event and NVIDIA GTC
                           <div className="grid grid-cols-2 grid-rows-2 gap-1 h-full">
                             {event.images.map((image, imgIndex) => (
                               <div 
