@@ -3,28 +3,40 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const milestones = [
   {
-    year: "2015",
-    description: "Founded to transform manufacturing with software + robotics."
+    year: "2000",
+    description: "Foundation with digital factory vision"
   },
   {
-    year: "2017", 
-    description: "First enterprise deployment (Henkel POC to production)."
+    year: "2007",
+    description: "First plant fully digitalized"
+  },
+  {
+    year: "2013",
+    description: "18 plants connected in network"
+  },
+  {
+    year: "2016",
+    description: "Scaled to 70 plants globally"
   },
   {
     year: "2019",
-    description: "Launched Vegam SFS; scaled to multi-plant rollouts."
+    description: "Milestone of 100+ plants achieved"
   },
   {
-    year: "2022",
-    description: "Introduced OEE/CMS & Robotics initiatives."
-  },
-  {
-    year: "2024", 
-    description: "Native SAP/SFS connectors, open APIs, GenAI pilots."
+    year: "2023",
+    description: "Foundation for Autonomous factories"
   },
   {
     year: "2025",
-    description: "AutoDock concept for autonomous loading/unloading."
+    description: "Milestone of 300+ plants achieved"
+  },
+  {
+    year: "2026",
+    description: "Projected First Fully Autonomous Plant"
+  },
+  {
+    year: "2030",
+    description: "1000 Autonomous Plants"
   }
 ];
 
