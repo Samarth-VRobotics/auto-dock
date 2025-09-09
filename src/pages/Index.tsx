@@ -324,12 +324,12 @@ const Index = () => {
           overflow: 'visible'
         }}>
             <style>{`
-              .vj-svg { 
-                width: 100%; 
-                height: auto; 
-                display: block; 
-                filter: drop-shadow(0 4px 20px hsl(var(--primary) / 0.1));
-              }
+               .vj-svg { 
+                 width: 100%; 
+                 height: 100%; 
+                 display: block; 
+                 filter: drop-shadow(0 4px 20px hsl(var(--primary) / 0.1));
+               }
                .vj-year { 
                  font: 800 36px/1.2 Inter, system-ui; 
                  fill: hsl(var(--foreground)); 
@@ -456,38 +456,37 @@ const Index = () => {
               
                   /* Mobile responsive adjustments */
                   @media (max-width: 768px) {
-                    .vj-svg { padding: 40px 25px 140px 25px; transform: scale(0.8); transform-origin: center top; }
+                    .timeline-container > div { height: 80vh !important; min-height: 500px !important; }
+                    .vj-svg { transform: scale(0.8); transform-origin: center; }
                     .vj-year { font-size: 42px; }
                     .vj-year-visible { font-size: 39px; font-weight: 700; }
-                    .vj-cap { font-size: 27px; font-weight: 600; }
+                    .vj-cap { font-size: 24px; font-weight: 600; }
                     .vj-node { r: 54; }
                     .vj-node-ring { r: 66; }
                     .vj-card rect { height: auto; min-height: 120px; rx: 30; }
-                    .timeline-container { padding-right: 0; margin: 0 -20px; padding-bottom: min(30vh, 320px); }
-                    .vj-strengths-panel { transform: translate(500, 350) scale(0.6); }
                   }
-               
+                
                  /* Tablet responsive adjustments */
                  @media (min-width: 769px) and (max-width: 1024px) {
-                   .vj-svg { padding: 40px 30px 120px 30px; transform: scale(0.75); transform-origin: center top; }
+                   .timeline-container > div { height: 75vh !important; min-height: 550px !important; }
+                   .vj-svg { transform: scale(0.85); transform-origin: center; }
                    .vj-year { font-size: 39px; }
                    .vj-year-visible { font-size: 36px; font-weight: 700; }
-                   .vj-cap { font-size: 27px; font-weight: 600; }
+                   .vj-cap { font-size: 24px; font-weight: 600; }
                    .vj-node { r: 51; }
                    .vj-node-ring { r: 63; }
                    .vj-card rect { height: auto; min-height: 113px; rx: 30; }
-                   .timeline-container { padding-bottom: min(25vh, 280px); }
-                   .vj-strengths-panel { transform: translate(700, 450) scale(0.8); }
                  }
-               
+                
                  /* Desktop responsive adjustments */
                  @media (min-width: 1025px) {
-                   .vj-svg { transform: scale(0.7); transform-origin: center top; }
-                   .timeline-container { padding-bottom: min(20vh, 250px); }
-                   .vj-strengths-panel { transform: translate(800, 500) scale(0.9); }
+                   .timeline-container > div { height: 70vh !important; min-height: 600px !important; }
+                   .vj-svg { transform: scale(0.9); transform-origin: center; }
                  }
-            `}</style>
-            <svg className="vj-svg" viewBox="0 0 1700 1100" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030">
+             `}</style>
+            <div className="w-full" style={{ height: '70vh', minHeight: '600px', maxHeight: '800px' }}>
+            <svg className="vj-svg" viewBox="0 0 1700 1100" role="img" aria-label="Interactive diagonal timeline with 9 milestones from 2000 to 2030" 
+                 style={{ width: '100%', height: '100%' }}>
               <defs>
                 <linearGradient id="vj-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="hsl(var(--destructive))" />
@@ -688,6 +687,7 @@ const Index = () => {
                </g>
 
             </svg>
+            </div>
           </div>
         </div>
       </section>
