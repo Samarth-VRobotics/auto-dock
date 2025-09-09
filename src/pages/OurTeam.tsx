@@ -49,16 +49,28 @@ const OurTeam = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-slate-100 opacity-50"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-primary opacity-5 rounded-full blur-3xl"></div>
+      <section className="pt-20 pb-16 relative overflow-hidden min-h-[60vh]">
+        {/* Video Background */}
+        <video 
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        >
+          <source src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/ASRS%20timelasp.mp4" type="video/mp4" />
+        </video>
         
-        <div className="container mx-auto px-6 relative">
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 z-10"></div>
+        
+        <div className="container mx-auto px-6 relative z-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in-up">
-              Meet the Humans Behind the <span className="text-primary">Robots</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up drop-shadow-lg">
+              Meet the Humans Behind the <span className="text-primary-foreground">Robots</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 leading-relaxed animate-fade-in px-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed animate-fade-in px-4 drop-shadow-md">
               A multidisciplinary team of engineers, creators, and problem-solvers building robots with purpose.
             </p>
           </div>
