@@ -64,35 +64,35 @@ const OurTeam = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up drop-shadow-lg">
               Meet the Humans Behind the <span className="text-primary-foreground">Robots</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed animate-fade-in px-4 drop-shadow-md mb-8">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed animate-fade-in px-4 drop-shadow-md">
               A multidisciplinary team of engineers, creators, and problem-solvers building robots with purpose.
             </p>
-            
-            {/* Centered Animated Scroll Indicator */}
-            <div className="flex justify-center mt-12 mb-8">
-              <div 
-                className="flex flex-col items-center space-y-3 transition-all duration-500 hover:scale-110 cursor-pointer animate-bounce"
-                onClick={() => {
-                  const nextSection = document.querySelector('#our-journey-section');
-                  nextSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-              >
-                <div className="w-6 h-10 sm:w-7 sm:h-12 border-2 border-white/70 rounded-full flex justify-center backdrop-blur-sm bg-white/10 shadow-lg">
-                  <div className="w-1 h-3 sm:w-1.5 sm:h-4 bg-white/90 rounded-full mt-2 animate-[pulse_2s_ease-in-out_infinite]"></div>
-                </div>
-                <div className="animate-[bounce_2s_infinite]">
-                  <svg 
-                    className="w-6 h-6 sm:w-7 sm:h-7 text-white/80 drop-shadow-lg transition-colors duration-300 hover:text-white" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                </div>
-                <p className="text-white/70 text-xs sm:text-sm font-semibold tracking-wider drop-shadow-md animate-fade-in">Scroll to explore</p>
-              </div>
+          </div>
+        </div>
+        
+        {/* Bottom Positioned Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+          <div 
+            className="flex flex-col items-center space-y-3 transition-all duration-500 hover:scale-110 cursor-pointer animate-bounce"
+            onClick={() => {
+              const nextSection = document.querySelector('#our-journey-section');
+              nextSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+          >
+            <div className="w-6 h-10 sm:w-7 sm:h-12 border-2 border-white/70 rounded-full flex justify-center backdrop-blur-sm bg-white/10 shadow-lg">
+              <div className="w-1 h-3 sm:w-1.5 sm:h-4 bg-white/90 rounded-full mt-2 animate-[pulse_2s_ease-in-out_infinite]"></div>
             </div>
+            <div className="animate-[bounce_2s_infinite]">
+              <svg 
+                className="w-6 h-6 sm:w-7 sm:h-7 text-white/80 drop-shadow-lg transition-colors duration-300 hover:text-white" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+            <p className="text-white/70 text-xs sm:text-sm font-semibold tracking-wider drop-shadow-md animate-fade-in">Scroll to explore</p>
           </div>
         </div>
       </section>
