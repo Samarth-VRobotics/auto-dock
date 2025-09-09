@@ -93,15 +93,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right side content overlay - keeping for mobile/fallback */}
-          <div className="relative animate-fade-in lg:hidden" style={{
-          animationDelay: '0.4s',
-          animationFillMode: 'both'
-        }}>
-            <div className="bg-background/10 backdrop-blur-sm rounded-xl p-6 border border-foreground/10">
-              <img src={heroImage} alt="Autonomous robotic arm unloading truck with flexible conveyor system" className="w-full h-auto rounded-lg shadow-xl opacity-80" />
-            </div>
-          </div>
+          {/* Mobile/tablet content is now handled by the full-screen video background */}
         </div>
       </div>
     </section>;
