@@ -327,16 +327,16 @@ const Index = () => {
               .timeline-svg {
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
-                border-radius: 16px;
+                background: transparent;
+                border-radius: 0;
                 overflow: visible;
-                filter: drop-shadow(0 4px 20px hsl(var(--primary) / 0.1));
+                filter: none;
               }
               
               /* Timeline path animation */
               .timeline-path {
                 stroke: url(#timeline-gradient);
-                stroke-width: 6;
+                stroke-width: 4;
                 stroke-linecap: round;
                 fill: none;
                 filter: drop-shadow(0 2px 8px hsl(var(--primary) / 0.3));
@@ -386,7 +386,7 @@ const Index = () => {
               
               /* Year labels */
               .year-label {
-                font-size: 24px;
+                font-size: 20px;
                 font-weight: 700;
                 fill: hsl(var(--foreground));
                 text-anchor: middle;
@@ -397,36 +397,9 @@ const Index = () => {
                 fill: hsl(var(--destructive));
               }
               
-              /* Content cards */
-              .content-card {
-                opacity: 0;
-                transform: translateY(10px);
-                transition: all 0.3s ease;
-                pointer-events: none;
-              }
-              
-              .milestone-node:hover .content-card,
-              .milestone-node:focus .content-card {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-              }
-              
-              .card-bg {
-                fill: hsl(var(--card));
-                stroke: hsl(var(--border));
-                stroke-width: 2;
-                rx: 12;
-                filter: drop-shadow(0 8px 25px hsl(var(--foreground) / 0.15));
-              }
-              
-              .card-bg.future {
-                stroke: hsl(var(--destructive));
-                stroke-width: 2;
-              }
-              
+              /* Card text styles */
               .card-text {
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: 600;
                 fill: hsl(var(--foreground));
                 text-anchor: start;
@@ -434,21 +407,13 @@ const Index = () => {
               }
               
               .card-number {
-                font-size: 18px;
+                font-size: 16px;
                 font-weight: 700;
                 fill: hsl(var(--primary));
               }
               
               .card-number.future {
                 fill: hsl(var(--destructive));
-              }
-              
-              /* Connecting lines */
-              .connect-line {
-                stroke: hsl(var(--muted-foreground));
-                stroke-width: 2;
-                stroke-dasharray: 5,5;
-                opacity: 0.6;
               }
               
               /* Responsive adjustments */
@@ -461,9 +426,9 @@ const Index = () => {
                   transform: scale(0.8); 
                   transform-origin: center; 
                 }
-                .year-label { font-size: 20px; }
-                .card-text { font-size: 14px; }
-                .card-number { font-size: 16px; }
+                .year-label { font-size: 18px; }
+                .card-text { font-size: 12px; }
+                .card-number { font-size: 14px; }
               }
               
               @media (min-width: 769px) and (max-width: 1024px) {
@@ -475,13 +440,16 @@ const Index = () => {
                   transform: scale(0.9); 
                   transform-origin: center; 
                 }
-                .year-label { font-size: 22px; }
+                .year-label { font-size: 19px; }
+                .card-text { font-size: 13px; }
+                .card-number { font-size: 15px; }
               }
             `}</style>
             
             <div className="w-full" style={{ height: '80vh', minHeight: '700px', maxHeight: '900px' }}>
               <svg className="timeline-svg" viewBox="0 0 1600 1000" role="img" 
-                   aria-label="Vegam Journey Timeline from 2000 to 2030">
+                   aria-label="Vegam Journey Timeline from 2000 to 2030" 
+                   style={{ background: 'transparent' }}>
                 
                 {/* Gradients and Definitions */}
                 <defs>
@@ -491,11 +459,6 @@ const Index = () => {
                     <stop offset="100%" stopColor="hsl(var(--destructive))" />
                   </linearGradient>
                   
-                  <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="hsl(var(--background))" />
-                    <stop offset="100%" stopColor="hsl(var(--muted))" />
-                  </linearGradient>
-                  
                   <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                     <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
                     <feMerge> 
@@ -503,160 +466,118 @@ const Index = () => {
                       <feMergeNode in="SourceGraphic"/> 
                     </feMerge>
                   </filter>
+                  
+                  <filter id="text-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feDropShadow dx="2" dy="2" stdDeviation="3" floodColor="hsl(var(--background))" floodOpacity="0.8"/>
+                  </filter>
                 </defs>
                 
-                {/* Background */}
-                <rect width="100%" height="100%" fill="url(#bg-gradient)" rx="16"/>
-                
-                {/* Main timeline path - curved S-shape */}
+                {/* Main timeline path - diagonal from bottom-left to top-right */}
                 <path className="timeline-path" 
-                      d="M 100 800 Q 400 700 500 500 T 900 300 T 1300 200 L 1500 150"
+                      d="M 100 850 L 300 720 L 500 590 L 700 460 L 900 330 L 1100 250 L 1250 200 L 1350 170 L 1500 130"
                       style={{animationDelay: '0.5s'}} />
                 
                 {/* Timeline Milestones */}
                 
                 {/* 2000 - Foundation */}
                 <g className="milestone-node" tabIndex={0} aria-label="2000 - Foundation with digital factory vision">
-                  <circle className="milestone-circle" cx="100" cy="800" r="25"/>
-                  <text className="year-label" x="100" y="800">2000</text>
-                  
-                  {/* Connecting line */}
-                  <line className="connect-line" x1="100" y1="825" x2="100" y2="870"/>
-                  
-                  {/* Content card */}
-                  <g className="content-card" transform="translate(30, 870)">
-                    <rect className="card-bg" width="280" height="60" />
-                    <text className="card-text" x="15" y="30">Foundation with digital factory vision</text>
-                  </g>
+                  <circle className="milestone-circle" cx="100" cy="850" r="18"/>
+                  <text className="year-label" x="100" y="820" filter="url(#text-shadow)">2000</text>
+                  <text className="card-text" x="100" y="885" textAnchor="middle" fontSize="14" fontWeight="600" 
+                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
+                    Foundation with digital factory vision
+                  </text>
                 </g>
                 
                 {/* 2007 - First plant digitalized */}
                 <g className="milestone-node" tabIndex={0} aria-label="2007 - First plant fully digitalized">
-                  <circle className="milestone-circle" cx="300" cy="650" r="25"/>
-                  <text className="year-label" x="300" y="650">2007</text>
-                  
-                  <line className="connect-line" x1="300" y1="625" x2="300" y2="580"/>
-                  
-                  <g className="content-card" transform="translate(190, 520)">
-                    <rect className="card-bg" width="260" height="60" />
-                    <text className="card-text" x="15" y="30">First plant fully digitalized</text>
-                  </g>
+                  <circle className="milestone-circle" cx="300" cy="720" r="18"/>
+                  <text className="year-label" x="300" y="690" filter="url(#text-shadow)">2007</text>
+                  <text className="card-text" x="300" y="755" textAnchor="middle" fontSize="14" fontWeight="600" 
+                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
+                    First plant fully digitalized
+                  </text>
                 </g>
                 
                 {/* 2013 - 18 plants network */}
                 <g className="milestone-node" tabIndex={0} aria-label="2013 - 18 plants connected in network">
-                  <circle className="milestone-circle" cx="500" cy="500" r="25"/>
-                  <text className="year-label" x="500" y="500">2013</text>
-                  
-                  <line className="connect-line" x1="500" y1="525" x2="500" y2="570"/>
-                  
-                  <g className="content-card" transform="translate(380, 570)">
-                    <rect className="card-bg" width="300" height="60" />
-                    <text className="card-text" x="15" y="25">
-                      <tspan className="card-number">18</tspan> plants connected
-                    </text>
-                    <text className="card-text" x="15" y="45">in network</text>
-                  </g>
+                  <circle className="milestone-circle" cx="500" cy="590" r="18"/>
+                  <text className="year-label" x="500" y="560" filter="url(#text-shadow)">2013</text>
+                  <text className="card-text" x="500" y="620" textAnchor="middle" fontSize="14" fontWeight="600" 
+                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
+                    <tspan className="card-number">18</tspan> plants connected in network
+                  </text>
                 </g>
                 
                 {/* 2016 - 70 plants globally */}
                 <g className="milestone-node" tabIndex={0} aria-label="2016 - Scaled to 70 plants globally">
-                  <circle className="milestone-circle" cx="700" cy="400" r="25"/>
-                  <text className="year-label" x="700" y="400">2016</text>
-                  
-                  <line className="connect-line" x1="700" y1="375" x2="700" y2="330"/>
-                  
-                  <g className="content-card" transform="translate(590, 270)">
-                    <rect className="card-bg" width="280" height="60" />
-                    <text className="card-text" x="15" y="25">Scaled to 
-                      <tspan className="card-number"> 70</tspan> plants
-                    </text>
-                    <text className="card-text" x="15" y="45">globally</text>
-                  </g>
+                  <circle className="milestone-circle" cx="700" cy="460" r="18"/>
+                  <text className="year-label" x="700" y="430" filter="url(#text-shadow)">2016</text>
+                  <text className="card-text" x="700" y="490" textAnchor="middle" fontSize="14" fontWeight="600" 
+                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
+                    Scaled to <tspan className="card-number">70</tspan> plants globally
+                  </text>
                 </g>
                 
                 {/* 2019 - 100+ plants milestone */}
                 <g className="milestone-node" tabIndex={0} aria-label="2019 - Milestone of 100+ plants achieved">
-                  <circle className="milestone-circle" cx="900" cy="300" r="25"/>
-                  <text className="year-label" x="900" y="300">2019</text>
-                  
-                  <line className="connect-line" x1="900" y1="325" x2="900" y2="370"/>
-                  
-                  <g className="content-card" transform="translate(760, 370)">
-                    <rect className="card-bg" width="320" height="60" />
-                    <text className="card-text" x="15" y="25">Milestone of 
-                      <tspan className="card-number">100+</tspan> plants
-                    </text>
-                    <text className="card-text" x="15" y="45">achieved</text>
-                  </g>
+                  <circle className="milestone-circle" cx="900" cy="330" r="18"/>
+                  <text className="year-label" x="900" y="300" filter="url(#text-shadow)">2019</text>
+                  <text className="card-text" x="900" y="360" textAnchor="middle" fontSize="14" fontWeight="600" 
+                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
+                    Milestone of <tspan className="card-number">100+</tspan> plants achieved
+                  </text>
                 </g>
                 
                 {/* 2023 - Autonomous foundation */}
                 <g className="milestone-node" tabIndex={0} aria-label="2023 - Foundation for Autonomous factories">
-                  <circle className="milestone-circle" cx="1100" cy="250" r="25"/>
-                  <text className="year-label" x="1100" y="250">2023</text>
-                  
-                  <line className="connect-line" x1="1100" y1="225" x2="1100" y2="180"/>
-                  
-                  <g className="content-card" transform="translate(960, 120)">
-                    <rect className="card-bg" width="320" height="60" />
-                    <text className="card-text" x="15" y="25">Foundation for</text>
-                    <text className="card-text" x="15" y="45">Autonomous factories</text>
-                  </g>
+                  <circle className="milestone-circle" cx="1100" cy="250" r="18"/>
+                  <text className="year-label" x="1100" y="220" filter="url(#text-shadow)">2023</text>
+                  <text className="card-text" x="1100" y="280" textAnchor="middle" fontSize="14" fontWeight="600" 
+                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
+                    Foundation for Autonomous factories
+                  </text>
                 </g>
                 
                 {/* 2025 - 300+ plants milestone */}
                 <g className="milestone-node" tabIndex={0} aria-label="2025 - Milestone of 300+ plants achieved">
-                  <circle className="milestone-circle" cx="1250" cy="220" r="25"/>
-                  <text className="year-label" x="1250" y="220">2025</text>
-                  
-                  <line className="connect-line" x1="1250" y1="245" x2="1250" y2="290"/>
-                  
-                  <g className="content-card" transform="translate(1110, 290)">
-                    <rect className="card-bg" width="320" height="60" />
-                    <text className="card-text" x="15" y="25">Milestone of 
-                      <tspan className="card-number">300+</tspan> plants
-                    </text>
-                    <text className="card-text" x="15" y="45">achieved</text>
-                  </g>
+                  <circle className="milestone-circle" cx="1250" cy="200" r="18"/>
+                  <text className="year-label" x="1250" y="170" filter="url(#text-shadow)">2025</text>
+                  <text className="card-text" x="1250" y="230" textAnchor="middle" fontSize="14" fontWeight="600" 
+                        fill="hsl(var(--foreground))" filter="url(#text-shadow)">
+                    Milestone of <tspan className="card-number">300+</tspan> plants achieved
+                  </text>
                 </g>
                 
                 {/* 2026 - First Fully Autonomous Plant (Future) */}
                 <g className="milestone-node" tabIndex={0} aria-label="2026 - Projected First Fully Autonomous Plant">
-                  <circle className="milestone-circle future" cx="1350" cy="190" r="25" filter="url(#glow)"/>
-                  <text className="year-label future" x="1350" y="190">2026</text>
-                  
-                  <line className="connect-line" x1="1350" y1="165" x2="1350" y2="120"/>
-                  
-                  <g className="content-card" transform="translate(1190, 60)">
-                    <rect className="card-bg future" width="360" height="60" />
-                    <text className="card-text" x="15" y="25">Projected First Fully</text>
-                    <text className="card-text" x="15" y="45">Autonomous Plant</text>
-                  </g>
+                  <circle className="milestone-circle future" cx="1350" cy="170" r="20" filter="url(#glow)"/>
+                  <text className="year-label future" x="1350" y="140" filter="url(#text-shadow)">2026</text>
+                  <text className="card-text" x="1350" y="200" textAnchor="middle" fontSize="14" fontWeight="600" 
+                        fill="hsl(var(--destructive))" filter="url(#text-shadow)">
+                    Projected First Fully Autonomous Plant
+                  </text>
                 </g>
                 
                 {/* 2030 - 1000 Autonomous Plants (Future) */}
                 <g className="milestone-node" tabIndex={0} aria-label="2030 - 1000 Autonomous Plants">
-                  <circle className="milestone-circle future" cx="1500" cy="150" r="30" filter="url(#glow)"/>
-                  <text className="year-label future" x="1500" y="150">2030</text>
-                  
-                  <line className="connect-line" x1="1500" y1="180" x2="1500" y2="225"/>
-                  
-                  <g className="content-card" transform="translate(1340, 225)">
-                    <rect className="card-bg future" width="320" height="60" />
-                    <text className="card-text" x="15" y="30">
-                      <tspan className="card-number future">1000</tspan> Autonomous Plants
-                    </text>
-                  </g>
+                  <circle className="milestone-circle future" cx="1500" cy="130" r="22" filter="url(#glow)"/>
+                  <text className="year-label future" x="1500" y="100" filter="url(#text-shadow)">2030</text>
+                  <text className="card-text" x="1500" y="160" textAnchor="middle" fontSize="14" fontWeight="600" 
+                        fill="hsl(var(--destructive))" filter="url(#text-shadow)">
+                    <tspan className="card-number future">1000</tspan> Autonomous Plants
+                  </text>
                 </g>
                 
-                {/* Progress indicators */}
+                {/* Company Strengths Panel - Top Left with transparency */}
                 <g transform="translate(50, 50)">
-                  <rect width="200" height="80" fill="hsl(var(--card))" rx="12" stroke="hsl(var(--border))" strokeWidth="2"/>
-                  <text x="100" y="30" textAnchor="middle" className="card-text">Journey Progress</text>
-                  <text x="100" y="55" textAnchor="middle" className="card-text">
-                    <tspan className="card-number">7</tspan>/9 Milestones Achieved
-                  </text>
+                  <rect width="280" height="100" fill="hsl(var(--background) / 0.8)" rx="12" 
+                        stroke="hsl(var(--border))" strokeWidth="2" filter="url(#text-shadow)"/>
+                  <text x="140" y="25" textAnchor="middle" fontSize="16" fontWeight="700" 
+                        fill="hsl(var(--primary))">Strong Foundation for Innovation</text>
+                  <text x="20" y="45" fontSize="12" fill="hsl(var(--foreground))">• 230+ dedicated R&D professionals in India</text>
+                  <text x="20" y="60" fontSize="12" fill="hsl(var(--foreground))">• ISO 27001 certified for information security</text>
+                  <text x="20" y="75" fontSize="12" fill="hsl(var(--foreground))">• ISO 9001 certified for quality management</text>
                 </g>
                 
               </svg>
