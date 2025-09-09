@@ -41,9 +41,9 @@ const eventsData = [
     title: "Industry Visits & Engagements",
     description: "Hard hats, shop floors, and the hum of industry from chemical labs to steel and aluminum plants, we've been there. Each visit is a reminder that robotics isn't just about technology; it's about people, processes, and solving challenges where they matter most.",
     images: [
-      { url: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png", alt: "Team visit to industrial facility with safety helmets" },
+      { url: "/lovable-uploads/6695258f-f234-49ae-add5-c781183aa065.png", alt: "Vegam team showcasing robotics solutions at industry trade show" },
       { url: "/lovable-uploads/d8d1c90e-5203-4491-a968-7073761f1348.png", alt: "Team at ROSCon robotics conference with CREATE and India Con banners" },
-      { url: "/lovable-uploads/6695258f-f234-49ae-add5-c781183aa065.png", alt: "Vegam team showcasing robotics solutions at industry trade show" }
+      { url: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png", alt: "Team visit to industrial facility with safety helmets" }
     ],
     imageUrl: "/lovable-uploads/7b36ed01-b0ce-4ab8-9964-584fb2c7ba36.png",
     imageAlt: "Industrial facility visit"
