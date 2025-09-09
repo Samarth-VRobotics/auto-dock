@@ -11,6 +11,7 @@ import AutoDock from "./pages/AutoDock";
 import AMRs from "./pages/AMRs";
 import ASRS from "./pages/ASRS";
 import NotFound from "./pages/NotFound";
+import GalleryVariantsDemo from "./components/GalleryVariantsDemo";
 
 const App = () => {
   const [queryClient] = useState(() => new QueryClient({
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/autodock" element={<AutoDock />} />
             <Route path="/amrs" element={<AMRs />} />
             <Route path="/asrs" element={<ASRS />} />
+            <Route path="/gallery-variants" element={<GalleryVariantsDemo />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
