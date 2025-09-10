@@ -58,56 +58,8 @@ const AutoDockAdvantage = () => {
             <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Enterprise%20Integration,%20Simplified.gif" alt="Enterprise Integration, Simplified - AutoDock integration visualization" className="w-full h-full object-cover" />
           </div>;
       case 'safety':
-        return <div className="relative bg-gradient-to-br from-emerald-50 to-emerald-25 rounded-2xl p-8 h-64 flex items-center justify-center overflow-hidden">
-            <div className="relative">
-              {/* Central shield */}
-              <div className="w-20 h-24 bg-gradient-to-br from-emerald-200 to-emerald-100 rounded-full flex items-center justify-center relative">
-                <Shield className="w-12 h-12 text-emerald-600" />
-                
-                {/* Safety scanning waves */}
-                <div className="absolute inset-0 rounded-full border-2 border-emerald-400/50 animate-ping"></div>
-                <div className="absolute inset-0 rounded-full border border-emerald-300/30" style={{
-                animation: 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
-                animationDelay: '1s'
-              }}></div>
-                <div className="absolute inset-0 rounded-full border border-emerald-200/20" style={{
-                animation: 'ping 4s cubic-bezier(0, 0, 0.2, 1) infinite',
-                animationDelay: '2s'
-              }}></div>
-              </div>
-
-              {/* Safety status indicator */}
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-sm">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
-              </div>
-
-              {/* Protected zone indicators */}
-              {[{
-              top: '-25px',
-              left: '30px'
-            }, {
-              top: '30px',
-              left: '45px'
-            }, {
-              top: '30px',
-              left: '-15px'
-            }, {
-              top: '-10px',
-              left: '-20px'
-            }].map((pos, i) => <div key={i} className="absolute w-4 h-4 bg-emerald-300/40 rounded-full flex items-center justify-center" style={{
-              top: pos.top,
-              left: pos.left
-            }}>
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" style={{
-                animationDelay: `${i * 0.3}s`
-              }}></div>
-                </div>)}
-
-              {/* Compliance indicator */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-xs text-emerald-700 font-medium bg-emerald-100 px-2 py-1 rounded-full">
-                ISO Compliant
-              </div>
-            </div>
+        return <div className="relative h-80 overflow-hidden flex items-center justify-center">
+            <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Built-In%20Safety.gif" alt="Built-In Safety, By Design - AutoDock safety visualization" className="w-full h-full object-cover" />
           </div>;
       case 'roi-graph':
         return <div className="relative bg-gradient-to-br from-emerald-50 to-emerald-25 rounded-2xl p-8 h-64 overflow-hidden">
