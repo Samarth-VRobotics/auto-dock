@@ -69,14 +69,36 @@ const Index = () => {
       </section>
 
       {/* Future of Manufacturing Section */}
-      
+      <section id="future-manufacturing" className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-background to-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
+              <div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-3 sm:mb-4">Future of Manufacturing</h2>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-red-600 mb-4 sm:mb-6">From Digital to Autonomous Factories</h3>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
+                  Pioneering the next evolution in manufacturing excellence. Vegam guides industry leaders through the transformation from digital operations to fully autonomous factories, combining decades of expertise with cutting-edge innovation in AI, robotics, and self-optimizing systems.
+                </p>
+              </div>
+            </div>
+            <div className="relative order-1 lg:order-2">
+              <div className="aspect-[4/3] rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden shadow-xl lg:shadow-2xl">
+                <img src="/lovable-uploads/e3c6f9fe-fe05-4fde-8134-14dffba60042.png" alt="Production Line 7 with autonomous robotic arms and digital monitoring systems" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Industry Evolution Section */}
       <section id="industry-evolution" className="section-padding relative bg-gradient-to-r from-slate-50 via-blue-50 to-red-50">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-100/40 via-blue-100/40 to-red-100/40"></div>
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-20">From Digital Foundations to Autonomous factories</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">From Digital Foundations to Autonomous factories</h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-20 leading-relaxed">
+              Pioneering the next evolution in manufacturing excellence. Vegam guides industry leaders through the transformation from digital operations to fully autonomous factories, combining decades of expertise with cutting-edge innovation in AI, robotics, and self-optimizing systems.
+            </p>
           </div>
           
           {/* Desktop Timeline */}
