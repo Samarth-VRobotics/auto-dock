@@ -4,36 +4,10 @@ import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Video - Optimized for immediate playback */}
+      {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline 
-          preload="auto"
-          disablePictureInPicture
-          disableRemotePlayback
-          x-webkit-airplay="deny"
-          controlsList="nodownload nofullscreen noremoteplayback"
-          className="w-full h-full object-cover"
-          onLoadStart={() => {
-            // Force immediate playback attempt
-            const video = document.querySelector('video') as HTMLVideoElement;
-            if (video) {
-              video.play().catch(() => {
-                // Fallback for browsers that block autoplay
-                console.log('Video autoplay blocked, user interaction required');
-              });
-            }
-          }}
-          onCanPlay={(e) => {
-            // Ensure video plays as soon as it can
-            const target = e.target as HTMLVideoElement;
-            target.play();
-          }}
-        >
-          <source src="/team-video.mp4" type="video/mp4" />
+        <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover">
+          <source src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Pre%20final.mp4" type="video/mp4" />
           {/* Fallback to hero image if video fails to load */}
           <img src={heroImage} alt="AutoDock AMR System" className="w-full h-full object-cover" />
         </video>
