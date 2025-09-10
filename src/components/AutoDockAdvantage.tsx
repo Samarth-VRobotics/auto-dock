@@ -62,41 +62,8 @@ const AutoDockAdvantage = () => {
             <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Built-In%20Safety.gif" alt="Built-In Safety, By Design - AutoDock safety visualization" className="w-full h-full object-cover" />
           </div>;
       case 'roi-graph':
-        return <div className="relative bg-gradient-to-br from-emerald-50 to-emerald-25 rounded-2xl p-8 h-64 overflow-hidden">
-            <div className="flex items-end justify-center h-full gap-8">
-              {/* Before state */}
-              <div className="flex flex-col items-center relative">
-                <div className="relative mb-4">
-                  <div className="h-24 w-12 bg-gradient-to-t from-red-400 to-red-300 rounded-t-lg shadow-sm"></div>
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-xs font-bold text-red-600">HIGH</div>
-                </div>
-                <div className="text-xs text-muted-foreground font-medium">Before</div>
-                <div className="text-xs text-red-600 mt-1">Costs & Time</div>
-              </div>
-
-              {/* Transformation arrow */}
-              <div className="mb-8 flex flex-col items-center">
-                <TrendingUp className="w-8 h-8 text-emerald-600 animate-pulse" />
-                <div className="text-xs text-emerald-600 font-medium mt-1">AutoDock</div>
-              </div>
-
-              {/* After state */}
-              <div className="flex flex-col items-center relative">
-                <div className="relative mb-4">
-                  <div className="h-12 w-12 bg-gradient-to-t from-emerald-500 to-emerald-400 rounded-t-lg shadow-sm">
-                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-400 to-emerald-300 rounded-t-lg animate-pulse"></div>
-                  </div>
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-xs font-bold text-emerald-600">LOW</div>
-                </div>
-                <div className="text-xs text-muted-foreground font-medium">After</div>
-                <div className="text-xs text-emerald-600 mt-1">Efficiency ↑</div>
-              </div>
-            </div>
-
-            {/* ROI percentage indicator */}
-            <div className="absolute top-4 right-4 bg-emerald-100 px-3 py-1 rounded-full">
-              <span className="text-xs font-bold text-emerald-700">12-24mo ROI</span>
-            </div>
+        return <div className="relative h-80 overflow-hidden flex items-center justify-center">
+            <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/ROI%20on%20Multiple%20Fronts.gif" alt="ROI on Multiple Fronts - AutoDock ROI visualization" className="w-full h-full object-cover" />
           </div>;
       default:
         return <div className="bg-muted/20 rounded-2xl p-8 h-64 flex items-center justify-center">
