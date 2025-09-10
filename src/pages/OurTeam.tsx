@@ -270,19 +270,19 @@ const OurTeam = () => {
                   {[{
                   name: "Falgun",
                   initials: "F",
-                  role: "Software Architect",
+                  role: "GenAI architect",
                   image: "/lovable-uploads/c7f3629b-de5b-4d24-b053-24ac3ecf879f.png",
                   linkedinUrl: "https://www.linkedin.com/in/falgun-aghera/"
                 }, {
                   name: "Parikshith Palegar",
                   initials: "PP",
-                  role: "Software Architect",
+                  role: "AI engineer",
                   image: "/lovable-uploads/dccb7189-5c8d-4a95-b2c2-1cafdba7fb45.png",
                   linkedinUrl: "https://www.linkedin.com/in/parikshith078/"
                 }, {
                   name: "Nieander Pranesh",
                   initials: "NP",
-                  role: "Software Architect",
+                  role: "AI Solutions Engineer",
                   image: "/lovable-uploads/56cc3bd2-28b1-49c7-94be-6eb09506c3c8.png",
                   linkedinUrl: "https://www.linkedin.com/in/nieander/"
                 }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
@@ -374,130 +374,113 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-3">Smart Factory Experts</h3>
                   <p className="text-foreground/60 text-lg">Digital factory solutions and process optimization specialists</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center">
+                
+                {/* First 15 members in normal grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center mb-8">
                   {[{
-                  name: "Aman Saxena",
-                  initials: "AS",
-                  role: "Senior Functional Consultant",
-                  image: "/lovable-uploads/d442dbd3-0500-46ee-b83b-55f2da49f55c.png",
-                  linkedinUrl: "https://www.linkedin.com/in/aman-saxena-7167281bb/"
-                }, {
-                  name: "Balaji Kumar",
-                  initials: "BK",
-                  role: "Senior Functional Consultant",
-                  image: "/lovable-uploads/352f28fa-76b2-4fca-843a-8124d22ea580.png",
-                  linkedinUrl: "https://www.linkedin.com/in/balaji-kumar-a466b277/"
-                }, {
-                  name: "Rohan Patil",
-                  initials: "RP",
-                  role: "Senior Functional Consultant",
-                  image: "/lovable-uploads/9410d024-f7c2-40be-9ae5-2dce6cdae3ec.png",
-                  linkedinUrl: "https://www.linkedin.com/in/rohan-patil-a3125b102/"
-                }, {
-                  name: "Shreeja M S",
-                  initials: "SMS",
-                  role: "Senior Software Engineer",
-                  image: "/lovable-uploads/e50606a0-da85-43fa-ba84-e9fa043c459b.png",
-                  linkedinUrl: "https://www.linkedin.com/in/shreeja-m-s-303710117/"
-                }, {
-                  name: "Ann Maria Jess Kurian",
-                  initials: "AJ",
-                  role: "Lead Functional Consultant",
-                  image: "/lovable-uploads/c3c6caf6-4edb-45d1-b318-3e024e67e623.png",
-                  linkedinUrl: "https://www.linkedin.com/in/ann-maria-jess-kurian-a22066170/"
-                }, {
-                  name: "Kanakaraddi C Radder",
-                  initials: "KR",
-                  role: "Senior Functional Consultant",
-                  image: "/lovable-uploads/e410257f-58da-483b-b232-679ecee0a73d.png",
-                  linkedinUrl: "https://www.linkedin.com/in/kanakreddycr/"
-                }, {
-                  name: "Pramod BP",
-                  initials: "PB",
-                  role: "Lead Functional Consultant",
-                  image: "/lovable-uploads/9ed852e5-407a-4b29-8eae-29f48055e52c.png",
-                  linkedinUrl: "https://www.linkedin.com/in/pramod-b-p-a1979097/"
-                }, {
-                  name: "Subha J",
-                  initials: "SJ",
-                  role: "Lead Functional Consultant",
-                  image: "/lovable-uploads/90a6e052-8027-43c2-80d6-aef85a810757.png",
-                  linkedinUrl: "https://www.linkedin.com/in/j-subha-68117312a/"
-                }, {
-                  name: "Ajay K",
-                  initials: "AK",
-                  role: "Technical Lead",
-                  image: "/lovable-uploads/de81c39a-3c55-4b86-b164-e91bed668082.png",
-                  linkedinUrl: "https://www.linkedin.com/in/ajay-moorthy-kartheesan-11115136/"
-                }, {
-                  name: "Chaithra N",
-                  initials: "CN",
-                  role: "Lead Functional Consultant",
-                  image: "/lovable-uploads/bf479e87-a27e-40c7-ae1f-8f61216d7ed8.png",
-                  linkedinUrl: "https://www.linkedin.com/in/chaithra-nagesh-848735200/"
-                }, {
-                  name: "Venkatesh HS",
-                  initials: "VH",
-                  role: "Lead Functional Consultant",
-                  image: "/lovable-uploads/79c22532-d762-481d-a996-4f13deb1878d.png",
-                  linkedinUrl: "https://www.linkedin.com/in/venkatesh-srinath-5a2307120/"
-                }, {
-                  name: "Tunga Santosh Kumar Reddy",
-                  initials: "TSR",
-                  role: "Software Architect",
-                  image: "/lovable-uploads/3d63daaa-3e71-42b1-af1b-f18016227d10.png",
-                  linkedinUrl: "https://www.linkedin.com/in/santhoshtunga/"
-                }, {
-                  name: "Varadharajan N M",
-                  initials: "VN",
-                  role: "Software Architect",
-                  image: "/lovable-uploads/27f82965-f871-462e-9d19-dfe00fc021bd.png",
-                  linkedinUrl: "https://www.linkedin.com/in/varadharajanmadhavan/"
-                }, {
-                  name: "Sachin Vishwakarma",
-                  initials: "SV",
-                  role: "Software Architect",
-                  image: "/lovable-uploads/b893342a-f6f5-4d8a-b6f0-6c2ba15fa002.png",
-                  linkedinUrl: "https://www.linkedin.com/in/sachin-vishwakarma-5b652b41/"
-                }, {
-                  name: "Pratish RameshChandra Gandhi",
-                  initials: "PRG",
-                  role: "Software Architect",
-                  image: "/lovable-uploads/5b0d2e84-1357-4b91-862b-84b8878527f9.png",
-                  linkedinUrl: "https://www.linkedin.com/in/pratish-gandhi-41635144/"
-                }, {
-                  name: "Vishweshwar Kapse",
-                  initials: "VK",
-                  role: "Software Architect",
-                  image: "/lovable-uploads/9a4c8e4c-3359-4f38-982c-675544f01a4a.png",
-                  linkedinUrl: "https://www.linkedin.com/in/vishweshwar-kapse/"
-                }, {
-                  name: "Sreenivasa Yarram",
-                  initials: "SY",
-                  role: "Software Architect",
-                  image: "/lovable-uploads/1ef3df60-aed7-4450-b3be-a92ffd78423c.png",
-                  linkedinUrl: "https://www.linkedin.com/in/sreenivasa-yarram-2b9143116/"
-                }, {
-                  name: "Sirajudheen NH",
-                  initials: "SN",
-                  role: "Software Architect",
-                  image: "/lovable-uploads/aaba0cb6-b9cd-4fca-95c1-3cfa2ebf16bc.png",
-                  linkedinUrl: "https://www.linkedin.com/in/sirajudheen-nh-9734b670/"
-                }, {
-                  name: "Sushin C",
-                  initials: "SC",
-                  role: "Software Architect",
-                  image: "/lovable-uploads/deb7b8e5-9c2d-4e19-bead-676533360f9d.png",
-                  linkedinUrl: "https://www.linkedin.com/in/sushin-c-b7473223/"
-                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
-                      {member.image ? <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                    name: "Aman Saxena",
+                    initials: "AS",
+                    role: "Senior Functional Consultant",
+                    image: "/lovable-uploads/d442dbd3-0500-46ee-b83b-55f2da49f55c.png",
+                    linkedinUrl: "https://www.linkedin.com/in/aman-saxena-7167281bb/"
+                  }, {
+                    name: "Rohan Patil",
+                    initials: "RP",
+                    role: "Senior Software Engineer",
+                    image: "/lovable-uploads/d9ae9656-f558-4e24-99c0-6cbd7febced3.png",
+                    linkedinUrl: "https://www.linkedin.com/in/rohan-patil-a3125b102/"
+                  }, {
+                    name: "Shreeja M S",
+                    initials: "SMS",
+                    role: "Senior Software Engineer",
+                    image: "/lovable-uploads/e50606a0-da85-43fa-ba84-e9fa043c459b.png",
+                    linkedinUrl: "https://www.linkedin.com/in/shreeja-m-s-303710117/"
+                  }, {
+                    name: "Ann Maria Jess Kurian",
+                    initials: "AJ",
+                    role: "Lead Functional Consultant",
+                    image: "/lovable-uploads/c3c6caf6-4edb-45d1-b318-3e024e67e623.png",
+                    linkedinUrl: "https://www.linkedin.com/in/ann-maria-jess-kurian-a22066170/"
+                  }, {
+                    name: "Kanakaraddi C Radder",
+                    initials: "KR",
+                    role: "Senior Functional Consultant",
+                    image: "/lovable-uploads/e410257f-58da-483b-b232-679ecee0a73d.png",
+                    linkedinUrl: "https://www.linkedin.com/in/kanakreddycr/"
+                  }, {
+                    name: "Pramod BP",
+                    initials: "PB",
+                    role: "Lead Functional Consultant",
+                    image: "/lovable-uploads/9ed852e5-407a-4b29-8eae-29f48055e52c.png",
+                    linkedinUrl: "https://www.linkedin.com/in/pramod-b-p-a1979097/"
+                  }, {
+                    name: "Subha J",
+                    initials: "SJ",
+                    role: "Lead Functional Consultant",
+                    image: "/lovable-uploads/90a6e052-8027-43c2-80d6-aef85a810757.png",
+                    linkedinUrl: "https://www.linkedin.com/in/j-subha-68117312a/"
+                  }, {
+                    name: "Ajay K",
+                    initials: "AK",
+                    role: "Technical Lead",
+                    image: "/lovable-uploads/de81c39a-3c55-4b86-b164-e91bed668082.png",
+                    linkedinUrl: "https://www.linkedin.com/in/ajay-moorthy-kartheesan-11115136/"
+                  }, {
+                    name: "Chaithra N",
+                    initials: "CN",
+                    role: "Lead Functional Consultant",
+                    image: "/lovable-uploads/bf479e87-a27e-40c7-ae1f-8f61216d7ed8.png",
+                    linkedinUrl: "https://www.linkedin.com/in/chaithra-nagesh-848735200/"
+                  }, {
+                    name: "Venkatesh HS",
+                    initials: "VH",
+                    role: "Lead Functional Consultant",
+                    image: "/lovable-uploads/79c22532-d762-481d-a996-4f13deb1878d.png",
+                    linkedinUrl: "https://www.linkedin.com/in/venkatesh-srinath-5a2307120/"
+                  }, {
+                    name: "Tunga Santosh Kumar Reddy",
+                    initials: "TSR",
+                    role: "Software Architect",
+                    image: "/lovable-uploads/3d63daaa-3e71-42b1-af1b-f18016227d10.png",
+                    linkedinUrl: "https://www.linkedin.com/in/santhoshtunga/"
+                  }, {
+                    name: "Varadharajan N M",
+                    initials: "VN",
+                    role: "Software Architect",
+                    image: "/lovable-uploads/27f82965-f871-462e-9d19-dfe00fc021bd.png",
+                    linkedinUrl: "https://www.linkedin.com/in/varadharajanmadhavan/"
+                  }, {
+                    name: "Sachin Vishwakarma",
+                    initials: "SV",
+                    role: "Software Architect",
+                    image: "/lovable-uploads/b893342a-f6f5-4d8a-b6f0-6c2ba15fa002.png",
+                    linkedinUrl: "https://www.linkedin.com/in/sachin-vishwakarma-5b652b41/"
+                  }, {
+                    name: "Pratish RameshChandra Gandhi",
+                    initials: "PRG",
+                    role: "Software Architect",
+                    image: "/lovable-uploads/5b0d2e84-1357-4b91-862b-84b8878527f9.png",
+                    linkedinUrl: "https://www.linkedin.com/in/pratish-gandhi-41635144/"
+                  }, {
+                    name: "Vishweshwar Kapse",
+                    initials: "VK",
+                    role: "Software Architect",
+                    image: "/lovable-uploads/9a4c8e4c-3359-4f38-982c-675544f01a4a.png",
+                    linkedinUrl: "https://www.linkedin.com/in/vishweshwar-kapse/"
+                  }].map((member, index) => (
+                    <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
+                      {member.image ? (
+                        <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           <AvatarImage src={member.image} alt={member.name} className="object-cover object-center" />
                           <AvatarFallback className="bg-gradient-to-br from-slate-600 to-slate-700 text-white font-bold text-2xl">
                             {member.initials}
                           </AvatarFallback>
-                        </Avatar> : <div className="w-32 h-32 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        </Avatar>
+                      ) : (
+                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           {member.initials}
-                        </div>}
+                        </div>
+                      )}
                       <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
                       <p className="text-foreground/60 text-sm mb-6 flex-grow">{member.role}</p>
                       {member.linkedinUrl ? (
@@ -513,7 +496,63 @@ const OurTeam = () => {
                           </svg>
                         </div>
                       )}
-                    </div>)}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Last 3 members centered */}
+                <div className="flex justify-center">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center max-w-4xl">
+                    {[{
+                      name: "Sreenivasa Yarram",
+                      initials: "SY",
+                      role: "Software Architect",
+                      image: "/lovable-uploads/1ef3df60-aed7-4450-b3be-a92ffd78423c.png",
+                      linkedinUrl: "https://www.linkedin.com/in/sreenivasa-yarram-2b9143116/"
+                    }, {
+                      name: "Sirajudheen NH",
+                      initials: "SN",
+                      role: "Software Architect",
+                      image: "/lovable-uploads/aaba0cb6-b9cd-4fca-95c1-3cfa2ebf16bc.png",
+                      linkedinUrl: "https://www.linkedin.com/in/sirajudheen-nh-9734b670/"
+                    }, {
+                      name: "Sushin C",
+                      initials: "SC",
+                      role: "Software Architect",
+                      image: "/lovable-uploads/deb7b8e5-9c2d-4e19-bead-676533360f9d.png",
+                      linkedinUrl: "https://www.linkedin.com/in/sushin-c-b7473223/"
+                    }].map((member, index) => (
+                      <div key={index + 15} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
+                        {member.image ? (
+                          <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                            <AvatarImage src={member.image} alt={member.name} className="object-cover object-center" />
+                            <AvatarFallback className="bg-gradient-to-br from-slate-600 to-slate-700 text-white font-bold text-2xl">
+                              {member.initials}
+                            </AvatarFallback>
+                          </Avatar>
+                        ) : (
+                          <div className="w-32 h-32 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                            {member.initials}
+                          </div>
+                        )}
+                        <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
+                        <p className="text-foreground/60 text-sm mb-6 flex-grow">{member.role}</p>
+                        {member.linkedinUrl ? (
+                          <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded bg-[#0077B5] hover:bg-[#005885] transition-colors cursor-pointer mt-auto">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                          </a>
+                        ) : (
+                          <div className="inline-flex items-center justify-center w-8 h-8 rounded bg-gray-400 cursor-default mt-auto">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
