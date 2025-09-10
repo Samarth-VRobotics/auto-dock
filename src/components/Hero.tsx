@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
         <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover">
-          <source src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Pre%20final.mp4" type="video/mp4" />
+          <source src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/final%20V1%20video.mp4" type="video/mp4" />
           {/* Fallback to hero image if video fails to load */}
           <img src={heroImage} alt="AutoDock AMR System" className="w-full h-full object-cover" />
         </video>
