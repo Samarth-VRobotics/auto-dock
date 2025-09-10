@@ -6,16 +6,11 @@ const Hero = () => {
   return <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
-        <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+        <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover">
           <source src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Pre%20final.mp4" type="video/mp4" />
           {/* Fallback to hero image if video fails to load */}
           <img src={heroImage} alt="AutoDock AMR System" className="w-full h-full object-cover" />
         </video>
-        
-        {/* Video Fade-in Animation Overlay */}
-        <div className="absolute inset-0 bg-background/10 animate-fade-in" style={{
-        animationDuration: '2s'
-      }}></div>
         
         {/* Professional Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-background/20"></div>
