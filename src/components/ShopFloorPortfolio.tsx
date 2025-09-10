@@ -543,15 +543,15 @@ const ShopFloorPortfolio = () => {
             
             <svg 
               width="100%" 
-              height="450" 
+              height="500" 
               viewBox="0 0 640 640" 
-              className="drop-shadow-lg max-w-sm md:max-w-lg"
-              style={{ minHeight: '400px' }}
+              className="drop-shadow-lg max-w-md md:max-w-xl"
+              style={{ minHeight: '450px' }}
             >
               <defs>
                 {/* Enhanced Glow filter */}
                 <filter id="mobile-glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
                   <feMerge>
                     <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="SourceGraphic"/>
@@ -566,11 +566,11 @@ const ShopFloorPortfolio = () => {
                 r={outerRadius}
                 fill="none"
                 stroke="#e5e7eb"
-                strokeWidth="1"
-                opacity="0.3"
+                strokeWidth="2"
+                opacity="0.4"
               />
               
-              {/* Segments - Consistent with desktop */}
+              {/* Segments - Enhanced for mobile visibility */}
               <g id="mobile-pie-slices">
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
@@ -583,14 +583,16 @@ const ShopFloorPortfolio = () => {
                       d={getSegmentPath(index)}
                       fill={isActive ? "#fef2f2" : isHovered ? "#fef7f7" : "white"}
                       stroke={isActive ? "#ef4444" : isHovered ? "#f87171" : "#e5e7eb"}
-                      strokeWidth={isActive ? "3" : isHovered ? "2" : "1"}
-                      className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2"
+                      strokeWidth={isActive ? "4" : isHovered ? "3" : "2"}
+                      className="cursor-pointer transition-all duration-200 ease-out"
                       style={{
-                        transform: isActive ? 'scale(1.05)' : isHovered ? 'scale(1.02)' : 'scale(1)',
+                        transform: isActive ? 'scale(1.08)' : isHovered ? 'scale(1.04)' : 'scale(1)',
                         transformOrigin: `${centroid.x}px ${centroid.y}px`,
                         filter: isActive ? 'url(#mobile-glow)' : 'none'
                       }}
                       onClick={() => setActiveSegment(index)}
+                      onTouchStart={() => setHoveredSegment(index)}
+                      onTouchEnd={() => setHoveredSegment(null)}
                       onMouseEnter={() => setHoveredSegment(index)}
                       onMouseLeave={() => setHoveredSegment(null)}
                     />
@@ -598,39 +600,39 @@ const ShopFloorPortfolio = () => {
                 })}
               </g>
               
-              {/* Center Circle - Consistent with desktop */}
+              {/* Center Circle - Enhanced for mobile */}
               <circle
                 cx={centerX}
                 cy={centerY}
                 r={innerRadius}
                 fill="white"
                 stroke="#e5e7eb"
-                strokeWidth="2"
+                strokeWidth="3"
               />
               
-              {/* Center Text - Consistent with desktop */}
+              {/* Center Text - Enhanced for mobile */}
               <text
                 x={centerX}
-                y={centerY - 10}
+                y={centerY - 12}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 className="font-bold fill-gray-800"
-                style={{ fontSize: window.innerWidth < 768 ? '16px' : '18px', fontWeight: '800' }}
+                style={{ fontSize: window.innerWidth < 768 ? '18px' : '20px', fontWeight: '800' }}
               >
                 Autonomous
               </text>
               <text
                 x={centerX}
-                y={centerY + 15}
+                y={centerY + 18}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 className="font-bold fill-gray-800"
-                style={{ fontSize: window.innerWidth < 768 ? '16px' : '18px', fontWeight: '800' }}
+                style={{ fontSize: window.innerWidth < 768 ? '18px' : '20px', fontWeight: '800' }}
               >
                 Factories
               </text>
               
-              {/* Labels and Icons - Consistent with desktop */}
+              {/* Labels and Icons - Enhanced for mobile */}
               <g id="mobile-labels-icons">
                 {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
@@ -645,24 +647,25 @@ const ShopFloorPortfolio = () => {
                   const labelX = centerX + Math.cos(labelAngle) * labelRadius;
                   const labelY = centerY + Math.sin(labelAngle) * labelRadius;
                   
-                  // Responsive icon sizing
-                  const iconSize = window.innerWidth < 768 ? 36 : 44;
-                  const iconBgRadius = iconSize / 2 + 4;
+                  // Enhanced icon sizing for better mobile interaction
+                  const iconSize = window.innerWidth < 768 ? 44 : 52;
+                  const iconBgRadius = iconSize / 2 + 6;
                   
                   return (
                     <g key={`mobile-icon-label-${index}`} className="pointer-events-none">
-                      {/* Icon with background circle - positioned on inner circle circumference */}
+                      {/* Icon with background circle - enhanced for mobile */}
                       <circle
                         cx={iconX}
                         cy={iconY}
                         r={iconBgRadius}
                         fill="white"
                         stroke={isActive ? "#ef4444" : isHovered ? "#f87171" : "#d1d5db"}
-                        strokeWidth={isActive ? "3" : isHovered ? "2.5" : "2"}
-                        className="transition-all duration-150"
+                        strokeWidth={isActive ? "4" : isHovered ? "3" : "2"}
+                        className="transition-all duration-200"
                         style={{
-                          transform: isActive ? 'scale(1.07)' : isHovered ? 'scale(1.03)' : 'scale(1)',
-                          transformOrigin: `${iconX}px ${iconY}px`
+                          transform: isActive ? 'scale(1.1)' : isHovered ? 'scale(1.05)' : 'scale(1)',
+                          transformOrigin: `${iconX}px ${iconY}px`,
+                          filter: isActive ? 'drop-shadow(0 4px 8px rgba(239, 68, 68, 0.25))' : 'none'
                         }}
                       />
                       <foreignObject
@@ -674,31 +677,31 @@ const ShopFloorPortfolio = () => {
                       >
                         <div className="w-full h-full flex items-center justify-center">
                           <IconComponent 
-                            size={iconSize * 0.7} 
-                            className={`transition-all duration-150 ${
+                            size={iconSize * 0.65} 
+                            className={`transition-all duration-200 ${
                               isActive ? "text-red-500" : isHovered ? "text-red-400" : "text-gray-600"
                             }`}
                           />
                         </div>
                       </foreignObject>
                       
-                      {/* Upright segment labels - consistent with desktop */}
+                      {/* Enhanced segment labels for mobile visibility */}
                       {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ? (
                         // Multi-line labels for segments with "/"
                         <>
                           <text
                             x={labelX}
-                            y={labelY - 8}
+                            y={labelY - 10}
                             textAnchor="middle"
                             dominantBaseline="central"
-                            className={`font-bold tracking-tight transition-all duration-150 ${
+                            className={`font-bold tracking-tight transition-all duration-200 ${
                               isActive ? "fill-gray-900 drop-shadow-sm" : isHovered ? "fill-gray-800" : "fill-gray-700"
                             }`}
                             style={{ 
-                              fontSize: window.innerWidth < 768 ? '12px' : '14px',
+                              fontSize: window.innerWidth < 768 ? '14px' : '16px',
                               fontWeight: '700',
                               opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
-                              filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                              filter: isActive ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' : 'none',
                               letterSpacing: '-0.025em'
                             }}
                           >
@@ -706,17 +709,17 @@ const ShopFloorPortfolio = () => {
                           </text>
                           <text
                             x={labelX}
-                            y={labelY + 8}
+                            y={labelY + 10}
                             textAnchor="middle"
                             dominantBaseline="central"
-                            className={`font-bold tracking-tight transition-all duration-150 ${
+                            className={`font-bold tracking-tight transition-all duration-200 ${
                               isActive ? "fill-gray-900 drop-shadow-sm" : isHovered ? "fill-gray-800" : "fill-gray-700"
                             }`}
                             style={{ 
-                              fontSize: window.innerWidth < 768 ? '12px' : '14px',
+                              fontSize: window.innerWidth < 768 ? '14px' : '16px',
                               fontWeight: '700',
                               opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
-                              filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                              filter: isActive ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' : 'none',
                               letterSpacing: '-0.025em'
                             }}
                           >
@@ -724,20 +727,20 @@ const ShopFloorPortfolio = () => {
                           </text>
                         </>
                       ) : (
-                        // Single line labels
+                        // Single line labels - enhanced for mobile
                         <text 
                           x={labelX}
                           y={labelY}
                           textAnchor="middle"
                           dominantBaseline="central"
-                          className={`font-bold tracking-tight transition-all duration-150 ${
+                          className={`font-bold tracking-tight transition-all duration-200 ${
                             isActive ? "fill-gray-900 drop-shadow-sm" : isHovered ? "fill-gray-800" : "fill-gray-700"
                           }`}
                           style={{ 
-                            fontSize: window.innerWidth < 768 ? '12px' : '14px',
+                            fontSize: window.innerWidth < 768 ? '14px' : '16px',
                             fontWeight: '700',
                             opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
-                            filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                            filter: isActive ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' : 'none',
                             letterSpacing: '-0.025em'
                           }}
                         >
