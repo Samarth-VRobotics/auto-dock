@@ -327,15 +327,15 @@ const ShopFloorPortfolio = () => {
           </div>
         </div>
 
-        {/* Mobile & Tablet Layout - Minimal spacing */}
+        {/* Mobile & Tablet Layout - Larger chart, no highlighting */}
         <div className="lg:hidden px-1 md:px-2">
-          <div className="flex justify-center min-h-[400px] md:min-h-[450px] relative">
+          <div className="flex justify-center min-h-[500px] md:min-h-[600px] relative">
             
-            <svg width="100%" height="400" viewBox="0 0 640 640" className="drop-shadow-xl max-w-sm md:max-w-md touch-manipulation">
+            <svg width="100%" height="500" viewBox="0 0 640 640" className="drop-shadow-lg max-w-full w-full touch-manipulation" style={{ maxWidth: '90vw', height: 'auto' }}>
               <defs>
-                {/* Enhanced Glow filter */}
+                {/* Subtle Glow filter */}
                 <filter id="mobile-glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                  <feGaussianBlur stdDeviation="2" result="coloredBlur" />
                   <feMerge>
                     <feMergeNode in="coloredBlur" />
                     <feMergeNode in="SourceGraphic" />
@@ -346,36 +346,35 @@ const ShopFloorPortfolio = () => {
               {/* Background Circle */}
               <circle cx={centerX} cy={centerY} r={outerRadius} fill="none" stroke="#e5e7eb" strokeWidth="2" opacity="0.4" />
               
-              {/* Segments - All highlighted in red for mobile, no interactions */}
+              {/* Segments - Neutral colors, no highlighting */}
               <g id="mobile-pie-slices">
                 {segments.map((segment, index) => {
                 const centroid = getSegmentCentroid(index);
-                return <path key={`mobile-segment-${index}`} d={getSegmentPath(index)} fill="#fef2f2" stroke="#dc2626" strokeWidth="4" className="transition-none" style={{
+                return <path key={`mobile-segment-${index}`} d={getSegmentPath(index)} fill="white" stroke="#e5e7eb" strokeWidth="2" className="transition-none" style={{
                   transform: 'scale(1)',
-                  transformOrigin: `${centroid.x}px ${centroid.y}px`,
-                  filter: 'url(#mobile-glow) drop-shadow(0 4px 8px rgba(220, 38, 38, 0.2))'
+                  transformOrigin: `${centroid.x}px ${centroid.y}px`
                 }} />;
               })}
               </g>
               
-              {/* Center Circle - Enhanced for mobile */}
-              <circle cx={centerX} cy={centerY} r={innerRadius} fill="white" stroke="#e5e7eb" strokeWidth="3" />
+              {/* Center Circle */}
+              <circle cx={centerX} cy={centerY} r={innerRadius} fill="white" stroke="#e5e7eb" strokeWidth="2" />
               
-              {/* Center Text - Enhanced for mobile */}
+              {/* Center Text */}
               <text x={centerX} y={centerY - 12} textAnchor="middle" dominantBaseline="middle" className="font-bold fill-gray-800" style={{
-              fontSize: window.innerWidth < 768 ? '18px' : '20px',
+              fontSize: window.innerWidth < 768 ? '20px' : '24px',
               fontWeight: '800'
             }}>
                 Autonomous
               </text>
               <text x={centerX} y={centerY + 18} textAnchor="middle" dominantBaseline="middle" className="font-bold fill-gray-800" style={{
-              fontSize: window.innerWidth < 768 ? '18px' : '20px',
+              fontSize: window.innerWidth < 768 ? '20px' : '24px',
               fontWeight: '800'
             }}>
                 Factories
               </text>
               
-              {/* Labels and Icons - All highlighted in red for mobile */}
+              {/* Labels and Icons - Neutral colors */}
               <g id="mobile-labels-icons">
                 {segments.map((segment, index) => {
                 const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
@@ -388,51 +387,41 @@ const ShopFloorPortfolio = () => {
                 const labelX = centerX + Math.cos(labelAngle) * labelRadius;
                 const labelY = centerY + Math.sin(labelAngle) * labelRadius;
 
-                // Enhanced icon sizing for better mobile interaction
-                const iconSize = window.innerWidth < 768 ? 50 : 58;
+                // Larger icon sizing for better mobile visibility
+                const iconSize = window.innerWidth < 768 ? 60 : 70;
                 const iconBgRadius = iconSize / 2 + 8;
                 return <g key={`mobile-icon-label-${index}`} className="pointer-events-none">
-                      {/* Icon with background circle - highlighted in red for mobile */}
-                      <circle cx={iconX} cy={iconY} r={iconBgRadius} fill="white" stroke="#dc2626" strokeWidth="4" className="transition-none" style={{
-                    transform: 'scale(1)',
-                    transformOrigin: `${iconX}px ${iconY}px`,
-                    filter: 'drop-shadow(0 4px 8px rgba(220, 38, 38, 0.2))'
-                  }} />
+                      {/* Icon with background circle - neutral colors */}
+                      <circle cx={iconX} cy={iconY} r={iconBgRadius} fill="white" stroke="#d1d5db" strokeWidth="2" className="transition-none" />
                       <foreignObject x={iconX - iconSize / 2} y={iconY - iconSize / 2} width={iconSize} height={iconSize} className="pointer-events-none">
                         <div className="w-full h-full flex items-center justify-center">
-                          <IconComponent size={iconSize * 0.6} className="text-red-600" strokeWidth={2.5} />
+                          <IconComponent size={iconSize * 0.6} className="text-gray-600" strokeWidth={2} />
                         </div>
                       </foreignObject>
                       
-                      {/* Enhanced segment labels for mobile visibility - highlighted in red */}
+                      {/* Segment labels - neutral colors */}
                       {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ?
                   // Multi-line labels for segments with "/"
                   <>
-                          <text x={labelX} y={labelY - 12} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-900" style={{
-                      fontSize: window.innerWidth < 768 ? '15px' : '17px',
-                      fontWeight: '800',
-                      opacity: 1.0,
-                      filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))',
+                          <text x={labelX} y={labelY - 12} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-700" style={{
+                      fontSize: window.innerWidth < 768 ? '16px' : '18px',
+                      fontWeight: '700',
                       letterSpacing: '-0.025em'
                     }}>
                             {segment.title.split(' / ')[0]} /
                           </text>
-                          <text x={labelX} y={labelY + 12} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-900" style={{
-                      fontSize: window.innerWidth < 768 ? '15px' : '17px',
-                      fontWeight: '800',
-                      opacity: 1.0,
-                      filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))',
+                          <text x={labelX} y={labelY + 12} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-700" style={{
+                      fontSize: window.innerWidth < 768 ? '16px' : '18px',
+                      fontWeight: '700',
                       letterSpacing: '-0.025em'
                     }}>
                             {segment.title.split(' / ')[1]}
                           </text>
                         </> :
-                  // Single line labels - highlighted for mobile
-                  <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-900" style={{
-                    fontSize: window.innerWidth < 768 ? '15px' : '17px',
-                    fontWeight: '800',
-                    opacity: 1.0,
-                    filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))',
+                  // Single line labels
+                  <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-700" style={{
+                    fontSize: window.innerWidth < 768 ? '16px' : '18px',
+                    fontWeight: '700',
                     letterSpacing: '-0.025em'
                   }}>
                           {window.innerWidth < 768 ? segment.shortTitle : segment.title}
