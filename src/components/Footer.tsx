@@ -2,16 +2,26 @@ import ContactDialog from "@/components/ContactDialog";
 const Footer = () => {
   return <footer className="bg-background border-t border-border section-padding-sm">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center justify-center space-y-6">
-          {/* Centered Logo and Contact Button */}
-          <div className="text-center space-y-4">
-            <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-16 mx-auto" />
-            <p className="text-lg text-muted-foreground">Making factories smarter</p>
+        <div className="flex items-center justify-center space-x-8">
+          {/* Left Side - Logo */}
+          <div className="flex-1 flex justify-end">
+            <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-16" />
           </div>
           
-          <ContactDialog>
-            <button className="bg-primary text-primary-foreground px-6 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">Contact Us</button>
-          </ContactDialog>
+          {/* Vertical Line */}
+          <div className="w-px h-24 bg-border"></div>
+          
+          {/* Right Side - Contact Info */}
+          <div className="flex-1">
+            <div className="space-y-2">
+              <h3 className="heading-sm text-foreground">Contact Us</h3>
+              <p className="body-sm font-medium text-foreground">Vegam Solutions Inc.</p>
+              <p className="body-sm text-muted-foreground">16192, Coastal Highway</p>
+              <p className="body-sm text-muted-foreground">Lewes, Delaware 19958, USA</p>
+              <a href="mailto:info@vegamrobotics.com" className="body-sm text-primary hover:text-primary/80 transition-colors block">info@vegamrobotics.com</a>
+              <a href="tel:+19193326999" className="body-sm text-primary hover:text-primary/80 transition-colors">+1 (919) 332-6999</a>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Section */}
