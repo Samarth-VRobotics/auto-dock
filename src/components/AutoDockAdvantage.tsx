@@ -63,7 +63,7 @@ const AutoDockAdvantage = () => {
           </div>;
       case 'roi-graph':
         return <div className="relative h-80 overflow-hidden flex items-center justify-center">
-            <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/ROI%20on%20Multiple%20Fronts.gif" alt="ROI on Multiple Fronts - AutoDock ROI visualization" className="w-full h-full object-cover" />
+            <img src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/ROI%20on%20Multiple%20Fronts.gif" alt="ROI on Multiple Fronts - AutoDock ROI visualization" className="w-full h-full object-contain" />
           </div>;
       default:
         return <div className="bg-muted/20 rounded-2xl p-8 h-64 flex items-center justify-center">
