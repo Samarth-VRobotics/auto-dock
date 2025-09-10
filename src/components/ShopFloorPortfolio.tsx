@@ -235,7 +235,7 @@ const ShopFloorPortfolio = () => {
                     // Multi-line labels for segments with "/"
                     <>
                             <text x={labelX} y={labelY - 10} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-150 ${isHighlighted ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"}`} style={{
-                        fontSize: window.innerWidth < 768 ? '15px' : window.innerWidth < 1024 ? '16px' : '18px',
+                        fontSize: window.innerWidth < 768 ? '12px' : window.innerWidth < 1024 ? '12.8px' : '14.4px',
                         fontWeight: '700',
                         opacity: isHighlighted ? 1.0 : 0.9,
                         filter: isHighlighted ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
@@ -244,7 +244,7 @@ const ShopFloorPortfolio = () => {
                               {segment.title.split(' / ')[0]} /
                             </text>
                             <text x={labelX} y={labelY + 10} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-150 ${isHighlighted ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"}`} style={{
-                        fontSize: window.innerWidth < 768 ? '15px' : window.innerWidth < 1024 ? '16px' : '18px',
+                        fontSize: window.innerWidth < 768 ? '12px' : window.innerWidth < 1024 ? '12.8px' : '14.4px',
                         fontWeight: '700',
                         opacity: isHighlighted ? 1.0 : 0.9,
                         filter: isHighlighted ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
@@ -254,8 +254,8 @@ const ShopFloorPortfolio = () => {
                             </text>
                           </> :
                     // Single line labels in Title Case
-                    <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-150 ${isHighlighted ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"}`} style={{
-                      fontSize: window.innerWidth < 768 ? '15px' : window.innerWidth < 1024 ? '16px' : '18px',
+                     <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-150 ${isHighlighted ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"}`} style={{
+                      fontSize: window.innerWidth < 768 ? '12px' : window.innerWidth < 1024 ? '12.8px' : '14.4px',
                       fontWeight: '700',
                       opacity: isHighlighted ? 1.0 : 0.9,
                       filter: isHighlighted ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
@@ -328,10 +328,10 @@ const ShopFloorPortfolio = () => {
         </div>
 
         {/* Mobile & Tablet Layout - Larger chart, no highlighting */}
-        <div className="lg:hidden px-1 md:px-2">
-          <div className="flex justify-center min-h-[500px] md:min-h-[600px] relative">
+        <div className="lg:hidden">
+          <div className="flex justify-center min-h-[450px] md:min-h-[550px] relative">
             
-            <svg width="100%" height="500" viewBox="0 0 640 640" className="drop-shadow-lg max-w-full w-full touch-manipulation" style={{ maxWidth: '90vw', height: 'auto' }}>
+            <svg width="100%" height="500" viewBox="0 0 640 640" className="drop-shadow-lg max-w-full w-full touch-manipulation" style={{ maxWidth: '100vw', height: 'auto' }}>
               <defs>
                 {/* Subtle Glow filter */}
                 <filter id="mobile-glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -404,14 +404,14 @@ const ShopFloorPortfolio = () => {
                   // Multi-line labels for segments with "/"
                   <>
                           <text x={labelX} y={labelY - 12} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-700" style={{
-                      fontSize: window.innerWidth < 768 ? '16px' : '18px',
+                      fontSize: window.innerWidth < 768 ? '12.8px' : '14.4px',
                       fontWeight: '700',
                       letterSpacing: '-0.025em'
                     }}>
                             {segment.title.split(' / ')[0]} /
                           </text>
                           <text x={labelX} y={labelY + 12} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-700" style={{
-                      fontSize: window.innerWidth < 768 ? '16px' : '18px',
+                      fontSize: window.innerWidth < 768 ? '12.8px' : '14.4px',
                       fontWeight: '700',
                       letterSpacing: '-0.025em'
                     }}>
@@ -420,7 +420,7 @@ const ShopFloorPortfolio = () => {
                         </> :
                   // Single line labels
                   <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-700" style={{
-                    fontSize: window.innerWidth < 768 ? '16px' : '18px',
+                    fontSize: window.innerWidth < 768 ? '12.8px' : '14.4px',
                     fontWeight: '700',
                     letterSpacing: '-0.025em'
                   }}>
