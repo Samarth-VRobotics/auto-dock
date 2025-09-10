@@ -157,16 +157,16 @@ const VegamJourney = () => {
                 {/* Mobile & Tablet Layout */}
                 <div className="lg:hidden flex items-center w-full">
                   {/* Circular Marker - Responsive sizes */}
-                  <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
-                    <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-background rounded-full"></div>
+                  <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
+                    <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-background rounded-full"></div>
                     <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
                   </div>
                   
                   {/* Content - Responsive spacing and sizing */}
-                  <div className="ml-4 sm:ml-6 flex-1">
-                    <Card className="bg-card border border-border shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 hover:bg-card/80 cursor-pointer group">
-                      <CardContent className="p-2.5 sm:p-3">
-                        <h3 className="text-sm sm:text-base font-semibold text-foreground mb-0.5 group-hover:text-red-600 transition-colors">{milestone.year}</h3>
+                  <div className="ml-3 sm:ml-4 flex-1">
+                    <Card className="bg-card border border-border shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 hover:bg-card/80 cursor-pointer group active:scale-95">
+                      <CardContent className="p-2 sm:p-2.5">
+                        <h3 className="text-sm sm:text-sm font-semibold text-foreground mb-0.5 group-hover:text-red-600 transition-colors">{milestone.year}</h3>
                         <p className="text-xs text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{milestone.description}</p>
                       </CardContent>
                     </Card>
@@ -188,8 +188,8 @@ const VegamJourney = () => {
                       </div>
                       
                       {/* Center Marker */}
-                      <div className="flex-shrink-0 w-8 h-8 xl:w-10 xl:h-10 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
-                        <div className="w-2 h-2 xl:w-2.5 xl:h-2.5 bg-background rounded-full"></div>
+                      <div className="flex-shrink-0 w-6 h-6 xl:w-8 xl:h-8 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
+                        <div className="w-1.5 h-1.5 xl:w-2 xl:h-2 bg-background rounded-full"></div>
                         <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
                       </div>
                       
@@ -202,8 +202,8 @@ const VegamJourney = () => {
                       <div className="w-1/2 pr-4 xl:pr-6"></div>
                       
                       {/* Center Marker */}
-                      <div className="flex-shrink-0 w-8 h-8 xl:w-10 xl:h-10 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
-                        <div className="w-2 h-2 xl:w-2.5 xl:h-2.5 bg-background rounded-full"></div>
+                      <div className="flex-shrink-0 w-6 h-6 xl:w-8 xl:h-8 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
+                        <div className="w-1.5 h-1.5 xl:w-2 xl:h-2 bg-background rounded-full"></div>
                         <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
                       </div>
                       
