@@ -172,13 +172,13 @@ const ShopFloorPortfolio = () => {
                 {/* Segments - base layer (ring/slices only) */}
                 <g id="pie-slices">
                   {segments.map((segment, index) => {
-                  const isActive = activeSegment === index;
+                  const isHighlighted = hoveredSegment === index;
                   const centroid = getSegmentCentroid(index);
-                  return <path key={`segment-${index}`} id={`segment-${index}`} d={getSegmentPath(index)} fill={isActive ? "#fef2f2" : "white"} stroke={isActive ? "#ef4444" : "#e5e7eb"} strokeWidth={isActive ? "3" : "1"} className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2 focus:outline-none" style={{
-                    transform: isActive ? 'scale(1.07)' : 'scale(1)',
+                  return <path key={`segment-${index}`} id={`segment-${index}`} d={getSegmentPath(index)} fill={hoveredSegment === index ? "#fef2f2" : "white"} stroke={hoveredSegment === index ? "#ef4444" : "#e5e7eb"} strokeWidth={hoveredSegment === index ? "3" : "1"} className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2 focus:outline-none" style={{
+                    transform: hoveredSegment === index ? 'scale(1.07)' : 'scale(1)',
                     transformOrigin: `${centroid.x}px ${centroid.y}px`,
-                    filter: isActive ? 'url(#glow)' : 'none'
-                  }} onMouseEnter={() => handleSegmentInteraction(index, true)} onFocus={() => handleSegmentInteraction(index, true)} onMouseLeave={handleInteractionEnd} onBlur={handleInteractionEnd} tabIndex={0} role="button" aria-label={`${segment.title} — ${segment.description.join('; ')}`} aria-controls={`card-${segment.id}`} aria-expanded={isActive} onClick={() => handleSegmentClick(index)} onKeyDown={e => handleKeyDown(e, index)} />;
+                    filter: hoveredSegment === index ? 'url(#glow)' : 'none'
+                  }} onMouseEnter={() => handleSegmentInteraction(index, true)} onFocus={() => handleSegmentInteraction(index, true)} onMouseLeave={handleInteractionEnd} onBlur={handleInteractionEnd} tabIndex={0} role="button" aria-label={`${segment.title} — ${segment.description.join('; ')}`} aria-controls={`card-${segment.id}`} aria-expanded={hoveredSegment === index} />;
                 })}
                 </g>
                 
@@ -204,7 +204,7 @@ const ShopFloorPortfolio = () => {
                 {/* Labels and Icons - foreground layer */}
                 <g id="labels-icons">
                   {segments.map((segment, index) => {
-                  const isActive = activeSegment === index;
+                  const isHighlighted = hoveredSegment === index;
                   const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
                   const iconX = centerX + Math.cos(iconAngle) * iconRadius;
                   const iconY = centerY + Math.sin(iconAngle) * iconRadius;
@@ -220,13 +220,13 @@ const ShopFloorPortfolio = () => {
                   const iconBgRadius = iconSize / 2 + 4;
                   return <g key={`icon-label-${index}`} className="pointer-events-none">
                         {/* Icon with background circle - positioned on inner circle circumference */}
-                        <circle cx={iconX} cy={iconY} r={iconBgRadius} fill="white" stroke={isActive ? "#ef4444" : "#d1d5db"} strokeWidth={isActive ? "3" : "2"} className="transition-all duration-150" style={{
-                      transform: isActive ? 'scale(1.07)' : 'scale(1)',
+                        <circle cx={iconX} cy={iconY} r={iconBgRadius} fill="white" stroke={isHighlighted ? "#ef4444" : "#d1d5db"} strokeWidth={isHighlighted ? "3" : "2"} className="transition-all duration-150" style={{
+                      transform: isHighlighted ? 'scale(1.07)' : 'scale(1)',
                       transformOrigin: `${iconX}px ${iconY}px`
                     }} />
                         <foreignObject x={iconX - iconSize / 2} y={iconY - iconSize / 2} width={iconSize} height={iconSize} className="pointer-events-none">
                           <div className="w-full h-full flex items-center justify-center">
-                            <IconComponent size={iconSize * 0.7} className={`transition-all duration-150 ${isActive ? "text-red-500" : "text-gray-600"}`} />
+                            <IconComponent size={iconSize * 0.7} className={`transition-all duration-150 ${isHighlighted ? "text-red-500" : "text-gray-600"}`} />
                           </div>
                         </foreignObject>
                         
@@ -234,31 +234,31 @@ const ShopFloorPortfolio = () => {
                         {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ?
                     // Multi-line labels for segments with "/"
                     <>
-                            <text x={labelX} y={labelY - 10} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-150 ${isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"}`} style={{
+                            <text x={labelX} y={labelY - 10} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-150 ${isHighlighted ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"}`} style={{
                         fontSize: window.innerWidth < 768 ? '15px' : window.innerWidth < 1024 ? '16px' : '18px',
                         fontWeight: '700',
-                        opacity: isActive ? 1.0 : 0.9,
-                        filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                        opacity: isHighlighted ? 1.0 : 0.9,
+                        filter: isHighlighted ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
                         letterSpacing: '-0.025em'
                       }}>
                               {segment.title.split(' / ')[0]} /
                             </text>
-                            <text x={labelX} y={labelY + 10} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-150 ${isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"}`} style={{
+                            <text x={labelX} y={labelY + 10} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-150 ${isHighlighted ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"}`} style={{
                         fontSize: window.innerWidth < 768 ? '15px' : window.innerWidth < 1024 ? '16px' : '18px',
                         fontWeight: '700',
-                        opacity: isActive ? 1.0 : 0.9,
-                        filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                        opacity: isHighlighted ? 1.0 : 0.9,
+                        filter: isHighlighted ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
                         letterSpacing: '-0.025em'
                       }}>
                               {segment.title.split(' / ')[1]}
                             </text>
                           </> :
                     // Single line labels in Title Case
-                    <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-150 ${isActive ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"}`} style={{
+                    <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-150 ${isHighlighted ? "fill-gray-900 drop-shadow-sm" : "fill-gray-700"}`} style={{
                       fontSize: window.innerWidth < 768 ? '15px' : window.innerWidth < 1024 ? '16px' : '18px',
                       fontWeight: '700',
-                      opacity: isActive ? 1.0 : 0.9,
-                      filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
+                      opacity: isHighlighted ? 1.0 : 0.9,
+                      filter: isHighlighted ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none',
                       letterSpacing: '-0.025em'
                     }}>
                             {window.innerWidth < 768 ? segment.shortTitle : segment.title}
@@ -273,21 +273,21 @@ const ShopFloorPortfolio = () => {
             <div className="absolute left-0 top-0 w-80 h-full">
               <div className="flex flex-col justify-center h-full py-20 space-y-7">
                 {segments.filter(segment => segment.side === 'left').sort((a, b) => a.slot - b.slot).map((segment, gridIndex) => {
-                const segmentIndex = segments.findIndex(s => s.id === segment.id);
-                const isActive = activeSegment === segmentIndex;
-                const IconComponent = segment.icon;
-                return <div key={`left-${segment.id}`} className="flex items-center">
-                        <div id={`card-${segment.id}`} className={`bg-white rounded-2xl p-6 border transition-all duration-150 w-full min-h-[180px] flex flex-col justify-start cursor-pointer ${isActive ? 'border-red-400 shadow-xl bg-red-50/20' : 'border-gray-200 shadow-lg hover:shadow-xl'}`} style={{
-                    boxShadow: isActive ? '0 8px 32px rgba(239, 68, 68, 0.15)' : '0 8px 24px rgba(0, 0, 0, 0.06)'
-                  }} onMouseEnter={() => handleSegmentInteraction(segmentIndex, true)} onMouseLeave={handleInteractionEnd} onClick={() => handleSegmentClick(segmentIndex)}>
+                 const segmentIndex = segments.findIndex(s => s.id === segment.id);
+                 const isHighlighted = hoveredSegment === segmentIndex;
+                 const IconComponent = segment.icon;
+                 return <div key={`left-${segment.id}`} className="flex items-center">
+                        <div id={`card-${segment.id}`} className={`bg-white rounded-2xl p-6 border transition-all duration-150 w-full min-h-[180px] flex flex-col justify-start ${isHighlighted ? 'border-red-400 shadow-xl bg-red-50/20' : 'border-gray-200 shadow-lg hover:shadow-xl'}`} style={{
+                    boxShadow: isHighlighted ? '0 8px 32px rgba(239, 68, 68, 0.15)' : '0 8px 24px rgba(0, 0, 0, 0.06)'
+                  }} onMouseEnter={() => handleSegmentInteraction(segmentIndex, true)} onMouseLeave={handleInteractionEnd}>
                           <div className="mb-4">
-                            <h3 className={`text-lg font-bold transition-colors ${isActive ? 'text-red-600' : 'text-gray-900'}`}>
+                            <h3 className={`text-lg font-bold transition-colors ${isHighlighted ? 'text-red-600' : 'text-gray-900'}`}>
                               {segment.title}
                             </h3>
                           </div>
                           <ul className="space-y-2.5">
                             {segment.description.map((point, pointIndex) => <li key={pointIndex} className="flex items-start space-x-3 text-sm text-gray-600">
-                                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${isActive ? 'bg-red-500' : 'bg-gray-400'}`}></span>
+                                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${isHighlighted ? 'bg-red-500' : 'bg-gray-400'}`}></span>
                                 <span className="leading-relaxed">{point}</span>
                               </li>)}
                           </ul>
@@ -301,21 +301,21 @@ const ShopFloorPortfolio = () => {
             <div className="absolute right-0 top-0 w-80 h-full">
               <div className="flex flex-col justify-center h-full py-20 space-y-7">
                 {segments.filter(segment => segment.side === 'right').sort((a, b) => a.slot - b.slot).map((segment, gridIndex) => {
-                const segmentIndex = segments.findIndex(s => s.id === segment.id);
-                const isActive = activeSegment === segmentIndex;
-                const IconComponent = segment.icon;
-                return <div key={`right-${segment.id}`} className="flex items-center">
-                        <div id={`card-${segment.id}`} className={`bg-white rounded-2xl p-6 border transition-all duration-150 w-full min-h-[180px] flex flex-col justify-start cursor-pointer ${isActive ? 'border-red-400 shadow-xl bg-red-50/20' : 'border-gray-200 shadow-lg hover:shadow-xl'}`} style={{
-                    boxShadow: isActive ? '0 8px 32px rgba(239, 68, 68, 0.15)' : '0 8px 24px rgba(0, 0, 0, 0.06)'
-                  }} onMouseEnter={() => handleSegmentInteraction(segmentIndex, true)} onMouseLeave={handleInteractionEnd} onClick={() => handleSegmentClick(segmentIndex)}>
+                 const segmentIndex = segments.findIndex(s => s.id === segment.id);
+                 const isHighlighted = hoveredSegment === segmentIndex;
+                 const IconComponent = segment.icon;
+                 return <div key={`right-${segment.id}`} className="flex items-center">
+                        <div id={`card-${segment.id}`} className={`bg-white rounded-2xl p-6 border transition-all duration-150 w-full min-h-[180px] flex flex-col justify-start ${isHighlighted ? 'border-red-400 shadow-xl bg-red-50/20' : 'border-gray-200 shadow-lg hover:shadow-xl'}`} style={{
+                    boxShadow: isHighlighted ? '0 8px 32px rgba(239, 68, 68, 0.15)' : '0 8px 24px rgba(0, 0, 0, 0.06)'
+                  }} onMouseEnter={() => handleSegmentInteraction(segmentIndex, true)} onMouseLeave={handleInteractionEnd}>
                           <div className="mb-4">
-                            <h3 className={`text-lg font-bold transition-colors ${isActive ? 'text-red-600' : 'text-gray-900'}`}>
+                            <h3 className={`text-lg font-bold transition-colors ${isHighlighted ? 'text-red-600' : 'text-gray-900'}`}>
                               {segment.title}
                             </h3>
                           </div>
                           <ul className="space-y-2.5">
                             {segment.description.map((point, pointIndex) => <li key={pointIndex} className="flex items-start space-x-3 text-sm text-gray-600">
-                                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${isActive ? 'bg-red-500' : 'bg-gray-400'}`}></span>
+                                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${isHighlighted ? 'bg-red-500' : 'bg-gray-400'}`}></span>
                                 <span className="leading-relaxed">{point}</span>
                               </li>)}
                           </ul>
