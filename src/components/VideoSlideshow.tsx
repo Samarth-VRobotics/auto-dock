@@ -28,9 +28,9 @@ const VideoSlideshow = ({ className = "" }: VideoSlideshowProps) => {
       caption: "Building Tomorrow"
     },
     {
-      src: "/team-video.mp4",
-      alt: "Team video from Microsoft Teams",
-      caption: "Team Collaboration"
+      src: "https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Photo%20album%20-ASRS.mp4",
+      alt: "ASRS system in action",
+      caption: "Automated Storage & Retrieval"
     },
     {
       src: "https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Photo%20album%20-4.mp4",
