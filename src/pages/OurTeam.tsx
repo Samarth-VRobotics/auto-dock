@@ -240,7 +240,7 @@ const OurTeam = () => {
                   role: "Robotics Hardware Engineer",
                   image: "/lovable-uploads/f60531ed-5e73-4d78-bce3-4dbccbbcb92c.png",
                   linkedinUrl: "https://www.linkedin.com/in/ashutosh-kangralkar-841584243/"
-                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
+                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
                       {member.image ? <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           <AvatarImage src={member.image} alt={member.name} className="object-cover object-center" />
                           <AvatarFallback className="bg-gradient-primary text-white font-bold text-2xl">
@@ -250,8 +250,8 @@ const OurTeam = () => {
                           {member.initials}
                         </div>}
                       <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
-                      <p className="text-foreground/60 text-sm mb-4">{member.role}</p>
-                      <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded bg-[#0077B5] hover:bg-[#005885] transition-colors cursor-pointer">
+                      <p className="text-foreground/60 text-sm mb-6 flex-grow">{member.role}</p>
+                      <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded bg-[#0077B5] hover:bg-[#005885] transition-colors cursor-pointer mt-auto">
                         <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
@@ -285,7 +285,7 @@ const OurTeam = () => {
                   role: "Software Architect",
                   image: "/lovable-uploads/56cc3bd2-28b1-49c7-94be-6eb09506c3c8.png",
                   linkedinUrl: "https://www.linkedin.com/in/nieander/"
-                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
+                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
                       {member.image ? <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           <AvatarImage src={member.image} alt={member.name} className="object-cover object-center" />
                           <AvatarFallback className="bg-gradient-secondary text-white font-bold text-2xl">
@@ -295,8 +295,8 @@ const OurTeam = () => {
                           {member.initials}
                         </div>}
                       <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
-                      <p className="text-foreground/60 text-sm mb-4">{member.role}</p>
-                      <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded bg-[#0077B5] hover:bg-[#005885] transition-colors cursor-pointer">
+                      <p className="text-foreground/60 text-sm mb-6 flex-grow">{member.role}</p>
+                      <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded bg-[#0077B5] hover:bg-[#005885] transition-colors cursor-pointer mt-auto">
                         <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
@@ -340,7 +340,7 @@ const OurTeam = () => {
                   role: "Senior Software Engineer",
                   image: "/lovable-uploads/e6dcb3fb-9309-445f-b034-b0c52e068181.png",
                   linkedinUrl: "https://www.linkedin.com/in/shridhar-samay-a18598223/"
-                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
+                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
                       {member.image ? <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           <AvatarImage src={member.image} alt={member.name} className="object-cover object-center" />
                           <AvatarFallback className="bg-gradient-accent text-white font-bold text-2xl">
@@ -350,17 +350,17 @@ const OurTeam = () => {
                           {member.initials}
                         </div>}
                       <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
-                      <p className="text-foreground/60 text-sm mb-4">{member.role}</p>
+                      <p className="text-foreground/60 text-sm mb-6 flex-grow">{member.role}</p>
                       {member.linkedinUrl ? (
-                        <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded bg-[#0077B5] hover:bg-[#005885] transition-colors cursor-pointer">
+                        <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded bg-[#0077B5] hover:bg-[#005885] transition-colors cursor-pointer mt-auto">
                           <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                           </svg>
                         </a>
                       ) : (
-                        <div className="inline-flex items-center justify-center w-8 h-8 rounded bg-gray-400 cursor-default">
+                        <div className="inline-flex items-center justify-center w-8 h-8 rounded bg-gray-400 cursor-default mt-auto">
                           <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path d="M20.447 20.452h-3.554v-5-569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                           </svg>
                         </div>
                       )}
@@ -493,7 +493,7 @@ const OurTeam = () => {
                   name: "Ramesh Kumar",
                   initials: "RK",
                   role: "Project Coordinator"
-                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group">
+                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
                       {member.image ? <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           <AvatarImage src={member.image} alt={member.name} className="object-cover object-center" />
                           <AvatarFallback className="bg-gradient-to-br from-slate-600 to-slate-700 text-white font-bold text-2xl">
@@ -503,15 +503,15 @@ const OurTeam = () => {
                           {member.initials}
                         </div>}
                       <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
-                      <p className="text-foreground/60 text-sm mb-4">{member.role}</p>
+                      <p className="text-foreground/60 text-sm mb-6 flex-grow">{member.role}</p>
                       {member.linkedinUrl ? (
-                        <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded bg-[#0077B5] hover:bg-[#005885] transition-colors cursor-pointer">
+                        <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded bg-[#0077B5] hover:bg-[#005885] transition-colors cursor-pointer mt-auto">
                           <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                           </svg>
                         </a>
                       ) : (
-                        <div className="inline-flex items-center justify-center w-8 h-8 rounded bg-gray-400 cursor-default">
+                        <div className="inline-flex items-center justify-center w-8 h-8 rounded bg-gray-400 cursor-default mt-auto">
                           <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                           </svg>
