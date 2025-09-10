@@ -404,14 +404,14 @@ const ShopFloorPortfolio = () => {
                   // Multi-line labels for segments with "/"
                   <>
                           <text x={labelX} y={labelY - 12} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-700" style={{
-                      fontSize: window.innerWidth < 768 ? '12.8px' : '14.4px',
+                      fontSize: window.innerWidth < 768 ? '10px' : '12px',
                       fontWeight: '700',
                       letterSpacing: '-0.025em'
                     }}>
                             {segment.title.split(' / ')[0]} /
                           </text>
                           <text x={labelX} y={labelY + 12} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-700" style={{
-                      fontSize: window.innerWidth < 768 ? '12.8px' : '14.4px',
+                      fontSize: window.innerWidth < 768 ? '10px' : '12px',
                       fontWeight: '700',
                       letterSpacing: '-0.025em'
                     }}>
@@ -420,7 +420,7 @@ const ShopFloorPortfolio = () => {
                         </> :
                   // Single line labels
                   <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-700" style={{
-                    fontSize: window.innerWidth < 768 ? '12.8px' : '14.4px',
+                    fontSize: window.innerWidth < 768 ? '10px' : '12px',
                     fontWeight: '700',
                     letterSpacing: '-0.025em'
                   }}>
