@@ -225,6 +225,7 @@ const Index = () => {
                   Future
                 </div>
               </div>
+              <div className="w-2 h-16 bg-gradient-to-b from-red-400 to-red-600 my-6 rounded-full shadow-sm"></div>
               <div className="bg-red-50/90 backdrop-blur-sm rounded-xl p-6 shadow-xl max-w-sm group-hover:shadow-2xl group-hover:bg-white transition-all duration-500">
                 <h3 className="text-lg font-bold text-red-800 mb-3 group-hover:text-red-900 transition-colors duration-500">Tomorrow: Autonomous Factories</h3>
                 <p className="text-sm text-red-700 leading-relaxed group-hover:text-red-800 transition-colors duration-500">
