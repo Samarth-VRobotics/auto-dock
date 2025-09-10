@@ -95,7 +95,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-100/40 via-blue-100/40 to-red-100/40"></div>
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-20">Industry Evolution</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-20">From Digital Foundations to Autonomous factories</h2>
           </div>
           
           {/* Desktop Timeline */}
