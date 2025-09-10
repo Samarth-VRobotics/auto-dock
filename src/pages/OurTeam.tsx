@@ -217,7 +217,7 @@ const OurTeam = () => {
                   image: "/lovable-uploads/ec6ab3f2-84b4-41a2-9fc8-3f2a26bf69e9.png",
                   linkedinUrl: "https://www.linkedin.com/in/faizan-pathan-6b8ab51aa/"
                 }, {
-                  name: "Rani Kinnal",
+                  name: "Rani\nKinnal",
                   initials: "RK",
                   role: "Robotics Engineer",
                   image: "/lovable-uploads/fb9654bd-cc20-4b43-80d0-bc2007022b1b.png",
@@ -249,7 +249,7 @@ const OurTeam = () => {
                         </Avatar> : <div className="w-32 h-32 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-2xl mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           {member.initials}
                         </div>}
-                      <h4 className="font-bold text-foreground text-xl mb-2">{member.name}</h4>
+                      <h4 className="font-bold text-foreground text-xl mb-2 whitespace-pre-line">{member.name}</h4>
                       <p className="text-foreground/60 text-sm mb-6 flex-grow">{member.role}</p>
                       <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded bg-[#0077B5] hover:bg-[#005885] transition-colors cursor-pointer mt-auto">
                         <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -374,7 +374,7 @@ const OurTeam = () => {
                   <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-3">Smart Factory Experts</h3>
                   <p className="text-foreground/60 text-lg">Digital factory solutions and process optimization specialists</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center">
                   {[{
                   name: "Aman Saxena",
                   initials: "AS",
@@ -421,7 +421,7 @@ const OurTeam = () => {
                   name: "Subha J",
                   initials: "SJ",
                   role: "Lead Functional Consultant",
-                  image: "/lovable-uploads/8884082c-70c9-40f7-b1e5-daa47dd94d21.png",
+                  image: "/lovable-uploads/90a6e052-8027-43c2-80d6-aef85a810757.png",
                   linkedinUrl: "https://www.linkedin.com/in/j-subha-68117312a/"
                 }, {
                   name: "Ajay K",
@@ -489,10 +489,6 @@ const OurTeam = () => {
                   role: "Software Architect",
                   image: "/lovable-uploads/deb7b8e5-9c2d-4e19-bead-676533360f9d.png",
                   linkedinUrl: "https://www.linkedin.com/in/sushin-c-b7473223/"
-                }, {
-                  name: "Ramesh Kumar",
-                  initials: "RK",
-                  role: "Project Coordinator"
                 }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
                       {member.image ? <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           <AvatarImage src={member.image} alt={member.name} className="object-cover object-center" />
