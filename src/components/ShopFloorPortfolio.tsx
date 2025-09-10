@@ -424,7 +424,7 @@ const ShopFloorPortfolio = () => {
                     fontWeight: '700',
                     letterSpacing: '-0.025em'
                   }}>
-                          {window.innerWidth < 768 ? segment.shortTitle : segment.title}
+                          {window.innerWidth < 768 ? (segment.id === 'lab' ? segment.title : segment.shortTitle) : segment.title}
                         </text>}
                     </g>;
               })}
