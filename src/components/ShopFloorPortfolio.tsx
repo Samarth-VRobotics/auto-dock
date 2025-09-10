@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Truck, Settings, Package, Factory, FlaskConical, FileText, Warehouse, Box } from 'lucide-react';
-import shopFloorBg from '@/assets/shop-floor-automation-bg.jpg';
 const ShopFloorPortfolio = () => {
   const [activeSegment, setActiveSegment] = useState(0);
   const [hoveredSegment, setHoveredSegment] = useState<number | null>(null);
@@ -135,20 +134,11 @@ const ShopFloorPortfolio = () => {
     }
   };
   return <section className="py-24 relative overflow-hidden" style={{
-    background: `
-      linear-gradient(135deg, rgba(246, 248, 251, 0.98) 0%, rgba(240, 244, 248, 0.98) 100%),
-      url(${shopFloorBg})
-    `,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
+    background: 'linear-gradient(135deg, #F6F8FB 0%, #F0F4F8 100%)',
     backgroundImage: `
-          linear-gradient(135deg, rgba(246, 248, 251, 0.98) 0%, rgba(240, 244, 248, 0.98) 100%),
-          url(${shopFloorBg}),
-          radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.02) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.02) 0%, transparent 50%)
-        `,
-    filter: 'brightness(1.1) contrast(0.9)'
+          radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.03) 0%, transparent 50%)
+        `
   }}>
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center mb-4 md:mb-16 lg:mb-20">
