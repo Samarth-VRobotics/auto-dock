@@ -4,7 +4,9 @@ import { Truck, Settings, Package, Factory, FlaskConical, FileText, Warehouse, B
 const ShopFloorPortfolio = () => {
   const [activeSegment, setActiveSegment] = useState(0);
   const [hoveredSegment, setHoveredSegment] = useState<number | null>(null);
+  const [isAutoRotating, setIsAutoRotating] = useState(true);
   const svgRef = useRef<SVGSVGElement>(null);
+  const autoRotationRef = useRef<NodeJS.Timeout | null>(null);
 
   const segments = [
     {
@@ -135,8 +137,51 @@ const ShopFloorPortfolio = () => {
     return `M ${startX} ${startY} L ${midX} ${startY} L ${cardEdgeX} ${cardCenterY}`;
   };
 
+  // Auto-rotation effect
+  useEffect(() => {
+    if (isAutoRotating) {
+      autoRotationRef.current = setInterval(() => {
+        setActiveSegment(prev => (prev + 1) % segments.length);
+      }, 3000); // Rotate every 3 seconds
+    } else {
+      if (autoRotationRef.current) {
+        clearInterval(autoRotationRef.current);
+        autoRotationRef.current = null;
+      }
+    }
+
+    return () => {
+      if (autoRotationRef.current) {
+        clearInterval(autoRotationRef.current);
+      }
+    };
+  }, [isAutoRotating, segments.length]);
+
+  // Pause auto-rotation on hover
+  const handleSegmentInteraction = (index: number, isHover: boolean = false) => {
+    if (isHover) {
+      setIsAutoRotating(false);
+      setHoveredSegment(index);
+    } else {
+      setActiveSegment(index);
+      setIsAutoRotating(false);
+    }
+  };
+
+  // Resume auto-rotation after interaction
+  const handleInteractionEnd = () => {
+    setHoveredSegment(null);
+    setTimeout(() => {
+      setIsAutoRotating(true);
+    }, 5000); // Resume after 5 seconds of no interaction
+  };
+
   const handleSegmentClick = (index: number) => {
     setActiveSegment(index);
+    setIsAutoRotating(false);
+    setTimeout(() => {
+      setIsAutoRotating(true);
+    }, 8000); // Resume after 8 seconds for clicks
   };
 
   const handleKeyDown = (event: React.KeyboardEvent, index: number) => {
@@ -176,6 +221,30 @@ const ShopFloorPortfolio = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 md:mb-6 px-4 leading-tight">
             Our Integrated Shop Floor Automation Portfolio
           </h2>
+          
+          {/* Auto-rotation control */}
+          <div className="flex items-center justify-center gap-3 mt-6 mb-2">
+            <button
+              onClick={() => setIsAutoRotating(!isAutoRotating)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                isAutoRotating 
+                  ? 'bg-red-100 text-red-700 hover:bg-red-200' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {isAutoRotating ? (
+                <>
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                  Auto-rotating
+                </>
+              ) : (
+                <>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                  Paused
+                </>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Desktop Layout */}
@@ -232,8 +301,10 @@ const ShopFloorPortfolio = () => {
                           transformOrigin: `${centroid.x}px ${centroid.y}px`,
                           filter: isActive ? 'url(#glow)' : 'none'
                         }}
-                        onMouseEnter={() => setActiveSegment(index)}
-                        onFocus={() => setActiveSegment(index)}
+                        onMouseEnter={() => handleSegmentInteraction(index, true)}
+                        onFocus={() => handleSegmentInteraction(index, true)}
+                        onMouseLeave={handleInteractionEnd}
+                        onBlur={handleInteractionEnd}
                         tabIndex={0}
                         role="button"
                         aria-label={`${segment.title} — ${segment.description.join('; ')}`}
@@ -428,8 +499,9 @@ const ShopFloorPortfolio = () => {
                               ? '0 8px 32px rgba(239, 68, 68, 0.15)' 
                               : '0 8px 24px rgba(0, 0, 0, 0.06)'
                           }}
-                          onMouseEnter={() => setActiveSegment(segmentIndex)}
-                          onClick={() => setActiveSegment(segmentIndex)}
+                          onMouseEnter={() => handleSegmentInteraction(segmentIndex, true)}
+                          onMouseLeave={handleInteractionEnd}
+                          onClick={() => handleSegmentClick(segmentIndex)}
                         >
                           <div className="mb-4">
                             <h3 className={`text-lg font-bold transition-colors ${
@@ -483,8 +555,9 @@ const ShopFloorPortfolio = () => {
                               ? '0 8px 32px rgba(239, 68, 68, 0.15)' 
                               : '0 8px 24px rgba(0, 0, 0, 0.06)'
                           }}
-                          onMouseEnter={() => setActiveSegment(segmentIndex)}
-                          onClick={() => setActiveSegment(segmentIndex)}
+                          onMouseEnter={() => handleSegmentInteraction(segmentIndex, true)}
+                          onMouseLeave={handleInteractionEnd}
+                          onClick={() => handleSegmentClick(segmentIndex)}
                         >
                           <div className="mb-4">
                             <h3 className={`text-lg font-bold transition-colors ${
@@ -514,6 +587,30 @@ const ShopFloorPortfolio = () => {
 
         {/* Mobile & Tablet Layout */}
         <div className="lg:hidden">
+          {/* Mobile Auto-rotation control */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <button
+              onClick={() => setIsAutoRotating(!isAutoRotating)}
+              className={`px-3 py-2 rounded-full text-xs font-medium transition-all duration-200 flex items-center gap-2 ${
+                isAutoRotating 
+                  ? 'bg-red-100 text-red-700 hover:bg-red-200' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {isAutoRotating ? (
+                <>
+                  <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div>
+                  Auto-rotating
+                </>
+              ) : (
+                <>
+                  <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
+                  Tap to pause
+                </>
+              )}
+            </button>
+          </div>
+          
           <div className="flex justify-center mb-8 md:mb-12 relative">
             {/* Enhanced Touch Feedback Popup */}
             {hoveredSegment !== null && (
@@ -592,19 +689,22 @@ const ShopFloorPortfolio = () => {
                       }}
                       onClick={(e) => {
                         e.preventDefault();
-                        setActiveSegment(activeSegment === index ? -1 : index);
+                        handleSegmentClick(index);
                         setHoveredSegment(null);
                       }}
                       onTouchStart={(e) => {
                         e.preventDefault();
-                        setHoveredSegment(index);
+                        handleSegmentInteraction(index, true);
                       }}
                       onTouchEnd={(e) => {
                         e.preventDefault();
-                        setTimeout(() => setHoveredSegment(null), 150);
+                        setTimeout(() => {
+                          setHoveredSegment(null);
+                          handleInteractionEnd();
+                        }, 150);
                       }}
-                      onMouseEnter={() => setHoveredSegment(index)}
-                      onMouseLeave={() => setHoveredSegment(null)}
+                      onMouseEnter={() => handleSegmentInteraction(index, true)}
+                      onMouseLeave={handleInteractionEnd}
                     />
                   );
                 })}
@@ -784,7 +884,9 @@ const ShopFloorPortfolio = () => {
                       ? '0 12px 48px rgba(239, 68, 68, 0.15), 0 0 0 1px rgba(239, 68, 68, 0.1)' 
                       : '0 4px 20px rgba(0, 0, 0, 0.08)'
                   }}
-                  onClick={() => setActiveSegment(activeSegment === index ? -1 : index)}
+                  onClick={() => handleSegmentClick(index)}
+                  onTouchStart={() => handleSegmentInteraction(index, true)}
+                  onTouchEnd={handleInteractionEnd}
                 >
                   <div className="p-5 md:p-7 flex items-center justify-between">
                     <div className="flex items-center space-x-4 md:space-x-5">
