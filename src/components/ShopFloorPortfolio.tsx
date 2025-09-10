@@ -330,24 +330,36 @@ const ShopFloorPortfolio = () => {
         {/* Mobile & Tablet Layout - Optimized spacing */}
         <div className="lg:hidden px-2 md:px-4">
           <div className="flex justify-center min-h-[450px] md:min-h-[500px] relative">
-            {/* Enhanced Touch Feedback Popup */}
-            {hoveredSegment !== null && <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 bg-white rounded-2xl border-2 border-red-200 shadow-2xl p-5 max-w-sm animate-scale-in" style={{
-            boxShadow: '0 12px 40px rgba(239, 68, 68, 0.15)'
-          }}>
-                <div className="text-center">
-                  <h4 className="font-bold text-gray-900 mb-3 text-base">
-                    {segments[hoveredSegment].title}
+            {/* Enhanced Touch Feedback Popup - Positioned at side of circle */}
+            {hoveredSegment !== null && (() => {
+              const segment = segments[hoveredSegment];
+              const isLeftSide = hoveredSegment === 0 || hoveredSegment === 4 || hoveredSegment === 5; // Inbound, Lab, Outbound
+              return <div className={`absolute top-1/2 transform -translate-y-1/2 z-20 bg-white rounded-2xl border-2 border-red-200 shadow-2xl p-4 max-w-[200px] animate-scale-in ${
+                isLeftSide 
+                  ? 'left-2 md:left-4' 
+                  : 'right-2 md:right-4'
+              }`} style={{
+                boxShadow: '0 12px 40px rgba(239, 68, 68, 0.15)'
+              }}>
+                <div className="text-left">
+                  <h4 className="font-bold text-gray-900 mb-3 text-sm">
+                    {segment.title}
                   </h4>
-                  <ul className="space-y-2">
-                    {segments[hoveredSegment].description.map((point, index) => <li key={index} className="flex items-start space-x-2 text-sm text-gray-600">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-500 flex-shrink-0"></span>
+                  <ul className="space-y-1.5">
+                    {segment.description.map((point, index) => <li key={index} className="flex items-start space-x-2 text-xs text-gray-600">
+                        <span className="mt-1 w-1 h-1 rounded-full bg-red-500 flex-shrink-0"></span>
                         <span className="leading-relaxed">{point}</span>
                       </li>)}
                   </ul>
                 </div>
-                {/* Enhanced Arrow */}
-                <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-white border-b-2 border-r-2 border-red-200 rotate-45"></div>
-              </div>}
+                {/* Enhanced Arrow pointing to circle */}
+                <div className={`absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white border-2 border-red-200 rotate-45 ${
+                  isLeftSide 
+                    ? '-right-1.5 border-l-0 border-t-0' 
+                    : '-left-1.5 border-r-0 border-b-0'
+                }`}></div>
+              </div>
+            })()}
             
             <svg width="100%" height="450" viewBox="0 0 640 640" className="drop-shadow-xl max-w-md md:max-w-lg touch-manipulation">
               <defs>
@@ -380,14 +392,22 @@ const ShopFloorPortfolio = () => {
                   setHoveredSegment(null);
                 }} onTouchStart={e => {
                   e.preventDefault();
-                  handleSegmentInteraction(index, true);
+                  e.stopPropagation();
+                  // Clear any existing hover state first
+                  setHoveredSegment(null);
+                  setTimeout(() => handleSegmentInteraction(index, true), 50);
                 }} onTouchEnd={e => {
                   e.preventDefault();
+                  e.stopPropagation();
                   setTimeout(() => {
                     setHoveredSegment(null);
                     handleInteractionEnd();
-                  }, 150);
-                }} onMouseEnter={() => handleSegmentInteraction(index, true)} onMouseLeave={handleInteractionEnd} />;
+                  }, 1500);
+                }} onMouseEnter={() => handleSegmentInteraction(index, true)} onMouseLeave={() => {
+                  // Clear hover state immediately for mouse events  
+                  setHoveredSegment(null);
+                  handleInteractionEnd();
+                }} />;
               })}
               </g>
               
