@@ -176,8 +176,21 @@ const ShopFloorPortfolio = () => {
             Our Integrated Shop Floor Automation Portfolio
           </h2>
           
-          {/* Auto-rotation control */}
-          <div className="flex items-center justify-center gap-3 mt-6 mb-2">
+          {/* Auto-rotation control - hidden on mobile to avoid duplicates */}
+          <div className="hidden lg:flex items-center justify-center gap-3 mt-6 mb-2">
+            <button onClick={() => setIsAutoRotating(!isAutoRotating)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 ${isAutoRotating ? 'bg-red-100 text-red-700 hover:bg-red-200' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
+              {isAutoRotating ? <>
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                  Auto-rotating
+                </> : <>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                  Paused
+                </>}
+            </button>
+          </div>
+          
+          {/* Mobile/Tablet Auto-rotation control */}
+          <div className="flex lg:hidden items-center justify-center gap-3 mt-6 mb-2">
             <button onClick={() => setIsAutoRotating(!isAutoRotating)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 ${isAutoRotating ? 'bg-red-100 text-red-700 hover:bg-red-200' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
               {isAutoRotating ? <>
                   <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>

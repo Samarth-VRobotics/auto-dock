@@ -270,19 +270,19 @@ const OurTeam = () => {
                   {[{
                   name: "Falgun",
                   initials: "F",
-                  role: "Software Architect",
+                  role: "GenAI architect",
                   image: "/lovable-uploads/c7f3629b-de5b-4d24-b053-24ac3ecf879f.png",
                   linkedinUrl: "https://www.linkedin.com/in/falgun-aghera/"
                 }, {
                   name: "Parikshith Palegar",
                   initials: "PP",
-                  role: "Software Architect",
+                  role: "AI engineer",
                   image: "/lovable-uploads/dccb7189-5c8d-4a95-b2c2-1cafdba7fb45.png",
                   linkedinUrl: "https://www.linkedin.com/in/parikshith078/"
                 }, {
                   name: "Nieander Pranesh",
                   initials: "NP",
-                  role: "Software Architect",
+                  role: "AI Solutions Engineer",
                   image: "/lovable-uploads/56cc3bd2-28b1-49c7-94be-6eb09506c3c8.png",
                   linkedinUrl: "https://www.linkedin.com/in/nieander/"
                 }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
