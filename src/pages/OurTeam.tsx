@@ -285,7 +285,7 @@ const OurTeam = () => {
                   role: "AI Solutions Engineer",
                   image: "/lovable-uploads/56cc3bd2-28b1-49c7-94be-6eb09506c3c8.png",
                   linkedinUrl: "https://www.linkedin.com/in/nieander/"
-                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full">
+                }].map((member, index) => <div key={index} className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group h-full w-full max-w-sm">
                       {member.image ? <Avatar className="w-32 h-32 mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                           <AvatarImage src={member.image} alt={member.name} className="object-cover object-center" />
                           <AvatarFallback className="bg-gradient-secondary text-white font-bold text-2xl">

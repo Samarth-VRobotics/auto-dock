@@ -153,16 +153,10 @@ const VideoSlideshow = ({ className = "" }: VideoSlideshowProps) => {
         )}
       </button>
 
-      {/* Bottom Overlay with Caption and Indicators */}
+      {/* Bottom Overlay with Indicators only */}
       <div className="absolute bottom-0 left-0 right-0 z-30 p-6">
-        {/* Caption */}
-        <div className="text-white mb-4 transform group-hover:translate-y-[-4px] transition-transform duration-300">
-          <h3 className="text-xl sm:text-2xl font-bold mb-2">{videos[currentSlide].caption}</h3>
-          <p className="text-sm sm:text-base text-white/90">{videos[currentSlide].alt}</p>
-        </div>
-        
         {/* Slide Indicators */}
-        <div className="flex space-x-3 items-center">
+        <div className="flex space-x-3 items-center justify-center">
           {videos.map((_, index) => (
             <button
               key={index}
