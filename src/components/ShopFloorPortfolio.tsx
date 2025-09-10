@@ -329,7 +329,7 @@ const ShopFloorPortfolio = () => {
 
         {/* Mobile & Tablet Layout - Larger chart, no highlighting */}
         <div className="lg:hidden">
-          <div className="flex justify-center min-h-[450px] md:min-h-[550px] relative">
+          <div className="flex justify-center min-h-[400px] md:min-h-[500px] relative py-2">
             
             <svg width="100%" height="500" viewBox="0 0 640 640" className="drop-shadow-lg max-w-full w-full touch-manipulation" style={{ maxWidth: '100vw', height: 'auto' }}>
               <defs>
