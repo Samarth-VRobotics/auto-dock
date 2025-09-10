@@ -142,8 +142,8 @@ const ShopFloorPortfolio = () => {
   }}>
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 md:mb-6 px-4 leading-tight">
-            Our Integrated Shop Floor Automation Portfolio
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 md:mb-6 px-4 leading-relaxed">
+            Our Integrated Shop Floor<br className="hidden sm:block" /> Automation Portfolio
           </h2>
         </div>
 
@@ -174,7 +174,7 @@ const ShopFloorPortfolio = () => {
                   {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
                   const centroid = getSegmentCentroid(index);
-                  return <path key={`segment-${index}`} id={`segment-${index}`} d={getSegmentPath(index)} fill={isActive ? "#fef2f2" : "white"} stroke={isActive ? "#ef4444" : "#e5e7eb"} strokeWidth={isActive ? "3" : "1"} className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2" style={{
+                  return <path key={`segment-${index}`} id={`segment-${index}`} d={getSegmentPath(index)} fill={isActive ? "#fef2f2" : "white"} stroke={isActive ? "#ef4444" : "#e5e7eb"} strokeWidth={isActive ? "3" : "1"} className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2 focus:outline-none" style={{
                     transform: isActive ? 'scale(1.07)' : 'scale(1)',
                     transformOrigin: `${centroid.x}px ${centroid.y}px`,
                     filter: isActive ? 'url(#glow)' : 'none'
