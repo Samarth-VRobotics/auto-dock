@@ -327,14 +327,11 @@ const ShopFloorPortfolio = () => {
           </div>
         </div>
 
-        {/* Mobile & Tablet Layout */}
-        <div className="lg:hidden">
-          {/* Mobile Auto-rotation control */}
-          
-          
-          <div className="flex justify-center mb-8 md:mb-12 relative">
+        {/* Mobile & Tablet Layout - Optimized spacing */}
+        <div className="lg:hidden px-2 md:px-4">
+          <div className="flex justify-center min-h-[450px] md:min-h-[500px] relative">
             {/* Enhanced Touch Feedback Popup */}
-            {hoveredSegment !== null && <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-6 z-20 bg-white rounded-2xl border-2 border-red-200 shadow-2xl p-5 max-w-sm animate-scale-in" style={{
+            {hoveredSegment !== null && <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 bg-white rounded-2xl border-2 border-red-200 shadow-2xl p-5 max-w-sm animate-scale-in" style={{
             boxShadow: '0 12px 40px rgba(239, 68, 68, 0.15)'
           }}>
                 <div className="text-center">
@@ -352,9 +349,7 @@ const ShopFloorPortfolio = () => {
                 <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-white border-b-2 border-r-2 border-red-200 rotate-45"></div>
               </div>}
             
-            <svg width="100%" height="550" viewBox="0 0 640 640" className="drop-shadow-xl max-w-lg md:max-w-2xl touch-manipulation" style={{
-            minHeight: '500px'
-          }}>
+            <svg width="100%" height="450" viewBox="0 0 640 640" className="drop-shadow-xl max-w-md md:max-w-lg touch-manipulation">
               <defs>
                 {/* Enhanced Glow filter */}
                 <filter id="mobile-glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -375,7 +370,7 @@ const ShopFloorPortfolio = () => {
                 const isActive = activeSegment === index;
                 const isHovered = hoveredSegment === index;
                 const centroid = getSegmentCentroid(index);
-                return <path key={`mobile-segment-${index}`} d={getSegmentPath(index)} fill={isActive ? "#fef2f2" : isHovered ? "#fef7f7" : "white"} stroke={isActive ? "#dc2626" : isHovered ? "#ef4444" : "#d1d5db"} strokeWidth={isActive ? "5" : isHovered ? "4" : "2"} className="cursor-pointer transition-all duration-300 ease-out" style={{
+                return <path key={`mobile-segment-${index}`} d={getSegmentPath(index)} fill={isActive ? "#fef2f2" : isHovered ? "#fef7f7" : "white"} stroke={isActive ? "#dc2626" : isHovered ? "#ef4444" : "#d1d5db"} strokeWidth={isActive ? "5" : isHovered ? "4" : "2"} className="cursor-pointer transition-all duration-300 ease-out focus:outline-none" style={{
                   transform: isActive ? 'scale(1.12)' : isHovered ? 'scale(1.06)' : 'scale(1)',
                   transformOrigin: `${centroid.x}px ${centroid.y}px`,
                   filter: isActive ? 'url(#mobile-glow) drop-shadow(0 6px 12px rgba(220, 38, 38, 0.3))' : isHovered ? 'drop-shadow(0 4px 8px rgba(239, 68, 68, 0.2))' : 'none'
@@ -481,49 +476,6 @@ const ShopFloorPortfolio = () => {
               })}
               </g>
             </svg>
-          </div>
-          
-          {/* Enhanced Mobile & Tablet Cards - Optimized for visibility */}
-          <div className="space-y-3 md:space-y-4 px-3 md:px-4">
-            {segments.map((segment, index) => {
-            const isActive = activeSegment === index;
-            const IconComponent = segment.icon;
-            return <div key={segment.id} className={`bg-white rounded-2xl md:rounded-3xl border-2 cursor-pointer transition-all duration-300 ease-out transform hover:scale-[1.01] active:scale-[0.99] ${isActive ? 'border-red-500 shadow-2xl bg-gradient-to-r from-red-50/50 to-white' : 'border-gray-200 shadow-lg hover:border-red-200 hover:shadow-xl'}`} style={{
-              boxShadow: isActive ? '0 12px 48px rgba(239, 68, 68, 0.15), 0 0 0 1px rgba(239, 68, 68, 0.1)' : '0 4px 20px rgba(0, 0, 0, 0.08)'
-            }} onClick={() => handleSegmentClick(index)} onTouchStart={() => handleSegmentInteraction(index, true)} onTouchEnd={handleInteractionEnd}>
-                  <div className="p-5 md:p-7 flex items-center justify-between">
-                    <div className="flex items-center space-x-4 md:space-x-5">
-                      <div className={`p-3 md:p-4 rounded-xl transition-all duration-300 ${isActive ? 'bg-red-100 text-red-600 shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-150'}`}>
-                        <IconComponent size={28} className="md:w-8 md:h-8" strokeWidth={2.2} />
-                      </div>
-                      <div>
-                        <h3 className={`text-lg md:text-xl font-bold leading-tight transition-all duration-300 ${isActive ? 'text-red-700' : 'text-gray-900'}`}>
-                          {segment.title}
-                        </h3>
-                        {!isActive && <p className="text-sm text-gray-500 mt-1">
-                            Tap to view details
-                          </p>}
-                      </div>
-                    </div>
-                    <div className={`transform transition-transform duration-300 ${isActive ? 'rotate-180' : 'rotate-0'}`}>
-                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </div>
-                  
-                  {isActive && <div className="px-5 md:px-7 pb-5 md:pb-7 border-t border-red-100 bg-gradient-to-r from-red-50/30 to-transparent animate-accordion-down">
-                      <div className="pt-4 md:pt-5">
-                        <ul className="space-y-3 md:space-y-4">
-                          {segment.description.map((point, pointIndex) => <li key={pointIndex} className="flex items-start space-x-4 text-base md:text-lg text-gray-700 group">
-                              <span className="mt-2 w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-200"></span>
-                              <span className="leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-200">{point}</span>
-                            </li>)}
-                        </ul>
-                      </div>
-                    </div>}
-                </div>;
-          })}
           </div>
         </div>
       </div>
