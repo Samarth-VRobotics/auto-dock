@@ -29,9 +29,6 @@ const OurJourneySection = () => {
   }, {
     src: "/lovable-uploads/49fef62f-3ef6-4c23-8ef3-f0e8bdfa7fe7.png",
     alt: "Team group photo at company facility"
-  }, {
-    src: "/lovable-uploads/136b6fa0-b665-4a14-8d04-6534a80379b0.png",
-    alt: "Students and faculty demonstrating robotics project with leadership"
   }];
 
   // Industry transition slideshow

@@ -28,6 +28,11 @@ const VideoSlideshow = ({ className = "" }: VideoSlideshowProps) => {
       caption: "Building Tomorrow"
     },
     {
+      src: "/team-video.mp4",
+      alt: "Team video from Microsoft Teams",
+      caption: "Team Collaboration"
+    },
+    {
       src: "https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Photo%20album%20-4.mp4",
       alt: "Team collaboration moments - Part 4",
       caption: "Future Reality"
@@ -95,7 +100,6 @@ const VideoSlideshow = ({ className = "" }: VideoSlideshowProps) => {
             <video 
               ref={setVideoRef(index)}
               className="w-full h-full object-cover"
-              loop
               muted
               playsInline
               preload="metadata"
