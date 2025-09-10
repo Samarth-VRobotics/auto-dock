@@ -126,21 +126,7 @@ const OurTeam = () => {
 
           {/* Tablet: Simplified Grid */}
           <div className="hidden md:block lg:hidden px-4">
-            <div className="grid grid-cols-4 grid-rows-3 gap-4 h-[400px] max-w-4xl mx-auto">
-              <div className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden shadow-xl group">
-                <img src={teamCollaboration} alt="Team collaboration" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-sm font-medium">Collaboration</p>
-                </div>
-              </div>
-              <div className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary/30 to-secondary/30"></div>
-              <div className="col-span-1 row-span-2 relative rounded-2xl overflow-hidden shadow-xl group">
-                <img src={mentorshipScene} alt="Mentorship" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              </div>
-              <div className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-accent/30 to-primary/30"></div>
-              <div className="col-span-2 row-span-1 relative rounded-2xl overflow-hidden shadow-lg bg-gradient-to-r from-secondary/20 to-accent/20"></div>
-            </div>
+            
           </div>
 
           {/* Mobile: Stacked Cards */}
