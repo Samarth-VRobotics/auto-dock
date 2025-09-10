@@ -17,35 +17,29 @@ const AutoDockInAction = () => {
     });
   };
   const steps = [{
-    title: "Truck Arrival",
-    headline: "Unloading Begins the Moment Trucks Arrive",
-    description: "Head AMR drives inside while Tail AMR anchors at staging, conveyor links them, unloading begins instantly.",
+    title: "Truck Arrival & Docking",
+    description: "The truck aligns and docks precisely at the loading bay to initiate the automated unloading sequence.",
     icon: Truck,
+    videoUrl: "https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Step%201%20Truck%20Arrival%20&%20Docking.mp4",
     duration: "0:15"
   }, {
-    title: "AMR Positioning",
-    headline: "Flexible Conveyors Keep Goods Moving",
-    description: "Conveyor adjusts length, angle, and shape to maintain smooth flow without pile-ups.",
+    title: "AMR Alignment & Dock Preparation",
+    description: "The Automated Mobile Robot (AMR)/AUTODock Head navigates and positions itself for seamless integration with the dock and unloading system.",
     icon: Move3D,
+    videoUrl: "https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Step%202%20AMR%20Alignment%20&%20Dock%20Preparation.mp4",
     duration: "0:12"
   }, {
-    title: "Conveyor Unloading",
-    headline: "Smart Palletizing for Mixed Loads",
-    description: "Head AMR unloads while Tail AMR organizes goods onto pallets or floor, keeping staging consistent.",
+    title: "Automated Truck Unloading",
+    description: "Advanced robotic systems unload cargo onto a powered flexible conveyor, eliminating manual handling and enhancing operational efficiency and safety.",
     icon: Package,
+    videoUrl: "https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Step%203%20Automated%20Truck%20Unloading.mp4",
     duration: "0:18"
   }, {
-    title: "Storage Flow",
-    headline: "Seamless Flow to Storage or Outbound",
-    description: "The system extends into storage or reverses for outbound, enabling continuous bi-directional dock flow.",
+    title: "End-of-Line Handling & Automatic Stacking",
+    description: "Items are transferred at the end of the line and automatically stacked for efficient storage and further processing.",
     icon: Warehouse,
+    videoUrl: "https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Step%204%20End-of-Line%20Handling%20&%20Automatic%20Stacking.mp4",
     duration: "0:10"
-  }, {
-    title: "AI Orchestration",
-    headline: "Orchestrated by AI for Predictable Throughput",
-    description: "Dock AI synchronizes all elements and updates WMS/ERP for visibility and SLA compliance.",
-    icon: Brain,
-    duration: "0:08"
   }];
   return <section className="py-16 bg-background">
       <div className="container mx-auto px-6">
@@ -67,18 +61,23 @@ const AutoDockInAction = () => {
               {steps.map((step, index) => {
               const IconComponent = step.icon;
               const isPlaying = playingSteps.has(index);
-              return <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+              return <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/4">
                     <div className="group cursor-pointer" onClick={() => setActiveStepIndex(index)}>
                       {/* Video Thumbnail */}
                       <div className="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 via-primary/10 to-background border border-border shadow-lg group-hover:shadow-xl transition-all duration-300">
-                        {/* Video Placeholder */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-background/50 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="w-12 h-12 bg-background/20 rounded-full flex items-center justify-center mb-3 mx-auto">
-                              <IconComponent className="w-6 h-6 text-foreground" />
-                            </div>
-                            <div className="text-xs text-muted-foreground font-medium">{step.duration}</div>
-                          </div>
+                        {/* Video */}
+                        <video 
+                          className="w-full h-full object-cover"
+                          src={step.videoUrl}
+                          muted
+                          loop
+                          preload="metadata"
+                          {...(isPlaying && { autoPlay: true })}
+                        />
+                        
+                        {/* Duration overlay */}
+                        <div className="absolute bottom-3 left-3 bg-black/50 px-2 py-1 rounded text-xs text-white font-medium">
+                          {step.duration}
                         </div>
                         
                         {/* Play Button Overlay */}
