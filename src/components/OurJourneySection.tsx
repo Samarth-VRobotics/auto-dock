@@ -123,17 +123,11 @@ const OurJourneySection = () => {
             
           </div>
 
-          {/* Row 1: First Paragraph + Image (Text Left, Image Right) */}
+          {/* Row 1: First Image + Paragraph (Mobile: Image top, Text bottom) */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
-                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
-                          transition-all duration-500 ease-out group w-full">
-              <p className="text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
-                At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. We take immense pride in calling it our alma mater, a place that offered us not only knowledge but also a thriving ecosystem of mentorship, opportunities, and innovation.
-              </p>
-            </div>
+            {/* Mobile: Image first, Desktop: Text first */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
-                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out">
+                          hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out order-1 lg:order-2">
               <img src="/lovable-uploads/8f6eb9f1-323c-4635-a08a-8b3484c5d126.png" alt="KLETU campus buildings with beautiful architecture" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
@@ -142,40 +136,47 @@ const OurJourneySection = () => {
                 <p className="text-base font-medium">Our Roots at KLETU</p>
               </div>
             </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
+                          hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
+                          transition-all duration-500 ease-out group w-full order-2 lg:order-1">
+              <p className="text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
+                At Vegam Robotics, our story is deeply rooted in KLE Technological University (KLETU), the institution that shaped not just our skills, but our vision. We take immense pride in calling it our alma mater, a place that offered us not only knowledge but also a thriving ecosystem of mentorship, opportunities, and innovation.
+              </p>
+            </div>
           </div>
 
-          {/* Row 2: Second Image + Paragraph (Image Left, Text Right) */}
+          {/* Row 2: Second Image + Paragraph (Mobile: Image top, Text bottom) */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">
             <AspectRatioSlideshow
               images={studentPortraits}
               autoAdvanceInterval={2500}
-              className="h-80 lg:h-[500px] w-full"
+              className="h-80 lg:h-[500px] w-full order-1"
               caption="Leadership & Vision"
             />
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
-                          transition-all duration-500 ease-out group w-full">
+                          transition-all duration-500 ease-out group w-full order-2">
               <p className="text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
                 Under the leadership of Dr. Ashok Shetter, the university fostered a culture that celebrates research-driven excellence and bold ideas. Today, the Department of Automation and Robotics, led by Dr. Vinayak Kulkarni, continues to carry the vision forward, preparing the next generation of robotics engineers.
               </p>
             </div>
           </div>
 
-          {/* Row 3: Third Paragraph + Image (Text Left, Image Right) */}
+          {/* Row 3: Third Image + Paragraph (Mobile: Image top, Text bottom) */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-24 items-center w-full max-w-[95vw] mx-auto">
+            <AspectRatioSlideshow
+              images={slideshowImages}
+              autoAdvanceInterval={3000}
+              className="h-80 lg:h-[500px] w-full order-1 lg:order-2"
+              caption="Mentorship & Growth"
+            />
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
                           hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 
-                          transition-all duration-500 ease-out group w-full">
+                          transition-all duration-500 ease-out group w-full order-2 lg:order-1">
               <p className="text-foreground/80 leading-loose text-xl lg:text-2xl group-hover:text-foreground transition-colors duration-300">
                 Among our greatest guiding lights, Prof. Arun Giriyapur, former HOD, has been far more than a teacher. A lifelong mentor, he encouraged our wildest ideas, anchored us with wisdom, and inspired us to keep pushing the boundaries of robotics. The faith he placed in us during our early years still drives our journey.
               </p>
             </div>
-            <AspectRatioSlideshow
-              images={slideshowImages}
-              autoAdvanceInterval={3000}
-              className="h-80 lg:h-[500px] w-full"
-              caption="Mentorship & Growth"
-            />
           </div>
 
           {/* From University to Industry - Section Header */}
