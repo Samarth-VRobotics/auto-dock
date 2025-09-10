@@ -145,8 +145,8 @@ const ShopFloorPortfolio = () => {
     backgroundPosition: window.innerWidth < 1024 ? 'center, 20% 80%, 80% 20%' : '20% 80%, 80% 20%',
     backgroundRepeat: 'no-repeat'
   }}>
-    {/* Mobile-only overlay to make background even lighter */}
-    <div className="absolute inset-0 bg-white/80 lg:hidden"></div>
+    {/* Mobile-only overlay to make background much lighter */}
+    <div className="absolute inset-0 bg-white/95 lg:hidden"></div>
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center mb-4 md:mb-16 lg:mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 md:mb-6 px-4 leading-relaxed">
