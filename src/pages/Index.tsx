@@ -465,49 +465,49 @@ const Index = () => {
                   </h3>
                 </div>
                 
-                <div className="p-8">
-                  <div className="grid grid-cols-2 gap-6 mb-6">
-                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
-                      <div className="w-12 h-12 mx-auto mb-4 bg-gray-600 rounded-xl flex items-center justify-center">
+                <div className="p-4 sm:p-6 lg:p-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
+                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
+                      <div className="w-12 h-12 mx-auto mb-3 sm:mb-4 bg-gray-600 rounded-xl flex items-center justify-center">
                         <Cog className="w-6 h-6 text-white" />
                       </div>
-                      <h4 className="font-bold text-gray-900 mb-2 text-sm">Autonomous Operations</h4>
-                      <p className="text-xs text-gray-600">Self-driven execution across plants & processes.</p>
+                      <h4 className="font-bold text-gray-900 mb-2 text-sm sm:text-base">Autonomous Operations</h4>
+                      <p className="text-sm sm:text-xs text-gray-600">Self-driven execution across plants & processes.</p>
                     </div>
                     
-                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
-                      <div className="w-12 h-12 mx-auto mb-4 bg-slate-600 rounded-xl flex items-center justify-center">
+                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
+                      <div className="w-12 h-12 mx-auto mb-3 sm:mb-4 bg-slate-600 rounded-xl flex items-center justify-center">
                         <Shield className="w-6 h-6 text-white" />
                       </div>
-                      <h4 className="font-bold text-gray-900 mb-2 text-sm">Proactive Risk Mitigation</h4>
-                      <p className="text-xs text-gray-600">AI-enabled robotics predict & prevent hazards.</p>
+                      <h4 className="font-bold text-gray-900 mb-2 text-sm sm:text-base">Proactive Risk Mitigation</h4>
+                      <p className="text-sm sm:text-xs text-gray-600">AI-enabled robotics predict & prevent hazards.</p>
                     </div>
                     
-                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
-                      <div className="w-12 h-12 mx-auto mb-4 bg-zinc-600 rounded-xl flex items-center justify-center">
+                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
+                      <div className="w-12 h-12 mx-auto mb-3 sm:mb-4 bg-zinc-600 rounded-xl flex items-center justify-center">
                         <Cpu className="w-6 h-6 text-white" />
                       </div>
-                      <h4 className="font-bold text-gray-900 mb-2 text-sm">Hyper-Scalable Manufacturing</h4>
-                      <p className="text-xs text-gray-600">Intelligent orchestration across geographies.</p>
+                      <h4 className="font-bold text-gray-900 mb-2 text-sm sm:text-base">Hyper-Scalable Manufacturing</h4>
+                      <p className="text-sm sm:text-xs text-gray-600">Intelligent orchestration across geographies.</p>
                     </div>
                     
-                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
-                      <div className="w-12 h-12 mx-auto mb-4 bg-stone-600 rounded-xl flex items-center justify-center">
+                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
+                      <div className="w-12 h-12 mx-auto mb-3 sm:mb-4 bg-stone-600 rounded-xl flex items-center justify-center">
                         <Gauge className="w-6 h-6 text-white" />
                       </div>
-                      <h4 className="font-bold text-gray-900 mb-2 text-sm">Continuous Optimization</h4>
-                      <p className="text-xs text-gray-600">Real-time workflow, energy & downtime efficiency.</p>
+                      <h4 className="font-bold text-gray-900 mb-2 text-sm sm:text-base">Continuous Optimization</h4>
+                      <p className="text-sm sm:text-xs text-gray-600">Real-time workflow, energy & downtime efficiency.</p>
                     </div>
                   </div>
                   
                   {/* Full-width bottom card */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
-                    <div className="flex flex-col items-center gap-4">
+                  <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-blue-100 text-center">
+                    <div className="flex flex-col items-center gap-3 sm:gap-4">
                       <div className="w-12 h-12 bg-gray-700 rounded-xl flex items-center justify-center">
                         <Lightbulb className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900 mb-1">Transformational Growth</h4>
+                        <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">Transformational Growth</h4>
                         <p className="text-sm text-gray-600">Unlock new business models & value creation opportunities.</p>
                       </div>
                     </div>
