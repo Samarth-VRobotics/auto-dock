@@ -164,8 +164,8 @@ const ShopFloorPortfolio = () => {
                   </filter>
                 </defs>
                 
-                {/* Background Circle */}
-                <circle cx={centerX} cy={centerY} r={outerRadius} fill="none" stroke="#e5e7eb" strokeWidth="1" opacity="0.3" />
+                {/* Background Circle - red border for mobile/tablet */}
+                <circle cx={centerX} cy={centerY} r={outerRadius} fill="none" stroke={window.innerWidth < 1024 ? "#ef4444" : "#e5e7eb"} strokeWidth={window.innerWidth < 1024 ? "2" : "1"} opacity={window.innerWidth < 1024 ? "0.8" : "0.3"} />
                 
                 {/* Connector lines removed per requirements */}
                 
