@@ -372,7 +372,7 @@ const ShopFloorPortfolio = () => {
 
         {/* Mobile & Tablet Layout */}
         <div className="lg:hidden">
-          {/* Mobile Auto-rotation control - removed duplicate */}
+          {/* Mobile Auto-rotation control */}
           
           
           <div className="flex justify-center mb-8 md:mb-12 relative">
