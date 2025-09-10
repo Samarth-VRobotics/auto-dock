@@ -327,41 +327,11 @@ const ShopFloorPortfolio = () => {
           </div>
         </div>
 
-        {/* Mobile & Tablet Layout - Optimized spacing */}
-        <div className="lg:hidden px-2 md:px-4">
-          <div className="flex justify-center min-h-[450px] md:min-h-[500px] relative">
-            {/* Enhanced Touch Feedback Popup - Positioned at side of circle */}
-            {hoveredSegment !== null && (() => {
-              const segment = segments[hoveredSegment];
-              const isLeftSide = hoveredSegment === 0 || hoveredSegment === 4 || hoveredSegment === 5; // Inbound, Lab, Outbound
-              return <div className={`absolute top-1/2 transform -translate-y-1/2 z-20 bg-white rounded-2xl border-2 border-red-200 shadow-2xl p-4 max-w-[200px] animate-scale-in ${
-                isLeftSide 
-                  ? 'left-2 md:left-4' 
-                  : 'right-2 md:right-4'
-              }`} style={{
-                boxShadow: '0 12px 40px rgba(239, 68, 68, 0.15)'
-              }}>
-                <div className="text-left">
-                  <h4 className="font-bold text-gray-900 mb-3 text-sm">
-                    {segment.title}
-                  </h4>
-                  <ul className="space-y-1.5">
-                    {segment.description.map((point, index) => <li key={index} className="flex items-start space-x-2 text-xs text-gray-600">
-                        <span className="mt-1 w-1 h-1 rounded-full bg-red-500 flex-shrink-0"></span>
-                        <span className="leading-relaxed">{point}</span>
-                      </li>)}
-                  </ul>
-                </div>
-                {/* Enhanced Arrow pointing to circle */}
-                <div className={`absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white border-2 border-red-200 rotate-45 ${
-                  isLeftSide 
-                    ? '-right-1.5 border-l-0 border-t-0' 
-                    : '-left-1.5 border-r-0 border-b-0'
-                }`}></div>
-              </div>
-            })()}
+        {/* Mobile & Tablet Layout - Minimal spacing */}
+        <div className="lg:hidden px-1 md:px-2">
+          <div className="flex justify-center min-h-[400px] md:min-h-[450px] relative">
             
-            <svg width="100%" height="450" viewBox="0 0 640 640" className="drop-shadow-xl max-w-md md:max-w-lg touch-manipulation">
+            <svg width="100%" height="400" viewBox="0 0 640 640" className="drop-shadow-xl max-w-sm md:max-w-md touch-manipulation">
               <defs>
                 {/* Enhanced Glow filter */}
                 <filter id="mobile-glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -376,42 +346,14 @@ const ShopFloorPortfolio = () => {
               {/* Background Circle */}
               <circle cx={centerX} cy={centerY} r={outerRadius} fill="none" stroke="#e5e7eb" strokeWidth="2" opacity="0.4" />
               
-              {/* Segments - Enhanced for mobile touch interaction */}
+              {/* Segments - All highlighted in red for mobile, no interactions */}
               <g id="mobile-pie-slices">
                 {segments.map((segment, index) => {
-                const isActive = activeSegment === index;
-                const isHovered = hoveredSegment === index;
                 const centroid = getSegmentCentroid(index);
-                return <path key={`mobile-segment-${index}`} d={getSegmentPath(index)} fill={isActive ? "#fef2f2" : isHovered ? "#fef7f7" : "white"} stroke={isActive ? "#dc2626" : isHovered ? "#ef4444" : "#d1d5db"} strokeWidth={isActive ? "5" : isHovered ? "4" : "2"} className="cursor-pointer transition-all duration-300 ease-out focus:outline-none" style={{
-                  transform: isActive ? 'scale(1.12)' : isHovered ? 'scale(1.06)' : 'scale(1)',
+                return <path key={`mobile-segment-${index}`} d={getSegmentPath(index)} fill="#fef2f2" stroke="#dc2626" strokeWidth="4" className="transition-none" style={{
+                  transform: 'scale(1)',
                   transformOrigin: `${centroid.x}px ${centroid.y}px`,
-                  filter: isActive ? 'url(#mobile-glow) drop-shadow(0 6px 12px rgba(220, 38, 38, 0.3))' : isHovered ? 'drop-shadow(0 4px 8px rgba(239, 68, 68, 0.2))' : 'none'
-                }} onClick={e => {
-                  e.preventDefault();
-                  handleSegmentClick(index);
-                  setHoveredSegment(null);
-                }} onTouchStart={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  // Clear all hover states first to prevent cross-highlighting
-                  setHoveredSegment(null);
-                  setTimeout(() => {
-                    // Only set hover if no other segment is currently hovered
-                    if (hoveredSegment === null || hoveredSegment === index) {
-                      handleSegmentInteraction(index, true);
-                    }
-                  }, 50);
-                }} onTouchEnd={e => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setTimeout(() => {
-                    setHoveredSegment(null);
-                    handleInteractionEnd();
-                  }, 1500);
-                }} onMouseEnter={() => handleSegmentInteraction(index, true)} onMouseLeave={() => {
-                  // Clear hover state immediately for mouse events  
-                  setHoveredSegment(null);
-                  handleInteractionEnd();
+                  filter: 'url(#mobile-glow) drop-shadow(0 4px 8px rgba(220, 38, 38, 0.2))'
                 }} />;
               })}
               </g>
@@ -433,11 +375,9 @@ const ShopFloorPortfolio = () => {
                 Factories
               </text>
               
-              {/* Labels and Icons - Enhanced for mobile visibility */}
+              {/* Labels and Icons - All highlighted in red for mobile */}
               <g id="mobile-labels-icons">
                 {segments.map((segment, index) => {
-                const isActive = activeSegment === index;
-                const isHovered = hoveredSegment === index;
                 const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
                 const iconX = centerX + Math.cos(iconAngle) * iconRadius;
                 const iconY = centerY + Math.sin(iconAngle) * iconRadius;
@@ -452,47 +392,47 @@ const ShopFloorPortfolio = () => {
                 const iconSize = window.innerWidth < 768 ? 50 : 58;
                 const iconBgRadius = iconSize / 2 + 8;
                 return <g key={`mobile-icon-label-${index}`} className="pointer-events-none">
-                      {/* Icon with background circle - enhanced for mobile */}
-                      <circle cx={iconX} cy={iconY} r={iconBgRadius} fill="white" stroke={isActive ? "#dc2626" : isHovered ? "#ef4444" : "#9ca3af"} strokeWidth={isActive ? "5" : isHovered ? "4" : "3"} className="transition-all duration-300" style={{
-                    transform: isActive ? 'scale(1.15)' : isHovered ? 'scale(1.08)' : 'scale(1)',
+                      {/* Icon with background circle - highlighted in red for mobile */}
+                      <circle cx={iconX} cy={iconY} r={iconBgRadius} fill="white" stroke="#dc2626" strokeWidth="4" className="transition-none" style={{
+                    transform: 'scale(1)',
                     transformOrigin: `${iconX}px ${iconY}px`,
-                    filter: isActive ? 'drop-shadow(0 6px 12px rgba(220, 38, 38, 0.3))' : isHovered ? 'drop-shadow(0 4px 8px rgba(239, 68, 68, 0.2))' : 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                    filter: 'drop-shadow(0 4px 8px rgba(220, 38, 38, 0.2))'
                   }} />
                       <foreignObject x={iconX - iconSize / 2} y={iconY - iconSize / 2} width={iconSize} height={iconSize} className="pointer-events-none">
                         <div className="w-full h-full flex items-center justify-center">
-                          <IconComponent size={iconSize * 0.6} className={`transition-all duration-300 ${isActive ? "text-red-600" : isHovered ? "text-red-500" : "text-gray-600"}`} strokeWidth={isActive ? 2.5 : 2} />
+                          <IconComponent size={iconSize * 0.6} className="text-red-600" strokeWidth={2.5} />
                         </div>
                       </foreignObject>
                       
-                      {/* Enhanced segment labels for mobile visibility */}
+                      {/* Enhanced segment labels for mobile visibility - highlighted in red */}
                       {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ?
                   // Multi-line labels for segments with "/"
                   <>
-                          <text x={labelX} y={labelY - 12} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-300 ${isActive ? "fill-gray-900" : isHovered ? "fill-gray-800" : "fill-gray-700"}`} style={{
+                          <text x={labelX} y={labelY - 12} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-900" style={{
                       fontSize: window.innerWidth < 768 ? '15px' : '17px',
                       fontWeight: '800',
-                      opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
-                      filter: isActive ? 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))' : isHovered ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' : 'none',
+                      opacity: 1.0,
+                      filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))',
                       letterSpacing: '-0.025em'
                     }}>
                             {segment.title.split(' / ')[0]} /
                           </text>
-                          <text x={labelX} y={labelY + 12} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-300 ${isActive ? "fill-gray-900" : isHovered ? "fill-gray-800" : "fill-gray-700"}`} style={{
+                          <text x={labelX} y={labelY + 12} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-900" style={{
                       fontSize: window.innerWidth < 768 ? '15px' : '17px',
                       fontWeight: '800',
-                      opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
-                      filter: isActive ? 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))' : isHovered ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' : 'none',
+                      opacity: 1.0,
+                      filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))',
                       letterSpacing: '-0.025em'
                     }}>
                             {segment.title.split(' / ')[1]}
                           </text>
                         </> :
-                  // Single line labels - enhanced for mobile
-                  <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-300 ${isActive ? "fill-gray-900" : isHovered ? "fill-gray-800" : "fill-gray-700"}`} style={{
+                  // Single line labels - highlighted for mobile
+                  <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className="font-bold tracking-tight fill-gray-900" style={{
                     fontSize: window.innerWidth < 768 ? '15px' : '17px',
                     fontWeight: '800',
-                    opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
-                    filter: isActive ? 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))' : isHovered ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' : 'none',
+                    opacity: 1.0,
+                    filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))',
                     letterSpacing: '-0.025em'
                   }}>
                           {window.innerWidth < 768 ? segment.shortTitle : segment.title}
