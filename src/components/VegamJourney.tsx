@@ -4,16 +4,16 @@ import vegamJourneyBg from "@/assets/vegam-journey-bg.jpg";
 
 // Add custom keyframes for the flowing animation
 const customStyles = `
-  @keyframes flowDown {
+  @keyframes flowUp {
     0% {
-      top: 0;
+      bottom: 0;
       opacity: 1;
     }
     50% {
       opacity: 0.8;
     }
     100% {
-      top: 100%;
+      bottom: 100%;
       opacity: 0;
     }
   }
@@ -127,30 +127,30 @@ const VegamJourney = () => {
           
           {/* Animated Flow Line - Responsive */}
           <div className="absolute left-1/2 -translate-x-0.5 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 overflow-hidden rounded-full z-0">
-            <div className="w-full h-full bg-gradient-to-b from-red-600 via-red-500 to-transparent opacity-60 animate-pulse"></div>
+            <div className="w-full h-full bg-gradient-to-t from-red-600 via-red-500 to-transparent opacity-60 animate-pulse"></div>
           </div>
           
           {/* Flowing Dots Animation - Responsive */}
           <div className="absolute left-1/2 -translate-x-0.5 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 z-0">
             <div className="relative w-full h-full">
-              <div className="absolute w-1.5 sm:w-2 h-1.5 sm:h-2 bg-red-500 rounded-full left-1/2 -translate-x-1/2 animate-bounce" 
+              <div className="absolute w-1.5 sm:w-2 h-1.5 sm:h-2 bg-red-500 rounded-full left-1/2 -translate-x-1/2" 
                    style={{
-                     animation: 'flowDown 4s ease-in-out infinite, pulse 1s ease-in-out infinite alternate'
+                     animation: 'flowUp 4s ease-in-out infinite, pulse 1s ease-in-out infinite alternate'
                    }}></div>
-              <div className="absolute w-1 sm:w-1.5 h-1 sm:h-1.5 bg-red-400 rounded-full left-1/2 -translate-x-1/2 animate-bounce" 
+              <div className="absolute w-1 sm:w-1.5 h-1 sm:h-1.5 bg-red-400 rounded-full left-1/2 -translate-x-1/2" 
                    style={{
-                     animation: 'flowDown 4s ease-in-out infinite 0.5s, pulse 1s ease-in-out infinite alternate 0.5s'
+                     animation: 'flowUp 4s ease-in-out infinite 0.5s, pulse 1s ease-in-out infinite alternate 0.5s'
                    }}></div>
-              <div className="absolute w-0.5 sm:w-1 h-0.5 sm:h-1 bg-red-300 rounded-full left-1/2 -translate-x-1/2 animate-bounce" 
+              <div className="absolute w-0.5 sm:w-1 h-0.5 sm:h-1 bg-red-300 rounded-full left-1/2 -translate-x-1/2" 
                    style={{
-                     animation: 'flowDown 4s ease-in-out infinite 1s, pulse 1s ease-in-out infinite alternate 1s'
+                     animation: 'flowUp 4s ease-in-out infinite 1s, pulse 1s ease-in-out infinite alternate 1s'
                    }}></div>
             </div>
           </div>
 
           {/* Timeline Items */}
           <div className="space-y-3 sm:space-y-4 lg:space-y-5">
-            {milestones.map((milestone, index) => (
+            {milestones.slice().reverse().map((milestone, index) => (
               <div
                 key={milestone.year}
                 ref={el => itemRefs.current[index] = el}
