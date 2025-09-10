@@ -123,15 +123,15 @@ const VegamJourney = () => {
         {/* Desktop & Mobile Timeline */}
         <div className="relative max-w-2xl lg:max-w-3xl mx-auto">
           {/* Center Line with Animation - Responsive */}
-          <div className="absolute left-1/2 -translate-x-0.5 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 bg-red-600/30 rounded-full"></div>
+          <div className="absolute left-1/2 -translate-x-0.5 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 bg-red-600/30 rounded-full z-0"></div>
           
           {/* Animated Flow Line - Responsive */}
-          <div className="absolute left-1/2 -translate-x-0.5 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 overflow-hidden rounded-full">
+          <div className="absolute left-1/2 -translate-x-0.5 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 overflow-hidden rounded-full z-0">
             <div className="w-full h-full bg-gradient-to-b from-red-600 via-red-500 to-transparent opacity-60 animate-pulse"></div>
           </div>
           
           {/* Flowing Dots Animation - Responsive */}
-          <div className="absolute left-1/2 -translate-x-0.5 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1">
+          <div className="absolute left-1/2 -translate-x-0.5 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 z-0">
             <div className="relative w-full h-full">
               <div className="absolute w-1.5 sm:w-2 h-1.5 sm:h-2 bg-red-500 rounded-full left-1/2 -translate-x-1/2 animate-bounce" 
                    style={{
