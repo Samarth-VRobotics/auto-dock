@@ -544,58 +544,6 @@ const OurTeam = () => {
         </div>
       </section>
 
-      {/* Events & Experiences Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-slate-50/50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Events & Experiences</h2>
-            <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
-              Sharing our journey and innovations at global conferences and industry events.
-            </p>
-          </div>
-
-          {/* NVIDIA GTC Section */}
-          <div className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-primary">NVIDIA GTC – San Jose, California</h3>
-            
-            {/* Photo Collage */}
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-6">
-                {/* Top Row - First 2 Images */}
-                <div className="relative rounded-2xl overflow-hidden shadow-xl group">
-                  <img 
-                    src="/lovable-uploads/1275c22a-5665-4e7f-a9a2-6eda97c09b46.png" 
-                    alt="Team at NVIDIA GTC entrance" 
-                    className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                </div>
-                <div className="relative rounded-2xl overflow-hidden shadow-xl group">
-                  <img 
-                    src="/lovable-uploads/c40fc37b-00c1-485f-bd2b-683039542729.png" 
-                    alt="Vegam booth at NVIDIA GTC" 
-                    className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                </div>
-              </div>
-              
-              {/* Bottom Row - Third Image Centered */}
-              <div className="flex justify-center">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl group w-full md:w-2/3 lg:w-1/2">
-                  <img 
-                    src="/lovable-uploads/61b1fcda-d2e6-4898-92b7-29a66c03e394.png" 
-                    alt="Team networking at NVIDIA GTC" 
-                    className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Photo Gallery Section */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-6">
