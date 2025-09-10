@@ -114,25 +114,25 @@ const VegamJourney = () => {
         {/* Desktop & Mobile Timeline */}
         <div className="relative max-w-2xl lg:max-w-3xl mx-auto">
           {/* Center Line with Animation - Responsive */}
-          <div className="absolute left-1/2 -translate-x-1/2 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 bg-red-600/30 rounded-full"></div>
+          <div className="absolute left-3 sm:left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 bg-red-600/30 rounded-full"></div>
           
           {/* Animated Flow Line - Responsive */}
-          <div className="absolute left-1/2 -translate-x-1/2 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 overflow-hidden rounded-full">
+          <div className="absolute left-3 sm:left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1 overflow-hidden rounded-full">
             <div className="w-full h-full bg-gradient-to-b from-red-600 via-red-500 to-transparent opacity-60 animate-pulse"></div>
           </div>
           
           {/* Flowing Dots Animation - Responsive */}
-          <div className="absolute left-1/2 -translate-x-1/2 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1">
+          <div className="absolute left-3 sm:left-4 lg:left-1/2 lg:-translate-x-0.5 top-0 bottom-0 w-0.5 sm:w-1">
             <div className="relative w-full h-full">
-              <div className="absolute w-1.5 sm:w-2 h-1.5 sm:h-2 bg-red-500 rounded-full left-1/2 -translate-x-1/2 animate-bounce" 
+              <div className="absolute w-1.5 sm:w-2 h-1.5 sm:h-2 bg-red-500 rounded-full -left-0.5 animate-bounce" 
                    style={{
                      animation: 'flowDown 4s ease-in-out infinite, pulse 1s ease-in-out infinite alternate'
                    }}></div>
-              <div className="absolute w-1 sm:w-1.5 h-1 sm:h-1.5 bg-red-400 rounded-full left-1/2 -translate-x-1/2 animate-bounce" 
+              <div className="absolute w-1 sm:w-1.5 h-1 sm:h-1.5 bg-red-400 rounded-full -left-0.25 animate-bounce" 
                    style={{
                      animation: 'flowDown 4s ease-in-out infinite 0.5s, pulse 1s ease-in-out infinite alternate 0.5s'
                    }}></div>
-              <div className="absolute w-0.5 sm:w-1 h-0.5 sm:h-1 bg-red-300 rounded-full left-1/2 -translate-x-1/2 animate-bounce" 
+              <div className="absolute w-0.5 sm:w-1 h-0.5 sm:h-1 bg-red-300 rounded-full left-0 animate-bounce" 
                    style={{
                      animation: 'flowDown 4s ease-in-out infinite 1s, pulse 1s ease-in-out infinite alternate 1s'
                    }}></div>
@@ -156,22 +156,20 @@ const VegamJourney = () => {
               >
                 {/* Mobile & Tablet Layout */}
                 <div className="lg:hidden flex items-center w-full">
-                  {/* Circular Marker - Responsive sizes - Centered on timeline */}
-                  <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 sm:w-5 sm:h-5 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
+                  {/* Circular Marker - Responsive sizes */}
+                  <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-red-600 rounded-full border-2 border-background shadow-md flex items-center justify-center relative z-10">
                     <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-background rounded-full"></div>
                     <div className="absolute inset-0 bg-red-600 rounded-full animate-ping opacity-40"></div>
                   </div>
                   
                   {/* Content - Responsive spacing and sizing */}
-                  <div className="w-full flex justify-center">
-                    <div className="w-4/5 max-w-md">
-                      <Card className="bg-card border border-border shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 hover:bg-card/80 cursor-pointer group active:scale-95">
-                        <CardContent className="p-2 sm:p-2.5 text-center">
-                          <h3 className="text-sm sm:text-sm font-semibold text-foreground mb-0.5 group-hover:text-red-600 transition-colors">{milestone.year}</h3>
-                          <p className="text-xs text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{milestone.description}</p>
-                        </CardContent>
-                      </Card>
-                    </div>
+                  <div className="ml-3 sm:ml-4 flex-1">
+                    <Card className="bg-card border border-border shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 hover:bg-card/80 cursor-pointer group active:scale-95">
+                      <CardContent className="p-2 sm:p-2.5">
+                        <h3 className="text-sm sm:text-sm font-semibold text-foreground mb-0.5 group-hover:text-red-600 transition-colors">{milestone.year}</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{milestone.description}</p>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
 
