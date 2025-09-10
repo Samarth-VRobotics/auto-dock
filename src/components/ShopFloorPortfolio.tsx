@@ -393,9 +393,14 @@ const ShopFloorPortfolio = () => {
                 }} onTouchStart={e => {
                   e.preventDefault();
                   e.stopPropagation();
-                  // Clear any existing hover state first
+                  // Clear all hover states first to prevent cross-highlighting
                   setHoveredSegment(null);
-                  setTimeout(() => handleSegmentInteraction(index, true), 50);
+                  setTimeout(() => {
+                    // Only set hover if no other segment is currently hovered
+                    if (hoveredSegment === null || hoveredSegment === index) {
+                      handleSegmentInteraction(index, true);
+                    }
+                  }, 50);
                 }} onTouchEnd={e => {
                   e.preventDefault();
                   e.stopPropagation();
