@@ -97,17 +97,18 @@ const ShopFloorPortfolio = () => {
     return `M ${startX} ${startY} L ${midX} ${startY} L ${cardEdgeX} ${cardCenterY}`;
   };
 
-  // Simple interaction handlers for hover and click
-  const handleSegmentInteraction = (index: number, isHover: boolean = false) => {
-    if (isHover) {
-      setHoveredSegment(index);
-    } else {
-      setActiveSegment(index);
-    }
+  // Hover-based interaction handlers
+  const handleSegmentHover = (index: number) => {
+    setActiveSegment(index);
+    setHoveredSegment(index);
   };
 
-  const handleInteractionEnd = () => {
+  const handleSegmentLeave = () => {
     setHoveredSegment(null);
+    // Keep active segment for a short delay to prevent flickering
+    setTimeout(() => {
+      setActiveSegment(0); // Reset to default
+    }, 150);
   };
 
   const handleSegmentClick = (index: number) => {
@@ -174,11 +175,11 @@ const ShopFloorPortfolio = () => {
                   {segments.map((segment, index) => {
                   const isActive = activeSegment === index;
                   const centroid = getSegmentCentroid(index);
-                  return <path key={`segment-${index}`} id={`segment-${index}`} d={getSegmentPath(index)} fill={isActive ? "#fef2f2" : "white"} stroke={isActive ? "#ef4444" : "#e5e7eb"} strokeWidth={isActive ? "3" : "1"} className="cursor-pointer transition-all duration-150 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2 focus:outline-none" style={{
+                  return <path key={`segment-${index}`} id={`segment-${index}`} d={getSegmentPath(index)} fill={isActive ? "#fef2f2" : "white"} stroke={isActive ? "#ef4444" : "#e5e7eb"} strokeWidth={isActive ? "3" : "1"} className="cursor-pointer transition-all duration-300 ease-out hover:fill-red-50 hover:stroke-red-400 hover:stroke-2" style={{
                     transform: isActive ? 'scale(1.07)' : 'scale(1)',
                     transformOrigin: `${centroid.x}px ${centroid.y}px`,
                     filter: isActive ? 'url(#glow)' : 'none'
-                  }} onMouseEnter={() => handleSegmentInteraction(index, true)} onFocus={() => handleSegmentInteraction(index, true)} onMouseLeave={handleInteractionEnd} onBlur={handleInteractionEnd} tabIndex={0} role="button" aria-label={`${segment.title} — ${segment.description.join('; ')}`} aria-controls={`card-${segment.id}`} aria-expanded={isActive} onClick={() => handleSegmentClick(index)} onKeyDown={e => handleKeyDown(e, index)} />;
+                  }} onMouseEnter={() => handleSegmentHover(index)} onMouseLeave={handleSegmentLeave} tabIndex={0} role="button" aria-label={`${segment.title} — ${segment.description.join('; ')}`} aria-controls={`card-${segment.id}`} aria-expanded={isActive} onClick={() => handleSegmentClick(index)} onKeyDown={e => handleKeyDown(e, index)} />;
                 })}
                 </g>
                 
@@ -276,18 +277,19 @@ const ShopFloorPortfolio = () => {
                 const segmentIndex = segments.findIndex(s => s.id === segment.id);
                 const isActive = activeSegment === segmentIndex;
                 const IconComponent = segment.icon;
-                return <div key={`left-${segment.id}`} className="flex items-center">
-                        <div id={`card-${segment.id}`} className={`bg-white rounded-2xl p-6 border transition-all duration-150 w-full min-h-[180px] flex flex-col justify-start cursor-pointer ${isActive ? 'border-red-400 shadow-xl bg-red-50/20' : 'border-gray-200 shadow-lg hover:shadow-xl'}`} style={{
-                    boxShadow: isActive ? '0 8px 32px rgba(239, 68, 68, 0.15)' : '0 8px 24px rgba(0, 0, 0, 0.06)'
-                  }} onMouseEnter={() => handleSegmentInteraction(segmentIndex, true)} onMouseLeave={handleInteractionEnd} onClick={() => handleSegmentClick(segmentIndex)}>
+                return <div key={`left-${segment.id}`} className={`transition-all duration-500 ease-out ${isActive ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-4 scale-95 pointer-events-none'}`}>
+                        <div id={`card-${segment.id}`} className={`bg-white rounded-2xl p-6 border w-full min-h-[180px] flex flex-col justify-start shadow-xl ${isActive ? 'border-red-400 bg-red-50/20' : 'border-gray-200'}`} style={{
+                    boxShadow: isActive ? '0 8px 32px rgba(239, 68, 68, 0.15)' : '0 8px 24px rgba(0, 0, 0, 0.06)',
+                    transform: isActive ? 'translateY(-4px)' : 'translateY(0)'
+                  }}>
                           <div className="mb-4">
-                            <h3 className={`text-lg font-bold transition-colors ${isActive ? 'text-red-600' : 'text-gray-900'}`}>
+                            <h3 className={`text-lg font-bold transition-colors duration-300 ${isActive ? 'text-red-600' : 'text-gray-900'}`}>
                               {segment.title}
                             </h3>
                           </div>
                           <ul className="space-y-2.5">
                             {segment.description.map((point, pointIndex) => <li key={pointIndex} className="flex items-start space-x-3 text-sm text-gray-600">
-                                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${isActive ? 'bg-red-500' : 'bg-gray-400'}`}></span>
+                                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors duration-300 ${isActive ? 'bg-red-500' : 'bg-gray-400'}`}></span>
                                 <span className="leading-relaxed">{point}</span>
                               </li>)}
                           </ul>
@@ -304,18 +306,19 @@ const ShopFloorPortfolio = () => {
                 const segmentIndex = segments.findIndex(s => s.id === segment.id);
                 const isActive = activeSegment === segmentIndex;
                 const IconComponent = segment.icon;
-                return <div key={`right-${segment.id}`} className="flex items-center">
-                        <div id={`card-${segment.id}`} className={`bg-white rounded-2xl p-6 border transition-all duration-150 w-full min-h-[180px] flex flex-col justify-start cursor-pointer ${isActive ? 'border-red-400 shadow-xl bg-red-50/20' : 'border-gray-200 shadow-lg hover:shadow-xl'}`} style={{
-                    boxShadow: isActive ? '0 8px 32px rgba(239, 68, 68, 0.15)' : '0 8px 24px rgba(0, 0, 0, 0.06)'
-                  }} onMouseEnter={() => handleSegmentInteraction(segmentIndex, true)} onMouseLeave={handleInteractionEnd} onClick={() => handleSegmentClick(segmentIndex)}>
+                return <div key={`right-${segment.id}`} className={`transition-all duration-500 ease-out ${isActive ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-4 scale-95 pointer-events-none'}`}>
+                        <div id={`card-${segment.id}`} className={`bg-white rounded-2xl p-6 border w-full min-h-[180px] flex flex-col justify-start shadow-xl ${isActive ? 'border-red-400 bg-red-50/20' : 'border-gray-200'}`} style={{
+                    boxShadow: isActive ? '0 8px 32px rgba(239, 68, 68, 0.15)' : '0 8px 24px rgba(0, 0, 0, 0.06)',
+                    transform: isActive ? 'translateY(-4px)' : 'translateY(0)'
+                  }}>
                           <div className="mb-4">
-                            <h3 className={`text-lg font-bold transition-colors ${isActive ? 'text-red-600' : 'text-gray-900'}`}>
+                            <h3 className={`text-lg font-bold transition-colors duration-300 ${isActive ? 'text-red-600' : 'text-gray-900'}`}>
                               {segment.title}
                             </h3>
                           </div>
                           <ul className="space-y-2.5">
                             {segment.description.map((point, pointIndex) => <li key={pointIndex} className="flex items-start space-x-3 text-sm text-gray-600">
-                                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${isActive ? 'bg-red-500' : 'bg-gray-400'}`}></span>
+                                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors duration-300 ${isActive ? 'bg-red-500' : 'bg-gray-400'}`}></span>
                                 <span className="leading-relaxed">{point}</span>
                               </li>)}
                           </ul>
@@ -327,155 +330,136 @@ const ShopFloorPortfolio = () => {
           </div>
         </div>
 
-        {/* Mobile & Tablet Layout - Optimized spacing */}
-        <div className="lg:hidden px-2 md:px-4">
-          <div className="flex justify-center min-h-[450px] md:min-h-[500px] relative">
-            {/* Enhanced Touch Feedback Popup */}
-            {hoveredSegment !== null && <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 bg-white rounded-2xl border-2 border-red-200 shadow-2xl p-5 max-w-sm animate-scale-in" style={{
-            boxShadow: '0 12px 40px rgba(239, 68, 68, 0.15)'
-          }}>
-                <div className="text-center">
-                  <h4 className="font-bold text-gray-900 mb-3 text-base">
+        {/* Mobile & Tablet Layout - Optimized for hover with minimal blank space */}
+        <div className="lg:hidden px-2 sm:px-4">
+          <div className="relative">
+            {/* Hover Card - positioned above ring */}
+            {hoveredSegment !== null && <div className="mb-4 px-2">
+                <div className={`bg-white rounded-2xl p-5 border shadow-xl mx-auto max-w-sm transition-all duration-500 ease-out transform ${hoveredSegment !== null ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95'} border-red-400 bg-red-50/20`} style={{
+                boxShadow: '0 8px 32px rgba(239, 68, 68, 0.15)'
+              }}>
+                  <h3 className="text-lg font-bold text-red-600 mb-3">
                     {segments[hoveredSegment].title}
-                  </h4>
-                  <ul className="space-y-2">
-                    {segments[hoveredSegment].description.map((point, index) => <li key={index} className="flex items-start space-x-2 text-sm text-gray-600">
+                  </h3>
+                  <ul className="space-y-2.5">
+                    {segments[hoveredSegment].description.map((point, pointIndex) => <li key={pointIndex} className="flex items-start space-x-3 text-sm text-gray-600">
                         <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-500 flex-shrink-0"></span>
                         <span className="leading-relaxed">{point}</span>
                       </li>)}
                   </ul>
                 </div>
-                {/* Enhanced Arrow */}
-                <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-white border-b-2 border-r-2 border-red-200 rotate-45"></div>
               </div>}
             
-            <svg width="100%" height="450" viewBox="0 0 640 640" className="drop-shadow-xl max-w-md md:max-w-lg touch-manipulation">
-              <defs>
-                {/* Enhanced Glow filter */}
-                <filter id="mobile-glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-              
-              {/* Background Circle */}
-              <circle cx={centerX} cy={centerY} r={outerRadius} fill="none" stroke="#e5e7eb" strokeWidth="2" opacity="0.4" />
-              
-              {/* Segments - Enhanced for mobile touch interaction */}
-              <g id="mobile-pie-slices">
-                {segments.map((segment, index) => {
-                const isActive = activeSegment === index;
-                const isHovered = hoveredSegment === index;
-                const centroid = getSegmentCentroid(index);
-                return <path key={`mobile-segment-${index}`} d={getSegmentPath(index)} fill={isActive ? "#fef2f2" : isHovered ? "#fef7f7" : "white"} stroke={isActive ? "#dc2626" : isHovered ? "#ef4444" : "#d1d5db"} strokeWidth={isActive ? "5" : isHovered ? "4" : "2"} className="cursor-pointer transition-all duration-300 ease-out focus:outline-none" style={{
-                  transform: isActive ? 'scale(1.12)' : isHovered ? 'scale(1.06)' : 'scale(1)',
-                  transformOrigin: `${centroid.x}px ${centroid.y}px`,
-                  filter: isActive ? 'url(#mobile-glow) drop-shadow(0 6px 12px rgba(220, 38, 38, 0.3))' : isHovered ? 'drop-shadow(0 4px 8px rgba(239, 68, 68, 0.2))' : 'none'
-                }} onClick={e => {
-                  e.preventDefault();
-                  handleSegmentClick(index);
-                  setHoveredSegment(null);
-                }} onTouchStart={e => {
-                  e.preventDefault();
-                  handleSegmentInteraction(index, true);
-                }} onTouchEnd={e => {
-                  e.preventDefault();
-                  setTimeout(() => {
-                    setHoveredSegment(null);
-                    handleInteractionEnd();
-                  }, 150);
-                }} onMouseEnter={() => handleSegmentInteraction(index, true)} onMouseLeave={handleInteractionEnd} />;
-              })}
-              </g>
-              
-              {/* Center Circle - Enhanced for mobile */}
-              <circle cx={centerX} cy={centerY} r={innerRadius} fill="white" stroke="#e5e7eb" strokeWidth="3" />
-              
-              {/* Center Text - Enhanced for mobile */}
-              <text x={centerX} y={centerY - 12} textAnchor="middle" dominantBaseline="middle" className="font-bold fill-gray-800" style={{
-              fontSize: window.innerWidth < 768 ? '18px' : '20px',
-              fontWeight: '800'
-            }}>
-                Autonomous
-              </text>
-              <text x={centerX} y={centerY + 18} textAnchor="middle" dominantBaseline="middle" className="font-bold fill-gray-800" style={{
-              fontSize: window.innerWidth < 768 ? '18px' : '20px',
-              fontWeight: '800'
-            }}>
-                Factories
-              </text>
-              
-              {/* Labels and Icons - Enhanced for mobile visibility */}
-              <g id="mobile-labels-icons">
-                {segments.map((segment, index) => {
-                const isActive = activeSegment === index;
-                const isHovered = hoveredSegment === index;
-                const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                const iconX = centerX + Math.cos(iconAngle) * iconRadius;
-                const iconY = centerY + Math.sin(iconAngle) * iconRadius;
-                const IconComponent = segment.icon;
+            {/* Optimized ring diagram */}
+            <div className="flex justify-center">
+              <svg width="100%" height="300" viewBox="0 0 640 640" className="max-w-[280px] sm:max-w-[320px] mx-auto">
+                <defs>
+                  <filter id="glow-mobile" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                    <feMerge>
+                      <feMergeNode in="coloredBlur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+                
+                {/* Background Circle */}
+                <circle cx={centerX} cy={centerY} r={outerRadius} fill="none" stroke="#e5e7eb" strokeWidth="1" opacity="0.3" />
+                
+                {/* Segments */}
+                <g id="pie-slices-mobile">
+                  {segments.map((segment, index) => {
+                  const isActive = activeSegment === index;
+                  const isHovered = hoveredSegment === index;
+                  const centroid = getSegmentCentroid(index);
+                  return <path key={`segment-mobile-${index}`} d={getSegmentPath(index)} fill={isActive || isHovered ? "#fef2f2" : "white"} stroke={isActive || isHovered ? "#ef4444" : "#e5e7eb"} strokeWidth={isActive || isHovered ? "3" : "1"} className="cursor-pointer transition-all duration-300 ease-out" style={{
+                    transform: isActive || isHovered ? 'scale(1.05)' : 'scale(1)',
+                    transformOrigin: `${centroid.x}px ${centroid.y}px`,
+                    filter: isActive || isHovered ? 'url(#glow-mobile)' : 'none'
+                  }} onMouseEnter={() => handleSegmentHover(index)} onMouseLeave={handleSegmentLeave} onTouchStart={() => handleSegmentHover(index)} onClick={() => handleSegmentClick(index)} />;
+                })}
+                </g>
+                
+                {/* Center circle */}
+                <g id="center-mobile">
+                  <circle cx={centerX} cy={centerY} r={innerRadius} fill="white" stroke="#e5e7eb" strokeWidth="2" />
+                  
+                  {/* Center text */}
+                  <text x={centerX} y={centerY - 8} textAnchor="middle" dominantBaseline="middle" className="font-bold fill-gray-800" style={{
+                  fontSize: '16px',
+                  fontWeight: '800'
+                }}>
+                    Autonomous
+                  </text>
+                  <text x={centerX} y={centerY + 12} textAnchor="middle" dominantBaseline="middle" className="font-bold fill-gray-800" style={{
+                  fontSize: '16px',
+                  fontWeight: '800'
+                }}>
+                    Factories
+                  </text>
+                </g>
+                
+                {/* Labels and Icons */}
+                <g id="labels-icons-mobile">
+                  {segments.map((segment, index) => {
+                  const isActive = activeSegment === index;
+                  const isHovered = hoveredSegment === index;
+                  const iconAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                  const iconX = centerX + Math.cos(iconAngle) * iconRadius;
+                  const iconY = centerY + Math.sin(iconAngle) * iconRadius;
+                  const IconComponent = segment.icon;
 
-                // Label positioning - consistent with desktop
-                const labelAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
-                const labelX = centerX + Math.cos(labelAngle) * labelRadius;
-                const labelY = centerY + Math.sin(labelAngle) * labelRadius;
+                  // Label positioning
+                  const labelAngle = (index * 60 - 90 + 30 - 60) * Math.PI / 180;
+                  const labelX = centerX + Math.cos(labelAngle) * labelRadius;
+                  const labelY = centerY + Math.sin(labelAngle) * labelRadius;
 
-                // Enhanced icon sizing for better mobile interaction
-                const iconSize = window.innerWidth < 768 ? 50 : 58;
-                const iconBgRadius = iconSize / 2 + 8;
-                return <g key={`mobile-icon-label-${index}`} className="pointer-events-none">
-                      {/* Icon with background circle - enhanced for mobile */}
-                      <circle cx={iconX} cy={iconY} r={iconBgRadius} fill="white" stroke={isActive ? "#dc2626" : isHovered ? "#ef4444" : "#9ca3af"} strokeWidth={isActive ? "5" : isHovered ? "4" : "3"} className="transition-all duration-300" style={{
-                    transform: isActive ? 'scale(1.15)' : isHovered ? 'scale(1.08)' : 'scale(1)',
-                    transformOrigin: `${iconX}px ${iconY}px`,
-                    filter: isActive ? 'drop-shadow(0 6px 12px rgba(220, 38, 38, 0.3))' : isHovered ? 'drop-shadow(0 4px 8px rgba(239, 68, 68, 0.2))' : 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
-                  }} />
-                      <foreignObject x={iconX - iconSize / 2} y={iconY - iconSize / 2} width={iconSize} height={iconSize} className="pointer-events-none">
-                        <div className="w-full h-full flex items-center justify-center">
-                          <IconComponent size={iconSize * 0.6} className={`transition-all duration-300 ${isActive ? "text-red-600" : isHovered ? "text-red-500" : "text-gray-600"}`} strokeWidth={isActive ? 2.5 : 2} />
-                        </div>
-                      </foreignObject>
-                      
-                      {/* Enhanced segment labels for mobile visibility */}
-                      {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ?
-                  // Multi-line labels for segments with "/"
-                  <>
-                          <text x={labelX} y={labelY - 12} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-300 ${isActive ? "fill-gray-900" : isHovered ? "fill-gray-800" : "fill-gray-700"}`} style={{
-                      fontSize: window.innerWidth < 768 ? '15px' : '17px',
-                      fontWeight: '800',
-                      opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
-                      filter: isActive ? 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))' : isHovered ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' : 'none',
+                  const iconSize = 32;
+                  const iconBgRadius = iconSize / 2 + 4;
+                  return <g key={`icon-label-mobile-${index}`} className="pointer-events-none">
+                        {/* Icon with background circle */}
+                        <circle cx={iconX} cy={iconY} r={iconBgRadius} fill="white" stroke={isActive || isHovered ? "#ef4444" : "#d1d5db"} strokeWidth={isActive || isHovered ? "3" : "2"} className="transition-all duration-300" style={{
+                      transform: isActive || isHovered ? 'scale(1.1)' : 'scale(1)',
+                      transformOrigin: `${iconX}px ${iconY}px`
+                    }} />
+                        <foreignObject x={iconX - iconSize / 2} y={iconY - iconSize / 2} width={iconSize} height={iconSize} className="pointer-events-none">
+                          <div className="w-full h-full flex items-center justify-center">
+                            <IconComponent size={iconSize * 0.7} className={`transition-all duration-300 ${isActive || isHovered ? "text-red-500" : "text-gray-600"}`} />
+                          </div>
+                        </foreignObject>
+                        
+                        {/* Labels */}
+                        {segment.title.includes(' / ') && !segment.title.includes('Manufacturing') && !segment.title.includes('Warehouse') && !segment.title.includes('Lab') ?
+                    // Multi-line labels
+                    <>
+                            <text x={labelX} y={labelY - 6} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-300 ${isActive || isHovered ? "fill-gray-900" : "fill-gray-700"}`} style={{
+                        fontSize: '11px',
+                        fontWeight: '700',
+                        letterSpacing: '-0.025em'
+                      }}>
+                              {segment.title.split(' / ')[0]} /
+                            </text>
+                            <text x={labelX} y={labelY + 6} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-300 ${isActive || isHovered ? "fill-gray-900" : "fill-gray-700"}`} style={{
+                        fontSize: '11px',
+                        fontWeight: '700',
+                        letterSpacing: '-0.025em'
+                      }}>
+                              {segment.title.split(' / ')[1]}
+                            </text>
+                          </> :
+                    // Single line labels
+                    <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-300 ${isActive || isHovered ? "fill-gray-900" : "fill-gray-700"}`} style={{
+                      fontSize: '11px',
+                      fontWeight: '700',
                       letterSpacing: '-0.025em'
                     }}>
-                            {segment.title.split(' / ')[0]} /
-                          </text>
-                          <text x={labelX} y={labelY + 12} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-300 ${isActive ? "fill-gray-900" : isHovered ? "fill-gray-800" : "fill-gray-700"}`} style={{
-                      fontSize: window.innerWidth < 768 ? '15px' : '17px',
-                      fontWeight: '800',
-                      opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
-                      filter: isActive ? 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))' : isHovered ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' : 'none',
-                      letterSpacing: '-0.025em'
-                    }}>
-                            {segment.title.split(' / ')[1]}
-                          </text>
-                        </> :
-                  // Single line labels - enhanced for mobile
-                  <text x={labelX} y={labelY} textAnchor="middle" dominantBaseline="central" className={`font-bold tracking-tight transition-all duration-300 ${isActive ? "fill-gray-900" : isHovered ? "fill-gray-800" : "fill-gray-700"}`} style={{
-                    fontSize: window.innerWidth < 768 ? '15px' : '17px',
-                    fontWeight: '800',
-                    opacity: isActive ? 1.0 : isHovered ? 0.95 : 0.9,
-                    filter: isActive ? 'drop-shadow(0 3px 6px rgba(0,0,0,0.2))' : isHovered ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' : 'none',
-                    letterSpacing: '-0.025em'
-                  }}>
-                          {window.innerWidth < 768 ? segment.shortTitle : segment.title}
-                        </text>}
-                    </g>;
-              })}
-              </g>
-            </svg>
+                            {segment.shortTitle}
+                          </text>}
+                      </g>;
+                })}
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
