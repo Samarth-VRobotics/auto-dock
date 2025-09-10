@@ -95,7 +95,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-100/40 via-blue-100/40 to-red-100/40"></div>
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="section-header">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-20">From Digital Foundations to Autonomous factories</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">From Digital Foundations to Autonomous factories</h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-20 leading-relaxed">
+              Pioneering the next evolution in manufacturing excellence. Vegam guides industry leaders through the transformation from digital operations to fully autonomous factories, combining decades of expertise with cutting-edge innovation in AI, robotics, and self-optimizing systems.
+            </p>
           </div>
           
           {/* Desktop Timeline */}
