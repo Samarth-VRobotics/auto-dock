@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Truck, Settings, Package, Factory, FlaskConical, FileText, Warehouse, Box } from 'lucide-react';
+import shopFloorBg from '@/assets/shop-floor-automation-bg.jpg';
 const ShopFloorPortfolio = () => {
   const [activeSegment, setActiveSegment] = useState(0);
   const [hoveredSegment, setHoveredSegment] = useState<number | null>(null);
@@ -134,8 +135,16 @@ const ShopFloorPortfolio = () => {
     }
   };
   return <section className="py-24 relative overflow-hidden" style={{
-    background: 'linear-gradient(135deg, #F6F8FB 0%, #F0F4F8 100%)',
+    background: `
+      linear-gradient(135deg, rgba(246, 248, 251, 0.95) 0%, rgba(240, 244, 248, 0.95) 100%),
+      url(${shopFloorBg})
+    `,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
     backgroundImage: `
+          url(${shopFloorBg}),
+          linear-gradient(135deg, rgba(246, 248, 251, 0.95) 0%, rgba(240, 244, 248, 0.95) 100%),
           radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
           radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.03) 0%, transparent 50%)
         `
