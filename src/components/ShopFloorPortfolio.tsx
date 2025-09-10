@@ -329,9 +329,9 @@ const ShopFloorPortfolio = () => {
 
         {/* Mobile & Tablet Layout - Larger chart, no highlighting */}
         <div className="lg:hidden">
-          <div className="flex justify-center min-h-[400px] md:min-h-[500px] relative py-2">
+          <div className="flex justify-center relative">
             
-            <svg width="100%" height="500" viewBox="0 0 640 640" className="drop-shadow-lg max-w-full w-full touch-manipulation" style={{ maxWidth: '100vw', height: 'auto' }}>
+            <svg width="100%" height="auto" viewBox="80 80 480 480" className="drop-shadow-lg max-w-full w-full touch-manipulation" style={{ maxWidth: '100vw' }}>
               <defs>
                 {/* Subtle Glow filter */}
                 <filter id="mobile-glow" x="-50%" y="-50%" width="200%" height="200%">
