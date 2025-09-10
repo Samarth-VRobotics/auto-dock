@@ -391,11 +391,11 @@ const ShopFloorPortfolio = () => {
                 const iconSize = window.innerWidth < 768 ? 60 : 70;
                 const iconBgRadius = iconSize / 2 + 8;
                 return <g key={`mobile-icon-label-${index}`} className="pointer-events-none">
-                      {/* Icon with background circle - neutral colors */}
-                      <circle cx={iconX} cy={iconY} r={iconBgRadius} fill="white" stroke="#d1d5db" strokeWidth="2" className="transition-none" />
+                      {/* Icon with background circle - red styling for mobile/tablet */}
+                      <circle cx={iconX} cy={iconY} r={iconBgRadius} fill="#fef2f2" stroke="#ef4444" strokeWidth="2" className="transition-none" />
                       <foreignObject x={iconX - iconSize / 2} y={iconY - iconSize / 2} width={iconSize} height={iconSize} className="pointer-events-none">
                         <div className="w-full h-full flex items-center justify-center">
-                          <IconComponent size={iconSize * 0.6} className="text-gray-600" strokeWidth={2} />
+                          <IconComponent size={iconSize * 0.6} className="text-red-500" strokeWidth={2} />
                         </div>
                       </foreignObject>
                       
