@@ -3,9 +3,7 @@ import { Truck, Settings, Package, Factory, FlaskConical, FileText, Warehouse, B
 const ShopFloorPortfolio = () => {
   const [activeSegment, setActiveSegment] = useState(0);
   const [hoveredSegment, setHoveredSegment] = useState<number | null>(null);
-  const [isAutoRotating, setIsAutoRotating] = useState(true);
   const svgRef = useRef<SVGSVGElement>(null);
-  const autoRotationRef = useRef<NodeJS.Timeout | null>(null);
   const segments = [{
     id: 'inbound',
     title: 'Inbound / Goods Receipt',
@@ -99,49 +97,21 @@ const ShopFloorPortfolio = () => {
     return `M ${startX} ${startY} L ${midX} ${startY} L ${cardEdgeX} ${cardCenterY}`;
   };
 
-  // Auto-rotation effect
-  useEffect(() => {
-    if (isAutoRotating) {
-      autoRotationRef.current = setInterval(() => {
-        setActiveSegment(prev => (prev + 1) % segments.length);
-      }, 3000); // Rotate every 3 seconds
-    } else {
-      if (autoRotationRef.current) {
-        clearInterval(autoRotationRef.current);
-        autoRotationRef.current = null;
-      }
-    }
-    return () => {
-      if (autoRotationRef.current) {
-        clearInterval(autoRotationRef.current);
-      }
-    };
-  }, [isAutoRotating, segments.length]);
-
-  // Pause auto-rotation on hover
+  // Simple interaction handlers for hover and click
   const handleSegmentInteraction = (index: number, isHover: boolean = false) => {
     if (isHover) {
-      setIsAutoRotating(false);
       setHoveredSegment(index);
     } else {
       setActiveSegment(index);
-      setIsAutoRotating(false);
     }
   };
 
-  // Resume auto-rotation after interaction
   const handleInteractionEnd = () => {
     setHoveredSegment(null);
-    setTimeout(() => {
-      setIsAutoRotating(true);
-    }, 5000); // Resume after 5 seconds of no interaction
   };
+
   const handleSegmentClick = (index: number) => {
     setActiveSegment(index);
-    setIsAutoRotating(false);
-    setTimeout(() => {
-      setIsAutoRotating(true);
-    }, 8000); // Resume after 8 seconds for clicks
   };
   const handleKeyDown = (event: React.KeyboardEvent, index: number) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -175,32 +145,6 @@ const ShopFloorPortfolio = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 md:mb-6 px-4 leading-tight">
             Our Integrated Shop Floor Automation Portfolio
           </h2>
-          
-          {/* Auto-rotation control - hidden on mobile to avoid duplicates */}
-          <div className="hidden lg:flex items-center justify-center gap-3 mt-6 mb-2">
-            <button onClick={() => setIsAutoRotating(!isAutoRotating)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 ${isAutoRotating ? 'bg-red-100 text-red-700 hover:bg-red-200' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
-              {isAutoRotating ? <>
-                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                  Auto-rotating
-                </> : <>
-                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-                  Paused
-                </>}
-            </button>
-          </div>
-          
-          {/* Mobile/Tablet Auto-rotation control */}
-          <div className="flex lg:hidden items-center justify-center gap-3 mt-6 mb-2">
-            <button onClick={() => setIsAutoRotating(!isAutoRotating)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 ${isAutoRotating ? 'bg-red-100 text-red-700 hover:bg-red-200' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
-              {isAutoRotating ? <>
-                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                  Auto-rotating
-                </> : <>
-                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-                  Paused
-                </>}
-            </button>
-          </div>
         </div>
 
         {/* Desktop Layout */}
