@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import { useMediaPreloader } from "@/hooks/useMediaPreloader";
 import Index from "./pages/Index";
 
 import OurTeam from "./pages/OurTeam";
@@ -14,6 +15,9 @@ import NotFound from "./pages/NotFound";
 import GalleryVariantsDemo from "./components/GalleryVariantsDemo";
 
 const App = () => {
+  // Preload all media assets when app loads
+  useMediaPreloader();
+
   const [queryClient] = useState(() => new QueryClient({
     defaultOptions: {
       queries: {
