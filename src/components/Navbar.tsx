@@ -48,23 +48,23 @@ const Navbar = () => {
                       </a>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
-                      <a href="/amrs" className="block w-full group">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
-                          <div>
-                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">AMRs</div>
-                            <div className="text-sm text-muted-foreground">Autonomous Mobile Robots</div>
-                          </div>
-                        </div>
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
                       <a href="/asrs" className="block w-full group">
                         <div className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
                           <div>
                             <div className="font-semibold text-foreground group-hover:text-primary transition-colors">ASRS</div>
                             <div className="text-sm text-muted-foreground">Automatic Storage and Retrieval System</div>
+                          </div>
+                        </div>
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild className="cursor-pointer hover:bg-primary/10 rounded-lg p-4 transition-all duration-200 focus:bg-primary/10">
+                      <a href="/amrs" className="block w-full group">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
+                          <div>
+                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">AMRs</div>
+                            <div className="text-sm text-muted-foreground">Autonomous Mobile Robots</div>
                           </div>
                         </div>
                       </a>
@@ -108,21 +108,21 @@ const Navbar = () => {
                       </div>
                     </div>
                   </a>
-                  <a href="/amrs" className="block py-2 text-muted-foreground hover:text-primary transition-colors group">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-1.5 h-1.5 bg-primary/60 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
-                      <div>
-                        <div className="font-medium">AMRs</div>
-                        <div className="text-xs text-muted-foreground">Autonomous Mobile Robots</div>
-                      </div>
-                    </div>
-                  </a>
                   <a href="/asrs" className="block py-2 text-muted-foreground hover:text-primary transition-colors group">
                     <div className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-primary/60 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                       <div>
                         <div className="font-medium">ASRS</div>
                         <div className="text-xs text-muted-foreground">Automatic Storage and Retrieval System</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="/amrs" className="block py-2 text-muted-foreground hover:text-primary transition-colors group">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary/60 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
+                      <div>
+                        <div className="font-medium">AMRs</div>
+                        <div className="text-xs text-muted-foreground">Autonomous Mobile Robots</div>
                       </div>
                     </div>
                   </a>
