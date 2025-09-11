@@ -5,19 +5,19 @@ const WhyQuadrupeds = () => {
   const advantages = [
     {
       icon: Building,
-      emoji: '🏢',
+      emoji: '',
       title: 'Unmatched Access',
       description: 'Stairs, corridors, multi-floor facilities, and cross-building routes.'
     },
     {
       icon: Shield,
-      emoji: '🔐',
+      emoji: '',
       title: 'Safe & Traceable',
       description: 'Secure compartments + digital audit logs.'
     },
     {
       icon: Zap,
-      emoji: '⚡',
+      emoji: '',
       title: 'Always Available',
       description: 'Fleet management and opportunity charging keep robots ready 24/7.'
     },
@@ -29,7 +29,7 @@ const WhyQuadrupeds = () => {
     },
     {
       icon: Globe,
-      emoji: '🌐',
+      emoji: '',
       title: 'Full Visibility',
       description: 'End-to-end orchestration with ERP, MES, LIMS, and WMS.'
     },

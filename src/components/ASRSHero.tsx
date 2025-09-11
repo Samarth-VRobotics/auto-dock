@@ -30,7 +30,7 @@ const ASRSHero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
           <div className="space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground animate-fade-in-up drop-shadow-lg leading-tight">
-              SampleRun → Intra-Facility Sample Logistics
+              The SampleRun: Smart Samples. Smarter Labs.
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 max-w-2xl animate-fade-in drop-shadow-md" style={{
@@ -44,37 +44,37 @@ const ASRSHero = () => {
             }}>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg"></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">🔐 Safe & Secure Delivery</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Safe & Secure Delivery</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.2s'
                 }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">🏢 Multi-Floor Navigation</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Multi-Floor Navigation</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.4s'
                 }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">⚡ 24/7 Fleet Ready</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">24/7 Fleet Ready</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.6s'
                 }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">🌐 Full ERP Integration</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Full ERP Integration</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.8s'
                 }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">🌦️ Indoor & Outdoor Operation</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Indoor & Outdoor Operation</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '1s'
                 }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">📊 Real-Time Visibility</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Real-Time Visibility</span>
               </div>
             </div>
 
