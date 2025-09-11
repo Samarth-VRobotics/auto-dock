@@ -30,8 +30,8 @@ const Index = () => {
         <div className="absolute inset-0 w-full h-full">
           <img src={autonomousProductionLine} alt="Autonomous robotic arms on production line" className="w-full h-full object-cover" />
           
-          {/* Subtle lighting animation overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-primary/15 to-blue-400/10 animate-factory-lights opacity-30"></div>
+          {/* Factory lights on/off animation overlay */}
+          <div className="absolute inset-0 bg-background/60 animate-factory-lights"></div>
           
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/30"></div>

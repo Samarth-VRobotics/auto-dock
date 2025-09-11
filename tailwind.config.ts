@@ -160,20 +160,13 @@ export default {
 				},
 				'factory-lights': {
 					'0%': { 
-						opacity: '0.2',
-						background: 'linear-gradient(45deg, hsl(221 39% 11% / 0.1), hsl(var(--primary) / 0.15), hsl(214 100% 59% / 0.1))'
+						opacity: '0.2'
 					},
-					'33%': { 
-						opacity: '0.4',
-						background: 'linear-gradient(45deg, hsl(214 100% 59% / 0.15), hsl(var(--primary) / 0.25), hsl(var(--accent) / 0.2))'
-					},
-					'66%': { 
-						opacity: '0.3',
-						background: 'linear-gradient(45deg, hsl(var(--accent) / 0.1), hsl(214 100% 59% / 0.2), hsl(var(--primary) / 0.15))'
+					'50%': { 
+						opacity: '0.8'
 					},
 					'100%': { 
-						opacity: '0.2',
-						background: 'linear-gradient(45deg, hsl(221 39% 11% / 0.1), hsl(var(--primary) / 0.15), hsl(214 100% 59% / 0.1))'
+						opacity: '0.2'
 					}
 				}
 			},
@@ -185,7 +178,7 @@ export default {
 				'slide-in-left': 'slide-in-left 0.7s ease-out',
 				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
 				'scroll': 'scroll 30s linear infinite',
-				'factory-lights': 'factory-lights 4.5s ease-in-out infinite'
+				'factory-lights': 'factory-lights 2s ease-in-out infinite'
 			}
 		}
 	},
