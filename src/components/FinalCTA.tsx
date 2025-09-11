@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
+import DownloadDeckDialog from "@/components/DownloadDeckDialog";
 const FinalCTA = () => {
   return <section className="section-padding relative overflow-hidden">
       {/* Enhanced gradient background */}
@@ -45,10 +46,12 @@ const FinalCTA = () => {
                 <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Button>
             </ContactDialog>
-            <Button size="lg" variant="outline" className="border-white text-white bg-transparent hover:bg-white hover:text-primary px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group">
-              Download Case Study
-              <Download className="ml-3 w-6 h-6 group-hover:translate-y-1 transition-transform" />
-            </Button>
+            <DownloadDeckDialog>
+              <Button size="lg" variant="outline" className="border-white text-white bg-transparent hover:bg-white hover:text-primary px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group">
+                Download Case Study
+                <Download className="ml-3 w-6 h-6 group-hover:translate-y-1 transition-transform" />
+              </Button>
+            </DownloadDeckDialog>
           </div>
           
           {/* Contact info */}
