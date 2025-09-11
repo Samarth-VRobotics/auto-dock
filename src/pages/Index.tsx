@@ -30,8 +30,8 @@ const Index = () => {
         <div className="absolute inset-0 w-full h-full">
           <img src={autonomousProductionLine} alt="Autonomous robotic arms on production line" className="w-full h-full object-cover" />
           
-          {/* Slow damaged bulb flicker effect overlay */}
-          <div className="absolute inset-0 bg-background/80 animate-bulb-flicker"></div>
+          {/* Smooth light on/off cycle overlay */}
+          <div className="absolute inset-0 bg-background/80 animate-light-cycle"></div>
           {/* Warm yellow glow overlay when light is on */}
           <div className="absolute inset-0 bg-yellow-600/20 animate-yellow-glow"></div>
           

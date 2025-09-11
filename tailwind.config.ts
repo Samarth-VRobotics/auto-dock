@@ -158,65 +158,19 @@ export default {
 						transform: 'translateX(-50%)'
 					}
 				},
-				'bulb-flicker': {
+				'light-cycle': {
 					'0%': { opacity: '0.85' },
-					'3%': { opacity: '0.85' },
-					'5%': { opacity: '0.1' },
-					'7%': { opacity: '0.85' },
-					'9%': { opacity: '0.1' },
-					'11%': { opacity: '0.1' },
-					'15%': { opacity: '0.85' },
-					'20%': { opacity: '0.85' },
-					'25%': { opacity: '0.85' },
-					'28%': { opacity: '0.15' },
-					'32%': { opacity: '0.85' },
-					'35%': { opacity: '0.1' },
-					'40%': { opacity: '0.1' },
-					'45%': { opacity: '0.1' },
-					'50%': { opacity: '0.85' },
-					'55%': { opacity: '0.85' },
-					'58%': { opacity: '0.2' },
-					'60%': { opacity: '0.85' },
-					'62%': { opacity: '0.1' },
-					'65%': { opacity: '0.85' },
-					'70%': { opacity: '0.85' },
+					'25%': { opacity: '0.15' },
+					'50%': { opacity: '0.15' },
 					'75%': { opacity: '0.85' },
-					'80%': { opacity: '0.1' },
-					'85%': { opacity: '0.1' },
-					'90%': { opacity: '0.85' },
-					'95%': { opacity: '0.1' },
-					'98%': { opacity: '0.85' },
 					'100%': { opacity: '0.85' }
 				},
 				'yellow-glow': {
-					'0%': { opacity: '0' },
-					'3%': { opacity: '0' },
-					'5%': { opacity: '0.25' },
-					'7%': { opacity: '0' },
-					'9%': { opacity: '0.25' },
-					'11%': { opacity: '0.25' },
-					'15%': { opacity: '0' },
-					'20%': { opacity: '0' },
+					'0%': { opacity: '0.25' },
 					'25%': { opacity: '0' },
-					'28%': { opacity: '0.2' },
-					'32%': { opacity: '0' },
-					'35%': { opacity: '0.25' },
-					'40%': { opacity: '0.25' },
-					'45%': { opacity: '0.25' },
 					'50%': { opacity: '0' },
-					'55%': { opacity: '0' },
-					'58%': { opacity: '0.18' },
-					'60%': { opacity: '0' },
-					'62%': { opacity: '0.25' },
-					'65%': { opacity: '0' },
-					'70%': { opacity: '0' },
-					'75%': { opacity: '0' },
-					'80%': { opacity: '0.25' },
-					'85%': { opacity: '0.25' },
-					'90%': { opacity: '0' },
-					'95%': { opacity: '0.25' },
-					'98%': { opacity: '0' },
-					'100%': { opacity: '0' }
+					'75%': { opacity: '0.25' },
+					'100%': { opacity: '0.25' }
 				}
 			},
 			animation: {
@@ -227,8 +181,8 @@ export default {
 				'slide-in-left': 'slide-in-left 0.7s ease-out',
 				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
 				'scroll': 'scroll 30s linear infinite',
-				'bulb-flicker': 'bulb-flicker 6s linear infinite',
-				'yellow-glow': 'yellow-glow 6s linear infinite'
+				'light-cycle': 'light-cycle 2s ease-in-out infinite',
+				'yellow-glow': 'yellow-glow 2s ease-in-out infinite'
 			}
 		}
 	},
