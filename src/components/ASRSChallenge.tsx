@@ -1,42 +1,39 @@
 import React from 'react';
-import { Warehouse, Search, TrendingUp } from 'lucide-react';
+import { Navigation, Clock, Users } from 'lucide-react';
 
 const ASRSChallenge = () => {
   const challenges = [
     {
-      id: 'space-constraints',
-      icon: Warehouse,
-      header: 'Space Constraints',
-      tagline: 'Limited warehouse space with growing inventory needs',
+      id: 'limited-access',
+      icon: Navigation,
+      header: 'Limited Access',
+      tagline: 'Current solutions can\'t handle complex facility layouts',
       points: [
-        'High Real Estate Costs: Prime warehouse locations increasingly expensive',
-        'Poor Space Utilization: Traditional racking only uses 60% of available space',
-        'Vertical Limitations: Manual operations can\'t efficiently use full height',
-        'Expansion Costs: Building new facilities requires significant investment'
+        'Conveyors can\'t handle stairs, elevators, or cross-building routes.',
+        'AMRs struggle with narrow corridors, uneven paths, or multi-floor navigation.',
+        'Human couriers are slow and prone to repetitive strain or errors.'
       ]
     },
     {
-      id: 'inventory-management',
-      icon: Search,
-      header: 'Inventory Management',
-      tagline: 'Poor visibility and control over stored inventory',
+      id: 'operational-burden',
+      icon: Clock,
+      header: 'Operational Burden',
+      tagline: 'Manual processes slow down critical operations',
       points: [
-        'Inventory Inaccuracy: Manual tracking leads to 20-30% inventory errors',
-        'Long Search Times: Workers spend 50% of time searching for items',
-        'Stock-outs: Poor visibility causes unexpected inventory shortages',
-        'Obsolete Inventory: Difficulty tracking and managing slow-moving stock'
+        'Frequent trips between production, QA, and storage are slow and manual.',
+        'Delays occur during elevator or outdoor trips.',
+        'Skilled staff get pulled into courier-like duties instead of higher-value work.'
       ]
     },
     {
-      id: 'throughput-limitations',
-      icon: TrendingUp,
-      header: 'Throughput Limitations',
-      tagline: 'Manual storage and retrieval can\'t meet growing demands',
+      id: 'scaling-pressure',
+      icon: Users,
+      header: 'Scaling Pressure',
+      tagline: 'Growing demands overwhelm existing systems',
       points: [
-        'Peak Season Bottlenecks: Manual systems overwhelmed during high demand',
-        'Retrieval Speed: Traditional picking takes 5-10x longer than automated',
-        'Order Accuracy: Manual processes result in 1-3% picking errors',
-        'Scalability Issues: Adding more workers doesn\'t proportionally increase speed'
+        'Multiple sample requests arrive simultaneously across facilities.',
+        'Queues build up in labs when samples are delayed.',
+        'Round-the-clock demand isn\'t feasible with human-only delivery.'
       ]
     }
   ];
@@ -47,10 +44,13 @@ const ASRSChallenge = () => {
         {/* Header Section */}
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-destructive bg-clip-text text-transparent leading-tight">
-            The High-Density Storage Challenge
+            The Challenge: Sample Flow Bottlenecks
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Where Growing Inventory Meets Limited Space
+            In chemical plants, pharma labs, and factories, samples and QA specimens must move quickly, safely, and traceably. Today's options leave critical gaps:
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4 leading-relaxed font-medium">
+            Every delayed or mishandled sample is a hidden production cost, compliance risk, and lost opportunity.
           </p>
         </div>
 

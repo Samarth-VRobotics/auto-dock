@@ -1,7 +1,11 @@
 import Navbar from "@/components/Navbar";
 import ASRSHero from "@/components/ASRSHero";
 import ASRSChallenge from "@/components/ASRSChallenge";
-import Industries from "@/components/Industries";
+import SampleRunSolution from "@/components/SampleRunSolution";
+import HowItWorks from "@/components/HowItWorks";
+import WhyQuadrupeds from "@/components/WhyQuadrupeds";
+import SampleRunIndustries from "@/components/SampleRunIndustries";
+import WhyVegam from "@/components/WhyVegam";
 import Customers from "@/components/Customers";
 import TeamIntro from "@/components/TeamIntro";
 import FinalCTA from "@/components/FinalCTA";
@@ -13,7 +17,11 @@ const ASRS = () => {
       <Navbar />
       <ASRSHero />
       <ASRSChallenge />
-      <Industries />
+      <SampleRunSolution />
+      <HowItWorks />
+      <WhyQuadrupeds />
+      <SampleRunIndustries />
+      <WhyVegam />
       <Customers />
       <TeamIntro />
       <FinalCTA />

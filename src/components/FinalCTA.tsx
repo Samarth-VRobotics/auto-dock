@@ -25,8 +25,8 @@ const FinalCTA = () => {
             
             
             <h2 className="heading-xl text-white mb-8">
-              Ready to Redefine Your 
-              <span className="block">Dock Operations?</span>
+              Ready to Redefine
+              <span className="block">Sample Logistics?</span>
             </h2>
             
             

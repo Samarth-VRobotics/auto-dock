@@ -30,14 +30,17 @@ const ASRSHero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
           <div className="space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground animate-fade-in-up drop-shadow-lg leading-tight">
-              Automated Storage & Retrieval: 
-              <span className="text-primary block animate-slide-in-left text-2xl sm:text-3xl md:text-4xl">Maximum Density. Maximum Efficiency.</span>
+              SampleRun → Intra-Facility Sample Logistics
             </h1>
+            
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-primary animate-slide-in-left drop-shadow-lg leading-tight mb-4">
+              Smarter, Safer Sample Flow — Powered by Vegam SFS
+            </h2>
             
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 max-w-2xl animate-fade-in drop-shadow-md" style={{
               animationDelay: '0.3s',
               animationFillMode: 'both'
-            }}>"Maximize your storage capacity and retrieval speed with intelligent ASRS systems designed for high-density, high-throughput operations."</p>
+            }}>Transform how quality samples move across labs, floors, and buildings. Enabled by advanced quadruped robots and fully integrated with Vegam Smart Factory Suite (SFS), SampleRun ensures every sample is delivered safely, traceably, and on time.</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 pt-4 animate-fade-in" style={{
               animationDelay: '0.6s',
@@ -45,37 +48,37 @@ const ASRSHero = () => {
             }}>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg"></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">85% Space Utilization</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">🔐 Safe & Secure Delivery</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.2s'
                 }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">400+ Retrieval Cycles/Hour</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">🏢 Multi-Floor Navigation</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.4s'
                 }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">99.9% Inventory Accuracy</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">⚡ 24/7 Fleet Ready</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.6s'
                 }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Lights-Out Operations</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">🌐 Full ERP Integration</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '0.8s'
                 }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Modular & Scalable Design</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">🌦️ Indoor & Outdoor Operation</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                   animationDelay: '1s'
                 }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">ROI &lt; 30 Months</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">📊 Real-Time Visibility</span>
               </div>
             </div>
 
