@@ -6,16 +6,11 @@ const Hero = () => {
   return <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
-        <iframe 
-          src="https://www.youtube.com/embed/6stlCkUDG_s?autoplay=1&mute=1&loop=1&playlist=6stlCkUDG_s&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1"
-          className="w-full h-full object-cover"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-          style={{ border: 'none' }}
-        >
+        <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover">
+          <source src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/final%20V1%20video.mp4" type="video/mp4" />
           {/* Fallback to hero image if video fails to load */}
           <img src={heroImage} alt="AutoDock AMR System" className="w-full h-full object-cover" />
-        </iframe>
+        </video>
         
         {/* Professional Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-background/20"></div>
