@@ -158,16 +158,65 @@ export default {
 						transform: 'translateX(-50%)'
 					}
 				},
-				'factory-lights': {
-					'0%': { 
-						opacity: '0.2'
-					},
-					'50%': { 
-						opacity: '0.8'
-					},
-					'100%': { 
-						opacity: '0.2'
-					}
+				'bulb-flicker': {
+					'0%': { opacity: '0.9' },
+					'2%': { opacity: '0.1' },
+					'4%': { opacity: '0.9' },
+					'6%': { opacity: '0.1' },
+					'8%': { opacity: '0.1' },
+					'10%': { opacity: '0.9' },
+					'12%': { opacity: '0.9' },
+					'14%': { opacity: '0.2' },
+					'16%': { opacity: '0.9' },
+					'18%': { opacity: '0.1' },
+					'20%': { opacity: '0.1' },
+					'22%': { opacity: '0.9' },
+					'25%': { opacity: '0.1' },
+					'30%': { opacity: '0.1' },
+					'35%': { opacity: '0.9' },
+					'40%': { opacity: '0.1' },
+					'45%': { opacity: '0.1' },
+					'50%': { opacity: '0.9' },
+					'55%': { opacity: '0.2' },
+					'60%': { opacity: '0.9' },
+					'65%': { opacity: '0.1' },
+					'70%': { opacity: '0.1' },
+					'75%': { opacity: '0.9' },
+					'80%': { opacity: '0.1' },
+					'85%': { opacity: '0.9' },
+					'90%': { opacity: '0.1' },
+					'95%': { opacity: '0.1' },
+					'100%': { opacity: '0.9' }
+				},
+				'yellow-glow': {
+					'0%': { opacity: '0' },
+					'2%': { opacity: '0.3' },
+					'4%': { opacity: '0' },
+					'6%': { opacity: '0.3' },
+					'8%': { opacity: '0.3' },
+					'10%': { opacity: '0' },
+					'12%': { opacity: '0' },
+					'14%': { opacity: '0.25' },
+					'16%': { opacity: '0' },
+					'18%': { opacity: '0.3' },
+					'20%': { opacity: '0.3' },
+					'22%': { opacity: '0' },
+					'25%': { opacity: '0.3' },
+					'30%': { opacity: '0.3' },
+					'35%': { opacity: '0' },
+					'40%': { opacity: '0.3' },
+					'45%': { opacity: '0.3' },
+					'50%': { opacity: '0' },
+					'55%': { opacity: '0.25' },
+					'60%': { opacity: '0' },
+					'65%': { opacity: '0.3' },
+					'70%': { opacity: '0.3' },
+					'75%': { opacity: '0' },
+					'80%': { opacity: '0.3' },
+					'85%': { opacity: '0' },
+					'90%': { opacity: '0.3' },
+					'95%': { opacity: '0.3' },
+					'100%': { opacity: '0' }
 				}
 			},
 			animation: {
@@ -178,7 +227,8 @@ export default {
 				'slide-in-left': 'slide-in-left 0.7s ease-out',
 				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
 				'scroll': 'scroll 30s linear infinite',
-				'factory-lights': 'factory-lights 2s ease-in-out infinite'
+				'bulb-flicker': 'bulb-flicker 3s linear infinite',
+				'yellow-glow': 'yellow-glow 3s linear infinite'
 			}
 		}
 	},
