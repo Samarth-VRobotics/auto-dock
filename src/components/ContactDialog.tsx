@@ -43,21 +43,38 @@ const ContactDialog = ({ children, isBookCallDialog = false }: ContactDialogProp
 
     try {
       // Save request to appropriate database table
-      const tableName = isBookCallDialog ? 'call_requests' : 'contact_requests';
-      const { error } = await supabase
-        .from(tableName)
-        .insert({
-          name: `${formData.firstName} ${formData.lastName}`,
-          email: formData.email,
-          phone: formData.phone || null,
-          company: formData.company,
-          job_title: formData.jobTitle || null,
-          industry: formData.industry || null,
-          message: formData.message || null
-        });
-
-      if (error) {
-        throw error;
+      if (isBookCallDialog) {
+        // Save to call_requests table with individual fields
+        const { error } = await supabase
+          .from('call_requests')
+          .insert({
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email,
+            phone: formData.phone || null,
+            company: formData.company,
+            job_title: formData.jobTitle || null,
+            industry: formData.industry || null,
+            message: formData.message || null
+          });
+        
+        if (error) {
+          throw error;
+        }
+      } else {
+        // Save to contact_requests table with combined message format
+        const { error } = await supabase
+          .from('contact_requests')
+          .insert({
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email,
+            phone: formData.phone || null,
+            company: formData.company,
+            message: `Job Title: ${formData.jobTitle || 'Not specified'}\nIndustry: ${formData.industry || 'Not specified'}\n\nMessage: ${formData.message || 'No additional message'}`
+          });
+        
+        if (error) {
+          throw error;
+        }
       }
 
       // Send auto-response email
