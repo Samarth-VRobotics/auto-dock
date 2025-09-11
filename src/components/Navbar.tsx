@@ -52,8 +52,8 @@ const Navbar = () => {
                         <div className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 group-hover:scale-125 transition-transform duration-200"></div>
                           <div>
-                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">ASRS</div>
-                            <div className="text-sm text-muted-foreground">Automatic Storage and Retrieval System</div>
+                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">SampleRun</div>
+                            <div className="text-sm text-muted-foreground">Intra-Facility Sample Logistics</div>
                           </div>
                         </div>
                       </a>
@@ -112,8 +112,8 @@ const Navbar = () => {
                     <div className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-primary/60 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                       <div>
-                        <div className="font-medium">ASRS</div>
-                        <div className="text-xs text-muted-foreground">Automatic Storage and Retrieval System</div>
+                        <div className="font-medium">SampleRun</div>
+                        <div className="text-xs text-muted-foreground">Intra-Facility Sample Logistics</div>
                       </div>
                     </div>
                   </a>
