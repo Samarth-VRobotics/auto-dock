@@ -19,9 +19,10 @@ import { sendDemoConfirmationEmail } from "@/lib/emailService";
 
 interface ContactDialogProps {
   children: React.ReactNode;
+  isBookCallDialog?: boolean;
 }
 
-const ContactDialog = ({ children }: ContactDialogProps) => {
+const ContactDialog = ({ children, isBookCallDialog = false }: ContactDialogProps) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -41,15 +42,18 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
     setIsSubmitting(true);
 
     try {
-      // Save contact request to database
+      // Save request to appropriate database table
+      const tableName = isBookCallDialog ? 'call_requests' : 'contact_requests';
       const { error } = await supabase
-        .from('contact_requests')
+        .from(tableName)
         .insert({
           name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
           phone: formData.phone || null,
           company: formData.company,
-          message: `Job Title: ${formData.jobTitle || 'Not specified'}\nIndustry: ${formData.industry || 'Not specified'}\n\nMessage: ${formData.message || 'No additional message'}`
+          job_title: formData.jobTitle || null,
+          industry: formData.industry || null,
+          message: formData.message || null
         });
 
       if (error) {

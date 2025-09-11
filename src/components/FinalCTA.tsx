@@ -39,7 +39,7 @@ const FinalCTA = () => {
           animationDelay: '0.4s',
           animationFillMode: 'both'
         }}>
-            <ContactDialog>
+            <ContactDialog isBookCallDialog={true}>
               <Button size="lg" className="bg-white text-foreground hover:bg-white/90 px-10 py-5 body-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group">
                 Book a Call
                 <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
