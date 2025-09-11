@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      call_requests: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          industry: string | null
+          job_title: string | null
+          message: string | null
+          name: string
+          phone: string | null
+          preferred_time: string | null
+          updated_at: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          industry?: string | null
+          job_title?: string | null
+          message?: string | null
+          name: string
+          phone?: string | null
+          preferred_time?: string | null
+          updated_at?: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          industry?: string | null
+          job_title?: string | null
+          message?: string | null
+          name?: string
+          phone?: string | null
+          preferred_time?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       contact_requests: {
         Row: {
           company: string | null
