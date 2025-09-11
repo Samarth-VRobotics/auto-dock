@@ -80,11 +80,14 @@ const Hero = () => {
                   Contact Us
                 </Button>
               </ContactDialog>
-              <DemoDialog>
-                <Button variant="outline" size="lg" className="border-2 border-foreground/80 bg-background/20 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold hover:scale-105 transition-all duration-200 shadow-lg">
-                  Watch Demo
-                </Button>
-              </DemoDialog>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-2 border-foreground/80 bg-background/20 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold hover:scale-105 transition-all duration-200 shadow-lg"
+                onClick={() => window.open('https://youtu.be/9D9_GomVBvI', '_blank', 'noopener,noreferrer')}
+              >
+                Watch Demo
+              </Button>
             </div>
           </div>
 
