@@ -35,7 +35,7 @@ const ASRSHero = () => {
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 max-w-2xl animate-fade-in drop-shadow-md" style={{
             animationDelay: '0.3s',
             animationFillMode: 'both'
-          }}>Revolutionize sample movement across labs, floors, and buildings. Powered by advanced quadruped robots fully integrated with Vegam SFS, SampleRun ensures safe, traceable, and on-time delivery.</p>
+          }}>&quot;Revolutionize sample movement with advanced robots integrated into Vegam SFS for safer, traceable and on-time delivery across labs, floors, and buildings&quot;</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 pt-4 animate-fade-in" style={{
             animationDelay: '0.6s',
