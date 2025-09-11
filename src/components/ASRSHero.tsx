@@ -33,10 +33,6 @@ const ASRSHero = () => {
               SampleRun → Intra-Facility Sample Logistics
             </h1>
             
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-primary animate-slide-in-left drop-shadow-lg leading-tight mb-4">
-              Smarter, Safer Sample Flow — Powered by Vegam SFS
-            </h2>
-            
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 max-w-2xl animate-fade-in drop-shadow-md" style={{
               animationDelay: '0.3s',
               animationFillMode: 'both'
