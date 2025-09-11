@@ -56,16 +56,12 @@ const Index = () => {
               <Badge className="badge-secondary text-xs sm:text-sm">Data Sciences AI/ML</Badge>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-in" style={{
+            <div className="flex justify-center animate-fade-in" style={{
             animationDelay: '0.9s',
             animationFillMode: 'both'
           }}>
-              <Button size="lg" className="w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 text-sm sm:text-base lg:text-lg font-bold hover:scale-105 transition-transform" onClick={() => scrollToSection('future-manufacturing')}>
-                Explore the Vision
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
               <ContactDialog>
-                <Button variant="outline" size="lg" className="w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 text-sm sm:text-base lg:text-lg font-bold hover:scale-105 transition-transform">
+                <Button size="lg" className="px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 text-sm sm:text-base lg:text-lg font-bold hover:scale-105 transition-transform">
                   Contact Vegam
                 </Button>
               </ContactDialog>
