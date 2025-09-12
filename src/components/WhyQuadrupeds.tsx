@@ -41,7 +41,7 @@ const WhyQuadrupeds = () => {
     {
       id: 'full-visibility',
       header: 'Full Visibility & Integration',
-      text: 'Every request, movement, and confirmation is logged in ERP, MES, LIMS, and SAP.',
+      text: 'Every request, movement, and confirmation is logged in MOM, MES, and SAP.',
       icon: Globe,
       visual: 'default'
     }

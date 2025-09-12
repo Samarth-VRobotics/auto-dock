@@ -26,7 +26,7 @@ const SampleRunSolution = () => {
     {
       icon: Eye,
       title: 'Full Visibility & Integration',
-      description: 'Every request, movement, and confirmation is logged in ERP, MES, LIMS, and SAP.'
+      description: 'Every request, movement, and confirmation is logged in MOM, MES, and SAP.'
     }
   ];
 

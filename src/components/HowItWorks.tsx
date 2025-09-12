@@ -4,7 +4,7 @@ const HowItWorks = () => {
   const steps = [{
     icon: FileText,
     title: 'Sample Request',
-    description: 'Triggered in ERP / LIMS.',
+    description: 'Triggered in MOM / MES.',
     step: '1'
   }, {
     icon: MapPin,
@@ -29,7 +29,7 @@ const HowItWorks = () => {
   }, {
     icon: CheckCircle,
     title: 'Confirmation',
-    description: 'Logged into ERP / LIMS dashboards in real time.',
+    description: 'Logged into MOM / MES dashboards in real time.',
     step: '6'
   }];
   return <section className="py-24 bg-background relative overflow-hidden">

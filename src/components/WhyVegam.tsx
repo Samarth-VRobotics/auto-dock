@@ -45,7 +45,7 @@ const WhyVegam = () => {
             <div className="bg-card/30 backdrop-blur-sm rounded-xl border border-border p-6 hover:shadow-lg hover:bg-card/50 transition-all duration-300">
               <Cog className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-bold text-foreground mb-2">Fully Integrated</h3>
-              <p className="text-muted-foreground">Seamlessly works with your existing ERP, MES, and LIMS systems.</p>
+              <p className="text-muted-foreground">Seamlessly works with your existing MOM and MES systems.</p>
             </div>
             
             <div className="bg-card/30 backdrop-blur-sm rounded-xl border border-border p-6 hover:shadow-lg hover:bg-card/50 transition-all duration-300">

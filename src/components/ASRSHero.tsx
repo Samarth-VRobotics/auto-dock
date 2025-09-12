@@ -61,7 +61,7 @@ const ASRSHero = () => {
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                 animationDelay: '0.6s'
               }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Full MES/LIMS Integration</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Full MOM/MES Integration</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
