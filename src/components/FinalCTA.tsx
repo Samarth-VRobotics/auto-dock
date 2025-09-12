@@ -26,7 +26,7 @@ const FinalCTA = () => {
             
             <h2 className="heading-xl text-white mb-8">
               Ready to Redefine
-              <span className="block">Sample Transport?</span>
+              <span className="block">Your Dock Operations?</span>
             </h2>
             
             
