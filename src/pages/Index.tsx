@@ -56,7 +56,7 @@ const Index = () => {
               <Badge className="badge-secondary text-xs sm:text-sm">Data Sciences AI/ML</Badge>
             </div>
 
-            <div className="flex justify-center animate-fade-in" style={{
+            <div className="flex justify-start animate-fade-in" style={{
             animationDelay: '0.9s',
             animationFillMode: 'both'
           }}>
