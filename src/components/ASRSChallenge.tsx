@@ -24,9 +24,7 @@ const ASRSChallenge = () => {
       <div className="container mx-auto px-6 relative">
         {/* Header Section */}
         <div className="text-center mb-20 animate-fade-in">
-          <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-destructive bg-clip-text text-transparent leading-tight">
-            The Challenge: Sample Flow Bottlenecks
-          </h2>
+          <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-destructive bg-clip-text text-transparent leading-tight">The Barriers in Sample Movement</h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             In chemical plants, pharma labs, and factories, samples and QA specimens must move quickly, safely, and traceably. Today's options leave critical gaps:
           </p>
