@@ -1,9 +1,7 @@
 import React from 'react';
 import { Target, Cog, Users } from 'lucide-react';
-
 const WhyVegam = () => {
-  return (
-    <section className="py-24 bg-background relative overflow-hidden">
+  return <section className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6 relative">
         {/* Header Section */}
         <div className="text-center mb-20 animate-fade-in">
@@ -27,10 +25,7 @@ const WhyVegam = () => {
                 We're delivering practical, integrated solutions that solve real operational challenges.
               </div>
               
-              <div className="text-lg lg:text-xl text-foreground leading-relaxed">
-                SampleRun leverages proven quadruped platforms to redefine intra-facility sample logistics, 
-                built around your real operational needs.
-              </div>
+              <div className="text-lg lg:text-xl text-foreground leading-relaxed">SampleRun leverages proven quadruped platforms to redefine intra-facility sample transport, built around your real operational needs.</div>
             </div>
           </div>
 
@@ -45,7 +40,7 @@ const WhyVegam = () => {
             <div className="bg-card/30 backdrop-blur-sm rounded-xl border border-border p-6 hover:shadow-lg hover:bg-card/50 transition-all duration-300">
               <Cog className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-bold text-foreground mb-2">Fully Integrated</h3>
-              <p className="text-muted-foreground">Seamlessly works with your existing MOM and MES systems.</p>
+              <p className="text-muted-foreground">Seamlessly works with your existing ERP, MES, and LIMS systems.</p>
             </div>
             
             <div className="bg-card/30 backdrop-blur-sm rounded-xl border border-border p-6 hover:shadow-lg hover:bg-card/50 transition-all duration-300">
@@ -56,8 +51,6 @@ const WhyVegam = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhyVegam;
