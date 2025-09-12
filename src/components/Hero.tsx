@@ -2,11 +2,63 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-dock-autonomy.jpg";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
+import { useRef, useEffect } from "react";
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Force video play for mobile devices
+    const playVideo = async () => {
+      try {
+        // Set video properties for better mobile compatibility
+        video.muted = true;
+        video.playsInline = true;
+        video.defaultMuted = true;
+        
+        // Attempt to play the video
+        await video.play();
+      } catch (error) {
+        console.log('Video autoplay failed:', error);
+      }
+    };
+
+    // Try to play immediately
+    playVideo();
+
+    // Also try to play on user interaction
+    const handleUserInteraction = () => {
+      playVideo();
+      // Remove listeners after first interaction
+      document.removeEventListener('touchstart', handleUserInteraction);
+      document.removeEventListener('click', handleUserInteraction);
+    };
+
+    document.addEventListener('touchstart', handleUserInteraction);
+    document.addEventListener('click', handleUserInteraction);
+
+    return () => {
+      document.removeEventListener('touchstart', handleUserInteraction);
+      document.removeEventListener('click', handleUserInteraction);
+    };
+  }, []);
+
   return <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
-        <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover">
+        <video 
+          ref={videoRef}
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          preload="auto" 
+          className="w-full h-full object-cover"
+          webkit-playsinline="true"
+          x-webkit-airplay="allow"
+        >
           <source src="https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/0001-1199.mov" type="video/mp4" />
           {/* Fallback to hero image if video fails to load */}
           <img src={heroImage} alt="AutoDock AMR System" className="w-full h-full object-cover" />
