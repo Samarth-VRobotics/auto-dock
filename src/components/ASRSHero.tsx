@@ -35,7 +35,7 @@ const ASRSHero = () => {
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 max-w-2xl animate-fade-in drop-shadow-md" style={{
             animationDelay: '0.3s',
             animationFillMode: 'both'
-          }}>Revolutionize sample movement across labs, floors, and buildings. Powered by advanced quadruped robots fully integrated with Vegam SFS, SampleRun ensures safe, traceable, and on-time delivery.</p>
+          }}>&quot;Revolutionize safe, traceable, and in-time sample movement across labs, floors, and buildings. Powered by advanced quadruped robots fully integrated into your MOM/MES.&quot;</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 pt-4 animate-fade-in" style={{
             animationDelay: '0.6s',
@@ -61,7 +61,7 @@ const ASRSHero = () => {
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
                 animationDelay: '0.6s'
               }}></div>
-                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Full MOM/MES Integration</span>
+                <span className="text-foreground font-semibold text-sm sm:text-base drop-shadow-sm">Full MES/LIMS Integration</span>
               </div>
               <div className="flex items-center space-x-3 sm:space-x-4 hover:scale-105 transition-transform duration-200">
                 <div className="w-3 h-3 bg-primary rounded-full animate-bounce-subtle shadow-lg" style={{
