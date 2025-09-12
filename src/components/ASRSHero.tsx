@@ -29,13 +29,13 @@ const ASRSHero = () => {
           <div className="space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground animate-fade-in-up drop-shadow-lg leading-tight">
               The SampleRun: 
-              <span className="text-primary block animate-slide-in-left text-2xl sm:text-3xl md:text-4xl">Intra-Facility Sample Logistics</span>
+              <span className="text-primary block animate-slide-in-left text-2xl sm:text-3xl md:text-4xl">Intra-Facility Sample Transport</span>
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 max-w-2xl animate-fade-in drop-shadow-md" style={{
             animationDelay: '0.3s',
             animationFillMode: 'both'
-          }}>&quot;Revolutionize sample movement with advanced robots integrated into Vegam SFS for safer, traceable and on-time delivery across labs, floors, and buildings&quot;</p>
+          }}>Revolutionize sample movement across labs, floors, and buildings. Powered by advanced quadruped robots fully integrated with Vegam SFS, SampleRun ensures safe, traceable, and on-time delivery.</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 pt-4 animate-fade-in" style={{
             animationDelay: '0.6s',

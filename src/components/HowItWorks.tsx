@@ -37,9 +37,7 @@ const HowItWorks = () => {
         {/* Header Section */}
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-destructive bg-clip-text text-transparent leading-tight">SampleRun in Action</h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Simple, automated workflow for seamless sample logistics
-          </p>
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">Simple, automated workflow for seamless sample transport</p>
         </div>
 
         {/* Workflow Steps */}
