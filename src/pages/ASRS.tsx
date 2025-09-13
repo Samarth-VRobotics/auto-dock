@@ -8,7 +8,7 @@ import SampleRunIndustries from "@/components/SampleRunIndustries";
 import WhyVegam from "@/components/WhyVegam";
 import Customers from "@/components/Customers";
 import TeamIntro from "@/components/TeamIntro";
-import FinalCTA from "@/components/FinalCTA";
+import SampleRunCTA from "@/components/SampleRunCTA";
 import Footer from "@/components/Footer";
 
 const ASRS = () => {
@@ -24,7 +24,7 @@ const ASRS = () => {
       <WhyVegam />
       <Customers />
       <TeamIntro />
-      <FinalCTA />
+      <SampleRunCTA />
       <Footer />
     </div>
   );
