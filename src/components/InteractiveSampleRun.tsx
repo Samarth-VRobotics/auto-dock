@@ -79,9 +79,9 @@ const InteractiveSampleRun = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-primary to-destructive rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="w-full px-0 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16 animate-fade-in px-6">
           <h2 className="text-5xl lg:text-6xl font-poppins font-bold mb-8 bg-gradient-to-r from-foreground via-foreground to-destructive bg-clip-text text-transparent leading-tight">
             SampleRun in Action
           </h2>
@@ -90,10 +90,10 @@ const InteractiveSampleRun = () => {
           </p>
         </div>
 
-        {/* Desktop Side-by-Side Layout */}
-        <div className="hidden md:flex max-w-7xl mx-auto gap-8 h-[600px]">
-          {/* Left Side - Step Animation */}
-          <div className="flex-1 relative">
+        {/* Desktop Full-Width Layout */}
+        <div className="hidden md:flex w-full gap-0 h-[600px] bg-gradient-to-r from-background via-background/95 to-background">
+          {/* Left Side - Step Animation (60% width) */}
+          <div className="w-[60%] relative pl-16 pr-8">
             {/* Stair-like connecting path */}
             <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -106,9 +106,9 @@ const InteractiveSampleRun = () => {
               </defs>
               {/* Stair-shaped path */}
               <path
-                d="M 80 520 L 140 520 L 140 420 L 200 420 L 200 320 L 260 320 L 260 220 L 320 220 L 320 120 L 380 120 L 380 80"
+                d="M 120 520 L 200 520 L 200 420 L 280 420 L 280 320 L 360 320 L 360 220 L 440 220 L 440 120 L 520 120 L 520 80"
                 stroke="url(#pathGradient)"
-                strokeWidth="4"
+                strokeWidth="6"
                 fill="none"
                 className="transition-all duration-1000"
               />
@@ -120,14 +120,14 @@ const InteractiveSampleRun = () => {
               const isActive = index === activeStep;
               const isCompleted = index < activeStep;
               
-              // Equal spacing stair positions
+              // Equal spacing stair positions with more spread
               const positions = [
-                { left: '15%', top: '85%' },   // Step 1
-                { left: '25%', top: '68%' },   // Step 2
-                { left: '35%', top: '51%' },   // Step 3
-                { left: '45%', top: '34%' },   // Step 4
-                { left: '55%', top: '17%' },   // Step 5
-                { left: '65%', top: '8%' },    // Step 6
+                { left: '18%', top: '85%' },   // Step 1
+                { left: '28%', top: '68%' },   // Step 2
+                { left: '38%', top: '51%' },   // Step 3
+                { left: '48%', top: '34%' },   // Step 4
+                { left: '58%', top: '17%' },   // Step 5
+                { left: '68%', top: '8%' },    // Step 6
               ];
               
               return (
@@ -139,9 +139,9 @@ const InteractiveSampleRun = () => {
                   {/* Step Circle - Equal sizes */}
                   <button
                     onClick={() => handleStepClick(index)}
-                    className={`relative w-16 h-16 rounded-full mb-3 transition-all duration-500 transform ${
+                    className={`relative w-20 h-20 rounded-full mb-4 transition-all duration-500 transform ${
                       isActive 
-                        ? 'bg-gradient-to-r from-destructive to-primary scale-110 shadow-lg shadow-destructive/25' 
+                        ? 'bg-gradient-to-r from-destructive to-primary scale-110 shadow-xl shadow-destructive/30' 
                         : isCompleted
                         ? 'bg-gradient-to-r from-destructive/80 to-primary/80'
                         : 'bg-muted hover:bg-muted/80 hover:scale-105'
@@ -150,27 +150,27 @@ const InteractiveSampleRun = () => {
                   >
                     {/* Glow effect for active step */}
                     {isActive && (
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-md opacity-50 scale-125"></div>
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-60 scale-125"></div>
                     )}
                     
                     <div className="relative z-10 flex items-center justify-center w-full h-full">
-                      <IconComponent className={`w-7 h-7 ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
+                      <IconComponent className={`w-8 h-8 ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
                     </div>
 
                     {/* Highlight indicator for active step */}
                     {isActive && (
-                      <div className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-r from-destructive to-primary rounded-full animate-ping"></div>
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-destructive to-primary rounded-full animate-ping"></div>
                     )}
                   </button>
 
                   {/* Step Title - Consistent sizing */}
-                  <div className="text-center w-[100px]">
-                    <h3 className={`font-poppins font-bold mb-1 text-xs transition-all duration-300 ${
+                  <div className="text-center w-[120px]">
+                    <h3 className={`font-poppins font-bold mb-2 text-sm transition-all duration-300 ${
                       isActive ? 'text-foreground' : 'text-muted-foreground'
                     }`}>
                       {step.title}
                     </h3>
-                    <span className={`text-xs px-2 py-1 rounded-full ${
+                    <span className={`text-xs px-3 py-1 rounded-full ${
                       isActive || isCompleted 
                         ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground' 
                         : 'bg-muted text-muted-foreground'
@@ -183,25 +183,25 @@ const InteractiveSampleRun = () => {
             })}
           </div>
 
-          {/* Right Side - Active Step Details */}
-          <div className="flex-1 flex items-center">
-            <Card className="w-full p-6 bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm border-2 transition-all duration-500 hover:shadow-xl h-fit">
+          {/* Right Side - Active Step Details (40% width) */}
+          <div className="w-[40%] flex items-center pr-16 pl-8 bg-gradient-to-l from-card/20 via-card/10 to-transparent">
+            <Card className="w-full p-8 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit">
               <div className="text-left">
-                <div className="w-16 h-16 bg-gradient-to-r from-destructive/10 to-primary/10 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-18 h-18 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-xl flex items-center justify-center mb-6 border border-border/30">
                   {React.createElement(steps[activeStep].icon, { 
-                    className: "w-8 h-8 text-destructive" 
+                    className: "w-9 h-9 text-destructive" 
                   })}
                 </div>
                 
-                <h3 className="text-2xl font-poppins font-bold text-foreground mb-3">
+                <h3 className="text-2xl lg:text-3xl font-poppins font-bold text-foreground mb-4 leading-tight">
                   Step {steps[activeStep].step}: {steps[activeStep].title}
                 </h3>
                 
-                <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   {steps[activeStep].description}
                 </p>
                 
-                <div className="bg-muted/30 rounded-lg p-4 border border-border/50">
+                <div className="bg-muted/40 rounded-lg p-5 border border-border/40 backdrop-blur-sm">
                   <p className="text-sm text-foreground leading-relaxed">
                     {steps[activeStep].detail}
                   </p>
@@ -212,7 +212,7 @@ const InteractiveSampleRun = () => {
         </div>
 
         {/* Mobile Vertical Timeline - No description box */}
-        <div className="md:hidden space-y-6">
+        <div className="md:hidden space-y-6 px-6">
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             const isActive = index === activeStep;
