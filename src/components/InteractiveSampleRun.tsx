@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FileText, MapPin, Package, Navigation, Lock, CheckCircle } from 'lucide-react';
+import { FileText, MapPin, Package, Navigation, Lock, CheckCircle, Settings } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import sampleRequestBg from '@/assets/sample-request-bg.jpg';
 import robotDispatchBg from '@/assets/robot-dispatch-bg.jpg';
@@ -126,8 +126,8 @@ const InteractiveSampleRun = () => {
                   r="45%"
                   fill="none"
                   stroke="hsl(var(--border))"
-                  strokeWidth="2"
-                  strokeOpacity="0.3"
+                  strokeWidth="4"
+                  strokeOpacity="0.4"
                 />
               </svg>
 
@@ -144,7 +144,7 @@ const InteractiveSampleRun = () => {
                 const y = 200 + radius * Math.sin(angle); // Center + radius * sin
                 
                 // Calculate label position (further out from circle)
-                const labelRadius = 220;
+                const labelRadius = 250;
                 const labelX = 200 + labelRadius * Math.cos(angle);
                 const labelY = 200 + labelRadius * Math.sin(angle);
                 
@@ -222,12 +222,13 @@ const InteractiveSampleRun = () => {
 
               {/* Center Logo/Branding Area - No Number */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 xl:w-24 xl:h-24 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 flex items-center justify-center backdrop-blur-md shadow-lg">
+                <div className="w-28 h-28 xl:w-32 xl:h-32 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 flex items-center justify-center backdrop-blur-md shadow-lg">
                   <div className="text-center">
-                    <div className="w-8 h-8 xl:w-10 xl:h-10 mx-auto mb-1 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-lg flex items-center justify-center">
-                      <Package className="w-4 h-4 xl:w-5 xl:h-5 text-primary" />
+                    <div className="w-12 h-12 xl:w-14 xl:h-14 mx-auto mb-2 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-xl flex items-center justify-center">
+                      <Settings className="w-6 h-6 xl:w-7 xl:h-7 text-primary" />
                     </div>
-                    <p className="text-xs font-medium text-muted-foreground/70">Workflow</p>
+                    <p className="text-sm xl:text-base font-medium text-muted-foreground/80">Automated</p>
+                    <p className="text-xs xl:text-sm font-medium text-muted-foreground/60">Workflow</p>
                   </div>
                 </div>
               </div>
@@ -280,8 +281,8 @@ const InteractiveSampleRun = () => {
                   r="45%"
                   fill="none"
                   stroke="hsl(var(--border))"
-                  strokeWidth="2"
-                  strokeOpacity="0.3"
+                  strokeWidth="4"
+                  strokeOpacity="0.4"
                 />
               </svg>
 
@@ -298,7 +299,7 @@ const InteractiveSampleRun = () => {
                 const y = 160 + radius * Math.sin(angle);
                 
                 // Calculate label position (further out from circle)
-                const labelRadius = 175;
+                const labelRadius = 205;
                 const labelX = 160 + labelRadius * Math.cos(angle);
                 const labelY = 160 + labelRadius * Math.sin(angle);
                 
@@ -373,10 +374,10 @@ const InteractiveSampleRun = () => {
 
               {/* Center Logo/Branding Area - No Number */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 flex items-center justify-center backdrop-blur-md shadow-lg">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 flex items-center justify-center backdrop-blur-md shadow-lg">
                   <div className="text-center">
-                    <div className="w-6 h-6 mx-auto mb-1 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-lg flex items-center justify-center">
-                      <Package className="w-3 h-3 text-primary" />
+                    <div className="w-8 h-8 mx-auto mb-1 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-lg flex items-center justify-center">
+                      <Settings className="w-4 h-4 text-primary" />
                     </div>
                     <p className="text-xs font-medium text-muted-foreground/70">Flow</p>
                   </div>
@@ -431,8 +432,8 @@ const InteractiveSampleRun = () => {
                   r="45%"
                   fill="none"
                   stroke="hsl(var(--border))"
-                  strokeWidth="2"
-                  strokeOpacity="0.3"
+                  strokeWidth="3"
+                  strokeOpacity="0.4"
                 />
               </svg>
 
@@ -489,10 +490,10 @@ const InteractiveSampleRun = () => {
 
               {/* Center Logo/Branding Area - No Number */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 flex items-center justify-center backdrop-blur-md shadow-lg">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 flex items-center justify-center backdrop-blur-md shadow-lg">
                   <div className="text-center">
-                    <div className="w-5 h-5 mx-auto bg-gradient-to-r from-destructive/20 to-primary/20 rounded flex items-center justify-center">
-                      <Package className="w-2.5 h-2.5 text-primary" />
+                    <div className="w-7 h-7 mx-auto bg-gradient-to-r from-destructive/20 to-primary/20 rounded-lg flex items-center justify-center">
+                      <Settings className="w-3.5 h-3.5 text-primary" />
                     </div>
                   </div>
                 </div>
