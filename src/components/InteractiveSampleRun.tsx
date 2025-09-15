@@ -519,6 +519,29 @@ const InteractiveSampleRun = () => {
                       </button>
                     </div>
 
+                    {/* Step Number - Positioned creatively beside each circle */}
+                    <div 
+                      className="absolute transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                      style={{ 
+                        left: `${((140 + (labelRadius + 15) * Math.cos(angle)) / 280) * 100}%`, 
+                        top: `${((140 + (labelRadius + 15) * Math.sin(angle)) / 280) * 100}%` 
+                      }}
+                    >
+                      <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500 border ${
+                        isActive 
+                          ? index === 5
+                            ? 'bg-green-500 text-white border-green-400 shadow-lg shadow-green-500/50 scale-110'
+                            : 'bg-destructive text-primary-foreground border-destructive/50 shadow-lg shadow-destructive/50 scale-110'
+                          : isCompleted
+                          ? index === 5
+                            ? 'bg-green-500/80 text-white border-green-400/50'
+                            : 'bg-destructive/80 text-primary-foreground border-destructive/30'
+                          : 'bg-muted/90 text-muted-foreground border-border backdrop-blur-sm'
+                      }`}>
+                        {step.step}
+                      </div>
+                    </div>
+
                   </div>
                 );
               })}
