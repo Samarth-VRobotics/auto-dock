@@ -437,7 +437,7 @@ const InteractiveSampleRun = () => {
                 />
               </svg>
 
-              {/* Step Dots Positioned Around Circle */}
+               {/* Step Dots Positioned Around Circle */}
               {steps.map((step, index) => {
                 const IconComponent = step.icon;
                 const isActive = index === activeStep;
@@ -449,41 +449,75 @@ const InteractiveSampleRun = () => {
                 const x = 140 + radius * Math.cos(angle);
                 const y = 140 + radius * Math.sin(angle);
                 
+                // Calculate label position for mobile (beside circle points)
+                const labelRadius = 180;
+                const labelX = 140 + labelRadius * Math.cos(angle);
+                const labelY = 140 + labelRadius * Math.sin(angle);
+                
                 return (
-                  <div 
-                    key={index} 
-                    className="absolute transform -translate-x-1/2 -translate-y-1/2" 
-                    style={{ 
-                      left: `${(x / 280) * 100}%`, 
-                      top: `${(y / 280) * 100}%` 
-                    }}
-                  >
+                  <div key={index}>
                     {/* Step Circle */}
-                    <button
-                      onClick={() => handleStepClick(index)}
-                      className={`relative w-10 h-10 rounded-full transition-all duration-700 transform z-20 border-2 ${
-                        isActive 
-                          ? 'bg-gradient-to-r from-destructive to-primary scale-110 shadow-lg shadow-destructive/30 border-transparent' 
-                          : isCompleted
-                          ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 border-transparent'
-                          : 'bg-card/80 scale-90 hover:scale-100 border-border hover:border-primary/50'
-                      }`}
-                      disabled={isAnimating}
+                    <div 
+                      className="absolute transform -translate-x-1/2 -translate-y-1/2" 
+                      style={{ 
+                        left: `${(x / 280) * 100}%`, 
+                        top: `${(y / 280) * 100}%` 
+                      }}
                     >
-                      {isActive && (
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-md opacity-60 scale-150 animate-pulse"></div>
-                      )}
-                      
-                      <div className="relative z-10 flex items-center justify-center w-full h-full">
-                        <IconComponent className={`w-4 h-4 transition-all duration-500 ${
+                      <button
+                        onClick={() => handleStepClick(index)}
+                        className={`relative w-10 h-10 rounded-full transition-all duration-700 transform z-20 border-2 ${
                           isActive 
-                            ? 'text-primary-foreground drop-shadow-lg' 
-                            : isCompleted 
-                            ? 'text-primary-foreground' 
-                            : 'text-muted-foreground hover:text-foreground'
-                        }`} />
+                            ? 'bg-gradient-to-r from-destructive to-primary scale-110 shadow-lg shadow-destructive/30 border-transparent' 
+                            : isCompleted
+                            ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 border-transparent'
+                            : 'bg-card/80 scale-90 hover:scale-100 border-border hover:border-primary/50'
+                        }`}
+                        disabled={isAnimating}
+                      >
+                        {isActive && (
+                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-md opacity-60 scale-150 animate-pulse"></div>
+                        )}
+                        
+                        <div className="relative z-10 flex items-center justify-center w-full h-full">
+                          <IconComponent className={`w-4 h-4 transition-all duration-500 ${
+                            isActive 
+                              ? 'text-primary-foreground drop-shadow-lg' 
+                              : isCompleted 
+                              ? 'text-primary-foreground' 
+                              : 'text-muted-foreground hover:text-foreground'
+                          }`} />
+                        </div>
+                      </button>
+                    </div>
+
+                    {/* Step Label - Positioned beside circle points for mobile */}
+                    <div 
+                      className="absolute transform -translate-x-1/2 -translate-y-1/2 text-center transition-all duration-500 pointer-events-none"
+                      style={{ 
+                        left: `${(labelX / 280) * 100}%`, 
+                        top: `${(labelY / 280) * 100}%` 
+                      }}
+                    >
+                      <div className={`transition-all duration-500 ${
+                        isActive ? 'opacity-100 scale-105' : isCompleted ? 'opacity-80' : 'opacity-60'
+                      }`}>
+                        <span className={`text-xs px-2 py-1 rounded-full inline-block font-medium whitespace-nowrap ${
+                          isActive 
+                            ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg' 
+                            : isCompleted
+                            ? 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
+                            : 'bg-muted/80 text-muted-foreground backdrop-blur-sm'
+                        }`}>
+                          {step.title}
+                        </span>
+                        <p className={`text-xs mt-1 font-medium max-w-16 mx-auto leading-tight ${
+                          isActive ? 'text-foreground' : isCompleted ? 'text-muted-foreground' : 'text-muted-foreground/70'
+                        }`}>
+                          {step.description}
+                        </p>
                       </div>
-                    </button>
+                    </div>
                   </div>
                 );
               })}

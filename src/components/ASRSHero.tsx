@@ -94,15 +94,6 @@ const ASRSHero = () => {
             </div>
           </div>
 
-          {/* Right side content overlay - keeping for mobile/fallback */}
-          <div className="relative animate-fade-in lg:hidden" style={{
-          animationDelay: '0.4s',
-          animationFillMode: 'both'
-        }}>
-            <div className="bg-background/10 backdrop-blur-sm rounded-xl p-6 border border-foreground/10">
-              <img src={asrsImage} alt="Automated Storage and Retrieval System" className="w-full h-auto rounded-lg shadow-xl opacity-80" />
-            </div>
-          </div>
         </div>
       </div>
     </section>;
