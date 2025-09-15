@@ -28,7 +28,7 @@ const WhyQuadrupeds = () => {
   }, {
     id: 'always-on-fleet',
     header: 'Always-On Fleet, Ready When You Are',
-    text: 'Multiple robots managed by Vegam SFS deliver 24/7 with intelligent charging and coordination.',
+    text: 'Multiple robots operate 24/7, with Fleet Manager overseeing opportunity charging and coordination.',
     icon: Zap,
     visual: 'default'
   }, {
