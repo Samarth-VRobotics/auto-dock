@@ -1,34 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, FileText, MapPin, Package, Navigation, Lock, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { FileText, MapPin, Package, Navigation, Lock, CheckCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import robotDogImage from '@/assets/robot-dog.webp';
-import { removeBackground, loadImage } from '@/lib/backgroundRemoval';
 
 const InteractiveSampleRun = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [processedRobotImage, setProcessedRobotImage] = useState<string | null>(null);
-  const [isProcessing, setIsProcessing] = useState(true);
-
-  // Process robot image to remove background
-  useEffect(() => {
-    const processImage = async () => {
-      try {
-        const img = await loadImage(robotDogImage);
-        const processedImageUrl = await removeBackground(img);
-        setProcessedRobotImage(processedImageUrl);
-      } catch (error) {
-        console.error('Failed to process robot image:', error);
-        // Fallback to original image
-        setProcessedRobotImage(robotDogImage);
-      } finally {
-        setIsProcessing(false);
-      }
-    };
-
-    processImage();
-  }, []);
 
   const steps = [
     {
@@ -75,6 +51,17 @@ const InteractiveSampleRun = () => {
     }
   ];
 
+  // Auto-progress through steps
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setActiveStep((prev) => (prev + 1) % steps.length);
+      
+      setTimeout(() => setIsAnimating(false), 600);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [steps.length]);
 
   const handleStepClick = (index: number) => {
     if (isAnimating) return;
@@ -83,15 +70,6 @@ const InteractiveSampleRun = () => {
     
     setTimeout(() => setIsAnimating(false), 600);
   };
-
-  const handleNext = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setActiveStep((prev) => (prev + 1) % steps.length);
-    
-    setTimeout(() => setIsAnimating(false), 600);
-  };
-
 
   return (
     <section className="py-24 bg-background relative overflow-hidden">
@@ -110,107 +88,98 @@ const InteractiveSampleRun = () => {
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
             Experience the seamless automation of sample transport through our interactive workflow demonstration
           </p>
-          
-          {/* Controls */}
-          <div className="flex justify-center gap-4 mb-12">
-            <Button
-              onClick={handleNext}
-              variant="outline"
-              size="lg"
-              className="gap-2"
-              disabled={isAnimating}
-            >
-              Next Step
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-          </div>
         </div>
 
-        {/* Interactive Timeline */}
+        {/* Diagonal Step Flow */}
         <div className="max-w-7xl mx-auto mb-16">
-          {/* Desktop Horizontal Timeline */}
-          <div className="hidden md:block">
-            <div className="relative">
-              {/* Progress Line */}
-              <div className="absolute top-20 left-0 w-full h-1 bg-border/30 rounded-full">
+          {/* Desktop Diagonal Layout */}
+          <div className="hidden md:block relative h-[600px]">
+            {/* Connecting Path */}
+            <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="pathGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(var(--destructive))" stopOpacity="0.3" />
+                  <stop offset={`${((activeStep + 1) / steps.length) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="0.8" />
+                  <stop offset={`${((activeStep + 1) / steps.length) * 100}%`} stopColor="hsl(var(--border))" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M 100 550 Q 200 450, 300 400 Q 400 350, 500 300 Q 600 250, 700 200 Q 800 150, 900 100 Q 1000 50, 1100 50"
+                stroke="url(#pathGradient)"
+                strokeWidth="4"
+                fill="none"
+                className="transition-all duration-1000"
+              />
+            </svg>
+
+            {/* Step Points */}
+            {steps.map((step, index) => {
+              const IconComponent = step.icon;
+              const isActive = index === activeStep;
+              const isCompleted = index < activeStep;
+              
+              // Calculate positions along diagonal path
+              const positions = [
+                { left: '8%', top: '85%' },   // Bottom left
+                { left: '24%', top: '70%' },  // Moving up-right
+                { left: '40%', top: '55%' },  // Center-left
+                { left: '56%', top: '40%' },  // Center-right
+                { left: '72%', top: '25%' },  // Moving up-right
+                { left: '88%', top: '10%' },  // Top right
+              ];
+              
+              return (
                 <div 
-                  className="h-full bg-gradient-to-r from-destructive to-primary rounded-full transition-all duration-1000 ease-out relative"
-                  style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
+                  key={index} 
+                  className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                  style={positions[index]}
                 >
-                  {/* Glowing effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-destructive to-primary rounded-full blur-sm opacity-75"></div>
-                </div>
-              </div>
-
-              {/* Step Markers */}
-              <div className="relative grid grid-cols-6 gap-4">
-                {steps.map((step, index) => {
-                  const IconComponent = step.icon;
-                  const isActive = index === activeStep;
-                  const isCompleted = index < activeStep;
-                  
-                  return (
-                    <div key={index} className="text-center">
-                      {/* Step Circle */}
-                      <button
-                        onClick={() => handleStepClick(index)}
-                        className={`relative w-16 h-16 rounded-full mx-auto mb-4 transition-all duration-500 transform ${
-                          isActive 
-                            ? 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-lg shadow-destructive/25' 
-                            : isCompleted
-                            ? 'bg-gradient-to-r from-destructive/80 to-primary/80 scale-110'
-                            : 'bg-muted hover:bg-muted/80 hover:scale-105'
-                        } ${isAnimating && isActive ? 'animate-pulse' : ''}`}
-                        disabled={isAnimating}
-                      >
-                        {/* Glow effect for active step */}
-                        {isActive && (
-                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-md opacity-50 scale-150"></div>
-                        )}
-                        
-                        <div className="relative z-10 flex items-center justify-center w-full h-full">
-                          <span className={`font-bold text-lg ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`}>
-                            {step.step}
-                          </span>
-                        </div>
-                        
-                        {/* Robot Dog Image - only shows on active step */}
-                        {isActive && !isProcessing && processedRobotImage && (
-                          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-                            <div className="w-16 h-12 animate-bounce">
-                              <img 
-                                src={processedRobotImage} 
-                                alt="Robot Dog" 
-                                className="w-full h-full object-contain filter drop-shadow-2xl"
-                                style={{
-                                  filter: 'drop-shadow(0 4px 8px rgba(220, 38, 38, 0.3)) drop-shadow(0 0 16px rgba(220, 38, 38, 0.2))'
-                                }}
-                              />
-                            </div>
-                          </div>
-                        )}
-                        
-                        {/* Loading indicator while processing */}
-                        {isActive && isProcessing && (
-                          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-                            <div className="w-16 h-12 flex items-center justify-center">
-                              <div className="w-6 h-6 border-2 border-destructive border-t-transparent rounded-full animate-spin"></div>
-                            </div>
-                          </div>
-                        )}
-                      </button>
-
-                      {/* Step Title */}
-                      <h3 className={`font-poppins font-bold mb-2 transition-all duration-300 ${
-                        isActive ? 'text-foreground text-lg' : 'text-muted-foreground text-base'
-                      }`}>
-                        {step.title}
-                      </h3>
+                  {/* Step Circle */}
+                  <button
+                    onClick={() => handleStepClick(index)}
+                    className={`relative w-16 h-16 rounded-full mb-4 transition-all duration-500 transform ${
+                      isActive 
+                        ? 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-lg shadow-destructive/25' 
+                        : isCompleted
+                        ? 'bg-gradient-to-r from-destructive/80 to-primary/80 scale-110'
+                        : 'bg-muted hover:bg-muted/80 hover:scale-105'
+                    } ${isAnimating && isActive ? 'animate-pulse' : ''}`}
+                    disabled={isAnimating}
+                  >
+                    {/* Glow effect for active step */}
+                    {isActive && (
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-md opacity-50 scale-150"></div>
+                    )}
+                    
+                    <div className="relative z-10 flex items-center justify-center w-full h-full">
+                      <IconComponent className={`w-8 h-8 ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
                     </div>
-                  );
-                })}
-              </div>
-            </div>
+
+                    {/* Highlight indicator for active step */}
+                    {isActive && (
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-destructive to-primary rounded-full animate-ping"></div>
+                    )}
+                  </button>
+
+                  {/* Step Title */}
+                  <div className="text-center min-w-[120px]">
+                    <h3 className={`font-poppins font-bold mb-1 text-sm transition-all duration-300 ${
+                      isActive ? 'text-foreground' : 'text-muted-foreground'
+                    }`}>
+                      {step.title}
+                    </h3>
+                    <span className={`text-xs px-2 py-1 rounded-full ${
+                      isActive || isCompleted 
+                        ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground' 
+                        : 'bg-muted text-muted-foreground'
+                    }`}>
+                      Step {step.step}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           {/* Mobile Vertical Timeline */}
@@ -233,9 +202,9 @@ const InteractiveSampleRun = () => {
                     } ${isAnimating && isActive ? 'animate-pulse' : ''}`}
                     disabled={isAnimating}
                   >
-                    <span className={`font-bold ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`}>
-                      {step.step}
-                    </span>
+                    <div className="flex items-center justify-center w-full h-full">
+                      <IconComponent className={`w-6 h-6 ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
+                    </div>
                   </button>
                   
                   <div className="flex-1">
