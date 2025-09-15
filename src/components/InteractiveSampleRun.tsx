@@ -57,8 +57,8 @@ const InteractiveSampleRun = () => {
       setIsAnimating(true);
       setActiveStep((prev) => (prev + 1) % steps.length);
       
-      setTimeout(() => setIsAnimating(false), 600);
-    }, 3000);
+      setTimeout(() => setIsAnimating(false), 400);
+    }, 1500);
 
     return () => clearInterval(interval);
   }, [steps.length]);
@@ -92,9 +92,9 @@ const InteractiveSampleRun = () => {
 
         {/* Diagonal Step Flow */}
         <div className="max-w-7xl mx-auto mb-16">
-          {/* Desktop Diagonal Layout */}
+          {/* Desktop Stair Layout */}
           <div className="hidden md:block relative h-[600px]">
-            {/* Connecting Path */}
+            {/* Stair-like connecting path */}
             <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="pathGradient" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -104,8 +104,9 @@ const InteractiveSampleRun = () => {
                   <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
+              {/* Stair-shaped path */}
               <path
-                d="M 100 550 Q 200 450, 300 400 Q 400 350, 500 300 Q 600 250, 700 200 Q 800 150, 900 100 Q 1000 50, 1100 50"
+                d="M 100 500 L 200 500 L 200 400 L 300 400 L 300 300 L 500 300 L 500 200 L 700 200 L 700 100 L 900 100 L 900 50 L 1000 50"
                 stroke="url(#pathGradient)"
                 strokeWidth="4"
                 fill="none"
@@ -113,20 +114,20 @@ const InteractiveSampleRun = () => {
               />
             </svg>
 
-            {/* Step Points */}
+            {/* Step Points positioned like stairs */}
             {steps.map((step, index) => {
               const IconComponent = step.icon;
               const isActive = index === activeStep;
               const isCompleted = index < activeStep;
               
-              // Calculate positions along diagonal path
+              // Stair-like positions - each step higher and to the right
               const positions = [
-                { left: '8%', top: '85%' },   // Bottom left
-                { left: '24%', top: '70%' },  // Moving up-right
-                { left: '40%', top: '55%' },  // Center-left
-                { left: '56%', top: '40%' },  // Center-right
-                { left: '72%', top: '25%' },  // Moving up-right
-                { left: '88%', top: '10%' },  // Top right
+                { left: '10%', top: '80%' },   // Step 1 - bottom left
+                { left: '22%', top: '65%' },   // Step 2 - up and right
+                { left: '34%', top: '50%' },   // Step 3 - up and right
+                { left: '50%', top: '35%' },   // Step 4 - up and right
+                { left: '70%', top: '20%' },   // Step 5 - up and right
+                { left: '86%', top: '8%' },    // Step 6 - top right
               ];
               
               return (
