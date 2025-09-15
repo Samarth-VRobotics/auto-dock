@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FileText, MapPin, Package, Navigation, Lock, CheckCircle, Settings } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import sampleRequestBg from '@/assets/sample-request-bg.jpg';
-import robotDispatchBg from '@/assets/robot-dispatch-bg.jpg';
+import performanceAnalytics from '@/assets/performance-analytics.jpg';
+import robotDispatchBg from '@/assets/robot-dispatch-bg.jpg';  
 import sampleCollectionBg from '@/assets/sample-collection-bg.jpg';
 import navigationBg from '@/assets/navigation-bg.jpg';
 import secureDeliveryBg from '@/assets/secure-delivery-bg.jpg';
-import confirmationBg from '@/assets/confirmation-bg.jpg';
+import smartFactoryHall from '@/assets/smart-factory-hall.jpg';
 
 const InteractiveSampleRun = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -19,7 +19,7 @@ const InteractiveSampleRun = () => {
       description: 'Triggered in MOM / MES system for quality control sampling.',
       detail: 'Manufacturing Operations Management system initiates automated sample collection request with specific location and priority parameters.',
       step: '1',
-      backgroundImage: sampleRequestBg
+      backgroundImage: performanceAnalytics
     },
     {
       icon: MapPin,
@@ -59,7 +59,7 @@ const InteractiveSampleRun = () => {
       description: 'Logged into MOM / MES dashboards in real time.',
       detail: 'Complete workflow data including timing, location tracking, and delivery confirmation automatically syncs with enterprise systems.',
       step: '6',
-      backgroundImage: confirmationBg
+      backgroundImage: smartFactoryHall
     }
   ];
 
@@ -162,9 +162,13 @@ const InteractiveSampleRun = () => {
                         onClick={() => handleStepClick(index)}
                         className={`relative w-16 h-16 xl:w-18 xl:h-18 rounded-full transition-all duration-700 transform z-20 border-2 ${
                           isActive 
-                            ? 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-2xl shadow-destructive/50 border-transparent' 
+                            ? index === 5 
+                              ? 'bg-gradient-to-r from-green-500 to-green-600 scale-125 shadow-2xl shadow-green-500/50 border-transparent'
+                              : 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-2xl shadow-destructive/50 border-transparent'
                             : isCompleted
-                            ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-110 shadow-lg shadow-destructive/25 border-transparent'
+                            ? index === 5
+                              ? 'bg-gradient-to-r from-green-500/90 to-green-600/90 scale-110 shadow-lg shadow-green-500/25 border-transparent'
+                              : 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-110 shadow-lg shadow-destructive/25 border-transparent'
                             : 'bg-card/80 scale-95 hover:scale-105 hover:bg-card border-border hover:border-primary/50'
                         }`}
                         disabled={isAnimating}
@@ -172,8 +176,12 @@ const InteractiveSampleRun = () => {
                         {/* Enhanced glow effect for active step */}
                         {isActive && (
                           <>
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-70 scale-150 animate-pulse"></div>
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-xl opacity-40 scale-200 animate-ping"></div>
+                            <div className={`absolute inset-0 rounded-full blur-lg opacity-70 scale-150 animate-pulse ${
+                              index === 5 ? 'bg-gradient-to-r from-green-500 to-green-600' : 'bg-gradient-to-r from-destructive to-primary'
+                            }`}></div>
+                            <div className={`absolute inset-0 rounded-full blur-xl opacity-40 scale-200 animate-ping ${
+                              index === 5 ? 'bg-gradient-to-r from-green-500 to-green-600' : 'bg-gradient-to-r from-destructive to-primary'
+                            }`}></div>
                           </>
                         )}
                         
@@ -202,9 +210,13 @@ const InteractiveSampleRun = () => {
                       }`}>
                         <span className={`text-xs px-2 py-1 xl:px-3 xl:py-1 rounded-full inline-block font-medium whitespace-nowrap ${
                           isActive 
-                            ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg' 
+                            ? index === 5
+                              ? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg'
+                              : 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg'
                             : isCompleted
-                            ? 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
+                            ? index === 5
+                              ? 'bg-gradient-to-r from-green-500/70 to-green-600/70 text-white'
+                              : 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
                             : 'bg-muted/80 text-muted-foreground backdrop-blur-sm'
                         }`}>
                           Step {step.step}
@@ -317,16 +329,22 @@ const InteractiveSampleRun = () => {
                         onClick={() => handleStepClick(index)}
                         className={`relative w-12 h-12 rounded-full transition-all duration-700 transform z-20 border-2 ${
                           isActive 
-                            ? 'bg-gradient-to-r from-destructive to-primary scale-115 shadow-xl shadow-destructive/40 border-transparent' 
+                            ? index === 5 
+                              ? 'bg-gradient-to-r from-green-500 to-green-600 scale-115 shadow-xl shadow-green-500/40 border-transparent'
+                              : 'bg-gradient-to-r from-destructive to-primary scale-115 shadow-xl shadow-destructive/40 border-transparent'
                             : isCompleted
-                            ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 shadow-lg shadow-destructive/20 border-transparent'
+                            ? index === 5
+                              ? 'bg-gradient-to-r from-green-500/90 to-green-600/90 scale-105 shadow-lg shadow-green-500/20 border-transparent'
+                              : 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 shadow-lg shadow-destructive/20 border-transparent'
                             : 'bg-card/80 scale-90 hover:scale-100 hover:bg-card border-border hover:border-primary/50'
                         }`}
                         disabled={isAnimating}
                       >
                         {/* Enhanced glow effect for active step */}
                         {isActive && (
-                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-60 scale-150 animate-pulse"></div>
+                          <div className={`absolute inset-0 rounded-full blur-lg opacity-60 scale-150 animate-pulse ${
+                            index === 5 ? 'bg-gradient-to-r from-green-500 to-green-600' : 'bg-gradient-to-r from-destructive to-primary'
+                          }`}></div>
                         )}
                         
                         <div className="relative z-10 flex items-center justify-center w-full h-full">
@@ -354,9 +372,13 @@ const InteractiveSampleRun = () => {
                       }`}>
                         <span className={`text-xs px-2 py-1 rounded-full inline-block font-medium whitespace-nowrap ${
                           isActive 
-                            ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg' 
+                            ? index === 5
+                              ? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg'
+                              : 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg'
                             : isCompleted
-                            ? 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
+                            ? index === 5
+                              ? 'bg-gradient-to-r from-green-500/70 to-green-600/70 text-white'
+                              : 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
                             : 'bg-muted/80 text-muted-foreground backdrop-blur-sm'
                         }`}>
                           Step {step.step}
@@ -468,15 +490,21 @@ const InteractiveSampleRun = () => {
                         onClick={() => handleStepClick(index)}
                         className={`relative w-10 h-10 rounded-full transition-all duration-700 transform z-20 border-2 ${
                           isActive 
-                            ? 'bg-gradient-to-r from-destructive to-primary scale-110 shadow-lg shadow-destructive/30 border-transparent' 
+                            ? index === 5 
+                              ? 'bg-gradient-to-r from-green-500 to-green-600 scale-110 shadow-lg shadow-green-500/30 border-transparent'
+                              : 'bg-gradient-to-r from-destructive to-primary scale-110 shadow-lg shadow-destructive/30 border-transparent'
                             : isCompleted
-                            ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 border-transparent'
+                            ? index === 5
+                              ? 'bg-gradient-to-r from-green-500/90 to-green-600/90 scale-105 border-transparent'
+                              : 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 border-transparent'
                             : 'bg-card/80 scale-90 hover:scale-100 border-border hover:border-primary/50'
                         }`}
                         disabled={isAnimating}
                       >
                         {isActive && (
-                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-md opacity-60 scale-150 animate-pulse"></div>
+                          <div className={`absolute inset-0 rounded-full blur-md opacity-60 scale-150 animate-pulse ${
+                            index === 5 ? 'bg-gradient-to-r from-green-500 to-green-600' : 'bg-gradient-to-r from-destructive to-primary'
+                          }`}></div>
                         )}
                         
                         <div className="relative z-10 flex items-center justify-center w-full h-full">
