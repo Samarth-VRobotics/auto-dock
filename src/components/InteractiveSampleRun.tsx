@@ -102,105 +102,109 @@ const InteractiveSampleRun = () => {
           </p>
         </div>
 
-        {/* Desktop Full-Width Layout */}
-        <div className="hidden md:flex w-full gap-0 h-[700px] bg-gradient-to-r from-background via-background/95 to-background relative">
-          {/* Centered Timeline Container */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-2 h-full flex flex-col justify-center">
-            {/* Main vertical progress line */}
+        {/* Desktop Diagonal Timeline Layout */}
+        <div className="hidden md:flex w-full gap-0 h-[700px] bg-gradient-to-r from-background via-background/95 to-background relative overflow-hidden">
+          {/* Diagonal Timeline Container */}
+          <div className="absolute inset-0">
+            {/* Diagonal progress line SVG */}
             <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="verticalProgress" x1="0%" y1="0%" x2="0%" y2="100%">
+                <linearGradient id="diagonalProgress" x1="10%" y1="90%" x2="50%" y2="20%">
                   <stop offset="0%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
-                  <stop offset={`${(activeStep / (steps.length - 1)) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="0.9" />
-                  <stop offset={`${(activeStep / (steps.length - 1)) * 100 + 1}%`} stopColor="hsl(var(--border))" stopOpacity="0.3" />
+                  <stop offset={`${(activeStep / (steps.length - 1)) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="1" />
+                  <stop offset={`${(activeStep / (steps.length - 1)) * 100 + 2}%`} stopColor="hsl(var(--border))" stopOpacity="0.3" />
                   <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
               <line
-                x1="50%"
-                y1="15%"
+                x1="10%"
+                y1="90%"
                 x2="50%"
-                y2="85%"
-                stroke="url(#verticalProgress)"
-                strokeWidth="4"
+                y2="20%"
+                stroke="url(#diagonalProgress)"
+                strokeWidth="6"
                 className="transition-all duration-1000"
               />
             </svg>
 
-            {/* Step dots positioned along vertical line */}
+            {/* Step dots positioned along diagonal line */}
             {steps.map((step, index) => {
               const IconComponent = step.icon;
               const isActive = index === activeStep;
               const isCompleted = index < activeStep;
+              const isUpcoming = index > activeStep;
               
-              // Vertical positions evenly distributed
-              const topPosition = 15 + (index * 14); // 15% to 85% evenly distributed
+              // Calculate diagonal positions from bottom-left (10%, 90%) to center (50%, 20%)
+              const progress = index / (steps.length - 1);
+              const leftPosition = 10 + (progress * 40); // 10% to 50%
+              const topPosition = 90 - (progress * 70); // 90% to 20%
               
               return (
-                <div key={index} className="absolute left-1/2 transform -translate-x-1/2" style={{ top: `${topPosition}%` }}>
-                  {/* Horizontal connection line to content (only for active step) */}
-                  {isActive && (
-                    <svg className="absolute top-1/2 left-10 w-[300px] h-1" xmlns="http://www.w3.org/2000/svg">
-                      <line
-                        x1="0"
-                        y1="50%"
-                        x2="100%"
-                        y2="50%"
-                        stroke="hsl(var(--destructive))"
-                        strokeWidth="3"
-                        strokeDasharray="8,4"
-                        className="animate-pulse"
-                      />
-                    </svg>
-                  )}
-                  
+                <div 
+                  key={index} 
+                  className="absolute transform -translate-x-1/2 -translate-y-1/2" 
+                  style={{ 
+                    left: `${leftPosition}%`, 
+                    top: `${topPosition}%` 
+                  }}
+                >
                   {/* Step Circle */}
                   <button
                     onClick={() => handleStepClick(index)}
-                    className={`relative w-16 h-16 rounded-full transition-all duration-500 transform z-20 ${
+                    className={`relative w-16 h-16 rounded-full transition-all duration-700 transform z-20 ${
                       isActive 
-                        ? 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-xl shadow-destructive/40 animate-pulse' 
+                        ? 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-2xl shadow-destructive/50' 
                         : isCompleted
-                        ? 'bg-gradient-to-r from-destructive/80 to-primary/80 scale-110'
-                        : 'bg-muted hover:bg-muted/80 hover:scale-105'
+                        ? 'bg-gradient-to-r from-destructive/80 to-primary/80 scale-110 shadow-lg shadow-destructive/30'
+                        : 'bg-muted/50 scale-90 hover:scale-100 hover:bg-muted/70'
                     }`}
                     disabled={isAnimating}
                   >
                     {/* Enhanced glow effect for active step */}
                     {isActive && (
                       <>
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-70 scale-150 animate-pulse"></div>
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-xl opacity-40 scale-200"></div>
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-xl opacity-80 scale-150 animate-ping"></div>
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-2xl opacity-60 scale-200 animate-pulse"></div>
                       </>
                     )}
                     
                     <div className="relative z-10 flex items-center justify-center w-full h-full">
-                      <IconComponent className={`w-6 h-6 ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
+                      <IconComponent className={`w-7 h-7 transition-all duration-500 ${
+                        isActive 
+                          ? 'text-primary-foreground drop-shadow-lg' 
+                          : isCompleted 
+                          ? 'text-primary-foreground' 
+                          : 'text-muted-foreground/60'
+                      }`} />
                     </div>
                   </button>
 
-                  {/* Step Title on the left */}
-                  <div className="absolute right-20 top-1/2 transform -translate-y-1/2 text-right w-32">
-                    <h3 className={`font-poppins font-bold text-sm transition-all duration-300 ${
-                      isActive ? 'text-foreground' : 'text-muted-foreground'
-                    }`}>
-                      {step.title}
-                    </h3>
-                    <span className={`text-xs px-2 py-1 rounded-full inline-block mt-1 ${
-                      isActive || isCompleted 
-                        ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground' 
-                        : 'bg-muted text-muted-foreground'
+                  {/* Step Label */}
+                  <div className={`absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-center transition-all duration-500 ${
+                    isActive ? 'opacity-100 scale-105' : isCompleted ? 'opacity-80' : 'opacity-50'
+                  }`}>
+                    <span className={`text-xs px-3 py-1 rounded-full inline-block font-medium ${
+                      isActive 
+                        ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg' 
+                        : isCompleted
+                        ? 'bg-gradient-to-r from-destructive/60 to-primary/60 text-primary-foreground'
+                        : 'bg-muted/70 text-muted-foreground'
                     }`}>
                       Step {step.step}
                     </span>
+                    <p className={`text-xs mt-1 font-medium max-w-20 leading-tight ${
+                      isActive ? 'text-foreground' : isCompleted ? 'text-muted-foreground' : 'text-muted-foreground/60'
+                    }`}>
+                      {step.title}
+                    </p>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Right Side - Active Step Details */}
-          <div className="ml-auto w-[45%] flex items-center pr-16 pl-8 relative">
+          {/* Right Side - Fixed Content Box */}
+          <div className="ml-auto w-[45%] flex items-center pr-8 pl-4 relative">
             <Card className="w-full p-12 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit max-w-none relative z-10 overflow-hidden">
               {/* Dynamic background image inside card */}
               <div 
