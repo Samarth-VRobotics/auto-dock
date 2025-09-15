@@ -90,44 +90,55 @@ const InteractiveSampleRun = () => {
           </p>
         </div>
 
-        {/* Desktop Full-Width Layout */}
-        <div className="hidden md:flex w-full gap-0 h-[600px] bg-gradient-to-r from-background via-background/95 to-background">
-          {/* Left Side - Step Animation (60% width) */}
-          <div className="w-[60%] relative pl-16 pr-8">
-            {/* Stair-like connecting path */}
+        {/* Desktop V-Shape Layout */}
+        <div className="hidden md:flex w-full h-[700px] relative bg-gradient-to-br from-background via-background/95 to-background">
+          {/* V-Shape Step Animation Container */}
+          <div className="w-full relative px-16">
+            {/* V-shaped connecting path */}
             <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="pathGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                <linearGradient id="vPathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="hsl(var(--destructive))" stopOpacity="0.3" />
-                  <stop offset={`${((activeStep + 1) / steps.length) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="0.8" />
+                  <stop offset={`${((activeStep + 1) / steps.length) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="0.9" />
                   <stop offset={`${((activeStep + 1) / steps.length) * 100}%`} stopColor="hsl(var(--border))" stopOpacity="0.3" />
                   <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
                 </linearGradient>
+                <path id="vPath" d="M 150 120 L 250 250 L 350 400 L 450 550 L 550 400 L 650 250 L 750 120"/>
               </defs>
-              {/* Stair-shaped path */}
+              
+              {/* V-shaped path */}
               <path
-                d="M 120 520 L 200 520 L 200 420 L 280 420 L 280 320 L 360 320 L 360 220 L 440 220 L 440 120 L 520 120 L 520 80"
-                stroke="url(#pathGradient)"
+                d="M 150 120 L 250 250 L 350 400 L 450 550 L 550 400 L 650 250 L 750 120"
+                stroke="url(#vPathGradient)"
                 strokeWidth="6"
                 fill="none"
                 className="transition-all duration-1000"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
+              
+              {/* Animated moving dot along the path */}
+              <circle r="6" fill="hsl(var(--destructive))" className="opacity-80">
+                <animateMotion dur="9s" repeatCount="indefinite">
+                  <mpath href="#vPath"/>
+                </animateMotion>
+              </circle>
             </svg>
 
-            {/* Step Points positioned like stairs - equal sizes */}
+            {/* Step Points positioned in V shape */}
             {steps.map((step, index) => {
               const IconComponent = step.icon;
               const isActive = index === activeStep;
               const isCompleted = index < activeStep;
               
-              // Equal spacing stair positions with more spread
+              // V-shape positions: top-left down to bottom-center, then up to top-right
               const positions = [
-                { left: '18%', top: '85%' },   // Step 1
-                { left: '28%', top: '68%' },   // Step 2
-                { left: '38%', top: '51%' },   // Step 3
-                { left: '48%', top: '34%' },   // Step 4
-                { left: '58%', top: '17%' },   // Step 5
-                { left: '68%', top: '8%' },    // Step 6
+                { left: '15%', top: '15%' },   // Step 1 - top left
+                { left: '25%', top: '35%' },   // Step 2 - middle left down
+                { left: '35%', top: '60%' },   // Step 3 - bottom center
+                { left: '45%', top: '80%' },   // Step 4 - bottom center
+                { left: '55%', top: '60%' },   // Step 5 - middle right up
+                { left: '65%', top: '35%' },   // Step 6 - top right up
               ];
               
               return (
@@ -136,35 +147,35 @@ const InteractiveSampleRun = () => {
                   className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
                   style={positions[index]}
                 >
-                  {/* Step Circle - Equal sizes */}
+                  {/* Step Circle */}
                   <button
                     onClick={() => handleStepClick(index)}
                     className={`relative w-20 h-20 rounded-full mb-4 transition-all duration-500 transform ${
                       isActive 
-                        ? 'bg-gradient-to-r from-destructive to-primary scale-110 shadow-xl shadow-destructive/30' 
+                        ? 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-2xl shadow-destructive/40' 
                         : isCompleted
-                        ? 'bg-gradient-to-r from-destructive/80 to-primary/80'
+                        ? 'bg-gradient-to-r from-destructive/80 to-primary/80 scale-110'
                         : 'bg-muted hover:bg-muted/80 hover:scale-105'
                     } ${isAnimating && isActive ? 'animate-pulse' : ''}`}
                     disabled={isAnimating}
                   >
                     {/* Glow effect for active step */}
                     {isActive && (
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-60 scale-125"></div>
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-xl opacity-70 scale-150"></div>
                     )}
                     
                     <div className="relative z-10 flex items-center justify-center w-full h-full">
-                      <IconComponent className={`w-8 h-8 ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
+                      <IconComponent className={`w-9 h-9 ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
                     </div>
 
                     {/* Highlight indicator for active step */}
                     {isActive && (
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-destructive to-primary rounded-full animate-ping"></div>
+                      <div className="absolute -top-2 -right-2 w-7 h-7 bg-gradient-to-r from-destructive to-primary rounded-full animate-ping"></div>
                     )}
                   </button>
 
-                  {/* Step Title - Consistent sizing */}
-                  <div className="text-center w-[120px]">
+                  {/* Step Title */}
+                  <div className="text-center w-[130px]">
                     <h3 className={`font-poppins font-bold mb-2 text-sm transition-all duration-300 ${
                       isActive ? 'text-foreground' : 'text-muted-foreground'
                     }`}>
@@ -181,33 +192,33 @@ const InteractiveSampleRun = () => {
                 </div>
               );
             })}
-          </div>
 
-          {/* Right Side - Active Step Details (40% width) */}
-          <div className="w-[40%] flex items-center pr-16 pl-8 bg-gradient-to-l from-card/20 via-card/10 to-transparent">
-            <Card className="w-full p-8 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit">
-              <div className="text-left">
-                <div className="w-18 h-18 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-xl flex items-center justify-center mb-6 border border-border/30">
-                  {React.createElement(steps[activeStep].icon, { 
-                    className: "w-9 h-9 text-destructive" 
-                  })}
-                </div>
-                
-                <h3 className="text-2xl lg:text-3xl font-poppins font-bold text-foreground mb-4 leading-tight">
-                  Step {steps[activeStep].step}: {steps[activeStep].title}
-                </h3>
-                
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  {steps[activeStep].description}
-                </p>
-                
-                <div className="bg-muted/40 rounded-lg p-5 border border-border/40 backdrop-blur-sm">
-                  <p className="text-sm text-foreground leading-relaxed">
-                    {steps[activeStep].detail}
+            {/* Center Description Box - positioned in the middle of V shape */}
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] z-20">
+              <Card className="p-8 bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-lg border-2 border-border/60 transition-all duration-500 hover:shadow-2xl shadow-xl">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-2xl flex items-center justify-center mb-6 mx-auto border border-border/40">
+                    {React.createElement(steps[activeStep].icon, { 
+                      className: "w-10 h-10 text-destructive" 
+                    })}
+                  </div>
+                  
+                  <h3 className="text-2xl font-poppins font-bold text-foreground mb-4 leading-tight">
+                    Step {steps[activeStep].step}: {steps[activeStep].title}
+                  </h3>
+                  
+                  <p className="text-base text-muted-foreground mb-5 leading-relaxed">
+                    {steps[activeStep].description}
                   </p>
+                  
+                  <div className="bg-muted/50 rounded-xl p-5 border border-border/50 backdrop-blur-sm">
+                    <p className="text-sm text-foreground leading-relaxed">
+                      {steps[activeStep].detail}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </div>
           </div>
         </div>
 
