@@ -107,13 +107,16 @@ const InteractiveSampleRun = () => {
           {/* Circular Timeline Container - Left Side */}
           <div className="w-[52%] flex items-center justify-center relative">
             <div className="relative w-[400px] h-[400px] xl:w-[450px] xl:h-[450px]">
-              {/* Circular Progress Ring */}
-              <svg className="absolute inset-0 w-full h-full transform -rotate-90" xmlns="http://www.w3.org/2000/svg">
+              {/* Static Background Circle */}
+              <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="circularProgress" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="hsl(var(--destructive))" stopOpacity="1" />
-                    <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="1" />
-                  </linearGradient>
+                  <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge>
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
                 </defs>
                 
                 {/* Background Circle */}
@@ -123,25 +126,8 @@ const InteractiveSampleRun = () => {
                   r="45%"
                   fill="none"
                   stroke="hsl(var(--border))"
-                  strokeWidth="4"
-                  strokeOpacity="0.2"
-                />
-                
-                {/* Progress Arc */}
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="45%"
-                  fill="none"
-                  stroke="url(#circularProgress)"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  strokeDasharray={`${2 * Math.PI * 0.45 * 200}`}
-                  strokeDashoffset={`${2 * Math.PI * 0.45 * 200 * (1 - (activeStep + 1) / steps.length)}`}
-                  className="transition-all duration-1200 ease-in-out"
-                  style={{
-                    filter: 'drop-shadow(0 0 8px hsl(var(--destructive) / 0.4))'
-                  }}
+                  strokeWidth="2"
+                  strokeOpacity="0.3"
                 />
               </svg>
 
@@ -157,85 +143,92 @@ const InteractiveSampleRun = () => {
                 const x = 200 + radius * Math.cos(angle); // Center + radius * cos
                 const y = 200 + radius * Math.sin(angle); // Center + radius * sin
                 
+                // Calculate label position (further out from circle)
+                const labelRadius = 220;
+                const labelX = 200 + labelRadius * Math.cos(angle);
+                const labelY = 200 + labelRadius * Math.sin(angle);
+                
                 return (
-                  <div 
-                    key={index} 
-                    className="absolute transform -translate-x-1/2 -translate-y-1/2" 
-                    style={{ 
-                      left: `${(x / 400) * 100}%`, 
-                      top: `${(y / 400) * 100}%` 
-                    }}
-                  >
+                  <div key={index}>
                     {/* Step Circle */}
-                    <button
-                      onClick={() => handleStepClick(index)}
-                      className={`relative w-16 h-16 xl:w-18 xl:h-18 rounded-full transition-all duration-700 transform z-20 ${
-                        isActive 
-                          ? 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-2xl shadow-destructive/50' 
-                          : isCompleted
-                          ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-110 shadow-lg shadow-destructive/25'
-                          : 'bg-muted/60 scale-95 hover:scale-105 hover:bg-muted/80'
-                      }`}
-                      disabled={isAnimating}
+                    <div 
+                      className="absolute transform -translate-x-1/2 -translate-y-1/2" 
+                      style={{ 
+                        left: `${(x / 400) * 100}%`, 
+                        top: `${(y / 400) * 100}%` 
+                      }}
                     >
-                      {/* Enhanced glow effect for active step */}
-                      {isActive && (
-                        <>
-                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-70 scale-150 animate-pulse"></div>
-                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-xl opacity-40 scale-200 animate-ping"></div>
-                        </>
-                      )}
-                      
-                      <div className="relative z-10 flex items-center justify-center w-full h-full">
-                        <IconComponent className={`w-7 h-7 xl:w-8 xl:h-8 transition-all duration-500 ${
+                      <button
+                        onClick={() => handleStepClick(index)}
+                        className={`relative w-16 h-16 xl:w-18 xl:h-18 rounded-full transition-all duration-700 transform z-20 border-2 ${
                           isActive 
-                            ? 'text-primary-foreground drop-shadow-lg' 
-                            : isCompleted 
-                            ? 'text-primary-foreground' 
-                            : 'text-muted-foreground/50'
-                        }`} />
-                      </div>
-                    </button>
+                            ? 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-2xl shadow-destructive/50 border-transparent' 
+                            : isCompleted
+                            ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-110 shadow-lg shadow-destructive/25 border-transparent'
+                            : 'bg-card/80 scale-95 hover:scale-105 hover:bg-card border-border hover:border-primary/50'
+                        }`}
+                        disabled={isAnimating}
+                      >
+                        {/* Enhanced glow effect for active step */}
+                        {isActive && (
+                          <>
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-70 scale-150 animate-pulse"></div>
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-xl opacity-40 scale-200 animate-ping"></div>
+                          </>
+                        )}
+                        
+                        <div className="relative z-10 flex items-center justify-center w-full h-full">
+                          <IconComponent className={`w-7 h-7 xl:w-8 xl:h-8 transition-all duration-500 ${
+                            isActive 
+                              ? 'text-primary-foreground drop-shadow-lg' 
+                              : isCompleted 
+                              ? 'text-primary-foreground' 
+                              : 'text-muted-foreground hover:text-foreground'
+                          }`} />
+                        </div>
+                      </button>
+                    </div>
 
-                    {/* Step Label */}
-                    <div className={`absolute ${
-                      // Position labels outside the circle based on angle
-                      index === 0 ? '-top-12' : // Top
-                      index === 1 ? '-top-8 -right-12' : // Top-right
-                      index === 2 ? 'top-1/2 -right-16 -translate-y-1/2' : // Right
-                      index === 3 ? '-bottom-8 -right-12' : // Bottom-right
-                      index === 4 ? '-bottom-12' : // Bottom
-                      '-bottom-8 -left-12' // Bottom-left (index 5)
-                    } left-1/2 transform -translate-x-1/2 text-center transition-all duration-500 ${
-                      isActive ? 'opacity-100 scale-105' : isCompleted ? 'opacity-80' : 'opacity-40'
-                    }`}>
-                      <span className={`text-xs px-2 py-1 xl:px-3 xl:py-1 rounded-full inline-block font-medium whitespace-nowrap ${
-                        isActive 
-                          ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg' 
-                          : isCompleted
-                          ? 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
-                          : 'bg-muted/60 text-muted-foreground'
+                    {/* Step Label - Positioned outside circle to avoid overlap */}
+                    <div 
+                      className="absolute transform -translate-x-1/2 -translate-y-1/2 text-center transition-all duration-500 pointer-events-none"
+                      style={{ 
+                        left: `${(labelX / 400) * 100}%`, 
+                        top: `${(labelY / 400) * 100}%` 
+                      }}
+                    >
+                      <div className={`transition-all duration-500 ${
+                        isActive ? 'opacity-100 scale-105' : isCompleted ? 'opacity-80' : 'opacity-60'
                       }`}>
-                        Step {step.step}
-                      </span>
-                      <p className={`text-xs mt-1 font-medium max-w-20 xl:max-w-24 leading-tight ${
-                        isActive ? 'text-foreground' : isCompleted ? 'text-muted-foreground' : 'text-muted-foreground/50'
-                      }`}>
-                        {step.title}
-                      </p>
+                        <span className={`text-xs px-2 py-1 xl:px-3 xl:py-1 rounded-full inline-block font-medium whitespace-nowrap ${
+                          isActive 
+                            ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg' 
+                            : isCompleted
+                            ? 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
+                            : 'bg-muted/80 text-muted-foreground backdrop-blur-sm'
+                        }`}>
+                          Step {step.step}
+                        </span>
+                        <p className={`text-xs mt-1 font-medium max-w-20 xl:max-w-24 mx-auto leading-tight ${
+                          isActive ? 'text-foreground' : isCompleted ? 'text-muted-foreground' : 'text-muted-foreground/70'
+                        }`}>
+                          {step.title}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 );
               })}
 
-              {/* Center Circle with Current Step Number */}
+              {/* Center Logo/Branding Area - No Number */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`w-20 h-20 xl:w-24 xl:h-24 rounded-full bg-gradient-to-r from-background to-card border-2 transition-all duration-500 ${
-                  isAnimating ? 'border-destructive/50' : 'border-border'
-                } flex items-center justify-center backdrop-blur-md`}>
-                  <span className="text-2xl xl:text-3xl font-poppins font-bold text-foreground">
-                    {activeStep + 1}
-                  </span>
+                <div className="w-20 h-20 xl:w-24 xl:h-24 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 flex items-center justify-center backdrop-blur-md shadow-lg">
+                  <div className="text-center">
+                    <div className="w-8 h-8 xl:w-10 xl:h-10 mx-auto mb-1 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-lg flex items-center justify-center">
+                      <Package className="w-4 h-4 xl:w-5 xl:h-5 text-primary" />
+                    </div>
+                    <p className="text-xs font-medium text-muted-foreground/70">Workflow</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -279,41 +272,16 @@ const InteractiveSampleRun = () => {
           {/* Circular Timeline Container - Left Side */}
           <div className="w-[50%] flex items-center justify-center relative">
             <div className="relative w-[320px] h-[320px]">
-              {/* Circular Progress Ring */}
-              <svg className="absolute inset-0 w-full h-full transform -rotate-90" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="tabletCircularProgress" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="hsl(var(--destructive))" stopOpacity="1" />
-                    <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="1" />
-                  </linearGradient>
-                </defs>
-                
-                {/* Background Circle */}
+              {/* Static Background Circle */}
+              <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <circle
                   cx="50%"
                   cy="50%"
                   r="45%"
                   fill="none"
                   stroke="hsl(var(--border))"
-                  strokeWidth="3"
-                  strokeOpacity="0.2"
-                />
-                
-                {/* Progress Arc */}
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="45%"
-                  fill="none"
-                  stroke="url(#tabletCircularProgress)"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                  strokeDasharray={`${2 * Math.PI * 0.45 * 160}`}
-                  strokeDashoffset={`${2 * Math.PI * 0.45 * 160 * (1 - (activeStep + 1) / steps.length)}`}
-                  className="transition-all duration-1200 ease-in-out"
-                  style={{
-                    filter: 'drop-shadow(0 0 6px hsl(var(--destructive) / 0.3))'
-                  }}
+                  strokeWidth="2"
+                  strokeOpacity="0.3"
                 />
               </svg>
 
@@ -329,77 +297,89 @@ const InteractiveSampleRun = () => {
                 const x = 160 + radius * Math.cos(angle);
                 const y = 160 + radius * Math.sin(angle);
                 
+                // Calculate label position (further out from circle)
+                const labelRadius = 175;
+                const labelX = 160 + labelRadius * Math.cos(angle);
+                const labelY = 160 + labelRadius * Math.sin(angle);
+                
                 return (
-                  <div 
-                    key={index} 
-                    className="absolute transform -translate-x-1/2 -translate-y-1/2" 
-                    style={{ 
-                      left: `${(x / 320) * 100}%`, 
-                      top: `${(y / 320) * 100}%` 
-                    }}
-                  >
+                  <div key={index}>
                     {/* Step Circle */}
-                    <button
-                      onClick={() => handleStepClick(index)}
-                      className={`relative w-12 h-12 rounded-full transition-all duration-700 transform z-20 ${
-                        isActive 
-                          ? 'bg-gradient-to-r from-destructive to-primary scale-115 shadow-xl shadow-destructive/40' 
-                          : isCompleted
-                          ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 shadow-lg shadow-destructive/20'
-                          : 'bg-muted/60 scale-90 hover:scale-100 hover:bg-muted/80'
-                      }`}
-                      disabled={isAnimating}
+                    <div 
+                      className="absolute transform -translate-x-1/2 -translate-y-1/2" 
+                      style={{ 
+                        left: `${(x / 320) * 100}%`, 
+                        top: `${(y / 320) * 100}%` 
+                      }}
                     >
-                      {/* Enhanced glow effect for active step */}
-                      {isActive && (
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-60 scale-150 animate-pulse"></div>
-                      )}
-                      
-                      <div className="relative z-10 flex items-center justify-center w-full h-full">
-                        <IconComponent className={`w-5 h-5 transition-all duration-500 ${
+                      <button
+                        onClick={() => handleStepClick(index)}
+                        className={`relative w-12 h-12 rounded-full transition-all duration-700 transform z-20 border-2 ${
                           isActive 
-                            ? 'text-primary-foreground drop-shadow-lg' 
-                            : isCompleted 
-                            ? 'text-primary-foreground' 
-                            : 'text-muted-foreground/50'
-                        }`} />
-                      </div>
-                    </button>
+                            ? 'bg-gradient-to-r from-destructive to-primary scale-115 shadow-xl shadow-destructive/40 border-transparent' 
+                            : isCompleted
+                            ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 shadow-lg shadow-destructive/20 border-transparent'
+                            : 'bg-card/80 scale-90 hover:scale-100 hover:bg-card border-border hover:border-primary/50'
+                        }`}
+                        disabled={isAnimating}
+                      >
+                        {/* Enhanced glow effect for active step */}
+                        {isActive && (
+                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-60 scale-150 animate-pulse"></div>
+                        )}
+                        
+                        <div className="relative z-10 flex items-center justify-center w-full h-full">
+                          <IconComponent className={`w-5 h-5 transition-all duration-500 ${
+                            isActive 
+                              ? 'text-primary-foreground drop-shadow-lg' 
+                              : isCompleted 
+                              ? 'text-primary-foreground' 
+                              : 'text-muted-foreground hover:text-foreground'
+                          }`} />
+                        </div>
+                      </button>
+                    </div>
 
-                    {/* Step Label */}
-                    <div className={`absolute ${
-                      // Position labels outside the circle based on angle
-                      index === 0 ? '-top-8' : 
-                      index === 1 ? '-top-6 -right-10' : 
-                      index === 2 ? 'top-1/2 -right-12 -translate-y-1/2' : 
-                      index === 3 ? '-bottom-6 -right-10' : 
-                      index === 4 ? '-bottom-8' : 
-                      '-bottom-6 -left-10'
-                    } left-1/2 transform -translate-x-1/2 text-center transition-all duration-500 ${
-                      isActive ? 'opacity-100 scale-105' : isCompleted ? 'opacity-80' : 'opacity-40'
-                    }`}>
-                      <span className={`text-xs px-2 py-1 rounded-full inline-block font-medium whitespace-nowrap ${
-                        isActive 
-                          ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-md' 
-                          : isCompleted
-                          ? 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
-                          : 'bg-muted/60 text-muted-foreground'
+                    {/* Step Label - Positioned outside circle to avoid overlap */}
+                    <div 
+                      className="absolute transform -translate-x-1/2 -translate-y-1/2 text-center transition-all duration-500 pointer-events-none"
+                      style={{ 
+                        left: `${(labelX / 320) * 100}%`, 
+                        top: `${(labelY / 320) * 100}%` 
+                      }}
+                    >
+                      <div className={`transition-all duration-500 ${
+                        isActive ? 'opacity-100 scale-105' : isCompleted ? 'opacity-80' : 'opacity-60'
                       }`}>
-                        {step.step}
-                      </span>
+                        <span className={`text-xs px-2 py-1 rounded-full inline-block font-medium whitespace-nowrap ${
+                          isActive 
+                            ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg' 
+                            : isCompleted
+                            ? 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
+                            : 'bg-muted/80 text-muted-foreground backdrop-blur-sm'
+                        }`}>
+                          Step {step.step}
+                        </span>
+                        <p className={`text-xs mt-1 font-medium max-w-16 mx-auto leading-tight ${
+                          isActive ? 'text-foreground' : isCompleted ? 'text-muted-foreground' : 'text-muted-foreground/70'
+                        }`}>
+                          {step.title}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 );
               })}
 
-              {/* Center Circle with Current Step Number */}
+              {/* Center Logo/Branding Area - No Number */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`w-16 h-16 rounded-full bg-gradient-to-r from-background to-card border-2 transition-all duration-500 ${
-                  isAnimating ? 'border-destructive/50' : 'border-border'
-                } flex items-center justify-center backdrop-blur-md`}>
-                  <span className="text-xl font-poppins font-bold text-foreground">
-                    {activeStep + 1}
-                  </span>
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 flex items-center justify-center backdrop-blur-md shadow-lg">
+                  <div className="text-center">
+                    <div className="w-6 h-6 mx-auto mb-1 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-lg flex items-center justify-center">
+                      <Package className="w-3 h-3 text-primary" />
+                    </div>
+                    <p className="text-xs font-medium text-muted-foreground/70">Flow</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -443,16 +423,8 @@ const InteractiveSampleRun = () => {
           {/* Mobile Circular Timeline */}
           <div className="flex items-center justify-center">
             <div className="relative w-[280px] h-[280px]">
-              {/* Circular Progress Ring */}
-              <svg className="absolute inset-0 w-full h-full transform -rotate-90" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="mobileCircularProgress" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="hsl(var(--destructive))" stopOpacity="1" />
-                    <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="1" />
-                  </linearGradient>
-                </defs>
-                
-                {/* Background Circle */}
+              {/* Static Background Circle */}
+              <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <circle
                   cx="50%"
                   cy="50%"
@@ -460,24 +432,7 @@ const InteractiveSampleRun = () => {
                   fill="none"
                   stroke="hsl(var(--border))"
                   strokeWidth="2"
-                  strokeOpacity="0.2"
-                />
-                
-                {/* Progress Arc */}
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="45%"
-                  fill="none"
-                  stroke="url(#mobileCircularProgress)"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeDasharray={`${2 * Math.PI * 0.45 * 140}`}
-                  strokeDashoffset={`${2 * Math.PI * 0.45 * 140 * (1 - (activeStep + 1) / steps.length)}`}
-                  className="transition-all duration-1200 ease-in-out"
-                  style={{
-                    filter: 'drop-shadow(0 0 4px hsl(var(--destructive) / 0.2))'
-                  }}
+                  strokeOpacity="0.3"
                 />
               </svg>
 
@@ -505,12 +460,12 @@ const InteractiveSampleRun = () => {
                     {/* Step Circle */}
                     <button
                       onClick={() => handleStepClick(index)}
-                      className={`relative w-10 h-10 rounded-full transition-all duration-700 transform z-20 ${
+                      className={`relative w-10 h-10 rounded-full transition-all duration-700 transform z-20 border-2 ${
                         isActive 
-                          ? 'bg-gradient-to-r from-destructive to-primary scale-110 shadow-lg shadow-destructive/30' 
+                          ? 'bg-gradient-to-r from-destructive to-primary scale-110 shadow-lg shadow-destructive/30 border-transparent' 
                           : isCompleted
-                          ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105'
-                          : 'bg-muted/60 scale-90 hover:scale-100'
+                          ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 border-transparent'
+                          : 'bg-card/80 scale-90 hover:scale-100 border-border hover:border-primary/50'
                       }`}
                       disabled={isAnimating}
                     >
@@ -524,7 +479,7 @@ const InteractiveSampleRun = () => {
                             ? 'text-primary-foreground drop-shadow-lg' 
                             : isCompleted 
                             ? 'text-primary-foreground' 
-                            : 'text-muted-foreground/50'
+                            : 'text-muted-foreground hover:text-foreground'
                         }`} />
                       </div>
                     </button>
@@ -532,14 +487,14 @@ const InteractiveSampleRun = () => {
                 );
               })}
 
-              {/* Center Circle with Current Step Number */}
+              {/* Center Logo/Branding Area - No Number */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`w-12 h-12 rounded-full bg-gradient-to-r from-background to-card border-2 transition-all duration-500 ${
-                  isAnimating ? 'border-destructive/50' : 'border-border'
-                } flex items-center justify-center backdrop-blur-md`}>
-                  <span className="text-lg font-poppins font-bold text-foreground">
-                    {activeStep + 1}
-                  </span>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 flex items-center justify-center backdrop-blur-md shadow-lg">
+                  <div className="text-center">
+                    <div className="w-5 h-5 mx-auto bg-gradient-to-r from-destructive/20 to-primary/20 rounded flex items-center justify-center">
+                      <Package className="w-2.5 h-2.5 text-primary" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
