@@ -91,27 +91,50 @@ const InteractiveSampleRun = () => {
         </div>
 
         {/* Desktop Full-Width Layout */}
-        <div className="hidden md:flex w-full gap-0 h-[600px] bg-gradient-to-r from-background via-background/95 to-background">
-          {/* Left Side - Step Animation (60% width) */}
-          <div className="w-[60%] relative pl-16 pr-8">
+        <div className="hidden md:flex w-full gap-0 h-[700px] bg-gradient-to-r from-background via-background/95 to-background">
+          {/* Left Side - Step Animation (55% width) */}
+          <div className="w-[55%] relative pl-16 pr-8">
             {/* Stair-like connecting path */}
             <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="pathGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--destructive))" stopOpacity="0.3" />
-                  <stop offset={`${((activeStep + 1) / steps.length) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="0.8" />
-                  <stop offset={`${((activeStep + 1) / steps.length) * 100}%`} stopColor="hsl(var(--border))" stopOpacity="0.3" />
+                  <stop offset="0%" stopColor="hsl(var(--destructive))" stopOpacity="0.8" />
+                  <stop offset={`${(activeStep / (steps.length - 1)) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="0.8" />
+                  <stop offset={`${(activeStep / (steps.length - 1)) * 100 + 2}%`} stopColor="hsl(var(--border))" stopOpacity="0.3" />
                   <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
-              {/* Stair-shaped path */}
+              {/* Enhanced stair-shaped path with better visibility */}
               <path
-                d="M 120 520 L 200 520 L 200 420 L 280 420 L 280 320 L 360 320 L 360 220 L 440 220 L 440 120 L 520 120 L 520 80"
+                d="M 120 580 L 200 580 L 200 480 L 280 480 L 280 380 L 360 380 L 360 280 L 440 280 L 440 180 L 520 180 L 520 120"
                 stroke="url(#pathGradient)"
-                strokeWidth="6"
+                strokeWidth="8"
                 fill="none"
-                className="transition-all duration-1000"
+                className="transition-all duration-1000 drop-shadow-sm"
               />
+              {/* Individual step segments for better visibility */}
+              {steps.map((_, index) => {
+                const segmentPaths = [
+                  "M 120 580 L 200 580 L 200 480",
+                  "M 200 480 L 280 480 L 280 380", 
+                  "M 280 380 L 360 380 L 360 280",
+                  "M 360 280 L 440 280 L 440 180",
+                  "M 440 180 L 520 180 L 520 120",
+                  "M 520 120 L 520 120"
+                ];
+                
+                return (
+                  <path
+                    key={index}
+                    d={segmentPaths[index]}
+                    stroke={index <= activeStep ? "hsl(var(--destructive))" : "hsl(var(--border))"}
+                    strokeWidth="8"
+                    strokeOpacity={index <= activeStep ? "0.9" : "0.3"}
+                    fill="none"
+                    className="transition-all duration-500"
+                  />
+                );
+              })}
             </svg>
 
             {/* Step Points positioned like stairs - equal sizes */}
@@ -120,14 +143,14 @@ const InteractiveSampleRun = () => {
               const isActive = index === activeStep;
               const isCompleted = index < activeStep;
               
-              // Equal spacing stair positions with more spread
+              // Equal spacing stair positions with better spread
               const positions = [
-                { left: '18%', top: '85%' },   // Step 1
+                { left: '18%', top: '82%' },   // Step 1
                 { left: '28%', top: '68%' },   // Step 2
-                { left: '38%', top: '51%' },   // Step 3
-                { left: '48%', top: '34%' },   // Step 4
-                { left: '58%', top: '17%' },   // Step 5
-                { left: '68%', top: '8%' },    // Step 6
+                { left: '38%', top: '54%' },   // Step 3
+                { left: '48%', top: '40%' },   // Step 4
+                { left: '58%', top: '26%' },   // Step 5
+                { left: '68%', top: '17%' },   // Step 6
               ];
               
               return (
@@ -183,26 +206,26 @@ const InteractiveSampleRun = () => {
             })}
           </div>
 
-          {/* Right Side - Active Step Details (40% width) */}
-          <div className="w-[40%] flex items-center pr-16 pl-8 bg-gradient-to-l from-card/20 via-card/10 to-transparent">
-            <Card className="w-full p-8 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit">
+          {/* Right Side - Active Step Details (45% width) */}
+          <div className="w-[45%] flex items-center pr-16 pl-8 bg-gradient-to-l from-card/20 via-card/10 to-transparent">
+            <Card className="w-full p-12 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit max-w-none">
               <div className="text-left">
-                <div className="w-18 h-18 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-xl flex items-center justify-center mb-6 border border-border/30">
+                <div className="w-20 h-20 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-xl flex items-center justify-center mb-8 border border-border/30">
                   {React.createElement(steps[activeStep].icon, { 
-                    className: "w-9 h-9 text-destructive" 
+                    className: "w-10 h-10 text-destructive" 
                   })}
                 </div>
                 
-                <h3 className="text-2xl lg:text-3xl font-poppins font-bold text-foreground mb-4 leading-tight">
+                <h3 className="text-3xl lg:text-4xl font-poppins font-bold text-foreground mb-6 leading-tight">
                   Step {steps[activeStep].step}: {steps[activeStep].title}
                 </h3>
                 
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                   {steps[activeStep].description}
                 </p>
                 
-                <div className="bg-muted/40 rounded-lg p-5 border border-border/40 backdrop-blur-sm">
-                  <p className="text-sm text-foreground leading-relaxed">
+                <div className="bg-muted/40 rounded-lg p-6 border border-border/40 backdrop-blur-sm">
+                  <p className="text-base text-foreground leading-relaxed">
                     {steps[activeStep].detail}
                   </p>
                 </div>
