@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import ASRSHero from "@/components/ASRSHero";
 import ASRSChallenge from "@/components/ASRSChallenge";
 
-import HowItWorks from "@/components/HowItWorks";
+import InteractiveSampleRun from "@/components/InteractiveSampleRun";
 import WhyQuadrupeds from "@/components/WhyQuadrupeds";
 import SampleRunIndustries from "@/components/SampleRunIndustries";
 import WhyVegam from "@/components/WhyVegam";
@@ -18,7 +18,7 @@ const ASRS = () => {
       <ASRSHero />
       <ASRSChallenge />
       
-      <HowItWorks />
+      <InteractiveSampleRun />
       <WhyQuadrupeds />
       <SampleRunIndustries />
       <WhyVegam />
