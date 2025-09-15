@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FileText, MapPin, Package, Navigation, Lock, CheckCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import workflowBackground from '@/assets/workflow-background.jpg';
 
 const InteractiveSampleRun = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -94,7 +95,7 @@ const InteractiveSampleRun = () => {
         <div className="hidden md:flex w-full gap-0 h-[700px] bg-gradient-to-r from-background via-background/95 to-background">
           {/* Left Side - Step Animation (55% width) */}
           <div className="w-[55%] relative pl-16 pr-8">
-            {/* Stair-like connecting path */}
+            {/* Straight diagonal connecting path */}
             <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="pathGradient" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -104,37 +105,14 @@ const InteractiveSampleRun = () => {
                   <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
-              {/* Enhanced stair-shaped path with better visibility */}
+              {/* Straight diagonal line */}
               <path
-                d="M 120 580 L 200 580 L 200 480 L 280 480 L 280 380 L 360 380 L 360 280 L 440 280 L 440 180 L 520 180 L 520 120"
+                d="M 120 580 L 520 120"
                 stroke="url(#pathGradient)"
                 strokeWidth="8"
                 fill="none"
                 className="transition-all duration-1000 drop-shadow-sm"
               />
-              {/* Individual step segments for better visibility */}
-              {steps.map((_, index) => {
-                const segmentPaths = [
-                  "M 120 580 L 200 580 L 200 480",
-                  "M 200 480 L 280 480 L 280 380", 
-                  "M 280 380 L 360 380 L 360 280",
-                  "M 360 280 L 440 280 L 440 180",
-                  "M 440 180 L 520 180 L 520 120",
-                  "M 520 120 L 520 120"
-                ];
-                
-                return (
-                  <path
-                    key={index}
-                    d={segmentPaths[index]}
-                    stroke={index <= activeStep ? "hsl(var(--destructive))" : "hsl(var(--border))"}
-                    strokeWidth="8"
-                    strokeOpacity={index <= activeStep ? "0.9" : "0.3"}
-                    fill="none"
-                    className="transition-all duration-500"
-                  />
-                );
-              })}
             </svg>
 
             {/* Step Points positioned like stairs - equal sizes */}
@@ -143,14 +121,14 @@ const InteractiveSampleRun = () => {
               const isActive = index === activeStep;
               const isCompleted = index < activeStep;
               
-              // Equal spacing stair positions with better spread
+              // Diagonal line positions - evenly spaced along the diagonal
               const positions = [
                 { left: '18%', top: '82%' },   // Step 1
-                { left: '28%', top: '68%' },   // Step 2
-                { left: '38%', top: '54%' },   // Step 3
-                { left: '48%', top: '40%' },   // Step 4
-                { left: '58%', top: '26%' },   // Step 5
-                { left: '68%', top: '17%' },   // Step 6
+                { left: '26%', top: '70%' },   // Step 2
+                { left: '34%', top: '58%' },   // Step 3
+                { left: '42%', top: '46%' },   // Step 4
+                { left: '50%', top: '34%' },   // Step 5
+                { left: '58%', top: '22%' },   // Step 6
               ];
               
               return (
@@ -207,8 +185,13 @@ const InteractiveSampleRun = () => {
           </div>
 
           {/* Right Side - Active Step Details (45% width) */}
-          <div className="w-[45%] flex items-center pr-16 pl-8 bg-gradient-to-l from-card/20 via-card/10 to-transparent">
-            <Card className="w-full p-12 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit max-w-none">
+          <div className="w-[45%] flex items-center pr-16 pl-8 bg-gradient-to-l from-card/20 via-card/10 to-transparent relative">
+            {/* Background image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center opacity-[0.03] rounded-lg"
+              style={{ backgroundImage: `url(${workflowBackground})` }}
+            ></div>
+            <Card className="w-full p-12 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit max-w-none relative z-10">
               <div className="text-left">
                 <div className="w-20 h-20 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-xl flex items-center justify-center mb-8 border border-border/30">
                   {React.createElement(steps[activeStep].icon, { 
