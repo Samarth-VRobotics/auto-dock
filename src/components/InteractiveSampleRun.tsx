@@ -103,86 +103,90 @@ const InteractiveSampleRun = () => {
         </div>
 
         {/* Desktop Full-Width Layout */}
-        <div className="hidden md:flex w-full gap-0 h-[700px] bg-gradient-to-r from-background via-background/95 to-background">
-          {/* Left Side - Step Animation (55% width) */}
-          <div className="w-[55%] relative pl-16 pr-8">
-            {/* Straight diagonal connecting path - centered and evenly spread */}
-            <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <div className="hidden md:flex w-full gap-0 h-[700px] bg-gradient-to-r from-background via-background/95 to-background relative">
+          {/* Centered Timeline Container */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-2 h-full flex flex-col justify-center">
+            {/* Main vertical progress line */}
+            <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="pathGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="hsl(var(--destructive))" stopOpacity="0.8" />
-                  <stop offset={`${(activeStep / (steps.length - 1)) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="0.8" />
-                  <stop offset={`${(activeStep / (steps.length - 1)) * 100 + 2}%`} stopColor="hsl(var(--border))" stopOpacity="0.3" />
+                <linearGradient id="verticalProgress" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
+                  <stop offset={`${(activeStep / (steps.length - 1)) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="0.9" />
+                  <stop offset={`${(activeStep / (steps.length - 1)) * 100 + 1}%`} stopColor="hsl(var(--border))" stopOpacity="0.3" />
                   <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
-              {/* Centered diagonal line spanning left section */}
-              <path
-                d="M 80 550 L 400 120"
-                stroke="url(#pathGradient)"
-                strokeWidth="8"
-                fill="none"
-                className="transition-all duration-1000 drop-shadow-sm"
+              <line
+                x1="50%"
+                y1="15%"
+                x2="50%"
+                y2="85%"
+                stroke="url(#verticalProgress)"
+                strokeWidth="4"
+                className="transition-all duration-1000"
               />
             </svg>
 
-            {/* Step Points positioned like stairs - equal sizes */}
+            {/* Step dots positioned along vertical line */}
             {steps.map((step, index) => {
               const IconComponent = step.icon;
               const isActive = index === activeStep;
               const isCompleted = index < activeStep;
               
-              // Centered diagonal positions - evenly spread across left section
-              const positions = [
-                { left: '12%', top: '78%' },   // Step 1
-                { left: '20%', top: '64%' },   // Step 2  
-                { left: '28%', top: '50%' },   // Step 3
-                { left: '36%', top: '36%' },   // Step 4
-                { left: '44%', top: '22%' },   // Step 5
-                { left: '52%', top: '12%' },   // Step 6
-              ];
+              // Vertical positions evenly distributed
+              const topPosition = 15 + (index * 14); // 15% to 85% evenly distributed
               
               return (
-                <div 
-                  key={index} 
-                  className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
-                  style={positions[index]}
-                >
-                  {/* Step Circle - Equal sizes */}
+                <div key={index} className="absolute left-1/2 transform -translate-x-1/2" style={{ top: `${topPosition}%` }}>
+                  {/* Horizontal connection line to content (only for active step) */}
+                  {isActive && (
+                    <svg className="absolute top-1/2 left-10 w-[300px] h-1" xmlns="http://www.w3.org/2000/svg">
+                      <line
+                        x1="0"
+                        y1="50%"
+                        x2="100%"
+                        y2="50%"
+                        stroke="hsl(var(--destructive))"
+                        strokeWidth="3"
+                        strokeDasharray="8,4"
+                        className="animate-pulse"
+                      />
+                    </svg>
+                  )}
+                  
+                  {/* Step Circle */}
                   <button
                     onClick={() => handleStepClick(index)}
-                    className={`relative w-20 h-20 rounded-full mb-4 transition-all duration-500 transform ${
+                    className={`relative w-16 h-16 rounded-full transition-all duration-500 transform z-20 ${
                       isActive 
-                        ? 'bg-gradient-to-r from-destructive to-primary scale-110 shadow-xl shadow-destructive/30' 
+                        ? 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-xl shadow-destructive/40 animate-pulse' 
                         : isCompleted
-                        ? 'bg-gradient-to-r from-destructive/80 to-primary/80'
+                        ? 'bg-gradient-to-r from-destructive/80 to-primary/80 scale-110'
                         : 'bg-muted hover:bg-muted/80 hover:scale-105'
-                    } ${isAnimating && isActive ? 'animate-pulse' : ''}`}
+                    }`}
                     disabled={isAnimating}
                   >
-                    {/* Glow effect for active step */}
+                    {/* Enhanced glow effect for active step */}
                     {isActive && (
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-60 scale-125"></div>
+                      <>
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-70 scale-150 animate-pulse"></div>
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-xl opacity-40 scale-200"></div>
+                      </>
                     )}
                     
                     <div className="relative z-10 flex items-center justify-center w-full h-full">
-                      <IconComponent className={`w-8 h-8 ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
+                      <IconComponent className={`w-6 h-6 ${isActive || isCompleted ? 'text-primary-foreground' : 'text-muted-foreground'}`} />
                     </div>
-
-                    {/* Highlight indicator for active step */}
-                    {isActive && (
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-destructive to-primary rounded-full animate-ping"></div>
-                    )}
                   </button>
 
-                  {/* Step Title - Consistent sizing */}
-                  <div className="text-center w-[120px]">
-                    <h3 className={`font-poppins font-bold mb-2 text-sm transition-all duration-300 ${
+                  {/* Step Title on the left */}
+                  <div className="absolute right-20 top-1/2 transform -translate-y-1/2 text-right w-32">
+                    <h3 className={`font-poppins font-bold text-sm transition-all duration-300 ${
                       isActive ? 'text-foreground' : 'text-muted-foreground'
                     }`}>
                       {step.title}
                     </h3>
-                    <span className={`text-xs px-3 py-1 rounded-full ${
+                    <span className={`text-xs px-2 py-1 rounded-full inline-block mt-1 ${
                       isActive || isCompleted 
                         ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground' 
                         : 'bg-muted text-muted-foreground'
@@ -195,8 +199,8 @@ const InteractiveSampleRun = () => {
             })}
           </div>
 
-          {/* Right Side - Active Step Details (45% width) */}
-          <div className="w-[45%] flex items-center pr-16 pl-8 relative">
+          {/* Right Side - Active Step Details */}
+          <div className="ml-auto w-[45%] flex items-center pr-16 pl-8 relative">
             <Card className="w-full p-12 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit max-w-none relative z-10 overflow-hidden">
               {/* Dynamic background image inside card */}
               <div 
