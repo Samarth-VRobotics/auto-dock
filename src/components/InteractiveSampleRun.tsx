@@ -63,14 +63,14 @@ const InteractiveSampleRun = () => {
     }
   ];
 
-  // Auto-progress through steps
+  // Auto-progress through steps with refined timing
   useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimating(true);
       setActiveStep((prev) => (prev + 1) % steps.length);
       
-      setTimeout(() => setIsAnimating(false), 400);
-    }, 1500);
+      setTimeout(() => setIsAnimating(false), 500);
+    }, 2500); // Increased to 2.5 seconds for better viewing
 
     return () => clearInterval(interval);
   }, [steps.length]);
@@ -103,27 +103,27 @@ const InteractiveSampleRun = () => {
         </div>
 
         {/* Desktop Diagonal Timeline Layout */}
-        <div className="hidden md:flex w-full gap-0 h-[700px] bg-gradient-to-r from-background via-background/95 to-background relative overflow-hidden">
+        <div className="hidden lg:flex w-full gap-0 h-[700px] bg-gradient-to-r from-background via-background/95 to-background relative overflow-hidden">
           {/* Diagonal Timeline Container */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 px-8 py-16">
             {/* Diagonal progress line SVG */}
             <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="diagonalProgress" x1="10%" y1="90%" x2="50%" y2="20%">
-                  <stop offset="0%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
+                <linearGradient id="diagonalProgress" x1="15%" y1="85%" x2="45%" y2="25%">
+                  <stop offset="0%" stopColor="hsl(var(--border))" stopOpacity="0.4" />
                   <stop offset={`${(activeStep / (steps.length - 1)) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="1" />
-                  <stop offset={`${(activeStep / (steps.length - 1)) * 100 + 2}%`} stopColor="hsl(var(--border))" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
+                  <stop offset={`${(activeStep / (steps.length - 1)) * 100 + 1}%`} stopColor="hsl(var(--border))" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.4" />
                 </linearGradient>
               </defs>
               <line
-                x1="10%"
-                y1="90%"
-                x2="50%"
-                y2="20%"
+                x1="15%"
+                y1="85%"
+                x2="45%"
+                y2="25%"
                 stroke="url(#diagonalProgress)"
-                strokeWidth="6"
-                className="transition-all duration-1000"
+                strokeWidth="4"
+                className="transition-all duration-1200 ease-in-out"
               />
             </svg>
 
@@ -132,12 +132,11 @@ const InteractiveSampleRun = () => {
               const IconComponent = step.icon;
               const isActive = index === activeStep;
               const isCompleted = index < activeStep;
-              const isUpcoming = index > activeStep;
               
-              // Calculate diagonal positions from bottom-left (10%, 90%) to center (50%, 20%)
+              // Calculate diagonal positions with better spacing (15%, 85%) to (45%, 25%)
               const progress = index / (steps.length - 1);
-              const leftPosition = 10 + (progress * 40); // 10% to 50%
-              const topPosition = 90 - (progress * 70); // 90% to 20%
+              const leftPosition = 15 + (progress * 30); // 15% to 45%
+              const topPosition = 85 - (progress * 60); // 85% to 25%
               
               return (
                 <div 
@@ -151,49 +150,49 @@ const InteractiveSampleRun = () => {
                   {/* Step Circle */}
                   <button
                     onClick={() => handleStepClick(index)}
-                    className={`relative w-16 h-16 rounded-full transition-all duration-700 transform z-20 ${
+                    className={`relative w-14 h-14 xl:w-16 xl:h-16 rounded-full transition-all duration-700 transform z-20 ${
                       isActive 
                         ? 'bg-gradient-to-r from-destructive to-primary scale-125 shadow-2xl shadow-destructive/50' 
                         : isCompleted
-                        ? 'bg-gradient-to-r from-destructive/80 to-primary/80 scale-110 shadow-lg shadow-destructive/30'
-                        : 'bg-muted/50 scale-90 hover:scale-100 hover:bg-muted/70'
+                        ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 shadow-lg shadow-destructive/25'
+                        : 'bg-muted/60 scale-90 hover:scale-100 hover:bg-muted/80'
                     }`}
                     disabled={isAnimating}
                   >
                     {/* Enhanced glow effect for active step */}
                     {isActive && (
                       <>
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-xl opacity-80 scale-150 animate-ping"></div>
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-2xl opacity-60 scale-200 animate-pulse"></div>
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-70 scale-150 animate-pulse"></div>
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-xl opacity-40 scale-200 animate-ping"></div>
                       </>
                     )}
                     
                     <div className="relative z-10 flex items-center justify-center w-full h-full">
-                      <IconComponent className={`w-7 h-7 transition-all duration-500 ${
+                      <IconComponent className={`w-6 h-6 xl:w-7 xl:h-7 transition-all duration-500 ${
                         isActive 
                           ? 'text-primary-foreground drop-shadow-lg' 
                           : isCompleted 
                           ? 'text-primary-foreground' 
-                          : 'text-muted-foreground/60'
+                          : 'text-muted-foreground/50'
                       }`} />
                     </div>
                   </button>
 
                   {/* Step Label */}
-                  <div className={`absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-center transition-all duration-500 ${
-                    isActive ? 'opacity-100 scale-105' : isCompleted ? 'opacity-80' : 'opacity-50'
+                  <div className={`absolute -bottom-10 xl:-bottom-12 left-1/2 transform -translate-x-1/2 text-center transition-all duration-500 ${
+                    isActive ? 'opacity-100 scale-105' : isCompleted ? 'opacity-80' : 'opacity-40'
                   }`}>
-                    <span className={`text-xs px-3 py-1 rounded-full inline-block font-medium ${
+                    <span className={`text-xs px-2 py-1 xl:px-3 xl:py-1 rounded-full inline-block font-medium ${
                       isActive 
                         ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg' 
                         : isCompleted
-                        ? 'bg-gradient-to-r from-destructive/60 to-primary/60 text-primary-foreground'
-                        : 'bg-muted/70 text-muted-foreground'
+                        ? 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
+                        : 'bg-muted/60 text-muted-foreground'
                     }`}>
                       Step {step.step}
                     </span>
-                    <p className={`text-xs mt-1 font-medium max-w-20 leading-tight ${
-                      isActive ? 'text-foreground' : isCompleted ? 'text-muted-foreground' : 'text-muted-foreground/60'
+                    <p className={`text-xs mt-1 font-medium max-w-16 xl:max-w-20 leading-tight ${
+                      isActive ? 'text-foreground' : isCompleted ? 'text-muted-foreground' : 'text-muted-foreground/50'
                     }`}>
                       {step.title}
                     </p>
@@ -204,7 +203,7 @@ const InteractiveSampleRun = () => {
           </div>
 
           {/* Right Side - Fixed Content Box */}
-          <div className="ml-auto w-[45%] flex items-center pr-8 pl-4 relative">
+          <div className="ml-auto w-[48%] flex items-center pr-6 xl:pr-8 pl-4 relative">
             <Card className="w-full p-12 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit max-w-none relative z-10 overflow-hidden">
               {/* Dynamic background image inside card */}
               <div 
@@ -236,8 +235,133 @@ const InteractiveSampleRun = () => {
           </div>
         </div>
 
-        {/* Mobile Vertical Timeline - No description box */}
-        <div className="md:hidden space-y-6 px-6">
+        {/* Tablet Diagonal Timeline - Smaller Diagonal */}
+        <div className="hidden md:flex lg:hidden w-full gap-0 h-[600px] bg-gradient-to-r from-background via-background/95 to-background relative overflow-hidden">
+          {/* Tablet Diagonal Timeline Container */}
+          <div className="absolute inset-0 px-4 py-12">
+            {/* Diagonal progress line SVG */}
+            <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="tabletDiagonalProgress" x1="20%" y1="80%" x2="50%" y2="30%">
+                  <stop offset="0%" stopColor="hsl(var(--border))" stopOpacity="0.4" />
+                  <stop offset={`${(activeStep / (steps.length - 1)) * 100}%`} stopColor="hsl(var(--destructive))" stopOpacity="1" />
+                  <stop offset={`${(activeStep / (steps.length - 1)) * 100 + 1}%`} stopColor="hsl(var(--border))" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.4" />
+                </linearGradient>
+              </defs>
+              <line
+                x1="20%"
+                y1="80%"
+                x2="50%"
+                y2="30%"
+                stroke="url(#tabletDiagonalProgress)"
+                strokeWidth="3"
+                className="transition-all duration-1200 ease-in-out"
+              />
+            </svg>
+
+            {/* Step dots positioned along diagonal line */}
+            {steps.map((step, index) => {
+              const IconComponent = step.icon;
+              const isActive = index === activeStep;
+              const isCompleted = index < activeStep;
+              
+              // Calculate diagonal positions for tablet (20%, 80%) to (50%, 30%)
+              const progress = index / (steps.length - 1);
+              const leftPosition = 20 + (progress * 30); // 20% to 50%
+              const topPosition = 80 - (progress * 50); // 80% to 30%
+              
+              return (
+                <div 
+                  key={index} 
+                  className="absolute transform -translate-x-1/2 -translate-y-1/2" 
+                  style={{ 
+                    left: `${leftPosition}%`, 
+                    top: `${topPosition}%` 
+                  }}
+                >
+                  {/* Step Circle */}
+                  <button
+                    onClick={() => handleStepClick(index)}
+                    className={`relative w-12 h-12 rounded-full transition-all duration-700 transform z-20 ${
+                      isActive 
+                        ? 'bg-gradient-to-r from-destructive to-primary scale-115 shadow-xl shadow-destructive/40' 
+                        : isCompleted
+                        ? 'bg-gradient-to-r from-destructive/90 to-primary/90 scale-105 shadow-lg shadow-destructive/20'
+                        : 'bg-muted/60 scale-90 hover:scale-100 hover:bg-muted/80'
+                    }`}
+                    disabled={isAnimating}
+                  >
+                    {/* Enhanced glow effect for active step */}
+                    {isActive && (
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-destructive to-primary blur-lg opacity-60 scale-150 animate-pulse"></div>
+                    )}
+                    
+                    <div className="relative z-10 flex items-center justify-center w-full h-full">
+                      <IconComponent className={`w-5 h-5 transition-all duration-500 ${
+                        isActive 
+                          ? 'text-primary-foreground drop-shadow-lg' 
+                          : isCompleted 
+                          ? 'text-primary-foreground' 
+                          : 'text-muted-foreground/50'
+                      }`} />
+                    </div>
+                  </button>
+
+                  {/* Step Label */}
+                  <div className={`absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center transition-all duration-500 ${
+                    isActive ? 'opacity-100 scale-105' : isCompleted ? 'opacity-80' : 'opacity-40'
+                  }`}>
+                    <span className={`text-xs px-2 py-1 rounded-full inline-block font-medium ${
+                      isActive 
+                        ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-md' 
+                        : isCompleted
+                        ? 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
+                        : 'bg-muted/60 text-muted-foreground'
+                    }`}>
+                      {step.step}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Right Side - Fixed Content Box */}
+          <div className="ml-auto w-[50%] flex items-center pr-4 pl-2 relative">
+            <Card className="w-full p-6 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-xl shadow-lg h-fit max-w-none relative z-10 overflow-hidden">
+              {/* Dynamic background image inside card */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-[0.04] transition-all duration-500"
+                style={{ backgroundImage: `url(${steps[activeStep].backgroundImage})` }}
+              ></div>
+              <div className="text-left relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-xl flex items-center justify-center mb-6 border border-border/30">
+                  {React.createElement(steps[activeStep].icon, { 
+                    className: "w-8 h-8 text-destructive" 
+                  })}
+                </div>
+                
+                <h3 className="text-2xl font-poppins font-bold text-foreground mb-4 leading-tight">
+                  Step {steps[activeStep].step}: {steps[activeStep].title}
+                </h3>
+                
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  {steps[activeStep].description}
+                </p>
+                
+                <div className="bg-muted/40 rounded-lg p-4 border border-border/40 backdrop-blur-sm">
+                  <p className="text-sm text-foreground leading-relaxed">
+                    {steps[activeStep].detail}
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+
+        {/* Mobile Vertical Timeline */}
+        <div className="md:hidden space-y-4 px-4">
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             const isActive = index === activeStep;
