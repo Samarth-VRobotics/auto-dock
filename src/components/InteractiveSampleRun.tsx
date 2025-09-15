@@ -491,39 +491,20 @@ const InteractiveSampleRun = () => {
                       </button>
                     </div>
 
-                    {/* Step Label - Positioned beside circle points for mobile */}
-                    <div 
-                      className="absolute transform -translate-x-1/2 -translate-y-1/2 text-center transition-all duration-500 pointer-events-none"
-                      style={{ 
-                        left: `${(labelX / 280) * 100}%`, 
-                        top: `${(labelY / 280) * 100}%` 
-                      }}
-                    >
-                      <div className={`transition-all duration-500 ${
-                        isActive ? 'opacity-100 scale-105' : isCompleted ? 'opacity-80' : 'opacity-60'
-                      }`}>
-                        <span className={`text-xs px-2 py-1 rounded-full inline-block font-medium whitespace-nowrap ${
-                          isActive 
-                            ? 'bg-gradient-to-r from-destructive to-primary text-primary-foreground shadow-lg' 
-                            : isCompleted
-                            ? 'bg-gradient-to-r from-destructive/70 to-primary/70 text-primary-foreground'
-                            : 'bg-muted/80 text-muted-foreground backdrop-blur-sm'
-                        }`}>
-                          {step.title}
-                        </span>
-                      </div>
-                    </div>
                   </div>
                 );
               })}
 
-              {/* Center Logo/Branding Area - No Number */}
+              {/* Center Content - Show active step text for mobile */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 flex items-center justify-center backdrop-blur-md shadow-lg">
-                  <div className="text-center">
-                    <div className="w-7 h-7 mx-auto bg-gradient-to-r from-destructive/20 to-primary/20 rounded-lg flex items-center justify-center">
-                      <Settings className="w-3.5 h-3.5 text-primary" />
+                <div className="w-20 h-20 rounded-full bg-gradient-to-r from-card to-background border-2 border-border/50 backdrop-blur-md shadow-lg transition-all duration-500">
+                  <div className="text-center p-2 flex flex-col items-center justify-center h-full">
+                    <div className="w-8 h-8 mx-auto mb-1 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-lg flex items-center justify-center">
+                      {React.createElement(steps[activeStep].icon, { 
+                        className: "w-4 h-4 text-primary" 
+                      })}
                     </div>
+                    <p className="text-xs font-medium text-foreground leading-tight">{steps[activeStep].title}</p>
                   </div>
                 </div>
               </div>
