@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, FileText, MapPin, Package, Navigation, Lock, CheckCircle, Play } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, FileText, MapPin, Package, Navigation, Lock, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import robotDogImage from '@/assets/robot-dog.webp';
 
 const InteractiveSampleRun = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [autoPlay, setAutoPlay] = useState(false);
 
   const steps = [
     {
@@ -53,22 +53,11 @@ const InteractiveSampleRun = () => {
     }
   ];
 
-  // Auto-play functionality
-  useEffect(() => {
-    if (!autoPlay) return;
-    
-    const interval = setInterval(() => {
-      setActiveStep(prev => (prev + 1) % steps.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [autoPlay, steps.length]);
 
   const handleStepClick = (index: number) => {
     if (isAnimating) return;
     setIsAnimating(true);
     setActiveStep(index);
-    setAutoPlay(false);
     
     setTimeout(() => setIsAnimating(false), 600);
   };
@@ -81,9 +70,6 @@ const InteractiveSampleRun = () => {
     setTimeout(() => setIsAnimating(false), 600);
   };
 
-  const toggleAutoPlay = () => {
-    setAutoPlay(!autoPlay);
-  };
 
   return (
     <section className="py-24 bg-background relative overflow-hidden">
@@ -105,15 +91,6 @@ const InteractiveSampleRun = () => {
           
           {/* Controls */}
           <div className="flex justify-center gap-4 mb-12">
-            <Button
-              onClick={toggleAutoPlay}
-              variant={autoPlay ? "destructive" : "outline"}
-              size="lg"
-              className="gap-2"
-            >
-              <Play className="w-5 h-5" />
-              {autoPlay ? 'Stop Demo' : 'Auto Demo'}
-            </Button>
             <Button
               onClick={handleNext}
               variant="outline"
@@ -175,11 +152,15 @@ const InteractiveSampleRun = () => {
                           </span>
                         </div>
                         
-                        {/* Robot Dog Icon - only shows on active step */}
+                        {/* Robot Dog Image - only shows on active step */}
                         {isActive && (
-                          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                            <div className="w-8 h-8 bg-destructive rounded-full flex items-center justify-center animate-bounce">
-                              <div className="w-4 h-4 bg-primary-foreground rounded-sm"></div>
+                          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                            <div className="w-16 h-12 animate-bounce">
+                              <img 
+                                src={robotDogImage} 
+                                alt="Robot Dog" 
+                                className="w-full h-full object-contain filter drop-shadow-lg"
+                              />
                             </div>
                           </div>
                         )}
