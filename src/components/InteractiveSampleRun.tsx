@@ -511,11 +511,6 @@ const InteractiveSampleRun = () => {
                         }`}>
                           {step.title}
                         </span>
-                        <p className={`text-xs mt-1 font-medium max-w-16 mx-auto leading-tight ${
-                          isActive ? 'text-foreground' : isCompleted ? 'text-muted-foreground' : 'text-muted-foreground/70'
-                        }`}>
-                          {step.description}
-                        </p>
                       </div>
                     </div>
                   </div>
