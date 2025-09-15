@@ -7,6 +7,7 @@ import { Mail, Linkedin } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
 import OurJourneySection from "@/components/OurJourneySection";
 import VideoSlideshow from "@/components/VideoSlideshow";
+import LearningCircleSection from "@/components/LearningCircleSection";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import mentorshipScene from "@/assets/mentorship-scene.jpg";
 import { useState, useEffect } from "react";
@@ -487,6 +488,9 @@ const OurTeam = () => {
           <VideoSlideshow />
         </div>
       </section>
+
+      {/* Learning Circle Section */}
+      <LearningCircleSection />
 
       <Footer />
     </div>;
