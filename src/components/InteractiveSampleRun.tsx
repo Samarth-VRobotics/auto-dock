@@ -1,12 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, FileText, MapPin, Package, Navigation, Lock, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import robotDogImage from '@/assets/robot-dog.webp';
+import { removeBackground, loadImage } from '@/lib/backgroundRemoval';
 
 const InteractiveSampleRun = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [processedRobotImage, setProcessedRobotImage] = useState<string | null>(null);
+  const [isProcessing, setIsProcessing] = useState(true);
+
+  // Process robot image to remove background
+  useEffect(() => {
+    const processImage = async () => {
+      try {
+        const img = await loadImage(robotDogImage);
+        const processedImageUrl = await removeBackground(img);
+        setProcessedRobotImage(processedImageUrl);
+      } catch (error) {
+        console.error('Failed to process robot image:', error);
+        // Fallback to original image
+        setProcessedRobotImage(robotDogImage);
+      } finally {
+        setIsProcessing(false);
+      }
+    };
+
+    processImage();
+  }, []);
 
   const steps = [
     {
@@ -153,14 +175,26 @@ const InteractiveSampleRun = () => {
                         </div>
                         
                         {/* Robot Dog Image - only shows on active step */}
-                        {isActive && (
+                        {isActive && !isProcessing && processedRobotImage && (
                           <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
                             <div className="w-16 h-12 animate-bounce">
                               <img 
-                                src={robotDogImage} 
+                                src={processedRobotImage} 
                                 alt="Robot Dog" 
-                                className="w-full h-full object-contain filter drop-shadow-lg"
+                                className="w-full h-full object-contain filter drop-shadow-2xl"
+                                style={{
+                                  filter: 'drop-shadow(0 4px 8px rgba(220, 38, 38, 0.3)) drop-shadow(0 0 16px rgba(220, 38, 38, 0.2))'
+                                }}
                               />
+                            </div>
+                          </div>
+                        )}
+                        
+                        {/* Loading indicator while processing */}
+                        {isActive && isProcessing && (
+                          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                            <div className="w-16 h-12 flex items-center justify-center">
+                              <div className="w-6 h-6 border-2 border-destructive border-t-transparent rounded-full animate-spin"></div>
                             </div>
                           </div>
                         )}
