@@ -18,7 +18,7 @@ const Footer = () => {
               <p className="body-sm font-medium text-foreground">Vegam Solutions Inc.</p>
               <p className="body-sm text-muted-foreground">16192, Coastal Highway</p>
               <p className="body-sm text-muted-foreground">Lewes, Delaware 19958, USA</p>
-              <a href="mailto:info@vegamrobotics.com" className="body-sm text-primary hover:text-primary/80 transition-colors block">info@vegamrobotics.com</a>
+              <a href="mailto:sales@vegamrobotics.com" className="body-sm text-primary hover:text-primary/80 transition-colors block">sales@vegamrobotics.com</a>
               <a href="tel:+19193326999" className="body-sm text-primary hover:text-primary/80 transition-colors">+1 (919) 332-6999</a>
             </div>
           </div>
