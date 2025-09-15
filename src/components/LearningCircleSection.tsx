@@ -15,11 +15,11 @@ const LearningCircleSection = () => {
           {/* Centered Quote */}
           <div className="max-w-5xl mx-auto text-center mb-16">
             <blockquote className="text-lg md:text-xl leading-relaxed italic text-foreground/90 mb-6">
-              "We — Faizan, Rani, and Amrut — began our journey as students at KLE Tech, driven by a passion for robotics and automation. Our path led us to Vegam, where we gained hands-on exposure to industry challenges, innovation, and building real-world robotic systems.
+              "We Faizan, Rani, and Amrut began our journey as students at KLE Tech, driven by a passion for robotics and automation. Our path led us to Vegam, where we are exposed to industry challenges, innovation, and building real-world robotic systems.
               <br /><br />
-              Guided by our mentors, we grew not only as engineers but also as learners. Today, we are committed to keeping that circle of learning alive by giving back to the student community — inspiring, mentoring, and collaborating with the next generation of innovators."
+              With the guidance of our mentors, we developed not only our technical skills but also a mindset of continuous learning. Today, we are committed to keeping that circle of learning alive by giving back to the student community, inspiring, mentoring, and collaborating with the next generation of innovators."
             </blockquote>
-            <cite className="text-base font-bold text-foreground">— Faizan, Rani & Amrut</cite>
+            <cite className="text-base font-bold text-foreground">Faizan, Rani & Amrut</cite>
           </div>
           
           {/* Two Cards Side by Side */}
