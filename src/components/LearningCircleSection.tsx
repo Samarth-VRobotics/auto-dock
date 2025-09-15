@@ -19,7 +19,7 @@ const LearningCircleSection = () => {
               <br /><br />
               With the guidance of our mentors, we developed not only our technical skills but also a mindset of continuous learning. Today, we are committed to keeping that circle of learning alive by giving back to the student community, inspiring, mentoring, and collaborating with the next generation of innovators."
             </blockquote>
-            <cite className="text-base font-bold text-foreground">Faizan, Rani & Amrut</cite>
+            <cite className="text-base font-bold text-foreground">- Faizan, Rani & Amrut</cite>
           </div>
           
           {/* Two Cards Side by Side */}
