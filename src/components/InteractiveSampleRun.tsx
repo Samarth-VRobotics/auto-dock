@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FileText, MapPin, Package, Navigation, Lock, CheckCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import workflowBackground from '@/assets/workflow-background.jpg';
+import sampleRequestBg from '@/assets/sample-request-bg.jpg';
+import robotDispatchBg from '@/assets/robot-dispatch-bg.jpg';
+import sampleCollectionBg from '@/assets/sample-collection-bg.jpg';
+import navigationBg from '@/assets/navigation-bg.jpg';
+import secureDeliveryBg from '@/assets/secure-delivery-bg.jpg';
+import confirmationBg from '@/assets/confirmation-bg.jpg';
 
 const InteractiveSampleRun = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -13,42 +18,48 @@ const InteractiveSampleRun = () => {
       title: 'Sample Request',
       description: 'Triggered in MOM / MES system for quality control sampling.',
       detail: 'Manufacturing Operations Management system initiates automated sample collection request with specific location and priority parameters.',
-      step: '1'
+      step: '1',
+      backgroundImage: sampleRequestBg
     },
     {
       icon: MapPin,
       title: 'Robot Dispatch',
       description: 'SFS assigns the nearest available quadruped robot.',
       detail: 'Smart Fleet System analyzes robot locations, battery levels, and current tasks to optimize dispatch efficiency and minimize response time.',
-      step: '2'
+      step: '2',
+      backgroundImage: robotDispatchBg
     },
     {
       icon: Package,
       title: 'Sample Collection',
       description: 'Robot secures the sample in a locked compartment.',
       detail: 'Automated gripper system carefully collects sample maintaining chain of custody with biometric verification and secure containment protocols.',
-      step: '3'
+      step: '3',
+      backgroundImage: sampleCollectionBg
     },
     {
       icon: Navigation,
       title: 'Navigation',
       description: 'Autonomous movement through complex industrial environments.',
       detail: 'Advanced LIDAR and computer vision enable seamless navigation across multiple floors, through elevators, doors, and dynamic obstacles.',
-      step: '4'
+      step: '4',
+      backgroundImage: navigationBg
     },
     {
       icon: Lock,
       title: 'Secure Delivery',
       description: 'Locked handover to QA lab or production team.',
       detail: 'Biometric authentication and digital handshake ensure secure transfer with complete audit trail and tamper-proof delivery confirmation.',
-      step: '5'
+      step: '5',
+      backgroundImage: secureDeliveryBg
     },
     {
       icon: CheckCircle,
       title: 'Confirmation',
       description: 'Logged into MOM / MES dashboards in real time.',
       detail: 'Complete workflow data including timing, location tracking, and delivery confirmation automatically syncs with enterprise systems.',
-      step: '6'
+      step: '6',
+      backgroundImage: confirmationBg
     }
   ];
 
@@ -95,7 +106,7 @@ const InteractiveSampleRun = () => {
         <div className="hidden md:flex w-full gap-0 h-[700px] bg-gradient-to-r from-background via-background/95 to-background">
           {/* Left Side - Step Animation (55% width) */}
           <div className="w-[55%] relative pl-16 pr-8">
-            {/* Straight diagonal connecting path */}
+            {/* Straight diagonal connecting path - centered and evenly spread */}
             <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="pathGradient" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -105,9 +116,9 @@ const InteractiveSampleRun = () => {
                   <stop offset="100%" stopColor="hsl(var(--border))" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
-              {/* Straight diagonal line */}
+              {/* Centered diagonal line spanning left section */}
               <path
-                d="M 120 580 L 520 120"
+                d="M 80 550 L 400 120"
                 stroke="url(#pathGradient)"
                 strokeWidth="8"
                 fill="none"
@@ -121,14 +132,14 @@ const InteractiveSampleRun = () => {
               const isActive = index === activeStep;
               const isCompleted = index < activeStep;
               
-              // Diagonal line positions - evenly spaced along the diagonal
+              // Centered diagonal positions - evenly spread across left section
               const positions = [
-                { left: '18%', top: '82%' },   // Step 1
-                { left: '26%', top: '70%' },   // Step 2
-                { left: '34%', top: '58%' },   // Step 3
-                { left: '42%', top: '46%' },   // Step 4
-                { left: '50%', top: '34%' },   // Step 5
-                { left: '58%', top: '22%' },   // Step 6
+                { left: '12%', top: '78%' },   // Step 1
+                { left: '20%', top: '64%' },   // Step 2  
+                { left: '28%', top: '50%' },   // Step 3
+                { left: '36%', top: '36%' },   // Step 4
+                { left: '44%', top: '22%' },   // Step 5
+                { left: '52%', top: '12%' },   // Step 6
               ];
               
               return (
@@ -185,14 +196,14 @@ const InteractiveSampleRun = () => {
           </div>
 
           {/* Right Side - Active Step Details (45% width) */}
-          <div className="w-[45%] flex items-center pr-16 pl-8 bg-gradient-to-l from-card/20 via-card/10 to-transparent relative">
-            {/* Background image */}
-            <div 
-              className="absolute inset-0 bg-cover bg-center opacity-[0.03] rounded-lg"
-              style={{ backgroundImage: `url(${workflowBackground})` }}
-            ></div>
-            <Card className="w-full p-12 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit max-w-none relative z-10">
-              <div className="text-left">
+          <div className="w-[45%] flex items-center pr-16 pl-8 relative">
+            <Card className="w-full p-12 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit max-w-none relative z-10 overflow-hidden">
+              {/* Dynamic background image inside card */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-[0.04] transition-all duration-500"
+                style={{ backgroundImage: `url(${steps[activeStep].backgroundImage})` }}
+              ></div>
+              <div className="text-left relative z-10">
                 <div className="w-20 h-20 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-xl flex items-center justify-center mb-8 border border-border/30">
                   {React.createElement(steps[activeStep].icon, { 
                     className: "w-10 h-10 text-destructive" 
