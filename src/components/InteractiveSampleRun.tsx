@@ -240,7 +240,7 @@ const InteractiveSampleRun = () => {
             <Card className="w-full p-12 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-2xl shadow-lg h-fit max-w-none relative z-10 overflow-hidden">
               {/* Dynamic background image inside card */}
               <div 
-                className="absolute inset-0 bg-cover bg-center opacity-[0.04] transition-all duration-500"
+                className="absolute inset-0 bg-cover bg-center opacity-[0.12] transition-all duration-500"
                 style={{ backgroundImage: `url(${steps[activeStep].backgroundImage})` }}
               ></div>
               <div className="text-left relative z-10">
@@ -391,7 +391,7 @@ const InteractiveSampleRun = () => {
             <Card className="w-full p-6 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-xl shadow-lg h-fit max-w-none relative z-10 overflow-hidden">
               {/* Dynamic background image inside card */}
               <div 
-                className="absolute inset-0 bg-cover bg-center opacity-[0.04] transition-all duration-500"
+                className="absolute inset-0 bg-cover bg-center opacity-[0.12] transition-all duration-500"
                 style={{ backgroundImage: `url(${steps[activeStep].backgroundImage})` }}
               ></div>
               <div className="text-left relative z-10">
@@ -515,7 +515,7 @@ const InteractiveSampleRun = () => {
           <Card className="w-full p-6 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-md border-2 border-border/50 transition-all duration-500 hover:shadow-xl shadow-lg relative z-10 overflow-hidden">
             {/* Dynamic background image inside card */}
             <div 
-              className="absolute inset-0 bg-cover bg-center opacity-[0.04] transition-all duration-500"
+              className="absolute inset-0 bg-cover bg-center opacity-[0.12] transition-all duration-500"
               style={{ backgroundImage: `url(${steps[activeStep].backgroundImage})` }}
             ></div>
             <div className="text-center relative z-10">
