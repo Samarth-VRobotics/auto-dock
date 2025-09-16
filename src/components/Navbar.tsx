@@ -20,10 +20,7 @@ const Navbar = () => {
             {/* Logo Section */}
             <div className="flex items-center space-x-8">
               <a href="/" className="flex items-center">
-                <picture>
-                  <source srcSet="/vegam-logo.webp" type="image/webp" />
-                  <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-14 transition-transform duration-200 hover:scale-105" />
-                </picture>
+                <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-14 transition-transform duration-200 hover:scale-105" />
               </a>
             </div>
             

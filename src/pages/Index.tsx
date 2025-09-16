@@ -28,10 +28,7 @@ const Index = () => {
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
-          <picture>
-            <source srcSet="/src/assets/autonomous-production-line.webp" type="image/webp" />
-            <img src={autonomousProductionLine} alt="Autonomous robotic arms on production line" className="w-full h-full object-cover" fetchPriority="high" />
-          </picture>
+          <img src={autonomousProductionLine} alt="Autonomous robotic arms on production line" className="w-full h-full object-cover" fetchPriority="high" />
           
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/30"></div>
