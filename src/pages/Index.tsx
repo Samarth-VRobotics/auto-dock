@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
 import { ArrowRight, Brain, Cog, Zap, Network, Clock, Shield, BarChart3, Users, Globe, Building2, Truck, Factory, Boxes, Package, FlaskConical, FileText, Download, CheckCircle2, Star, TrendingUp, Target, Settings, Database, Hand, Cpu, Gauge, Lightbulb, Handshake, Headphones, MapPin } from "lucide-react";
-import heroProductionOptimized from "@/assets/hero-production-optimized.jpg";
+import autonomousProductionLine from "@/assets/autonomous-production-line.jpg";
 import smartFactoryHall from "@/assets/smart-factory-hall.jpg";
 import manufacturingEvolutionLab from "@/assets/manufacturing-evolution-lab.jpg";
 import futureOfWorkBg from "@/assets/future-of-work-bg.jpg";
@@ -28,7 +28,7 @@ const Index = () => {
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
-          <img src={heroProductionOptimized} alt="Autonomous robotic arms on production line" className="w-full h-full object-cover" loading="eager" />
+          <img src={autonomousProductionLine} alt="Autonomous robotic arms on production line" className="w-full h-full object-cover" />
           
           {/* Smooth light on/off cycle overlay */}
           <div className="absolute inset-0 bg-background/80 animate-light-cycle"></div>
