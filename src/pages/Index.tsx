@@ -28,7 +28,7 @@ const Index = () => {
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
-          <img src={autonomousProductionLine} alt="Autonomous robotic arms on production line" className="w-full h-full object-cover" />
+          <img src={autonomousProductionLine} alt="Autonomous robotic arms on production line" className="w-full h-full object-cover" fetchPriority="high" />
           
           {/* Smooth light on/off cycle overlay */}
           <div className="absolute inset-0 bg-background/80 animate-light-cycle"></div>
