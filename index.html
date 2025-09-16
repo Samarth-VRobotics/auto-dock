@@ -13,22 +13,16 @@
     <!-- Preload critical LCP image -->
     <link rel="preload" href="/assets/autonomous-production-line-DATz0Cm4.jpg" as="image" fetchpriority="high">
     
-    <!-- Professional fonts - Optimized for non-blocking -->
+    <!-- Optimize font loading to reduce critical request chains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Inline critical CSS loading optimization -->
-    <script>
-      // Load fonts asynchronously to prevent render blocking
-      (function() {
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap';
-        link.media = 'print';
-        link.onload = function() { this.media = 'all'; };
-        document.head.appendChild(link);
-      })();
-    </script>
+    <!-- Preload critical font files directly to avoid request chains -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v23/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Load font CSS asynchronously to prevent render blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
     <!-- Google Analytics -->
