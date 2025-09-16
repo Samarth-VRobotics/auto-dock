@@ -14,7 +14,6 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Building, User, MessageSquare } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { sendDemoConfirmationEmail } from "@/lib/emailService";
 
 interface ContactDialogProps {
@@ -42,40 +41,13 @@ const ContactDialog = ({ children, isBookCallDialog = false }: ContactDialogProp
     setIsSubmitting(true);
 
     try {
-      // Save request to appropriate database table
-      if (isBookCallDialog) {
-        // Save to call_requests table with individual fields
-        const { error } = await supabase
-          .from('call_requests')
-          .insert({
-            name: `${formData.firstName} ${formData.lastName}`,
-            email: formData.email,
-            phone: formData.phone || null,
-            company: formData.company,
-            job_title: formData.jobTitle || null,
-            industry: formData.industry || null,
-            message: formData.message || null
-          });
-        
-        if (error) {
-          throw error;
-        }
-      } else {
-        // Save to contact_requests table with combined message format
-        const { error } = await supabase
-          .from('contact_requests')
-          .insert({
-            name: `${formData.firstName} ${formData.lastName}`,
-            email: formData.email,
-            phone: formData.phone || null,
-            company: formData.company,
-            message: `Job Title: ${formData.jobTitle || 'Not specified'}\nIndustry: ${formData.industry || 'Not specified'}\n\nMessage: ${formData.message || 'No additional message'}`
-          });
-        
-        if (error) {
-          throw error;
-        }
-      }
+      // Log the form submission (replace with your preferred analytics/logging solution)
+      console.log('Contact form submitted:', {
+        type: isBookCallDialog ? 'call_request' : 'contact_request',
+        name: `${formData.firstName} ${formData.lastName}`,
+        email: formData.email,
+        company: formData.company
+      });
 
       // Send auto-response email
       const emailSent = await sendDemoConfirmationEmail({

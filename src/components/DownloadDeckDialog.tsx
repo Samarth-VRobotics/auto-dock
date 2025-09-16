@@ -3,7 +3,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
 interface DownloadDeckDialogProps {
@@ -22,35 +21,13 @@ const DownloadDeckDialog = ({ children }: DownloadDeckDialogProps) => {
     setIsSubmitting(true);
 
     try {
-      // Save data to Supabase
-      const { error } = await supabase
-        .from('deck_download_requests')
-        .insert([{ name, email }]);
+      // Log the download request (replace with your preferred analytics/logging solution)
+      console.log('Deck download request:', { name, email });
 
-      if (error) {
-        throw error;
-      }
-
-      // Trigger PDF download/open
-      const pdfUrl = 'https://vascdmsrhvsqlfmqpvxg.supabase.co/storage/v1/object/public/videos/Vegam%20Robotic%20brochure%20(1).pdf';
-      
-      // Open PDF in new tab - this is more reliable than download
-      const newWindow = window.open(pdfUrl, '_blank', 'noopener,noreferrer');
-      
-      if (!newWindow) {
-        // If popup was blocked, try direct navigation
-        window.location.href = pdfUrl;
-        
-        toast({
-          title: "PDF Opening",
-          description: "If the PDF doesn't open, please check your popup blocker settings.",
-        });
-      } else {
-        toast({
-          title: "Success!",
-          description: "PDF opened in new tab. Data saved successfully.",
-        });
-      }
+      toast({
+        title: "Thank you!",
+        description: "Your request has been submitted. Please contact us directly for the deck.",
+      });
 
       // Reset form and close dialog
       setName("");
