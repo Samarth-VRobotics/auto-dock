@@ -106,11 +106,14 @@ const VegamJourney = () => {
       <section className="py-6 sm:py-8 lg:py-12 relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img 
-          src={vegamJourneyBg} 
-          alt="Smart factory background" 
-          className="w-full h-full object-cover opacity-30" 
-        />
+        <picture>
+          <source srcSet="/src/assets/vegam-journey-bg.webp" type="image/webp" />
+          <img 
+            src={vegamJourneyBg} 
+            alt="Smart factory background" 
+            className="w-full h-full object-cover opacity-30" 
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/50 to-background/70"></div>
       </div>
       

@@ -5,7 +5,10 @@ const Footer = () => {
         <div className="flex items-center justify-center space-x-8">
           {/* Left Side - Logo */}
           <div className="flex-1 flex justify-end">
-            <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-16" />
+            <picture>
+              <source srcSet="/vegam-logo.webp" type="image/webp" />
+              <img src="/lovable-uploads/714d52e8-240b-4dbc-a80b-4aeefd614424.png" alt="Vegam" className="h-16" />
+            </picture>
           </div>
           
           {/* Vertical Line */}
