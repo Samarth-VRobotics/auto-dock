@@ -1,4 +1,5 @@
 import React from 'react';
+import { TestTube, Cpu, Factory, Apple } from 'lucide-react';
 const SampleRunIndustries = () => {
   return <section className="py-24 bg-muted/30 relative overflow-hidden">
       <div className="container mx-auto px-6 relative">
@@ -15,7 +16,9 @@ const SampleRunIndustries = () => {
           <div className="group bg-card/50 backdrop-blur-sm rounded-2xl border border-border p-8 h-full relative overflow-hidden hover:shadow-xl hover:bg-card/70 transition-all duration-300 animate-fade-in">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10 text-center">
-              <div className="text-4xl mb-4">🧪</div>
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <TestTube className="w-8 h-8 text-primary" />
+              </div>
               <h3 className="text-xl font-bold text-foreground mb-3">Pharma & Biotech</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Stable, traceable QA samples across labs and production.
@@ -29,7 +32,9 @@ const SampleRunIndustries = () => {
         }}>
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10 text-center">
-              <div className="text-4xl mb-4">💻</div>
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Cpu className="w-8 h-8 text-primary" />
+              </div>
               <h3 className="text-xl font-bold text-foreground mb-3">Electronics & Semiconductors</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Cross-building sample delivery in cleanrooms.
@@ -43,7 +48,9 @@ const SampleRunIndustries = () => {
         }}>
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10 text-center">
-              <div className="text-4xl mb-4">🏭</div>
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Factory className="w-8 h-8 text-primary" />
+              </div>
               <h3 className="text-xl font-bold text-foreground mb-3">Manufacturing & R&D</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Quality samples between testing, QA, and production.
@@ -57,7 +64,9 @@ const SampleRunIndustries = () => {
         }}>
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10 text-center">
-              <div className="text-4xl mb-4">🍎</div>
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Apple className="w-8 h-8 text-primary" />
+              </div>
               <h3 className="text-xl font-bold text-foreground mb-3">FMCG & Food</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Traceable QA handling across floors and processing units.
