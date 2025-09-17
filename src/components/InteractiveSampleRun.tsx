@@ -24,7 +24,7 @@ const InteractiveSampleRun = () => {
     {
       icon: MapPin,
       title: 'Robot Dispatch',
-      description: 'SFS assigns the nearest available quadruped robot.',
+      description: 'Fleet Manager assigns the nearest available quadruped robot.',
       detail: 'Smart Fleet System analyzes robot locations, battery levels, and current tasks to optimize dispatch efficiency and minimize response time.',
       step: '2',
       backgroundImage: robotDispatchBg
