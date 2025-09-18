@@ -43,18 +43,11 @@ const ContactDialog = ({ children, isBookCallDialog = false }: ContactDialogProp
 
     try {
       // Save to CSV
-      saveToCSV({
-        timestamp: new Date().toISOString(),
-        type: isBookCallDialog ? 'call_request' : 'contact_request',
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        jobTitle: formData.jobTitle,
-        industry: formData.industry,
-        message: formData.message,
-      });
+      await saveToCSV(
+        formData,
+        isBookCallDialog ? 'book_call' : 'contact',
+        isBookCallDialog
+      );
 
       // Log the form submission (replace with your preferred analytics/logging solution)
       console.log('Contact form submitted:', {

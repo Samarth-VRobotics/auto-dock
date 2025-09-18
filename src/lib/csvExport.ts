@@ -1,9 +1,6 @@
-interface CSVContactData {
-  timestamp: string;
-  type: 'contact_request' | 'call_request' | 'download_request';
-  firstName?: string;
+interface ContactFormData {
+  firstName: string;
   lastName?: string;
-  name?: string;
   email: string;
   phone?: string;
   company?: string;
@@ -12,70 +9,31 @@ interface CSVContactData {
   message?: string;
 }
 
-export const saveToCSV = (data: CSVContactData) => {
-  const csvData = getCSVData();
-  csvData.push(data);
-  saveCSVData(csvData);
-  console.log('Data saved to CSV storage:', data);
-};
+const API_BASE_URL = 'http://localhost:3001';
 
-export const downloadStoredCSV = () => {
-  const csvData = getCSVData();
-  if (csvData.length > 0) {
-    downloadCSV(csvData);
-  }
-};
-
-const getCSVData = (): CSVContactData[] => {
+export const saveToCSV = async (formData: ContactFormData, formType: string = 'contact', isBookCallDialog: boolean = false): Promise<boolean> => {
   try {
-    const stored = localStorage.getItem('contact_data_csv');
-    return stored ? JSON.parse(stored) : [];
-  } catch {
-    return [];
+    const response = await fetch(`${API_BASE_URL}/api/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        formData,
+        formType,
+        isBookCallDialog,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log('Data saved to server CSV:', result);
+    return true;
+  } catch (error) {
+    console.error('Error saving to CSV:', error);
+    return false;
   }
-};
-
-const saveCSVData = (data: CSVContactData[]) => {
-  localStorage.setItem('contact_data_csv', JSON.stringify(data));
-};
-
-const downloadCSV = (data: CSVContactData[]) => {
-  const headers = [
-    'Timestamp',
-    'Type',
-    'Name',
-    'Email',
-    'Phone',
-    'Company',
-    'Job Title',
-    'Industry',
-    'Message'
-  ];
-
-  const csvContent = [
-    headers.join(','),
-    ...data.map(row => [
-      `"${row.timestamp}"`,
-      `"${row.type}"`,
-      `"${row.name || `${row.firstName || ''} ${row.lastName || ''}`.trim()}"`,
-      `"${row.email}"`,
-      `"${row.phone || ''}"`,
-      `"${row.company || ''}"`,
-      `"${row.jobTitle || ''}"`,
-      `"${row.industry || ''}"`,
-      `"${row.message || ''}"`
-    ].join(','))
-  ].join('\n');
-
-  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-  const link = document.createElement('a');
-  const url = URL.createObjectURL(blob);
-  
-  link.setAttribute('href', url);
-  link.setAttribute('download', `contact_leads_${new Date().toISOString().split('T')[0]}.csv`);
-  link.style.visibility = 'hidden';
-  
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
 };

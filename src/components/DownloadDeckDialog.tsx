@@ -23,12 +23,13 @@ const DownloadDeckDialog = ({ children }: DownloadDeckDialogProps) => {
 
     try {
       // Save to CSV
-      saveToCSV({
-        timestamp: new Date().toISOString(),
-        type: 'download_request',
-        name: name,
-        email: email,
-      });
+      await saveToCSV(
+        {
+          firstName: name,
+          email: email,
+        },
+        'download_deck'
+      );
 
       // Log the download request (replace with your preferred analytics/logging solution)
       console.log('Deck download request:', { name, email });
