@@ -15,6 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Building, User, MessageSquare } from "lucide-react";
 import { sendDemoConfirmationEmail } from "@/lib/emailService";
+import { exportToCSV } from "@/lib/csvExport";
 
 interface ContactDialogProps {
   children: React.ReactNode;
@@ -41,6 +42,20 @@ const ContactDialog = ({ children, isBookCallDialog = false }: ContactDialogProp
     setIsSubmitting(true);
 
     try {
+      // Save to CSV
+      exportToCSV({
+        timestamp: new Date().toISOString(),
+        type: isBookCallDialog ? 'call_request' : 'contact_request',
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        jobTitle: formData.jobTitle,
+        industry: formData.industry,
+        message: formData.message,
+      });
+
       // Log the form submission (replace with your preferred analytics/logging solution)
       console.log('Contact form submitted:', {
         type: isBookCallDialog ? 'call_request' : 'contact_request',
