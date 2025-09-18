@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { exportToCSV } from "@/lib/csvExport";
+import { saveToCSV } from "@/lib/csvExport";
 
 interface DownloadDeckDialogProps {
   children: React.ReactNode;
@@ -23,7 +23,7 @@ const DownloadDeckDialog = ({ children }: DownloadDeckDialogProps) => {
 
     try {
       // Save to CSV
-      exportToCSV({
+      saveToCSV({
         timestamp: new Date().toISOString(),
         type: 'download_request',
         name: name,

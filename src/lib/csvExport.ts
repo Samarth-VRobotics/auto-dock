@@ -12,11 +12,18 @@ interface CSVContactData {
   message?: string;
 }
 
-export const exportToCSV = (data: CSVContactData) => {
+export const saveToCSV = (data: CSVContactData) => {
   const csvData = getCSVData();
   csvData.push(data);
   saveCSVData(csvData);
-  downloadCSV(csvData);
+  console.log('Data saved to CSV storage:', data);
+};
+
+export const downloadStoredCSV = () => {
+  const csvData = getCSVData();
+  if (csvData.length > 0) {
+    downloadCSV(csvData);
+  }
 };
 
 const getCSVData = (): CSVContactData[] => {
