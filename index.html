@@ -25,26 +25,6 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Google Analytics - Optimized loading to reduce unused JS -->
-    <script>
-      // Defer Google Analytics to improve initial page load
-      window.addEventListener('load', function() {
-        // Load gtag script after page load to reduce blocking
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9C68SR5BW0';
-        document.head.appendChild(script);
-        
-        // Initialize dataLayer and gtag function
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-9C68SR5BW0');
-        
-        // Make gtag globally available
-        window.gtag = gtag;
-      });
-    </script>
 
     <meta property="og:title" content="dock-autonomy-landing" />
     <meta property="og:description" content="Lovable Generated Project" />
