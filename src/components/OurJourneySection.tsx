@@ -128,7 +128,7 @@ const OurJourneySection = () => {
             {/* Mobile: Image first, Desktop: Text first */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl h-80 lg:h-[500px] w-full group
                           hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out order-1 lg:order-2">
-              <img src="/src/assets/kle-tech-university.jpg" alt="KLE Technological University campus with main building and beautiful architecture" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <img src="/src/assets/kle-tech-university-new.jpg" alt="KLE Technological University campus with main building and beautiful architecture" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
                             group-hover:from-black/60 group-hover:to-transparent transition-all duration-300"></div>
               <div className="absolute bottom-6 left-6 text-white transform 
