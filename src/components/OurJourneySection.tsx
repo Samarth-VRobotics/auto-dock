@@ -135,8 +135,8 @@ const OurJourneySection = () => {
                             group-hover:translate-y-[-4px] transition-transform duration-300">
                 <p className="text-base font-medium">Our Roots at KLETU</p>
               </div>
-              <div className="absolute top-4 right-4 text-white/70 text-xs">
-                <p>Property of KLETU</p>
+              <div className="absolute bottom-4 right-4 text-white/70 text-xs">
+                <p>© Property of KLETU</p>
               </div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
