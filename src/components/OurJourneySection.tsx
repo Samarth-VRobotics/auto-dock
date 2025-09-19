@@ -136,7 +136,7 @@ const OurJourneySection = () => {
                 <p className="text-base font-medium">Our Roots at KLETU</p>
               </div>
               <div className="absolute bottom-4 right-4 text-white/70 text-xs">
-                <p>© Property of KLETU</p>
+                <p><span className="text-sm">©</span> Property of KLETU</p>
               </div>
             </div>
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-xl border border-primary/10 
