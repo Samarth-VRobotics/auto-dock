@@ -1,16 +1,16 @@
 import { Button } from "@/components/ui/button";
-import asrsImage from "@/assets/asrs-system.jpg";
+import sampleRunHeroBg from "@/assets/samplerun-hero-bg.jpg";
 import ContactDialog from "@/components/ContactDialog";
 import DemoDialog from "@/components/DemoDialog";
 const ASRSHero = () => {
   return <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
-        <video autoPlay muted loop playsInline className="w-full h-full object-cover" poster={asrsImage}>
+        <video autoPlay muted loop playsInline className="w-full h-full object-cover" poster={sampleRunHeroBg}>
           {/* Placeholder for actual video - replace src with your ASRS demo video */}
           <source src="/path-to-your-asrs-demo-video.mp4" type="video/mp4" />
           {/* Fallback to hero image if video fails to load */}
-          <img src={asrsImage} alt="Automated Storage and Retrieval System" className="w-full h-full object-cover" />
+          <img src={sampleRunHeroBg} alt="Laboratory scientist with quadruped robot carrying samples" className="w-full h-full object-cover" />
         </video>
         
         {/* Video Fade-in Animation Overlay */}
