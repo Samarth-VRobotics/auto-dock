@@ -3,6 +3,12 @@ import { useEffect } from 'react';
 // Media files to preload (using local assets)
 const MEDIA_URLS = [
   "/team-video.mp4",
+  "/videos/samplerun_weatherproof.mp4",
+  "/videos/samplerun_secure_delivery.mp4",
+  "/videos/samplerun_lift.mp4",
+  "/videos/samplerun_integration.mp4",
+  "/videos/samplerun_fleet.mp4",
+  "/videos/samplerun_faster_cycles.mp4",
   // Add other local video files as needed
 ];
 
