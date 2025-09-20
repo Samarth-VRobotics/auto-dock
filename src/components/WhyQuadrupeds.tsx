@@ -6,37 +6,37 @@ const WhyQuadrupeds = () => {
     header: 'Faster QA Cycles',
     text: 'Shorten batch-release timelines and eliminate delays from manual sample transfers.',
     icon: Clock,
-    video: '/videos/samplerun_faster_cycles.mp4'
+    video: 'https://cdn.vegamrobotics.com/uploads/samplerun_faster_cycles.mp4'
   }, {
     id: 'safe-secure',
     header: 'Safe & Secure Sample Delivery',
     text: 'QA and lab samples arrive intact in secure, digitally locked compartments.',
     icon: Shield,
-    video: '/videos/samplerun_secure_delivery.mp4'
+    video: 'https://cdn.vegamrobotics.com/uploads/samplerun_secure_delivery.mp4'
   }, {
     id: 'seamless-movement',
     header: 'Seamless Movement Across Floors & Buildings',
     text: 'Robots navigate elevators, staircases, doors, and gateways effortlessly.',
     icon: Building,
-    video: '/videos/samplerun_lift.mp4'
+    video: 'https://cdn.vegamrobotics.com/uploads/samplerun_lift.mp4'
   }, {
     id: 'reliable-operation',
     header: 'Reliable Indoor & Outdoor Operation',
     text: 'Weatherproof design and obstacle detection keep operations running campus-wide.',
     icon: CloudSnow,
-    video: '/videos/samplerun_weatherproof.mp4'
+    video: 'https://cdn.vegamrobotics.com/uploads/samplerun_weatherproof.mp4'
   }, {
     id: 'always-on-fleet',
     header: 'Always-On Fleet, Ready When You Are',
     text: 'Multiple robots operate 24/7, with Fleet Manager overseeing opportunity charging and coordination.',
     icon: Zap,
-    video: '/videos/samplerun_fleet.mp4'
+    video: 'https://cdn.vegamrobotics.com/uploads/samplerun_fleet.mp4'
   }, {
     id: 'full-visibility',
     header: 'Full Visibility & Integration',
     text: 'Every request, movement, and confirmation is logged in ERP, MES, LIMS, and SAP.',
     icon: Globe,
-    video: '/videos/samplerun_integration.mp4'
+    video: 'https://cdn.vegamrobotics.com/uploads/samplerun_integration.mp4'
   }];
   const renderVisual = (video: string, icon: any) => {
     const IconComponent = icon;
